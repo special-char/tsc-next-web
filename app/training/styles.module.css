@@ -84,16 +84,18 @@
   --_carousel-gutters: max(1rem, calc((100vw - calc(1280px - 1rem * 2)) / 2));
   position: relative;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: auto 1fr auto;
   grid-template-rows:
     [carousel-scroller] 1fr
     [carousel-pagination] var(--_carousel-pagination-size);
 
   &__scroller {
-    @apply relative mb-14 block w-full snap-x snap-mandatory overflow-x-scroll overscroll-contain whitespace-nowrap;
+    @apply relative block snap-x snap-mandatory overflow-x-scroll overscroll-contain whitespace-nowrap;
     scrollbar-width: none;
     scroll-padding-inline: var(--_carousel-gutters);
     padding-inline: var(--_carousel-gutters);
+    grid-row: 1;
+    grid-column: 1/-1;
 
     &::-webkit-scrollbar {
       display: none;
@@ -109,7 +111,26 @@
   }
 
   &__controls {
-    @apply absolute z-50 flex  w-full  items-center justify-between px-container;
+    /* @apply absolute z-50 flex  w-full  items-center justify-between px-container; */
+    display: flex;
+    justify-content: space-between;
+    padding-inline: var(--_carousel-gutters);
+    display: contents;
+  }
+
+  &__control {
+    grid-row: 1;
+    place-self: center;
+    @apply z-50 mx-container;
+
+    &:first-child {
+      grid-column: 1;
+      @apply w-12;
+    }
+    &:last-child {
+      grid-column: 3;
+      @apply w-12;
+    }
   }
 }
 

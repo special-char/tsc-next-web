@@ -98,7 +98,7 @@ const Courses = (props: Props) => {
         <div className={styles.carousal__controls}>
           <button
             type="button"
-            className="btn btn--primary btn--round w-12"
+            className={`${styles.carousal__control} btn btn--primary btn--round`}
             onClick={() => {
               const scrollPort = scrollerRef.current;
               if (scrollPort) {
@@ -139,7 +139,7 @@ const Courses = (props: Props) => {
           >{`<`}</button>
           <button
             type="button"
-            className="btn btn--primary btn--round w-12"
+            className={`${styles.carousal__control} btn btn--primary btn--round`}
             onClick={() => {}}
           >{`>`}</button>
         </div>
