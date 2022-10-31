@@ -6,6 +6,9 @@ const nextConfig = {
     // Required:
     appDir: true,
   },
+  images: {
+    domains: ['assets.website-files.com'],
+  },
 };
 
 module.exports = nextConfig;

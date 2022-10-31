@@ -11,7 +11,7 @@ async function delay(ms: number): Promise<string> {
 }
 
 export default function ProductHeader() {
-  let title = use(delay(800));
+  let title = use(delay(2000));
   return (
     <section>
       <div className="mb-2 text-xl font-bold">{title}</div>
