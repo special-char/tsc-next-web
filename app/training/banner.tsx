@@ -2,34 +2,69 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './styles.module.css';
 
+async function getBannerData() {
+  try {
+    const res = await fetch('http://65.20.70.84:1337/graphql', {
+      method: 'POST',
+      body: JSON.stringify({
+        query: `{
+          banner {
+            data {
+              attributes {
+                title
+                description
+                image {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+                buttons {
+                  id
+                  text
+                  url
+                }
+              }
+            }
+          }
+        }`,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    });
+    const json = await res.json();
+    return json;
+  } catch (error) {}
+}
+
 type Props = {};
 
-const Banner = (props: Props) => {
+const Banner = async (props: Props) => {
+  const bannerData = await getBannerData();
+  console.log(bannerData);
+
+  const bannerInfo = bannerData?.data?.banner?.data?.attributes;
+
   return (
     <section id="banner" className={styles.banner}>
       <div className={styles.banner__details}>
-        <h1 className={styles.banner__title}>
-          Grow your skills, define your future
-        </h1>
-        <p className={styles.banner__description}>
-          Presenting Academy, the tech school of the future. We teach you the
-          right skills to be prepared for tomorrow.
-        </p>
+        <h1 className={styles.banner__title}>{bannerInfo?.title}</h1>
+        <p className={styles.banner__description}>{bannerInfo?.description}</p>
         <div className={styles.banner__actions}>
-          <Link href="/" className="btn btn--primary">
-            Explore Courses
-          </Link>
-          <Link href="/" className="btn btn--secondary">
-            Learn More
-          </Link>
+          {bannerInfo?.buttons.map((item) => (
+            <Link key={item.id} href={item.url} className="btn btn--primary">
+              {item.text}
+            </Link>
+          ))}
         </div>
       </div>
       <div className={styles.banner__image}>
-        <Image
-          src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607e15d7c0c9f4037bde6f44_image-home-hero-education-x-template.jpg"
-          alt="logo"
-          fill
-        />
+        {bannerInfo?.image && (
+          <Image src={bannerInfo?.image.data.attributes.url} alt="logo" fill />
+        )}
       </div>
     </section>
   );

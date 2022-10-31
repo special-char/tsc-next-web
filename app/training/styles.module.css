@@ -71,19 +71,24 @@
   }
 }
 
-:is(.courses, .perks) {
+/* :is(.courses, .perks) {
+  &__title {
+    @apply mb-14;
+  }
+} */
+
+.courses {
   @apply grid min-h-screen place-content-center justify-items-center bg-neutral-200;
   grid-template-rows: repeat(3, auto);
 
   &__title {
-    @apply mb-14;
+    @apply mb-10 md:mb-14;
   }
 }
 
 .carousal {
+  @apply relative mb-10 grid md:mb-14;
   --_carousel-gutters: max(1rem, calc((100vw - calc(1280px - 1rem * 2)) / 2));
-  position: relative;
-  display: grid;
   grid-template-columns: auto 1fr auto;
   grid-template-rows:
     [carousel-scroller] 1fr
@@ -112,24 +117,21 @@
 
   &__controls {
     /* @apply absolute z-50 flex  w-full  items-center justify-between px-container; */
-    display: flex;
     justify-content: space-between;
     padding-inline: var(--_carousel-gutters);
-    display: contents;
+    @apply hidden md:contents;
   }
 
   &__control {
     grid-row: 1;
     place-self: center;
-    @apply z-50 mx-container;
+    @apply z-50 mx-container w-20;
 
     &:first-child {
       grid-column: 1;
-      @apply w-12;
     }
     &:last-child {
       grid-column: 3;
-      @apply w-12;
     }
   }
 }

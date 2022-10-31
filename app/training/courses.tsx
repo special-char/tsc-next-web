@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import React, { useRef } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styles from './styles.module.css';
 
 type Props = {};
@@ -65,6 +65,46 @@ const courses = [
 
 const Courses = (props: Props) => {
   const scrollerRef = useRef<HTMLDivElement>(null);
+  const [element, setElement] = useState<Element | null>(null);
+
+  useEffect(() => {
+    const scrollPort = scrollerRef.current;
+    if (scrollPort) {
+      const element = scrollPort.firstElementChild;
+      setElement(element);
+    }
+  }, []);
+
+  const scrollLeft = useCallback(() => {
+    if (scrollerRef.current && element) {
+      const paddingLeft = parseInt(getComputedStyle(element)['padding-left']);
+      scrollerRef.current.scrollTo({
+        left:
+          scrollerRef.current.scrollLeft + (element.clientWidth - paddingLeft),
+        behavior: 'smooth',
+      });
+
+      if (element.nextElementSibling) {
+        setElement(element.nextElementSibling);
+      }
+    }
+  }, [element]);
+
+  const scrollRight = useCallback(() => {
+    if (scrollerRef.current && element) {
+      const paddingRight = parseInt(getComputedStyle(element)['padding-right']);
+      scrollerRef.current.scrollTo({
+        left:
+          scrollerRef.current.scrollLeft - (element.clientWidth - paddingRight),
+        behavior: 'smooth',
+      });
+
+      if (element.previousElementSibling) {
+        setElement(element.previousElementSibling);
+      }
+    }
+  }, [element]);
+
   return (
     <section id="courses" className={styles.courses}>
       <h2 className={styles.courses__title}>Browse our popular courses</h2>
@@ -99,48 +139,12 @@ const Courses = (props: Props) => {
           <button
             type="button"
             className={`${styles.carousal__control} btn btn--primary btn--round`}
-            onClick={() => {
-              const scrollPort = scrollerRef.current;
-              if (scrollPort) {
-                const element =
-                  scrollPort.firstElementChild as HTMLAnchorElement;
-
-                const paddingLeft = parseInt(
-                  getComputedStyle(element)['padding-left'],
-                );
-
-                console.log(element.clientWidth);
-
-                console.log(paddingLeft);
-
-                // const delta = Math.abs(
-                //   scrollPort.offsetLeft - element.offsetLeft,
-                // );
-
-                // console.log(delta);
-
-                // const scrollerPadding = parseInt(
-                //   getComputedStyle(scrollPort)['padding-left'],
-                // );
-
-                // const pos =
-                //   scrollPort.clientWidth / 2 > delta
-                //     ? delta - scrollerPadding
-                //     : delta + scrollerPadding;
-
-                // console.log(pos);
-
-                scrollPort.scrollTo({
-                  left: element.clientWidth / 2,
-                  behavior: 'smooth',
-                });
-              }
-            }}
+            onClick={scrollRight}
           >{`<`}</button>
           <button
             type="button"
             className={`${styles.carousal__control} btn btn--primary btn--round`}
-            onClick={() => {}}
+            onClick={scrollLeft}
           >{`>`}</button>
         </div>
       </div>
