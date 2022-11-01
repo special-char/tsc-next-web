@@ -1,4 +1,5 @@
 import Banner from './banner';
+import Blogs from './blogs';
 import Courses from './courses';
 import Perks from './perks';
 
@@ -9,7 +10,7 @@ const Page = (props: Props) => {
     <>
       <Banner />
       <Courses />
-      <Perks />
+      <Blogs />
     </>
   );
 };
