@@ -53,9 +53,10 @@
 /* banner CSS */
 
 .banner {
+  
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   min-height: calc(theme(height.screen) - theme(spacing.16) - 30px);
-  @apply grid content-center items-center gap-4 px-4 sm:px-sm-container lg:gap-32 lg:px-container;
+  @apply grid content-center items-center gap-4 px-4 lg:gap-32 lg:px-container;
 
   & :is(.banner__title, .banner__description) {
     @apply text-center;
@@ -68,6 +69,59 @@
 
   &__image {
     @apply relative aspect-image overflow-hidden rounded-3xl bg-secondary3;
+  }
+}
+
+:is(.courses, .perks) {
+  @apply grid min-h-screen place-content-center justify-items-center bg-neutral-200;
+  grid-template-rows: repeat(3, auto);
+
+  &__title {
+    @apply mb-14;
+  }
+}
+
+.leaders {
+  @apply grid content-center gap-4 px-4 py-24 md:py-36 lg:py-44 sm:px-sm-container items-center justify-center lg:gap-24 lg:px-container min-h-screen;
+
+  @media screen and  (min-width: 1024px) {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+  }
+
+  
+  & :is(.leaders__title, .leaders__description) {
+    @apply text-center lg:text-left;
+  }
+
+  &__actions {
+    grid-template-rows: repeat(auto-fit, minmax(260px, 1fr));
+    @apply gap-4 justify-end lg:justify-start flex flex-col md:flex-row lg:flex-col   ;
+    @apply w-full lg:w-72 gap-4;
+    
+  }
+
+  &__image_content {
+    @apply grid;
+    grid-template-rows: repeat(3, auto);
+    align-items: flex-end;
+  }
+
+  &__image {
+    grid-row: 1 / -2;
+    grid-column: 1 / -1;
+    aspect-ratio: 2 / 2.5;
+    @apply h-full relative bg-secondary3 rounded-lg overflow-hidden;
+  }
+
+  &__content {
+    @apply z-50 bg-neutral-200 rounded-lg shadow-dark text-left mx-4 px-4 py-6 md:px-6 md:py-8;
+    grid-row: 2 / -1;
+    grid-column: 1 / -1;
+  
+  
+  
+  
   }
 }
 
