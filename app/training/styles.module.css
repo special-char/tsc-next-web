@@ -63,7 +63,7 @@
 
   &__actions {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    @apply grid gap-4;
+    @apply grid gap-4 ;
   }
 
   &__image {
@@ -156,4 +156,25 @@
 
 .perks {
   @apply bg-neutral-700 text-neutral-100;
+}
+
+.education {
+  @apply grid px-container gap-8 grid-cols-1 sm:grid-cols-2 justify-items-center;
+
+  &__header {
+    grid-column: 1 / -1;
+
+    & > * {
+      @apply text-center;
+    }
+  }
+
+  &__image {
+    @apply relative w-full aspect-square rounded-xl overflow-hidden shadow-base;
+  }
+
+  &__content {
+    @apply grid gap-4 pt-16 ;
+    grid-template-columns: auto 1fr;
+  }
 }

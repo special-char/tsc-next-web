@@ -1,3 +1,4 @@
+import Education from './education';
 import Banner from './banner';
 import Courses from './courses';
 import Perks from './perks';
@@ -10,6 +11,7 @@ const Page = (props: Props) => {
       <Banner />
       <Courses />
       <Perks />
+      <Education />
     </>
   );
 };
