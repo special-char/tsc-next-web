@@ -6,6 +6,14 @@ const nextConfig = {
     // Required:
     appDir: true,
   },
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+
+    return config;
+  },
   images: {
     domains: ['assets.website-files.com', 'ik.imagekit.io'],
   },

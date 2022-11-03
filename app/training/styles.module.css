@@ -137,7 +137,7 @@
 }
 
 .card {
-  @apply flex max-w-xl flex-col flex-col justify-between overflow-hidden rounded-2xl bg-neutral-100 shadow-dark;
+  @apply flex max-w-xl  flex-col justify-between overflow-hidden rounded-2xl bg-neutral-100 shadow-dark;
 
   &__figure {
     @apply m-0 p-0;
@@ -157,5 +157,48 @@
 }
 
 .perks {
-  @apply bg-neutral-700 text-neutral-100;
+  @apply grid min-h-screen content-center justify-items-center bg-neutral-700 text-neutral-100;
+  grid-template-rows: repeat(2, auto);
+
+  &__title {
+    @apply text-neutral-100;
+  }
+
+  &__content {
+    @apply grid w-full columns-auto gap-8 px-container;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    @media screen and (max-width: theme(screens.md)) and (min-width: theme(screens.sm)) {
+      grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    }
+  }
+
+  &__item {
+    @apply grid grid-rows-2 justify-items-center md:text-left;
+    @media screen and (max-width: theme(screens.md)) and (min-width: theme(screens.sm)) {
+      @apply grid-cols-2 grid-rows-1 items-center justify-items-start md:text-start;
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+}
+
+.category {
+  @apply grid min-h-screen content-center justify-items-center bg-neutral-200 text-neutral-700;
+  grid-template-rows: repeat(2, auto);
+
+  &__title {
+    @apply text-neutral-700;
+  }
+
+  &__content {
+    @apply grid w-full gap-4 sm:px-sm-container md:px-container lg:px-container;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    @media screen and (max-width: theme(screens.md)) and (min-width: theme(screens.sm)) {
+      grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    }
+  }
+
+  &__item {
+    @apply grid justify-items-center;
+    grid-template-rows: repeat(2, auto);
+  }
 }
