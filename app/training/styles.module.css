@@ -133,6 +133,15 @@
     @apply mb-14;
   }
 }
+.footer{
+  @apply grid content-center gap-4 px-4 sm:px-sm-container items-center justify-center lg:gap-8 min-h-screen;
+
+  @media screen and  (min-width: 1024px) {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+  }
+
+}
 
 .carousal {
   --_carousel-gutters: max(1rem, calc((100vw - calc(1280px - 1rem * 2)) / 2));
