@@ -140,7 +140,7 @@
   @apply flex max-w-xl  flex-col justify-between overflow-hidden rounded-2xl bg-neutral-100 shadow-dark;
 
   &__figure {
-    @apply m-0 p-0;
+    @apply relative m-0 aspect-h-image w-full p-0;
   }
 
   &__content {
@@ -218,5 +218,27 @@
   &__item {
     @apply grid justify-items-center;
     grid-template-rows: repeat(3, auto);
+  }
+}
+
+.blogs {
+  @apply grid min-h-screen grid-cols-1 content-center items-center justify-items-center gap-8 px-container lg:grid-cols-2 lg:justify-items-start;
+  /* grid-template-columns: repeat(auto-fit, minmax(416px, 1fr)); */
+  grid-template-rows: repeat(4, auto);
+
+  &__title {
+    @apply m-0;
+  }
+
+  &__btn {
+    @apply lg:justify-self-end;
+  }
+
+  & > .card {
+    @apply grid h-36 w-full;
+    grid-template-columns: repeat(2, auto);
+    &:first-of-type {
+      @apply row-span-3 h-full;
+    }
   }
 }
