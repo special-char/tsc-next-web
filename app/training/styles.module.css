@@ -156,6 +156,9 @@
   }
 }
 
+.line {
+  @apply h-[2px] w-[100%] rounded-full bg-neutral-500 lg:col-span-2;
+}
 .perks {
   @apply bg-neutral-700 text-neutral-100;
 }
