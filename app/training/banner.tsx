@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from './styles.module.css';
+import '@/styles/banner.css';
 
 async function getBannerData() {
   try {
@@ -49,11 +49,11 @@ const Banner = async (props: Props) => {
   const bannerInfo = bannerData?.data?.banner?.data?.attributes;
 
   return (
-    <section id="banner" className={styles.banner}>
-      <div className={styles.banner__details}>
-        <h1 className={styles.banner__title}>{bannerInfo?.title}</h1>
-        <p className={styles.banner__description}>{bannerInfo?.description}</p>
-        <div className={styles.banner__actions}>
+    <section id="banner" className="banner">
+      <div className="banner__details">
+        <h1 className="banner__title">{bannerInfo?.title}</h1>
+        <p className="banner__description">{bannerInfo?.description}</p>
+        <div className="banner__actions">
           {bannerInfo?.buttons.map((item) => (
             <Link key={item.id} href={item.url} className="btn btn--primary">
               {item.text}
@@ -61,7 +61,7 @@ const Banner = async (props: Props) => {
           ))}
         </div>
       </div>
-      <div className={styles.banner__image}>
+      <div className="banner__image">
         {bannerInfo?.image && (
           <Image src={bannerInfo?.image.data.attributes.url} alt="logo" fill />
         )}

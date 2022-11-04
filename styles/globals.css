@@ -279,7 +279,81 @@
     }
   }
 
+  .carousal {
+    @apply relative mb-10 grid md:mb-14;
+    --_carousel-gutters: max(1rem, calc((100vw - calc(1280px - 1rem * 2)) / 2));
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows:
+      [carousel-scroller] 1fr
+      [carousel-pagination] var(--_carousel-pagination-size);
+
+    &__scroller {
+      @apply flex snap-x snap-mandatory gap-8 overflow-x-scroll overscroll-contain;
+      scrollbar-width: none;
+      scroll-padding-inline: var(--_carousel-gutters);
+      padding-inline: var(--_carousel-gutters);
+      grid-row: 1;
+      grid-column: 1/-1;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      @media (--motionOK) {
+        scroll-behavior: smooth;
+      }
+    }
+
+    &__items {
+      @apply max-w-xl flex-shrink-0 flex-grow basis-full snap-center snap-always;
+    }
+
+    &__controls {
+      /* @apply absolute z-50 flex  w-full  items-center justify-between px-container; */
+      justify-content: space-between;
+      padding-inline: var(--_carousel-gutters);
+      @apply hidden md:contents;
+    }
+
+    &__control {
+      grid-row: 1;
+      place-self: center;
+      @apply z-50 mx-container w-20;
+
+      &:first-child {
+        grid-column: 1;
+      }
+      &:last-child {
+        grid-column: 3;
+      }
+    }
+  }
+
   .card {
+    @apply grid h-full overflow-hidden rounded-2xl bg-neutral-100 shadow-dark;
+
+    &__image {
+      @apply relative m-0;
+    }
+
+    &__body {
+      @apply p-8;
+    }
+
+    &__title {
+      @apply line-clamp-1;
+
+      &--line-2 {
+        @apply line-clamp-2;
+      }
+    }
+
+    &__desc {
+      @apply line-clamp-2;
+    }
+  }
+
+  /* .card {
     @apply relative flex min-h-full flex-col overflow-hidden rounded-[20px] bg-neutral-100 shadow-base;
     transform: translate(0px, 0px);
     transition: box-shadow 300ms ease, transform 300ms ease;
@@ -320,5 +394,5 @@
     & figure {
       @apply mb-0 flex min-h-[200px] items-center justify-center;
     }
-  }
+  } */
 }
