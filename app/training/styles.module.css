@@ -202,3 +202,21 @@
     grid-template-rows: repeat(2, auto);
   }
 }
+
+.ourOffice {
+  @apply grid min-h-screen content-center justify-items-center px-container text-neutral-700;
+  grid-template-rows: repeat(3, auto);
+
+  &__title {
+    @apply text-neutral-700;
+  }
+
+  &__content {
+    @apply w-full;
+  }
+
+  &__item {
+    @apply grid justify-items-center;
+    grid-template-rows: repeat(3, auto);
+  }
+}
