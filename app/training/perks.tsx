@@ -1,8 +1,8 @@
 import styles from './styles.module.css';
-import PerksSvg from '../../public/icons/perks.svg';
-import Perks1Svg from '../../public/icons/perks1.svg';
-import Perks2Svg from '../../public/icons/perks2.svg';
-import PinkSvg from '../../public/icons/pinkarrow.svg';
+import PerksSvg from '@/public/icons/perks.svg';
+import Perks1Svg from '@/public/icons/perks1.svg';
+import Perks2Svg from '@/public/icons/perks2.svg';
+import PinkSvg from '@/public/icons/pinkarrow.svg';
 
 type Props = {};
 const PerksData = [

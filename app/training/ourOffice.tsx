@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './styles.module.css';
-import OfficeSvg from '../../public/icons/office.svg';
+import OfficeSvg from '@/public/icons/office.svg';
 import Image from 'next/image';
-import WorldMap from '../../public/images/world map.jpg';
+import WorldMap from '@/public/images/world map.jpg';
+// import '@/styles/dist.css';
 
 type Props = {};
 

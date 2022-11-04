@@ -1,7 +1,7 @@
 import Banner from './banner';
 import Courses from './courses';
-import Category from './category';
 import OurOffice from './ourOffice';
+import Perks from './perks';
 
 type Props = {};
 
@@ -11,6 +11,7 @@ const Page = (props: Props) => {
       <OurOffice />
       <Banner />
       <Courses />
+      <Perks />
     </>
   );
 };
