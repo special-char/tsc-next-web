@@ -1,4 +1,5 @@
 import Banner from './banner';
+import Category from './category';
 import Courses from './courses';
 import OurOffice from './ourOffice';
 import Perks from './perks';
@@ -9,9 +10,10 @@ const Page = (props: Props) => {
   return (
     <>
       <OurOffice />
-      <Banner />
-      <Courses />
-      <Perks />
+      {/* <Banner />
+      <Courses /> */}
+      {/* <Perks /> */}
+      {/* <Category /> */}
     </>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles.module.css';
+import '@/styles/ourOffice.css';
 import OfficeSvg from '@/public/icons/office.svg';
 import Image from 'next/image';
 import WorldMap from '@/public/images/world map.jpg';
@@ -9,26 +9,21 @@ type Props = {};
 
 const ourOffice = (props: Props) => {
   return (
-    <section
-      id="ourOffice"
-      className={`${styles.ourOffice} overflow-hidden pt-4`}
-    >
-      <div className="px-6 text-center md:mx-24 md:mb-6 lg:mx-40">
-        <h2 className={`${styles.ourOffice__title}`}>Our Offices</h2>
+    <section id="ourOffice" className="ourOffice">
+      <div className="text-center md:mx-24 md:mb-6 lg:mx-40">
+        <h2 className="ourOffice__title">Our Offices</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt.
         </p>
       </div>
 
-      <div className={`${styles.ourOffice__content}`}>
-        <div className={`${styles.ourOffice__item}`}>
-          <div className={`${styles.card} relative`}>
-            <div className={styles.card__content}>
-              <figure className={`${styles.card__figure} w-16`}>
-                <OfficeSvg />
-              </figure>
-              <h3 className={styles.card__title}>Ahmedabad</h3>
+      <div className="ourOffice__content">
+        <div className="ourOffice__item">
+          <div className="card relative">
+            <div className="card__content">
+              <OfficeSvg className="w-16" />
+              <h3 className="card__title">Ahmedabad</h3>
               <address className="text-neutral-600">
                 <a className="w-auto" href={`#`}>
                   thespecial@character.com
