@@ -54,7 +54,7 @@ const Banner = async (props: Props) => {
         <h1 className={styles.banner__title}>{bannerInfo?.title}</h1>
         <p className={styles.banner__description}>{bannerInfo?.description}</p>
         <div className={styles.banner__actions}>
-          {bannerInfo?.buttons.map((item) => (
+          {bannerInfo?.buttons.map((item: any) => (
             <Link key={item.id} href={item.url} className="btn btn--primary">
               {item.text}
             </Link>
