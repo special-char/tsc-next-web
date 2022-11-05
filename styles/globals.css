@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 @layer base {
+   
+
   body {
     @apply min-h-screen font-sans text-lg text-neutral-600;
   }
@@ -127,6 +129,9 @@
 }
 
 @layer components {
+  .active {
+    @apply text-error;
+  }
   .btn {
     @apply inline-block rounded-full py-6 px-10 text-center text-base font-bold uppercase tracking-[0.08em];
     transition: transform 300ms ease, background-color 300ms ease;

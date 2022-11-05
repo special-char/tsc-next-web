@@ -81,15 +81,13 @@
   }
 }
 
-.leaders {
+/* .leaders {
   @apply grid content-center gap-4 px-4 py-24 md:py-36 lg:py-44 sm:px-sm-container items-center justify-center lg:gap-24 lg:px-container min-h-screen;
 
   @media screen and  (min-width: 1024px) {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 
   }
-
-  
   & :is(.leaders__title, .leaders__description) {
     @apply text-center lg:text-left;
   }
@@ -119,22 +117,9 @@
     grid-row: 2 / -1;
     grid-column: 1 / -1;
   }
-}
+} */
 
-  .companyHistory {
-    @apply grid content-center px-4 gap-4 py-24 md:py-36 lg:py-44 items-center justify-center lg:gap-24 lg:px-container min-h-screen;
   
-   
-
-  &__contents{
-     @apply grid md:grid-cols-2 mt-12 md:mt-1 gap-8 md:gap-12 border-l-2  border-neutral-300;
-
-    @media screen and  (min-width: 768px) {
-      grid-template-columns: repeat(auto-fit, minmax(320px, 2fr));
-
-    }
-  }
-  }
 
 
 :is(.courses, .perks) {

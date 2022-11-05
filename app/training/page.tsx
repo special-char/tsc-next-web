@@ -12,8 +12,8 @@ const Page = (props: Props) => {
       {/* <Banner /> */}
       {/* <Courses /> */}
       {/* <Perks /> */}
-      <Companyhistory />
       <Leaders />
+      <Companyhistory />
     </>
   );
 };
