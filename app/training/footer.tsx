@@ -37,13 +37,11 @@ const Footer = (props: Props) => {
   return (
     <section id="footer" className="footer">
       <div className="footer__title_section">
-        <div className="grid lg:grid-cols-2 ">
-          <h1 className="text-neutral-100">TSC</h1>
-          <p className="text-neutral-100">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt aliqua.
-          </p>
-        </div>
+        <h1 className="text-neutral-100">TSC</h1>
+        <p className="text-neutral-100">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt aliqua.
+        </p>
       </div>
       <div className="footer__line"></div>
       <div className="footer__newsletter">
@@ -62,24 +60,19 @@ const Footer = (props: Props) => {
         </p>
         <div className="footer__email">
           <input
-            className="w-full rounded-full py-5 px-6"
+            className="input"
             placeholder="Enter your email"
             type="text"
             name=""
             id=""
           />
 
-          <span className="submit-btn btn btn--primary top-2 right-2 p-0 md:absolute">
-            Submit
-          </span>
+          <span className="submit-btn btn btn--primary">Submit</span>
         </div>
       </div>
-      <div className="footer__pageslinks">
-        <h3 className="text-neutral-100">Pages</h3>
-        <div
-          className="grid grid-cols-1 gap-4
-         md:grid-cols-2"
-        >
+      <div className="footer__pages">
+        <h3 className=" text-neutral-100">Pages</h3>
+        <div className="footer__links grid gap-3 md:grid-cols-2">
           {links.map((val) => (
             <Link href={'#'}>{val.page}</Link>
           ))}
@@ -87,19 +80,19 @@ const Footer = (props: Props) => {
       </div>
       <div className="footer__line"></div>
       <div className="footer__sociallinks">
-        <div className="grid gap-6 lg:grid-cols-2 ">
-          <div className="footer__socialicons">
-            {data.map((val) => (
-              <Image
-                className="rounded-full"
-                src={val.icon}
-                alt=""
-                height={40}
-                width={40}
-              />
-            ))}
-          </div>
-          <p className="text-neutral-100">
+        <div className="footer__socialicons ">
+          {data.map((val) => (
+            <Image
+              className="rounded-full"
+              src={val.icon}
+              alt=""
+              height={40}
+              width={40}
+            />
+          ))}
+        </div>
+        <div>
+          <p className="mb-0 text-neutral-100">
             Copyright © TSC | Designed by TSC - Powered by TSC
           </p>
         </div>
@@ -109,5 +102,3 @@ const Footer = (props: Props) => {
 };
 
 export default Footer;
-
-// grid w-4/5 grid-cols-5 grid-rows-2 gap-2 py-4 md:w-2/4
