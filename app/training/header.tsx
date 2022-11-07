@@ -1,18 +1,18 @@
+import '@/styles/header.css';
 import Link from 'next/link';
 import React from 'react';
-import styles from './styles.module.css';
 
 type Props = {};
 
 const Header = (props: Props) => {
   return (
-    <header className={styles.header}>
-      <div className={styles.header__left}>hello</div>
-      <nav className={styles.header__nav}>
+    <header className="header">
+      <div className="header__left">hello</div>
+      <nav className="header__nav">
         <ul>
           <li>
             <Link href="">Bootcamps</Link>
-            <nav className={styles.header__nested_nav}>
+            <nav className="header__nested_nav">
               <ul>
                 <li>
                   <Link href="">Full Stack</Link>
@@ -31,7 +31,7 @@ const Header = (props: Props) => {
           </li>
           <li>
             <Link href="">Talent</Link>
-            <nav className={styles.header__nested_nav}>
+            <nav className="header__nested_nav">
               <ul>
                 <li>
                   <Link href="">Hire Out Graduates</Link>
@@ -53,7 +53,7 @@ const Header = (props: Props) => {
           </li>
         </ul>
       </nav>
-      <div className={styles.header__right}>hello</div>
+      <div className="header__right">hello</div>
     </header>
   );
 };
