@@ -18,10 +18,10 @@ const Leaders = (props: Props) => {
         </p>
         <div className="leader__actions">
           <Link href="/" className="btn btn--primary">
-            <button>BROWSE TEACHERS</button>
+            BROWSE TEACHERS
           </Link>
           <Link href="/" className="btn btn--secondary">
-            <button> BECOME A TEACHER</button>
+            BECOME A TEACHER
           </Link>
         </div>
       </div>

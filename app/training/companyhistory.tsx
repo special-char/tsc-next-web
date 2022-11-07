@@ -44,7 +44,7 @@ const CompanyHistory = (props: Props) => {
         <div className="companyHistory__info">
           {Data.map((val) => (
             <div key={val.Date} className="companyHistory__RightSection">
-              <div className="companyHistory__ChipSection">
+              <div className="companyHistory__ChipSection chip chip--white">
                 <span className="companyHistory__Date">{val.Date}</span>
               </div>
               <h3 className="py-3">{val.title}</h3>
