@@ -8,9 +8,9 @@
 
   &__content {
     @apply grid w-full columns-auto gap-2 md:gap-8;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     @media screen and (max-width: theme(screens.md)) and (min-width: theme(screens.sm)) {
-      grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
     }
   }
 

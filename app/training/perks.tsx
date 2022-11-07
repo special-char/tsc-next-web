@@ -44,7 +44,7 @@ const Perks = (props: Props) => {
           );
         })}
       </div>
-      <div className="absolute -bottom-20 z-10 w-14  lg:-bottom-32 lg:mt-20 lg:w-20">
+      <div className="absolute -bottom-16 z-10 w-12 md:-bottom-20 md:w-20 lg:-bottom-20 lg:w-20">
         <PinkSvg />
       </div>
     </section>
