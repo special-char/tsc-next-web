@@ -1,15 +1,17 @@
 import Courses from './courses';
 import OurOffice from './ourOffice';
 import Perks from './perks';
+import Category from './category';
 
 type Props = {};
 
 const Page = (props: Props) => {
   return (
     <>
-      <OurOffice />
-      <Courses />
+      {/* <Courses /> */}
       <Perks />
+      <Category />
+      <OurOffice />
     </>
   );
 };
