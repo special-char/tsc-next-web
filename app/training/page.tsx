@@ -1,5 +1,8 @@
+import Banner from './banner';
+import Blogs from './blogs';
 import Courses from './courses';
-import OurOffice from './ourOffice';
+import Footer from './footer';
+import GrowCareer from './growcareer';
 import Perks from './perks';
 
 type Props = {};
@@ -7,9 +10,12 @@ type Props = {};
 const Page = (props: Props) => {
   return (
     <>
-      <OurOffice />
+      {/* <Banner />
       <Courses />
-      <Perks />
+      <Perks /> */}
+      <GrowCareer />
+      <Footer />
+      <Blogs />
     </>
   );
 };
