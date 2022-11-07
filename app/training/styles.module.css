@@ -184,7 +184,7 @@
 .about {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   min-height: calc(theme(height.screen) - theme(spacing.16) - 30px);
-  @apply mb-7 grid content-center items-center  px-4  sm:px-sm-container lg:gap-32 lg:px-container;
+  @apply mb-7 grid content-center items-center  px-4   sm:py-2 sm:px-sm-container lg:gap-32 lg:px-container;
 }
 .achieve {
   grid-template-columns: repeat(auto-fit, minmax(1fr, 1fr, 1fr));

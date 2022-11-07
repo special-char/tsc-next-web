@@ -5,7 +5,7 @@ type Props = {};
 
 const Aboutheader = (props: Props) => {
   return (
-    <section className={styles.about}>
+    <section className={`${styles.about} grid grid-cols-1`}>
       <div className="con">
         <h1 className="text-7xl">The big mission behind Educationic</h1>
         <div className={styles.education__header}>
