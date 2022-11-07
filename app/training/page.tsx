@@ -1,7 +1,7 @@
 import Banner from './banner';
 import Companyhistory from './companyhistory';
+import Blogs from './blogs';
 import Courses from './courses';
-
 import Leaders from './leaders';
 import Perks from './perks';
 
@@ -15,6 +15,9 @@ const Page = (props: Props) => {
       {/* <Perks /> */}
       <Leaders />
       <Companyhistory />
+      <Banner />
+      <Courses />
+      <Blogs />
     </>
   );
 };

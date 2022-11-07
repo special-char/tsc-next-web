@@ -72,12 +72,18 @@
   }
 }
 
-:is(.courses, .perks) {
+/* :is(.courses, .perks) {
+  &__title {
+    @apply mb-14;
+  }
+} */
+
+.courses {
   @apply grid min-h-screen place-content-center justify-items-center bg-neutral-200;
   grid-template-rows: repeat(3, auto);
 
   &__title {
-    @apply mb-14;
+    @apply mb-10 md:mb-14;
   }
 }
 
@@ -106,19 +112,20 @@
 
 
 .carousal {
+  @apply relative mb-10 grid md:mb-14;
   --_carousel-gutters: max(1rem, calc((100vw - calc(1280px - 1rem * 2)) / 2));
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: auto 1fr auto;
   grid-template-rows:
     [carousel-scroller] 1fr
     [carousel-pagination] var(--_carousel-pagination-size);
 
   &__scroller {
-    @apply relative mb-14 block w-full snap-x snap-mandatory overflow-x-scroll overscroll-contain whitespace-nowrap;
+    @apply relative block snap-x snap-mandatory overflow-x-scroll overscroll-contain whitespace-nowrap;
     scrollbar-width: none;
     scroll-padding-inline: var(--_carousel-gutters);
     padding-inline: var(--_carousel-gutters);
+    grid-row: 1;
+    grid-column: 1/-1;
 
     &::-webkit-scrollbar {
       display: none;
@@ -134,15 +141,31 @@
   }
 
   &__controls {
-    @apply absolute z-50 flex  w-full  items-center justify-between px-container;
+    /* @apply absolute z-50 flex  w-full  items-center justify-between px-container; */
+    justify-content: space-between;
+    padding-inline: var(--_carousel-gutters);
+    @apply hidden md:contents;
+  }
+
+  &__control {
+    grid-row: 1;
+    place-self: center;
+    @apply z-50 mx-container w-20;
+
+    &:first-child {
+      grid-column: 1;
+    }
+    &:last-child {
+      grid-column: 3;
+    }
   }
 }
 
 .card {
-  @apply flex max-w-xl flex-col flex-col justify-between overflow-hidden rounded-2xl bg-neutral-100 shadow-dark;
+  @apply flex max-w-xl flex-col justify-between overflow-hidden rounded-2xl bg-neutral-100 shadow-dark;
 
   &__figure {
-    @apply m-0 p-0;
+    @apply relative m-0 aspect-h-image w-full p-0;
   }
 
   &__content {
@@ -160,4 +183,26 @@
 
 .perks {
   @apply bg-neutral-700 text-neutral-100;
+}
+
+.blogs {
+  @apply grid min-h-screen grid-cols-1 content-center items-center justify-items-center gap-8 px-container lg:grid-cols-2 lg:justify-items-start;
+  /* grid-template-columns: repeat(auto-fit, minmax(416px, 1fr)); */
+  grid-template-rows: repeat(4, auto);
+
+  &__title {
+    @apply m-0;
+  }
+
+  &__btn {
+    @apply lg:justify-self-end;
+  }
+
+  & > .card {
+    @apply grid h-36 w-full;
+    grid-template-columns: repeat(2, auto);
+    &:first-of-type {
+      @apply row-span-3 h-full;
+    }
+  }
 }

@@ -284,7 +284,7 @@
     }
   }
 
-  /* .card {
+  .card {
     @apply relative flex min-h-full flex-col overflow-hidden rounded-[20px] bg-neutral-100 shadow-base;
     transform: translate(0px, 0px);
     transition: box-shadow 300ms ease, transform 300ms ease;
@@ -325,5 +325,5 @@
     & figure {
       @apply mb-0 flex min-h-[200px] items-center justify-center;
     }
-  } */
+  }
 }
