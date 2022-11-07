@@ -1,0 +1,55 @@
+/* Header CSS */
+.header {
+  grid-template-columns: auto 1fr auto;
+  @apply grid justify-items-center px-container py-8 shadow-dark;
+
+  & a {
+    @apply font-bold text-neutral-800;
+    &:hover {
+      @apply text-secondary3;
+    }
+  }
+
+  &__nav {
+    & > ul {
+      @apply m-0 flex gap-8 p-0;
+
+      & > li {
+        @apply relative m-0 p-0;
+
+        & > a {
+          &:hover + nav {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  &__nested_nav {
+    display: none;
+    position: absolute;
+    top: 24px;
+    left: -1rem;
+    @apply z-50 w-fit bg-transparent;
+
+    & > ul {
+      @apply mt-10 flex flex-col gap-4 rounded-xl bg-neutral-100 p-8 shadow-dark;
+
+      & > li {
+        @apply m-0 p-0;
+
+        > a {
+          @apply whitespace-nowrap;
+        }
+      }
+    }
+    &:hover {
+      display: block;
+    }
+  }
+}
+
+.perks {
+  @apply bg-neutral-700 text-neutral-100;
+}

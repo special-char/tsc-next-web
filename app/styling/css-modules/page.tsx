@@ -1,6 +1,6 @@
 'use client';
 
-import styles from './styles.module.css';
+import styles from './styles.css';
 
 const SkeletonCard = () => (
   <div className={styles.skeleton}>
@@ -14,7 +14,7 @@ const SkeletonCard = () => (
 export default function Page() {
   return (
     <div className="space-y-4">
-      <div className="text-xl font-medium text-zinc-500">
+      <div className="text-zinc-500 text-xl font-medium">
         Styled with CSS Modules
       </div>
       <div className={styles.container}>

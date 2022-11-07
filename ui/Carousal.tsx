@@ -7,7 +7,7 @@ import React, {
   useState,
   PropsWithChildren,
 } from 'react';
-import styles from './styles.module.css';
+import clsx from 'clsx';
 
 type Props = {} & PropsWithChildren;
 
@@ -54,19 +54,26 @@ const Carousal = ({ children }: Props) => {
   }, [element]);
 
   return (
-    <div className={styles.carousal}>
-      <div ref={scrollerRef} className={styles.carousal__scroller}>
-        {children}
+    <div className="carousal">
+      <div ref={scrollerRef} className="carousal__scroller">
+        {React.Children.map(children, (child) => {
+          const { className } = child.props;
+          return React.cloneElement(child, {
+            className: clsx('carousal__items', {
+              [className]: !!className,
+            }),
+          });
+        })}
       </div>
-      <div className={styles.carousal__controls}>
+      <div className="carousal__controls">
         <button
           type="button"
-          className={`${styles.carousal__control} btn btn--primary btn--round`}
+          className={`carousal__control btn btn--primary btn--round`}
           onClick={scrollRight}
         >{`<`}</button>
         <button
           type="button"
-          className={`${styles.carousal__control} btn btn--primary btn--round`}
+          className={`carousal__control btn btn--primary btn--round`}
           onClick={scrollLeft}
         >{`>`}</button>
       </div>
