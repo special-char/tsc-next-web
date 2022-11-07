@@ -1,5 +1,5 @@
 .category {
-  @apply relative grid min-h-screen content-center justify-items-center bg-neutral-200 px-container  pt-16 pb-28 text-neutral-700 md:pt-28 md:pb-36 lg:pt-36 lg:pb-44;
+  @apply relative grid min-h-screen content-center justify-items-center overflow-hidden bg-neutral-200 px-container  pt-16 pb-28 text-neutral-700 md:pt-28 md:pb-36 lg:pt-36 lg:pb-44;
   grid-template-rows: repeat(2, auto);
 
   &__title {
@@ -10,7 +10,7 @@
     @apply grid w-full gap-8;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     @media screen and (max-width: theme(screens.md)) and (min-width: theme(screens.sm)) {
-      grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(512px, 1fr));
     }
   }
 

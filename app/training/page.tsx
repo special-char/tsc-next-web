@@ -16,14 +16,14 @@ const Page = (props: Props) => {
     <>
       {/* <Banner />
       <Courses /> */}
-      <Perks />
+      {/* <Perks /> */}
       {/* <Leaders />
       <Companyhistory />
       <GrowCareer />
       <Footer />
       <Blogs /> */}
-      {/* <Category /> */}
-      {/* <OurOffice /> */}
+      <Category />
+      <OurOffice />
     </>
   );
 };
