@@ -37,7 +37,7 @@ const ourOffice = (props: Props) => {
                 </div>
               </address>
             </div>
-            <div className="absolute -right-2 -bottom-2 h-12 w-12 rounded-full bg-primary  md:-right-4 md:-bottom-5 md:h-16 md:w-16 lg:-bottom-24 lg:-right-10 lg:h-32 lg:w-32"></div>
+            <div className="absolute -right-2 -bottom-2 h-12 w-12 rounded-full bg-primary  md:-right-4 md:-bottom-5 md:h-16 md:w-16 lg:-bottom-28 lg:-right-3 lg:h-32 lg:w-32"></div>
           </div>
         </div>
         <Image
