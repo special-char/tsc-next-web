@@ -20,7 +20,7 @@
   }
 }
 
-.perks {
+/* .perks {
   @apply grid min-h-screen content-center justify-items-center bg-neutral-700 text-neutral-100;
   grid-template-rows: repeat(2, auto);
 
@@ -29,7 +29,7 @@
   }
 
   &__content {
-    @apply grid w-full columns-auto gap-8 px-container;
+    @apply grid w-full columns-auto gap-2 md:gap-8;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     @media screen and (max-width: theme(screens.md)) and (min-width: theme(screens.sm)) {
       grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
@@ -37,20 +37,20 @@
   }
 
   &__item {
-    @apply grid grid-rows-2 justify-items-center md:text-left;
+    @apply grid grid-rows-2 items-center justify-items-center md:text-left;
     @media screen and (max-width: theme(screens.md)) and (min-width: theme(screens.sm)) {
-      @apply grid-cols-2 grid-rows-1 items-center justify-items-start md:text-start;
+      @apply grid-cols-2 grid-rows-1 justify-items-start md:text-start;
       grid-template-columns: 1fr 2fr;
     }
   }
-}
+} */
 
-.category {
-  @apply grid min-h-screen content-center justify-items-center bg-neutral-200 text-neutral-700;
+/* .category {
+  @apply grid min-h-screen content-center  justify-items-center bg-neutral-200 text-neutral-700;
   grid-template-rows: repeat(2, auto);
 
   &__title {
-    @apply text-neutral-700;
+    @apply mb-10 text-center text-neutral-700;
   }
 
   &__content {
@@ -62,12 +62,31 @@
   }
 
   &__item {
-    @apply grid justify-items-center;
+    @apply grid justify-items-center gap-4;
     grid-template-rows: repeat(2, auto);
   }
-}
+  .card {
+    @apply flex max-w-xl  flex-col justify-between overflow-hidden rounded-2xl bg-neutral-100 shadow-dark;
 
-.ourOffice {
+    &__figure {
+      @apply relative m-0 aspect-h-image w-full p-0;
+    }
+
+    &__content {
+      @apply flex h-full flex-col justify-between p-8;
+    }
+
+    &__title {
+      @apply mb-1 h-9 line-clamp-1;
+    }
+
+    &__desc {
+      @apply m-0 my-0 h-16 p-0 line-clamp-2;
+    }
+  }
+} */
+
+/* .ourOffice {
   @apply grid min-h-screen content-center justify-items-center px-container text-neutral-700;
   grid-template-rows: repeat(3, auto);
 
@@ -83,7 +102,7 @@
     @apply grid justify-items-center;
     grid-template-rows: repeat(3, auto);
   }
-}
+} */
 
 .blogs {
   @apply grid min-h-screen grid-cols-1 content-center items-center justify-items-center gap-8 px-container lg:grid-cols-2 lg:justify-items-start;

@@ -1,4 +1,4 @@
-import styles from './styles.module.css';
+import '@/styles/perks.css';
 import PerksSvg from '@/public/icons/perks.svg';
 import Perks1Svg from '@/public/icons/perks1.svg';
 import Perks2Svg from '@/public/icons/perks2.svg';
@@ -10,41 +10,41 @@ const PerksData = [
     svg: <PerksSvg />,
     title: '1.Learn',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit.Distinctio explicabo mollitia illum ',
+      'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua.',
   },
   {
     svg: <Perks1Svg />,
     title: '2.Graduate',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit.Distinctio explicabo mollitia illum ',
+      'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua. ',
   },
   {
     svg: <Perks2Svg />,
     title: '3.Work',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit.Distinctio explicabo mollitia illum',
+      'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua.',
   },
 ];
 const Perks = (props: Props) => {
   return (
-    <section id="perks" className={`${styles.perks} relative`}>
-      <h2 className={`${styles.perks__title} mb-6 px-4`}>
+    <section id="perks" className="perks">
+      <h2 className="perks__title mb-10 lg:mb-14">
         Why learn with our courses?
       </h2>
-      <div className={`${styles.perks__content}`}>
+      <div className="perks__content">
         {PerksData.map((perk) => {
           return (
-            <div className={`${styles.perks__item} mb-16`}>
+            <div className="perks__item">
               <div className="w-48">{perk.svg}</div>
               <div className="text-center md:text-left lg:text-center">
-                <h3 className="mt-2  text-neutral-100">{perk.title}</h3>
+                <h3 className="mb-1 text-neutral-100">{perk.title}</h3>
                 <p className="mb-0">{perk.description}</p>
               </div>
             </div>
           );
         })}
       </div>
-      <div className="absolute -bottom-20 z-10 w-14 lg:mt-20">
+      <div className="absolute -bottom-20 z-10 w-14  lg:-bottom-32 lg:mt-20 lg:w-20">
         <PinkSvg />
       </div>
     </section>
