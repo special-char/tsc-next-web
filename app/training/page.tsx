@@ -1,4 +1,5 @@
 import Banner from './banner';
+import Blogs from './blogs';
 import Courses from './courses';
 import Footer from './footer';
 import GrowCareer from './growcareer';
@@ -14,6 +15,7 @@ const Page = (props: Props) => {
       <Perks /> */}
       <GrowCareer />
       <Footer />
+      <Blogs />
     </>
   );
 };
