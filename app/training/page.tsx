@@ -6,6 +6,7 @@ import Leaders from './leaders';
 import Footer from './footer';
 import GrowCareer from './growcareer';
 import Perks from './perks';
+import Contactform from './contactform';
 
 type Props = {};
 
@@ -15,12 +16,13 @@ const Page = (props: Props) => {
       {/* <Banner /> */}
       {/* <Courses /> */}
       {/* <Perks /> */}
-      <Leaders />
+      {/* <Leaders />
       <Companyhistory />
-      <Banner />
+      <Banner /> */}
       <GrowCareer />
       <Footer />
-      <Blogs />
+      {/* <Blogs />
+      <Contactform /> */}
     </>
   );
 };
