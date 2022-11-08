@@ -3,8 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-   
-
   body {
     @apply min-h-screen font-sans text-lg text-neutral-600;
   }
@@ -356,6 +354,10 @@
     &__desc {
       @apply line-clamp-2;
     }
+  }
+
+  .input {
+    @apply w-full rounded-full  py-5 px-6;
   }
 
   /* .card {
