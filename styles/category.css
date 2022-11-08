@@ -1,5 +1,5 @@
 .category {
-  @apply relative grid min-h-screen content-center justify-items-center bg-neutral-200 px-container pt-16 pb-28 text-neutral-700 md:pt-28 md:pb-36 lg:pt-36 lg:pb-44;
+  @apply relative grid min-h-screen content-center justify-items-center overflow-hidden bg-neutral-200 px-container  pt-16 pb-28 text-neutral-700 md:pt-28 md:pb-36 lg:pt-36 lg:pb-44;
   grid-template-rows: repeat(2, auto);
 
   &__title {
@@ -7,19 +7,19 @@
   }
 
   &__content {
-    @apply grid w-full gap-4 sm:px-sm-container md:px-container lg:px-container;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    @apply grid w-full gap-8;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     @media screen and (max-width: theme(screens.md)) and (min-width: theme(screens.sm)) {
-      grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(512px, 1fr));
     }
   }
 
   &__item {
-    @apply grid justify-items-center gap-4;
+    @apply grid justify-items-center;
     grid-template-rows: repeat(2, auto);
   }
   &__card {
-    @apply flex max-w-xl  flex-col justify-between overflow-hidden rounded-2xl bg-neutral-100 shadow-dark;
+    @apply flex max-w-xl  flex-col justify-between overflow-hidden rounded-2xl bg-neutral-100 shadow-dark duration-500 hover:scale-y-105;
 
     &__figure {
       @apply relative m-0 aspect-h-image w-full p-0;

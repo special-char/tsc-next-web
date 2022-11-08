@@ -7,6 +7,8 @@ import Footer from './footer';
 import GrowCareer from './growcareer';
 import Perks from './perks';
 import Contactform from './contactform';
+import Category from './category';
+import OurOffice from './ourOffice';
 
 type Props = {};
 
@@ -23,6 +25,16 @@ const Page = (props: Props) => {
       <Footer />
       {/* <Blogs />
       <Contactform /> */}
+      <Banner />
+      <Courses />
+      <Perks />
+      <Leaders />
+      <Companyhistory />
+      <GrowCareer />
+      <Footer />
+      <Blogs />
+      <Category />
+      <OurOffice />
     </>
   );
 };
