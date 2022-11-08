@@ -22,7 +22,7 @@ const Page = (props: Props) => {
       <GrowCareer />
       <Footer />
       <Blogs /> */}
-      <Category />
+      {/* <Category /> */}
       <OurOffice />
     </>
   );
