@@ -1,31 +1,50 @@
 .footer {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   min-height: calc(theme(height.screen) - theme(spacing.16) - 30px);
-  @apply grid grid-cols-1 content-center items-center gap-8 bg-neutral-700 px-4 pt-16 lg:grid-cols-2 lg:px-container;
+  @apply grid grid-cols-1 content-center items-center gap-8 bg-neutral-700 px-4 pt-16 md:px-6 lg:grid-cols-2 lg:px-container;
   &__title_section {
-    @apply lg:col-span-2;
+    @apply grid lg:col-span-2 lg:grid-cols-2;
   }
 
   &__newsletter {
-    @apply grid gap-3 py-10 lg:py-16;
+    @apply grid gap-3 py-10 md:w-4/5 lg:py-16;
   }
   &__email {
     @apply relative grid gap-2 lg:grid-cols-1;
   }
-  &__pageslinks {
-    @apply grid gap-4 lg:justify-end;
+  &__pages {
+    @apply grid grid-cols-1 gap-4;
+  }
+
+  &__links {
+    @apply grid grid-cols-1;
+    @media screen and (min-width: 375px) {
+      @apply grid-cols-2;
+    }
   }
   &__sociallinks {
-    @apply lg:col-span-2;
+    @apply grid gap-6 lg:col-span-2 lg:grid-cols-2;
+    @media screen and (min-width: 1024px) {
+      div:nth-of-type(1) {
+        order: 2;
+      }
+    }
   }
   &__socialicons {
-    @apply grid gap-2 md:w-4/5;
+    @apply grid gap-2 md:w-4/5 lg:justify-end lg:pb-4;
     grid-template-columns: repeat(auto-fit, minmax(50px, 20px));
   }
   &__line {
     @apply h-[1px] w-[100%] rounded-full bg-neutral-600 lg:col-span-2;
   }
+
   .submit-btn {
-    @apply py-6 px-10 md:px-6 md:py-4;
+    /* @apply top-2 right-2 p-0 py-6 px-10 md:absolute md:px-6 md:py-4; */
+    @media screen and (min-width: 479px) {
+      @apply absolute top-2 right-2 py-4 px-10 md:px-6 md:py-4;
+    }
+  }
+  .input {
+    @apply w-full rounded-full py-5 px-6;
   }
 }
