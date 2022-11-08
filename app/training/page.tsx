@@ -6,6 +6,7 @@ import Leaders from './leaders';
 import Footer from './footer';
 import GrowCareer from './growcareer';
 import Perks from './perks';
+import SocialMedia from './socialMedia';
 
 type Props = {};
 
@@ -15,9 +16,10 @@ const Page = (props: Props) => {
       {/* <Banner /> */}
       {/* <Courses /> */}
       {/* <Perks /> */}
+      <SocialMedia />
       <Leaders />
       <Companyhistory />
-      <Banner />
+      {/* <Banner /> */}
       <GrowCareer />
       <Footer />
       <Blogs />
