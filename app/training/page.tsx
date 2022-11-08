@@ -12,11 +12,11 @@ type Props = {};
 const Page = (props: Props) => {
   return (
     <>
-       <Banner />
+      {/* <Banner />
       <Courses />
-      {/* { *<Perks /> * /}
+      <Perks /> */}
 
-      <Footer /> */} */}
+      {/* <Footer /> */}
       <Education />
       <Aboutheader />
       <Achievements />
@@ -26,4 +26,3 @@ const Page = (props: Props) => {
 };
 
 export default Page;
-

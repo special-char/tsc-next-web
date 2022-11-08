@@ -7,7 +7,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ['assets.website-files.com', 'ik.imagekit.io'],
+    domains: ['assets.website-files.com', 'ik.imagekit.io', 'tse3.mm.bing.net'],
   },
 };
 

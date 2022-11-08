@@ -1,0 +1,5 @@
+.about {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  min-height: calc(theme(height.screen) - theme(spacing.16) - 30px);
+  @apply grid content-center items-center gap-4 overflow-hidden px-4 sm:px-sm-container lg:grid-cols-1 lg:grid-rows-1 lg:gap-8 lg:px-container;
+}

@@ -181,18 +181,18 @@
     }
   }
 }
-.about {
+/* .about {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   min-height: calc(theme(height.screen) - theme(spacing.16) - 30px);
   @apply mb-7 grid content-center items-center  px-4   sm:py-2 sm:px-sm-container lg:gap-32 lg:px-container;
-}
-.achieve {
+} */
+/* .achieve {
   grid-template-columns: repeat(auto-fit, minmax(1fr, 1fr, 1fr));
   min-height: calc(theme(height.screen) - theme(spacing.16) - 30px);
 
   @apply grid content-center items-center gap-4 px-4 sm:px-sm-container lg:gap-32 lg:px-container;
-}
-.education {
+} */
+/* .education {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   min-height: calc(theme(height.screen) - theme(spacing.16) - 30px);
   @apply grid grid-cols-1 justify-items-center  px-container sm:grid-cols-2;
@@ -213,7 +213,7 @@
     grid-template-columns: auto 1fr;
     @apply grid  grid-cols-1 justify-items-center gap-4 pt-16;
   }
-}
+} */
 .footer {
   @apply grid grid-cols-2;
   grid-template-columns: 1fr 2fr;

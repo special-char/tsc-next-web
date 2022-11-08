@@ -1,5 +1,6 @@
+import '@/styles/achieve.css';
 import React from 'react';
-import styles from './styles.module.css';
+
 type Props = {};
 const achievedetails = [
   {
@@ -24,22 +25,20 @@ const achievedetails = [
 
 const Achievements = (props: Props) => {
   return (
-    <section className={styles.achieve}>
+    <section className="achieve">
       <h2 className="text-center">A few numbers that we are proud of</h2>
-      <div className="content grid grid-cols-3">
+      <div className="achieve__tile">
         {achievedetails.map((x) => (
-          <>
-            <div>
-              <h1 className="text-secondary3">
-                {new Intl.NumberFormat('en-IN', {
-                  maximumSignificantDigits: 3,
-                }).format(x.number)}
-                +
-              </h1>
-              <h3>{x.title}</h3>
-              <p>{x.description}</p>
-            </div>
-          </>
+          <div className="overflow-hidden">
+            <h1 className="text-secondary3">
+              {new Intl.NumberFormat('en-IN', {
+                maximumSignificantDigits: 3,
+              }).format(x.number)}
+              +
+            </h1>
+            <h3>{x.title}</h3>
+            <p>{x.description}</p>
+          </div>
         ))}
       </div>
     </section>
