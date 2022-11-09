@@ -1,0 +1,40 @@
+.category {
+  @apply relative grid min-h-screen content-center justify-items-center overflow-hidden bg-neutral-200 px-container  pt-16 pb-28 text-neutral-700 md:pt-28 md:pb-36 lg:pt-36 lg:pb-44;
+  grid-template-rows: repeat(2, auto);
+
+  &__title {
+    @apply mb-10 text-center text-neutral-700;
+  }
+
+  &__content {
+    @apply grid w-full gap-8;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    @media screen and (max-width: theme(screens.md)) and (min-width: theme(screens.sm)) {
+      grid-template-columns: repeat(auto-fit, minmax(512px, 1fr));
+    }
+  }
+
+  &__item {
+    @apply grid justify-items-center;
+    grid-template-rows: repeat(2, auto);
+  }
+  &__card {
+    @apply flex max-w-xl  flex-col justify-between overflow-hidden rounded-2xl bg-neutral-100 shadow-dark duration-500 hover:scale-y-105;
+
+    &__figure {
+      @apply relative m-0 aspect-h-image w-full p-0;
+    }
+
+    &__content {
+      @apply flex h-full flex-col justify-between p-8;
+    }
+
+    &__title {
+      @apply mb-1 h-9 line-clamp-1;
+    }
+
+    &__desc {
+      @apply m-0 my-0 h-16 p-0 line-clamp-2;
+    }
+  }
+}

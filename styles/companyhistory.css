@@ -1,0 +1,33 @@
+.companyHistory {
+  @apply grid min-h-screen content-center items-center justify-center gap-4 px-4 py-24 md:py-36 lg:gap-24 lg:py-44 lg:px-container;
+
+  .companyHistory__section {
+    @apply grid md:grid-cols-2;
+  }
+
+  .companyHistory__leftSection {
+    @apply top-0 flex flex-col items-stretch md:sticky md:mr-8 md:items-start;
+  }
+
+  .companyHistory__info {
+    @apply mt-12 grid gap-8 border-l-2 border-neutral-300 md:mt-1 md:grid-cols-2 md:gap-12;
+
+    .companyHistory__RightSection {
+      @apply relative pl-8;
+    }
+
+    .companyHistory__ChipSection {
+      @apply gap-20 border border-neutral-300 px-6 md:mb-6;
+    }
+    .companyHistory__Date {
+      @apply text-lg font-bold text-neutral-700;
+    }
+    .companyHistory__circle {
+      @apply absolute top-4 -left-2.5 z-50 h-5 w-5 rounded-full bg-secondary3;
+    }
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 2fr));
+    }
+  }
+}

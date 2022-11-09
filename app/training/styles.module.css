@@ -55,7 +55,7 @@
 .banner {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   min-height: calc(theme(height.screen) - theme(spacing.16) - 30px);
-  @apply grid content-center items-center gap-4 px-4 sm:px-sm-container lg:gap-32 lg:px-container;
+  @apply grid content-center items-center gap-4 px-4 lg:gap-32 lg:px-container;
 
   & :is(.banner__title, .banner__description) {
     @apply text-center;
@@ -83,6 +83,15 @@
 
   &__title {
     @apply mb-10 md:mb-14;
+  }
+}
+
+:is(.courses, .perks) {
+  @apply grid min-h-screen place-content-center justify-items-center bg-neutral-200;
+  grid-template-rows: repeat(3, auto);
+
+  &__title {
+    @apply mb-14;
   }
 }
 
@@ -156,6 +165,9 @@
   }
 }
 
+.line {
+  @apply h-[2px] w-[100%] rounded-full bg-neutral-500 lg:col-span-2;
+}
 .perks {
   @apply bg-neutral-700 text-neutral-100;
 }
