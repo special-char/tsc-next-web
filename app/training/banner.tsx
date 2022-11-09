@@ -1,3 +1,4 @@
+import { use } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import '@/styles/banner.css';
@@ -35,16 +36,16 @@ async function getBannerData() {
         Accept: 'application/json',
       },
     });
-    const json = await res.json();
-    return json;
+    return await res.json();
   } catch (error) {}
 }
 
 type Props = {};
 
-const Banner = async (props: Props) => {
-  const bannerData = await getBannerData();
-  console.log(bannerData);
+const Banner = (props: Props) => {
+  const bannerData = use(getBannerData());
+
+  if (!bannerData) return null;
 
   const bannerInfo = bannerData?.data?.banner?.data?.attributes;
 
@@ -54,7 +55,7 @@ const Banner = async (props: Props) => {
         <h1 className="banner__title">{bannerInfo?.title}</h1>
         <p className="banner__description">{bannerInfo?.description}</p>
         <div className="banner__actions">
-          {bannerInfo?.buttons.map((item) => (
+          {bannerInfo?.buttons.map((item: any) => (
             <Link key={item.id} href={item.url} className="btn btn--primary">
               {item.text}
             </Link>

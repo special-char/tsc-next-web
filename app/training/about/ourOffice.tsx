@@ -7,7 +7,7 @@ import WorldMap from '@/public/images/world map.jpg';
 
 type Props = {};
 
-const ourOffice = (props: Props) => {
+const OurOffice = (props: Props) => {
   return (
     <section id="ourOffice" className="ourOffice">
       <div className="text-center md:mx-24 md:mb-6 lg:mx-40">
@@ -50,4 +50,4 @@ const ourOffice = (props: Props) => {
   );
 };
 
-export default ourOffice;
+export default OurOffice;

@@ -3,9 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import '@/styles/leaderSection.css';
 
-type Props = '';
-
-const Leaders = (props: Props) => {
+const Leaders = () => {
   return (
     <section id="Leaders" className="leader">
       <div className="leader__details">
