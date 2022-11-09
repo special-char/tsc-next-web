@@ -33,6 +33,6 @@
     grid-column: 1 / -1;
   }
   .leader__ContentData {
-    @apply mb-2 rounded-full bg-secondary1 py-2 text-center font-bold text-primary;
+    @apply mb-2 rounded-full bg-secondary1 py-3 px-5 text-center font-bold text-primary;
   }
 }
