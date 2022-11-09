@@ -28,23 +28,21 @@ const PerksData = [
 const Perks = (props: Props) => {
   return (
     <section id="perks" className="perks">
-      <h2 className="perks__title mb-10 lg:mb-14">
-        Why learn with our courses?
-      </h2>
+      <h2 className="perks__title">Why learn with our courses?</h2>
       <div className="perks__content">
         {PerksData.map((perk) => {
           return (
             <div className="perks__item">
-              <div className="w-48">{perk.svg}</div>
-              <div className="text-center md:text-left lg:text-center">
-                <h3 className="mb-1 text-neutral-100">{perk.title}</h3>
+              <div className="perks__item__image">{perk.svg}</div>
+              <div className="perks__item__body">
+                <h3 className="mb-4 text-neutral-100">{perk.title}</h3>
                 <p className="mb-0">{perk.description}</p>
               </div>
             </div>
           );
         })}
       </div>
-      <div className="absolute -bottom-20 z-10 w-14  lg:-bottom-32 lg:mt-20 lg:w-20">
+      <div className="absolute -bottom-16 z-10 w-12 md:-bottom-20 md:w-20 lg:-bottom-20 lg:w-20">
         <PinkSvg />
       </div>
     </section>
