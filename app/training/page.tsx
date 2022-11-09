@@ -4,6 +4,7 @@ import Banner from './banner';
 import Blogs from './blogs';
 import Courses from './courses';
 import Education from './education';
+import Event from './event';
 import Footer from './footer';
 import Perks from './perks';
 
@@ -17,9 +18,11 @@ const Page = (props: Props) => {
       <Perks /> */}
 
       {/* <Footer /> */}
-      <Education />
+      {/* <Education />
       <Aboutheader />
-      <Achievements />
+      <Achievements /> */}
+      <Event />
+
       {/* <Blogs /> */}
     </>
   );

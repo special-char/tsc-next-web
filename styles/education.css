@@ -2,7 +2,7 @@
   /* display: grid;
   grid-template-rows: repeat(3, auto);
   min-height: calc(theme(height.screen) - theme(spacing.16) - 30px); */
-  @apply justify-items-center gap-y-10 px-container;
+  @apply justify-items-center gap-y-10 px-container sm:mx-auto;
 
   /* &__header {
     grid-column: 1 / -1; */
