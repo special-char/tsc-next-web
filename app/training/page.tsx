@@ -6,6 +6,8 @@ import Leaders from './leaders';
 import Footer from './footer';
 import GrowCareer from './growcareer';
 import Perks from './perks';
+import SocialMedia from './socialMedia';
+import Faq from './faq';
 import Contactform from './contactform';
 import Category from './category';
 import OurOffice from './ourOffice';
@@ -18,6 +20,14 @@ const Page = (props: Props) => {
       {/* <Banner /> */}
       {/* <Courses /> */}
       {/* <Perks /> */}
+      <Faq />
+      {/* <SocialMedia /> */}
+      {/* <Leaders /> */}
+      {/* <Companyhistory /> */}
+      {/* <Banner /> */}
+      {/* <GrowCareer /> */}
+      {/* <Footer /> */}
+      {/* <Blogs />  */}
       {/* <Leaders />
       <Companyhistory />
       <Banner /> */}
