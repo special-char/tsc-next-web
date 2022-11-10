@@ -14,4 +14,23 @@
     @apply grid justify-items-center;
     grid-template-rows: repeat(3, auto);
   }
+  &__card {
+    @apply max-w-xl justify-between overflow-hidden rounded-2xl border border-neutral-400 bg-neutral-100 shadow-dark;
+
+    &__figure {
+      @apply relative m-0 aspect-h-image w-full p-0;
+    }
+
+    &__content {
+      @apply h-full flex-col justify-between p-8;
+    }
+
+    &__title {
+      @apply mb-1 h-9 line-clamp-1;
+    }
+
+    &__desc {
+      @apply m-0 my-0 h-16 p-0 line-clamp-2;
+    }
+  }
 }

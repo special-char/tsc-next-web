@@ -20,30 +20,32 @@ const ourOffice = (props: Props) => {
 
       <div className="ourOffice__content">
         <div className="ourOffice__item">
-          <div className="card relative">
-            <div className="card__content">
+          <div className="ourOffice__card relative overflow-hidden">
+            <div className="ourOffice__card__content">
               <OfficeSvg className="w-16" />
-              <h3 className="card__title">Ahmedabad</h3>
-              <address className="text-neutral-600">
-                <a className="w-auto" href={`#`}>
+              <h3 className="ourOffice__card__title">Ahmedabad</h3>
+              <address className="grid-rows-span-3 grid text-neutral-600">
+                <a className="w-auto pb-2" href={`#`}>
                   thespecial@character.com
                 </a>
-                <br />
-                <a className="w-auto" href={`#`}>
+                <a className="w-auto pb-2" href={`#`}>
                   +91 1800180018
                 </a>
-                <div className="pr-20">
-                  Lorem ipsum, dolorsitamet consectetur adipisicing elit.
+                <div className="mb-2">
+                  B-604/605, Ganesh Glory11
+                  <br />
+                  SG-Hwy, Ahmedabad, <br />
+                  Gujrat 382470
                 </div>
               </address>
             </div>
-            <div className="absolute -right-8 -bottom-16 h-32 w-32 rounded-full bg-primary"></div>
+            <div className="absolute -right-14 -bottom-20 h-32 w-32 rounded-full bg-primary"></div>
           </div>
         </div>
         <Image
           src={WorldMap}
           alt="office"
-          className="fill -z-10 -mt-5 md:-mt-16 lg:-mt-24"
+          className="fill -z-10 -mt-7 md:-mt-24 lg:-mt-36"
         />
       </div>
     </section>

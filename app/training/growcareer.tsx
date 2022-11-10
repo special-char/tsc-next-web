@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles.module.css';
+import '@/styles/growcareer.css';
 const data = [
   {
     rating: 1,
@@ -17,12 +17,12 @@ const data = [
 
 const GrowCareer = () => {
   return (
-    <section id="growcareer" className={`${styles.growcareer}`}>
-      <div className={styles.growcareer__details}>
-        <h2 className={styles.growcareer__title}>
+    <section id="growcareer" className="growcareer">
+      <div className="growcareer__details">
+        <h2 className="growcareer__title">
           Grow your career today with the Educationic courses
         </h2>
-        <p className={`${styles.growcareer__description} text-neutral-400`}>
+        <p className="growcareer__description">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt.
         </p>
@@ -30,9 +30,9 @@ const GrowCareer = () => {
           explore courses
         </button>
       </div>
-      <div className={styles.growcareer__cards}>
+      <div className="growcareer__cards">
         {data.map((val) => (
-          <div className={styles.growcareer__card_details}>
+          <div className="growcareer__card_details">
             <h1>{val.rating}</h1>
             <p>{val.description}</p>
           </div>

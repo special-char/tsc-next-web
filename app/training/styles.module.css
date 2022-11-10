@@ -53,7 +53,6 @@
 /* banner CSS */
 
 .banner {
-  
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   min-height: calc(theme(height.screen) - theme(spacing.16) - 30px);
   @apply grid content-center items-center gap-4 px-4 lg:gap-32 lg:px-container;
@@ -87,20 +86,6 @@
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 :is(.courses, .perks) {
   @apply grid min-h-screen place-content-center justify-items-center bg-neutral-200;
   grid-template-rows: repeat(3, auto);
@@ -109,7 +94,6 @@
     @apply mb-14;
   }
 }
-
 
 .carousal {
   @apply relative mb-10 grid md:mb-14;
@@ -186,28 +170,6 @@
 }
 .perks {
   @apply bg-neutral-700 text-neutral-100;
-}
-
-.growcareer {
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  min-height: calc(theme(height.screen) - theme(spacing.16) - 30px);
-  @apply grid grid-cols-1 content-center items-center gap-10 bg-primary py-14 px-4 text-center sm:px-sm-container md:py-16 lg:grid-cols-2 lg:gap-32 lg:py-20 lg:px-container lg:text-left;
-
-  &__title {
-    @apply text-neutral-100;
-  }
-
-  &__cards {
-    @apply grid items-center gap-8;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-
-  &__card_details {
-    @apply w-full rounded-2xl bg-neutral-100 p-8 text-center shadow-base;
-    &:nth-child(2) {
-      grid-row: span 2;
-    }
-  }
 }
 
 .blogs {
