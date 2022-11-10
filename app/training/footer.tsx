@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import Image from 'next/image';
+import MailIcon from '@/public/icons/mail.svg';
 import '@/styles/footer.css';
 
 type Props = {};
@@ -45,14 +46,9 @@ const Footer = (props: Props) => {
       </div>
       <div className="footer__line"></div>
       <div className="footer__newsletter">
-        <Image
-          className="rounded-full"
-          src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607f5ea5d227324cf40fa52d_icon-newsletter-footer-education-x-template.svg"
-          alt=""
-          height={100}
-          width={100}
-        />
-
+        <div className="btn btn--secondary btn--round w-20">
+          <MailIcon />
+        </div>
         <h3 className="text-neutral-100">Subscribe to our newsletter</h3>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -82,13 +78,9 @@ const Footer = (props: Props) => {
       <div className="footer__sociallinks">
         <div className="footer__socialicons ">
           {data.map((val) => (
-            <Image
-              className="rounded-full"
-              src={val.icon}
-              alt=""
-              height={40}
-              width={40}
-            />
+            <div className="btn btn--secondary btn--round w-9">
+              <MailIcon />
+            </div>
           ))}
         </div>
         <div>
