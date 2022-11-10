@@ -7,7 +7,7 @@ import WorldMap from '@/public/images/world map.jpg';
 
 type Props = {};
 
-const ourOffice = (props: Props) => {
+const OurOffice = (props: Props) => {
   return (
     <section id="ourOffice" className="ourOffice">
       <div className="text-center md:mx-24 md:mb-6 lg:mx-40">
@@ -32,8 +32,10 @@ const ourOffice = (props: Props) => {
                   +91 1800180018
                 </a>
                 <div className="mb-2">
-                  B-604/605, Ganesh Glory11 Jagatpur Road, Sarkhej-Gandhinagar
-                  Hwy,Ahmedabad, Gujrat 382470
+                  B-604/605, Ganesh Glory11
+                  <br />
+                  SG-Hwy, Ahmedabad, <br />
+                  Gujrat 382470
                 </div>
               </address>
             </div>
@@ -43,11 +45,11 @@ const ourOffice = (props: Props) => {
         <Image
           src={WorldMap}
           alt="office"
-          className="fill -z-10 -mt-5 md:-mt-16 lg:-mt-24"
+          className="fill -z-10 -mt-7 md:-mt-24 lg:-mt-36"
         />
       </div>
     </section>
   );
 };
 
-export default ourOffice;
+export default OurOffice;
