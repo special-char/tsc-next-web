@@ -1,4 +1,3 @@
-import styles from './styles.module.css';
 import Image, { ImageProps } from 'next/image';
 
 type Props = {
@@ -7,7 +6,7 @@ type Props = {
 
 export default function Card({ image }: Props) {
   return (
-    <div className={styles.card}>
+    <div>
       <Image {...image} />
     </div>
   );

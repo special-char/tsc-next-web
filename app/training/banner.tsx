@@ -1,6 +1,7 @@
+import { use } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from './styles.module.css';
+import '@/styles/banner.css';
 
 async function getBannerData() {
   try {
@@ -35,33 +36,33 @@ async function getBannerData() {
         Accept: 'application/json',
       },
     });
-    const json = await res.json();
-    return json;
+    return await res.json();
   } catch (error) {}
 }
 
 type Props = {};
 
-const Banner = async (props: Props) => {
-  const bannerData = await getBannerData();
-  console.log(bannerData);
+const Banner = (props: Props) => {
+  const bannerData = use(getBannerData());
+
+  if (!bannerData) return null;
 
   const bannerInfo = bannerData?.data?.banner?.data?.attributes;
 
   return (
-    <section id="banner" className={styles.banner}>
-      <div className={styles.banner__details}>
-        <h1 className={styles.banner__title}>{bannerInfo?.title}</h1>
-        <p className={styles.banner__description}>{bannerInfo?.description}</p>
-        <div className={styles.banner__actions}>
-          {bannerInfo?.buttons.map((item) => (
+    <section id="banner" className="banner">
+      <div className="banner__details">
+        <h1 className="banner__title">{bannerInfo?.title}</h1>
+        <p className="banner__description">{bannerInfo?.description}</p>
+        <div className="banner__actions">
+          {bannerInfo?.buttons.map((item: any) => (
             <Link key={item.id} href={item.url} className="btn btn--primary">
               {item.text}
             </Link>
           ))}
         </div>
       </div>
-      <div className={styles.banner__image}>
+      <div className="banner__image">
         {bannerInfo?.image && (
           <Image src={bannerInfo?.image.data.attributes.url} alt="logo" fill />
         )}

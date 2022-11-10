@@ -6,8 +6,9 @@ import React, {
   useRef,
   useState,
   PropsWithChildren,
+  ReactElement,
 } from 'react';
-import styles from './styles.module.css';
+import clsx from 'clsx';
 
 type Props = {} & PropsWithChildren;
 
@@ -25,7 +26,7 @@ const Carousal = ({ children }: Props) => {
 
   const scrollLeft = useCallback(() => {
     if (scrollerRef.current && element) {
-      const paddingLeft = parseInt(getComputedStyle(element)['padding-left']);
+      const paddingLeft = parseInt(getComputedStyle(element)?.paddingLeft);
       scrollerRef.current.scrollTo({
         left:
           scrollerRef.current.scrollLeft + (element.clientWidth - paddingLeft),
@@ -40,7 +41,7 @@ const Carousal = ({ children }: Props) => {
 
   const scrollRight = useCallback(() => {
     if (scrollerRef.current && element) {
-      const paddingRight = parseInt(getComputedStyle(element)['padding-right']);
+      const paddingRight = parseInt(getComputedStyle(element)?.paddingLeft);
       scrollerRef.current.scrollTo({
         left:
           scrollerRef.current.scrollLeft - (element.clientWidth - paddingRight),
@@ -54,19 +55,28 @@ const Carousal = ({ children }: Props) => {
   }, [element]);
 
   return (
-    <div className={styles.carousal}>
-      <div ref={scrollerRef} className={styles.carousal__scroller}>
-        {children}
+    <div className="carousal">
+      <div ref={scrollerRef} className="carousal__scroller">
+        {React.Children.map(children, (child) => {
+          const item = child as ReactElement<PropsWithChildren<any>>;
+
+          const { className } = item?.props;
+          return React.cloneElement(item, {
+            className: clsx('carousal__items', {
+              [className]: !!className,
+            }),
+          });
+        })}
       </div>
-      <div className={styles.carousal__controls}>
+      <div className="carousal__controls">
         <button
           type="button"
-          className={`${styles.carousal__control} btn btn--primary btn--round`}
+          className={`carousal__control btn btn--primary btn--round`}
           onClick={scrollRight}
         >{`<`}</button>
         <button
           type="button"
-          className={`${styles.carousal__control} btn btn--primary btn--round`}
+          className={`carousal__control btn btn--primary btn--round`}
           onClick={scrollLeft}
         >{`>`}</button>
       </div>
