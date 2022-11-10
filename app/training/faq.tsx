@@ -1,6 +1,5 @@
 import React from 'react';
 import '@/styles/faq.css';
-import Link from 'next/link';
 
 interface Props {}
 const Data = [
@@ -51,9 +50,9 @@ const Faq = (props: Props) => {
           {Data.map((val) => (
             <div key={val.id}>
               <div className="faq__pageSection">
-                <details className="faq__pages">
-                  <summary className="faq__summary">{val.title}</summary>
-                  <p className=" faq__p">{val.Description}</p>
+                <details className="accordion">
+                  <summary className="accordion__summary">{val.title}</summary>
+                  <p className="accordion__content">{val.Description}</p>
                 </details>
               </div>
             </div>

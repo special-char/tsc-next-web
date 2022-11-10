@@ -1,48 +1,102 @@
 .faq__section {
-    @apply content-center sm:px-sm-container items-center justify-center lg:px-container min-h-screen bg-neutral-200 md:py-44 py-24 px-4 md:px-6;
+  @apply min-h-screen content-center items-center justify-center bg-neutral-200 py-24 px-4 sm:px-sm-container md:py-44 md:px-6 lg:px-container;
 }
-.faq__page{
-@apply md:w-[585px] mx-auto text-center justify-center md:px-6 mb-14
-}
-
-
-
-.faq__downPage{
-    @apply mx-auto max-w-2xl
+.faq__page {
+  @apply mx-auto mb-14 justify-center text-center md:w-[585px] md:px-6;
 }
 
-.faq__pageSection{
-    @apply drop-shadow-lg rounded-xl bg-neutral-100 text-left;
+.faq__downPage {
+  @apply mx-auto max-w-2xl;
 }
-.faq__pages{
-    @apply text-center justify-center md:mb-14; 
-}
-details>summary {
-    @apply cursor-pointer p-4 outline-none rounded-full;
-    list-style-type: none;
-    border: 1px solid #eee;   
-  }
-  details>summary::before {
-    @apply py-2 px-[23px] text-7xl rounded-full bg-neutral-400 text-neutral-600 text-center justify-center;
-    content: '+ ';     
-  }
 
-  details[open]>summary::before {
-    @apply  bg-primary text-neutral-100 rotate-180 duration-150 ease-in-out;
-    content: '- '; 
-  }
-  details[open]>summary {
-    margin-bottom: 0.5rem;
-  }
-  details>summary::-webkit-details-marker {
-    @apply hidden
-  }
-.faq__summary{
-    @apply flex items-start my-8 md:my-0 gap-4 md:gap-8 lg:gap-12 text-left text-2xl border-none w-full drop-shadow-lg cursor-pointer border-2 font-bold md:items-center md:justify-start;
+.faq__pageSection {
+  @apply rounded-xl bg-neutral-100 text-left drop-shadow-lg;
 }
-.faq__p{
-    @apply border-none pb-8 text-left px-4 pl-16 md:pl-24 lg:pl-28 overflow-hidden;
+/* .faq__pages {
+  @apply justify-center text-center md:mb-14;
+} */
+
+/* details > summary {
+  @apply cursor-pointer rounded-full p-4 outline-none;
+  list-style-type: none;
+  border: 1px solid #eee;
+} */
+
+/* details summary::-webkit-details-marker {
+  background: red;
+  color: #fff;
+  font-size: 500%;
 }
-.faq__summary::marker{
-    @apply hidden !important
+summary::-webkit-details-marker {
+  display: none;
+}
+summary:after {
+  @apply items-start justify-start;
+  background: blue;
+  border-radius: 100%;
+  content: '+';
+  color: #fff;
+  float: left;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: -5px 10px 0 0;
+  padding: 0;
+  text-align: center;
+  width: 60;
+}
+details[open] summary:after {
+  content: '-';
+} */
+
+.accordion {
+  @apply mb-4 max-w-lg rounded-md p-4 shadow-base;
+
+  &__summary {
+    @apply flex items-start text-2xl;
+
+    &::before {
+      content: '+';
+      @apply float-left mr-8 w-[82px] items-center rounded-full border bg-primary text-center text-2xl font-bold text-secondary1 md:h-12 md:w-12 md:pl-0;
+    }
+  }
+  &__content {
+    @apply p-6 text-base text-primary;
+  }
+}
+
+details summary::marker {
+  display: none;
+}
+details summary {
+  list-style-type: none;
+}
+
+details[open] summary::before {
+  content: '-';
+  @apply bg-secondary1 text-primary;
+}
+
+/* details > summary::before {
+  @apply justify-center rounded-full bg-neutral-400 px-4 py-2 text-center text-7xl text-neutral-600;
+  content: '+ ';
+}
+
+details[open] > summary::before {
+  @apply rotate-180 bg-primary text-neutral-100 duration-150 ease-in-out;
+  content: '- ';
+}
+details[open] > summary {
+  margin-bottom: 0.5rem;
+}
+details > summary::-webkit-details-marker {
+  @apply hidden;
+}
+.faq__summary::marker {
+  @apply hidden !important;
+} */
+.faq__summary {
+  @apply my-8 flex w-full cursor-pointer items-start gap-8 border-2 border-none text-left text-2xl font-bold drop-shadow-lg md:my-0 md:items-center md:justify-start md:gap-8 lg:gap-12;
+}
+.faq__p {
+  @apply overflow-hidden border-none px-4 pb-8 pl-16 text-left md:pl-24 lg:pl-28;
 }
