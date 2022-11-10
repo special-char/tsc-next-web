@@ -25,7 +25,7 @@ const Page = (props: Props) => {
       <Footer />
       {/* <Blogs />
       <Contactform /> */}
-      <Banner />
+      {/* <Banner />
       <Courses />
       <Perks />
       <Leaders />
@@ -34,7 +34,7 @@ const Page = (props: Props) => {
       <Footer />
       <Blogs />
       <Category />
-      <OurOffice />
+      <OurOffice /> */}
     </>
   );
 };
