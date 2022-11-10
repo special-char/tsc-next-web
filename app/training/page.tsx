@@ -5,19 +5,21 @@ import Leaders from './leaders';
 import GrowCareer from './growcareer';
 import Perks from './perks';
 import Category from './category';
+import Card from './card';
 
 type Props = {};
 
 const Page = (props: Props) => {
   return (
     <>
-      <Banner />
+      {/* <Banner />
       <Courses />
       <Perks />
       <Leaders />
       <GrowCareer />
       <Category />
-      <Blogs />
+      <Blogs /> */}
+      <Card />
     </>
   );
 };

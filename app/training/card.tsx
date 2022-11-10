@@ -1,17 +1,16 @@
 'use client';
 
-// import React from 'react';
 import React, { useState } from 'react';
-import '@/styles/rate.css';
+import Image from 'next/link';
 
 type Props = {};
 
-const Ratecard = (props: Props) => {
+const Card = (props: Props) => {
   const [price, setprice] = useState('$99.00USD');
 
   return (
     <section>
-      <div className="ratecard">
+      <div className="card card__rate">
         {' '}
         <div>
           <h2>{price}!</h2>
@@ -196,22 +195,55 @@ const Ratecard = (props: Props) => {
           </div>
         </div>
       </div>
-      {/* <div className="">
-        <div className="tab">
-          <h2>all Event</h2>
-          <div
-            className="btns justify-centers box-border grid gap-x-4 overflow-hidden rounded-lg bg-neutral-300
-          px-4 md:grid-cols-4 md:grid-rows-1"
-          >
-            <button>All</button>
-            <button>Devlopment</button>
-            <button>Design</button>
-            <button>Marketing</button>
+      <div className=" flex  h-screen gap-4 bg-neutral-200">
+        <a href="#" className="inline-block">
+          <div className="card card__course ">
+            <img
+              src="https://images.unsplash.com/photo-1667493620964-5db1a9529f14?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+              alt="image"
+              className="mb-5"
+            />
+            <div className="card__body">
+              <h2>Lorem, ipsum dolor.</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Voluptatibus eius nesciunt cupiditate iure obcaecati a dicta non
+                temporibus quis deserunt.
+              </p>
+              <div className="flex items-center">
+                <svg
+                  width="48"
+                  height="48"
+                  viewBox="0 0 29 29"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="avatar avatar__image mr-3"
+                >
+                  <path
+                    d="M20.248 12.1359L24.3049 8.81575C25.3102 7.9928 26.8181 8.7098 26.8168 10.0071L26.802 19.0607C26.8008 20.3579 25.2917 21.0688 24.2889 20.2458L20.248 16.9257"
+                    stroke="#064EA4"
+                    stroke-width="2.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M20.2435 18.9827C20.3431 21.2397 18.5216 23.1483 16.1752 23.2442C16.0024 23.2515 7.57704 23.2345 7.57704 23.2345C5.24205 23.4118 3.19847 21.7339 3.01429 19.4854C3.00042 19.3178 3.0042 10.2776 3.0042 10.2776C2.90076 8.01813 4.7198 6.1047 7.0674 6.00514C7.24275 5.99665 15.6568 6.01243 15.6568 6.01243C18.0031 5.8376 20.053 7.52763 20.2346 9.78709C20.2473 9.94978 20.2435 18.9827 20.2435 18.9827Z"
+                    stroke="#1E3D60"
+                    stroke-width="2.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <h3>lakshya</h3>
+              </div>
+            </div>
           </div>
-        </div>
-      </div> */}
+        </a>
+      </div>
     </section>
   );
 };
 
-export default Ratecard;
+export default Card;
