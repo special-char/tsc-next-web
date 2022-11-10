@@ -7,6 +7,7 @@ import Footer from './footer';
 import GrowCareer from './growcareer';
 import Perks from './perks';
 import SocialMedia from './socialMedia';
+import Faq from './faq';
 
 type Props = {};
 
@@ -16,13 +17,14 @@ const Page = (props: Props) => {
       {/* <Banner /> */}
       {/* <Courses /> */}
       {/* <Perks /> */}
-      <SocialMedia />
-      <Leaders />
-      <Companyhistory />
+      <Faq />
+      {/* <SocialMedia /> */}
+      {/* <Leaders /> */}
+      {/* <Companyhistory /> */}
       {/* <Banner /> */}
-      <GrowCareer />
-      <Footer />
-      <Blogs />
+      {/* <GrowCareer /> */}
+      {/* <Footer /> */}
+      {/* <Blogs />  */}
     </>
   );
 };

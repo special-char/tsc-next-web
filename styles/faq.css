@@ -1,0 +1,48 @@
+.faq__section {
+    @apply content-center sm:px-sm-container items-center justify-center lg:px-container min-h-screen bg-neutral-200 md:py-44 py-24 px-4 md:px-6;
+}
+.faq__page{
+@apply md:w-[585px] mx-auto text-center justify-center md:px-6 mb-14
+}
+
+
+
+.faq__downPage{
+    @apply mx-auto max-w-2xl
+}
+
+.faq__pageSection{
+    @apply drop-shadow-lg rounded-xl bg-neutral-100 text-left;
+}
+.faq__pages{
+    @apply text-center justify-center md:mb-14; 
+}
+details>summary {
+    @apply cursor-pointer p-4 outline-none rounded-full;
+    list-style-type: none;
+    border: 1px solid #eee;   
+  }
+  details>summary::before {
+    @apply py-2 px-[23px] text-7xl rounded-full bg-neutral-400 text-neutral-600 text-center justify-center;
+    content: '+ ';     
+  }
+
+  details[open]>summary::before {
+    @apply  bg-primary text-neutral-100 rotate-180 duration-150 ease-in-out;
+    content: '- '; 
+  }
+  details[open]>summary {
+    margin-bottom: 0.5rem;
+  }
+  details>summary::-webkit-details-marker {
+    @apply hidden
+  }
+.faq__summary{
+    @apply flex items-start my-8 md:my-0 gap-4 md:gap-8 lg:gap-12 text-left text-2xl border-none w-full drop-shadow-lg cursor-pointer border-2 font-bold md:items-center md:justify-start;
+}
+.faq__p{
+    @apply border-none pb-8 text-left px-4 pl-16 md:pl-24 lg:pl-28 overflow-hidden;
+}
+.faq__summary::marker{
+    @apply hidden !important
+}
