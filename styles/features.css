@@ -1,7 +1,7 @@
 .features {
-  @apply grid gap-3 overflow-hidden px-container pt-20;
-  @media only screen and (min-width: 1024px) {
-    grid-template-columns: 1fr 4fr;
+  @apply grid min-h-full w-full grid-cols-1 px-container pt-20;
+  @media only screen and (min-width: 1010px) {
+    grid-template-columns: 1fr 1fr;
   }
 
   &__body {
@@ -9,6 +9,6 @@
   }
 
   &__title {
-    @apply text-left md:text-center;
+    @apply text-left md:text-center lg:text-left;
   }
 }

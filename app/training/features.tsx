@@ -7,10 +7,10 @@ const features = (props: Props) => {
     <section id="features" className="features">
       <h2 className="features__title">All Courses</h2>
       <div className="features__body">
-        <button className="btn btn--secondary btn--small">All</button>
-        <button className="btn btn--secondary btn--small">Development</button>
-        <button className="btn btn--secondary btn--small">Design</button>
-        <button className="btn btn--secondary btn--small">Marketing</button>
+        <span className="chip chip--primary">All</span>
+        <span className="chip chip--secondary">Development</span>
+        <span className="chip chip--secondary">Design</span>
+        <span className="chip chip--secondary">Marketing</span>
       </div>
     </section>
   );
