@@ -17,13 +17,17 @@ type Props = {};
 const Page = (props: Props) => {
   return (
     <>
-      <Banner />
+      <Event />
+      <Education />
+      <Aboutheader />
+      <Achievements />
+      {/* <Banner />
       <Courses />
       <Perks />
       <Leaders />
       <GrowCareer />
       <Category />
-      <Blogs />
+      <Blogs /> */}
     </>
   );
 };

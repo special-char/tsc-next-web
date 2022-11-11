@@ -174,10 +174,10 @@
   }
 
   .chip {
-    @apply inline-block rounded-full py-3 px-4 text-xs font-bold shadow-base sm:px-6;
+    @apply inline-block justify-between rounded-full py-4 px-4 text-xs font-bold shadow-base sm:px-6;
 
     &.icon {
-      @apply flex gap-2 py-4 px-6;
+      @apply flex justify-between gap-32 py-8 px-8;
     }
 
     &--primary {
