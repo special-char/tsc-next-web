@@ -3,8 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-   
-
   body {
     @apply min-h-screen font-sans text-lg text-neutral-600;
   }
@@ -400,4 +398,16 @@
       @apply mb-0 flex min-h-[200px] items-center justify-center;
     }
   } */
+
+  .form {
+    @apply w-full px-4;
+
+    &__label {
+      @apply m-0 mb-3 text-xl;
+    }
+
+    &__input {
+      @apply h-14 w-full rounded-full bg-neutral-200 px-6 py-2 outline-neutral-400 focus:outline;
+    }
+  }
 }

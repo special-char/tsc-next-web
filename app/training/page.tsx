@@ -6,26 +6,16 @@ import Leaders from './leaders';
 import Footer from './footer';
 import GrowCareer from './growcareer';
 import Perks from './perks';
-import Contactform from './contactform';
 import Category from './category';
 import OurOffice from './ourOffice';
+import Contact from './contact';
 
 type Props = {};
 
 const Page = (props: Props) => {
   return (
     <>
-      {/* <Banner /> */}
-      {/* <Courses /> */}
-      {/* <Perks /> */}
-      {/* <Leaders />
-      <Companyhistory />
-      <Banner /> */}
-      <GrowCareer />
-      <Footer />
-      {/* <Blogs />
-      <Contactform /> */}
-      <Banner />
+      {/* <Banner />
       <Courses />
       <Perks />
       <Leaders />
@@ -34,7 +24,8 @@ const Page = (props: Props) => {
       <Footer />
       <Blogs />
       <Category />
-      <OurOffice />
+      <OurOffice /> */}
+      <Contact />
     </>
   );
 };

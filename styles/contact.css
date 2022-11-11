@@ -1,0 +1,35 @@
+.contact {
+  @apply grid gap-8 px-container pt-8 pb-8;
+
+  @media only screen and (min-width: 1010px) {
+    grid-template-columns: 3fr 2fr;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    @apply mb-0 pt-8 text-center text-4xl;
+  }
+  &__desc {
+    grid-column: 1 / -1;
+    @apply text-center md:mx-12;
+  }
+
+  &__body {
+    @apply grid gap-8 md:grid-cols-2 lg:grid-cols-2;
+    /* grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); */
+
+    & .form {
+      &:nth-child(5) {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+
+  &__cards {
+    @apply grid  items-center gap-6;
+  }
+
+  &__card_details {
+    @apply grid w-full justify-items-center rounded-2xl text-center shadow-base;
+  }
+}
