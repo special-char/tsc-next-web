@@ -49,9 +49,9 @@ const Faq = (props: Props) => {
         </div>
         <div className="faq__body">
           {Data.map((val) => (
-            <details className="accordion">
-              <summary className="accordion__summary">{val.title}</summary>
-              <p className="accordion__content">{val.Description}</p>
+            <details>
+              <summary>{val.title}</summary>
+              <p>{val.Description}</p>
             </details>
           ))}
         </div>

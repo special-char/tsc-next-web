@@ -2,45 +2,9 @@
   @apply min-h-screen content-center items-center justify-center bg-neutral-200 py-24 px-4 sm:px-sm-container md:py-44 md:px-6 lg:px-container;
 }
 .faq__header {
-  @apply mx-auto mb-14 justify-center text-center md:w-[585px] md:px-6;
+  @apply mx-auto mb-14 items-center justify-center text-center md:w-[585px] md:px-6;
 }
 
 .faq__body {
-  @apply mx-auto max-w-2xl;
-}
-
-.accordion {
-  @apply mb-4 max-w-lg rounded-md p-4 shadow-base;
-
-  &__summary {
-    @apply flex items-center justify-center text-2xl;
-
-    &::before {
-      /* content: '+';
-      @apply float-left mr-8 w-[82px] origin-center rotate-180 rounded-full bg-neutral-300 text-center text-2xl font-bold text-neutral-500 duration-300 md:h-12 md:w-12 md:pl-0 md:text-5xl; */
-      /* background-image: url('pluse.svg'); */
-      background-image: url('data:image/svg+xml;utf8, <svg
-      xmlns='http://www.w3.org/2000/svg' height='48' width='48'><path d='M1025.5v-3h28v3Z'/></svg>');
-      background-size: 40px 40px;
-    }
-  }
-  &__content {
-    @apply overflow-hidden border-none p-6 px-4 pb-6 pl-16 text-left text-base md:pl-20;
-  }
-}
-
-details summary::marker {
-  display: none;
-}
-details summary {
-  list-style-type: none;
-}
-
-details[open] summary::before {
-  content: '-';
-  @apply origin-center rotate-180 bg-primary  text-neutral-100 duration-300;
-}
-
-.faq__summary {
-  @apply my-8 flex w-full cursor-pointer items-start gap-8 border-2 border-none text-left text-2xl font-bold drop-shadow-lg md:my-0 md:items-center md:justify-start md:gap-8 lg:gap-12;
+  @apply mx-auto max-w-3xl;
 }
