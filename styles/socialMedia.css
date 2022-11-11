@@ -1,0 +1,35 @@
+.SocialMedia{ 
+    @apply grid content-center py-12 px-4 md:px-6 gap-4 lg:gap-12 lg:px-container min-h-screen items-center justify-center
+}
+
+
+.SocialMedia__section{
+    @apply grid grid-cols-1 lg:grid-cols-2;    
+    @media screen and (min-width:1024px) { 
+        grid-template-columns: 200px 1fr;
+   }
+   
+}
+
+.SocialMedia__leftSection{
+    @apply text-left lg:text-center font-bold gap-12 justify-center text-primary uppercase
+}
+.__date{
+    @apply mb-6 text-7xl lg:text-9xl text-neutral-700 font-bold
+}
+
+.SocialMedia__RightSection{
+    @apply max-w-[650px]
+}
+.__rightData{
+@apply grid gap-4 
+}
+.__rightSideData{
+ @apply flex flex-col md:flex-row gap-4 pb-4 md:gap-12
+}
+
+.__rightInfo{
+    @apply grid gap-4 
+    }
+
+   

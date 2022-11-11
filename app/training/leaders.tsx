@@ -3,9 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import '@/styles/leaderSection.css';
 
-type Props = '';
-
-const Leaders = (props: Props) => {
+const Leaders = () => {
   return (
     <section id="Leaders" className="leader">
       <div className="leader__details">
@@ -16,11 +14,11 @@ const Leaders = (props: Props) => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt.
         </p>
-        <div className="leader__actions">
-          <Link href="/" className="btn btn--primary">
+        <div className="leader__actions ">
+          <Link href="/" className="btn btn--primary text-xs">
             BROWSE TEACHERS
           </Link>
-          <Link href="/" className="btn btn--secondary">
+          <Link href="/" className="btn btn--secondary text-xs">
             BECOME A TEACHER
           </Link>
         </div>
