@@ -353,8 +353,21 @@
     }
   }
 
-  .input {
-    @apply w-full rounded-full  py-5 px-6;
+  .newsletter {
+    @apply grid;
+    grid-template-columns: 3fr 2fr;
+
+    &__input {
+      @apply w-full rounded-full bg-neutral-100 py-5 px-6;
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
+    }
+
+    &__btn {
+      grid-row: 1 / -1;
+      grid-column: 2 / -1;
+      @apply m-2 !py-3 !px-4;
+    }
   }
 
   /* .card {

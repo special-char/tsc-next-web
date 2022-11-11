@@ -57,16 +57,16 @@ const footer = (props: Props) => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmo.
         </p>
-        <div className="footer__email relative">
+        <div className="newsletter">
           <input
-            className="input"
+            className="newsletter__input"
             placeholder="Enter your email"
             type="text"
             name=""
             id=""
           />
 
-          <button className="submit-btn btn btn--primary">Submit</button>
+          <button className="btn btn--primary newsletter__btn">Submit</button>
         </div>
       </div>
 
