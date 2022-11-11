@@ -3,6 +3,7 @@
 import Button from '@/ui/Button';
 import React from 'react';
 
+
 export default function BuggyButton() {
   const [clicked, setClicked] = React.useState(false);
 
