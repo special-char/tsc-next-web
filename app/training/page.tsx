@@ -9,6 +9,7 @@ import Perks from './perks';
 import Category from './category';
 import OurOffice from './ourOffice';
 import Contact from './contact';
+import Features from './features';
 
 type Props = {};
 
@@ -25,7 +26,8 @@ const Page = (props: Props) => {
       <Blogs />
       <Category />
       <OurOffice /> */}
-      <Contact />
+      {/* <Contact /> */}
+      <Features />
     </>
   );
 };
