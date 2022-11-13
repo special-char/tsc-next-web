@@ -37,6 +37,7 @@ const GrowCareer = () => {
             <p>{val.description}</p>
           </div>
         ))}
+        <div className="growcareer_bg"></div>
       </div>
     </section>
   );

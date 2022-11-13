@@ -5,62 +5,63 @@ import Image from 'next/image';
 import Link from 'next/link';
 type Props = {};
 
-const Event = (props: Props) => {
-  const data = [
-    {
-      id: 1,
-      title: 'Social Media Marketing Masterclass',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id.',
-      image:
-        'https://assets.website-files.com/607de2d8e8911e32707a3efe/6081c72dd73f4ebc33cc14dc_icon-date-education-x-template.svg',
-      month: 'JULY',
-      date: 24,
-      day: 'Sunday',
-      startTime: '5:00 pm',
-      endTime: '6:00 pm',
-    },
-    {
-      id: 2,
-      title: 'Brand & Identity Design QA with Sophie Moore',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id.',
-      image:
-        'https://assets.website-files.com/607de2d8e8911e32707a3efe/6081c72dd73f4ebc33cc14dc_icon-date-education-x-template.svg',
-      month: 'JULY',
-      date: 28,
-      day: 'Thursday',
-      startTime: '8:00 pm',
-      endTime: '9:00 pm',
-    },
-    {
-      id: 3,
-      title: 'Business Analytics Free Webinar',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id.',
-      image:
-        'https://assets.website-files.com/607de2d8e8911e32707a3efe/6081c72dd73f4ebc33cc14dc_icon-date-education-x-template.svg',
-      month: 'AUGUST',
-      date: 12,
-      day: 'Friday',
-      startTime: '6:00 pm',
-      endTime: '7:00 pm',
-    },
+const data = [
+  {
+    id: 1,
+    title: 'Social Media Marketing Masterclass',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id.',
+    image:
+      'https://assets.website-files.com/607de2d8e8911e32707a3efe/6081c72dd73f4ebc33cc14dc_icon-date-education-x-template.svg',
+    month: 'JULY',
+    date: 24,
+    day: 'Sunday',
+    startTime: '5:00 pm',
+    endTime: '6:00 pm',
+  },
+  {
+    id: 2,
+    title: 'Brand & Identity Design QA with Sophie Moore',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id.',
+    image:
+      'https://assets.website-files.com/607de2d8e8911e32707a3efe/6081c72dd73f4ebc33cc14dc_icon-date-education-x-template.svg',
+    month: 'JULY',
+    date: 28,
+    day: 'Thursday',
+    startTime: '8:00 pm',
+    endTime: '9:00 pm',
+  },
+  {
+    id: 3,
+    title: 'Business Analytics Free Webinar',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id.',
+    image:
+      'https://assets.website-files.com/607de2d8e8911e32707a3efe/6081c72dd73f4ebc33cc14dc_icon-date-education-x-template.svg',
+    month: 'AUGUST',
+    date: 12,
+    day: 'Friday',
+    startTime: '6:00 pm',
+    endTime: '7:00 pm',
+  },
 
-    {
-      id: 4,
-      title: 'Landing Page Optimization Masterclass',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id.',
-      image:
-        'https://assets.website-files.com/607de2d8e8911e32707a3efe/6081c72dd73f4ebc33cc14dc_icon-date-education-x-template.svg',
-      date: 18,
-      day: 'Thursday',
-      month: 'August',
-      startTime: '2:00 pm',
-      endTime: '4:00 pm',
-    },
-  ];
+  {
+    id: 4,
+    title: 'Landing Page Optimization Masterclass',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id.',
+    image:
+      'https://assets.website-files.com/607de2d8e8911e32707a3efe/6081c72dd73f4ebc33cc14dc_icon-date-education-x-template.svg',
+    date: 18,
+    day: 'Thursday',
+    month: 'August',
+    startTime: '2:00 pm',
+    endTime: '4:00 pm',
+  },
+];
+
+const Event = (props: Props) => {
   return (
     <section className=" px-4 py-4 md:mx-auto md:w-11/12 lg:grid-cols-2">
       {/* <div className="card__header">

@@ -72,7 +72,7 @@ const Contact = (props: Props) => {
                 <textarea
                   name=""
                   id=""
-                  rows="5"
+                  rows={5}
                   placeholder={formData.placeholder}
                   className="w-full rounded-2xl bg-neutral-200 px-4 py-2 outline-neutral-400 focus:outline"
                 ></textarea>
