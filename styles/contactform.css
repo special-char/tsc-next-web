@@ -1,5 +1,0 @@
-.contactform {
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  min-height: calc(theme(height.screen) - theme(spacing.16) - 30px);
-  @apply grid grid-cols-1 content-center items-center gap-8 bg-neutral-700 px-4 md:px-6 lg:grid-cols-2 lg:px-container;
-}
