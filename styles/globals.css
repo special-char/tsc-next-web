@@ -124,6 +124,37 @@
   .section {
     transition: flex 1000ms 150ms ease-in-out;
   }
+
+  details {
+    @apply mb-4 max-w-full rounded-md bg-neutral-100 px-8 py-4 text-left drop-shadow-lg;
+
+    & > summary {
+      @apply flex list-none items-start justify-start text-3xl font-bold text-neutral-500 md:items-center;
+
+      &::marker {
+        @apply hidden;
+      }
+
+      &::before {
+        content: '+';
+        @apply mr-8 aspect-square h-12 w-12 rotate-180 rounded-full bg-neutral-300 text-center text-6xl font-bold text-neutral-600 duration-300 md:h-12 md:w-12;
+      }
+    }
+    & > p {
+      @apply overflow-hidden border-none pt-2 pl-20 text-left text-base md:pl-20;
+    }
+  }
+
+  details[open] {
+    & > summary {
+      @apply text-primary;
+
+      &::before {
+        content: '-';
+        @apply bottom-2 flex rotate-[15px] items-center justify-center bg-primary pb-2 text-neutral-100 duration-300;
+      }
+    }
+  }
 }
 
 @layer components {

@@ -9,6 +9,8 @@ import Leaders from './leaders';
 import Footer from './footer';
 import GrowCareer from './growcareer';
 import Perks from './perks';
+import SocialMedia from './socialMedia';
+import Faq from './faq';
 import Contactform from './contactform';
 import Category from './category';
 
@@ -17,17 +19,13 @@ type Props = {};
 const Page = (props: Props) => {
   return (
     <>
+      <Faq />
+      <GrowCareer />
+      <Banner />
       <Event />
       <Education />
       <Aboutheader />
       <Achievements />
-      {/* <Banner />
-      <Courses />
-      <Perks />
-      <Leaders />
-      <GrowCareer />
-      <Category />
-      <Blogs /> */}
     </>
   );
 };
