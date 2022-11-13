@@ -158,9 +158,6 @@
 }
 
 @layer components {
-  .active {
-    @apply text-error;
-  }
   .btn {
     @apply inline-block rounded-full py-6 px-10 text-center text-base font-bold uppercase tracking-[0.08em];
     transition: transform 300ms ease, background-color 300ms ease;
@@ -208,10 +205,10 @@
   }
 
   .chip {
-    @apply inline-block rounded-full py-3 px-4 text-xs font-bold shadow-base sm:px-6;
+    @apply inline-block justify-between rounded-full py-4 px-4 text-xs font-bold shadow-base sm:px-6;
 
     &.icon {
-      @apply flex gap-2 py-4 px-6;
+      @apply flex justify-between gap-32 py-8 px-8;
     }
 
     &--primary {
@@ -384,6 +381,23 @@
 
     &__desc {
       @apply line-clamp-2;
+    }
+  }
+
+  .newsletter {
+    @apply grid;
+    grid-template-columns: 3fr 2fr;
+
+    &__input {
+      @apply w-full rounded-full bg-neutral-100 py-5 px-6;
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
+    }
+
+    &__btn {
+      grid-row: 1 / -1;
+      grid-column: 2 / -1;
+      @apply m-2 !py-3 !px-4;
     }
   }
 
