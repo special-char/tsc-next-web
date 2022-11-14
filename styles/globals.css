@@ -129,7 +129,7 @@
     @apply mb-4 max-w-full rounded-md bg-neutral-100 px-8 py-4 text-left drop-shadow-lg;
 
     & > summary {
-      @apply flex list-none items-start justify-start text-3xl font-bold text-neutral-500 md:items-center;
+      @apply flex cursor-pointer list-none items-start justify-start text-3xl font-bold text-neutral-600 md:items-center;
 
       &::marker {
         @apply hidden;
@@ -147,7 +147,7 @@
 
   details[open] {
     & > summary {
-      @apply text-primary;
+      @apply text-neutral-800;
 
       &::before {
         content: '-';
