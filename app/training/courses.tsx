@@ -64,7 +64,7 @@ const courses = [
 const Courses = (props: Props) => {
   return (
     <section id="courses" className="courses">
-      <h2 className="courses__title">Browse our popular courses</h2>
+      <h2 className="courses__title ">Browse our popular courses</h2>
       <Carousal>
         {courses.map((course) => (
           <Link key={course.id} href="/" className="card">
