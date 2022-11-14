@@ -29,26 +29,20 @@ const educationDetails = [
 ];
 const Education = (props: Props) => {
   return (
-    <section className="education justify-center">
-      <div className="">
+    <section className="education">
+      <div className=" education__header">
         <h2>About Educatoion</h2>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, et!</p>
       </div>
-
-      <div className="education__content justify-center overflow-hidden">
-        <div className="education__image ">
+      <div className=" main grid grid-cols-1 place-items-center justify-center gap-16 md:mx-auto lg:grid-cols-2">
+        <div className="education__image relative">
           <Image
-            src="https://tse3.mm.bing.net/th?id=OIP.u2M0ZzimPJTVuTAJjHe8qQHaJ4&pid=Api&P=0"
+            src="https://images.unsplash.com/photo-1579547621113-e4bb2a19bdd6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjJ8fHNvbGlkJTIwY29sb3J8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
             alt=""
-            height={500}
-            width={500}
-            className="rounded-lg"
+            fill
           />
         </div>
-        <div
-          className="education__content__tile item-center lg:w-fullmd:gap-2
-         justify-items-center md:mx-auto md:w-[70%] lg:gap-4"
-        >
+        <div className="education__content">
           {educationDetails.map((x) => (
             <>
               <Image
@@ -56,7 +50,7 @@ const Education = (props: Props) => {
                 alt="test"
                 height={48}
                 width={48}
-                className="mr-4 rounded-full "
+                className="rounded-full"
               />
               <div className="">
                 <h3>{x.name}</h3>
@@ -66,8 +60,7 @@ const Education = (props: Props) => {
           ))}
         </div>
       </div>
-
-      <div className="education__header  mt-8 ">
+      <div className="education__header">
         <Link href="/" className="btn btn--secondary">
           About Education
         </Link>
