@@ -345,34 +345,36 @@
   }
 
   .card {
-    @apply grid overflow-hidden rounded-2xl bg-neutral-100 shadow-dark;
+    @apply grid  transform overflow-hidden rounded-2xl shadow-dark transition duration-300 ease-in-out hover:translate-y-1 hover:scale-y-105;
 
     &__image {
-      @apply relative m-0;
+      @apply /*transition hover:scale-105; */ 
+      relative m-0 aspect-h-image duration-300 ease-in-out hover:translate-y-1;
     }
 
     &__body {
-      @apply p-8 pt-0;
+      @apply p-6 pt-0;
     }
 
     &__title {
-      @apply line-clamp-1;
+      @apply mt-6 duration-300 ease-in-out  hover:text-primary;
 
       &--line-2 {
         @apply line-clamp-2;
       }
     }
+    &__avatar {
+      @apply mr-4 aspect-square w-10 rounded-full;
+    }
 
     &__desc {
-      @apply line-clamp-2;
+      @apply text-neutral-500 line-clamp-4;
     }
-    &__rate {
-      @apply my-10 py-16 px-8 sm:w-full sm:grid-cols-1 md:grid-cols-2 md:gap-4 lg:w-1/3 lg:grid-cols-1;
+    &__f {
+      @apply grid sm:grid-rows-2 lg:grid-cols-2;
     }
-    &__course {
-      grid-row: 30% 70%;
-      width: 50%;
-      @apply my-10 w-5/12;
-    }
+  }
+  .price {
+    @apply my-10 grid overflow-hidden rounded-2xl py-16 px-8 shadow-dark sm:w-full sm:grid-cols-1  md:grid-cols-2 md:gap-4 lg:w-1/3 lg:grid-cols-1;
   }
 }
