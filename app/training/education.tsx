@@ -2,29 +2,32 @@ import '@/styles/education.css';
 import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
+import IndustrySvg from '@/public/icons/industry.svg';
+import UpdateSvg from '@/public/icons/update.svg';
+import CommunitySvg from '@/public/icons/community.svg';
 
 type Props = {};
-const educationDetails = [
+const educationData = [
   {
     id: 1,
     name: 'Industry expert teachers',
     description:
       'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id dolor ',
-    img: 'https://assets.website-files.com/607de2d8e8911e32707a3efe/607eedf6d7623a851c7feabb_icon-1-home-about-education-x-template.svg',
+    svg: <IndustrySvg />,
   },
   {
     id: 2,
     name: 'Up-to-date course content',
     description:
       'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id dolor ',
-    img: 'https://assets.website-files.com/607de2d8e8911e32707a3efe/607eedf6fe6961a78b192f8d_icon-2-home-about-education-x-template.svg',
+    svg: <UpdateSvg />,
   },
   {
     id: 3,
     name: 'Students community',
     description:
       'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id dolor ',
-    img: 'https://assets.website-files.com/607de2d8e8911e32707a3efe/607eedf6965e388154b41812_icon-3-home-about-education-x-template.svg',
+    svg: <CommunitySvg />,
   },
 ];
 const Education = (props: Props) => {
@@ -34,8 +37,8 @@ const Education = (props: Props) => {
         <h2>About Educatoion</h2>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, et!</p>
       </div>
-      <div className=" main grid grid-cols-1 place-items-center justify-center gap-16 md:mx-auto lg:grid-cols-2">
-        <div className="education__image relative">
+      <div className="education__body">
+        <div className="education__image">
           <Image
             src="https://images.unsplash.com/photo-1579547621113-e4bb2a19bdd6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjJ8fHNvbGlkJTIwY29sb3J8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
             alt=""
@@ -43,15 +46,11 @@ const Education = (props: Props) => {
           />
         </div>
         <div className="education__content">
-          {educationDetails.map((x) => (
+          {educationData.map((x) => (
             <>
-              <Image
-                src={x.img}
-                alt="test"
-                height={48}
-                width={48}
-                className="rounded-full"
-              />
+              <figure className="w-16 overflow-hidden rounded-full">
+                {x.svg}
+              </figure>
               <div className="">
                 <h3>{x.name}</h3>
                 <p>{x.description}</p>

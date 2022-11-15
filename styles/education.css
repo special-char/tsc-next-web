@@ -3,8 +3,12 @@
   &__header {
     @apply mt-8 text-center;
   }
+
+  &__body {
+    @apply grid grid-cols-1 place-items-center justify-center gap-16 md:mx-auto lg:grid-cols-2;
+  }
   &__image {
-    @apply h-full min-h-[300px] w-full overflow-hidden rounded-2xl;
+    @apply relative h-full min-h-[300px] w-full overflow-hidden rounded-2xl;
   }
   &__content {
     grid-template-columns: 80px 1fr;
