@@ -1,37 +1,38 @@
 import React from 'react';
 import '@/styles/faq.css';
 import PluseSvg from '../../public/icons/pluse.svg';
+import Accordian from '@/ui/Accordian';
 
 interface Props {}
-const Data = [
+const data = [
   {
     id: '1',
     title: 'Do you offer discounts for students?',
-    Description:
+    description:
       'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id dolor.',
   },
   {
     id: '2',
     title: 'Do you offer discounts for students?',
-    Description:
+    description:
       'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id dolor.',
   },
   {
     id: '3',
     title: 'Do you offer discounts for students?',
-    Description:
+    description:
       'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id dolor.',
   },
   {
     id: '4',
     title: 'Do you offer discounts for students?',
-    Description:
+    description:
       'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id dolor.',
   },
   {
     id: '5',
     title: 'Do you offer discounts for students?',
-    Description:
+    description:
       'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id dolor.',
   },
 ];
@@ -48,12 +49,7 @@ const Faq = (props: Props) => {
           </p>
         </div>
         <div className="faq__body">
-          {Data.map((val) => (
-            <details>
-              <summary>{val.title}</summary>
-              <p>{val.Description}</p>
-            </details>
-          ))}
+          <Accordian data={data} />
         </div>
       </div>
     </section>
