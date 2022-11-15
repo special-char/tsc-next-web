@@ -8,10 +8,17 @@
   }
   &__content {
     grid-template-columns: 80px 1fr;
-    @apply my-auto  grid  max-w-[600px] items-start justify-items-center gap-6 py-16 text-center md:text-left;
+    @apply my-auto  grid  max-w-[600px] items-start justify-items-center gap-6 text-center md:text-left lg:py-16;
 
     @media screen and (max-width: 767px) {
       @apply grid-cols-1;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    div:nth-child(2) {
+      div:nth-child(1) {
+        order: 2;
+      }
     }
   }
 }
