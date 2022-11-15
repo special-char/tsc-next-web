@@ -34,7 +34,7 @@ const Education = (props: Props) => {
         <h2>About Educatoion</h2>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, et!</p>
       </div>
-      <div className=" main grid grid-cols-1 place-items-center justify-center gap-16 md:mx-auto lg:grid-cols-2">
+      <div className="education__main">
         <div className="education__image relative">
           <Image
             src="https://images.unsplash.com/photo-1579547621113-e4bb2a19bdd6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjJ8fHNvbGlkJTIwY29sb3J8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
