@@ -1,5 +1,5 @@
 .education {
-  @apply grid justify-items-center gap-8 px-container py-24 sm:mx-auto md:py-36 lg:py-44;
+  @apply grid justify-items-center gap-8 px-container py-24 sm:mx-auto sm:px-sm-container md:py-36 lg:px-container lg:py-44;
   &__header {
     @apply mt-8 text-center;
   }
@@ -8,7 +8,7 @@
     @apply grid grid-cols-1 place-items-center justify-center gap-16 md:mx-auto lg:grid-cols-2;
   }
   &__image {
-    @apply relative h-full min-h-[300px] w-full overflow-hidden rounded-2xl;
+    @apply relative  min-h-[300px] w-full overflow-hidden rounded-2xl lg:min-h-[620px];
   }
   &__content {
     grid-template-columns: 80px 1fr;
