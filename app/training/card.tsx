@@ -20,9 +20,7 @@ const Card = (props: Props) => {
             nostrum, amet inventore doloremque quibusdam est!
           </p>
           <div className="">
-            <div
-            //   className="mb-8 h-16 w-full rounded-full bg-neutral-300 px-7 hover:border-2 hover:border-primary"
-            >
+            <div>
               <select
                 className="mb-8 h-16 w-full rounded-full bg-neutral-300 px-7 transition ease-in-out hover:border-2 hover:border-primary"
                 // className=" my-1 h-14 w-full bg-neutral-300"
