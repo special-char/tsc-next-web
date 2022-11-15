@@ -1,7 +1,6 @@
 .growcareer {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  min-height: calc(theme(height.screen) - theme(spacing.16) - 30px);
-  @apply grid grid-cols-1 content-center items-center gap-10 bg-primary py-14 px-4 text-center sm:px-sm-container md:py-16 lg:grid-cols-2 lg:gap-32 lg:py-20 lg:px-container lg:text-left;
+  @apply grid min-h-fit content-center items-center gap-4 bg-primary px-4 py-16 text-center sm:px-sm-container md:gap-16 lg:gap-32 lg:px-container;
 
   &__title {
     @apply text-neutral-100;
@@ -11,14 +10,27 @@
   }
 
   &__cards {
-    @apply grid items-center gap-8;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    @apply relative grid w-full items-center justify-items-center gap-5;
+    grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
   }
 
   &__card_details {
-    @apply w-full rounded-2xl bg-neutral-100 p-8 text-center shadow-base;
+    @apply z-10 flex w-full flex-col items-center justify-center rounded-2xl bg-neutral-100 py-8 px-6 text-center shadow-base sm:aspect-square;
     &:nth-child(2) {
       grid-row: span 2;
     }
+
+    & > h1 {
+      @apply mb-1;
+    }
+
+    & > p {
+      @apply m-0;
+    }
+  }
+
+  &_bg {
+    width: 65%;
+    @apply absolute aspect-square rounded-full bg-secondary3;
   }
 }

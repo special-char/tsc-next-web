@@ -1,11 +1,17 @@
+import Aboutheader from './aboutheader';
+import Achievements from './achievements';
 import Banner from './banner';
 import Blogs from './blogs';
-import Courses from './courses';
-import Leaders from './leaders';
-import GrowCareer from './growcareer';
-import Perks from './perks';
 import Category from './category';
-import Card from './card';
+import Contact from './contact/contact';
+import Courses from './courses';
+import Education from './education';
+import Event from './event';
+import Features from './features';
+import GrowCareer from './growcareer';
+import Leaders from './leaders';
+import Perks from './perks';
+import SocialMedia from './socialMedia';
 
 type Props = {};
 
@@ -17,9 +23,9 @@ const Page = (props: Props) => {
       <Perks />
       <Leaders />
       <GrowCareer />
+      <Education />
       <Category />
       <Blogs />
-      <Card />
     </>
   );
 };
