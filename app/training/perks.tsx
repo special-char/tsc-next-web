@@ -2,7 +2,7 @@ import '@/styles/perks.css';
 import PerksSvg from '@/public/icons/perks.svg';
 import Perks1Svg from '@/public/icons/perks1.svg';
 import Perks2Svg from '@/public/icons/perks2.svg';
-import PinkSvg from '@/public/icons/pinkarrow.svg';
+import PinkSeparatorArrow from '@/ui/PinkSeparatorArrow';
 
 type Props = {};
 const PerksData = [
@@ -42,9 +42,7 @@ const Perks = (props: Props) => {
           );
         })}
       </div>
-      <div className="absolute -bottom-16 z-10 w-12 md:-bottom-20 md:w-20 lg:-bottom-20 lg:w-20">
-        <PinkSvg />
-      </div>
+      <PinkSeparatorArrow />
     </section>
   );
 };

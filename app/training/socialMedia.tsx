@@ -1,8 +1,8 @@
 import React from 'react';
 import '@/styles/socialMedia.css';
 import Link from 'next/link';
-import ClockSvg from '../../public/icons/clock.svg';
-import MapSvg from '../../public/icons/map.svg';
+// import ClockSvg from '../../public/icons/clock.svg';
+// import MapSvg from '../../public/icons/map.svg';
 
 interface Props {}
 
@@ -18,10 +18,10 @@ const SocialMedia = (props: Props) => {
         <div className="SocialMedia__info  ">
           <div className="SocialMedia__RightSection">
             <div className="__rightData">
-              <div className="__rightSideData">
-                <ClockSvg />
+              <div className="__rightSideData w-16">
+                {/* <ClockSvg /> */}
                 <h6>Sunday 5:00 pm - 6:00 pm EDT</h6>
-                <MapSvg />
+                {/* <MapSvg /> */}
                 <h6>Los Angeles, LA</h6>
               </div>
               <div className="__dataInfo grid gap-4">

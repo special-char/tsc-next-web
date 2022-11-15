@@ -1,9 +1,11 @@
-import Accordian from '@/ui/Accordian';
+import Contact from './contact';
+import Faq from './faq';
 
 const Page = () => {
   return (
     <div>
-      <Accordian />
+      <Contact />
+      <Faq />
     </div>
   );
 };

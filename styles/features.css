@@ -1,0 +1,14 @@
+.features {
+  @apply grid min-h-full w-full grid-cols-1 px-container pt-20;
+  @media only screen and (min-width: 1010px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__body {
+    @apply grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-4;
+  }
+
+  &__title {
+    @apply text-left md:text-center lg:text-left;
+  }
+}

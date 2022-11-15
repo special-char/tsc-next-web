@@ -35,7 +35,7 @@ const links = [
   { page: 'Individual Teacher' },
   { page: 'Contact' },
 ];
-const footer = (props: Props) => {
+const Footer = (props: Props) => {
   return (
     <section id="footer" className="footer">
       <h1 className="text-neutral-100">TSC</h1>
@@ -97,4 +97,4 @@ const footer = (props: Props) => {
   );
 };
 
-export default footer;
+export default Footer;

@@ -1,7 +1,24 @@
-type Props = {};
+type AccordianType = {
+  id: number;
+  title: string;
+  description: string;
+};
 
-const Accordian = (props: Props) => {
-  return <div>Accordian</div>;
+type Props = {
+  data: [AccordianType];
+};
+
+const Accordian = ({ data }: Props) => {
+  return (
+    <>
+      {data.map((val) => (
+        <details>
+          <summary>{val.title}</summary>
+          <p>{val.description}</p>
+        </details>
+      ))}
+    </>
+  );
 };
 
 export default Accordian;
