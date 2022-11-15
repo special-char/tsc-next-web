@@ -9,23 +9,25 @@ import GrowCareer from './growcareer';
 import Perks from './perks';
 import Contactform from './contactform';
 import Category from './category';
+import Aboutheader from './aboutheader';
+import Achievements from './achievements';
 
 type Props = {};
 
 const Page = (props: Props) => {
   return (
     <>
-      {/* <Banner />
+      <Banner />
       <Courses />
       <Perks />
       <Leaders />
       <GrowCareer />
-     <Category />
+      <Category />
       <Blogs />
-      <Event /> */}
+      <Event />
       <Education />
-      {/* <Aboutheader />
-      <Achievements /> */}
+      <Aboutheader />
+      <Achievements />
     </>
   );
 };
