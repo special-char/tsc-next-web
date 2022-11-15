@@ -2,18 +2,7 @@
   display: grid;
 
   @apply grid justify-between justify-items-center overflow-hidden rounded-2xl bg-neutral-100  shadow-dark lg:grid-cols-2 lg:grid-rows-1;
-  &__figure {
-    @apply relative m-0 aspect-h-image w-full p-0;
-  }
-  /* &__header {
-    display: grid;
-    grid-column: 1 / -1;
-  } */
-  /* &__data {
-    display: grid;
-    margin-left: auto;
-    grid-template-columns: 70% 30%;
-  } */
+
   &__content {
     @apply flex  justify-between gap-x-2 p-4;
   }
@@ -30,8 +19,4 @@
   &__desc {
     @apply p-0 line-clamp-3;
   }
-  /* @media screen and (min-width: 760px) {
-    @apply gap-4;
-    grid-template-columns: repeat(2, auto);
-  } */
 }
