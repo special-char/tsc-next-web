@@ -1,0 +1,11 @@
+.found {
+  @apply flex flex-wrap-reverse justify-center py-14  px-4 md:flex-col-reverse md:items-center lg:flex-row;
+
+  &__content {
+    @apply grid content-center justify-center text-center md:max-w-[600px] lg:mr-20 lg:grid-flow-row  lg:text-start;
+  }
+
+  &__btn {
+    @apply grid gap-6 md:grid-cols-2;
+  }
+}
