@@ -13,6 +13,7 @@ import GrowCareer from './growcareer';
 import Leaders from './leaders';
 import Perks from './perks';
 import SocialMedia from './socialMedia';
+import TeacherCard from './teachercard';
 
 type Props = {};
 
