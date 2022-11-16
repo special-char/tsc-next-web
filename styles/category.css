@@ -1,12 +1,12 @@
 .category {
-  @apply grid min-h-fit content-center items-center px-4 sm:px-sm-container lg:px-container;
+  @apply grid min-h-fit content-center items-center px-4 pb-20 pt-24 sm:px-sm-container md:pt-28 lg:px-container lg:pt-36;
 
   &__title {
     @apply mb-10 text-center text-neutral-700;
   }
 
   &__content {
-    @apply grid w-full gap-8;
+    @apply grid w-full gap-8 pb-16 lg:pb-24;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 

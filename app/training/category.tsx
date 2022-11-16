@@ -1,8 +1,8 @@
 import '@/styles/category.css';
-import DesignSvg from '../../public/icons/design_course.svg';
-import DevelopmentSvg from '../../public/icons/development.svg';
-import MarketingSvg from '../../public/icons/marketing.svg';
-import YellowSvg from '../../public/icons/yellow.svg';
+import SeparatorArray from '@/ui/SeparatorArray';
+import DesignSvg from '@/public/icons/design_course.svg';
+import DevelopmentSvg from '@/public/icons/development.svg';
+import MarketingSvg from '@/public/icons/marketing.svg';
 
 type Props = {};
 const CategoryData = [
@@ -24,7 +24,7 @@ const CategoryData = [
 ];
 const Category = (props: Props) => {
   return (
-    <section id="category" className="category">
+    <section id="category" className="category relative">
       <h2 className="category__title">Browse our courses by category</h2>
       <div className="category__content">
         {CategoryData.map((category) => {
@@ -39,9 +39,7 @@ const Category = (props: Props) => {
           );
         })}
       </div>
-      <div className="absolute -bottom-20 z-10 w-14 lg:mt-10">
-        <YellowSvg />
-      </div>
+      <SeparatorArray />
     </section>
   );
 };

@@ -1,5 +1,5 @@
 .perks {
-  @apply relative grid min-h-screen content-center justify-items-center bg-neutral-700 px-container py-24 text-center text-neutral-100 lg:py-48;
+  @apply relative grid min-h-screen content-center justify-items-center  bg-neutral-700 py-24 px-container text-center text-neutral-100 sm:px-sm-container lg:px-container  lg:py-48;
 
   &__title {
     @apply mb-10 text-neutral-100 lg:mb-14;
@@ -7,7 +7,7 @@
 
   &__content {
     @apply grid w-full gap-8;
-    grid-template-columns: repeat(auto-fit, minmax(theme(screens.xs), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     @media screen and (max-width: theme(screens.lg)) and (min-width: theme(screens.sm)) {
       grid-template-columns: repeat(auto-fit, minmax(512px, 1fr));
     }

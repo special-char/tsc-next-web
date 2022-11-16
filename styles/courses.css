@@ -1,8 +1,8 @@
 .courses {
-  @apply grid min-h-screen place-content-center justify-items-center bg-neutral-200;
+  @apply grid min-h-screen place-content-center justify-items-center bg-neutral-200 py-24;
   grid-template-rows: repeat(3, auto);
 
   &__title {
-    @apply mb-10 md:mb-14;
+    @apply mb-10 px-4 text-center md:mb-14;
   }
 }
