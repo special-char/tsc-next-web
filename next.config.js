@@ -21,6 +21,7 @@ const nextConfig = {
       'tse3.mm.bing.net',
       'images.unsplash.com',
       'media.istockphoto.com',
+      'images.pexels.com',
     ],
   },
 };
