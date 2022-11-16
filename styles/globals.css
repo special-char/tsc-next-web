@@ -360,7 +360,7 @@
     }
   }
 
-  .card {
+  /* .card {
     @apply grid h-full overflow-hidden rounded-2xl bg-neutral-100 shadow-dark;
 
     &__image {
@@ -382,7 +382,7 @@
     &__desc {
       @apply line-clamp-2;
     }
-  }
+  } */
 
   .newsletter {
     @apply grid;
