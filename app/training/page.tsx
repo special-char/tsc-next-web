@@ -11,17 +11,21 @@ import Faq from './faq';
 import Contactform from './contactform';
 import Category from './category';
 import OurOffice from './ourOffice';
+import Testimonial from './testimonial';
+import Rating from './rating';
 
 type Props = {};
 
 const Page = (props: Props) => {
   return (
     <>
+      {/* <Testimonial /> */}
+      <Rating />
       {/* <Banner /> */}
       {/* <Courses /> */}
       {/* <Perks /> */}
-      <Faq />
-      {/* <SocialMedia /> */}
+      {/* <Faq />
+      <SocialMedia /> */}
       {/* <Leaders /> */}
       {/* <Companyhistory /> */}
       {/* <Banner /> */}
@@ -31,11 +35,11 @@ const Page = (props: Props) => {
       {/* <Leaders />
       <Companyhistory />
       <Banner /> */}
-      <GrowCareer />
-      <Footer />
+      {/* <GrowCareer />
+      <Footer /> */}
       {/* <Blogs />
       <Contactform /> */}
-      <Banner />
+      {/* <Banner />
       <Courses />
       <Perks />
       <Leaders />
@@ -44,7 +48,7 @@ const Page = (props: Props) => {
       <Footer />
       <Blogs />
       <Category />
-      <OurOffice />
+      <OurOffice /> */}
     </>
   );
 };
