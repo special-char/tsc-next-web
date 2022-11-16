@@ -1,3 +1,4 @@
+import Card from '@/ui/Card';
 import Aboutheader from './aboutheader';
 import Achievements from './achievements';
 import Banner from './banner';
@@ -18,17 +19,17 @@ type Props = {};
 
 const Page = (props: Props) => {
   return (
-    <>
+    <div className="bg-secondary1 p-14">
+      <Card />
       {/* <Banner />
       <Courses />
       <Perks />
       <Leaders />
       <GrowCareer />
       <Education />
-      <Category /> */}
-      {/* <Blogs /> */}
-      <TeacherCard />
-    </>
+      <Category />
+      <Blogs /> */}
+    </div>
   );
 };
 
