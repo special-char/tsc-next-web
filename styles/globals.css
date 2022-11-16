@@ -158,9 +158,6 @@
 }
 
 @layer components {
-  .active {
-    @apply text-error;
-  }
   .btn {
     @apply inline-block rounded-full py-6 px-10 text-center text-base font-bold uppercase tracking-[0.08em];
     transition: transform 300ms ease, background-color 300ms ease;
@@ -208,10 +205,10 @@
   }
 
   .chip {
-    @apply inline-block rounded-full py-3 px-4 text-xs font-bold shadow-base sm:px-6;
+    @apply flex items-center justify-center  rounded-full py-3 px-4 align-middle text-xs font-bold shadow-base sm:px-6;
 
     &.icon {
-      @apply flex gap-2 py-4 px-6;
+      @apply flex justify-between gap-32 py-8 px-8;
     }
 
     &--primary {
@@ -387,6 +384,23 @@
     }
   }
 
+  .newsletter {
+    @apply grid;
+    grid-template-columns: 3fr 2fr;
+
+    &__input {
+      @apply w-full rounded-full bg-neutral-100 py-5 px-6;
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
+    }
+
+    &__btn {
+      grid-row: 1 / -1;
+      grid-column: 2 / -1;
+      @apply m-2 !py-3 !px-4;
+    }
+  }
+
   /* .card {
     @apply relative flex min-h-full flex-col overflow-hidden rounded-[20px] bg-neutral-100 shadow-base;
     transform: translate(0px, 0px);
@@ -429,4 +443,16 @@
       @apply mb-0 flex min-h-[200px] items-center justify-center;
     }
   } */
+
+  .form {
+    @apply w-full px-4;
+
+    &__label {
+      @apply m-0 mb-3 text-xl;
+    }
+
+    &__input {
+      @apply h-14 w-full rounded-full bg-neutral-200 px-6 py-2 outline-neutral-400 focus:outline;
+    }
+  }
 }

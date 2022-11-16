@@ -29,15 +29,11 @@ const Category = (props: Props) => {
       <div className="category__content">
         {CategoryData.map((category) => {
           return (
-            <div className="category__item">
-              <div className="category__card">
-                <figure className="category__card__figure">
-                  {category.svg}
-                </figure>
-                <div className="category__card__content">
-                  <h3 className="category__card__title">{category.title}</h3>
-                  <p className="category__card__desc">{category.description}</p>
-                </div>
+            <div className="category__card">
+              <figure className="category__card__figure">{category.svg}</figure>
+              <div className="category__card__content">
+                <h3 className="category__card__title">{category.title}</h3>
+                <p className="category__card__desc">{category.description}</p>
               </div>
             </div>
           );

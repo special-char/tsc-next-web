@@ -1,10 +1,15 @@
+import Aboutheader from './aboutheader';
+import Achievements from './achievements';
 import Banner from './banner';
-import Companyhistory from './companyhistory';
 import Blogs from './blogs';
+import Category from './category';
+import Contact from './contact/contact';
 import Courses from './courses';
-import Leaders from './leaders';
-import Footer from './footer';
+import Education from './education';
+import Event from './event';
+import Features from './features';
 import GrowCareer from './growcareer';
+import Leaders from './leaders';
 import Perks from './perks';
 import SocialMedia from './socialMedia';
 import Faq from './faq';
@@ -19,35 +24,14 @@ type Props = {};
 const Page = (props: Props) => {
   return (
     <>
-      {/* <Testimonial /> */}
-      <Rating />
-      {/* <Banner /> */}
-      {/* <Courses /> */}
-      {/* <Perks /> */}
-      {/* <Faq />
-      <SocialMedia /> */}
-      {/* <Leaders /> */}
-      {/* <Companyhistory /> */}
-      {/* <Banner /> */}
-      {/* <GrowCareer /> */}
-      {/* <Footer /> */}
-      {/* <Blogs />  */}
-      {/* <Leaders />
-      <Companyhistory />
-      <Banner /> */}
-      {/* <GrowCareer />
-      <Footer /> */}
-      {/* <Blogs />
-      <Contactform /> */}
-      {/* <Banner />
+      <Banner />
       <Courses />
       <Perks />
       <Leaders />
-      <Companyhistory />
       <GrowCareer />
-      <Footer />
-      <Blogs />
+      <Education />
       <Category />
+      <Blogs />
       <OurOffice /> */}
     </>
   );

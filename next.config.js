@@ -15,7 +15,13 @@ const nextConfig = {
     return config;
   },
   images: {
-    domains: ['assets.website-files.com', 'ik.imagekit.io', 'placeimg.com'],
+    domains: [
+      'assets.website-files.com',
+      'ik.imagekit.io',
+      'tse3.mm.bing.net',
+      'images.unsplash.com',
+      'media.istockphoto.com',
+    ],
   },
 };
 

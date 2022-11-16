@@ -6,6 +6,7 @@ import React, {
   useRef,
   useState,
   PropsWithChildren,
+  ReactElement,
 } from 'react';
 import clsx from 'clsx';
 
@@ -25,7 +26,7 @@ const Carousal = ({ children }: Props) => {
 
   const scrollLeft = useCallback(() => {
     if (scrollerRef.current && element) {
-      const paddingLeft = parseInt(getComputedStyle(element)['padding-left']);
+      const paddingLeft = parseInt(getComputedStyle(element)?.paddingLeft);
       scrollerRef.current.scrollTo({
         left:
           scrollerRef.current.scrollLeft + (element.clientWidth - paddingLeft),
@@ -40,7 +41,7 @@ const Carousal = ({ children }: Props) => {
 
   const scrollRight = useCallback(() => {
     if (scrollerRef.current && element) {
-      const paddingRight = parseInt(getComputedStyle(element)['padding-right']);
+      const paddingRight = parseInt(getComputedStyle(element)?.paddingLeft);
       scrollerRef.current.scrollTo({
         left:
           scrollerRef.current.scrollLeft - (element.clientWidth - paddingRight),
@@ -57,8 +58,10 @@ const Carousal = ({ children }: Props) => {
     <div className="carousal">
       <div ref={scrollerRef} className="carousal__scroller">
         {React.Children.map(children, (child) => {
-          const { className } = child.props;
-          return React.cloneElement(child, {
+          const item = child as ReactElement<PropsWithChildren<any>>;
+
+          const { className } = item?.props;
+          return React.cloneElement(item, {
             className: clsx('carousal__items', {
               [className]: !!className,
             }),
