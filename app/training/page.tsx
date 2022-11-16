@@ -12,20 +12,22 @@ import GrowCareer from './growcareer';
 import Leaders from './leaders';
 import Perks from './perks';
 import SocialMedia from './socialMedia';
+import TeacherCard from './teachercard';
 
 type Props = {};
 
 const Page = (props: Props) => {
   return (
     <>
-      <Banner />
+      {/* <Banner />
       <Courses />
       <Perks />
       <Leaders />
       <GrowCareer />
       <Education />
-      <Category />
+      <Category /> */}
       {/* <Blogs /> */}
+      <TeacherCard />
     </>
   );
 };

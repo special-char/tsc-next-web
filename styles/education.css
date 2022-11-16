@@ -8,11 +8,11 @@
     @apply grid grid-cols-1 place-items-center justify-center gap-16 md:mx-auto lg:grid-cols-2;
   }
   &__image {
-    @apply relative  min-h-[300px] w-full overflow-hidden rounded-2xl lg:min-h-[620px];
+    @apply relative  min-h-[300px] w-full overflow-hidden rounded-2xl lg:min-h-[600px];
   }
   &__content {
     grid-template-columns: 80px 1fr;
-    @apply my-auto  grid  max-w-[600px] items-start justify-items-center gap-6 text-center md:text-left lg:py-16;
+    @apply my-auto grid max-w-[600px] items-start justify-items-center text-center md:text-left lg:gap-6;
 
     @media screen and (max-width: 767px) {
       @apply grid-cols-1;
