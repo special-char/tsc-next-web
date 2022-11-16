@@ -18,6 +18,7 @@ const nextConfig = {
     domains: [
       'assets.website-files.com',
       'ik.imagekit.io',
+      'placeimg.com',
       'tse3.mm.bing.net',
       'images.unsplash.com',
       'media.istockphoto.com',
