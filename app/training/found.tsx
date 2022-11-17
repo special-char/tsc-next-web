@@ -6,7 +6,7 @@ type Props = {};
 
 const Found = (props: Props) => {
   return (
-    <section className="found">
+    <section className="found ">
       <div className="found__content">
         <p>Page not found</p>
         <h2>The page you are looking for doesn't exist or has been moved.</h2>
