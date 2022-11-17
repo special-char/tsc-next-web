@@ -19,6 +19,7 @@ const nextConfig = {
       'assets.website-files.com',
       'ik.imagekit.io',
       'placeimg.com',
+      'website-files.com',
       'tse3.mm.bing.net',
       'images.unsplash.com',
       'media.istockphoto.com',
