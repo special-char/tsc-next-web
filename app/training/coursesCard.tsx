@@ -1,49 +1,55 @@
-import '@/styles/courses.css';
+import React from 'react';
 import Link from 'next/link';
 
 type Props = {};
 
-const courses = [
+const avatarData = [
   {
-    id: 1,
-    name: 'Graphic Design',
-    description:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime dolores aperiam dolorem reprehenderit, architecto magni labore deserunt. Quae, eos ipsa!',
-    url: 'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2e01cbd8323965e6629a_image-6-courses-education-x-template.jpg',
-    trainer: {
-      avatar: '',
-      name: '',
-    },
+    name: 'Kathie Crol',
+    url: 'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f1ff9fd9e0e1686d26497_image-3-profile-picture-small-teacher-education-x-template.jpg',
   },
 ];
 
-const CoursesCard = (props: Props) => {
+const coursesCard = (props: Props) => {
   return (
-    <section id="coursescard" className="coursescard">
-      {courses.map((course) => (
-        <Link key={course.id} href="/" className="card">
-          <figure className="card__image">
-            <img src={course.url} alt={course.name} />
-          </figure>
-          <div className="card__body">
-            <h3 className="card__title">{course.name}</h3>
-            <p className="card__desc">{course.description}</p>
-            <div className="card__actions">
-              <div className="avatar placeholder w-16">
-                <div>
-                  <img
-                    src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f1ff9fd9e0e1686d26497_image-3-profile-picture-small-teacher-education-x-template.jpg"
-                    alt="Kathie Corl"
-                  />
-                </div>
-                <h3>Dhara</h3>
-              </div>
-            </div>
+    <section id="coursescard" className=" px-container">
+      <Link href="#" className="card lg:grid-cols-2">
+        <div className="card__image ">
+          <img
+            src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2e01cbd8323965e6629a_image-6-courses-education-x-template-p-1080.jpeg"
+            alt="image"
+          />
+          <div className="card__chipset left-3 flex-col md:flex-row">
+            <span className="card__chipset__chip card__chipset__chip--secondary text-center">
+              7hr56m
+            </span>
+            <span className=" card__chipset__chip card__chipset__chip--primary">
+              $199.00 USD
+            </span>
           </div>
-        </Link>
-      ))}
+        </div>
+
+        <div className="card__body">
+          <h2 className="card__title">Lorem, ipsum dolor.</h2>
+          <p className="card__desc">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Voluptatibus eius nesciunt cupiditate iure obcaecati a dicta non
+            temporibus quis deserunt.
+          </p>
+          <div className="card__actions">
+            {avatarData.map((avatarData) => (
+              <>
+                <div className="card__avatar placeholder w-16">
+                  <img src={avatarData.url} alt={avatarData.name} />
+                </div>
+                <h3>{avatarData.name}</h3>
+              </>
+            ))}
+          </div>
+        </div>
+      </Link>
     </section>
   );
 };
 
-export default CoursesCard;
+export default coursesCard;
