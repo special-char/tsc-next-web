@@ -3,7 +3,7 @@ import { cookies, headers, previewData } from 'next/headers';
 
 const HooksServer = () => {
   return (
-    <div className="overflow-x-auto rounded-xl py-4 px-2 text-sm text-white [color-scheme:dark]">
+    <div className="text-white overflow-x-auto rounded-xl py-4 px-2 text-sm [color-scheme:dark]">
       <pre>
         {JSON.stringify(
           {
