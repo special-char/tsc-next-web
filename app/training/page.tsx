@@ -5,6 +5,8 @@ import Education from './education';
 import GrowCareer from './growcareer';
 import Leaders from './leaders';
 import Perks from './perks';
+import Blogs from './blogs';
+import CoursesCard from './coursescard';
 
 type Props = {};
 
@@ -21,6 +23,7 @@ const Page = (props: Props) => {
       <Education />
       <Category />
       {/* <Blogs /> */}
+      <CoursesCard />
     </>
   );
 };
