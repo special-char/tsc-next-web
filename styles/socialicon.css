@@ -1,0 +1,9 @@
+.socialicons {
+  @apply grid gap-2 md:w-4/5 lg:justify-end lg:pb-4;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 20px));
+}
+@media screen and (min-width: 1024px) {
+  div:nth-of-type(5) {
+    order: 6;
+  }
+}
