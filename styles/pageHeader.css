@@ -1,0 +1,18 @@
+.page__section {
+  @apply relative h-auto w-full;
+}
+.page__body {
+  @apply relative overflow-hidden bg-neutral-200;
+}
+.page__pages {
+  @apply mx-auto max-w-7xl py-20 px-8;
+}
+.page__detail {
+  @apply mx-auto text-center md:w-1/2 lg:pb-20;
+}
+.circle__blue {
+  @apply absolute -top-36 -right-20 z-10 h-[167px] rounded-full bg-primary md:-top-52 md:-right-40 md:h-[300px] md:w-[300px] lg:-top-60 lg:-right-28 lg:h-[400px] lg:w-[400px];
+}
+.circle__orange {
+  @apply absolute -left-20 -bottom-36 z-10 h-[167px] w-[167px] rounded-full bg-secondary3 md:-left-40 md:-bottom-48 md:h-[300px]  md:w-[300px] lg:-bottom-60 lg:-left-40 lg:h-[420px] lg:w-[420px];
+}
