@@ -6,7 +6,7 @@ import GrowCareer from './growcareer';
 import Leaders from './leaders';
 import Perks from './perks';
 import Blogs from './blogs';
-import CoursesCard from './coursescard';
+import BlogSubscribe from './blogSubscribe';
 
 type Props = {};
 
@@ -15,15 +15,15 @@ const rating = 4;
 const Page = (props: Props) => {
   return (
     <>
-      <Banner />
+      {/* <Banner />
       <Courses />
       <Perks />
       <Leaders />
       <GrowCareer />
       <Education />
       <Category />
-      {/* <Blogs /> */}
-      <CoursesCard />
+      <Blogs /> */}
+      <BlogSubscribe />
     </>
   );
 };
