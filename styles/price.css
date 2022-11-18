@@ -24,7 +24,7 @@
     padding: 1rem;
     padding-right: 2rem;
 
-    @apply mb-8 h-16 w-full rounded-full bg-neutral-300 px-7 transition ease-in-out hover:border-2 hover:border-primary;
+    @apply mb-8 h-16 w-full rounded-full bg-neutral-100 px-7 transition ease-in-out hover:border-2 hover:border-primary;
   }
 }
 .btn {

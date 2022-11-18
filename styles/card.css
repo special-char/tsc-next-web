@@ -1,5 +1,5 @@
 .card {
-  @apply my-20 grid transform overflow-hidden rounded-2xl shadow-dark transition duration-300 ease-in-out hover:translate-y-1 hover:scale-y-105 md:max-w-full lg:max-w-lg;
+  @apply my-20 grid overflow-hidden rounded-2xl shadow-dark;
 
   &__image {
     @apply relative  duration-300 ease-in-out hover:translate-y-1;
