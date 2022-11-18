@@ -1,6 +1,7 @@
 import React from 'react';
 import RightSvg from '@/public/icons/right.svg';
 import '@/styles/ourWorks.css';
+import PinkSeparatorArrow from '@/ui/PinkSeparatorArrow';
 
 type Props = {};
 const Data2 = [
@@ -53,14 +54,20 @@ const OurWorks = (props: Props) => {
           <div className="ourWorks__sections">
             <div className="ourWorks__chipLine">
               <div className="ourWorks__svg rounded-full">{val.svg}</div>
-              <div className="ourWorks__chip chip chip--white">
-                <span className="font-bold text-neutral-700">{val.chip}</span>
+              <div className="ourWorks__chip chip chip--white font-bold text-neutral-700">
+                {val.chip}
               </div>
             </div>
             <h3 className="ourWorks__h3 ">{val.title}</h3>
             <p className="ourWorks__p">{val.description}</p>
           </div>
         ))}
+      </div>
+      <div>
+        {' '}
+        <div className="ourWorks__arrow">
+          <PinkSeparatorArrow />
+        </div>
       </div>
     </section>
   );

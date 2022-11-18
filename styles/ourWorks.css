@@ -1,5 +1,5 @@
 .ourWorks {
-  @apply min-h-screen content-center items-center justify-center gap-6 bg-neutral-700 py-24 px-4 md:px-8 lg:px-container;
+  @apply relative min-h-screen content-center items-center justify-center gap-6 bg-neutral-700 py-24 px-4 md:py-36 md:px-8 lg:py-44 lg:px-container;
 }
 .ourWorks__header {
   @apply flex flex-col justify-center pb-8 text-center;
@@ -27,4 +27,7 @@
 }
 .ourWorks__p {
   @apply text-neutral-600 line-clamp-3;
+}
+.ourWorks__arrow {
+  @apply flex items-center justify-center;
 }
