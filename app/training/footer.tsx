@@ -91,9 +91,7 @@ const Footer = (props: Props) => {
           />
         ))}
       </div> */}
-      <div>
-        <SocialIcon />
-      </div>
+      <SocialIcon />
       <p className="mb-0 text-neutral-100">
         Copyright © TSC | Designed by TSC - Powered by TSC
       </p>
