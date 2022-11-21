@@ -1,3 +1,4 @@
+import PageHeader from '@/ui/pageHeader';
 import Banner from './banner';
 import Category from './category';
 import Courses from './courses';
@@ -15,6 +16,14 @@ const rating = 4;
 const Page = (props: Props) => {
   return (
     <>
+      <PageHeader
+        title="Blogs"
+        desc="hello from desc"
+        className="customClass"
+        circleRight="bg-primary"
+        circleLeft="bg-secondary3"
+      />
+
       <OurWorks />
       <Testimonial />
       <Banner />
@@ -24,8 +33,6 @@ const Page = (props: Props) => {
       <GrowCareer />
       <Education />
       <Category />
-
-      {/* <Blogs />  */}
     </>
   );
 };

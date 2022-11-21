@@ -1,28 +1,40 @@
 import React from 'react';
 import '@/styles/pageHeader.css';
-
+import clsx from 'clsx';
 import SeparatorArray from './SeparatorArray';
+type Props = {
+  className: any;
+  title: string;
+  desc: string;
+  circleRight: any;
+  circleLeft: any;
+};
 
-type Props = {};
-
-const pageHeader = (props: Props) => {
+const PageHeader = ({
+  className,
+  title,
+  desc,
+  circleRight,
+  circleLeft,
+}: Props) => {
   return (
-    <section className="page__section">
-      <div className="page__body">
+    <section className={clsx('page__section', { [className]: !!className })}>
+      <div className={clsx('page__body', { [className]: !!className })}>
         <div className="page__pages">
           <div className="page__detail">
-            <h1 className="text-neutral-700">Blog</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna.
-            </p>
+            <h1 className="text-neutral-700">{title}</h1>
+            <p>{desc}</p>
           </div>
         </div>
-        <div className="circle__blue"></div>
-        <div className="circle__orange"></div>
+        <div
+          className={clsx('circle__right', { [circleRight]: !!circleRight })}
+        ></div>
+        <div
+          className={clsx('circle__left', { [circleRight]: !circleLeft })}
+        ></div>
       </div>
       <SeparatorArray />
     </section>
   );
 };
-export default pageHeader;
+export default PageHeader;
