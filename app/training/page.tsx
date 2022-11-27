@@ -3,9 +3,13 @@ import Banner from './banner';
 import Category from './category';
 import Courses from './courses';
 import Education from './education';
+import Event from './event';
+import Features from './features';
+import Found from './found';
 import GrowCareer from './growcareer';
 import Leaders from './leaders';
 import Perks from './perks';
+import Teacherscard from './teacherscard';
 import OurWorks from './teacher/ourWorks';
 import Testimonial from './testimonial';
 import Blogs from './blogs';
@@ -25,7 +29,6 @@ const Page = (props: Props) => {
         circleRight="bg-primary"
         circleLeft="bg-secondary3"
       />
-
       <OurWorks />
       <Testimonial />
       <Banner />
@@ -35,6 +38,9 @@ const Page = (props: Props) => {
       <GrowCareer />
       <Education />
       <Category />
+      {/* <Blogs /> */}
+      <Found />
+      <Teacherscard />
       <Blogs />
       {/* <BlogSubscribe /> */}
     </>
