@@ -18,10 +18,13 @@ const nextConfig = {
     domains: [
       'assets.website-files.com',
       'ik.imagekit.io',
+      'placeimg.com',
+      'website-files.com',
       'tse3.mm.bing.net',
       'images.unsplash.com',
       'media.istockphoto.com',
       'images.pexels.com',
+      'placeimg.com',
     ],
   },
   typescript: {
