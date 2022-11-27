@@ -1,10 +1,4 @@
 import React from 'react';
-import FacebookSvg from '@/public/icons/facebook.svg';
-import TwitterSvg from '@/public/icons/twitter.svg';
-import InstagramSvg from '@/public/icons/instagram.svg';
-import LinkedinSvg from '@/public/icons/linkedin.svg';
-import YoutubeSvg from '@/public/icons/youtube.svg';
-import WhatsappSvg from '@/public/icons/whatsapp.svg';
 import '@/styles/socialicon.css';
 import Icon from '@/ui/Icon';
 import Link from 'next/link';

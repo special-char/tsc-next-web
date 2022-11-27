@@ -1,10 +1,9 @@
 .blogs {
-  @apply grid min-h-screen grid-cols-1 content-center items-center justify-items-center gap-8 px-container sm:px-sm-container lg:grid-cols-2 lg:justify-items-start lg:px-container;
-  /* grid-template-columns: repeat(auto-fit, minmax(416px, 1fr)); */
+  @apply grid min-h-screen grid-cols-1 content-center justify-items-center gap-8 px-container sm:px-sm-container lg:grid-cols-2 lg:justify-items-start lg:px-container;
   grid-template-rows: repeat(4, auto);
 
   &__title {
-    @apply m-0;
+    @apply my-auto;
   }
 
   &__btn {
