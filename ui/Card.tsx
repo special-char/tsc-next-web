@@ -12,7 +12,6 @@ export default function Card() {
         />
         <div className="card__image__chips card__image__chips--left">
           <div className="chip chip--primary">$ 99.00 USD</div>
-          {/* <div className="chip chip--white">7hr 24m</div> */}
         </div>
       </div>
       <div className="card__body">

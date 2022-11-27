@@ -125,6 +125,21 @@
     transition: flex 1000ms 150ms ease-in-out;
   }
 
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: 50%;
+    border: 1px solid #dfdfdf;
+    border-radius: 2px;
+    margin-right: 2rem;
+    padding: 1rem;
+    padding-right: 2rem;
+  }
+
   details {
     @apply mb-4 max-w-full rounded-md bg-neutral-100 px-8 py-4 text-left drop-shadow-lg;
 
@@ -380,6 +395,9 @@
       &--line-2 {
         @apply line-clamp-2;
       }
+    }
+    &__avatar {
+      @apply mr-4 aspect-square w-10 rounded-full;
     }
 
     &__desc {
