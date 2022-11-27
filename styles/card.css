@@ -1,38 +1,45 @@
 .card {
-  /* remove margin */
-  /* remove max width */
-  @apply m-10 grid max-w-lg grid-cols-1 overflow-hidden rounded-lg bg-neutral-100 shadow-dark;
+  @apply my-20 grid overflow-hidden rounded-2xl shadow-dark;
 
-  &--hoz {
-    @apply grid max-w-full gap-8;
-    grid-template-columns: 1fr 2fr;
-  }
-
-  /* replace aspect ratio */
   &__image {
-    @apply relative;
-    aspect-ratio: 3 / 2;
-    &__chips {
-      @apply absolute right-3 top-3 flex gap-4;
+    @apply relative  duration-300 ease-in-out hover:translate-y-1;
+  }
+  &__chipset {
+    @apply absolute top-3 right-6 flex justify-end gap-3;
 
-      &--left {
-        @apply left-3;
+    &__chip {
+      @apply items-center  justify-center rounded-full py-3 px-4 align-middle text-xs font-bold shadow-base sm:px-6;
+
+      &--primary {
+        @apply bg-primary text-neutral-100;
+      }
+
+      &--secondary {
+        @apply bg-neutral-300 text-neutral-700;
       }
     }
   }
+
   &__body {
-    @apply p-8;
-    &__title {
+    @apply p-6 pt-0;
+  }
+
+  &__title {
+    @apply mt-6 duration-300 ease-in-out  hover:text-primary;
+
+    &--line-2 {
+      @apply line-clamp-2;
     }
-    &__desc {
-    }
-    &__actions {
-    }
-    &__time {
-    }
-    &__date {
-    }
-    &__date-full {
-    }
+  }
+
+  &__desc {
+    @apply text-neutral-500 line-clamp-4;
+  }
+  &__actions {
+    @apply flex items-center gap-4;
+  }
+
+  &__avatar {
+    @apply aspect-square w-10 overflow-hidden rounded-full;
   }
 }

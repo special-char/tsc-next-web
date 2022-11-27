@@ -4,6 +4,7 @@ import { demos } from '@/lib/demos';
 import Link from 'next/link';
 import { useState } from 'react';
 import clsx from 'clsx';
+import Icon from '@/ui/Icon';
 
 export default function Page() {
   const [list, setList] = useState(['A', 'B', 'C']);
@@ -17,6 +18,7 @@ export default function Page() {
 
   return (
     <div className="flex h-screen items-center justify-center">
+      <Icon name="email" height={42} width={42} />
       <ul>
         {list.map((x) => (
           <li key={x} role="button" onClick={() => changeList(x)}>

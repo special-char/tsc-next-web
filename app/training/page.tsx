@@ -1,3 +1,4 @@
+import PageHeader from '@/ui/pageHeader';
 import Banner from './banner';
 import Category from './category';
 import Courses from './courses';
@@ -9,6 +10,10 @@ import GrowCareer from './growcareer';
 import Leaders from './leaders';
 import Perks from './perks';
 import Teacherscard from './teacherscard';
+import OurWorks from './teacher/ourWorks';
+import Testimonial from './testimonial';
+import Blogs from './blogs';
+import BlogSubscribe from './blogSubscribe';
 
 type Props = {};
 
@@ -17,8 +22,16 @@ const rating = 4;
 const Page = (props: Props) => {
   return (
     <>
+      <PageHeader
+        title="Blogs"
+        desc="hello from desc"
+        className="customClass"
+        circleRight="bg-primary"
+        circleLeft="bg-secondary3"
+      />
+      <OurWorks />
+      <Testimonial />
       <Banner />
-
       <Courses />
       <Perks />
       <Leaders />
@@ -28,6 +41,8 @@ const Page = (props: Props) => {
       {/* <Blogs /> */}
       <Found />
       <Teacherscard />
+      <Blogs />
+      {/* <BlogSubscribe /> */}
     </>
   );
 };

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import '@/styles/footer.css';
+import SocialIcon from '@/ui/SocialIcon';
 
 type Props = {};
 
@@ -79,7 +80,7 @@ const Footer = (props: Props) => {
         </div>
       </div>
       <div className="footer__line"></div>
-      <div className="footer__socialicons">
+      {/* <div className="footer__socialicons">
         {data.map((val) => (
           <Image
             className="rounded-full"
@@ -89,7 +90,8 @@ const Footer = (props: Props) => {
             width={40}
           />
         ))}
-      </div>
+      </div> */}
+      <SocialIcon />
       <p className="mb-0 text-neutral-100">
         Copyright © TSC | Designed by TSC - Powered by TSC
       </p>
