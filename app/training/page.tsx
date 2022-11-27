@@ -22,15 +22,6 @@ const rating = 4;
 const Page = (props: Props) => {
   return (
     <>
-      <PageHeader
-        title="Blogs"
-        desc="hello from desc"
-        className="customClass"
-        circleRight="bg-primary"
-        circleLeft="bg-secondary3"
-      />
-      <OurWorks />
-      <Testimonial />
       <Banner />
       <Courses />
       <Perks />
@@ -38,11 +29,8 @@ const Page = (props: Props) => {
       <GrowCareer />
       <Education />
       <Category />
-      {/* <Blogs /> */}
-      <Found />
-      <Teacherscard />
+      <Testimonial />
       <Blogs />
-      {/* <BlogSubscribe /> */}
     </>
   );
 };

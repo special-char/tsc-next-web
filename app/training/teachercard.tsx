@@ -16,7 +16,7 @@ const data = [
   },
 ];
 
-const teacherCard = (props: Props) => {
+const TeacherCard = (props: Props) => {
   return (
     <section id="teacherCard" className="teacherCard">
       <div className="teacherCard__content">
@@ -56,4 +56,4 @@ const teacherCard = (props: Props) => {
   );
 };
 
-export default teacherCard;
+export default TeacherCard;

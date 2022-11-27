@@ -1,6 +1,6 @@
-import '@/styles/header.css';
 import Link from 'next/link';
 import React from 'react';
+import '@/styles/header.css';
 
 type Props = {};
 
