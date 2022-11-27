@@ -8,6 +8,8 @@ import Leaders from './leaders';
 import Perks from './perks';
 import OurWorks from './teacher/ourWorks';
 import Testimonial from './testimonial';
+import Blogs from './blogs';
+import BlogSubscribe from './blogSubscribe';
 
 type Props = {};
 
@@ -33,6 +35,8 @@ const Page = (props: Props) => {
       <GrowCareer />
       <Education />
       <Category />
+      <Blogs />
+      {/* <BlogSubscribe /> */}
     </>
   );
 };

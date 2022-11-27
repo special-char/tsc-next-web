@@ -27,6 +27,9 @@ const nextConfig = {
       'placeimg.com',
     ],
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
 module.exports = nextConfig;

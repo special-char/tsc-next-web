@@ -1,14 +1,5 @@
 
 <svg viewBox="0 0 60 60" className="rounded-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0)">
-<rect width="60" height="60" class="rounded-full"  fill="#E1EDFB"/>
-<circle cx="30.459" cy="30.459" r="30.459" fill="#E1EDFB"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M22.2861 15.6641H38.5852C40.9353 15.6904 43.1721 16.6839 44.7747 18.4132C46.3772 20.1425 47.2057 22.4566 47.067 24.8166V36.102C47.2057 38.462 46.3772 40.7761 44.7747 42.5054C43.1721 44.2346 40.9353 45.2282 38.5852 45.2545H22.2861C17.2382 45.2545 13.8359 41.1478 13.8359 36.102V24.8166C13.8359 19.7708 17.2382 15.6641 22.2861 15.6641Z" fill="white" stroke="#1E3D60" stroke-width="2.59321" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M40.2327 27.2773L32.8586 33.2145C31.463 34.3086 29.5068 34.3086 28.1113 33.2145L20.6738 27.2773" stroke="#064EA4" stroke-width="2.59321" stroke-linecap="round" stroke-linejoin="round"/>
-</g>
-<defs>
-<clipPath id="clip0">
-<rect width="60" height="60" fill="white"/>
-</clipPath>
-</defs>
 </svg>
