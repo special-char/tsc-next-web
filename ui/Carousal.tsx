@@ -9,6 +9,8 @@ import React, {
   ReactElement,
 } from 'react';
 import clsx from 'clsx';
+import LeftSvg from '@/public/icons/left-arrow.svg';
+import RightSvg from '@/public/icons/right-arrow.svg';
 
 type Props = {} & PropsWithChildren;
 
@@ -71,14 +73,18 @@ const Carousal = ({ children }: Props) => {
       <div className="carousal__controls">
         <button
           type="button"
-          className={`carousal__control btn btn--primary btn--round`}
+          className={`carousal__control btn btn--white btn--round hover:bg-primary `}
           onClick={scrollRight}
-        >{`<`}</button>
+        >
+          <LeftSvg className="hover:fill-neutral-100" />
+        </button>
         <button
           type="button"
-          className={`carousal__control btn btn--primary btn--round`}
+          className={`carousal__control btn btn--white btn--round  hover:bg-primary`}
           onClick={scrollLeft}
-        >{`>`}</button>
+        >
+          <RightSvg className="hover:fill-neutral-100" />
+        </button>
       </div>
     </div>
   );
