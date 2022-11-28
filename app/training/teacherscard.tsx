@@ -40,9 +40,43 @@ const teacherData = [
       { svg: <TwitterSvg /> },
     ],
   },
+  {
+    id: 1,
+    img: 'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f1ff4698e5af4686c9948_image-3-profile-picture-teacher-education-x-template.jpg',
+    title: 'Andrew lorem',
+    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    svg: [
+      { svg: <FacebookSvg /> },
+      { svg: <InstagramSvg /> },
+      { svg: <TwitterSvg /> },
+    ],
+  },
+
+  {
+    id: 2,
+    img: 'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f1ff4698e5af4686c9948_image-3-profile-picture-teacher-education-x-template.jpg',
+    title: 'Andrew lorem',
+    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    svg: [
+      { svg: <FacebookSvg /> },
+      { svg: <InstagramSvg /> },
+      { svg: <TwitterSvg /> },
+    ],
+  },
+  {
+    id: 3,
+    img: 'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f1ff4698e5af4686c9948_image-3-profile-picture-teacher-education-x-template.jpg',
+    title: 'Andrew lorem',
+    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    svg: [
+      { svg: <FacebookSvg /> },
+      { svg: <InstagramSvg /> },
+      { svg: <TwitterSvg /> },
+    ],
+  },
 ];
 
-const Teacherscard = (props: Props) => {
+const TeachersCard = (props: Props) => {
   return (
     <section className="px-container">
       <div className="main">
@@ -72,4 +106,4 @@ const Teacherscard = (props: Props) => {
   );
 };
 
-export default Teacherscard;
+export default TeachersCard;

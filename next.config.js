@@ -24,7 +24,11 @@ const nextConfig = {
       'images.unsplash.com',
       'media.istockphoto.com',
       'images.pexels.com',
+      'placeimg.com',
     ],
+  },
+  typescript: {
+    ignoreBuildErrors: true,
   },
 };
 

@@ -19,7 +19,8 @@
       "@/ui/*": ["ui/*"],
       "@/lib/*": ["lib/*"],
       "@/public/*": ["public/*"],
-      "@/styles/*": ["styles/*"]
+      "@/styles/*": ["styles/*"],
+      "@/hooks/*": ["hooks/*"]
     },
     "plugins": [
       {

@@ -2,6 +2,7 @@ import React from 'react';
 import '@/styles/testimonial.css';
 import Image from 'next/image';
 import Rating from '@/ui/Rating';
+import Carousal from '@/ui/Carousal';
 
 interface Props {}
 const Data1 = [
@@ -47,7 +48,7 @@ const Testimonial = (props: Props) => {
   return (
     <section id="Testimonial" className="testimonial">
       <h2 className="testimonial__Header">What Our Clients Say</h2>
-      <div className="testimonial__section gap-4">
+      <Carousal>
         {Data1.map((val) => (
           <div className="testimonial__body">
             <div className="testimonial__image">
@@ -67,7 +68,7 @@ const Testimonial = (props: Props) => {
             </div>
           </div>
         ))}
-      </div>
+      </Carousal>
     </section>
   );
 };
