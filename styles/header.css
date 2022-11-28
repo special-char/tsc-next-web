@@ -1,6 +1,6 @@
 .header {
   grid-template-columns: auto 1fr auto;
-  @apply grid justify-items-center px-container py-8 shadow-dark;
+  @apply grid items-center justify-items-center px-container shadow-dark;
 
   & a {
     @apply font-bold text-neutral-800;
