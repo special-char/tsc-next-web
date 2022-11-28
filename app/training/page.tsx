@@ -3,6 +3,9 @@ import Banner from './banner';
 import Category from './category';
 import Courses from './courses';
 import Education from './education';
+import Event from './event';
+import Features from './features';
+import Found from './found';
 import GrowCareer from './growcareer';
 import Leaders from './leaders';
 import Perks from './perks';
@@ -27,6 +30,7 @@ const Page = (props: Props) => {
       <OurWorks />
       <Testimonial />
       <Banner />
+
       <Courses />
       <Perks />
       <Leaders />
