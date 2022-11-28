@@ -32,7 +32,7 @@ const educationData = [
 ];
 const Education = (props: Props) => {
   return (
-    <section className="education">
+    <section className="education ">
       <div className=" education__header">
         <h2>About Educatoion</h2>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, et!</p>

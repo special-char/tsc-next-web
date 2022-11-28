@@ -75,15 +75,13 @@ const Courses = (props: Props) => {
               <h3 className="card__title">{course.name}</h3>
               <p className="card__desc">{course.description}</p>
               <div className="card__actions">
-                <div className="avatar placeholder w-16">
-                  <div>
-                    <img
-                      src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f1ff9fd9e0e1686d26497_image-3-profile-picture-small-teacher-education-x-template.jpg"
-                      alt="Kathie Corl"
-                    />
-                  </div>
-                  <div>Yagnesh Modh</div>
+                <div className="avatar placeholder w-16 overflow-hidden rounded-full">
+                  <img
+                    src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f1ff9fd9e0e1686d26497_image-3-profile-picture-small-teacher-education-x-template.jpg"
+                    alt="Kathie Corl"
+                  />
                 </div>
+                <h4>Yagnesh Modh</h4>
               </div>
             </div>
           </Link>

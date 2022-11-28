@@ -5,6 +5,26 @@ import Rating from '@/ui/Rating';
 import Carousal from '@/ui/Carousal';
 
 interface Props {}
+
+const NumberDetails = [
+  {
+    numbers: '100,000+',
+    title: 'students worldwide',
+  },
+  {
+    numbers: '200,00+',
+    title: 'Total course views',
+  },
+  {
+    numbers: '5,000+',
+    title: 'Five-star course reviews',
+  },
+  {
+    numbers: '75,000+',
+    title: 'Students community',
+  },
+];
+
 const Data1 = [
   {
     id: 1,
@@ -47,7 +67,7 @@ const Data1 = [
 const Testimonial = (props: Props) => {
   return (
     <section id="Testimonial" className="testimonial">
-      <h2 className="testimonial__Header">What Our Clients Say</h2>
+      <h2 className="testimonial__Header">What our students say about us</h2>
       <Carousal>
         {Data1.map((val) => (
           <div className="testimonial__body">
@@ -69,6 +89,17 @@ const Testimonial = (props: Props) => {
           </div>
         ))}
       </Carousal>
+      <div className="testimonial__content">
+        {NumberDetails.map((number) => (
+          <div>
+            <h3 className="testimonial__title">{number.numbers}</h3>
+            <p>{number.title}</p>
+          </div>
+        ))}
+      </div>
+      <div className="flex justify-center">
+        <button className="btn btn--primary">explore courses</button>
+      </div>
     </section>
   );
 };

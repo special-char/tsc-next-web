@@ -1,17 +1,23 @@
 .testimonial {
-  @apply grid min-h-screen content-center items-center justify-center gap-4 bg-neutral-200 py-12 lg:gap-12;
-}
+  @apply grid min-h-screen content-center items-center justify-center gap-4 bg-neutral-200 px-container py-36 sm:px-sm-container lg:gap-12 lg:px-container;
 
-.testimonial__Header {
-  @apply justify-center text-center md:p-12 md:py-8;
-}
-
-.testimonial__body {
-  @apply grid max-w-screen-md items-center justify-center gap-8 overflow-hidden rounded-3xl bg-neutral-100 py-11 text-center drop-shadow-sm md:border-spacing-2 md:gap-0 md:p-12 md:py-12 md:text-left;
-  @media screen and (min-width: 678px) {
-    grid-template-columns: 230px auto;
+  .testimonial__Header {
+    @apply justify-center text-center md:p-12 md:py-8;
   }
-}
-.testimonial__paragraph {
-  @apply flex flex-col items-center justify-center md:items-start;
+
+  .testimonial__body {
+    @apply grid max-w-screen-md items-center justify-center gap-8 overflow-hidden rounded-3xl bg-neutral-100 py-11 text-center drop-shadow-sm md:border-spacing-2 md:gap-0 md:p-12 md:py-12 md:text-left;
+    @media screen and (min-width: 678px) {
+      grid-template-columns: 230px auto;
+    }
+  }
+  .testimonial__paragraph {
+    @apply flex flex-col items-center justify-center md:items-start;
+  }
+  &__content {
+    @apply grid grid-cols-2 justify-items-center lg:grid-cols-4;
+  }
+  &__title {
+    @apply text-center;
+  }
 }
