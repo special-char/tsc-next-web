@@ -1,5 +1,5 @@
 .testimonial {
-  @apply grid min-h-screen content-center items-center justify-center gap-4 bg-neutral-200 px-container py-36 sm:px-sm-container lg:gap-12 lg:px-container;
+  @apply grid min-h-screen content-center items-center justify-center gap-4 bg-neutral-200 py-36 lg:gap-12;
 
   .testimonial__Header {
     @apply justify-center text-center md:p-12 md:py-8;
@@ -15,7 +15,7 @@
     @apply flex flex-col items-center justify-center md:items-start;
   }
   &__content {
-    @apply grid grid-cols-2 justify-items-center lg:grid-cols-4;
+    @apply grid grid-cols-2 justify-items-center px-container lg:grid-cols-4;
   }
   &__title {
     @apply text-center;
