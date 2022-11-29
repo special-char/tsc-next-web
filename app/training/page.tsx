@@ -26,8 +26,10 @@ const Page = (props: Props) => {
       <Education />
       <Category />
       {/* <Blogs /> */}
-      <Found />
+
       <Teacherscard />
+      {/* <Event /> */}
+      <Found />
     </>
   );
 };

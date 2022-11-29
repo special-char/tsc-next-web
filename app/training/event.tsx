@@ -1,5 +1,3 @@
-import '@/styles/event.css';
-import DateIcon from '@/public/icons/icon-date.svg';
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -84,7 +82,7 @@ const Event = (props: Props) => {
           />
 
           <div className="chip absolute left-4 mt-6  items-center bg-neutral-100 ">
-            <div className="flex  gap-1">
+            <div className=" flex gap-1 bg-secondary3">
               <Image
                 src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f21aa2c18150120252017_icon-3-categories-education-x-template.svg"
                 alt=""
@@ -97,7 +95,6 @@ const Event = (props: Props) => {
         </div>
 
         <div className="card__body">
-          {/* <div className="card__data pb-3"> */}
           <div className=" mb-2 sm:grid-rows-2 md:grid-cols-2">
             <span>
               <Image
