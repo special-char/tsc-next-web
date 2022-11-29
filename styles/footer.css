@@ -14,10 +14,10 @@
   }
 
   &__pages > h3 {
-    @apply mb-4;
+    @apply mb-4 pt-10 lg:pt-16;
   }
   &__socialicons {
-    @apply grid gap-2 md:w-4/5 lg:justify-end lg:pb-4;
+    @apply grid gap-2 pt-2 md:w-4/5 lg:justify-end lg:pt-2;
     grid-template-columns: repeat(auto-fit, minmax(50px, 20px));
   }
   @media screen and (min-width: 1024px) {
