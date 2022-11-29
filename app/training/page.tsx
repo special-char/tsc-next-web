@@ -22,7 +22,7 @@ const rating = 4;
 const Page = (props: Props) => {
   return (
     <>
-      {/* <Banner />
+      <Banner />
       <Courses />
       <Perks />
       <Leaders />
@@ -30,7 +30,7 @@ const Page = (props: Props) => {
       <Education />
       <Category />
       <Testimonial />
-      <Blogs /> */}
+      <Blogs />
     </>
   );
 };
