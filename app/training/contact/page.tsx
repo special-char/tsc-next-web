@@ -5,13 +5,13 @@ import Faq from './faq';
 const Page = () => {
   return (
     <div>
-      <PageHeader
+      {/* <PageHeader
         title="Blogs"
         desc="hello from desc"
         className="customClass"
         circleRight="bg-primary"
         circleLeft="bg-secondary3"
-      />
+      /> */}
       <Contact />
       <Faq />
     </div>
