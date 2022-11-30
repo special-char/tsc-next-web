@@ -24,7 +24,7 @@ const CategoryData = [
 ];
 const Category = (props: Props) => {
   return (
-    <section id="category" className="category relative">
+    <section id="category" className="category relative ">
       <h2 className="category__title">Browse our courses by category</h2>
       <div className="category__content">
         {CategoryData.map((category) => {
