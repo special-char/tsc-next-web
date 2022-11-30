@@ -40,10 +40,12 @@ const Footer = (props: Props) => {
   return (
     <section id="footer" className="footer">
       <h1 className="text-neutral-100">TSC</h1>
-      <p className="text-neutral-100">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt.
+
+      <p className=" text-neutral-100 ">
+        Lorem ipsum dolor something abc sit amet, consectetur adipiscing elit,
+        seen do eiusmod tempor incididunt.
       </p>
+
       <div className="footer__line"></div>
       <div className="footer__newsletter">
         <Image

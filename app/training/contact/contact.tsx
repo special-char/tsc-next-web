@@ -90,6 +90,7 @@ const Contact = (props: Props) => {
           submit
         </button>
       </div>
+
       <div className="contact__cards">
         {CardData.map((cardData) => (
           <div className="contact__card_details ">

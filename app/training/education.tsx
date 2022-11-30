@@ -33,11 +33,11 @@ const educationData = [
 const Education = (props: Props) => {
   return (
     <section className="education ">
-      <div className=" education__header">
+      <div className=" education__header col-span-2">
         <h2>About Educatoion</h2>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, et!</p>
       </div>
-      <div className="education__body">
+      <div className="education__body col-span-2">
         <div className="education__image">
           <Image
             src="https://images.unsplash.com/photo-1579547621113-e4bb2a19bdd6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjJ8fHNvbGlkJTIwY29sb3J8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
@@ -45,7 +45,7 @@ const Education = (props: Props) => {
             fill
           />
         </div>
-        <div className="education__content">
+        <div className="education__content ">
           {educationData.map((x) => (
             <>
               <figure className="w-16 overflow-hidden rounded-full">
@@ -59,11 +59,12 @@ const Education = (props: Props) => {
           ))}
         </div>
       </div>
-      <div className="education__header">
+      <div className="education__header col-span-2 pb-24 lg:pb-36">
         <Link href="/" className="btn btn--secondary">
           About Education
         </Link>
       </div>
+      <span className="education__line"></span>
     </section>
   );
 };
