@@ -56,7 +56,7 @@ const Footer = (props: Props) => {
           width={90}
         />
         <h3 className="mb-3 text-neutral-100">Subscribe to our newsletter</h3>
-        <p>
+        <p className="lg:w-2/3">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmo.
         </p>
@@ -73,8 +73,8 @@ const Footer = (props: Props) => {
         </div>
       </div>
 
-      <div className="footer__pages">
-        <h3 className="text-neutral-100">Pages</h3>
+      <div className="footer__pages grid lg:justify-items-end">
+        <h3 className="text-neutral-100 lg:w-2/3">Pages</h3>
         <div className="footer__links">
           {links.map((val) => (
             <Link href={'#'}>{val.page}</Link>

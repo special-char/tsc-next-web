@@ -496,9 +496,6 @@
       @apply h-14 w-full rounded-full bg-neutral-200 px-6 py-2 outline-neutral-400 focus:outline;
     }
   }
-  .main {
-    @apply grid  gap-10 md:grid-cols-2 lg:grid-cols-3;
-  }
 
   /* .card {
     @apply grid transform overflow-hidden rounded-2xl  shadow-dark transition duration-300 ease-in-out hover:translate-y-1 hover:scale-y-105 md:max-w-full lg:max-w-xl;

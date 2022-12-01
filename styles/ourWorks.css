@@ -7,7 +7,7 @@
 .ourWorks__line {
   @apply m-auto w-auto text-neutral-300 md:w-[520px];
 }
-.ourWorks__secondPage {
+.ourWorks__content {
   @apply grid border-spacing-2 justify-center gap-9 rounded-3xl text-left drop-shadow-md md:grid-cols-2 md:pb-7 lg:pb-12;
 }
 .ourWorks__sections {
