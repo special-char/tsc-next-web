@@ -1,6 +1,8 @@
 .footer {
-  @apply grid gap-3 bg-neutral-700 px-4 pt-16 pb-6 md:px-6 lg:grid-cols-2 lg:px-container;
-  grid-template-columns: 2fr 1.5fr;
+  @apply grid gap-3 overflow-hidden bg-neutral-700 px-4 pt-16 pb-6 md:px-6 lg:px-container;
+  @media screen and(min-width:1024px) {
+    grid-template-columns: 2fr 1.5fr;
+  }
   &__line {
     @apply h-[1px] w-[100%] rounded-full bg-neutral-600 lg:col-span-2;
   }
