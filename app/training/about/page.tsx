@@ -2,7 +2,6 @@ import PageHeader from '@/ui/pageHeader';
 import React from 'react';
 import OurWorks from '../teacher/ourWorks';
 import Achievements from './achievements';
-import BigMession from './bigMession';
 import CompanyHistory from './companyhistory';
 import OurOffice from './ourOffice';
 
