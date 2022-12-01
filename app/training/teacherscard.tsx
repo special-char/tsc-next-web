@@ -1,8 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
-import FacebookSvg from '@/public/icons/facebook.svg';
-import InstagramSvg from '@/public/icons/instagram.svg';
-import TwitterSvg from '@/public/icons/twitter.svg';
+import Icon from '@/ui/Icon';
+import Link from 'next/link';
+import '@/styles/teacherscard.css';
 
 type Props = {};
 const teacherData = [
@@ -12,9 +12,18 @@ const teacherData = [
     title: 'Andrew lorem',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     svg: [
-      { svg: <FacebookSvg /> },
-      { svg: <InstagramSvg /> },
-      { svg: <TwitterSvg /> },
+      {
+        icon: 'facebook',
+        link: 'https://www.facebook.com',
+      },
+      {
+        icon: 'twitter',
+        link: 'https://www.twitter.com',
+      },
+      {
+        icon: 'instagram',
+        link: 'https://www.instagram.com',
+      },
     ],
   },
 
@@ -24,9 +33,18 @@ const teacherData = [
     title: 'Andrew lorem',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     svg: [
-      { svg: <FacebookSvg /> },
-      { svg: <InstagramSvg /> },
-      { svg: <TwitterSvg /> },
+      {
+        icon: 'facebook',
+        link: 'https://www.facebook.com',
+      },
+      {
+        icon: 'twitter',
+        link: 'https://www.twitter.com',
+      },
+      {
+        icon: 'instagram',
+        link: 'https://www.instagram.com',
+      },
     ],
   },
   {
@@ -35,9 +53,18 @@ const teacherData = [
     title: 'Andrew lorem',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     svg: [
-      { svg: <FacebookSvg /> },
-      { svg: <InstagramSvg /> },
-      { svg: <TwitterSvg /> },
+      {
+        icon: 'facebook',
+        link: 'https://www.facebook.com',
+      },
+      {
+        icon: 'twitter',
+        link: 'https://www.twitter.com',
+      },
+      {
+        icon: 'instagram',
+        link: 'https://www.instagram.com',
+      },
     ],
   },
   {
@@ -46,9 +73,18 @@ const teacherData = [
     title: 'Andrew lorem',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     svg: [
-      { svg: <FacebookSvg /> },
-      { svg: <InstagramSvg /> },
-      { svg: <TwitterSvg /> },
+      {
+        icon: 'facebook',
+        link: 'https://www.facebook.com',
+      },
+      {
+        icon: 'twitter',
+        link: 'https://www.twitter.com',
+      },
+      {
+        icon: 'instagram',
+        link: 'https://www.instagram.com',
+      },
     ],
   },
 
@@ -58,9 +94,18 @@ const teacherData = [
     title: 'Andrew lorem',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     svg: [
-      { svg: <FacebookSvg /> },
-      { svg: <InstagramSvg /> },
-      { svg: <TwitterSvg /> },
+      {
+        icon: 'facebook',
+        link: 'https://www.facebook.com',
+      },
+      {
+        icon: 'twitter',
+        link: 'https://www.twitter.com',
+      },
+      {
+        icon: 'instagram',
+        link: 'https://www.instagram.com',
+      },
     ],
   },
   {
@@ -69,17 +114,26 @@ const teacherData = [
     title: 'Andrew lorem',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     svg: [
-      { svg: <FacebookSvg /> },
-      { svg: <InstagramSvg /> },
-      { svg: <TwitterSvg /> },
+      {
+        icon: 'facebook',
+        link: 'https://www.facebook.com',
+      },
+      {
+        icon: 'twitter',
+        link: 'https://www.twitter.com',
+      },
+      {
+        icon: 'instagram',
+        link: 'https://www.instagram.com',
+      },
     ],
   },
 ];
 
 const TeachersCard = (props: Props) => {
   return (
-    <section className="px-container">
-      <div className="main">
+    <section id="teacherscard" className="teacherscard">
+      <div className="teacherscard__main">
         {teacherData.map((x) => (
           <a href="#" className="card">
             <Image src={x.img} alt="" height={500} width={500} />
@@ -87,15 +141,12 @@ const TeachersCard = (props: Props) => {
               <h3 className="card__title">{x.title}</h3>
               <p className="card__desc">{x.desc}</p>
               <div className="card__actions">
-                {x.svg.map((val) => (
-                  <a
-                    href="#"
-                    className="rounded-full bg-neutral-500 duration-300 ease-in-out hover:bg-primary"
-                  >
-                    <span className="overflow-hidden rounded-full">
-                      {val.svg}
-                    </span>
-                  </a>
+                {x.svg.map((icon) => (
+                  <span className="rounded-full bg-neutral-500 p-2 hover:bg-primary">
+                    <Link key={icon.icon} href={icon.link} target="_blank">
+                      <Icon name={icon.icon} height={20} width={20} />
+                    </Link>
+                  </span>
                 ))}
               </div>
             </div>

@@ -30,7 +30,7 @@ const CompanyHistory = (props: Props) => {
       <div className="companyHistory__section">
         <div>
           <div className="companyHistory__leftSection">
-            <h2 className="text-primary">Our company history</h2>
+            <h2 className="text-6xl text-primary">Our company history</h2>
             <p className="text-neutral-500">
               Presenting Academy, the tech school of the future. We teach you
               the right skills to be prepared for tomorrow.
@@ -44,7 +44,7 @@ const CompanyHistory = (props: Props) => {
         <div className="companyHistory__info">
           {Data.map((val) => (
             <div key={val.Date} className="companyHistory__RightSection">
-              <div className="companyHistory__ChipSection chip chip--white">
+              <div className="companyHistory__ChipSection chip chip--white w-1/4 lg:w-[20%]">
                 <span className="companyHistory__Date">{val.Date}</span>
               </div>
               <h3 className="py-3">{val.title}</h3>

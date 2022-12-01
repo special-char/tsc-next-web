@@ -1,4 +1,4 @@
-.teacherCard {
+.individualteacher {
   @apply min-h-screen max-w-fit content-center justify-items-center overflow-hidden bg-neutral-300 py-24 px-container md:py-36 lg:px-container lg:py-48;
 
   &__content {

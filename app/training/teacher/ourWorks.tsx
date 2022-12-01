@@ -49,7 +49,7 @@ const OurWorks = (props: Props) => {
           eiusmod tempor incididunt.
         </p>
       </div>
-      <div className="ourWorks__secondPage ">
+      <div className="ourWorks__content mx-auto lg:w-4/5">
         {Data2.map((val) => (
           <div className="ourWorks__sections">
             <div className="ourWorks__chipLine">
