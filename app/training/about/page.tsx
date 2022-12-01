@@ -11,8 +11,8 @@ const page = (props: Props) => {
   return (
     <>
       <PageHeader
-        title="Blogs"
-        desc="hello from desc"
+        title="The big mission behind Educationic"
+        desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium pulvinar ac molestie cursus malesuada enim. Massa nec tellus, elit tellus, erat faucibus aenean. Nunc, lacus, dignissim nec sit."
         className="customClass"
         circleRight="bg-primary"
         circleLeft="bg-secondary3"

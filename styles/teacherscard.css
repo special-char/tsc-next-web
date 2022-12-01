@@ -1,0 +1,7 @@
+.teacherscard {
+  @apply py-28 px-container sm:px-sm-container lg:py-32 lg:px-container;
+
+  &__main {
+    @apply grid  gap-10 md:grid-cols-2 lg:grid-cols-3;
+  }
+}

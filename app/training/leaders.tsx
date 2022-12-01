@@ -7,7 +7,7 @@ const Leaders = () => {
   return (
     <section id="Leaders" className="leader">
       <div className="leader__details">
-        <h2 className="leader__title">
+        <h2 className="leader__title text-center lg:text-left">
           Courses taught by industry leaders around the world
         </h2>
         <p className="leader__description">

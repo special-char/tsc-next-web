@@ -40,10 +40,12 @@ const Footer = (props: Props) => {
   return (
     <section id="footer" className="footer">
       <h1 className="text-neutral-100">TSC</h1>
-      <p className="text-neutral-100">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt.
+
+      <p className=" text-neutral-100 ">
+        Lorem ipsum dolor something abc sit amet, consectetur adipiscing elit,
+        seen do eiusmod tempor incididunt.
       </p>
+
       <div className="footer__line"></div>
       <div className="footer__newsletter">
         <Image
@@ -54,7 +56,7 @@ const Footer = (props: Props) => {
           width={90}
         />
         <h3 className="mb-3 text-neutral-100">Subscribe to our newsletter</h3>
-        <p>
+        <p className="lg:w-2/3">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmo.
         </p>
@@ -71,8 +73,8 @@ const Footer = (props: Props) => {
         </div>
       </div>
 
-      <div className="footer__pages">
-        <h3 className="text-neutral-100">Pages</h3>
+      <div className="footer__pages grid lg:justify-items-end">
+        <h3 className="text-neutral-100 lg:w-2/3">Pages</h3>
         <div className="footer__links">
           {links.map((val) => (
             <Link href={'#'}>{val.page}</Link>
@@ -81,7 +83,7 @@ const Footer = (props: Props) => {
       </div>
       <div className="footer__line"></div>
       <SocialIcon />
-      <p className="mb-0 text-neutral-100">
+      <p className="mb-0 pt-2 text-neutral-100">
         Copyright © TSC | Designed by TSC - Powered by TSC
       </p>
     </section>

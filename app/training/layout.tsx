@@ -13,16 +13,22 @@ export default function RootLayout({
     <>
       <aside id="sidenav-open">
         <nav>
-          <h4>My</h4>
-          <a href="#">Dashboard</a>
-          <a href="#">Profile</a>
-          <a href="#">Preferences</a>
-          <a href="#">Archive</a>
-
-          <h4>Settings</h4>
-          <a href="#">Accessibility</a>
-          <a href="#">Theme</a>
-          <a href="#">Admin</a>
+          <details>
+            <summary>Home</summary>
+            <ul>
+              <li>
+                <a href="">Hello</a>
+              </li>
+            </ul>
+          </details>
+          <details>
+            <summary>Home</summary>
+            <ul>
+              <li>
+                <a href="">Hello</a>
+              </li>
+            </ul>
+          </details>
         </nav>
 
         <a

@@ -35,9 +35,11 @@ const SocialIcon = (props: Props) => {
   return (
     <div className="socialicons">
       {socialicon.map((icon) => (
-        <Link key={icon.icon} href={icon.link} target="_blank">
-          <Icon name={icon.icon} height={24} width={24} />
-        </Link>
+        <span className="rounded-full bg-neutral-500 p-2 hover:bg-primary">
+          <Link key={icon.icon} href={icon.link} target="_blank">
+            <Icon name={icon.icon} height={20} width={20} />
+          </Link>
+        </span>
       ))}
     </div>
   );
