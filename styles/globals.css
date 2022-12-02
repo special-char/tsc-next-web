@@ -405,9 +405,9 @@
         @apply line-clamp-2;
       }
     }
-    &__avatar {
-      @apply mr-4 aspect-square w-10 rounded-full;
-    }
+    /* &__avatar {
+      @apply aspect-square w-14 rounded-full;
+    } */
 
     &__desc {
       @apply text-neutral-500 line-clamp-3;
@@ -417,7 +417,7 @@
     }
 
     &__avatar {
-      @apply aspect-square w-10 overflow-hidden rounded-full;
+      @apply aspect-square w-14 overflow-hidden rounded-full;
     }
 
     &__hori {

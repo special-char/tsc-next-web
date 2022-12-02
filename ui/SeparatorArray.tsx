@@ -9,7 +9,7 @@ const SeparatorArray = (props: Props) => {
     <div className="absolute -bottom-[84px] w-full">
       {/* <YellowSvg height={160} width={77} className="mx-auto" /> */}
       {/* <PinkSvg height={160} width={77} className="mx-auto" /> */}
-      {/* <BlueSvg height={160} width={77} className="mx-auto" /> */}
+      <BlueSvg height={160} width={77} className="mx-auto" />
     </div>
   );
 };
