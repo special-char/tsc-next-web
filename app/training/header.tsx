@@ -2,15 +2,15 @@ import Link from 'next/link';
 import React from 'react';
 import '@/styles/header.css';
 import TscLogoSvg from '@/public/icons/tsclogo.svg';
+import TscSvg from '@/public/icons/tsc.svg';
 
 type Props = {};
 
 const Header = (props: Props) => {
   return (
     <header className="header">
-      <div className="hidden w-20   ">
-        <TscLogoSvg />
-      </div>
+      <TscLogoSvg className="header__tsclogo" />
+      <TscSvg className="w-16 lg:hidden " />
       <nav className="header__nav">
         <ul>
           <li>
@@ -56,7 +56,7 @@ const Header = (props: Props) => {
           </li>
         </ul>
       </nav>
-      <button className="btn btn--primary">contect us</button>
+      <button className="header__button btn btn--small">contect us</button>
     </header>
   );
 };

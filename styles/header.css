@@ -1,6 +1,10 @@
 .header {
   grid-template-columns: auto 1fr auto;
-  @apply grid items-center justify-items-center px-container shadow-dark;
+
+  @apply grid items-center justify-items-center py-4 px-container shadow-dark lg:py-0;
+  &__tsclogo {
+    @apply hidden w-44 lg:block;
+  }
 
   & a {
     @apply font-bold text-neutral-800;
@@ -11,7 +15,7 @@
 
   &__nav {
     & > ul {
-      @apply m-0 flex gap-8 p-0;
+      @apply m-0 flex gap-4 p-0 md:gap-8;
 
       & > li {
         @apply relative m-0 p-0;
@@ -45,6 +49,13 @@
     }
     &:hover {
       display: block;
+    }
+  }
+  &__button {
+    @apply !hidden bg-primary  text-neutral-100 md:!block;
+    &:hover {
+      background-color: #064ea4;
+      color: #ffffff;
     }
   }
 }
