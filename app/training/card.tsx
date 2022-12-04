@@ -14,7 +14,7 @@ const Card = (props: Props) => {
   return (
     <section id="coursescard" className="">
       <Link href="#" className="card">
-        <figure className="card__image ">
+        <div className="card__image ">
           <img
             src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2e01cbd8323965e6629a_image-6-courses-education-x-template-p-1080.jpeg"
             alt="image"
@@ -27,7 +27,7 @@ const Card = (props: Props) => {
               $199.00 USD
             </span>
           </div>
-        </figure>
+        </div>
 
         <div className="card__body">
           <h2 className="card__title">Lorem, ipsum dolor.</h2>
