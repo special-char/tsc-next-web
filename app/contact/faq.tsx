@@ -1,6 +1,5 @@
 import React from 'react';
 import '@/styles/faq.css';
-import PluseSvg from '../../public/icons/pluse.svg';
 import Accordian from '@/ui/Accordian';
 
 interface Props {}

@@ -1,6 +1,6 @@
 import PageHeader from '@/ui/pageHeader';
 import React from 'react';
-import OurWorks from '../teacher/ourWorks';
+import OurWorks from './ourWorks';
 import Achievements from './achievements';
 import CompanyHistory from './companyhistory';
 import OurOffice from './ourOffice';
