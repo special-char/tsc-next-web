@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import '@/styles/header.css';
-import TscLogoSvg from '@/public/icons/tsclogo.svg';
+import TscLogoSvg from '@/public/icons/tscLogo.svg';
 import TscSvg from '@/public/icons/tsc.svg';
 
 type Props = {};
