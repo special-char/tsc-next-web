@@ -1,5 +1,5 @@
 .contact {
-  @apply grid  min-h-fit gap-8 px-container py-20 lg:py-32;
+  @apply grid min-h-fit grid-cols-1 gap-8 px-container py-20 lg:py-32;
 
   @media only screen and (min-width: 1010px) {
     grid-template-columns: 3fr 2fr;
@@ -26,7 +26,7 @@
   }
 
   &__cards {
-    @apply grid  items-center gap-6;
+    @apply grid grid-cols-1 items-center gap-6;
   }
 
   &__card_details {
