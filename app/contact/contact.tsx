@@ -57,14 +57,14 @@ const CardData = [
 ];
 const Contact = (props: Props) => {
   return (
-    <section id="contact" className="contact relative overflow-hidden">
+    <section id="contact" className="contact">
       <h1 className="contact__title">Get in touch!</h1>
       <p className="contact__desc">
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
         aliquip commodo consequat
       </p>
       <div className="contact__body relative">
-        <div className="grid grid-cols-1 gap-3 gap-y-10 md:grid-cols-2">
+        <div className="contact__formdata">
           {FormData.map((formData) => {
             return (
               <div className="form">
@@ -75,7 +75,7 @@ const Contact = (props: Props) => {
                     id=""
                     rows={5}
                     placeholder={formData.placeholder}
-                    className="w-full rounded-2xl bg-neutral-200 px-4 py-2 outline-neutral-400 focus:outline"
+                    className="contact__textarea"
                   ></textarea>
                 ) : (
                   <input
@@ -88,13 +88,13 @@ const Contact = (props: Props) => {
             );
           })}
         </div>
-        <button className="btn btn--primary btn--small md:ml-6 md:h-16 md:w-44 lg:h-20 lg:w-44">
+        <button className="contact__button btn btn--primary btn--small">
           submit
         </button>
       </div>
       <div className="contact__cards relative ">
         {CardData.map((cardData) => (
-          <div className="contact__card_details rounded-2xl bg-neutral-100">
+          <div className="contact__card_details bg-neutral-100">
             <div className="w-16 overflow-hidden rounded-full">
               {cardData.svg}
             </div>
