@@ -9,13 +9,16 @@
     @apply text-neutral-100;
   }
 
+  &__details {
+    @apply lg:text-left;
+  }
   &__cards {
     @apply relative grid w-full items-center justify-items-center gap-5;
     grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
   }
 
   &__card_details {
-    @apply z-10 flex w-full flex-col items-center justify-center rounded-2xl bg-neutral-100 py-8 px-6 text-center shadow-base sm:aspect-square;
+    @apply z-10 flex w-full flex-col items-center justify-center rounded-2xl  bg-neutral-100 py-8 px-6 text-center shadow-base sm:aspect-square;
     &:nth-child(2) {
       grid-row: span 2;
     }
