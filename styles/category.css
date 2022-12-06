@@ -1,5 +1,5 @@
 .category {
-  @apply grid min-h-fit content-center items-center px-4 pb-20 pt-24 sm:px-sm-container md:pt-28 lg:px-container lg:pt-36;
+  @apply grid min-h-fit content-center items-center px-4 py-16 sm:px-sm-container md:pt-28 lg:px-container lg:pt-36;
 
   &__title {
     @apply mb-10 text-center text-neutral-700;

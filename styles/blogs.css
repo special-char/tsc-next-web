@@ -14,7 +14,7 @@
   @apply grid overflow-hidden rounded-2xl shadow-dark;
 
   &__image {
-    @apply relative h-full;
+    @apply relative aspect-video;
   }
   &__chipset {
     @apply absolute top-3 flex justify-end gap-3;

@@ -59,7 +59,7 @@ const Education = (props: Props) => {
           ))}
         </div>
       </div>
-      <div className="education__header col-span-2 pb-24 lg:pb-36">
+      <div className="education__header col-span-2">
         <Link href="/" className="btn btn--secondary">
           About Education
         </Link>
