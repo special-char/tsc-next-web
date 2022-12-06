@@ -61,7 +61,7 @@ const Blogs = (props: Props) => {
                   />
                 </div>
                 <div className="card__body">
-                  <h4 className="card__title line-clamp-3 lg:text-sm">
+                  <h4 className="card__title m-0 line-clamp-3 lg:text-xl">
                     {blog.description}
                   </h4>
                 </div>
