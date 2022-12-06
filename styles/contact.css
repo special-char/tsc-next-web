@@ -51,7 +51,7 @@
   &__orangecircle {
     @apply absolute top-[68%] -left-[40%] -z-10 h-[400px] w-[400px] rounded-full bg-secondary3 md:top-[63%] md:-left-36 lg:top-[65%] lg:-left-20;
   }
-  &____blucircle {
+  &__blucircle {
     @apply absolute -left-[900px] -z-10 h-[400px] w-[400px] rounded-full bg-secondary1 md:-top-80 md:-left-44 lg:-top-[24%] lg:-left-20;
   }
 }
