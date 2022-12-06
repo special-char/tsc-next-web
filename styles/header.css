@@ -15,7 +15,7 @@
 
   &__nav {
     & > ul {
-      @apply m-0 flex gap-4 p-0 md:gap-8;
+      @apply m-0 hidden gap-4 p-0 md:flex md:gap-8;
 
       & > li {
         @apply relative m-0 p-0;

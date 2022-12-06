@@ -99,7 +99,7 @@ const Contact = (props: Props) => {
               {cardData.svg}
             </div>
             <h3 className="mt-4">{cardData.title}</h3>
-            <p className="px-12">{cardData.description}</p>
+            <p className="px-4">{cardData.description}</p>
           </div>
         ))}
       </div>
