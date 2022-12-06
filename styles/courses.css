@@ -1,5 +1,5 @@
 .courses {
-  @apply grid min-h-screen place-content-center justify-items-center bg-neutral-200 py-24;
+  @apply grid min-h-screen place-content-center justify-items-center bg-neutral-200 py-16;
   grid-template-rows: repeat(3, auto);
 
   &__title {

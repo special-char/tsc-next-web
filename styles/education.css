@@ -1,5 +1,5 @@
 .education {
-  @apply grid justify-items-center gap-8 px-container py-16  sm:mx-auto sm:px-sm-container md:pt-36 lg:px-container lg:pt-44;
+  @apply grid justify-items-center gap-8 px-container py-16  sm:mx-auto sm:px-sm-container lg:px-container lg:pt-44;
   &__header {
     @apply mt-8 text-center;
   }
