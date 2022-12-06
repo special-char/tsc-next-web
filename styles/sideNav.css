@@ -1,0 +1,124 @@
+#sidenav-open {
+  --easeOutExpo: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration: 0.6s;
+  --surface: lch(90 0 0);
+  --surface2: lch(100 0 0);
+  --text: lch(20 0 0);
+  --text2: lch(40 0 0);
+
+  display: grid;
+  grid-template-columns: [nav] 2fr [escape] 1fr;
+  z-index: 9999;
+  height: 100vh;
+
+  position: sticky;
+  top: 0;
+  max-height: 100vh;
+  overflow: hidden auto;
+  overscroll-behavior: contain;
+
+  visibility: hidden; /* not keyboard accessible when closed */
+  transform: translateX(-110vw);
+  will-change: transform;
+  transition: transform var(--duration) var(--easeOutExpo),
+    visibility 0s linear var(--duration);
+
+  &:target {
+    visibility: visible;
+    transform: translateX(0);
+    transition: transform var(--duration) var(--easeOutExpo);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    --duration: 1ms;
+  }
+
+  & > nav {
+    display: inline-flex;
+    flex-direction: column;
+    /* padding: 1rem 0rem; */
+    font-size: 1.25rem;
+    color: var(--text);
+
+    @media (min-width: 540px) {
+      padding-block-start: 4.5rem;
+    }
+
+    background-color: var(--surface2);
+    border-inline-end: 1px var(--surface1);
+    box-shadow: 5px 0 40px hsla(0 0% 0% / 0.45);
+    font-size: 1.5rem;
+
+    & > h4 {
+      text-transform: uppercase;
+
+      &:not(:first-child) {
+        margin-block-start: 2rem;
+      }
+    }
+
+    & a {
+      text-decoration: none;
+      line-height: 1.25;
+    }
+  }
+
+  details {
+    @apply mb-0 max-w-full bg-neutral-100 px-8 text-left drop-shadow-none;
+
+    & > summary {
+      @apply relative flex cursor-pointer list-none items-start justify-start pb-4 text-3xl font-bold text-neutral-600 md:items-center;
+
+      &::marker {
+        @apply hidden;
+      }
+
+      &::before {
+        content: '^';
+        right: 0;
+        @apply absolute mr-8 aspect-square rotate-180  justify-center rounded-full bg-neutral-300 text-center text-5xl  font-bold text-neutral-600 duration-300 md:h-12 md:w-12;
+      }
+    }
+    & > p {
+      @apply overflow-hidden border-none pt-2 pl-20 text-left text-base md:pl-20;
+    }
+  }
+  details[open] {
+    & > summary {
+      @apply text-neutral-800;
+
+      &::before {
+        content: '^';
+        @apply bottom-2 flex rotate-[15px] justify-center bg-primary p-0 pb-2 text-center text-5xl text-neutral-100 duration-300;
+      }
+    }
+  }
+}
+
+#sidenav-button,
+#sidenav-close {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+  touch-action: manipulation;
+
+  @media (min-width: 540px) {
+    display: none;
+  }
+}
+
+/* use this if copying/pasting skeleton */
+/* @media (max-width: 540px) {
+    #sidenav-open > nav {
+      background-color: white;
+    }
+  }
+  
+  #sidenav-button > svg {
+    max-width: 50px;
+  
+    & > line {
+      stroke: black;
+      stroke-width: 7px;
+    }
+  } */

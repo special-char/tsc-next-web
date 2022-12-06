@@ -1,5 +1,8 @@
 .footer {
-  @apply grid gap-3 bg-neutral-700 px-4 pt-16 md:px-6 lg:grid-cols-2 lg:px-container;
+  @apply grid gap-3 overflow-hidden bg-neutral-700 px-4 pt-16 pb-6 md:px-6 lg:px-container;
+  @media screen and(min-width:1024px) {
+    grid-template-columns: 2fr 1.5fr;
+  }
   &__line {
     @apply h-[1px] w-[100%] rounded-full bg-neutral-600 lg:col-span-2;
   }
@@ -10,14 +13,14 @@
     }
   }
   &__newsletter {
-    @apply py-10 md:w-4/5 lg:py-16;
+    @apply py-10 md:w-2/3 lg:py-16;
   }
 
   &__pages > h3 {
-    @apply mb-4;
+    @apply mb-4 pt-10 lg:pt-16;
   }
   &__socialicons {
-    @apply grid gap-2 md:w-4/5 lg:justify-end lg:pb-4;
+    @apply grid gap-2 pt-2  lg:justify-end lg:pt-2;
     grid-template-columns: repeat(auto-fit, minmax(50px, 20px));
   }
   @media screen and (min-width: 1024px) {

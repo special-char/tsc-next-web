@@ -1,0 +1,9 @@
+.socialicons {
+  @apply grid justify-items-center gap-2 pt-2 lg:justify-end lg:justify-items-end;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 20px));
+}
+@media screen and (min-width: 1024px) {
+  div:nth-of-type(5) {
+    order: 6;
+  }
+}

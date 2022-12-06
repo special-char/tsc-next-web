@@ -21,10 +21,7 @@
     "concurrently": "7.5.0",
     "next": "latest",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "styled-components": "6.0.0-beta.2",
-    "styled-jsx": "5.1.0",
-    "use-count-up": "3.0.1"
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@svgr/webpack": "6.5.1",

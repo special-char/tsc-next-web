@@ -1,0 +1,33 @@
+.ourWorks {
+  @apply relative min-h-screen content-center items-center justify-center gap-6 bg-neutral-700 py-24 px-4 md:py-36 md:px-8 lg:py-44 lg:px-container;
+}
+.ourWorks__header {
+  @apply flex flex-col justify-center pb-8 text-center;
+}
+.ourWorks__line {
+  @apply m-auto w-auto text-neutral-300 md:w-[520px];
+}
+.ourWorks__content {
+  @apply grid border-spacing-2 justify-center gap-9 rounded-3xl text-left drop-shadow-md md:grid-cols-2 md:pb-7 lg:pb-12;
+}
+.ourWorks__sections {
+  @apply items-center rounded-3xl bg-neutral-100 p-4 pb-8 md:p-12;
+}
+.ourWorks__chipLine {
+  @apply mb-10 flex items-center justify-between;
+}
+.ourWorks__svg {
+  @apply w-16  bg-secondary2;
+}
+.ourWorks__chip {
+  @apply border-[1px] border-neutral-300 text-lg font-bold  text-neutral-700 shadow-dark;
+}
+.ourWorks__h3 {
+  @apply mb-2 text-neutral-700 md:mb-3.5;
+}
+.ourWorks__p {
+  @apply text-neutral-600 line-clamp-3;
+}
+.ourWorks__arrow {
+  @apply flex items-center justify-center;
+}

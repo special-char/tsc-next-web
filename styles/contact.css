@@ -1,5 +1,5 @@
 .contact {
-  @apply grid gap-8 px-container pt-8 pb-8;
+  @apply grid  min-h-fit gap-8 px-container py-20 lg:py-32;
 
   @media only screen and (min-width: 1010px) {
     grid-template-columns: 3fr 2fr;
@@ -7,7 +7,7 @@
 
   &__title {
     grid-column: 1 / -1;
-    @apply mb-0 pt-8 text-center text-4xl lg:text-left;
+    @apply mb-0 text-center lg:text-left;
   }
   &__desc {
     grid-column: 1 / -1;
@@ -15,7 +15,7 @@
   }
 
   &__body {
-    @apply grid gap-8 md:grid-cols-2 lg:grid-cols-2;
+    @apply grid gap-8 rounded-2xl bg-neutral-100 py-8 px-4 shadow-base md:grid-cols-1 lg:grid-cols-1;
     /* grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); */
 
     & .form {

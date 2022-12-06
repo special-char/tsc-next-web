@@ -1,0 +1,30 @@
+.individualteacher {
+  @apply min-h-screen max-w-fit content-center justify-items-center overflow-hidden bg-neutral-300 py-24 px-container md:py-36 lg:px-container lg:py-48;
+
+  &__content {
+    @apply m-0;
+
+    &__card {
+      @apply grid justify-items-center rounded-2xl bg-neutral-200 p-10 md:justify-items-start md:gap-7;
+      @media only screen and (min-width: 768px) {
+        grid-template-columns: 1fr 3fr;
+      }
+
+      &__body {
+        @apply mt-4 justify-center md:mb-7 md:flex md:flex-row-reverse md:justify-between;
+      }
+
+      &__title {
+        @apply mb-1 mt-4 h-9 text-center line-clamp-1 md:text-left;
+      }
+
+      &__desc {
+        @apply my-0 mb-6 p-0 text-center line-clamp-3 md:mb-7 md:text-left;
+      }
+      &__icons {
+        @apply grid justify-center justify-items-center gap-1 md:justify-start md:gap-3;
+        grid-template-columns: repeat(auto-fit, minmax(50px, 20px));
+      }
+    }
+  }
+}
