@@ -1,58 +1,84 @@
 import '@/styles/education.css';
+import { use } from 'react';
 import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
-import IndustrySvg from '@/public/icons/industry.svg';
-import UpdateSvg from '@/public/icons/update.svg';
-import CommunitySvg from '@/public/icons/community.svg';
 
 type Props = {};
-const educationData = [
-  {
-    id: 1,
-    name: 'Industry expert teachers',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id dolor ',
-    svg: <IndustrySvg />,
-  },
-  {
-    id: 2,
-    name: 'Up-to-date course content',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id dolor ',
-    svg: <UpdateSvg />,
-  },
-  {
-    id: 3,
-    name: 'Students community',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id dolor ',
-    svg: <CommunitySvg />,
-  },
-];
+
+async function getEducation() {
+  try {
+    const res = await fetch('http://65.20.70.84:1337/graphql', {
+      method: 'POST',
+      body: JSON.stringify({
+        query: `{
+          aboutTsc {
+            data {
+              id
+              attributes {
+                title
+                description
+                image {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+                details {
+                  title
+                  description
+                  image {
+                    data {
+                      attributes {
+                        url
+                      }
+                    }
+                  }
+                }
+                button {
+                  text
+                  url
+                }
+              }
+            }
+          }
+        }`,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    });
+    return await res.json();
+  } catch (error) {}
+}
+
 const Education = (props: Props) => {
+  const educationData = use(getEducation());
+
+  if (!educationData) return null;
+
+  const educationInfo = educationData?.data?.aboutTsc?.data?.attributes;
+
   return (
     <section className="education ">
       <div className=" education__header col-span-2">
-        <h2>About Educatoion</h2>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, et!</p>
+        <h2>{educationInfo.title}</h2>
+        <p>{educationInfo.description}</p>
       </div>
       <div className="education__body col-span-2">
         <div className="education__image">
-          <Image
-            src="https://images.unsplash.com/photo-1579547621113-e4bb2a19bdd6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjJ8fHNvbGlkJTIwY29sb3J8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
-            alt=""
-            fill
-          />
+          <Image src={educationInfo.image.data.attributes.url} alt="" fill />
         </div>
         <div className="education__content ">
-          {educationData.map((x) => (
+          {educationInfo.details.map((x) => (
             <>
-              <figure className="w-16 overflow-hidden rounded-full">
-                {x.svg}
+              <figure className="relative aspect-square w-16 overflow-hidden rounded-full">
+                <Image src={x.image.data.attributes.url} alt="" fill />
               </figure>
               <div className="">
-                <h3>{x.name}</h3>
+                <h3>{x.title}</h3>
                 <p>{x.description}</p>
               </div>
             </>

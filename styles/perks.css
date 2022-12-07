@@ -21,7 +21,7 @@
     }
 
     &__image {
-      @apply mb-10 w-48;
+      @apply relative mb-10 aspect-square w-48;
       @media screen and (max-width: theme(screens.lg)) and (min-width: theme(screens.sm)) {
         @apply mb-0;
       }

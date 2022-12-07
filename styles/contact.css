@@ -1,5 +1,5 @@
 .contact {
-  @apply grid  min-h-fit gap-8 px-container py-20 lg:py-32;
+  @apply relative grid min-h-fit grid-cols-1 gap-8 overflow-hidden px-container py-20 lg:py-32;
 
   @media only screen and (min-width: 1010px) {
     grid-template-columns: 3fr 2fr;
@@ -8,6 +8,9 @@
   &__title {
     grid-column: 1 / -1;
     @apply mb-0 text-center lg:text-left;
+  }
+  &__formdata {
+    @apply grid grid-cols-1 gap-3 gap-y-10 md:grid-cols-2;
   }
   &__desc {
     grid-column: 1 / -1;
@@ -24,12 +27,31 @@
       }
     }
   }
-
+  &__textarea {
+    @apply w-full rounded-2xl bg-neutral-200 px-4 py-2 outline-neutral-400 focus:outline;
+  }
+  &__button {
+    @apply md:ml-6 md:h-16 md:w-44 lg:h-20 lg:w-44;
+  }
   &__cards {
-    @apply grid  items-center gap-6;
+    @apply grid grid-cols-1 items-center gap-6;
   }
 
   &__card_details {
-    @apply grid w-full justify-items-center rounded-2xl text-center shadow-base;
+    @apply grid w-full justify-items-center rounded-2xl bg-neutral-100 text-center shadow-base;
+  }
+
+  &__svg {
+    @apply w-16 overflow-hidden rounded-full;
+  }
+
+  &__yellowcircle {
+    @apply absolute -right-[900px] -z-10 h-[400px] w-[400px] rounded-full bg-secondary2 md:top-[10%] md:-right-[49%] lg:top-24 lg:-right-48;
+  }
+  &__orangecircle {
+    @apply absolute top-[68%] -left-[40%] -z-10 h-[400px] w-[400px] rounded-full bg-secondary3 md:top-[63%] md:-left-36 lg:top-[65%] lg:-left-20;
+  }
+  &__blucircle {
+    @apply absolute -left-[900px] -z-10 h-[400px] w-[400px] rounded-full bg-secondary1 md:-top-80 md:-left-44 lg:-top-[24%] lg:-left-20;
   }
 }

@@ -18,6 +18,9 @@
 
   &__pages > h3 {
     @apply mb-4 pt-10 lg:pt-16;
+    @media screen and (min-width: 1024px) {
+      margin-right: 340px;
+    }
   }
   &__socialicons {
     @apply grid gap-2 pt-2  lg:justify-end lg:pt-2;
