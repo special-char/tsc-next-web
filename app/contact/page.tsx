@@ -13,7 +13,7 @@ const Page = () => {
         circleLeft="bg-secondary3"
       /> */}
       <Contact />
-      {/* <Faq /> */}
+      <Faq />
     </div>
   );
 };
