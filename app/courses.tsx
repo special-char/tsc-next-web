@@ -1,5 +1,6 @@
 import '@/styles/courses.css';
 import Carousal from '@/ui/Carousal';
+import Image from 'next/image';
 import Link from 'next/link';
 
 type Props = {};
@@ -69,7 +70,7 @@ const Courses = (props: Props) => {
         {courses.map((course) => (
           <Link key={course.id} href="/" className="card">
             <figure className="card__image">
-              <img src={course.url} alt={course.name} />
+              <Image src={course.url} alt={course.name} fill />
             </figure>
             <div className="card__body">
               <h3 className="card__title">{course.name}</h3>

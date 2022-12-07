@@ -10,7 +10,7 @@
     @apply lg:justify-self-end;
   }
 }
-.card {
+/* .card {
   @apply grid overflow-hidden rounded-2xl shadow-dark;
 
   &__image {
@@ -31,9 +31,6 @@
       @apply line-clamp-2;
     }
   }
-  /* &__avatar {
-    @apply aspect-square w-14 rounded-full;
-  } */
 
   &__desc {
     @apply text-neutral-500 line-clamp-3;
@@ -49,4 +46,4 @@
   &__hori {
     @apply grid md:grid-cols-2;
   }
-}
+} */
