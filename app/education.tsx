@@ -85,9 +85,9 @@ const Education = (props: Props) => {
           ))}
         </div>
       </div>
-      <div className="education__header col-span-2 pb-24 lg:pb-36">
-        <Link href={educationInfo.button.url} className="btn btn--secondary">
-          {educationInfo.button.text}
+      <div className="education__header col-span-2">
+        <Link href="/" className="btn btn--secondary">
+          About Education
         </Link>
       </div>
       <span className="education__line"></span>
