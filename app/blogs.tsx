@@ -32,18 +32,18 @@ const Blogs = (props: Props) => {
           Browse Blog
         </Link>
         <a href="#" className="card">
-          <figure className="relative">
-            <img
-              className="card__image aspect-video"
+          <figure className="card__image">
+            <Image
               src="https://images.unsplash.com/photo-1661347335413-e4ef4c97d625?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwyMXx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60"
               alt="image"
+              fill
             />
             <span className=" chip chip--secondary absolute top-4 right-3">
               $199.00 USD
             </span>
           </figure>
           <div className="card__body">
-            <h4 className="card__desc">December 1,2022</h4>
+            <time className="card__date">December 1,2022</time>
             <h2 className="card__title line-clamp-2">
               Lorem, ipsum dolor sit amet consectetur adipisicing.
             </h2>
@@ -52,16 +52,12 @@ const Blogs = (props: Props) => {
         <div className="grid grid-rows-3 gap-8 ">
           {blogData.map((blog) => {
             return (
-              <a href="#" className="card card__hori">
-                <div>
-                  <img
-                    className="card__image aspect-video"
-                    src={blog.url}
-                    alt=""
-                  />
-                </div>
+              <a href="#" className="card card--hoz">
+                <figure className="card__image">
+                  <Image src={blog.url} alt="" fill />
+                </figure>
                 <div className="card__body">
-                  <h4 className="card__title line-clamp-3 lg:text-sm">
+                  <h4 className="card__title m-0 line-clamp-3 lg:text-xl">
                     {blog.description}
                   </h4>
                 </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { use } from 'react';
 import '@/styles/testimonial.css';
 import Image from 'next/image';
 import Rating from '@/ui/Rating';
@@ -64,30 +64,75 @@ const Data1 = [
   },
 ];
 
+async function getTestimonialsData() {
+  try {
+    const res = await fetch('http://65.20.70.84:1337/graphql', {
+      method: 'POST',
+      body: JSON.stringify({
+        query: `{
+          testimonials {
+            data {
+              id
+              attributes {
+                quote
+                rating
+                name
+                company
+                designation
+                avatar {
+                  data {
+                    attributes {
+                      url
+                      alternativeText
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }`,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    });
+    return await res.json();
+  } catch (error) {}
+}
+
 const Testimonial = (props: Props) => {
+  const testimonialsData = use(getTestimonialsData());
+
+  if (!testimonialsData) return null;
+
+  const testimonialsInfo = testimonialsData?.data?.testimonials?.data;
+
   return (
     <section id="Testimonial" className="testimonial">
-      <h2 className="testimonial__Header">What our students say about us</h2>
+      <h2 className="testimonial__header">What our students say about us</h2>
       <Carousal>
-        {Data1.map((val) => (
-          <div className="testimonial__body">
-            <div className="testimonial__image">
-              <Image
-                className="avatar overflow-hidden rounded-full "
-                alt=""
-                src={val.url}
-                width={203}
-                height={203}
-              />
+        {testimonialsInfo.map((testimonial) => {
+          const { avatar, rating, quote, name, designation, company } =
+            testimonial.attributes;
+          return (
+            <div className="testimonial__card card" key={testimonial.id}>
+              <div className="card__image testimonial__card__image">
+                <Image
+                  src={avatar.data.attributes.url}
+                  alt={avatar.data.attributes.alternativeText}
+                  fill
+                />
+              </div>
+              <div className="card__body testimonial__card__body">
+                <Rating rate={rating} />
+                <p className="card__desc">{`"${quote}"`}</p>
+                <h4>{name}</h4>
+                <p className="card__desc">{`${designation} at ${company}`}</p>
+              </div>
             </div>
-            <div className="testimonial__paragraph">
-              <div className="testimonial__star my-4">{val.star}</div>
-              <p>{val.description}</p>
-              <h4>{val.name}</h4>
-              <p>{val.designation}</p>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </Carousal>
       <div className="testimonial__content">
         {NumberDetails.map((number) => (

@@ -1,4 +1,4 @@
-import '@/styles/teacher.css';
+// import '@/styles/teacher.css';
 import Image from 'next/image';
 
 type Props = {};

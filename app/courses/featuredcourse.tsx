@@ -8,7 +8,7 @@ const Featuredcourse = (props: Props) => {
   return (
     <section id="featuredcourse" className="featuredcourse">
       <h2 className="featuredcourse__title">Featured Course</h2>
-      <a href="#" className="card card__hori m-0 ">
+      <a href="#" className="card card--hoz m-0 ">
         <div className="relative ">
           <Image
             className="card__image aspect-[3/2] h-full"

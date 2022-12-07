@@ -27,11 +27,11 @@ const links = [
   { page: 'Home' },
   { page: 'About' },
   { page: 'Courses' },
-  { page: 'individual Course' },
+  { page: 'Individual Course' },
   { page: 'Blog' },
   { page: 'Blog post' },
   { page: 'Events' },
-  { page: 'individual Course Events' },
+  { page: 'Individual Event' },
   { page: 'Teacher' },
   { page: 'Individual Teacher' },
   { page: 'Contact' },
@@ -41,9 +41,9 @@ const Footer = (props: Props) => {
     <section id="footer" className="footer">
       <h1 className="text-neutral-100">TSC</h1>
 
-      <p className=" text-neutral-100 ">
-        Lorem ipsum dolor something abc sit amet, consectetur adipiscing elit,
-        seen do eiusmod tempor incididunt.
+      <p className="footer__description ">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt aliqua.
       </p>
 
       <div className="footer__line"></div>
@@ -73,8 +73,8 @@ const Footer = (props: Props) => {
         </div>
       </div>
 
-      <div className="footer__pages grid lg:justify-items-end">
-        <h3 className="text-neutral-100 lg:w-2/3">Pages</h3>
+      <div className="footer__pages grid lg:mr-auto lg:w-2/3">
+        <h3 className="text-neutral-100 ">Pages</h3>
         <div className="footer__links">
           {links.map((val) => (
             <Link href={'#'}>{val.page}</Link>
@@ -91,3 +91,5 @@ const Footer = (props: Props) => {
 };
 
 export default Footer;
+
+// lg:mr-[46px] lg:w-2/3

@@ -1,9 +1,9 @@
 import React from 'react';
-import Features from '../features';
+import Features from './features';
 import Image from 'next/image';
 import ActionBar from '@/ui/ActionBar';
 import Link from 'next/link';
-import '@/styles/allcourses.css';
+import '@/styles/allCourses.css';
 
 type Props = {};
 

@@ -1,5 +1,5 @@
 .blogs {
-  @apply grid min-h-screen grid-cols-1 content-center justify-items-center gap-8 px-container py-16 sm:px-sm-container lg:grid-cols-2 lg:justify-items-start lg:px-container lg:py-28;
+  @apply grid min-h-screen grid-cols-1 content-center justify-items-center gap-8 px-container py-16 sm:px-sm-container  lg:grid-cols-2 lg:justify-items-start lg:px-container lg:py-28;
   grid-template-rows: repeat(4, auto);
 
   &__title {
@@ -10,3 +10,40 @@
     @apply lg:justify-self-end;
   }
 }
+/* .card {
+  @apply grid overflow-hidden rounded-2xl shadow-dark;
+
+  &__image {
+    @apply relative aspect-video;
+  }
+  &__chipset {
+    @apply absolute top-3 flex justify-end gap-3;
+  }
+
+  &__body {
+    @apply grid items-center p-6;
+  }
+
+  &__title {
+    @apply duration-300 ease-in-out  hover:text-primary;
+
+    &--line-2 {
+      @apply line-clamp-2;
+    }
+  }
+
+  &__desc {
+    @apply text-neutral-500 line-clamp-3;
+  }
+  &__actions {
+    @apply flex items-center gap-4;
+  }
+
+  &__avatar {
+    @apply aspect-square w-14 overflow-hidden rounded-full;
+  }
+
+  &--hoz {
+    @apply grid md:grid-cols-2;
+  }
+} */
