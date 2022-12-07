@@ -1,5 +1,5 @@
 .footer {
-  @apply grid gap-3 overflow-hidden bg-neutral-700 px-4 pt-16 pb-6 md:px-6 lg:px-container;
+  @apply grid gap-3 overflow-hidden bg-neutral-700 px-4 pt-16 pb-6 md:px-6 lg:justify-between lg:px-container;
   @media screen and(min-width:1024px) {
     grid-template-columns: 2fr 1.5fr;
   }
@@ -8,6 +8,9 @@
   }
   &__line {
     @apply h-[1px] w-[100%] rounded-full bg-neutral-600 lg:col-span-2;
+  }
+  &__description {
+    @apply text-neutral-100 lg:ml-auto lg:w-[420px];
   }
   &__links {
     @apply grid grid-cols-1 gap-3;
@@ -20,7 +23,7 @@
   }
 
   &__pages > h3 {
-    @apply mb-4 lg:pt-10;
+    @apply mb-4  lg:pt-10;
     @media screen and (min-width: 1024px) {
       margin-right: 340px;
     }
