@@ -18,17 +18,17 @@ const rating = 4;
 const Page = (props: Props) => {
   return (
     <>
-      {/* <Banner />
+      {/* { <Banner />
       <Courses />
       <Perks />
       <Leaders />
       <GrowCareer />
-      <Education />
+      <Education /> */}
       <Category />
-      <Testimonial />
+      {/* <Testimonial />
       <Blogs />
-      <Teacherscard /> */}
-      <Event />
+      <Teacherscard />}
+      <Event /> */}
       {/* <Found /> */}
     </>
   );
