@@ -8,6 +8,8 @@ import Perks from '../perks';
 import Teacherscard from '../teacherscard';
 import Testimonial from '../testimonial';
 import Blogs from '../blogs';
+import Found from './found';
+import Event from './event';
 
 type Props = {};
 
@@ -16,7 +18,7 @@ const rating = 4;
 const Page = (props: Props) => {
   return (
     <>
-      <Banner />
+      {/* <Banner />
       <Courses />
       <Perks />
       <Leaders />
@@ -25,7 +27,9 @@ const Page = (props: Props) => {
       <Category />
       <Testimonial />
       <Blogs />
-      <Teacherscard />
+      <Teacherscard /> */}
+      <Event />
+      {/* <Found /> */}
     </>
   );
 };
