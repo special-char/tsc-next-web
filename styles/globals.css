@@ -6,13 +6,11 @@
   body {
     @apply min-h-screen font-sans text-lg text-neutral-600;
 
-    & > div {
-      display: grid;
-      grid-template-columns: min-content [stack] 1fr;
+    display: grid;
+    grid-template-columns: min-content [stack] 1fr;
 
-      & > :is(aside, main) {
-        grid-area: stack;
-      }
+    & > :is(aside, main) {
+      grid-area: stack;
     }
   }
 

@@ -1,4 +1,5 @@
 import '@/styles/globals.css';
+import '@/styles/sideNav.css';
 import React from 'react';
 import Footer from './footer';
 import Header from './header';
@@ -37,7 +38,7 @@ export default function RootLayout({
         <title>Next.js Turbopack App Directory Playground</title>
       </head>
       <body>
-        {/* <aside id="sidenav-open">
+        <aside id="sidenav-open">
           <nav>
             {data.map((data) => (
               <details>
@@ -65,9 +66,8 @@ export default function RootLayout({
             id="sidenav-close"
             title="Close Menu"
             aria-label="Close Menu"
-            onchange="history.go(-1)"
           ></a>
-        </aside> */}
+        </aside>
         <main>
           <Header />
           {children}
