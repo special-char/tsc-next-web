@@ -41,7 +41,7 @@ const Footer = (props: Props) => {
     <section id="footer" className="footer">
       <h1 className="text-neutral-100">TSC</h1>
 
-      <p className="text-neutral-100 lg:ml-auto lg:w-[420px] lg:pl-2">
+      <p className="footer__description ">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt aliqua.
       </p>
@@ -73,7 +73,7 @@ const Footer = (props: Props) => {
         </div>
       </div>
 
-      <div className="footer__pages grid lg:justify-items-end">
+      <div className="footer__pages grid lg:mr-auto lg:w-2/3">
         <h3 className="text-neutral-100 ">Pages</h3>
         <div className="footer__links">
           {links.map((val) => (
