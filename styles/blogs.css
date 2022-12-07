@@ -43,7 +43,7 @@
     @apply aspect-square w-14 overflow-hidden rounded-full;
   }
 
-  &__hori {
+  &--hoz {
     @apply grid md:grid-cols-2;
   }
 } */

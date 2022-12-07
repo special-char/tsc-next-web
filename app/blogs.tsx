@@ -52,7 +52,7 @@ const Blogs = (props: Props) => {
         <div className="grid grid-rows-3 gap-8 ">
           {blogData.map((blog) => {
             return (
-              <a href="#" className="card card__hori">
+              <a href="#" className="card card--hoz">
                 <figure className="card__image">
                   <Image src={blog.url} alt="" fill />
                 </figure>
