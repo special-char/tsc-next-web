@@ -426,7 +426,7 @@
   }
 
   .newsletter {
-    @apply grid gap-3;
+    @apply grid gap-5;
     grid-template-columns: 3fr 2fr;
 
     &__input {
@@ -436,12 +436,13 @@
     }
 
     &__btn {
-      @apply col-span-2 m-0 p-3 py-5 px-4 md:px-3;
-      @media screen and (min-width: 425px) {
+      @apply col-span-2 m-0 p-3 py-5 px-4 md:px-1 md:py-1;
+      @media screen and (min-width: 479px) {
         @apply m-2;
         grid-row: 1 / -1;
         grid-column: 2 / -1;
       }
+      line-height: inherit;
     }
   }
 

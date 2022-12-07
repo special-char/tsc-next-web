@@ -3,6 +3,9 @@
   @media screen and(min-width:1024px) {
     grid-template-columns: 2fr 1.5fr;
   }
+  h1 {
+    @apply m-0;
+  }
   &__line {
     @apply h-[1px] w-[100%] rounded-full bg-neutral-600 lg:col-span-2;
   }
@@ -17,7 +20,7 @@
   }
 
   &__pages > h3 {
-    @apply mb-4 pt-10 lg:pt-16;
+    @apply mb-4 lg:pt-10;
     @media screen and (min-width: 1024px) {
       margin-right: 340px;
     }
