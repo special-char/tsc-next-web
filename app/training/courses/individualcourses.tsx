@@ -1,0 +1,170 @@
+import React from 'react';
+import '@/styles/individualcourse.css';
+import DesignSvg from '@/public/icons/design.svg';
+import PlayVideo from '@/public/icons/playVideo.svg';
+import Image from 'next/image';
+import Price from '../price';
+import ChipNavigation from '@/ui/ChipNavigation';
+import Rating from '@/ui/Rating';
+
+type Props = {};
+
+const learnData = [
+  {
+    desc: 'Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.',
+  },
+  {
+    desc: 'Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.',
+  },
+  {
+    desc: 'Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.',
+  },
+  {
+    desc: 'Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.',
+  },
+];
+
+const CourseReview = [
+  {
+    id: 1,
+    url: 'https://placeimg.com/192/192/peoplehttps://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bd45dc22493a193f7e_image-1-testimonials-education-x-template.jpg',
+    description:
+      '“Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint”',
+    name: 'Company Name',
+    designation: 'Junior Designer at Facebook',
+    star: <Rating />,
+  },
+  {
+    id: 2,
+    url: 'https://placeimg.com/192/192/peoplehttps://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bd45dc22493a193f7e_image-1-testimonials-education-x-template.jpg',
+    description:
+      '“Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint”',
+    name: 'Company Name',
+    designation: 'Junior Designer at Facebook',
+    star: <Rating />,
+  },
+];
+
+const Individualcourse = (props: Props) => {
+  return (
+    <section id="individualcourse" className="individualcourse">
+      <div className="relative h-full w-full ">
+        <div className="absolute -z-10 h-[500px] w-full bg-neutral-700 lg:h-[600px]"></div>
+        <div className="absolute -right-96 -top-96 -z-10 h-[500px] w-[500px] rounded-full bg-secondary3 md:-right-48 md:-top-80 lg:-right-36 lg:-top-60"></div>
+      </div>
+      <div className="main py-16">
+        <div className="main__left-section">
+          <div className="chip justify-start px-0">
+            <div className="chip chip--white top-28 left-10 items-center gap-1 px-6 py-3">
+              <DesignSvg className="w-4" />
+              <span className="font-bold">Design</span>
+            </div>
+          </div>
+          <h2 className="main__left-section__title">Brand & Identity Design</h2>
+          <p className="text-neutral-100">
+            Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida. Diam
+            phasellus vestibulum lorem sed risus ultricies.
+          </p>
+          <div className="main__left-section__preview">
+            <Image
+              src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2cfe66189f214c09a0c3_image-4-courses-education-x-template.jpg"
+              alt="playvideo"
+              className="rounded-3xl brightness-50"
+              fill
+            />
+            <div className="main__left-section__preview__body">
+              <a href="https://media.geeksforgeeks.org/wp-content/uploads/20200513195558/Placement100-_-GeeksforGeeks-1.mp4">
+                <div className="main__left-section__preview__body-content">
+                  <PlayVideo className="w-4 fill-primary md:w-9" />
+                </div>
+              </a>
+            </div>
+          </div>
+          <div className="lg:hidden">
+            <Price />
+          </div>
+          <div className="main__left-section__course-navigation">
+            <ChipNavigation />
+          </div>
+          <div className="main__left-section__about">
+            <h2>About the course</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit.
+              Felis donec massa aliquam id.Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit. Purus viverra praesent felis
+              consequat pellentesque turpis et quisque platea. Eu, elit ut nunc
+              ac mauris bibendum nulla placerat. Sagittis sit eu sit massa
+              sapien, risus diam. In lorem eu sed euismod laoreet urna, feugiat
+              et. Euismod sem purus rutrum in. Tortor varius a bibendum nisl et
+              tellus. Aliquet elit senectus iaculis netus gravida.
+            </p>
+          </div>
+          <div className="main__left-section__topic">
+            <h2>What will you learn</h2>
+            <p>
+              Euismod sem purus rutrum in. Tortor varius a bibendum nisl et
+              tellus. Aliquet elit senectus iaculis netus gravida
+            </p>
+            <ol
+              style={{
+                listStyle: 'decimal',
+              }}
+            >
+              {learnData.map((data) => (
+                <li>{data.desc}</li>
+              ))}
+            </ol>
+          </div>
+          <div className="main__left-section__result">
+            <h2>Results after course completion</h2>
+            <p>
+              Eget aliquet nibh praesent tristique magna sit amet purus.
+              Consequat id porta nibh venenatis cras sed felis. Nisl rhoncus
+              mattis rhoncus urna neque viverra justo nec. Habitant morbi
+              tristique senectus et netus et malesuada fames ac. Et tortor
+              consequat id porta nibh venenatis cras sed felis.
+            </p>
+
+            <div className="main__left-section__image">
+              <Image
+                className="rounded-3xl"
+                alt="result"
+                fill
+                src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f294e56e6b00b752780af_image-course-results-education-x-template.jpg"
+              />
+            </div>
+          </div>
+          {/* <div className=" testimonial py-20">
+            <h2>What our students say</h2>
+            <div className="testimonial__content">
+              {CourseReview.map((val) => (
+                <div className="testimonial__body">
+                  <div className="testimonial__image">
+                    <Image
+                      className="avatar overflow-hidden rounded-full"
+                      alt=""
+                      src={val.url}
+                      width={150}
+                      height={150}
+                    />
+                  </div>
+                  <div className="testimonial__paragraph">
+                    <div className="testimonial__star my-4">{val.star}</div>
+                    <p>{val.description}</p>
+                    <h4>{val.name}</h4>
+                    <p>{val.designation}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div> */}
+        </div>
+        <div className="individualcourse__right-section">
+          <Price />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Individualcourse;
