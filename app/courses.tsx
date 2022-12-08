@@ -2,6 +2,7 @@ import '@/styles/courses.css';
 import Carousal from '@/ui/Carousal';
 import Image from 'next/image';
 import Link from 'next/link';
+import { use } from 'react';
 
 type Props = {};
 
@@ -62,19 +63,59 @@ const courses = [
   },
 ];
 
+async function getCoursesData() {
+  try {
+    const res = await fetch('http://65.20.70.84:1337/graphql', {
+      method: 'POST',
+      body: JSON.stringify({
+        query: `{
+          courses{
+            data{
+              id
+              attributes{
+                title
+                description
+                courseVideoPoster{
+                  data{
+                    id
+                    attributes{
+                      url
+                    }
+                  }
+                }
+                
+              }
+            }
+          }
+        }`,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    });
+    return await res.json();
+  } catch (error) {}
+}
+
 const Courses = (props: Props) => {
+  const coursesData = use(getCoursesData());
+
+  if (!coursesData) return null;
+
+  const coursesInfo = coursesData?.data?.courses?.data;
   return (
     <section id="courses" className="courses">
       <h2 className="courses__title ">Browse our popular courses</h2>
       <Carousal>
-        {courses.map((course) => (
+        {coursesInfo.map((course) => (
           <Link key={course.id} href="/" className="card">
             <figure className="card__image">
-              <Image src={course.url} alt={course.name} fill />
+              <Image src={course.url} alt={course.attributes.title} fill />
             </figure>
             <div className="card__body">
-              <h3 className="card__title">{course.name}</h3>
-              <p className="card__desc">{course.description}</p>
+              <h3 className="card__title">{course.attributes.title}</h3>
+              <p className="card__desc">{course.attributes.description}</p>
               <div className="card__actions">
                 <div className="avatar placeholder w-16 overflow-hidden rounded-full">
                   <img
