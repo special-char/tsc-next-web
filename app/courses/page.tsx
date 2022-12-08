@@ -9,7 +9,7 @@ type Props = {};
 const page = (props: Props) => {
   return (
     <>
-      {/* <PageHeader
+      <PageHeader
         title="Courses"
         desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
         className="customClass"
@@ -17,7 +17,7 @@ const page = (props: Props) => {
         circleLeft="bg-secondary3"
       />
       <Featuredcourse />
-      <AllCourses /> */}
+      <AllCourses />
     </>
   );
 };
