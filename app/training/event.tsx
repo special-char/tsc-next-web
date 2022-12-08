@@ -1,6 +1,7 @@
 import '@/styles/event.css';
 import React from 'react';
 import Image from 'next/image';
+import CalendarSvg from '@/public/icons/calendar.svg';
 type Props = {};
 
 const data = [
@@ -62,9 +63,9 @@ const data = [
 const Event = (props: Props) => {
   return (
     <section className="px-container py-24">
-      <div className="body">
+      <div className="chipbody">
         <h2>All Events</h2>
-        <div className="body__header">
+        <div className="chipbody__header">
           <button className="chip chip--white px-6">All</button>
           <button className="chip chip--white px-6">Development</button>
           <button className="chip chip--white px-6">Design</button>
@@ -76,15 +77,10 @@ const Event = (props: Props) => {
           <>
             <div className="card">
               <div className="relative">
-                <Image
-                  src={x.image}
-                  alt=""
-                  height={700}
-                  width={800}
-                  className="mb-2 h-full"
-                />
-
-                <div className="chip absolute left-4 top-4 items-center bg-neutral-100">
+                <div className="card__image">
+                  <Image src={x.image} alt="" fill className="" />
+                </div>
+                <div className="chip chip--white absolute left-4 top-4">
                   <div className="flex gap-1">
                     <Image
                       src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f21aa2c18150120252017_icon-3-categories-education-x-template.svg"
@@ -96,31 +92,22 @@ const Event = (props: Props) => {
                   </div>
                 </div>
               </div>
-
-              <div className="card__body gap-4">
-                <div className="mb-2  items-center gap-4 md:flex">
-                  <span>
-                    <Image
-                      src="https://assets.website-files.com/607de2d8e8911e32707a3efe/6081c72dd73f4ebc33cc14dc_icon-date-education-x-template.svg"
-                      alt="Calendar Icon - Education X Webflow Template"
-                      className=""
-                      height={20}
-                      width={20}
-                    />
-                  </span>
-                  <p className="small m-0 overflow-hidden">
-                    {x.day} {x.startTime} -&nbsp; {x.endTime}
-                  </p>
+              <div className="card__body">
+                <div className="maincontent">
+                  <div className="mb-4 items-center gap-4 md:flex">
+                    <CalendarSvg />
+                    <p className="small m-0 items-center overflow-hidden">
+                      {x.day} {x.startTime} -&nbsp; {x.endTime}
+                    </p>
+                  </div>
+                  <div className="rightcontent">
+                    <h3 className="card__title">{x.title}</h3>
+                    <p className="card__desc">{x.description}</p>
+                  </div>
                 </div>
-                <div className="text-center md:row-span-2">
+                <div className="">
                   <div>{x.month}</div>
-                  <h2 className=" m-0 md:text-7xl lg:text-9xl">{x.date}</h2>
-                </div>
-
-                <div className="col-span-2 md:col-span-1">
-                  <h3 className="card__title">{x.title}</h3>
-
-                  <p className="card__desc">{x.description}</p>
+                  <h2 className="m-0 md:text-7xl">{x.date}</h2>
                 </div>
               </div>
             </div>
