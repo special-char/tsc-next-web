@@ -1,0 +1,55 @@
+@import '../../styles/variables.scss';
+
+.registerForm {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 2.5rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  & button {
+    grid-column: 1/3;
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    min-width: 250px;
+  }
+}
+.imageUpload {
+  & input {
+    background-color: #fff !important;
+    &:hover {
+      border-color: #fff !important;
+    }
+  }
+}
+.textInput {
+  width: 400px;
+}
+@media screen and (max-width: $breakpointLgForMw) {
+  .textInput {
+    width: 300px;
+  }
+}
+@media screen and (max-width: $breakpointMdForMw) {
+  .registerForm {
+    grid-template-columns: 1fr;
+    & button {
+      grid-column: 1/2;
+    }
+  }
+  .textInput {
+    width: 500px;
+  }
+}
+@media screen and (max-width: $breakpointSmForMw) {
+  .textInput {
+    width: 290px;
+  }
+}
+
+@media screen and (min-width: $breakpointMd) {
+  .textInputCol {
+    grid-column: 1/3;
+  }
+}
