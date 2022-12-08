@@ -3,7 +3,6 @@ import PageHeader from '@/ui/pageHeader';
 import Featuredcourse from './featuredcourse';
 import AllCourses from './allCourses';
 import Courses from '../courses';
-import Individualcourse from './individualcourses';
 
 type Props = {};
 
@@ -19,7 +18,6 @@ const page = (props: Props) => {
       />
       <Featuredcourse />
       <AllCourses /> */}
-      <Individualcourse />
     </>
   );
 };

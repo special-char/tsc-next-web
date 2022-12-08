@@ -26,7 +26,7 @@ const PriceData = [
     title: 'Lifetime Access',
   },
   {
-    svg: <AccessSvg className="md:w-10" />,
+    svg: <AccessSvg className=" xs:w-9 md:w-9" />,
     title: 'Access From Any Computer, Tablet or Mobile',
   },
 ];
@@ -46,9 +46,9 @@ const Price = (props: Props) => {
             <option value="basic">Basic</option>
             <option value="premium">Premium</option>
           </select>
-          <a href="/" className="btn btn--primary">
+          <Link href="/" className="btn btn--primary">
             Add to cart
-          </a>
+          </Link>
         </div>
       </div>
       <div className=" price__features ">

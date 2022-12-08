@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Price from '../price';
 import ChipNavigation from '@/ui/ChipNavigation';
 import Rating from '@/ui/Rating';
+import Link from 'next/link';
 
 type Props = {};
 
@@ -24,7 +25,7 @@ const learnData = [
   },
 ];
 
-const CourseReview = [
+const TestimonialInfo = [
   {
     id: 1,
     url: 'https://placeimg.com/192/192/peoplehttps://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bd45dc22493a193f7e_image-1-testimonials-education-x-template.jpg',
@@ -48,9 +49,9 @@ const CourseReview = [
 const Individualcourse = (props: Props) => {
   return (
     <section id="individualcourse" className="individualcourse">
-      <div className="relative h-full w-full ">
-        <div className="absolute -z-10 h-[500px] w-full bg-neutral-700 lg:h-[600px]"></div>
-        <div className="absolute -right-96 -top-96 -z-10 h-[500px] w-[500px] rounded-full bg-secondary3 md:-right-48 md:-top-80 lg:-right-36 lg:-top-60"></div>
+      <div className="individualcourse__content">
+        <div className="individualcourse__content__bg"></div>
+        <div className="individualcourse__content__round"></div>
       </div>
       <div className="main py-16">
         <div className="main__left-section">
@@ -73,11 +74,11 @@ const Individualcourse = (props: Props) => {
               fill
             />
             <div className="main__left-section__preview__body">
-              <a href="https://media.geeksforgeeks.org/wp-content/uploads/20200513195558/Placement100-_-GeeksforGeeks-1.mp4">
+              <Link href="https://media.geeksforgeeks.org/wp-content/uploads/20200513195558/Placement100-_-GeeksforGeeks-1.mp4">
                 <div className="main__left-section__preview__body-content">
                   <PlayVideo className="w-4 fill-primary md:w-9" />
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="lg:hidden">
@@ -134,33 +135,31 @@ const Individualcourse = (props: Props) => {
               />
             </div>
           </div>
-          {/* <div className=" testimonial py-20">
-            <h2>What our students say</h2>
-            <div className="testimonial__content">
-              {CourseReview.map((val) => (
-                <div className="testimonial__body">
-                  <div className="testimonial__image">
-                    <Image
-                      className="avatar overflow-hidden rounded-full"
-                      alt=""
-                      src={val.url}
-                      width={150}
-                      height={150}
-                    />
+          <div className="course-review pt-16">
+            <h2 className="mb-14 text-center md:text-left">
+              What our Students say
+            </h2>
+            {TestimonialInfo.map((testimonial) => {
+              return (
+                <div className="testimonial__card card" key={testimonial.id}>
+                  <div className="card__image testimonial__card__image">
+                    <Image src={testimonial.url} alt="image" fill />
                   </div>
-                  <div className="testimonial__paragraph">
-                    <div className="testimonial__star my-4">{val.star}</div>
-                    <p>{val.description}</p>
-                    <h4>{val.name}</h4>
-                    <p>{val.designation}</p>
+                  <div className="card__body testimonial__card__body">
+                    <figure>{testimonial.star}</figure>
+                    <p className="card__desc">{testimonial.description}</p>
+                    <h4>{testimonial.name}</h4>
+                    <p className="card__desc">{testimonial.designation}</p>
                   </div>
                 </div>
-              ))}
-            </div>
-          </div> */}
+              );
+            })}
+          </div>
         </div>
-        <div className="individualcourse__right-section">
-          <Price />
+        <div className=" hidden lg:block">
+          <div className="individualcourse__right-section">
+            <Price />
+          </div>
         </div>
       </div>
     </section>
