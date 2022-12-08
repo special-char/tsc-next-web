@@ -73,8 +73,8 @@ const Footer = (props: Props) => {
         </div>
       </div>
 
-      <div className="footer__pages grid lg:mr-auto lg:w-2/3">
-        <h3 className="text-neutral-100 ">Pages</h3>
+      <div className="footer__pages">
+        <h3 className="text-neutral-100">Pages</h3>
         <div className="footer__links">
           {links.map((val) => (
             <Link href={'#'} key={val.page}>
