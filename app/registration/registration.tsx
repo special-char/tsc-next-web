@@ -1,6 +1,6 @@
 import styles from './register.module.scss';
-import Form from '@components/Form';
-import Typography from '@components/Typography';
+import Form from '@/ui/Form';
+import Typography from '@/ui/Typography';
 import React from 'react';
 import {
   registerFields,

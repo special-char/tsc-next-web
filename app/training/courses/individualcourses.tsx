@@ -62,7 +62,7 @@ const Individualcourse = (props: Props) => {
             </div>
           </div>
           <h2 className="main__left-section__title">Brand & Identity Design</h2>
-          <p className="text-neutral-100">
+          <p className="pb-6 text-neutral-100">
             Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida. Diam
             phasellus vestibulum lorem sed risus ultricies.
           </p>
@@ -139,21 +139,23 @@ const Individualcourse = (props: Props) => {
             <h2 className="mb-14 text-center md:text-left">
               What our Students say
             </h2>
-            {TestimonialInfo.map((testimonial) => {
-              return (
-                <div className="testimonial__card card" key={testimonial.id}>
-                  <div className="card__image testimonial__card__image">
-                    <Image src={testimonial.url} alt="image" fill />
+            <div className="testimonial">
+              {TestimonialInfo.map((testimonial) => {
+                return (
+                  <div className="testimonial__card card" key={testimonial.id}>
+                    <div className="card__image testimonial__card__image">
+                      <Image src={testimonial.url} alt="image" fill />
+                    </div>
+                    <div className="card__body testimonial__card__body">
+                      <figure>{testimonial.star}</figure>
+                      <p className="card__desc">{testimonial.description}</p>
+                      <h4>{testimonial.name}</h4>
+                      <p className="card__desc">{testimonial.designation}</p>
+                    </div>
                   </div>
-                  <div className="card__body testimonial__card__body">
-                    <figure>{testimonial.star}</figure>
-                    <p className="card__desc">{testimonial.description}</p>
-                    <h4>{testimonial.name}</h4>
-                    <p className="card__desc">{testimonial.designation}</p>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
         <div className=" hidden lg:block">

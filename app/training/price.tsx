@@ -11,15 +11,18 @@ type Props = {};
 const PriceData = [
   {
     svg: <LevelSvg />,
-    title: 'Level: Advanced',
+    title: 'Level: ',
+    desc: ' Advanced',
   },
   {
     svg: <DurationSvg />,
-    title: 'Duration: 8hr 12m',
+    title: 'Duration: ',
+    desc: '8hr 12m',
   },
   {
     svg: <LessonSvg />,
-    title: 'Lesson: 80',
+    title: 'Lesson: ',
+    desc: '80',
   },
   {
     svg: <LifetimeSvg />,
@@ -55,7 +58,8 @@ const Price = (props: Props) => {
         {PriceData.map((data) => (
           <div className="price__content">
             <figure className="w-9">{data.svg}</figure>
-            <p>{data.title}</p>
+            <p className="pl-5">{data.title}</p>
+            <p className="pl-2 font-bold text-neutral-700">{data.desc}</p>
           </div>
         ))}
       </div>
