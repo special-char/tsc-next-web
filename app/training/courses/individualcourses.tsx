@@ -56,7 +56,7 @@ const Individualcourse = (props: Props) => {
       <div className="main py-16">
         <div className="main__left-section">
           <div className="chip justify-start px-0">
-            <div className="chip chip--white top-28 left-10 items-center gap-1 px-6 py-3">
+            <div className="chip chip--white top-28 left-0 gap-1 py-3">
               <DesignSvg className="w-4" />
               <span className="font-bold">Design</span>
             </div>

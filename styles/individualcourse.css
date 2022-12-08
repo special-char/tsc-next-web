@@ -17,7 +17,7 @@
   }
   &__left-section {
     &__title {
-      @apply pt-4 text-7xl text-neutral-100;
+      @apply pt-4 text-6xl text-neutral-100 md:text-9xl;
     }
     &__preview {
       @apply relative mb-10 min-h-[260px] w-full  md:min-h-[400px];
@@ -29,7 +29,7 @@
       }
     }
     &__course-navigation {
-      @apply flex flex-col gap-3 rounded-3xl px-3 py-5 md:flex-row md:rounded-full;
+      @apply flex flex-col gap-3 rounded-3xl  py-5 md:flex-row md:rounded-full;
     }
     &__about {
       @apply border-b-[1px] border-neutral-400 py-20;
@@ -60,7 +60,7 @@
     @apply max-w-screen-md items-center justify-items-center md:grid-cols-[1fr_2fr];
 
     &__image {
-      @apply aspect-square w-52 overflow-hidden rounded-full;
+      @apply aspect-square w-44 overflow-hidden rounded-full;
     }
 
     &__body {
