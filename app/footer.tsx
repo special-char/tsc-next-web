@@ -77,7 +77,9 @@ const Footer = (props: Props) => {
         <h3 className="text-neutral-100 ">Pages</h3>
         <div className="footer__links">
           {links.map((val) => (
-            <Link href={'#'}>{val.page}</Link>
+            <Link href={'#'} key={val.page}>
+              {val.page}
+            </Link>
           ))}
         </div>
       </div>

@@ -7,16 +7,19 @@ type Props = {};
 
 const blogData = [
   {
+    id: 1,
     url: 'https://images.unsplash.com/photo-1667988152364-52ab908cd3bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60',
     description:
       'Lorem ipsum, dolor sit amet consectetur adipisicing elit.Beatae, corrupti!',
   },
   {
+    id: 2,
     url: 'https://images.unsplash.com/photo-1667988152364-52ab908cd3bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60',
     description:
       'Lorem ipsum, dolor sit amet consectetur adipisicing elit.Beatae, corrupti!',
   },
   {
+    id: 3,
     url: 'https://images.unsplash.com/photo-1667988152364-52ab908cd3bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60',
     description:
       'Lorem ipsum, dolor sit amet consectetur adipisicing elit.Beatae, corrupti!',
@@ -52,7 +55,7 @@ const Blogs = (props: Props) => {
         <div className="grid grid-rows-3 gap-8 ">
           {blogData.map((blog) => {
             return (
-              <a href="#" className="card card--hoz">
+              <a href="#" key={blog.id} className="card card--hoz">
                 <figure className="card__image">
                   <Image src={blog.url} alt="" fill />
                 </figure>

@@ -26,6 +26,7 @@ async function getEducation() {
                   }
                 }
                 details {
+                  id
                   title
                   description
                   image {
