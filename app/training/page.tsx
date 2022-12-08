@@ -10,6 +10,7 @@ import Testimonial from '../testimonial';
 import Blogs from '../blogs';
 import Found from './found';
 import Event from './event';
+import Individualcourse from './courses/individualcourses';
 
 type Props = {};
 
@@ -28,8 +29,9 @@ const Page = (props: Props) => {
       <Testimonial />
       <Blogs />
       <Teacherscard /> */}
-      <Event />
+      {/* <Event /> */}
       {/* <Found /> */}
+      <Individualcourse />
     </>
   );
 };

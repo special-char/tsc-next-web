@@ -25,45 +25,6 @@ const NumberDetails = [
   },
 ];
 
-const Data1 = [
-  {
-    id: 1,
-    url: 'https://placeimg.com/192/192/peoplehttps://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bd45dc22493a193f7e_image-1-testimonials-education-x-template.jpg',
-    description:
-      '“Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint”',
-    name: 'Company Name',
-    designation: 'Junior Designer at Facebook',
-    star: <Rating />,
-  },
-  {
-    id: 2,
-    url: 'https://placeimg.com/192/192/peoplehttps://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bd45dc22493a193f7e_image-1-testimonials-education-x-template.jpg',
-    description:
-      '“Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint”',
-    name: 'Company Name',
-    designation: 'Junior Designer at Facebook',
-    star: <Rating />,
-  },
-  {
-    id: 3,
-    url: 'https://placeimg.com/192/192/peoplehttps://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bd45dc22493a193f7e_image-1-testimonials-education-x-template.jpg',
-    description:
-      '“Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint”',
-    name: 'Company Name',
-    designation: 'Junior Designer at Facebook',
-    star: <Rating />,
-  },
-  {
-    id: 4,
-    url: 'https://placeimg.com/192/192/peoplehttps://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bd45dc22493a193f7e_image-1-testimonials-education-x-template.jpg',
-    description:
-      '“Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint”',
-    name: 'Company Name',
-    designation: 'Junior Designer at Facebook',
-    star: <Rating />,
-  },
-];
-
 async function getTestimonialsData() {
   try {
     const res = await fetch('http://65.20.70.84:1337/graphql', {

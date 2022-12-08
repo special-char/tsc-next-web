@@ -1,0 +1,77 @@
+.individualcourse {
+  @apply overflow-hidden;
+  &__content {
+    @apply relative h-full w-full;
+    &__bg {
+      @apply absolute -z-10 h-[500px] w-full bg-neutral-700 lg:h-[600px];
+    }
+    &__round {
+      @apply absolute -right-96 -top-96 -z-10 h-[500px] w-[500px] rounded-full bg-secondary3 md:-right-48 md:-top-80 lg:-right-36 lg:-top-60;
+    }
+  }
+}
+.main {
+  @apply grid gap-8 px-container;
+  @media only screen and (min-width: 1010px) {
+    grid-template-columns: 2fr 1fr;
+  }
+  &__left-section {
+    &__title {
+      @apply pt-4 text-7xl text-neutral-100;
+    }
+    &__preview {
+      @apply relative mb-10 min-h-[260px] w-full  md:min-h-[400px];
+      &__body {
+        @apply absolute flex h-full w-full items-center justify-center;
+      }
+      &__body-content {
+        @apply flex h-20 w-20 items-center justify-center rounded-full bg-secondary1 md:h-32 md:w-32;
+      }
+    }
+    &__course-navigation {
+      @apply flex flex-col gap-3 rounded-3xl px-3 py-5 md:flex-row md:rounded-full;
+    }
+    &__about {
+      @apply border-b-[1px] border-neutral-400 py-20;
+    }
+    &__topic {
+      @apply border-b-[1px] border-neutral-400 py-20;
+    }
+    &__result {
+      @apply border-b-[1px] border-neutral-400 py-20;
+    }
+    &__image {
+      @apply relative min-h-[162px] w-full md:min-h-[400px];
+    }
+  }
+  &__right-section {
+    @apply sticky top-0;
+  }
+}
+
+.testimonial {
+  @apply grid min-h-screen content-center items-center justify-center gap-4 bg-neutral-200 py-36 pb-16 lg:gap-12;
+
+  &__header {
+    @apply justify-center text-center md:p-12 md:py-8;
+  }
+
+  &__card {
+    @apply max-w-screen-md items-center justify-items-center md:grid-cols-[1fr_2fr];
+
+    &__image {
+      @apply aspect-square w-52 overflow-hidden rounded-full;
+    }
+
+    &__body {
+      @apply justify-items-center text-center md:justify-items-start md:text-start;
+    }
+  }
+
+  &__content {
+    @apply grid grid-cols-2 justify-items-center px-container lg:grid-cols-4;
+  }
+  &__title {
+    @apply text-center;
+  }
+}
