@@ -1,5 +1,5 @@
 .individualcourse {
-  @apply overflow-hidden;
+  @apply overflow-clip;
   &__content {
     @apply relative h-full w-full;
     &__bg {

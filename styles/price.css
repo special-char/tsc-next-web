@@ -5,7 +5,7 @@
     @apply pt-8 sm:text-sm md:text-2xl lg:pt-0;
   }
   &__content {
-    @apply flex items-start gap-6;
+    @apply flex items-start;
   }
   select {
     -webkit-appearance: none;
