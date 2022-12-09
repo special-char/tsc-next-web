@@ -1,14 +1,11 @@
-import React from 'react';
 import '@/styles/individualcourse.css';
 import DesignSvg from '@/public/icons/design.svg';
 import PlayVideo from '@/public/icons/playVideo.svg';
 import Image from 'next/image';
-import Price from '../price';
+import Price from './price';
 import ChipNavigation from '@/ui/ChipNavigation';
 import Rating from '@/ui/Rating';
 import Link from 'next/link';
-
-type Props = {};
 
 const learnData = [
   {
@@ -46,7 +43,7 @@ const TestimonialInfo = [
   },
 ];
 
-const Individualcourse = (props: Props) => {
+export default async function Page() {
   return (
     <section id="individualcourse" className="individualcourse">
       <div className="individualcourse__content">
@@ -164,6 +161,4 @@ const Individualcourse = (props: Props) => {
       </div>
     </section>
   );
-};
-
-export default Individualcourse;
+}

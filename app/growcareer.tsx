@@ -1,39 +1,64 @@
-import React from 'react';
+import React, { use } from 'react';
 import '@/styles/growcareer.css';
-const data = [
-  {
-    rating: 1,
-    description: 'this is description1',
-  },
-  {
-    rating: 2,
-    description: 'this is description2',
-  },
-  {
-    rating: 3,
-    description: 'this is description3',
-  },
-];
+import Link from 'next/link';
+
+async function getGrowCareerData() {
+  try {
+    const res = await fetch('http://65.20.70.84:1337/graphql', {
+      method: 'POST',
+      body: JSON.stringify({
+        query: `{
+          homeGrowCareer {
+            data {
+              attributes {
+                title
+                description
+                link {
+                  text
+                  url
+                }
+                details {
+                  id
+                  title
+                   description
+                }
+              }
+            }
+          }
+        }`,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    });
+    return await res.json();
+  } catch (error) {}
+}
 
 const GrowCareer = () => {
+  const growCareerData = use(getGrowCareerData());
+
+  if (!growCareerData) return null;
+
+  const growCareerInfo = growCareerData?.data?.homeGrowCareer?.data?.attributes;
+
   return (
     <section id="growcareer" className="growcareer">
       <div className="growcareer__details">
-        <h2 className="growcareer__title">
-          Grow your career today with the Educationic courses
-        </h2>
-        <p className="growcareer__description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt.
-        </p>
-        <button className="btn btn--secondary btn--small">
-          explore courses
-        </button>
+        <h2 className="growcareer__title">{growCareerInfo.title}</h2>
+        <p className="growcareer__description">{growCareerInfo.description}</p>
+        <Link
+          href={growCareerInfo.link.url}
+          className="btn btn--secondary btn--small"
+        >
+          {growCareerInfo.link.text}
+        </Link>
       </div>
       <div className="growcareer__cards">
-        {data.map((val) => (
-          <div className="growcareer__card_details">
-            <h1>{val.rating}</h1>
+        {growCareerInfo.details.map((val) => (
+          <div key={val.id} className="growcareer__card_details">
+            <h1>{val.title}</h1>
             <p>{val.description}</p>
           </div>
         ))}

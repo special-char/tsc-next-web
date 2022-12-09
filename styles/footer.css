@@ -19,13 +19,14 @@
     }
   }
   &__newsletter {
-    @apply py-10 md:w-2/3 lg:py-16;
+    @apply py-10;
   }
 
-  &__pages > h3 {
-    @apply mb-4  lg:pt-10;
-    @media screen and (min-width: 1024px) {
-      margin-right: 340px;
+  &__pages {
+    @apply py-10;
+
+    & > h3 {
+      @apply pb-8;
     }
   }
   &__socialicons {

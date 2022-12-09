@@ -31,7 +31,9 @@ async function getTestimonialsData() {
       method: 'POST',
       body: JSON.stringify({
         query: `{
-          testimonials {
+          testimonials(filters: {
+            tag: null
+          }) {
             data {
               id
               attributes {

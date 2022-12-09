@@ -1,28 +1,28 @@
 .card {
   display: grid;
-
-  @apply grid justify-between  justify-items-center  rounded-2xl  bg-neutral-100 shadow-dark  md:grid-cols-1  lg:grid-cols-2 lg:grid-rows-3 lg:grid-rows-1;
-
-  &__content {
-    @apply flex  justify-between gap-x-2 p-4;
+  @apply justify-items-center rounded-3xl bg-neutral-100 shadow-dark  md:grid-cols-1 lg:grid-cols-2;
+  &__image {
+    @apply relative mb-4 h-[200px] w-[288px] md:mb-4 md:min-h-[350px] md:w-[736px] lg:w-[600px];
   }
   &__body {
     display: grid;
     grid-template-columns: 80% 20%;
-    grid-template-rows: 30% 70%;
-    @apply p-8;
+    grid-template-rows: auto;
+    @apply place-content-center items-start gap-1;
   }
+
   &__title {
-    @apply m-0 mb-2 line-clamp-2;
+    @apply m-0 mb-5 line-clamp-2;
   }
 
   &__desc {
     @apply m-0 p-0 line-clamp-3;
   }
 }
-.body {
-  @apply items-center justify-between pb-10 text-center lg:flex;
+.chipbody {
+  @apply content-center justify-between pb-10 text-center lg:flex;
+
   &__header {
-    @apply flex flex-row flex-wrap justify-around gap-2 rounded-3xl bg-neutral-200 p-6;
+    @apply flex flex-row flex-wrap justify-around gap-2 rounded-full bg-neutral-200 p-6;
   }
 }
