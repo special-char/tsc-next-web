@@ -89,8 +89,8 @@ export default async function Page() {
             <h2 className='m-0 grid place-content-center place-self-start'>Latest posts</h2>
             <span className='chip chip--secondary uppercase max-w-max py-4 px-10 text-base place-self-end'>all posts</span>
           </div>
-          <div className='grid grid-cols-2 gap-x-7 mt-12 '>
-            <a href="#" className="card">
+          <div className='moreblogs'>
+            <Link href="#" className="card">
               <figure className="card__image">
                 <Image
                   src="https://images.unsplash.com/photo-1661347335413-e4ef4c97d625?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwyMXx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60"
@@ -107,8 +107,8 @@ export default async function Page() {
                   Lorem, ipsum dolor sit amet consectetur adipisicing.
                 </h2>
               </div>
-            </a>
-            <a href="#" className="card">
+            </Link>
+            <Link href="#" className="card">
               <figure className="card__image">
                 <Image
                   src="https://images.unsplash.com/photo-1661347335413-e4ef4c97d625?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwyMXx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60"
@@ -125,7 +125,7 @@ export default async function Page() {
                   Lorem, ipsum dolor sit amet consectetur adipisicing.
                 </h2>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
