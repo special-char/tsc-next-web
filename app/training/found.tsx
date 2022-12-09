@@ -8,8 +8,8 @@ const Found = (props: Props) => {
   return (
     <section className="found">
       <div className="found__content">
-        <p>Page not found</p>
-        <h2 className="text-6xl">
+        <p className="text-2xl">Page not found</p>
+        <h2 className="font-semibold">
           The page you are looking for doesn't exist or has been moved.
         </h2>
         <div className="found__btn">
