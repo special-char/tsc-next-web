@@ -153,7 +153,7 @@ export default async function Page() {
             </div>
           </div>
         </div>
-        <div className=" hidden lg:block">
+        <div className="sticky top-0 hidden self-start lg:block">
           <div className="individualcourse__right-section">
             <Price />
           </div>
