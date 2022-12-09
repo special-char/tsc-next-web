@@ -1,8 +1,8 @@
 .individualteacher {
-  @apply min-h-screen max-w-fit content-center justify-items-center overflow-hidden bg-neutral-300 py-24 px-container md:py-36 lg:px-container lg:py-48;
+  @apply h-auto w-auto content-center justify-items-center overflow-hidden px-container lg:px-container;
 
   &__content {
-    @apply m-0;
+    @apply mx-0 lg:mx-28;
 
     &__card {
       @apply grid justify-items-center rounded-2xl bg-neutral-200 p-10 md:justify-items-start md:gap-7;
