@@ -49,7 +49,7 @@ async function getLeaderData() {
       },
     });
     return await res.json();
-  } catch (error) {}
+  } catch (error) { }
 }
 
 const Leaders = () => {
@@ -71,7 +71,7 @@ const Leaders = () => {
         </h2>
         <p className="leader__description">{leaderInfo.description}</p>
         <div className="leader__actions">
-          {leaderInfo.btns.map((x) => (
+          {leaderInfo.btns.map((x: any) => (
             <Link href={x.url} key={x.id} className="btn btn--primary text-xs">
               {x.text}
             </Link>

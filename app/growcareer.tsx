@@ -33,7 +33,7 @@ async function getGrowCareerData() {
       },
     });
     return await res.json();
-  } catch (error) {}
+  } catch (error) { }
 }
 
 const GrowCareer = () => {
@@ -56,7 +56,7 @@ const GrowCareer = () => {
         </Link>
       </div>
       <div className="growcareer__cards">
-        {growCareerInfo.details.map((val) => (
+        {growCareerInfo.details.map((val: any) => (
           <div key={val.id} className="growcareer__card_details">
             <h1>{val.title}</h1>
             <p>{val.description}</p>

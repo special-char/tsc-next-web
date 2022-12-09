@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Rating from '@/ui/Rating';
 import Carousal from '@/ui/Carousal';
 
-interface Props {}
+interface Props { }
 
 const NumberDetails = [
   {
@@ -61,7 +61,7 @@ async function getTestimonialsData() {
       },
     });
     return await res.json();
-  } catch (error) {}
+  } catch (error) { }
 }
 
 const Testimonial = (props: Props) => {
@@ -75,7 +75,7 @@ const Testimonial = (props: Props) => {
     <section id="Testimonial" className="testimonial">
       <h2 className="testimonial__header">What our students say about us</h2>
       <Carousal>
-        {testimonialsInfo.map((testimonial) => {
+        {testimonialsInfo.map((testimonial: any) => {
           const { avatar, rating, quote, name, designation, company } =
             testimonial.attributes;
           return (

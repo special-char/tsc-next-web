@@ -52,7 +52,7 @@ async function getEducation() {
       },
     });
     return await res.json();
-  } catch (error) {}
+  } catch (error) { }
 }
 
 const Education = (props: Props) => {
@@ -73,7 +73,7 @@ const Education = (props: Props) => {
           <Image src={educationInfo.image.data.attributes.url} alt="" fill />
         </div>
         <div className="education__content ">
-          {educationInfo.details.map((x) => (
+          {educationInfo.details.map((x: any) => (
             <>
               <figure className="relative aspect-square w-16 overflow-hidden rounded-full">
                 <Image src={x.image.data.attributes.url} alt="" fill />

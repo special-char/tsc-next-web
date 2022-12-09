@@ -19,6 +19,7 @@ async function getPerks() {
               attributes {
                 title
                  benifits {
+                  id
                   title
                   description
                   image {
@@ -40,7 +41,7 @@ async function getPerks() {
       },
     });
     return await res.json();
-  } catch (error) {}
+  } catch (error) { }
 }
 
 const Perks = (props: Props) => {
@@ -54,9 +55,9 @@ const Perks = (props: Props) => {
     <section id="perks" className="perks">
       <h2 className="perks__title">{perksInfo.title}</h2>
       <div className="perks__content">
-        {perksInfo.benifits.map((perk) => {
+        {perksInfo.benifits.map((perk: any) => {
           return (
-            <div className="perks__item">
+            <div className="perks__item" key={perk.id}>
               <div className="perks__item__image">
                 <Image src={perk.image.data.attributes.url} alt="" fill />
               </div>

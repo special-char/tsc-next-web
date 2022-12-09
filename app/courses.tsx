@@ -95,7 +95,7 @@ async function getCoursesData() {
       },
     });
     return await res.json();
-  } catch (error) {}
+  } catch (error) { }
 }
 
 const Courses = (props: Props) => {
@@ -108,7 +108,7 @@ const Courses = (props: Props) => {
     <section id="courses" className="courses">
       <h2 className="courses__title ">Browse our popular courses</h2>
       <Carousal>
-        {coursesInfo.map((course) => (
+        {coursesInfo.map((course: any) => (
           <Link key={course.id} href="/" className="card">
             <figure className="card__image">
               <Image src={course.url} alt={course.attributes.title} fill />

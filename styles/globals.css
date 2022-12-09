@@ -87,11 +87,11 @@
   }
 
   ol {
-    @apply mt-0 mb-2 pl-10;
+    @apply mt-0 mb-2 list-decimal pl-10;
   }
 
   ul {
-    @apply mt-0 mb-2 pl-10;
+    @apply mt-0 mb-2 list-disc pl-10;
   }
 
   li {
@@ -242,7 +242,15 @@
     }
 
     &--white {
-      @apply bg-neutral-100 text-neutral-800;
+      @apply bg-neutral-100 text-neutral-800 transition-colors transition-transform;
+      &:hover {
+        @apply scale-95 bg-primary text-neutral-100;
+      }
+    }
+    &:hover > &__icon {
+      path {
+        stroke: white;
+      }
     }
   }
 

@@ -38,7 +38,7 @@ async function getCategoriesData() {
       },
     });
     return await res.json();
-  } catch (error) {}
+  } catch (error) { }
 }
 
 const Category = (props: Props) => {
@@ -52,7 +52,7 @@ const Category = (props: Props) => {
     <section id="category" className="category relative ">
       <h2 className="category__title">Browse our courses by category</h2>
       <div className="category__content">
-        {categoriesInfo.map((category) => {
+        {categoriesInfo.map((category: any) => {
           return (
             <div key={category.id} className="card">
               <figure className="card__image aspect-h-image">
