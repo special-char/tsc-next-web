@@ -69,25 +69,24 @@ async function getCoursesData() {
       method: 'POST',
       body: JSON.stringify({
         query: `{
-          courses{
-            data{
+          courses {
+            data {
               id
-              attributes{
+              attributes {
                 title
                 description
-                courseVideoPoster{
-                  data{
-                    id
-                    attributes{
+                courseVideoPoster {
+                  data {
+                    attributes {
                       url
+                      alternativeText
                     }
                   }
                 }
-                
               }
             }
           }
-        }`,
+          }`,
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -108,26 +107,30 @@ const Courses = (props: Props) => {
     <section id="courses" className="courses">
       <h2 className="courses__title ">Browse our popular courses</h2>
       <Carousal>
-        {coursesInfo.map((course) => (
-          <Link key={course.id} href="/" className="card">
-            <figure className="card__image">
-              <Image src={course.url} alt={course.attributes.title} fill />
-            </figure>
-            <div className="card__body">
-              <h3 className="card__title">{course.attributes.title}</h3>
-              <p className="card__desc">{course.attributes.description}</p>
-              <div className="card__actions">
-                <div className="avatar placeholder w-16 overflow-hidden rounded-full">
-                  <img
-                    src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f1ff9fd9e0e1686d26497_image-3-profile-picture-small-teacher-education-x-template.jpg"
-                    alt="Kathie Corl"
-                  />
+        {coursesInfo.map((course) => {
+          const { title, description, courseVideoPoster } = course.attributes;
+          const { url, alternativeText } = courseVideoPoster.data.attributes;
+          return (
+            <Link key={course.id} href="/" className="card">
+              <figure className="card__image">
+                <Image src={url} alt={alternativeText} fill />
+              </figure>
+              <div className="card__body">
+                <h3 className="card__title">{title}</h3>
+                <p className="card__desc">{description}</p>
+                <div className="card__actions">
+                  <div className="avatar placeholder w-16 overflow-hidden rounded-full">
+                    <img
+                      src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f1ff9fd9e0e1686d26497_image-3-profile-picture-small-teacher-education-x-template.jpg"
+                      alt="Kathie Corl"
+                    />
+                  </div>
+                  <h4>Yagnesh Modh</h4>
                 </div>
-                <h4>Yagnesh Modh</h4>
               </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          );
+        })}
       </Carousal>
 
       <Link href="/" className="btn btn--primary">
