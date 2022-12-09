@@ -9,9 +9,7 @@ import Testimonial from './testimonial';
 import Blogs from './blogs';
 import { Suspense } from 'react';
 
-type Props = {};
-
-const Page = (props: Props) => {
+const Page = () => {
   return (
     <>
       <Suspense fallback={<h1>Loading...</h1>}>
