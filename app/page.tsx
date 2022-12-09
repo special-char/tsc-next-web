@@ -14,22 +14,38 @@ type Props = {};
 const Page = (props: Props) => {
   return (
     <>
-      {/* @ts-expect-error Async Server Component */}
-      <Banner />
-      {/* @ts-expect-error Async Server Component */}
-      <Courses />
-      {/* @ts-expect-error Async Server Component */}
-      <Perks />
-      {/* @ts-expect-error Async Server Component */}
-      <Leaders />
-      {/* @ts-expect-error Async Server Component */}
-      <GrowCareer />
-      {/* @ts-expect-error Async Server Component */}
-      <Education />
-      {/* @ts-expect-error Async Server Component */}
-      <Category />
-      {/* @ts-expect-error Async Server Component */}
-      <Testimonial />
+      <Suspense fallback={<h1>Loading...</h1>}>
+        {/* @ts-expect-error Async Server Component */}
+        <Banner />
+      </Suspense>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        {/* @ts-expect-error Async Server Component */}
+        <Courses />
+      </Suspense>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        {/* @ts-expect-error Async Server Component */}
+        <Perks />
+      </Suspense>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        {/* @ts-expect-error Async Server Component */}
+        <Leaders />
+      </Suspense>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        {/* @ts-expect-error Async Server Component */}
+        <GrowCareer />
+      </Suspense>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        {/* @ts-expect-error Async Server Component */}
+        <Education />
+      </Suspense>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        {/* @ts-expect-error Async Server Component */}
+        <Category />
+      </Suspense>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        {/* @ts-expect-error Async Server Component */}
+        <Testimonial />
+      </Suspense>
       <Blogs />
     </>
   );
