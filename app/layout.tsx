@@ -4,28 +4,6 @@ import React from 'react';
 import Footer from './footer';
 import Header from './header';
 
-const data = [
-  {
-    title: 'Bootcamps',
-    sub: 'Full Stack',
-    sub2: 'React',
-    sub3: 'Node.js',
-    sub4: 'Flutter',
-  },
-  {
-    title: 'Talent',
-    sub: 'Hire Out Graduates',
-    sub2: 'Success Stories',
-    sub3: 'Team',
-  },
-  {
-    title: 'Blog',
-  },
-  {
-    title: 'Contact',
-  },
-];
-
 export default function RootLayout({
   children,
 }: {
@@ -39,28 +17,15 @@ export default function RootLayout({
       </head>
       <body>
         <aside id="sidenav-open">
-          <nav>
+          {/* <nav>
             {data.map((data) => (
               <details>
                 <summary>{data.title}</summary>
-                <label>
-                  <li>
-                    <a href="">{data.sub}</a>
-                  </li>
-                  <li>
-                    <a href="">{data.sub2}</a>
-                  </li>
-                  <li>
-                    <a href="">{data.sub3}</a>
-                  </li>
-                  <li>
-                    <a href="">{data.sub4}</a>
-                  </li>
-                </label>
+                <p>hello</p>
               </details>
             ))}
-          </nav>
-
+          </nav> */}
+          <nav></nav>
           <a
             href="#"
             id="sidenav-close"
