@@ -1,7 +1,28 @@
 .teacherscard {
-  @apply py-28 px-container sm:px-sm-container lg:py-32 lg:px-container;
+  @apply py-28 sm:px-sm-container  lg:px-container;
 
-  &__main {
-    @apply grid  gap-10 md:grid-cols-2 lg:grid-cols-3;
+  &__body {
+    @apply grid p-6;
+    &__title {
+      @apply duration-300 ease-in-out line-clamp-1  hover:text-primary;
+
+      &--line-2 {
+        @apply line-clamp-2;
+      }
+
+      &:last-child {
+        @apply mb-0;
+      }
+    }
+    &__desc {
+      @apply my-6 flex items-center text-neutral-500 line-clamp-2;
+
+      &:last-child {
+        @apply mb-0;
+      }
+    }
+    &__actions {
+      @apply flex items-center gap-4;
+    }
   }
 }
