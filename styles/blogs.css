@@ -1,5 +1,5 @@
 .blogs {
-  @apply grid min-h-screen grid-cols-1 content-center justify-items-center gap-8 px-container py-0 pt-28 sm:px-sm-container  lg:grid-cols-2 lg:justify-items-start lg:px-container lg:py-28 lg:pt-44;
+  @apply grid min-h-screen grid-cols-1 content-center justify-items-center gap-8 px-container pt-28 sm:px-sm-container  lg:grid-cols-2 lg:justify-items-start lg:py-0 lg:px-container  lg:pt-32;
 
   &__title {
     @apply my-auto;
@@ -25,7 +25,7 @@
     @apply grid grid-rows-3 gap-8;
   }
   &__moreblogs {
-    @apply grid gap-7 gap-y-12 px-sm-container py-16 md:grid-cols-2 md:px-container lg:py-20;
+    @apply grid gap-7 gap-y-12 px-sm-container py-8 md:grid-cols-2 md:px-container;
     & figure {
       @apply h-fit transition-all;
       & img {
