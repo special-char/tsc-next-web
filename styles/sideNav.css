@@ -64,42 +64,36 @@
   }
 
   details {
-    @apply mb-0 max-w-full justify-center bg-neutral-100 px-8 text-left drop-shadow-none;
+    @apply mb-0 max-w-full items-center justify-center overflow-hidden bg-neutral-100 px-4 text-left drop-shadow-none;
 
-    & > summary {
-      @apply relative flex cursor-pointer list-none items-start justify-start pb-4 text-3xl font-bold text-neutral-600 md:items-center;
+    & > .summary {
+      @apply relative flex cursor-pointer list-none items-start justify-start pb-4 text-2xl font-bold text-neutral-600 md:items-center;
 
       &::marker {
         @apply hidden;
       }
 
       &::before {
-        content: url('../public/icons/rightside.svg');
-        /* content: '>'; */
-        height: 2rem;
-        width: 2rem;
-
-        right: 0;
-        @apply absolute !z-50 mr-8 aspect-square rotate-[15*] justify-center !rounded-none !bg-transparent fill-primary text-center text-2xl  font-bold text-neutral-600 duration-100 md:h-12 md:w-12;
+        content: '';
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><path d="m18.75 36-2.15-2.15 9.9-9.9-9.9-9.9 2.15-2.15L30.8 23.95Z"/></svg>');
+        background-repeat: no-repeat;
+        height: 3rem;
+        width: 3rem;
+        @apply absolute right-0 mr-0 rotate-0 !rounded-none !bg-neutral-100 duration-300 md:mr-8;
       }
-    }
-    & > p {
-      @apply overflow-hidden border-none pt-2 pl-20 text-left text-base md:pl-20;
     }
   }
   details[open] {
-    & > summary {
+    & > .summary {
       @apply text-neutral-800;
-
       &::before {
-        content: url('../public/icons/downarrow.svg');
-        /* content: '>'; */
-        height: 2rem;
-        width: 2rem;
-
-        @apply bottom-2 !z-50 flex rotate-90 justify-center
-          !bg-transparent fill-primary p-0 pb-2 text-center text-2xl
-          text-neutral-600 duration-100;
+        content: '';
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><path d="m24 30.75-12-12 2.15-2.15L24 26.5l9.85-9.85L36 18.8Z"/></svg>');
+        background-repeat: no-repeat;
+        height: 3rem;
+        width: 3rem;
+        right: 0;
+        @apply overflow-hidden !bg-transparent duration-300;
       }
     }
   }

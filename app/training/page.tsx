@@ -10,6 +10,8 @@ import Testimonial from '../testimonial';
 import Blogs from '../blogs';
 import Found from './found';
 import Event from './event';
+import AllEvents from './allevents';
+import IndividualEventBanner from './IndividualEventBanner';
 
 type Props = {};
 
@@ -18,17 +20,19 @@ const rating = 4;
 const Page = (props: Props) => {
   return (
     <>
-      {/* { <Banner />
+      <IndividualEventBanner />
+      <AllEvents />
+      {/* <Banner />
       <Courses />
       <Perks />
       <Leaders />
       <GrowCareer />
-      <Education /> */}
-      <Category />
-      {/* <Testimonial />
-      <Blogs />
-      <Teacherscard />}
-      <Event /> */}
+      <Education />
+      <Category /> */}
+      {/* <Testimonial /> */}
+      {/* <Blogs />
+      <Teacherscard /> */}
+      {/* <Event /> */}
       {/* <Found /> */}
     </>
   );

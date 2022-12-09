@@ -7,6 +7,7 @@ import Leaders from './leaders';
 import Perks from './perks';
 import Testimonial from './testimonial';
 import Blogs from './blogs';
+import Event from './training/event';
 
 type Props = {};
 
@@ -24,6 +25,7 @@ const Page = (props: Props) => {
       <Category />
       <Testimonial />
       <Blogs />
+      <Event />
     </>
   );
 };

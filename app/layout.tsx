@@ -7,16 +7,11 @@ import Header from './header';
 const data = [
   {
     title: 'Bootcamps',
-    sub: 'Full Stack',
-    sub2: 'React',
-    sub3: 'Node.js',
-    sub4: 'Flutter',
+    subject: ['Full-Stack', 'React', 'Node.js', 'Flutter'],
   },
   {
     title: 'Talent',
-    sub: 'Hire Out Graduates',
-    sub2: 'Success Stories',
-    sub3: 'Team',
+    subject: ['Hire Out Graduates', 'Success Stories', 'Team'],
   },
   {
     title: 'Blog',
@@ -42,21 +37,24 @@ export default function RootLayout({
           <nav>
             {data.map((data) => (
               <details>
-                <summary>{data.title}</summary>
-                <label>
-                  <li>
-                    <a href="">{data.sub}</a>
-                  </li>
-                  <li>
-                    <a href="">{data.sub2}</a>
-                  </li>
-                  <li>
-                    <a href="">{data.sub3}</a>
-                  </li>
-                  <li>
-                    <a href="">{data.sub4}</a>
-                  </li>
-                </label>
+                <summary className={data.subject && 'summary'}>
+                  {data.title}
+                </summary>
+                {data.subject && (
+                  <ul
+                    style={{
+                      listStyle: 'inherit',
+                    }}
+                  >
+                    {data.subject?.map((subject) => {
+                      return (
+                        <li>
+                          <a href="">{subject}</a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
               </details>
             ))}
           </nav>
