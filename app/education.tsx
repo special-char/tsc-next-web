@@ -1,89 +1,47 @@
 import '@/styles/education.css';
-import { use } from 'react';
 import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
+import { getEducationData } from '@/lib/getEducation';
+import { AboutTsc, ComponentCommonDetail, UploadFile } from 'types/types';
 
-type Props = {};
-
-async function getEducation() {
-  try {
-    const res = await fetch('http://65.20.70.84:1337/graphql', {
-      method: 'POST',
-      body: JSON.stringify({
-        query: `{
-          aboutTsc {
-            data {
-              id
-              attributes {
-                title
-                description
-                image {
-                  data {
-                    attributes {
-                      url
-                    }
-                  }
-                }
-                details {
-                  id
-                  title
-                  description
-                  image {
-                    data {
-                      attributes {
-                        url
-                      }
-                    }
-                  }
-                }
-                button {
-                  text
-                  url
-                }
-              }
-            }
-          }
-        }`,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-    });
-    return await res.json();
-  } catch (error) { }
-}
-
-const Education = (props: Props) => {
-  const educationData = use(getEducation());
+const Education = async () => {
+  const educationData = await getEducationData();
 
   if (!educationData) return null;
 
-  const educationInfo = educationData?.data?.aboutTsc?.data?.attributes;
+  const { title, description, details, image } = educationData.data.data
+    .aboutTsc.data?.attributes as AboutTsc;
+
+  const { url, alternativeText } = image?.data?.attributes as UploadFile;
 
   return (
     <section className="education ">
       <div className=" education__header col-span-2">
-        <h2>{educationInfo.title}</h2>
-        <p>{educationInfo.description}</p>
+        <h2>{title}</h2>
+        <p>{description}</p>
       </div>
       <div className="education__body col-span-2">
         <div className="education__image">
-          <Image src={educationInfo.image.data.attributes.url} alt="" fill />
+          <Image src={`${url}`} alt={`${alternativeText}`} fill />
         </div>
         <div className="education__content ">
-          {educationInfo.details.map((x: any) => (
-            <>
-              <figure className="relative aspect-square w-16 overflow-hidden rounded-full">
-                <Image src={x.image.data.attributes.url} alt="" fill />
-              </figure>
-              <div className="">
-                <h3>{x.title}</h3>
-                <p>{x.description}</p>
-              </div>
-            </>
-          ))}
+          {details?.map((x) => {
+            const { title, description, image } = x as ComponentCommonDetail;
+            const { url, alternativeText } = image.data
+              ?.attributes as UploadFile;
+            return (
+              <>
+                <figure className="relative aspect-square w-16 overflow-hidden rounded-full">
+                  <Image src={url} alt={`${alternativeText}`} fill />
+                </figure>
+                <div className="">
+                  <h3>{title}</h3>
+                  <p>{description}</p>
+                </div>
+              </>
+            );
+          })}
         </div>
       </div>
       <div className="education__header col-span-2">

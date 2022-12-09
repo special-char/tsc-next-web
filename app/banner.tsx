@@ -1,61 +1,29 @@
-import { use } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import '@/styles/banner.css';
-
-async function getBannerData() {
-  try {
-    const res = await fetch('http://65.20.70.84:1337/graphql', {
-      method: 'POST',
-      body: JSON.stringify({
-        query: `{
-          banner {
-            data {
-              attributes {
-                title
-                description
-                image {
-                  data {
-                    attributes {
-                      url
-                    }
-                  }
-                }
-                buttons {
-                  id
-                  text
-                  url
-                }
-              }
-            }
-          }
-        }`,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-    });
-    return await res.json();
-  } catch (error) {}
-}
+import { getBannerData } from '@/lib/getBanner';
+import { Banner, UploadFile } from 'types/types';
+// import { Banner, UploadFile } from 'types/types';
 
 type Props = {};
 
-const Banner = (props: Props) => {
-  const bannerData = use(getBannerData());
+const Banner = async (props: Props) => {
+  const bannerData = await getBannerData();
 
   if (!bannerData) return null;
 
-  const bannerInfo = bannerData?.data?.banner?.data?.attributes;
+  const { title, description, buttons, image } = bannerData.data.data.banner
+    .data?.attributes as Banner;
+
+  const { url } = image.data?.attributes as UploadFile;
 
   return (
     <section id="banner" className="banner">
       <div className="banner__details">
-        <h1 className="banner__title">{bannerInfo?.title}</h1>
-        <p className="banner__description">{bannerInfo?.description}</p>
+        <h1 className="banner__title">{title}</h1>
+        <p className="banner__description">{description}</p>
         <div className="banner__actions">
-          {bannerInfo?.buttons.map((item: any) => (
+          {buttons?.map((item: any) => (
             <Link key={item.id} href={item.url} className="btn btn--primary">
               {item.text}
             </Link>
@@ -63,9 +31,7 @@ const Banner = (props: Props) => {
         </div>
       </div>
       <div className="banner__image">
-        {bannerInfo?.image && (
-          <Image src={bannerInfo?.image.data.attributes.url} alt="logo" fill />
-        )}
+        {image && <Image src={url} alt="logo" fill />}
       </div>
     </section>
   );
