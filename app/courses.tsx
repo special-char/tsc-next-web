@@ -69,26 +69,24 @@ async function getCoursesData() {
       method: 'POST',
       body: JSON.stringify({
         query: `{
-          courses{
-            data{
+          courses {
+            data {
               id
-              attributes{
+              attributes {
                 title
                 description
-                courseVideoPoster{
-                  data{
-                    id
-                    attributes{
-                      alternativeText
+                courseVideoPoster {
+                  data {
+                    attributes {
                       url
+                      alternativeText
                     }
                   }
                 }
-                
               }
             }
           }
-        }`,
+          }`,
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -111,15 +109,16 @@ const Courses = (props: Props) => {
       <h2 className="courses__title ">Browse our popular courses</h2>
       <Carousal>
         {coursesInfo.map((course) => {
-          const { title, description } = course?.attributes;
+          const { title, description, courseVideoPoster } = course.attributes;
+          const { url, alternativeText } = courseVideoPoster.data.attributes;
           return (
             <Link key={course.id} href="/" className="card">
-              {/* <figure className="card__image">
-                <Image src={course.url} alt={course.name} fill />
-              </figure> */}
+              <figure className="card__image">
+                <Image src={url} alt={alternativeText} fill />
+              </figure>
               <div className="card__body">
-                {/* <h3 className="card__title">{title}</h3> */}
-                {/* <p className="card__desc">{description}</p> */}
+                <h3 className="card__title">{title}</h3>
+                <p className="card__desc">{description}</p>
                 <div className="card__actions">
                   <div className="avatar placeholder w-16 overflow-hidden rounded-full">
                     <img

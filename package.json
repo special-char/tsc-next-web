@@ -8,7 +8,8 @@
     "lint": "next lint",
     "tailwind": "tailwindcss -i styles/globals.css -o styles/dist.css",
     "format": "prettier --write \"**/*.{js,ts,tsx,md}\"",
-    "postinstall": "npm run tailwind"
+    "postinstall": "npm run tailwind",
+    "codegen": "graphql-codegen --config codegen.yml"
   },
   "prettier": {
     "arrowParens": "always",
@@ -17,8 +18,11 @@
     "singleQuote": true
   },
   "dependencies": {
+    "@graphql-codegen/cli": "2.16.1",
+    "@graphql-codegen/typescript": "2.8.5",
     "clsx": "1.2.1",
     "concurrently": "7.5.0",
+    "graphql": "16.6.0",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0"
