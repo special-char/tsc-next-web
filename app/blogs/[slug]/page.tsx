@@ -4,6 +4,7 @@ import Design from '@/public/icons/design.svg'
 // import Chip from '@/ui/Chip';
 import Image from 'next/image';
 import Link from 'next/link';
+import IndividualTeacher from 'app/training/individualteacher';
 export default async function Page() {
   // const chips = [
   //   {
@@ -77,9 +78,57 @@ export default async function Page() {
             <blockquote>Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida. Diam phasellus vestibulum lorem sed risus ultricies. Magna sit amet purus gravida quis blandit. Arcu cursus vitae congue mauris.</blockquote>
             <h6>A brand book can always keep evolving</h6>
             <p>Tortor dignissim convallis aenean et tortor at risus. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et netus. Dui nunc mattis enim ut tellus elementum sagittis vitae et. Quis imperdiet massa tincidunt nunc pulvinar sapien et.</p>
+            <IndividualTeacher />
           </div>
         </div>
+
       </div>
+      <section className='px-container bg-neutral-200'>
+        <div className='pt-44 pb-28 '>
+          <div className='grid grid-cols-2'>
+            <h2 className='m-0 grid place-content-center place-self-start'>Latest posts</h2>
+            <span className='chip chip--secondary uppercase max-w-max py-4 px-10 text-base place-self-end'>all posts</span>
+          </div>
+          <div className='grid grid-cols-2 gap-x-7 mt-12 '>
+            <a href="#" className="card">
+              <figure className="card__image">
+                <Image
+                  src="https://images.unsplash.com/photo-1661347335413-e4ef4c97d625?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwyMXx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60"
+                  alt="image"
+                  fill
+                />
+                <span className=" chip chip--secondary absolute top-4 right-3">
+                  $199.00 USD
+                </span>
+              </figure>
+              <div className="card__body">
+                <time className="card__date">December 1,2022</time>
+                <h2 className="card__title line-clamp-2">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing.
+                </h2>
+              </div>
+            </a>
+            <a href="#" className="card">
+              <figure className="card__image">
+                <Image
+                  src="https://images.unsplash.com/photo-1661347335413-e4ef4c97d625?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwyMXx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60"
+                  alt="image"
+                  fill
+                />
+                <span className=" chip chip--secondary absolute top-4 right-3">
+                  $199.00 USD
+                </span>
+              </figure>
+              <div className="card__body">
+                <time className="card__date">December 1,2022</time>
+                <h2 className="card__title line-clamp-2">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing.
+                </h2>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
     </section>
   );
 }

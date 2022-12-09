@@ -34,9 +34,9 @@ const IndividualTeacher = (props: Props) => {
           </div>
           <div className="individualteacher__card">
             <div className="individualteacher__content__card__body">
-              <span className="chip chip--white mx-auto w-1/3 md:mx-0 md:w-24">
+              <div className="chip chip--white !text-neutral-100 !bg-primary !py-3 !px-6">
                 Design
-              </span>
+              </div>
               <h2 className="individualteacher__content__card__title ">
                 Kathie Corl
               </h2>
