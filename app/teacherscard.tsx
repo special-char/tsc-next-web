@@ -135,14 +135,14 @@ const TeachersCard = (props: Props) => {
     <section id="teacherscard" className="teacherscard">
       <div className="teacherscard__main">
         {teacherData.map((x) => (
-          <a href="#" className="card">
+          <a href="#" className="card" key={x.id}>
             <Image src={x.img} alt="" height={500} width={500} />
             <div className="card__body">
               <h3 className="card__title">{x.title}</h3>
               <p className="card__desc">{x.desc}</p>
               <div className="card__actions">
                 {x.svg.map((icon) => (
-                  <span className="rounded-full bg-neutral-500 p-2 hover:bg-primary">
+                  <span key={icon.icon} className="rounded-full bg-neutral-500 p-2 hover:bg-primary">
                     <Link key={icon.icon} href={icon.link} target="_blank">
                       <Icon name={icon.icon} height={20} width={20} />
                     </Link>

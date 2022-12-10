@@ -1,0 +1,40 @@
+.individualcourse {
+  @apply relative;
+  &__content {
+    @apply absolute z-0 h-[600px] w-screen;
+    &__bg {
+      @apply absolute -z-20 h-[500px] w-full bg-primary lg:h-[250px];
+    }
+    &__round {
+      @apply absolute !left-0 !top-24 -z-10 h-[500px] w-[500px] rounded-full bg-secondary3;
+    }
+  }
+}
+figure {
+  @apply !mt-14;
+}
+h4,
+h5 {
+  @apply !mt-4;
+}
+h6 {
+  @apply !mb-3;
+}
+blockquote {
+  @apply !my-14;
+}
+.moreblogs {
+  @apply grid gap-7 gap-y-12 gap-x-7 py-8 md:grid-cols-2;
+  & figure {
+    @apply h-fit transition-all;
+    & img {
+      @apply object-cover duration-300 ease-in-out hover:scale-110;
+    }
+    & ~ div {
+      @apply items-center gap-3 p-4  lg:p-8 lg:pt-12 lg:pb-14;
+      & h4 {
+        @apply m-0 text-xl md:text-2xl;
+      }
+    }
+  }
+}

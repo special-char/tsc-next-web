@@ -65,6 +65,7 @@ module.exports = {
       aspectRatio: {
         image: '3 / 4',
         'h-image': '4 / 3',
+        'blog-image': '16/9',
       },
       keyframes: ({ theme }) => ({
         rerender: {

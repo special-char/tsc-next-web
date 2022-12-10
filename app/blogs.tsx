@@ -52,20 +52,6 @@ const Blogs = (props: Props) => {
             </h2>
           </div>
         </Link>
-        <div className="blogs__horizontal">
-          {blogData.map((blog) => {
-            return (
-              <Link href="#" key={blog.id} className="card card--hoz">
-                <figure className="card__image">
-                  <Image src={blog.url} alt="" fill />
-                </figure>
-                <div className="card__body">
-                  <h4 className="card__title">{blog.description}</h4>
-                </div>
-              </Link>
-            );
-          })}
-        </div>
       </section>
     </>
   );

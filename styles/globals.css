@@ -87,11 +87,11 @@
   }
 
   ol {
-    @apply mt-0 mb-2 pl-10;
+    @apply mt-0 mb-2 list-decimal pl-10;
   }
 
   ul {
-    @apply mt-0 mb-2 pl-10;
+    @apply mt-0 mb-2 list-disc pl-10;
   }
 
   li {
@@ -242,7 +242,15 @@
     }
 
     &--white {
-      @apply bg-neutral-100 text-neutral-800;
+      @apply bg-neutral-100 text-neutral-800 transition-colors transition-transform;
+      &:hover {
+        @apply scale-95 bg-primary text-neutral-100;
+      }
+    }
+    &:hover > &__icon {
+      path {
+        stroke: white;
+      }
     }
   }
 
@@ -511,52 +519,4 @@
       @apply h-14 w-full rounded-full bg-neutral-200 px-6 py-2 outline-neutral-400 focus:outline;
     }
   }
-
-  /* .card {
-    @apply grid transform overflow-hidden rounded-2xl  shadow-dark transition duration-300 ease-in-out hover:translate-y-1 hover:scale-y-105 md:max-w-full lg:max-w-xl;
-
-    &__image {
-      @apply relative  duration-300 ease-in-out hover:translate-y-1;
-    }
-    &__chipset {
-      @apply absolute flex justify-end gap-3;
-
-      &__chip {
-        @apply items-center  justify-center rounded-full py-3 px-4 align-middle text-xs font-bold shadow-base sm:px-6;
-
-        &--primary {
-          @apply bg-primary text-neutral-100;
-        }
-
-        &--secondary {
-          @apply bg-neutral-300 text-neutral-700;
-        }
-      }
-    }
-
-    &__body {
-      @apply p-6 pt-0;
-    }
-
-    &__title {
-      @apply mt-6 duration-300 ease-in-out  hover:text-primary;
-
-      &--line-2 {
-        @apply line-clamp-2;
-      }
-    }
-
-    &__desc {
-      @apply text-neutral-500 line-clamp-4;
-    }
-    &__actions {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, 36px);
-      @apply items-center gap-4;
-    }
-
-    &__avatar {
-      @apply aspect-square w-10 overflow-hidden rounded-full;
-    }
-  } */
 }
