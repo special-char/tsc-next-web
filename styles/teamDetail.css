@@ -1,11 +1,17 @@
+.teamDetail {
+  @apply h-full overflow-hidden;
+  &__desc {
+    @apply mx-0 px-container pt-64  pb-20 md:pt-40 lg:mx-44;
+  }
+}
 .individualteacher {
-  @apply h-auto w-full cursor-pointer content-center justify-items-center overflow-hidden rounded-3xl shadow-dark;
+  @apply h-auto w-auto content-center justify-items-center overflow-hidden px-container lg:px-container;
 
   &__content {
     @apply mx-0 lg:mx-28;
 
     &__card {
-      @apply grid justify-items-center overflow-hidden rounded-2xl p-10 md:justify-items-start md:gap-7;
+      @apply grid justify-items-center rounded-2xl bg-neutral-200 p-10 md:justify-items-start md:gap-7;
       @media only screen and (min-width: 768px) {
         grid-template-columns: 1fr 3fr;
       }
@@ -20,10 +26,6 @@
 
       &__desc {
         @apply my-0 mb-6 p-0 text-center line-clamp-3 md:mb-7 md:text-left;
-      }
-      &__icons {
-        @apply grid justify-center justify-items-center gap-1 md:justify-start md:gap-3;
-        grid-template-columns: repeat(auto-fit, minmax(50px, 20px));
       }
     }
   }
