@@ -41,7 +41,7 @@ const Blogs = (props: Props) => {
               alt="image"
               fill
             />
-            <span className=" chip chip--secondary absolute top-4 right-3">
+            <span className="chip chip--secondary absolute top-4 right-3">
               $199.00 USD
             </span>
           </figure>

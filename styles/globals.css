@@ -75,7 +75,7 @@
   }
 
   figcaption {
-    @apply mt-1 text-center;
+    @apply mt-4 text-center;
   }
 
   strong {

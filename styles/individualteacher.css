@@ -5,7 +5,7 @@
     @apply mx-0 lg:mx-28;
 
     &__card {
-      @apply grid justify-items-center overflow-hidden rounded-2xl p-10 md:justify-items-start md:gap-7;
+      @apply grid justify-items-center overflow-hidden rounded-2xl p-7 md:justify-items-start md:gap-7 md:p-10;
       @media only screen and (min-width: 768px) {
         grid-template-columns: 1fr 3fr;
       }
@@ -15,7 +15,7 @@
       }
 
       &__title {
-        @apply mb-1 mt-4 h-9 text-center line-clamp-1 md:text-left;
+        @apply mb-1 mt-4 text-center text-xl line-clamp-1 md:text-left md:text-5xl;
       }
 
       &__desc {

@@ -19,8 +19,8 @@ export default async function Page() {
         <div className="individualcourse__content__bg"></div>
         <div className="individualcourse__content__round"></div>
       </div>
-      <div className="grid grid-cols-1 gap-20 py-32 px-container">
-        <div className="relative h-[640px] w-full overflow-hidden rounded-[40px]">
+      <div className="grid grid-cols-1 gap-12 md:gap-16 lg:gap-20 xs:py-16 md:pt-24 md:pb-44 py-32 lg:mx-10 px-container">
+        <div className="relative h-44 md:h-[400px] lg:h-[500px] xl:h-[640px] w-full overflow-hidden xs:rounded-[20px] md:rounded-[33px]">
           <Image
             alt="alt"
             src={
@@ -29,12 +29,10 @@ export default async function Page() {
             fill
           />
         </div>
-        <div className="mx-auto w-4/5 px-6 pb-6 text-left">
-          <div className="grid grid-cols-1 border-b pb-20">
+        <div className="mx-auto lg:w-full xl:w-4/5 px-6 pb-6 text-left">
+          <div className="grid grid-cols-1">
             <h1
-              style={{
-                maxWidth: '760px',
-              }}
+              className='text-[35px] md:text-5xl'
             >
               How to design a simple, yet unique and memorable brand identity
             </h1>
@@ -51,37 +49,38 @@ export default async function Page() {
               </span>
             </div>
           </div>
-          <div className="pt-20">
-            <h2 className="mb-2">What makes a good brand book?</h2>
-            <p>
+          <div className="w-full h-[1px] border border-neutral-300 my-20"></div>
+          <h2 className="mb-2">What makes a good brand book?</h2>
+          <p>
+            Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
+            Diam phasellus vestibulum lorem sed risus ultricies. Magna sit
+            amet purus gravida quis blandit. Arcu cursus vitae congue mauris.
+            Nunc mattis enim ut tellus elementum sagittis vitae et leo. Semper
+            risus in hendrerit gravida rutrum quisque non. At urna condimentum
+            mattis pellentesque id nibh tortor. A erat nam at lectus urna duis
+            convallis convallis tellus. Sit amet mauris commodo quis imperdiet
+            massa. Vitae congue eu consequat ac felis
+          </p>
+          <ul>
+            <li>
               Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
-              Diam phasellus vestibulum lorem sed risus ultricies. Magna sit
-              amet purus gravida quis blandit. Arcu cursus vitae congue mauris.
-              Nunc mattis enim ut tellus elementum sagittis vitae et leo. Semper
-              risus in hendrerit gravida rutrum quisque non. At urna condimentum
-              mattis pellentesque id nibh tortor. A erat nam at lectus urna duis
-              convallis convallis tellus. Sit amet mauris commodo quis imperdiet
-              massa. Vitae congue eu consequat ac felis
-            </p>
-            <ul>
-              <li>
-                Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
-              </li>
-              <li>
-                Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
-              </li>
-              <li>
-                Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
-              </li>
-              <li>
-                Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
-              </li>
-              <li>
-                Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
-              </li>
-            </ul>
-            <h3>How to create a good brand book?</h3>
-            <figure className="relative aspect-blog-image  overflow-hidden rounded-[40px]">
+            </li>
+            <li>
+              Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
+            </li>
+            <li>
+              Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
+            </li>
+            <li>
+              Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
+            </li>
+            <li>
+              Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
+            </li>
+          </ul>
+          <h3>How to create a good brand book?</h3>
+          <figure>
+            <div className="relative aspect-blog-image  overflow-hidden rounded-[40px]">
               <Image
                 alt="alt"
                 src={
@@ -89,91 +88,93 @@ export default async function Page() {
                 }
                 fill
               />
-              <figcaption>this is a figcaption</figcaption>
-            </figure>
-
-            <h4>This is the h5 tag</h4>
-            <p>
-              Eget aliquet nibh praesent tristique magna sit amet purus.
-              Consequat id porta nibh venenatis cras sed felis. Nisl rhoncus
-              mattis rhoncus urna neque viverra justo nec. Habitant morbi
-              tristique senectus et netus et malesuada fames ac. Et tortor
-              consequat id porta nibh venenatis cras sed felis. Fringilla est
-              ullamcorper eget nulla facilisi. Mi sit amet mauris commodo quis.
-              Eget arcu dictum varius duis at consectetur lorem.Venenatis cras
-              sed felis eget velit
-            </p>
-            <ol>
-              <li>Magna eget est lorem ipsum dolor.</li>
-              <li>Magna eget est lorem ipsum dolor.</li>
-              <li>Magna eget est lorem ipsum dolor.</li>
-              <li>Magna eget est lorem ipsum dolor.</li>
-            </ol>
-            <blockquote>
-              Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
-              Diam phasellus vestibulum lorem sed risus ultricies. Magna sit
-              amet purus gravida quis blandit. Arcu cursus vitae congue mauris.
-            </blockquote>
-            <h6>A brand book can always keep evolving</h6>
-            <p>
-              Tortor dignissim convallis aenean et tortor at risus. Condimentum
-              vitae sapien pellentesque habitant morbi tristique senectus et
-              netus. Dui nunc mattis enim ut tellus elementum sagittis vitae et.
-              Quis imperdiet massa tincidunt nunc pulvinar sapien et.
-            </p>
-            <IndividualTeacher />
-          </div>
+            </div>
+            <figcaption>this is a figcaption</figcaption>
+          </figure>
+          <h4>This is the h5 tag</h4>
+          <p>
+            Eget aliquet nibh praesent tristique magna sit amet purus.
+            Consequat id porta nibh venenatis cras sed felis. Nisl rhoncus
+            mattis rhoncus urna neque viverra justo nec. Habitant morbi
+            tristique senectus et netus et malesuada fames ac. Et tortor
+            consequat id porta nibh venenatis cras sed felis. Fringilla est
+            ullamcorper eget nulla facilisi. Mi sit amet mauris commodo quis.
+            Eget arcu dictum varius duis at consectetur lorem.Venenatis cras
+            sed felis eget velit
+          </p>
+          <ol>
+            <li>Magna eget est lorem ipsum dolor.</li>
+            <li>Magna eget est lorem ipsum dolor.</li>
+            <li>Magna eget est lorem ipsum dolor.</li>
+            <li>Magna eget est lorem ipsum dolor.</li>
+          </ol>
+          <blockquote>
+            Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
+            Diam phasellus vestibulum lorem sed risus ultricies. Magna sit
+            amet purus gravida quis blandit. Arcu cursus vitae congue mauris.
+          </blockquote>
+          <h6>A brand book can always keep evolving</h6>
+          <p>
+            Tortor dignissim convallis aenean et tortor at risus. Condimentum
+            vitae sapien pellentesque habitant morbi tristique senectus et
+            netus. Dui nunc mattis enim ut tellus elementum sagittis vitae et.
+            Quis imperdiet massa tincidunt nunc pulvinar sapien et.
+          </p>
+          <IndividualTeacher />
         </div>
       </div>
-      <section className="bg-neutral-200 px-container">
-        <div className="pt-44 pb-28 ">
-          <div className="grid grid-cols-2">
-            <h2 className="m-0 grid place-content-center place-self-start">
-              Latest posts
-            </h2>
-            <span className="chip chip--secondary max-w-max place-self-end py-4 px-10 text-base uppercase">
-              all posts
-            </span>
-          </div>
-          <div className="moreblogs">
-            <Link href="#" className="card">
-              <figure className="card__image">
-                <Image
-                  src="https://images.unsplash.com/photo-1661347335413-e4ef4c97d625?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwyMXx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60"
-                  alt="image"
-                  fill
-                />
-                <span className=" chip chip--secondary absolute top-4 right-3">
-                  $199.00 USD
-                </span>
-              </figure>
-              <div className="card__body">
-                <time className="card__date">December 1,2022</time>
-                <h2 className="card__title line-clamp-2">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing.
-                </h2>
-              </div>
-            </Link>
-            <Link href="#" className="card">
-              <figure className="card__image">
-                <Image
-                  src="https://images.unsplash.com/photo-1661347335413-e4ef4c97d625?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwyMXx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60"
-                  alt="image"
-                  fill
-                />
-                <span className=" chip chip--secondary absolute top-4 right-3">
-                  $199.00 USD
-                </span>
-              </figure>
-              <div className="card__body">
-                <time className="card__date">December 1,2022</time>
-                <h2 className="card__title line-clamp-2">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing.
-                </h2>
-              </div>
-            </Link>
-          </div>
+      <section className="bg-neutral-200 px-container grid grid-cols-1 gap-y-12 pb-14 md:pb-36 pt-24 lg:pt-44">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-5 md:gap-y-0 place-content-center">
+          <h2 className="my-auto text-3xl md:text-5xl place-self-center md:place-self-start">
+            Latest posts
+          </h2>
+          <span className="chip chip--secondary w-full md:max-w-max place-self-center md:place-self-end py-4 px-10 text-base uppercase">
+            all posts
+          </span>
         </div>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-x-7'>
+          <Link href="#" className="card rounded-lg overflow-hidden">
+            <figure className='overflow-hidden !m-0 !translate-y-0 aspect-blog-image'>
+              <div className="card__image">
+                <Image
+                  src="https://images.unsplash.com/photo-1661347335413-e4ef4c97d625?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwyMXx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60"
+                  alt="image"
+                  fill
+                />
+              </div>
+              <span className="chip chip--secondary absolute top-4 right-3">
+                $199.00 USD
+              </span>
+            </figure>
+            <div className="card__body !pb-8 !pt-6 !px-10 md:!px-12 md:!pt-8 md:!pb-14">
+              <time className="card__date text-neutral-600 font-semibold text-base">December 1,2022</time>
+              <h2 className="card__title line-clamp-2 text-xl md:text-2xl">
+                Lorem, ipsum dolor sit amet consectetur adipisicing.
+              </h2>
+            </div>
+          </Link>
+          {/* <Link href="#" className="card rounded-lg overflow-hidden">
+            <figure className='overflow-hidden !m-0 !translate-y-0 aspect-blog-image'>
+              <div className="card__image">
+                <Image
+                  src="https://images.unsplash.com/photo-1661347335413-e4ef4c97d625?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwyMXx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60"
+                  alt="image"
+                  fill
+                />
+              </div>
+              <span className="chip chip--secondary absolute top-4 right-3">
+                $199.00 USD
+              </span>
+            </figure>
+            <div className="card__body !px-12 !pt-8 !pb-14">
+              <time className="card__date text-neutral-600 font-semibold text-base">December 1,2022</time>
+              <h2 className="card__title line-clamp-2">
+                Lorem, ipsum dolor sit amet consectetur adipisicing.
+              </h2>
+            </div>
+          </Link> */}
+        </div>
+
       </section>
     </section>
   );

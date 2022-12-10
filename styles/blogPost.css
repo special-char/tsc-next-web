@@ -1,12 +1,12 @@
 .individualcourse {
-  @apply relative;
+  @apply relative overflow-hidden;
   &__content {
-    @apply absolute z-0 h-[600px] w-screen;
+    @apply absolute z-0 h-[600px] w-screen overflow-hidden;
     &__bg {
-      @apply absolute -z-20 h-[500px] w-full bg-primary lg:h-[250px];
+      @apply absolute -z-20 w-full bg-primary xs:h-36 md:h-48 lg:h-64 xl:h-[500px];
     }
     &__round {
-      @apply absolute !left-0 !top-24 -z-10 h-[500px] w-[500px] rounded-full bg-secondary3;
+      @apply absolute !top-24 -z-10 rounded-full bg-secondary3 xs:!-left-16 xs:!-top-10 xs:h-32 xs:w-32 md:!-left-80 md:min-h-[478px] md:w-[478px] lg:!-left-40 xl:!left-0;
     }
   }
 }
@@ -23,18 +23,20 @@ h6 {
 blockquote {
   @apply !my-14;
 }
-.moreblogs {
-  @apply grid gap-7 gap-y-12 gap-x-7 py-8 md:grid-cols-2;
-  & figure {
-    @apply h-fit transition-all;
-    & img {
-      @apply object-cover duration-300 ease-in-out hover:scale-110;
-    }
-    & ~ div {
-      @apply items-center gap-3 p-4  lg:p-8 lg:pt-12 lg:pb-14;
-      & h4 {
-        @apply m-0 text-xl md:text-2xl;
-      }
+
+figure {
+  @apply transition-all;
+  & img {
+    @apply duration-300 ease-in-out hover:scale-110;
+  }
+  & ~ div {
+    @apply items-center;
+
+    & h4 {
+      @apply m-0 line-clamp-3 lg:text-xl;
     }
   }
+}
+a {
+  @apply text-neutral-400 hover:text-neutral-400;
 }
