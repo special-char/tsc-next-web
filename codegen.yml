@@ -1,0 +1,6 @@
+overwrite: true
+schema: "http://65.20.70.84:1337/graphql"
+generates:
+  ./types/types.d.ts:
+    plugins:
+      - "typescript"
