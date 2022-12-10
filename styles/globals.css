@@ -177,6 +177,16 @@
       }
     }
   }
+
+  nav {
+    ol {
+      @apply m-0 list-none p-0;
+    }
+
+    ul {
+      @apply m-0 list-none p-0;
+    }
+  }
 }
 
 @layer components {
