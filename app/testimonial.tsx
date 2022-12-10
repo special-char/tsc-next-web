@@ -35,7 +35,7 @@ const Testimonial = async () => {
     <section id="Testimonial" className="testimonial">
       <h2 className="testimonial__header">What our students say about us</h2>
       <Carousal>
-        {testimonialsInfo.map((testimonial) => {
+        {testimonialsInfo.map((testimonial: any) => {
           const { avatar, rating, quote, name, designation, company } =
             testimonial.attributes as Testimonial;
           const { url, alternativeText } = avatar?.data
