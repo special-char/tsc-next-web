@@ -8,9 +8,9 @@ const Features = (props: Props) => {
       <h2 className="features__title">All Courses</h2>
       <div className="features__body">
         <span className="chip chip--primary">All</span>
-        <span className="chip chip--secondary">Development</span>
-        <span className="chip chip--secondary">Design</span>
-        <span className="chip chip--secondary">Marketing</span>
+        <span className="chip chip--white">Development</span>
+        <span className="chip chip--white">Design</span>
+        <span className="chip chip--white">Marketing</span>
       </div>
     </section>
   );

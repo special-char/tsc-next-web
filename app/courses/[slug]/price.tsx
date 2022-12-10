@@ -58,8 +58,10 @@ const Price = (props: Props) => {
         {PriceData.map((data) => (
           <div className="price__content">
             <figure className="w-9">{data.svg}</figure>
-            <p className="pl-5">{data.title}</p>
-            <p className="pl-2 font-bold text-neutral-700">{data.desc}</p>
+            <p className="pl-5 text-lg">{data.title}</p>
+            <p className="pl-2 text-lg font-bold text-neutral-700">
+              {data.desc}
+            </p>
           </div>
         ))}
       </div>

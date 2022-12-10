@@ -13,16 +13,49 @@ const TeamDetails = (props: Props) => {
           <div className="shape-2 absolute bottom-0 -right-44 -z-10 h-72 w-72 rounded-full bg-secondary2 md:-bottom-2 md:-right-28 md:h-64 md:w-64 lg:-bottom-96 lg:-right-24 lg:h-[573px] lg:w-[573px]"></div>
         </div>
         <div className="details absolute top-40 md:top-72">
-          <IndividualTeacher />
+          <section id="individualteacher" className="individualteacher">
+            <div className="individualteacher__content">
+              <div className="individualteacher__content__card">
+                <div className="avatar placeholder w-48 items-center overflow-hidden md:w-56">
+                  <div>
+                    <img
+                      src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f1ff9fd9e0e1686d26497_image-3-profile-picture-small-teacher-education-x-template.jpg"
+                      alt="Kathie Corl"
+                    />
+                  </div>
+                </div>
+                <div className="individualteacher__card">
+                  <div className="individualteacher__content__card__body">
+                    <div className="chip chip--white !bg-primary !py-3 !px-6 !text-neutral-100">
+                      Design
+                    </div>
+                    <h2 className="individualteacher__content__card__title ">
+                      Kathie Corl
+                    </h2>
+                  </div>
+                  <p className="individualteacher__content__card__desc">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Tempora voluptas ipsam deserunt illo nihil eos.
+                  </p>
+                  <span
+                    role="button"
+                    className="btn btn--primary !px-3 !py-6 md:!px-10 md:!py-6"
+                  >
+                    Download Resume
+                  </span>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
 
-        <div className="lg:pt- mx-0 px-container pt-52  pb-20 md:pt-40 lg:mx-44">
+        <div className=" teamDetail__desc">
           <div className="flex ">
             <h2 className="text-3xl md:text-5xl">About</h2>
             <h2 className="pl-1 text-3xl md:text-5xl"> Kathie Corl</h2>
           </div>
 
-          <p className="">
+          <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus
             viverra praesent felis consequat pellentesque turpis et quisque
             platea. Eu, elit ut nunc ac mauris bibendum nulla placerat. Sagittis
