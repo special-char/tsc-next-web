@@ -1,8 +1,11 @@
 .events {
-  @apply mx-auto flex w-full max-w-7xl flex-col bg-neutral-200 px-4 md:!px-6;
+  @apply relative overflow-hidden px-4;
 
+  &__page {
+    @apply mx-auto flex w-full max-w-7xl flex-col bg-neutral-200 px-4 md:!px-6;
+  }
   &__body {
-    @apply flex flex-col flex-wrap gap-8 pt-12 md:flex-col md:gap-4 md:pt-20 lg:flex-row lg:justify-center lg:gap-24;
+    @apply flex flex-col flex-wrap gap-8  pt-12 md:flex-col md:gap-4 md:pt-20 lg:flex-row lg:justify-center;
   }
   &__header {
     @apply flex flex-col items-start justify-start text-center uppercase lg:items-center;
