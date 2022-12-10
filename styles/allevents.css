@@ -1,0 +1,33 @@
+.events {
+  @apply mx-auto flex w-full max-w-7xl flex-col bg-neutral-200 px-4 md:!px-6;
+
+  &__body {
+    @apply flex flex-col flex-wrap gap-8 pt-12 md:flex-col md:gap-4 md:pt-20 lg:flex-row lg:justify-center lg:gap-24;
+  }
+  &__header {
+    @apply flex flex-col items-start justify-start text-center uppercase lg:items-center;
+  }
+  &__datails {
+    @apply mb-16 w-[600px] md:mb-20 lg:mb-28;
+  }
+  &__title {
+    @apply mb-5 flex flex-row items-center justify-start gap-4 font-bold text-neutral-800;
+  }
+  &__chip {
+    @apply chip chip--white gap-2 text-base;
+    &:hover {
+      path {
+        fill: white;
+      }
+    }
+  }
+  &__head {
+    @apply mb-5 block text-3xl font-semibold text-primary md:w-[450px] md:text-6xl;
+  }
+  &__button {
+    @apply btn btn--primary px-10 py-6 text-center uppercase md:w-72;
+  }
+  &__paragraph {
+    @apply mx-auto flex w-[750px] flex-col items-start gap-2 pb-20 md:pb-36;
+  }
+}

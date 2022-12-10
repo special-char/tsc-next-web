@@ -2,45 +2,57 @@ import React from 'react';
 import CelenderSvg from '@/public/icons/celender.svg';
 import MapSvg from '@/public/icons/map.svg';
 import SpeakerSvg from '@/public/icons/speaker.svg';
+import '@/styles/allevents.css';
+import Image from 'next/image';
 
 const EventDetails = () => {
   return (
-    <section className="mx-auto flex w-full max-w-7xl flex-col bg-neutral-200 px-4 md:!px-6">
-      <div className="flex flex-col flex-wrap gap-8 pt-12 md:flex-col md:gap-4 md:pt-20 lg:!flex-row lg:justify-center lg:!gap-24">
-        <div className="flex flex-col items-start justify-between">
-          <div className="flex flex-col justify-start text-center">
-            <h5>JULY</h5>
-            <h1 className="mb-0">24</h1>
+    <section className="events">
+      {/* <div className="h-full w-full overflow-hidden bg-primary">
+        <div className="relative flex  items-center justify-center py-20 px-8">
+          <div className="absolute flex h-44 w-44 rounded-full md:h-32 lg:h-44">
+            <Image
+              src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/6081bc900fef3e8a43d23b44_image-3-events-education-x-template-p-1600.jpeg"
+              alt=""
+              height={700}
+              width={800}
+              className="mb-2"
+            />
           </div>
+          <div className="animate-bounce-slow absolute -top-28 -right-20 z-10 h-[167px] w-[167px] rounded-full bg-secondary3 md:-top-52 md:-right-40 md:h-[300px] md:w-[300px] lg:-top-56 lg:-right-28 lg:h-[350px] lg:w-[350px]"></div>
+          <div className="animate-bounce-slow absolute -left-20 -bottom-36 z-10 h-[167px] w-[167px] rounded-full bg-secondary2 md:-left-40 md:-bottom-48  md:h-[300px] md:w-[300px] lg:-bottom-72 lg:-left-40 lg:h-[350px] lg:w-[350px]"></div>
         </div>
-        <div className="mb-16 w-[600px] md:mb-20 lg:mb-28">
-          <div className="flex flex-row items-center justify-start gap-4 font-bold text-neutral-800 md:flex-col">
+      </div> */}
+      <div className="events__body">
+        <div className="events__header">
+          <h5>july</h5>
+          <h1 className="mb-0">24</h1>
+        </div>
+        <div className="events__datails ">
+          <div className="events__title">
             <CelenderSvg className="w-6" />
             <span className="text-base font-bold md:text-sm">
               Sunday 5:00 pm - 6:00 pm EDT
             </span>
             <MapSvg className="w-6" />
             <span>Ahmedabad</span>
-            <span className="chip chip--chip--white gap-2">
-              <SpeakerSvg className="w-6" />
+            <span className="events__chip">
+              <span className="chip__icon ">
+                <SpeakerSvg className="w-6" />
+              </span>
               Marketing
             </span>
           </div>
-
-          <span className="card__title mb-5 block text-6xl font-semibold text-primary">
-            Social Media Marketing Masterclass
-          </span>
+          <h2 className="events__head">Social Media Marketing Masterclass</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit.
             Felis donec massa aliquam id.
           </p>
-          <button className="btn btn--primary px-10 py-6 text-center uppercase md:w-72">
-            REGISTER TO EVENT
-          </button>
+          <button className="events__button">REGISTER TO EVENT</button>
         </div>
       </div>
 
-      <div className="mx-auto flex w-[750px] flex-col items-start gap-2 pb-20 md:pb-36">
+      <div className="events__paragraph">
         <h2>Event Agenda</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porta massa,
@@ -70,9 +82,7 @@ const EventDetails = () => {
             dor
           </li>
         </ol>
-        <button className="btn btn--primary px-10 py-6 text-center uppercase md:w-72">
-          REGISTER TO EVENT
-        </button>
+        <button className="events__button">REGISTER TO EVENT</button>
       </div>
     </section>
   );

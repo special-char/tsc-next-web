@@ -8,6 +8,7 @@ import Perks from './perks';
 import Testimonial from './testimonial';
 import Blogs from './blogs';
 import { Suspense } from 'react';
+import EventDetails from './training/allevents';
 
 const Page = () => {
   return (
