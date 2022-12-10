@@ -2,6 +2,7 @@ import React from 'react';
 import PageHeader from '@/ui/pageHeader';
 import Featuredcourse from './featuredcourse';
 import AllCourses from './allCourses';
+import Courses from '../courses';
 
 type Props = {};
 

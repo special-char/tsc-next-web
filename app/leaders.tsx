@@ -1,43 +1,48 @@
 import Image from 'next/image';
-import React from 'react';
 import Link from 'next/link';
 import '@/styles/leaderSection.css';
+import { getLeaderData } from '@/lib/getLeader';
+import { HomeLeader, Testimonial, UploadFile } from 'types/types';
 
-const Leaders = () => {
+const Leaders = async () => {
+  const leaderData = await getLeaderData();
+
+  if (!leaderData) return null;
+
+  const { title, description, btns, image, testimonial } = leaderData.data.data
+    .homeLeader.data?.attributes as HomeLeader;
+
+  const { url, alternativeText } = image?.data?.attributes as UploadFile;
+
+  const { tag, quote, name, designation, company } = testimonial?.data
+    ?.attributes as Testimonial;
+
   return (
     <section id="Leaders" className="leader">
       <div className="leader__details">
-        <h2 className="leader__title text-center lg:text-left">
-          Courses taught by industry leaders around the world
-        </h2>
-        <p className="leader__description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt.
-        </p>
-        <div className="leader__actions ">
-          <Link href="/" className="btn btn--primary text-xs">
-            BROWSE TEACHERS
-          </Link>
-          <Link href="/" className="btn btn--secondary text-xs">
-            BECOME A TEACHER
-          </Link>
+        <h2 className="leader__title text-center lg:text-left">{title}</h2>
+        <p className="leader__description">{description}</p>
+        <div className="leader__actions">
+          {btns?.map((val) => (
+            <Link
+              href={`${val?.url}`}
+              key={val?.id}
+              className="btn btn--primary text-xs"
+            >
+              {val?.text}
+            </Link>
+          ))}
         </div>
       </div>
       <div className="leader__image_content">
         <div className="leader__image">
-          <Image
-            src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607ee9511b8768627aa63e05_image-home-about-education-x-template.jpg"
-            alt="logo"
-            fill
-          />
+          <Image src={url} alt={`${alternativeText}`} fill />
         </div>
         <div className="leader__content">
-          <span className="leader__ContentData">Featured Teacher</span>
-          <h3 className="py-4 text-neutral-700">
-            “Teaching on Educationic platform has been an amazing experience”
-          </h3>
-          <h5 className="text-neutral-700">Yagnesh modh</h5>
-          <h6 className="mb-0 text-neutral-600">CEO</h6>
+          <span className="leader__ContentData">{tag}</span>
+          <h3 className="py-4 text-neutral-700">{`“${quote}”`}</h3>
+          <h5 className="text-neutral-700">{name}</h5>
+          <h6 className="mb-0 text-neutral-600">{`${designation} at ${company}`}</h6>
         </div>
       </div>
     </section>

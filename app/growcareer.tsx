@@ -1,40 +1,32 @@
-import React from 'react';
+import { getGrowCareerData } from '@/lib/getGrowCareer';
 import '@/styles/growcareer.css';
-const data = [
-  {
-    rating: 1,
-    description: 'this is description1',
-  },
-  {
-    rating: 2,
-    description: 'this is description2',
-  },
-  {
-    rating: 3,
-    description: 'this is description3',
-  },
-];
+import Link from 'next/link';
+import { ComponentCommonLink, HomeGrowCareer } from 'types/types';
 
-const GrowCareer = () => {
+const GrowCareer = async () => {
+  const growCareerData = await getGrowCareerData();
+
+  if (!growCareerData) return null;
+
+  const { title, description, link, details } = growCareerData.data.data
+    .homeGrowCareer.data?.attributes as HomeGrowCareer;
+
+  const { url, text } = link as ComponentCommonLink;
+
   return (
     <section id="growcareer" className="growcareer">
       <div className="growcareer__details">
-        <h2 className="growcareer__title">
-          Grow your career today with the Educationic courses
-        </h2>
-        <p className="growcareer__description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt.
-        </p>
-        <button className="btn btn--secondary btn--small">
-          explore courses
-        </button>
+        <h2 className="growcareer__title">{title}</h2>
+        <p className="growcareer__description">{description}</p>
+        <Link href={`${url}`} className="btn btn--secondary btn--small">
+          {text}
+        </Link>
       </div>
       <div className="growcareer__cards">
-        {data.map((val) => (
-          <div className="growcareer__card_details">
-            <h1>{val.rating}</h1>
-            <p>{val.description}</p>
+        {details?.map((val) => (
+          <div key={val?.id} className="growcareer__card_details">
+            <h1>{val?.title}</h1>
+            <p>{val?.description}</p>
           </div>
         ))}
         <div className="growcareer_bg"></div>

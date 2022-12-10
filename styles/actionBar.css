@@ -1,0 +1,13 @@
+.actionbar {
+  @apply flex items-center gap-4;
+
+  &__avatar {
+    @apply aspect-square w-14 overflow-hidden rounded-full;
+    & img {
+      @apply transition-all duration-300 hover:scale-110;
+    }
+  }
+  &__data {
+    @apply grid;
+  }
+}

@@ -8,7 +8,8 @@
     "lint": "next lint",
     "tailwind": "tailwindcss -i styles/globals.css -o styles/dist.css",
     "format": "prettier --write \"**/*.{js,ts,tsx,md}\"",
-    "postinstall": "npm run tailwind"
+    "postinstall": "npm run tailwind",
+    "codegen": "graphql-codegen --config codegen.yml"
   },
   "prettier": {
     "arrowParens": "always",
@@ -17,16 +18,19 @@
     "singleQuote": true
   },
   "dependencies": {
+    "axios": "1.2.1",
     "clsx": "1.2.1",
-    "concurrently": "7.5.0",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "2.16.1",
+    "@graphql-codegen/typescript": "2.8.5",
     "@svgr/webpack": "6.5.1",
     "@tailwindcss/line-clamp": "0.4.2",
     "@tailwindcss/typography": "0.5.7",
+    "@types/axios": "0.14.0",
     "@types/node": "18.0.3",
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
@@ -34,6 +38,7 @@
     "cssnano": "5.1.13",
     "eslint": "8.19.0",
     "eslint-config-next": "latest",
+    "graphql": "16.6.0",
     "postcss": "8.4.18",
     "postcss-easings": "3.0.1",
     "postcss-import": "15.0.0",

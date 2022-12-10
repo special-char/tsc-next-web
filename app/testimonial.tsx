@@ -1,10 +1,9 @@
-import React, { use } from 'react';
 import '@/styles/testimonial.css';
 import Image from 'next/image';
 import Rating from '@/ui/Rating';
 import Carousal from '@/ui/Carousal';
-
-interface Props {}
+import { getTestimonialData } from '@/lib/getTestimonials';
+import { Testimonial, UploadFile } from 'types/types';
 
 const NumberDetails = [
   {
@@ -25,104 +24,26 @@ const NumberDetails = [
   },
 ];
 
-const Data1 = [
-  {
-    id: 1,
-    url: 'https://placeimg.com/192/192/peoplehttps://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bd45dc22493a193f7e_image-1-testimonials-education-x-template.jpg',
-    description:
-      '“Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint”',
-    name: 'Company Name',
-    designation: 'Junior Designer at Facebook',
-    star: <Rating />,
-  },
-  {
-    id: 2,
-    url: 'https://placeimg.com/192/192/peoplehttps://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bd45dc22493a193f7e_image-1-testimonials-education-x-template.jpg',
-    description:
-      '“Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint”',
-    name: 'Company Name',
-    designation: 'Junior Designer at Facebook',
-    star: <Rating />,
-  },
-  {
-    id: 3,
-    url: 'https://placeimg.com/192/192/peoplehttps://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bd45dc22493a193f7e_image-1-testimonials-education-x-template.jpg',
-    description:
-      '“Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint”',
-    name: 'Company Name',
-    designation: 'Junior Designer at Facebook',
-    star: <Rating />,
-  },
-  {
-    id: 4,
-    url: 'https://placeimg.com/192/192/peoplehttps://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bd45dc22493a193f7e_image-1-testimonials-education-x-template.jpg',
-    description:
-      '“Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint”',
-    name: 'Company Name',
-    designation: 'Junior Designer at Facebook',
-    star: <Rating />,
-  },
-];
-
-async function getTestimonialsData() {
-  try {
-    const res = await fetch('http://65.20.70.84:1337/graphql', {
-      method: 'POST',
-      body: JSON.stringify({
-        query: `{
-          testimonials {
-            data {
-              id
-              attributes {
-                quote
-                rating
-                name
-                company
-                designation
-                avatar {
-                  data {
-                    attributes {
-                      url
-                      alternativeText
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }`,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-    });
-    return await res.json();
-  } catch (error) {}
-}
-
-const Testimonial = (props: Props) => {
-  const testimonialsData = use(getTestimonialsData());
+const Testimonial = async () => {
+  const testimonialsData = await getTestimonialData();
 
   if (!testimonialsData) return null;
 
-  const testimonialsInfo = testimonialsData?.data?.testimonials?.data;
+  const testimonialsInfo = testimonialsData.data.data.testimonials.data;
 
   return (
     <section id="Testimonial" className="testimonial">
       <h2 className="testimonial__header">What our students say about us</h2>
       <Carousal>
-        {testimonialsInfo.map((testimonial) => {
+        {testimonialsInfo.map((testimonial: any) => {
           const { avatar, rating, quote, name, designation, company } =
-            testimonial.attributes;
+            testimonial.attributes as Testimonial;
+          const { url, alternativeText } = avatar?.data
+            ?.attributes as UploadFile;
           return (
             <div className="testimonial__card card" key={testimonial.id}>
               <div className="card__image testimonial__card__image">
-                <Image
-                  src={avatar.data.attributes.url}
-                  alt={avatar.data.attributes.alternativeText}
-                  fill
-                />
+                <Image src={url} alt={`${alternativeText}`} fill />
               </div>
               <div className="card__body testimonial__card__body">
                 <Rating rate={rating} />

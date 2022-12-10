@@ -4,23 +4,6 @@ import React from 'react';
 import Footer from './footer';
 import Header from './header';
 
-const data = [
-  {
-    title: 'Bootcamps',
-    subject: ['Full-Stack', 'React', 'Node.js', 'Flutter'],
-  },
-  {
-    title: 'Talent',
-    subject: ['Hire Out Graduates', 'Success Stories', 'Team'],
-  },
-  {
-    title: 'Blog',
-  },
-  {
-    title: 'Contact',
-  },
-];
-
 export default function RootLayout({
   children,
 }: {
@@ -28,37 +11,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Next.js Turbopack App Directory Playground</title>
-      </head>
+      <head />
       <body>
         <aside id="sidenav-open">
-          <nav>
+          {/* <nav>
             {data.map((data) => (
               <details>
-                <summary className={data.subject && 'summary'}>
-                  {data.title}
-                </summary>
-                {data.subject && (
-                  <ul
-                    style={{
-                      listStyle: 'inherit',
-                    }}
-                  >
-                    {data.subject?.map((subject) => {
-                      return (
-                        <li>
-                          <a href="">{subject}</a>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                )}
+                <summary>{data.title}</summary>
+                <p>hello</p>
               </details>
             ))}
-          </nav>
-
+          </nav> */}
+          <nav></nav>
           <a
             href="#"
             id="sidenav-close"

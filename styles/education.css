@@ -20,7 +20,7 @@
     }
   }
   &__line {
-    @apply h-[1px] w-[100%] rounded-full bg-neutral-300  lg:col-span-2;
+    @apply col-span-2 h-[1px] w-[100%] rounded-full  bg-neutral-300;
   }
   @media screen and (max-width: 768px) {
     div:nth-of-type(2) {
