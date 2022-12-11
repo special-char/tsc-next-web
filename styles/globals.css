@@ -466,12 +466,7 @@
     }
 
     &__btn {
-      @apply col-span-2 m-0 p-3 py-5 px-4 md:px-1 md:py-1;
-      @media screen and (min-width: 479px) {
-        grid-row: 1 / -1;
-        grid-column: 2 / -1;
-      }
-      line-height: inherit;
+      @apply col-span-2 m-0 p-3 py-5 px-4 md:col-[2_/_-1] md:row-span-full md:m-1 md:px-1 md:py-1;
     }
   }
 

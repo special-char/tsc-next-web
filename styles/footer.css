@@ -1,16 +1,12 @@
 .footer {
-  @apply grid gap-3 overflow-hidden bg-neutral-700 px-4 pt-16 pb-6 md:px-6 lg:justify-between lg:px-container;
-  @media screen and(min-width:1024px) {
-    grid-template-columns: 2fr 1.5fr;
+  @apply grid grid-cols-1 items-center gap-10 overflow-hidden bg-neutral-700 px-container pb-6 pt-20 md:grid-cols-2 md:gap-20;
+
+  &__title {
+    @apply m-0 text-neutral-100;
   }
-  h1 {
-    @apply m-0;
-  }
-  &__line {
-    @apply h-[1px] w-[100%] rounded-full bg-neutral-600 lg:col-span-2;
-  }
+
   &__description {
-    @apply text-neutral-100 lg:ml-auto lg:w-[420px];
+    @apply m-0 text-neutral-100 md:max-w-md md:justify-self-end;
   }
   &__links {
     @apply grid grid-cols-1 gap-3;
@@ -18,24 +14,15 @@
       @apply grid-cols-2;
     }
   }
-  &__newsletter {
-    @apply py-10;
-  }
 
   &__pages {
-    @apply py-10;
-
+    @apply w-full md:max-w-md md:justify-self-end;
     & > h3 {
       @apply pb-8;
     }
   }
-  &__socialicons {
-    @apply grid gap-2 pt-2  lg:justify-end lg:pt-2;
-    grid-template-columns: repeat(auto-fit, minmax(50px, 20px));
-  }
-  @media screen and (min-width: 1024px) {
-    div:nth-of-type(5) {
-      order: 6;
-    }
+
+  &__copyright {
+    @apply mb-6 text-neutral-100 md:max-w-md md:justify-self-end;
   }
 }
