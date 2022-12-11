@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import '@/styles/banner.css';
+import md from 'markdown-it';
 import { getBannerData } from '@/lib/getBanner';
 import { Banner, UploadFile } from 'types/types';
-// import { Banner, UploadFile } from 'types/types';
 
 type Props = {};
 
@@ -21,7 +21,9 @@ const Banner = async (props: Props) => {
     <section id="banner" className="banner">
       <div className="banner__details">
         <h1 className="banner__title">{title}</h1>
-        <p className="banner__description">{description}</p>
+        <div
+          dangerouslySetInnerHTML={{ __html: md().render(description) }}
+        ></div>
         <div className="banner__actions">
           {buttons?.map((item: any) => (
             <Link key={item.id} href={item.url} className="btn btn--primary">
