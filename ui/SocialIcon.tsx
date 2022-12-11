@@ -1,35 +1,10 @@
+import { memo } from 'react';
 import '@/styles/socialicon.css';
 import Icon from '@/ui/Icon';
 import clsx from 'clsx';
 import Link from 'next/link';
-type Props = {};
 
-const socialicon = [
-  // {
-  //   icon: 'facebook',
-  //   link: 'https://www.facebook.com',
-  // },
-  {
-    icon: 'twitter',
-    link: 'https://www.twitter.com',
-  },
-  {
-    icon: 'instagram',
-    link: 'https://www.instagram.com',
-  },
-  {
-    icon: 'linkedin',
-    link: 'https://www.linkedin.com',
-  },
-  // {
-  //   icon: 'youtube',
-  //   link: 'https://www.youtube.com',
-  // },
-  // {
-  //   icon: 'whatsapp',
-  //   link: 'https://www.whatsapp.com',
-  // },
-];
+type Props = {};
 
 const SocialIcon = ({ icons, iconProps, linkClass, wrapperClass }: Props) => {
   return (
@@ -42,7 +17,7 @@ const SocialIcon = ({ icons, iconProps, linkClass, wrapperClass }: Props) => {
         <Link
           key={icon.icon}
           href={icon.link}
-          target="_blank"
+          // target="_blank"
           className={clsx('rounded-full bg-neutral-500 p-2 hover:bg-primary', {
             [linkClass]: !!linkClass,
           })}
@@ -54,4 +29,4 @@ const SocialIcon = ({ icons, iconProps, linkClass, wrapperClass }: Props) => {
   );
 };
 
-export default SocialIcon;
+export default memo(SocialIcon);

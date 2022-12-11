@@ -9,8 +9,6 @@ function useDynamicSVGImport(
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<Error>();
 
-  const { onCompleted, onError } = options;
-
   useEffect(() => {
     setLoading(true);
     import(`@/public/icons/${name}.svg`)
@@ -25,7 +23,7 @@ function useDynamicSVGImport(
       .finally(() => {
         setLoading(false);
       });
-  }, [name, onCompleted, onError]);
+  }, []);
 
   return { error, loading, SvgIcon: iconModule?.default };
 }
