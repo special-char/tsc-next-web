@@ -438,18 +438,20 @@
   }
 
   .newsletter {
-    @apply grid gap-5;
-    grid-template-columns: 3fr 2fr;
+    @apply grid   gap-5 bg-secondary3;
+    /* grid-template-columns: 3fr 2fr; */
 
     &__input {
-      @apply w-full rounded-full bg-neutral-100 py-5 px-6;
+      @apply relative w-full rounded-full bg-neutral-100 py-5 px-6;
       grid-column: 1 / -1;
       grid-row: 1 / -1;
     }
 
     &__btn {
-      @apply col-span-2 m-0 p-3 py-5 px-4 md:px-1 md:py-1;
+      @apply col-span-2 m-0 w-full p-3 py-5 px-4;
       @media screen and (min-width: 479px) {
+        width: 128px;
+        padding: 12px;
         grid-row: 1 / -1;
         grid-column: 2 / -1;
       }

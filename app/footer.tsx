@@ -1,8 +1,11 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import '@/styles/footer.css';
 import SocialIcon from '@/ui/SocialIcon';
+import { Field, Form, Formik } from 'formik';
+import { error } from 'console';
 
 type Props = {};
 
@@ -36,7 +39,23 @@ const links = [
   { page: 'Individual Teacher' },
   { page: 'Contact' },
 ];
+
+function validateEmail(values: any) {
+  let error;
+  if (!values) {
+    error = 'Required email';
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values)) {
+    error = 'Invalid email address';
+  }
+  return error;
+}
 const Footer = (props: Props) => {
+  // const [submit, setsubmit] = useState(false);
+  // const buttonHandler = () => {
+  //   console.log('buttonHandler clicked');
+  //   setsubmit(!submit);
+  //   console.log(submit);
+  // };
   return (
     <section id="footer" className="footer">
       <h1 className="text-neutral-100">TSC</h1>
@@ -60,16 +79,44 @@ const Footer = (props: Props) => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmo.
         </p>
-        <div className="newsletter">
-          <input
-            className="newsletter__input"
-            placeholder="Enter your email"
-            type="text"
-            name=""
-            id=""
-          />
-
-          <button className="btn btn--primary newsletter__btn">Submit</button>
+        <div className="">
+          <Formik
+            initialValues={{ name: 'email new' }}
+            onSubmit={(values) => {
+              console.log('data of submit:', values);
+            }}
+          >
+            {({ isSubmitting, touched, errors }) => (
+              <Form className="footer__email_section relative">
+                <div hidden={isSubmitting}>
+                  <Field
+                    className="newsletter__input  relative"
+                    placeholder="Enter your email"
+                    type="text"
+                    name="email"
+                    id=""
+                    validate={validateEmail}
+                  ></Field>
+                  <p className="py-2 pl-9 text-error">
+                    {errors.email && touched.email && <div>{errors.email}</div>}
+                  </p>
+                  <button
+                    type="submit"
+                    className="newsletter__btn btn btn--primary"
+                  >
+                    Submit
+                  </button>
+                </div>
+                <div className="m-0 py-2" hidden={!isSubmitting}>
+                  {isSubmitting && (
+                    <p className="z-50 m-0  w-[80%] rounded-2xl bg-primary py-6 px-10 text-center text-secondary1 line-clamp-2">
+                      Thanks for joining our newsletter.
+                    </p>
+                  )}
+                </div>
+              </Form>
+            )}
+          </Formik>
         </div>
       </div>
 
