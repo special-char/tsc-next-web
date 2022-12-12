@@ -106,19 +106,21 @@ const Contact = (props: Props) => {
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
         aliquip commodo consequat
       </p>
-      <CustomForm
-        initialValues={{
-          name: '',
-          email: '',
-          phone: '',
-          subject: '',
-          message: '',
-        }}
-        onSubmit={(values) => {
-          console.log(values);
-        }}
-        fields={fields}
-      />
+      <div className="contact__body">
+        <CustomForm
+          initialValues={{
+            name: '',
+            email: '',
+            phone: '',
+            subject: '',
+            message: '',
+          }}
+          onSubmit={(values) => {
+            console.log(values);
+          }}
+          fields={fields}
+        />
+      </div>
       <div className="contact__cards">
         {CardData.map((cardData) => (
           <div className="contact__card_details">

@@ -16,14 +16,14 @@ const TextInput = ({
 }: Props) => {
   return (
     <div
-      className={clsx('form', {
+      className={clsx('form__group', {
         [wrapperClassName]: !!wrapperClassName,
       })}
     >
-      <label className="form__label">{label}</label>
-      <input type="text" className="form__input" {...field} {...rest} />
+      <label className="form__group__label">{label}</label>
+      <input type="text" className="form__group__input" {...field} {...rest} />
       {touched[field.name] && errors[field.name] && (
-        <p className="form__error">{errors[field.name]}</p>
+        <p className="form__group__error">{errors[field.name]}</p>
       )}
     </div>
   );

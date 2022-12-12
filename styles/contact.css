@@ -14,7 +14,7 @@
   }
 
   &__body {
-    @apply grid grid-cols-1 content-center items-center gap-8 rounded-2xl bg-neutral-100 py-8  px-4 shadow-base md:grid-cols-2;
+    @apply rounded-2xl bg-neutral-100 p-4 shadow-dark md:p-8;
   }
 
   &__cards {
@@ -22,7 +22,7 @@
   }
 
   &__card_details {
-    @apply grid w-full justify-items-center rounded-2xl bg-neutral-100 text-center shadow-base;
+    @apply grid w-full justify-items-center rounded-2xl bg-neutral-100 text-center shadow-dark;
   }
 
   &__svg {

@@ -16,14 +16,18 @@ const TextArea = ({
 }: Props) => {
   return (
     <div
-      className={clsx('form', {
+      className={clsx('form__group', {
         [wrapperClassName]: !!wrapperClassName,
       })}
     >
-      <label className="form__label">{label}</label>
-      <textarea className="form__textarea" {...field} {...rest}></textarea>
+      <label className="form__group__label">{label}</label>
+      <textarea
+        className="form__group__textarea"
+        {...field}
+        {...rest}
+      ></textarea>
       {touched[field.name] && errors[field.name] && (
-        <p className="form__error">{errors[field.name]}</p>
+        <p className="form__group__error">{errors[field.name]}</p>
       )}
     </div>
   );
