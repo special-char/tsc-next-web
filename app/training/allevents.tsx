@@ -9,11 +9,11 @@ const EventDetails = () => {
   return (
     <section className="events relative h-auto">
       <div className="absolute h-96 w-full bg-primary"></div>
-      <div className="animate-bounce-slow absolute left-20 top-20 z-10 h-[167px] w-[167px] rounded-full bg-secondary2 md:-left-40 md:-bottom-48  md:h-[300px] md:w-[300px] lg:-bottom-72 lg:-left-40 lg:h-[350px] lg:w-[350px]"></div>
-      <div className="animate-bounce-slow absolute  top-28 right-20 z-10 h-[167px] w-[167px] rounded-full bg-secondary3 md:-top-52 md:-right-40 md:h-[300px] md:w-[300px] lg:-top-56 lg:-right-28 lg:h-[350px] lg:w-[350px]"></div>
+      <div className="animate-bounce-slow absolute -left-36 -top-20 z-10 h-[250px] w-[250px] rounded-full bg-secondary3 md:-left-80 md:top-24 md:h-[500px] md:w-[500px] lg:top-80 lg:-left-24 lg:h-[500px] lg:w-[500px]"></div>
+      <div className="animate-bounce-slow absolute  top-[350px] -right-[420px] z-10 h-[550px] w-[550px] rounded-full bg-secondary2 md:top-64 md:-right-32 md:h-[500px] md:w-[500px] lg:top-56 lg:-right-0 lg:h-[350px] lg:w-[350px]"></div>
 
-      <div className="events__page pt-20">
-        <div className="relative h-[640px] w-full overflow-hidden rounded-[40px] ">
+      <div className="events__page pt-40">
+        <div className="relative z-20 h-[640px] w-full overflow-hidden rounded-[40px] ">
           <Image
             alt="alt"
             src={
