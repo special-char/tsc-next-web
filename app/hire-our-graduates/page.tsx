@@ -46,10 +46,10 @@ const graduateData = [
 ];
 
 const icons = [
-  {
-    icon: 'facebook',
-    link: 'https://www.facebook.com',
-  },
+  // {
+  //   icon: 'facebook',
+  //   link: 'https://www.facebook.com',
+  // },
   {
     icon: 'twitter',
     link: 'https://www.twitter.com',
@@ -62,14 +62,14 @@ const icons = [
     icon: 'linkedin',
     link: 'https://www.linkedin.com',
   },
-  {
-    icon: 'youtube',
-    link: 'https://www.youtube.com',
-  },
-  {
-    icon: 'whatsapp',
-    link: 'https://www.whatsapp.com',
-  },
+  // {
+  //   icon: 'youtube',
+  //   link: 'https://www.youtube.com',
+  // },
+  // {
+  //   icon: 'whatsapp',
+  //   link: 'https://www.whatsapp.com',
+  // },
 ];
 
 const Hirecard = (props: Props) => {
@@ -79,14 +79,16 @@ const Hirecard = (props: Props) => {
       <div className="hirecard">
         {graduateData.map((x) => (
           <div key={x.id} className="overflow-hidden rounded-3xl">
-            <div className="hirecard__image">
-              <Image src={x.img} alt="" className="" fill />
-            </div>
-            <div className="hirecard__body">
-              <h3 className="hirecard__title">{x.title}</h3>
-              <p className="hirecard__desc">{x.desc}</p>
-            </div>
-            <SocialIcon icons={icons} wrapperClass="mb-6" />
+            <Link href={'#'}>
+              <div className="hirecard__image">
+                <Image src={x.img} alt="" className="" fill />
+              </div>
+              <div className="hirecard__body">
+                <h3 className="hirecard__title">{x.title}</h3>
+                <p className="hirecard__desc">{x.desc}</p>
+              </div>
+            </Link>
+            <SocialIcon icons={icons} wrapperClass="mb-6 px-6" />
           </div>
         ))}
       </div>

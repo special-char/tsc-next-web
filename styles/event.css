@@ -1,14 +1,12 @@
 .card {
-  display: grid;
-  @apply justify-items-center rounded-3xl bg-neutral-100 shadow-dark  md:grid-cols-1 lg:grid-cols-2;
+  @apply grid  justify-items-center rounded-3xl bg-neutral-100 shadow-dark  md:grid-cols-1 lg:grid-cols-2;
   &__image {
-    @apply relative mb-4  h-[200px] w-[288px] md:mb-4 md:min-h-[350px] md:w-[736px] lg:w-[600px];
+    @apply relative mb-4  aspect-video w-full overflow-hidden;
   }
   &__body {
-    display: grid;
     grid-template-columns: 80% 20%;
     grid-template-rows: auto;
-    @apply place-content-center items-start gap-1;
+    @apply grid place-content-center items-start gap-1 px-12;
   }
 
   &__title {
@@ -16,7 +14,7 @@
   }
 
   &__desc {
-    @apply m-0 p-0 line-clamp-3;
+    @apply m-0 p-0 text-lg line-clamp-3;
   }
 }
 .chipbody {
