@@ -1,7 +1,7 @@
 .ourteamcard {
   @apply grid justify-items-center gap-10 overflow-hidden  rounded-3xl md:grid-cols-2  md:justify-items-start md:gap-7 lg:grid-cols-3;
   &__image {
-    @apply relative min-h-[300px] rounded-3xl duration-300 ease-in-out hover:translate-y-1;
+    @apply relative min-h-[300px]  duration-300 ease-in-out hover:translate-y-1;
   }
   &__body {
     @apply p-6 pt-0;
