@@ -51,14 +51,14 @@
   }
 
   a {
-    @apply text-neutral-400 no-underline;
+    @apply text-neutral-400 no-underline transition-colors hover:text-secondary3;
     -webkit-transition: color 300ms ease;
     transition: color 300ms ease;
   }
 
-  a:hover {
-    @apply text-secondary3;
-  }
+  /* a {
+    @apply cursor-pointer text-primary underline transition-colors hover:text-secondary3;
+  } */
 
   label {
     @apply mb-4 block font-bold text-neutral-700;
@@ -75,7 +75,7 @@
   }
 
   figcaption {
-    @apply mt-1 text-center;
+    @apply mt-4 text-center;
   }
 
   strong {
@@ -179,6 +179,10 @@
   }
 
   nav {
+    a {
+      @apply no-underline;
+    }
+
     ol {
       @apply m-0 list-none p-0;
     }
@@ -402,7 +406,6 @@
 
   .card {
     @apply grid overflow-hidden rounded-2xl shadow-dark;
-
     &__image {
       @apply relative m-0 aspect-video w-full overflow-hidden;
       & > img {
