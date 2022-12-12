@@ -2,7 +2,7 @@ import '@/styles/category.css';
 import SeparatorArray from '@/ui/SeparatorArray';
 import Image from 'next/image';
 import { getCategoriesData } from '@/lib/getCategories';
-import { Category, UploadFile } from 'types/types';
+import { Category, HomeCategory, UploadFile } from 'types/types';
 
 const Category = async () => {
   const categoriesData = await getCategoriesData();
@@ -11,9 +11,12 @@ const Category = async () => {
 
   const categoriesInfo = categoriesData.data.data.categories.data;
 
+  const { title } = categoriesData.data.data.homeCategory.data
+    ?.attributes as HomeCategory;
+
   return (
     <section id="category" className="category relative ">
-      <h2 className="category__title">Browse our courses by category</h2>
+      <h2 className="category__title">{title}</h2>
       <div className="category__content">
         {categoriesInfo.map((category) => {
           const { title, description, icon } = category.attributes as Category;

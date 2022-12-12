@@ -1,0 +1,21 @@
+.employeeEdu {
+  @apply h-auto w-full py-24;
+  &__main {
+    @apply mx-auto grid max-w-7xl  px-4 md:px-6;
+  }
+  &__title {
+    @apply md:flex-1 lg:flex-[0.8];
+  }
+  &__content {
+    @apply h-full flex-[2];
+  }
+  &__content-main {
+    @apply grid;
+  }
+  &__content-course {
+    @apply mb-4 text-xl font-semibold text-neutral-700 md:text-2xl;
+  }
+  &__content-univ {
+    @apply text-sm font-semibold text-neutral-700 md:text-base;
+  }
+}

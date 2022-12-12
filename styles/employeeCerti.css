@@ -1,0 +1,15 @@
+.employeeCerti {
+  @apply py-24;
+  &__main {
+    @apply mx-auto max-w-7xl px-4 md:px-6;
+  }
+  &__content {
+    @apply grid;
+  }
+  &__content-part {
+    @apply flex flex-1 flex-col px-4  lg:flex-[0.8];
+  }
+  &__list {
+    @apply m-0 flex flex-col items-start justify-start p-0;
+  }
+}

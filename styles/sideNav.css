@@ -62,41 +62,6 @@
       line-height: 1.25;
     }
   }
-
-  details {
-    @apply mb-0 max-w-full items-center justify-center overflow-hidden bg-neutral-100 px-4 text-left drop-shadow-none;
-
-    & > .summary {
-      @apply relative flex cursor-pointer list-none items-start justify-start pb-4 text-2xl font-bold text-neutral-600 md:items-center;
-
-      &::marker {
-        @apply hidden;
-      }
-
-      &::before {
-        content: '';
-        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><path d="m18.75 36-2.15-2.15 9.9-9.9-9.9-9.9 2.15-2.15L30.8 23.95Z"/></svg>');
-        background-repeat: no-repeat;
-        height: 3rem;
-        width: 3rem;
-        @apply absolute right-0 mr-0 rotate-0 !rounded-none !bg-neutral-100 duration-300 md:mr-8;
-      }
-    }
-  }
-  details[open] {
-    & > .summary {
-      @apply text-neutral-800;
-      &::before {
-        content: '';
-        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><path d="m24 30.75-12-12 2.15-2.15L24 26.5l9.85-9.85L36 18.8Z"/></svg>');
-        background-repeat: no-repeat;
-        height: 3rem;
-        width: 3rem;
-        right: 0;
-        @apply overflow-hidden !bg-transparent duration-300;
-      }
-    }
-  }
 }
 
 #sidenav-button,

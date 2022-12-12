@@ -1,9 +1,13 @@
-import { CategoryEntityResponseCollection } from 'types/types';
+import {
+  CategoryEntityResponseCollection,
+  HomeCategoryEntityResponse,
+} from 'types/types';
 import axiosInstance from './axiosInstance';
 
 export type CategoriesType = {
   data: {
     categories: CategoryEntityResponseCollection;
+    homeCategory: HomeCategoryEntityResponse;
   };
 };
 
@@ -12,22 +16,33 @@ export const getCategoriesData = async () => {
     return await axiosInstance.post<CategoriesType>('/graphql', {
       query: `{
         categories {
-         data {
+          data {
             id
-           attributes {
-             title
-             description
-             icon {
-               data {
-                 attributes {
-                   url
-                 }
-               }
-             }
-           }
-         }
-       } 
-       }`,
+            attributes {
+              title
+              description
+              icon {
+                data {
+                  attributes {
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
+        homeCategory {
+          data {
+            attributes {
+              title
+              button {
+                text
+                url
+              }
+            }
+          }
+        }
+      }`,
     });
   } catch (error) {}
 };

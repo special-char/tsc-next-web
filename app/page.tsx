@@ -13,7 +13,7 @@ import EventDetails from './training/allevents';
 const Page = () => {
   return (
     <>
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<h1>Bannerx...</h1>}>
         {/* @ts-expect-error Async Server Component */}
         <Banner />
       </Suspense>
