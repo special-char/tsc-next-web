@@ -1,9 +1,23 @@
 .events {
-  @apply relative overflow-hidden;
+  @apply relative h-auto overflow-hidden;
+
+  &__banner {
+    @apply absolute h-96 w-full bg-primary;
+  }
+  &__animate-bounce-slow1 {
+    @apply absolute -left-36 -top-20 z-10 h-[250px] w-[250px] rounded-full bg-secondary3 md:-left-80 md:top-24 md:h-[500px] md:w-[500px] lg:top-80 lg:-left-24 lg:h-[500px] lg:w-[500px];
+  }
+  &__animate-bounce-slow2 {
+    @apply absolute top-[350px] -right-[420px] z-10 h-[550px] w-[550px] rounded-full bg-secondary2 md:top-64 md:-right-32 md:h-[500px] md:w-[500px] lg:top-56 lg:-right-0 lg:h-[350px] lg:w-[350px];
+  }
 
   &__page {
-    @apply mx-auto flex w-full max-w-7xl flex-col bg-neutral-200 px-4 md:!px-6;
+    @apply mx-auto flex w-full max-w-7xl flex-col bg-neutral-200 px-4 pt-40 md:!px-6;
   }
+  &__image {
+    @apply relative z-20 h-[640px] w-full overflow-hidden rounded-[40px];
+  }
+
   &__body {
     @apply flex flex-col flex-wrap gap-4 pt-12 md:flex-col md:pt-20 lg:flex-row lg:justify-center lg:gap-24;
   }
