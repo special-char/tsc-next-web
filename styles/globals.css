@@ -469,12 +469,7 @@
     }
 
     &__btn {
-      @apply col-span-2 m-0 p-3 py-5 px-4 md:px-1 md:py-1;
-      @media screen and (min-width: 479px) {
-        grid-row: 1 / -1;
-        grid-column: 2 / -1;
-      }
-      line-height: inherit;
+      @apply col-span-2 m-0 p-3 py-5 px-4 md:col-[2_/_-1] md:row-span-full md:m-1 md:px-1 md:py-1;
     }
   }
 
@@ -522,14 +517,24 @@
   } */
 
   .form {
-    @apply w-full px-4;
+    @apply grid w-full grid-cols-1 gap-4 md:grid-cols-2;
 
-    &__label {
-      @apply m-0 mb-3 text-xl;
-    }
+    &__group {
+      &__label {
+        @apply m-0 mb-3 text-xl;
+      }
 
-    &__input {
-      @apply h-14 w-full rounded-full bg-neutral-200 px-6 py-2 outline-neutral-400 focus:outline;
+      &__input {
+        @apply h-14 w-full rounded-full bg-neutral-200 px-6 py-2 outline-neutral-400 focus:outline;
+      }
+
+      &__textarea {
+        @apply w-full rounded-2xl bg-neutral-200 px-4 py-2 outline-neutral-400 focus:outline;
+      }
+
+      &__error {
+        @apply m-2 text-xs font-semibold text-error;
+      }
     }
   }
 }

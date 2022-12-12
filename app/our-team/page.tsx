@@ -61,7 +61,35 @@ const Teamcard = (props: Props) => {
             <div className="ourteamcard__body">
               <h3 className="ourteamcard__title">{x.title}</h3>
               <p className="ourteamcard__desc">{x.desc}</p>
-              <SocialIcon />
+              <SocialIcon
+                icons={[
+                  {
+                    icon: 'facebook',
+                    link: 'https://www.facebook.com',
+                  },
+                  {
+                    icon: 'twitter',
+                    link: 'https://www.twitter.com',
+                  },
+                  {
+                    icon: 'instagram',
+                    link: 'https://www.instagram.com',
+                  },
+                  {
+                    icon: 'linkedin',
+                    link: 'https://www.linkedin.com',
+                  },
+                  {
+                    icon: 'youtube',
+                    link: 'https://www.youtube.com',
+                  },
+                  {
+                    icon: 'whatsapp',
+                    link: 'https://www.whatsapp.com',
+                  },
+                ]}
+                wrapperClass="mb-6"
+              />
             </div>
           </a>
         ))}
