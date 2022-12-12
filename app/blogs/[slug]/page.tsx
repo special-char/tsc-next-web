@@ -6,42 +6,33 @@ import Image from 'next/image';
 import Link from 'next/link';
 import IndividualTeacher from 'app/training/individualteacher';
 export default async function Page() {
-  // const chips = [
-  //   {
-  //     id: 1,
-  //     text: "Design",
-  //     icon: 'design',
-  //   }
-  // ]
   return (
-    <section id="individualcourse" className="individualcourse">
-      <div className="individualcourse__content">
-        <div className="individualcourse__content__bg"></div>
-        <div className="individualcourse__content__round"></div>
+    <section id="blogPost" className="blogPost">
+      <div className="blogPost__background-layout">
+        <div className="blogPost__background-layout__bg"></div>
+        <div className="blogPost__background-layout__round"></div>
       </div>
-      <div className="grid grid-cols-1 gap-12 md:gap-16 lg:gap-20 xs:py-16 md:pt-24 md:pb-44 py-32 lg:mx-10 px-container">
-        <div className="relative h-44 md:h-[400px] lg:h-[500px] xl:h-[640px] w-full overflow-hidden xs:rounded-[20px] md:rounded-[33px]">
+      <div className="blogPost__content">
+        <div className="blogPost__content__image">
           <Image
-            alt="alt"
+            alt="It is the image of the blog post that you are viewing"
             src={
               'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f23fe55a94aa127fb47b2_image-6-blog-education-x-template.jpg'
             }
             fill
           />
         </div>
-        <div className="mx-auto lg:w-full xl:w-4/5 px-6 pb-6 text-left">
-          <div className="grid grid-cols-1">
-            <h1
-              className='text-[35px] md:text-5xl'
-            >
+        <div className="blogPost__content__text">
+          <div className="blogPost__content__headline">
+            <h1>
               How to design a simple, yet unique and memorable brand identity
             </h1>
-            <div className="grid grid-cols-2">
+            <div className="blogPost__content__author-info">
               <ActionBar />
-              <span className="flex gap-5 place-self-end">
+              <span className="blogPost__content__about-blog">
                 <Link href={'#'}>
-                  <span className="chip chip--white flex gap-2 border border-[#e7eaee] text-xs">
-                    <Design className="chip__icon h-5 w-4" />
+                  <span className="blogPost__content__about-blog__accessory">
+                    <Design className="chip__icon" />
                     <span>Design</span>
                   </span>
                 </Link>
@@ -49,7 +40,7 @@ export default async function Page() {
               </span>
             </div>
           </div>
-          <div className="w-full h-[1px] border border-neutral-300 my-20"></div>
+          <div className="blogPost__content__divider"></div>
           <h2 className="mb-2">What makes a good brand book?</h2>
           <p>
             Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
@@ -91,10 +82,10 @@ export default async function Page() {
             </div>
             <figcaption>this is a figcaption</figcaption>
           </figure>
-          <h4>This is the h5 tag</h4>
+          <h4>This is the h4 tag</h4>
           <p>
             Eget aliquet nibh praesent tristique magna sit amet purus.
-            Consequat id porta nibh venenatis cras sed felis. Nisl rhoncus
+            Consequat id porta <a>nibh</a> venenatis cras sed felis. Nisl rhoncus
             mattis rhoncus urna neque viverra justo nec. Habitant morbi
             tristique senectus et netus et malesuada fames ac. Et tortor
             consequat id porta nibh venenatis cras sed felis. Fringilla est
@@ -123,18 +114,18 @@ export default async function Page() {
           <IndividualTeacher />
         </div>
       </div>
-      <section className="bg-neutral-200 px-container grid grid-cols-1 gap-y-12 pb-14 md:pb-36 pt-24 lg:pt-44">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-5 md:gap-y-0 place-content-center">
-          <h2 className="my-auto text-3xl md:text-5xl place-self-center md:place-self-start">
+      <div className="blogPost__blogs">
+        <div className="blogPost__blogs__header">
+          <h2 className="blogPost__blogs__header__heading">
             Latest posts
           </h2>
-          <span className="chip chip--secondary w-full md:max-w-max place-self-center md:place-self-end py-4 px-10 text-base uppercase">
+          <span className="blogPost__blogs__header__btn">
             all posts
           </span>
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-x-7'>
-          <Link href="#" className="card rounded-lg overflow-hidden">
-            <figure className='overflow-hidden !m-0 !translate-y-0 aspect-blog-image'>
+        <div className='blogPost__blogs__latest-blogs'>
+          <Link href="#" className="blog-post">
+            <figure className='blog-post__content'>
               <div className="card__image">
                 <Image
                   src="https://images.unsplash.com/photo-1661347335413-e4ef4c97d625?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwyMXx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60"
@@ -175,7 +166,7 @@ export default async function Page() {
           </Link> */}
         </div>
 
-      </section>
+      </div>
     </section>
   );
 }
