@@ -7,12 +7,12 @@ import Image from 'next/image';
 
 const EventDetails = () => {
   return (
-    <section className="events">
-      <div className="events__banner"></div>
+    <section className="events relative h-auto">
+      <div className="events__banner "></div>
       <div className="events__animate-bounce-slow1 "></div>
-      <div className="events__animate-bounce-slow2 "></div>
+      <div className="events__animate-bounce-slow2"></div>
 
-      <div className="events__page">
+      <div className="events__page ">
         <div className="events__image">
           <Image
             alt="alt"
@@ -35,7 +35,7 @@ const EventDetails = () => {
               </span>
               <MapSvg className="w-6" />
               <span>Ahmedabad</span>
-              <span className="events__chip">
+              <span className="events__chip chip chip--white">
                 <span className="chip__icon ">
                   <SpeakerSvg className="w-6" />
                 </span>
@@ -47,7 +47,9 @@ const EventDetails = () => {
               Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit.
               Felis donec massa aliquam id.
             </p>
-            <button className="events__button">REGISTER TO EVENT</button>
+            <button className="events__button btn btn--primary">
+              REGISTER TO EVENT
+            </button>
           </div>
         </div>
 
@@ -81,7 +83,9 @@ const EventDetails = () => {
               ipsum dor
             </li>
           </ol>
-          <button className="events__button">REGISTER TO EVENT</button>
+          <button className="events__button btn btn--primary">
+            REGISTER TO EVENT
+          </button>
         </div>
       </div>
     </section>

@@ -8,11 +8,11 @@
     @apply absolute -left-36 -top-20 z-10 h-[250px] w-[250px] rounded-full bg-secondary3 md:-left-80 md:top-24 md:h-[500px] md:w-[500px] lg:top-80 lg:-left-24 lg:h-[500px] lg:w-[500px];
   }
   &__animate-bounce-slow2 {
-    @apply absolute top-[350px] -right-[420px] z-10 h-[550px] w-[550px] rounded-full bg-secondary2 md:top-64 md:-right-32 md:h-[500px] md:w-[500px] lg:top-56 lg:-right-0 lg:h-[350px] lg:w-[350px];
+    @apply absolute top-[350px] -right-[420px] z-10 h-[550px] w-[550px] rounded-full bg-secondary2 md:top-64 md:-right-32 md:h-[500px] md:w-[500px] lg:top-56 lg:-right-0 lg:h-[400px] lg:w-[400px];
   }
 
   &__page {
-    @apply mx-auto flex w-full max-w-7xl flex-col bg-neutral-200 px-4 pt-40 md:!px-6;
+    @apply mx-auto flex w-full max-w-7xl flex-col overflow-hidden bg-neutral-200 px-4 pt-40 md:!px-6;
   }
   &__image {
     @apply relative z-20 h-[640px] w-full overflow-hidden rounded-[40px];
@@ -31,7 +31,7 @@
     @apply flex flex-row items-center justify-start gap-4 font-bold text-neutral-800;
   }
   &__chip {
-    @apply chip chip--white gap-2 text-base;
+    @apply gap-2 text-base;
     &:hover {
       path {
         fill: white;
@@ -42,7 +42,7 @@
     @apply mb-5 block text-3xl font-semibold text-primary md:w-[450px] md:text-6xl;
   }
   &__button {
-    @apply btn btn--primary px-10 py-6 text-center uppercase md:w-72;
+    @apply px-10 py-6 text-center uppercase md:w-72;
   }
   &__paragraph {
     @apply mx-auto flex w-[750px] flex-col items-start gap-2 pb-20 md:pb-36;
