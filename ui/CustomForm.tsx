@@ -14,15 +14,9 @@ const CustomForm = ({ fields, ...rest }: Props) => {
           {fields.map((field) => {
             return <Field key={field.name} {...field} />;
           })}
-          <Button as={Link} href="/" type="secondary" isRound className="w-10">
-            <Icon name="facebook" height={16} width={16} fill="red" />
+          <Button as="button" type="submit" variant="primary">
+            Submit
           </Button>
-          <Button as={Link} href="/" type="secondary" size="large">
-            Hello
-          </Button>
-          {/* <button type="submit" className="btn btn--primary">
-            submit
-          </button> */}
         </Form>
       )}
     </Formik>

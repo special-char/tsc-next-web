@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React from 'react';
 
 type Props = {
-  type: string;
+  variant: string;
   size: string;
   isRound: boolean;
   className?: string;
@@ -10,7 +10,7 @@ type Props = {
 
 const Button = ({
   as: Tag,
-  type,
+  variant,
   size,
   isRound,
   className,
@@ -19,8 +19,8 @@ const Button = ({
   return (
     <Tag
       className={clsx('btn', {
-        'btn--primary': type === 'primary',
-        'btn--secondary': type === 'secondary',
+        'btn--primary': variant === 'primary',
+        'btn--secondary': variant === 'secondary',
         'btn--small': size === 'small',
         'btn--large': size === 'large',
         'btn--round': isRound,
