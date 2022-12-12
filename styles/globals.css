@@ -9,7 +9,7 @@
     display: grid;
     grid-template-columns: min-content [stack] 1fr;
 
-    & > :is(aside, main) {
+    & > :is(aside, div) {
       grid-area: stack;
     }
   }

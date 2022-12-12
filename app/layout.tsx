@@ -1,5 +1,6 @@
 import '@/styles/globals.css';
 import '@/styles/sideNav.css';
+import Link from 'next/link';
 import React from 'react';
 import Footer from './footer';
 import Header from './header';
@@ -14,27 +15,20 @@ export default function RootLayout({
       <head />
       <body>
         <aside id="sidenav-open">
-          {/* <nav>
-            {data.map((data) => (
-              <details>
-                <summary>{data.title}</summary>
-                <p>hello</p>
-              </details>
-            ))}
-          </nav> */}
           <nav></nav>
           <a
             href="#"
             id="sidenav-close"
             title="Close Menu"
             aria-label="Close Menu"
+            // onchange="history.go(-1)"
           ></a>
         </aside>
-        <main>
+        <div>
           <Header />
-          {children}
+          <main>{children}</main>
           <Footer />
-        </main>
+        </div>
       </body>
     </html>
   );

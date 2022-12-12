@@ -113,7 +113,6 @@ const Footer = (props: Props) => {
             link: 'https://www.whatsapp.com',
           },
         ]}
-        wrapperClass="mb-6"
       />
       <p className="footer__copyright">
         Copyright © TSC | Designed by TSC - Powered by TSC

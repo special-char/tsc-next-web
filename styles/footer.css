@@ -23,6 +23,6 @@
   }
 
   &__copyright {
-    @apply mb-6 text-neutral-100 md:max-w-md md:justify-self-end;
+    @apply text-neutral-100 md:max-w-md md:justify-self-end;
   }
 }
