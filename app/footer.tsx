@@ -23,6 +23,7 @@ const data = [
     icon: 'https://assets.website-files.com/607de2d8e8911e32707a3efe/607f5ea5d227324cf40fa52d_icon-newsletter-footer-education-x-template.svg',
   },
 ];
+
 const links = [
   { page: 'Home' },
   { page: 'About' },
@@ -36,17 +37,18 @@ const links = [
   { page: 'Individual Teacher' },
   { page: 'Contact' },
 ];
+
 const Footer = (props: Props) => {
   return (
     <section id="footer" className="footer">
-      <h1 className="text-neutral-100">TSC</h1>
+      <h1 className="footer__title">TSC</h1>
 
       <p className="footer__description ">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt aliqua.
       </p>
 
-      <div className="footer__line"></div>
+      <hr className="col-span-full" />
       <div className="footer__newsletter">
         <Image
           className="mb-3 rounded-full"
@@ -56,7 +58,7 @@ const Footer = (props: Props) => {
           width={90}
         />
         <h3 className="mb-3 text-neutral-100">Subscribe to our newsletter</h3>
-        <p className="lg:w-2/3">
+        <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmo.
         </p>
@@ -68,7 +70,6 @@ const Footer = (props: Props) => {
             name=""
             id=""
           />
-
           <button className="btn btn--primary newsletter__btn">Submit</button>
         </div>
       </div>
@@ -83,9 +84,37 @@ const Footer = (props: Props) => {
           ))}
         </div>
       </div>
-      <div className="footer__line"></div>
-      <SocialIcon />
-      <p className="mb-0 pt-2 text-neutral-100">
+      <hr className="col-span-full" />
+      {/* <div className="footer__line"></div> */}
+      <SocialIcon
+        icons={[
+          {
+            icon: 'facebook',
+            link: 'https://www.facebook.com',
+          },
+          {
+            icon: 'twitter',
+            link: 'https://www.twitter.com',
+          },
+          {
+            icon: 'instagram',
+            link: 'https://www.instagram.com',
+          },
+          {
+            icon: 'linkedin',
+            link: 'https://www.linkedin.com',
+          },
+          {
+            icon: 'youtube',
+            link: 'https://www.youtube.com',
+          },
+          {
+            icon: 'whatsapp',
+            link: 'https://www.whatsapp.com',
+          },
+        ]}
+      />
+      <p className="footer__copyright">
         Copyright © TSC | Designed by TSC - Powered by TSC
       </p>
     </section>

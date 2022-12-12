@@ -5,23 +5,18 @@ import { UseDynamicSVGImportOptions } from 'types/UseDynamicSVGImportOptions';
 
 interface IconProps extends React.SVGProps<SVGSVGElement> {
   name: string;
-  onCompleted?: UseDynamicSVGImportOptions['onCompleted'];
-  onError?: UseDynamicSVGImportOptions['onError'];
 }
 
 const Icon: React.FC<IconProps> = ({
   name,
-  onCompleted,
-  onError,
   ...rest
 }): React.ReactNode | null => {
-  const { error, loading, SvgIcon } = useDynamicSVGImport(name, {
-    onCompleted,
-    onError,
-  });
+  const { error, loading, SvgIcon } = useDynamicSVGImport(name);
+
   if (error) {
     return error.message;
   }
+
   if (loading) {
     return (
       <div
@@ -34,9 +29,11 @@ const Icon: React.FC<IconProps> = ({
       ></div>
     );
   }
+
   if (SvgIcon) {
     return <SvgIcon {...rest} />;
   }
+
   return null;
 };
 

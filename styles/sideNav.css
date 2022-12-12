@@ -62,37 +62,6 @@
       line-height: 1.25;
     }
   }
-
-  details {
-    @apply mb-0 max-w-full bg-neutral-100 px-8 text-left drop-shadow-none;
-
-    & > summary {
-      @apply relative flex cursor-pointer list-none items-start justify-start pb-4 text-3xl font-bold text-neutral-600 md:items-center;
-
-      &::marker {
-        @apply hidden;
-      }
-
-      &::before {
-        content: '^';
-        right: 0;
-        @apply absolute mr-8 aspect-square rotate-180  justify-center rounded-full bg-neutral-300 text-center text-5xl  font-bold text-neutral-600 duration-300 md:h-12 md:w-12;
-      }
-    }
-    & > p {
-      @apply overflow-hidden border-none pt-2 pl-20 text-left text-base md:pl-20;
-    }
-  }
-  details[open] {
-    & > summary {
-      @apply text-neutral-800;
-
-      &::before {
-        content: '^';
-        @apply bottom-2 flex rotate-[15px] justify-center bg-primary p-0 pb-2 text-center text-5xl text-neutral-100 duration-300;
-      }
-    }
-  }
 }
 
 #sidenav-button,

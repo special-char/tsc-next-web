@@ -1,40 +1,83 @@
+'use client';
+
 import EmailSvg from '@/public/icons/email.svg';
 import PhoneSvg from '@/public/icons/phone.svg';
 import AddressSvg from '@/public/icons/address.svg';
 import '@/styles/contact.css';
+import { Formik, Form, Field } from 'formik';
+import TextInput from '@/ui/TextInput';
+import TextArea from '@/ui/TextArea';
+import clsx from 'clsx';
+import CustomForm from '@/ui/CustomForm';
 
 type Props = {};
-const FormData = [
+const fields = [
   {
-    id: 'txtName',
+    name: 'name',
     label: 'Name',
-    type: 'name',
+    type: 'text',
     placeholder: 'Full Name',
+    component: TextInput,
+    validate: (value: string) => {
+      if (!value) {
+        return 'Required...';
+      }
+      return '';
+    },
   },
   {
-    id: 'txtEmail',
+    name: 'email',
     label: 'Email Address',
     type: 'email',
     placeholder: 'Email',
+    component: TextInput,
+    validate: (value: string) => {
+      if (!value) {
+        return 'Required...';
+      }
+      return '';
+    },
   },
 
   {
-    id: 'txtPhone',
+    name: 'phone',
     label: 'Phone Number',
     type: 'tel',
     placeholder: '+91 1234 5678 90',
+    component: TextInput,
+    validate: (value: string) => {
+      if (!value) {
+        return 'Required...';
+      }
+      return '';
+    },
   },
   {
-    id: 'txtSubject',
+    name: 'subject',
     label: 'Subject',
-    type: 'txtSubject',
+    type: 'text',
     placeholder: 'Subject',
+    component: TextInput,
+    validate: (value: string) => {
+      if (!value) {
+        return 'Required...';
+      }
+      return '';
+    },
   },
   {
-    id: 'txtMessage',
+    name: 'message',
     label: 'Message',
-    type: 'textarea',
     placeholder: 'Write your message here...',
+    component: TextArea,
+    rows: 5,
+    wrapperClassName: 'col-span-full',
+    validate: (value: string) => {
+      if (!value) {
+        return 'Required...';
+      }
+      return '';
+    },
   },
 ];
 
@@ -63,36 +106,22 @@ const Contact = (props: Props) => {
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
         aliquip commodo consequat
       </p>
-      <div className="contact__body relative">
-        <div className="contact__formdata">
-          {FormData.map((formData) => {
-            return (
-              <div className="form">
-                <label className="form__label">{formData.label}</label>
-                {formData.type === 'textarea' ? (
-                  <textarea
-                    name=""
-                    id=""
-                    rows={5}
-                    placeholder={formData.placeholder}
-                    className="contact__textarea"
-                  ></textarea>
-                ) : (
-                  <input
-                    type="text"
-                    placeholder={formData.placeholder}
-                    className="form__input"
-                  />
-                )}
-              </div>
-            );
-          })}
-        </div>
-        <button className="contact__button btn btn--primary btn--small">
-          submit
-        </button>
+      <div className="contact__body">
+        <CustomForm
+          initialValues={{
+            name: '',
+            email: '',
+            phone: '',
+            subject: '',
+            message: '',
+          }}
+          onSubmit={(values) => {
+            console.log(values);
+          }}
+          fields={fields}
+        />
       </div>
-      <div className="contact__cards relative ">
+      <div className="contact__cards">
         {CardData.map((cardData) => (
           <div className="contact__card_details">
             <div className="contact__svg">{cardData.svg}</div>

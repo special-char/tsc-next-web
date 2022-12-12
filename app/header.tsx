@@ -59,7 +59,9 @@ const Header = (props: Props) => {
         </ul>
       </nav>
       <button className="header__button btn btn--small">contect us</button>
-      <HemburgerSvg className="h-12 w-12 fill-primary md:hidden " />
+      <a href="#sidenav-open" title="Open Menu" aria-label="Open Menu">
+        <HemburgerSvg className="h-12 w-12 fill-primary md:hidden " />
+      </a>
     </header>
   );
 };

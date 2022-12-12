@@ -2,6 +2,7 @@ import '@/styles/ourteam.css';
 import React from 'react';
 import Image from 'next/image';
 import SocialIcon from '@/ui/SocialIcon';
+import Link from 'next/link';
 
 type Props = {};
 const teamData = [
@@ -43,6 +44,32 @@ const teamData = [
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
   },
 ];
+const icons = [
+  // {
+  //   icon: 'facebook',
+  //   link: 'https://www.facebook.com',
+  // },
+  {
+    icon: 'twitter',
+    link: 'https://www.twitter.com',
+  },
+  {
+    icon: 'instagram',
+    link: 'https://www.instagram.com',
+  },
+  {
+    icon: 'linkedin',
+    link: 'https://www.linkedin.com',
+  },
+  // {
+  //   icon: 'youtube',
+  //   link: 'https://www.youtube.com',
+  // },
+  // {
+  //   icon: 'whatsapp',
+  //   link: 'https://www.whatsapp.com',
+  // },
+];
 
 const Teamcard = (props: Props) => {
   return (
@@ -54,16 +81,18 @@ const Teamcard = (props: Props) => {
       </p>
       <div className="ourteamcard">
         {teamData.map((x) => (
-          <a key={x.id} href="#" className="overflow-hidden rounded-3xl">
-            <div className="ourteamcard__image">
-              <Image src={x.img} alt="" className="" fill />
-            </div>
-            <div className="ourteamcard__body">
-              <h3 className="ourteamcard__title">{x.title}</h3>
-              <p className="ourteamcard__desc">{x.desc}</p>
-              <SocialIcon />
-            </div>
-          </a>
+          <div key={x.id} className="overflow-hidden rounded-3xl">
+            <Link href={'#'}>
+              <div className="ourteamcard__image">
+                <Image src={x.img} alt="" className="" fill />
+              </div>
+              <div className="ourteamcard__body">
+                <h3 className="ourteamcard__title">{x.title}</h3>
+                <p className="ourteamcard__desc">{x.desc}</p>
+              </div>
+            </Link>
+            <SocialIcon icons={icons} wrapperClass="mb-6 px-6" />
+          </div>
         ))}
       </div>
     </section>
