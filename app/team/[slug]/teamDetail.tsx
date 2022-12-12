@@ -54,7 +54,6 @@ const TeamDetails = (props: Props) => {
             <h2 className="text-3xl md:text-5xl">About</h2>
             <h2 className="pl-1 text-3xl md:text-5xl"> Kathie Corl</h2>
           </div>
-
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus
             viverra praesent felis consequat pellentesque turpis et quisque

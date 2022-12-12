@@ -1,13 +1,13 @@
 .employeeTechno {
-  @apply h-auto py-20;
+  @apply h-auto px-container pt-24 sm:px-sm-container lg:px-container;
   &__main {
-    @apply mx-auto flex max-w-7xl flex-col px-4  md:px-8;
+    @apply mx-0 grid pb-24 lg:mx-44;
   }
   &__title {
     @apply flex-1 lg:flex-[0.8];
   }
   &__content {
-    @apply grid grid-cols-1 gap-x-10 md:grid-cols-2;
+    @apply grid grid-cols-1 gap-x-10 lg:grid-cols-2;
   }
   &__content-item {
     @apply flex justify-between p-0 px-3 font-bold text-primary;

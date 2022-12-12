@@ -1,15 +1,13 @@
 .employeeAchive {
-  @apply py-24;
+  @apply px-container  pt-24  sm:px-sm-container lg:px-container;
 
   &__main {
-    @apply mx-auto max-w-7xl px-2  md:px-8;
+    @apply p-0;
   }
   &__content {
-    @apply grid;
+    @apply mx-0 grid pb-24 lg:mx-44;
   }
-  &__content-part {
-    @apply flex flex-1 flex-col px-4  lg:flex-[0.8];
-  }
+
   &__list {
     @apply m-0 flex flex-col items-start justify-start p-0;
   }
