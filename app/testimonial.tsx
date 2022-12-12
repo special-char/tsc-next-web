@@ -3,26 +3,8 @@ import Image from 'next/image';
 import Rating from '@/ui/Rating';
 import Carousal from '@/ui/Carousal';
 import { getTestimonialData } from '@/lib/getTestimonials';
-import { Testimonial, UploadFile } from 'types/types';
-
-const NumberDetails = [
-  {
-    numbers: '100,000+',
-    title: 'students worldwide',
-  },
-  {
-    numbers: '200,00+',
-    title: 'Total course views',
-  },
-  {
-    numbers: '5,000+',
-    title: 'Five-star course reviews',
-  },
-  {
-    numbers: '75,000+',
-    title: 'Students community',
-  },
-];
+import { HomeTestimonial, Testimonial, UploadFile } from 'types/types';
+import Link from 'next/link';
 
 const Testimonial = async () => {
   const testimonialsData = await getTestimonialData();
@@ -30,10 +12,12 @@ const Testimonial = async () => {
   if (!testimonialsData) return null;
 
   const testimonialsInfo = testimonialsData.data.data.testimonials.data;
+  const { title, numbers, btn } = testimonialsData.data.data.homeTestimonial
+    .data?.attributes as HomeTestimonial;
 
   return (
     <section id="Testimonial" className="testimonial">
-      <h2 className="testimonial__header">What our students say about us</h2>
+      <h2 className="testimonial__header">{title}</h2>
       <Carousal>
         {testimonialsInfo.map((testimonial: any) => {
           const { avatar, rating, quote, name, designation, company } =
@@ -56,15 +40,17 @@ const Testimonial = async () => {
         })}
       </Carousal>
       <div className="testimonial__content">
-        {NumberDetails.map((number) => (
+        {numbers?.map((number) => (
           <div>
-            <h3 className="testimonial__title">{number.numbers}</h3>
-            <p>{number.title}</p>
+            <h3 className="testimonial__title">{number?.title}</h3>
+            <p>{number?.description}</p>
           </div>
         ))}
       </div>
       <div className="flex justify-center">
-        <button className="btn btn--primary">explore courses</button>
+        <Link href={`{btn?.url}`} className="btn btn--primary">
+          {btn?.text}
+        </Link>
       </div>
     </section>
   );

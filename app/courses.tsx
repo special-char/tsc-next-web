@@ -3,7 +3,7 @@ import '@/styles/courses.css';
 import Carousal from '@/ui/Carousal';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Course, UploadFile } from 'types/types';
+import { Course, HomeCourse, UploadFile } from 'types/types';
 
 const Courses = async () => {
   const coursesData = await getCoursesData();
@@ -11,9 +11,11 @@ const Courses = async () => {
   if (!coursesData) return null;
 
   const coursesInfo = coursesData.data.data.courses.data;
+  const { title, button } = coursesData.data.data.homeCourse.data
+    ?.attributes as HomeCourse;
   return (
     <section id="courses" className="courses">
-      <h2 className="courses__title ">Browse our popular courses</h2>
+      <h2 className="courses__title ">{title}</h2>
       <Carousal>
         {coursesInfo?.map((course) => {
           const { title, description, courseVideoPoster } =
@@ -43,8 +45,8 @@ const Courses = async () => {
         })}
       </Carousal>
 
-      <Link href="/" className="btn btn--primary">
-        Explore All Courses
+      <Link href={`${button?.url}`} className="btn btn--primary">
+        {button?.text}
       </Link>
     </section>
   );
