@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'http://65.20.70.84:1337/graphql',
+  baseURL: 'http://65.20.70.84:1337',
   timeout: 5000,
   timeoutErrorMessage: 'Timeout! something went wrong',
 });
@@ -22,7 +22,7 @@ axiosInstance.interceptors.response.use(
   function (response) {
     // Any status code that lie within the range of 2xx cause this function to trigger
     // Do something with response data
-    return response.data;
+    return response;
   },
   function (error) {
     // Any status codes that falls outside the range of 2xx cause this function to trigger

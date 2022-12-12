@@ -2,12 +2,12 @@
   @apply flex flex-wrap-reverse justify-center  py-14 px-container md:flex-col-reverse  md:items-center lg:flex-row;
 
   &__content {
-    @apply grid content-center justify-center  text-center md:max-w-[600px] lg:mr-64 lg:flex-1  lg:text-start;
+    @apply grid content-center justify-center  text-center md:max-w-[600px] lg:mr-24 lg:flex-1 lg:text-left;
   }
   &__btn {
-    @apply flex  flex-col  gap-6  md:flex-row lg:justify-start lg:pt-4;
+    @apply flex  flex-col  gap-6 text-lg  md:flex-row lg:justify-start lg:pt-4;
   }
   &__tile {
-    @apply text-[110px] md:text-[250px] lg:flex-1 lg:text-[250px];
+    @apply text-[110px] md:text-[250px] lg:flex-1 lg:text-[350px];
   }
 }

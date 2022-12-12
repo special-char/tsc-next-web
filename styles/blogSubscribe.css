@@ -1,5 +1,5 @@
 .blogSubscribe {
-  @apply h-full w-full px-container py-20;
+  @apply relative h-full w-full px-container py-20;
 
   &__body {
     @apply items-center justify-center;

@@ -1,91 +1,33 @@
-import React, { use } from 'react';
 import '@/styles/testimonial.css';
 import Image from 'next/image';
 import Rating from '@/ui/Rating';
 import Carousal from '@/ui/Carousal';
+import { getTestimonialData } from '@/lib/getTestimonials';
+import { HomeTestimonial, Testimonial, UploadFile } from 'types/types';
+import Link from 'next/link';
 
-interface Props {}
-
-const NumberDetails = [
-  {
-    numbers: '100,000+',
-    title: 'students worldwide',
-  },
-  {
-    numbers: '200,00+',
-    title: 'Total course views',
-  },
-  {
-    numbers: '5,000+',
-    title: 'Five-star course reviews',
-  },
-  {
-    numbers: '75,000+',
-    title: 'Students community',
-  },
-];
-
-async function getTestimonialsData() {
-  try {
-    const res = await fetch('http://65.20.70.84:1337/graphql', {
-      method: 'POST',
-      body: JSON.stringify({
-        query: `{
-          testimonials(filters: {
-            tag: null
-          }) {
-            data {
-              id
-              attributes {
-                quote
-                rating
-                name
-                company
-                designation
-                avatar {
-                  data {
-                    attributes {
-                      url
-                      alternativeText
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }`,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-    });
-    return await res.json();
-  } catch (error) {}
-}
-
-const Testimonial = (props: Props) => {
-  const testimonialsData = use(getTestimonialsData());
+const Testimonial = async () => {
+  const testimonialsData = await getTestimonialData();
 
   if (!testimonialsData) return null;
 
-  const testimonialsInfo = testimonialsData?.data?.testimonials?.data;
+  const testimonialsInfo = testimonialsData.data.data.testimonials.data;
+  const { title, numbers, btn } = testimonialsData.data.data.homeTestimonial
+    .data?.attributes as HomeTestimonial;
 
   return (
     <section id="Testimonial" className="testimonial">
-      <h2 className="testimonial__header">What our students say about us</h2>
+      <h2 className="testimonial__header">{title}</h2>
       <Carousal>
-        {testimonialsInfo.map((testimonial) => {
+        {testimonialsInfo.map((testimonial: any) => {
           const { avatar, rating, quote, name, designation, company } =
-            testimonial.attributes;
+            testimonial.attributes as Testimonial;
+          const { url, alternativeText } = avatar?.data
+            ?.attributes as UploadFile;
           return (
             <div className="testimonial__card card" key={testimonial.id}>
               <div className="card__image testimonial__card__image">
-                <Image
-                  src={avatar.data.attributes.url}
-                  alt={avatar.data.attributes.alternativeText}
-                  fill
-                />
+                <Image src={url} alt={`${alternativeText}`} fill />
               </div>
               <div className="card__body testimonial__card__body">
                 <Rating rate={rating} />
@@ -98,15 +40,17 @@ const Testimonial = (props: Props) => {
         })}
       </Carousal>
       <div className="testimonial__content">
-        {NumberDetails.map((number) => (
+        {numbers?.map((number) => (
           <div>
-            <h3 className="testimonial__title">{number.numbers}</h3>
-            <p>{number.title}</p>
+            <h3 className="testimonial__title">{number?.title}</h3>
+            <p>{number?.description}</p>
           </div>
         ))}
       </div>
       <div className="flex justify-center">
-        <button className="btn btn--primary">explore courses</button>
+        <Link href={`{btn?.url}`} className="btn btn--primary">
+          {btn?.text}
+        </Link>
       </div>
     </section>
   );

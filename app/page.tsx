@@ -7,22 +7,43 @@ import Leaders from './leaders';
 import Perks from './perks';
 import Testimonial from './testimonial';
 import Blogs from './blogs';
+import { Suspense } from 'react';
 
-type Props = {};
-
-const rating = 4;
-
-const Page = (props: Props) => {
+const Page = () => {
   return (
     <>
-      <Banner />
-      <Courses />
-      <Perks />
-      <Leaders />
-      <GrowCareer />
-      <Education />
-      <Category />
-      <Testimonial />
+      <Suspense fallback={<h1>Bannerx...</h1>}>
+        {/* @ts-expect-error Async Server Component */}
+        <Banner />
+      </Suspense>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        {/* @ts-expect-error Async Server Component */}
+        <Courses />
+      </Suspense>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        {/* @ts-expect-error Async Server Component */}
+        <Perks />
+      </Suspense>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        {/* @ts-expect-error Async Server Component */}
+        <Leaders />
+      </Suspense>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        {/* @ts-expect-error Async Server Component */}
+        <GrowCareer />
+      </Suspense>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        {/* @ts-expect-error Async Server Component */}
+        <Education />
+      </Suspense>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        {/* @ts-expect-error Async Server Component */}
+        <Category />
+      </Suspense>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        {/* @ts-expect-error Async Server Component */}
+        <Testimonial />
+      </Suspense>
       <Blogs />
     </>
   );

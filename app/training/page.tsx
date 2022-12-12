@@ -1,4 +1,5 @@
 import Event from './event';
+import Found from './found';
 
 type Props = {};
 
@@ -8,7 +9,7 @@ const Page = (props: Props) => {
   return (
     <>
       <Event />
-      {/* <Found /> */}
+      <Found />
     </>
   );
 };
