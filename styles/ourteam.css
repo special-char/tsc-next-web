@@ -1,21 +1,21 @@
 .ourteamcard {
-  @apply grid justify-items-center gap-10 overflow-hidden  rounded-3xl md:grid-cols-2  md:justify-items-start md:gap-7 lg:grid-cols-3;
+  @apply grid   justify-center gap-10 gap-y-5 overflow-hidden rounded-3xl shadow-dark md:grid-cols-2 lg:grid-cols-3;
   &__image {
-    @apply relative min-h-[300px]  duration-300 ease-in-out hover:translate-y-1;
+    @apply relative mx-auto aspect-square w-full  overflow-hidden duration-300 hover:scale-110;
   }
   &__body {
-    @apply p-6 pt-0;
+    @apply mx-auto mb-5 flex flex-col gap-2 md:w-full md:flex-row md:justify-between md:gap-0 md:place-self-start;
   }
-
   &__title {
-    @apply mt-6 duration-300 ease-in-out  hover:text-primary;
-
-    &--line-2 {
-      @apply line-clamp-2;
-    }
-
-    &__desc {
-      @apply text-neutral-500 line-clamp-4;
-    }
+    @apply grid place-content-center text-xl hover:text-primary md:text-2xl;
+  }
+  &__desc {
+    @apply m-0 mb-4 !text-center md:mb-6 md:!text-left;
+  }
+  h4 {
+    @apply !m-0;
+  }
+  a {
+    @apply hover:text-primary;
   }
 }
