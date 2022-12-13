@@ -40,7 +40,6 @@ export default function RootLayout({
         <Suspense fallback={<h1>Loading...</h1>}>
           {/* @ts-expect-error Async Server Component */}
           <SideNav />
-          <SideNavSkeleton />
         </Suspense>
         <div>
           <Suspense fallback={<HeaderSkeleton />}>
