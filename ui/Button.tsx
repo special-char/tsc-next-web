@@ -2,8 +2,8 @@ import clsx from 'clsx';
 import React from 'react';
 
 type Props = {
-  variant: 'primary' | 'secondary';
-  size: 'small' | 'large';
+  variant?: 'primary' | 'secondary';
+  size?: 'small' | 'large';
   isRound?: boolean;
   className?: string;
 };
