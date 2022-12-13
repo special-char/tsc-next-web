@@ -58,12 +58,17 @@ const Header = async (props: Props) => {
       </nav>
       <Link
         href={attributes.url}
-        className="header__button btn--primary btn btn--small"
+        className="header__button btn btn--primary btn--small "
       >
         {attributes.title}
       </Link>
-      <a href="#sidenav-open" title="Open Menu" aria-label="Open Menu">
-        <HemburgerSvg className="h-12 w-12 fill-primary md:hidden " />
+      <a
+        href="#sidenav-open"
+        title="Open Menu"
+        aria-label="Open Menu"
+        className="md:hidden"
+      >
+        <HemburgerSvg className="h-12 w-12 fill-primary" />
       </a>
     </header>
   );
