@@ -6,7 +6,7 @@
     @apply hidden w-44 lg:block;
   }
 
-  & a {
+  &__link {
     @apply font-bold text-neutral-800;
     &:hover {
       @apply text-secondary3;
@@ -52,10 +52,6 @@
     }
   }
   &__button {
-    @apply !hidden bg-primary  text-neutral-100 md:!block;
-    &:hover {
-      background-color: #064ea4;
-      color: #ffffff;
-    }
+    @apply hidden md:block;
   }
 }
