@@ -13,6 +13,7 @@ const kumbSans = Kumbh_Sans({
 
 const newsreader = Newsreader({
   style: ['normal'],
+  subsets: ['latin'],
   variable: '--font-newsreader',
 });
 
