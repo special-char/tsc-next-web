@@ -81,7 +81,7 @@ const Testimonial = async () => {
                 <Rating rate={rating} />
                 <p className="card__desc">{`"${quote}"`}</p>
                 <h4>{name}</h4>
-                <p className="card__desc">{`${designation} at ${company}`}</p>
+                <p className="card__desc mt-2">{`${designation} at ${company}`}</p>
               </div>
             </div>
           );
