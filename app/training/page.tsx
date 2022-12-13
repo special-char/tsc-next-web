@@ -10,8 +10,8 @@ const Page = (props: Props) => {
   return (
     <>
       <EventDetails />
-      <Event />
-      <Found />
+      {/* <Event /> */}
+      {/* <Found /> */}
     </>
   );
 };

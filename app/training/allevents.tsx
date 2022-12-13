@@ -1,5 +1,5 @@
 import React from 'react';
-import CelenderSvg from '@/public/icons/celender.svg';
+import ClockSvg from '@/public/icons/clock.svg';
 import MapSvg from '@/public/icons/map.svg';
 import SpeakerSvg from '@/public/icons/speaker.svg';
 import '@/styles/allevents.css';
@@ -7,12 +7,13 @@ import Image from 'next/image';
 
 const EventDetails = () => {
   return (
-    <section className="events relative h-auto">
-      <div className="events__banner "></div>
-      <div className="events__animate-bounce-slow1 "></div>
-      <div className="events__animate-bounce-slow2"></div>
-
-      <div className="events__page ">
+    <section className="events h-auto w-full">
+      <div>
+        <div className="events__banner "></div>
+        <div className="events__animate-bounce-slow1 "></div>
+        <div className="events__animate-bounce-slow2"></div>
+      </div>
+      <div className="events__page">
         <div className="events__image">
           <Image
             alt="alt"
@@ -29,7 +30,7 @@ const EventDetails = () => {
           </div>
           <div className="events__datails ">
             <div className="events__title">
-              <CelenderSvg className="w-6" />
+              <ClockSvg className="w-6" />
               <span className="text-base font-bold md:text-sm">
                 Sunday 5:00 pm - 6:00 pm EDT
               </span>

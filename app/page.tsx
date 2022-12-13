@@ -9,6 +9,7 @@ import Testimonial from './testimonial';
 import Blogs from './blogs';
 import { Suspense } from 'react';
 import EventDetails from './training/allevents';
+import Imageskeleton from '@/ui/Imageskeleton';
 
 const Page = () => {
   return (
@@ -46,7 +47,6 @@ const Page = () => {
         <Testimonial />
       </Suspense>
       <Blogs />
-      <Event />
     </>
   );
 };
