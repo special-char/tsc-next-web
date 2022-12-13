@@ -3,7 +3,6 @@ import '@/styles/ourOffice.css';
 import OfficeSvg from '@/public/icons/office.svg';
 import Image from 'next/image';
 import WorldMap from '@/public/images/world map.jpg';
-// import '@/styles/dist.css';
 
 type Props = {};
 

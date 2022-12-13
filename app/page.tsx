@@ -1,6 +1,6 @@
-import Banner from './banner';
+import Banner, { BannerSkeleton } from './banner';
 import Category from './category';
-import Courses from './courses';
+import Courses, { CoursesSkeleton } from './courses';
 import Education from './education';
 import GrowCareer from './growcareer';
 import Leaders from './leaders';
@@ -14,11 +14,11 @@ import Imageskeleton from '@/ui/Imageskeleton';
 const Page = () => {
   return (
     <>
-      <Suspense fallback={<h1>Bannerx...</h1>}>
+      <Suspense fallback={<BannerSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
         <Banner />
       </Suspense>
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<CoursesSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
         <Courses />
       </Suspense>

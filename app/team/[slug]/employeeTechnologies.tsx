@@ -65,6 +65,7 @@ const EmployeeTechnologies = (props: Props) => {
             </div>
           </div>
         </div>
+        <hr className="col-span-full" />
       </section>
     </>
   );
