@@ -1,15 +1,13 @@
 import Banner, { BannerSkeleton } from './banner';
-import Category from './category';
+import Category, { CategorySkeleton } from './category';
 import Courses, { CoursesSkeleton } from './courses';
 import Education, { EducationSkeleton } from './education';
 import GrowCareer, { GrowCareerSkeleton } from './growcareer';
 import Leaders, { LeadersSkeleton } from './leaders';
-import Perks from './perks';
-import Testimonial from './testimonial';
+import Perks, { PerksSkeleton } from './perks';
+import Testimonial, { TestimonialSkeleton } from './testimonial';
 import Blogs from './blogs';
 import { Suspense } from 'react';
-import EventDetails from './training/allevents';
-import Imageskeleton from '@/ui/Imageskeleton';
 
 const Page = () => {
   return (
@@ -22,7 +20,7 @@ const Page = () => {
         {/* @ts-expect-error Async Server Component */}
         <Courses />
       </Suspense>
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<PerksSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
         <Perks />
       </Suspense>
@@ -38,11 +36,11 @@ const Page = () => {
         {/* @ts-expect-error Async Server Component */}
         <Education />
       </Suspense>
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<CategorySkeleton />}>
         {/* @ts-expect-error Async Server Component */}
         <Category />
       </Suspense>
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<TestimonialSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
         <Testimonial />
       </Suspense>

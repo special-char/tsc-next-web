@@ -6,6 +6,53 @@ import { getTestimonialData } from '@/lib/getTestimonials';
 import { HomeTestimonial, Testimonial, UploadFile } from 'types/types';
 import Link from 'next/link';
 
+export const TestimonialSkeleton = () => {
+  return (
+    <section id="Testimonial" className="testimonial animate-pulse">
+      <h2 className="testimonial__header font-cursive">
+        What our students say about us
+      </h2>
+      <Carousal>
+        {[1, 2, 3].map((testimonial: any) => {
+          //   const { avatar, rating, quote, name, designation, company } =
+          //     testimonial.attributes as Testimonial;
+          //   const { url, alternativeText } = avatar?.data
+          //     ?.attributes as UploadFile;
+          return (
+            <div className="testimonial__card card" key={testimonial.id}>
+              <div className="card__image testimonial__card__image">
+                <div></div>
+              </div>
+              <div className="card__body testimonial__card__body">
+                <div></div>
+                <p className="card__desc font-cursive">
+                  "Duis aute irure dolor in reprehenderit in voluptate velit
+                  esse cillum dolore eu fugiat nulla pariatur. Excepteur sint"
+                </p>
+                <h4 className="font-cursive">Katherine Cutts</h4>
+                <p className="card__desc font-cursive">
+                  Junior Designer at Facebook
+                </p>
+              </div>
+            </div>
+          );
+        })}
+      </Carousal>
+      <div className="testimonial__content">
+        {[1, 2, 3, 4].map((number) => (
+          <div>
+            <h3 className="testimonial__title font-cursive">100,000+</h3>
+            <p className="font-cursive">Five-star course reviews</p>
+          </div>
+        ))}
+      </div>
+      <div className="flex justify-center">
+        <div className="btn btn--primary font-cursive">Explore Courses</div>
+      </div>
+    </section>
+  );
+};
+
 const Testimonial = async () => {
   const testimonialsData = await getTestimonialData();
 
