@@ -1,31 +1,25 @@
-.card {
+.maincard {
   @apply grid overflow-hidden rounded-2xl shadow-dark;
 
   &__image {
-    @apply relative  duration-300 ease-in-out;
+    @apply relative m-0 aspect-video h-full w-full overflow-hidden;
+    & > img {
+      object-fit: cover;
+    }
   }
   &__chipset {
-    @apply absolute top-3 right-6 flex justify-end gap-3;
-
-    &__chip {
-      @apply items-center  justify-center rounded-full py-3 px-4 align-middle text-xs font-bold shadow-base sm:px-6;
-
-      &--primary {
-        @apply bg-primary text-neutral-100;
-      }
-
-      &--secondary {
-        @apply bg-neutral-300 text-neutral-700;
-      }
-    }
+    @apply absolute top-5 grid w-full gap-3 px-5 md:flex md:px-6;
   }
 
   &__body {
-    @apply p-6 pt-0;
+    @apply grid items-center gap-2 p-6;
+  }
+  &__date {
+    @apply text-base font-bold;
   }
 
   &__title {
-    @apply mt-6 duration-300 ease-in-out  hover:text-primary;
+    @apply text-xl font-bold duration-300 ease-in-out line-clamp-3 hover:text-primary md:line-clamp-1 xl:text-2xl;
 
     &--line-2 {
       @apply line-clamp-2;
@@ -33,13 +27,38 @@
   }
 
   &__desc {
-    @apply text-neutral-500 line-clamp-4;
+    @apply text-lg text-neutral-500 line-clamp-4;
   }
-  &__actions {
+  &__actionbar {
     @apply flex items-center gap-4;
   }
 
   &__avatar {
-    @apply aspect-square w-14 overflow-hidden rounded-full;
+    @apply aspect-square h-12 w-12 overflow-hidden rounded-full;
+    &--details {
+      @apply grid items-center;
+    }
+    &__name {
+      @apply text-base font-bold md:text-lg;
+    }
+    &__designation {
+      @apply text-base;
+    }
   }
+  &__icons {
+    & > div {
+      @apply m-0 p-0;
+    }
+  }
+  &__hoz {
+    @apply grid md:grid-cols-2;
+    .maincard__title {
+      @apply line-clamp-3;
+    }
+  }
+}
+p,
+h4,
+h3 {
+  @apply m-0 p-0;
 }

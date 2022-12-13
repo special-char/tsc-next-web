@@ -1,3 +1,6 @@
+const path = require('path');
+const { resolve } = require('path');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
@@ -10,9 +13,14 @@ const nextConfig = {
     config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
+      resolve:{
+        alias:{
+          core: path.join(__dirname, 'core')
+        }
+      }
     });
-
     return config;
+    
   },
   images: {
     domains: [
