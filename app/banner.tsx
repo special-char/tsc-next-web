@@ -4,6 +4,7 @@ import '@/styles/banner.css';
 import md from 'markdown-it';
 import { getBannerData } from '@/lib/getBanner';
 import { Banner, UploadFile } from 'types/types';
+import Button from '@/ui/Button';
 
 export const BannerSkeleton = () => {
   return (
@@ -52,9 +53,9 @@ const Banner = async (props: Props) => {
         ></div>
         <div className="banner__actions">
           {buttons?.map((item: any) => (
-            <Link key={item.id} href={item.url} className="btn btn--primary">
+            <Button as={Link} key={item.id} href={item.url} variant="primary">
               {item.text}
-            </Link>
+            </Button>
           ))}
         </div>
       </div>
