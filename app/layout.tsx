@@ -2,7 +2,7 @@ import { Kumbh_Sans, Newsreader, Flow_Block } from '@next/font/google';
 import React, { Suspense } from 'react';
 import Footer from './footer';
 import Header, { HeaderSkeleton } from './header';
-import SideNav, { SideNavSkeleton } from './sideNav';
+import SideNav from './sideNav';
 import '@/styles/globals.css';
 
 const kumbSans = Kumbh_Sans({

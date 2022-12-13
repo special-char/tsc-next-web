@@ -45,7 +45,6 @@
       }
     }
   }
-
   &__blogs {
     @apply grid grid-cols-1 gap-y-12 bg-neutral-200 px-container pb-14 pt-24 md:pb-36 lg:pt-44;
     &__header {

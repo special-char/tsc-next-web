@@ -50,7 +50,7 @@ const Perks = async () => {
         {benifits?.map((perk) => {
           const { title, description, image, id } =
             perk as ComponentCommonDetail;
-          const { url } = image.data?.attributes as UploadFile;
+          const { url } = image?.data?.attributes as UploadFile;
           return (
             <div key={id} className="perks__item">
               <div className="perks__item__image">
