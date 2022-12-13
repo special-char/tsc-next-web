@@ -1,9 +1,9 @@
 import Banner, { BannerSkeleton } from './banner';
 import Category from './category';
 import Courses, { CoursesSkeleton } from './courses';
-import Education from './education';
-import GrowCareer from './growcareer';
-import Leaders from './leaders';
+import Education, { EducationSkeleton } from './education';
+import GrowCareer, { GrowCareerSkeleton } from './growcareer';
+import Leaders, { LeadersSkeleton } from './leaders';
 import Perks from './perks';
 import Testimonial from './testimonial';
 import Blogs from './blogs';
@@ -26,15 +26,15 @@ const Page = () => {
         {/* @ts-expect-error Async Server Component */}
         <Perks />
       </Suspense>
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<LeadersSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
         <Leaders />
       </Suspense>
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<GrowCareerSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
         <GrowCareer />
       </Suspense>
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<EducationSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
         <Education />
       </Suspense>
