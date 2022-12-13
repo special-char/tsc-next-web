@@ -5,6 +5,7 @@ import TscLogoSvg from '@/public/icons/tscLogo.svg';
 import TscSvg from '@/public/icons/tsc.svg';
 import HemburgerSvg from '@/public/icons/hemburger.svg';
 import { getMenuData } from '@/lib/getMenu';
+import Button from '@/ui/Button';
 
 type Props = {};
 
@@ -19,7 +20,7 @@ const Header = async (props: Props) => {
 
   return (
     <header className="header">
-      <Link href="/">
+      <Link as={Link} href="/">
         <TscLogoSvg className="header__tsclogo" />
         <TscSvg className="w-14 lg:hidden " />
       </Link>

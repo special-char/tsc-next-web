@@ -1,6 +1,7 @@
 import '@/styles/about.css';
 import React from 'react';
 import Link from 'next/link';
+import Button from '@/ui/Button';
 type Props = {};
 
 const Aboutheader = (props: Props) => {
@@ -16,9 +17,9 @@ const Aboutheader = (props: Props) => {
           </p>
         </div>
         <div className="education__header justify-items-center">
-          <Link href="/" className="btn btn--primary">
+          <Button as={Link} href="/" variant="primary">
             JOIN OUR TEAM
-          </Link>
+          </Button>
         </div>
       </div>
     </section>

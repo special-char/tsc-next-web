@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 import '@/styles/footer.css';
 import SocialIcon from '@/ui/SocialIcon';
+import Button from '@/ui/Button';
 
 type Props = {};
 
@@ -70,7 +71,9 @@ const Footer = (props: Props) => {
             name=""
             id=""
           />
-          <button className="btn btn--primary newsletter__btn">Submit</button>
+          <Button as="button" variant="primary" className="newsletter__btn">
+            Submit
+          </Button>
         </div>
       </div>
 

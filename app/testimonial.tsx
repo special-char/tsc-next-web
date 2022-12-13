@@ -5,6 +5,7 @@ import Carousal from '@/ui/Carousal';
 import { getTestimonialData } from '@/lib/getTestimonials';
 import { HomeTestimonial, Testimonial, UploadFile } from 'types/types';
 import Link from 'next/link';
+import Button from '@/ui/Button';
 
 export const TestimonialSkeleton = () => {
   return (
@@ -95,9 +96,9 @@ const Testimonial = async () => {
         ))}
       </div>
       <div className="flex justify-center">
-        <Link href={`{btn?.url}`} className="btn btn--primary">
+        <Button as={Link} href={`{btn?.url}`} variant="primary">
           {btn?.text}
-        </Link>
+        </Button>
       </div>
     </section>
   );

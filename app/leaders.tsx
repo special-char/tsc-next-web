@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Button from '@/ui/Button';
 import '@/styles/leaderSection.css';
 import { getLeaderData } from '@/lib/getLeader';
 import { HomeLeader, Testimonial, UploadFile } from 'types/types';
@@ -24,13 +25,14 @@ const Leaders = async () => {
         <p className="leader__description">{description}</p>
         <div className="leader__actions">
           {btns?.map((val) => (
-            <Link
+            <Button
+              as={Link}
               href={`${val?.url}`}
               key={val?.id}
-              className="btn btn--primary text-xs"
+              variant="primary"
             >
               {val?.text}
-            </Link>
+            </Button>
           ))}
         </div>
       </div>

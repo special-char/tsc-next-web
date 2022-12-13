@@ -1,5 +1,6 @@
 import { getGrowCareerData } from '@/lib/getGrowCareer';
 import '@/styles/growcareer.css';
+import Button from '@/ui/Button';
 import Link from 'next/link';
 import { ComponentCommonLink, HomeGrowCareer } from 'types/types';
 
@@ -18,9 +19,9 @@ const GrowCareer = async () => {
       <div className="growcareer__details">
         <h2 className="growcareer__title">{title}</h2>
         <p className="growcareer__description">{description}</p>
-        <Link href={`${url}`} className="btn btn--secondary btn--small">
+        <Button as={Link} href={`${url}`} variant="secondary" size="small">
           {text}
-        </Link>
+        </Button>
       </div>
       <div className="growcareer__cards">
         {details?.map((val) => (

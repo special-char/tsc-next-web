@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import '@/styles/blogs.css';
+import Button from '@/ui/Button';
 
 type Props = {};
 
@@ -31,9 +32,14 @@ const Blogs = (props: Props) => {
     <>
       <section className="blogs">
         <h2 className="blogs__title">Resources & News</h2>
-        <Link href="/blogs" className="btn btn--secondary lg:ml-auto">
+        <Button
+          as={Link}
+          href="/blogs"
+          variant="secondary"
+          className="lg:ml-auto"
+        >
           Browse Blog
-        </Link>
+        </Button>
         <Link href="#" className="card">
           <figure className="card__image">
             <Image

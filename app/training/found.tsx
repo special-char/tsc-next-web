@@ -1,6 +1,7 @@
 import '@/styles/found.css';
 import React from 'react';
 import Link from 'next/link';
+import Button from '@/ui/Button';
 
 type Props = {};
 
@@ -13,12 +14,12 @@ const Found = (props: Props) => {
           The page you are looking for doesn't exist or has been moved.
         </h2>
         <div className="found__btn">
-          <Link href="/" className="btn btn--primary">
+          <Button as={Link} href="/" variant="primary">
             EXPLORE COURSES
-          </Link>
-          <Link href="/" className="btn btn--secondary">
+          </Button>
+          <Button as={Link} href="/" variant="secondary">
             GO HOME
-          </Link>
+          </Button>
         </div>
       </div>
       <h2 className="found__tile">404</h2>
