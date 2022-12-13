@@ -4,93 +4,81 @@ import PhoneSvg from '@/public/icons/phone.svg';
 import AddressSvg from '@/public/icons/address.svg';
 import clsx from 'clsx';
 import '@/styles/contact.css';
-import { Field, Form, Formik } from 'formik';
+import { Formik, Form, Field } from 'formik';
+import TextInput from '@/ui/TextInput';
+import TextArea from '@/ui/TextArea';
+import clsx from 'clsx';
+import CustomForm from '@/ui/CustomForm';
 
 type Props = {};
-const formData = [
+const fields = [
   {
-    id: 'txtName',
-    label: 'Name',
     name: 'name',
+    label: 'Name',
     type: 'text',
-    // pattern: '^[a-zA-z ]*$',
-    placeholder: 'Full Name...1',
-    title: 'Enter your name',
-    validate: (values: any) => {
-      let error;
-      if (!values) {
-        error = 'Required name';
+    placeholder: 'Full Name',
+    component: TextInput,
+    validate: (value: string) => {
+      if (!value) {
+        return 'Required...';
       }
-      return error;
+      return '';
     },
   },
   {
-    id: 'txtEmail',
+    name: 'email',
     label: 'Email Address',
     name: 'email',
     type: 'email',
-    // pattern: '^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$',
-    placeholder: 'Email ',
-    title: 'Enter email address',
-    validate: (values: any) => {
-      let error;
-      if (!values) {
-        error = 'Required email';
-      } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values)) {
-        error = 'Invalid email address';
+    placeholder: 'Email',
+    component: TextInput,
+    validate: (value: string) => {
+      if (!value) {
+        return 'Required...';
       }
-      return error;
+      return '';
     },
   },
 
   {
-    id: 'txtPhone',
+    name: 'phone',
     label: 'Phone Number',
     name: 'contactnumber',
     type: 'tel',
-    pattern: '[0-9]{10}',
-    title: 'Enter 10 digit number',
-    placeholder: '+91 1234 5678 90....3',
-    validate: (values: any) => {
-      let error;
-      if (!values) {
-        error = 'Required phone number';
-      } else if (!/^\d{10}$/i.test(values)) {
-        error = 'Invalid phone';
+    placeholder: '+91 1234 5678 90',
+    component: TextInput,
+    validate: (value: string) => {
+      if (!value) {
+        return 'Required...';
       }
-      return error;
+      return '';
     },
   },
   {
-    id: 'txtSubject',
-    label: 'Subject',
     name: 'subject',
+    label: 'Subject',
     type: 'text',
-    //pattern: '^[a-zA-z ]*$',
-    placeholder: 'Subject...4',
-    title: 'Enter subject',
-    validate: (values: any) => {
-      let error;
-      if (!values) {
-        error = 'Required subject';
+    placeholder: 'Subject',
+    component: TextInput,
+    validate: (value: string) => {
+      if (!value) {
+        return 'Required...';
       }
-      return error;
+      return '';
     },
   },
   {
-    id: 'txtMessage',
-    label: 'Message',
     name: 'message',
-    type: 'textarea',
-    //pattern: '^([A-Za-z0-9]+.[A-Za-z0-9]+(\r)?(\n)?)+$',
-    placeholder: 'text area...',
-    title: 'type your message here...',
-    validate: (values: any) => {
-      let error;
-      if (!values) {
-        error = 'Required messages';
+    label: 'Message',
+    placeholder: 'Write your message here...',
+    component: TextArea,
+    rows: 5,
+    wrapperClassName: 'col-span-full',
+    validate: (value: string) => {
+      if (!value) {
+        return 'Required...';
       }
-      return error;
+      return '';
     },
   },
 ];
@@ -130,81 +118,22 @@ const Contact = (props: Props) => {
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
         aliquip commodo consequat
       </p>
-      <div className="contact__body relative place-content-center">
-        <div className="">
-          <Formik
-            initialValues={initialValues}
-            onSubmit={(values) => {
-              console.log(values);
-            }}
-          >
-            {({ isSubmitting, values, errors, touched, dirty }) => (
-              <Form className="form relative">
-                {formData.map((formData: any) => {
-                  return (
-                    <div key={formData.id}>
-                      <label className="form__label">{formData.label}</label>
-                      {formData.type === 'textarea' ? (
-                        <div>
-                          <Field
-                            as="textarea"
-                            name={formData.name}
-                            id={formData.id}
-                            title={formData.title}
-                            placeholder={formData.placeholder}
-                            className="contact__textarea resize-none"
-                            validate={formData.validate}
-                          ></Field>
-                          <p className="py-2 pl-9 text-error">
-                            {touched[formData.name] && errors
-                              ? errors[formData.name]
-                              : ''}
-                            {/* {errors[formData.name]} */}
-                          </p>
-                        </div>
-                      ) : (
-                        <div>
-                          <Field
-                            type={formData.type}
-                            name={formData.name}
-                            placeholder={formData.name}
-                            title={formData.title}
-                            className={clsx('form__input resize-none ', {
-                              'outline-error': errors,
-                            })}
-                            validate={formData.validate}
-                          />
-                          <p className="py-2 pl-9 text-error">
-                            {touched[formData.name] && errors
-                              ? errors[formData.name]
-                              : ''}
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-
-                <button
-                  type="submit"
-                  className="contact__button btn btn--primary btn--small"
-                >
-                  {isSubmitting ? 'Please wait' : 'submit'}
-                </button>
-                {isSubmitting && (
-                  <div className="absolute z-50 m-auto flex h-full w-full items-center justify-center bg-neutral-100 px-2 py-5 text-center">
-                    <p className="mb-0 h-auto w-full rounded-2xl bg-primary py-10 px-2 text-secondary1 shadow-base md:px-40">
-                      Your message has been submitted. We will get back to you
-                      within 24-48 hours.
-                    </p>
-                  </div>
-                )}
-              </Form>
-            )}
-          </Formik>
-        </div>
+      <div className="contact__body">
+        <CustomForm
+          initialValues={{
+            name: '',
+            email: '',
+            phone: '',
+            subject: '',
+            message: '',
+          }}
+          onSubmit={(values) => {
+            console.log(values);
+          }}
+          fields={fields}
+        />
       </div>
-      <div className="contact__cards relative ">
+      <div className="contact__cards">
         {CardData.map((cardData) => (
           <div className="contact__card_details">
             <div className="contact__svg">{cardData.svg}</div>
