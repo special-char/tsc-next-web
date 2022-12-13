@@ -13,6 +13,6 @@
   }
 
   &__image {
-    @apply relative aspect-image overflow-hidden rounded-3xl bg-secondary3;
+    @apply relative aspect-image overflow-hidden rounded-3xl bg-neutral-300;
   }
 }

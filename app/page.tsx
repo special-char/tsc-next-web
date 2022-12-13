@@ -1,6 +1,6 @@
-import Banner from './banner';
+import Banner, { BannerSkeleton } from './banner';
 import Category from './category';
-import Courses from './courses';
+import Courses, { CoursesSkeleton } from './courses';
 import Education from './education';
 import GrowCareer from './growcareer';
 import Leaders from './leaders';
@@ -8,21 +8,15 @@ import Perks from './perks';
 import Testimonial from './testimonial';
 import Blogs from './blogs';
 import { Suspense } from 'react';
-import DescriptionSkeleton from '@/ui/DescriptionSkeleton';
-import TitleSkeleton from '@/ui/TitleSkeleton';
-import ButtonSkeleton from '@/ui/ButtonSkeleton';
 
 const Page = () => {
   return (
     <>
-      <TitleSkeleton />
-      <DescriptionSkeleton />
-      <ButtonSkeleton />
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<BannerSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
         <Banner />
       </Suspense>
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<CoursesSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
         <Courses />
       </Suspense>
