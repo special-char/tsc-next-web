@@ -36,9 +36,9 @@
       @apply my-auto flex gap-5 place-self-start md:place-self-end;
       &__accessory {
         @apply flex gap-2 border border-[#e7eaee] text-xs;
-        /* .chip-icon {
+        .chip-icon {
           @apply h-5 w-4;
-        } */
+        }
       }
       a {
         @apply no-underline;
