@@ -1,5 +1,5 @@
 import { Kumbh_Sans, Newsreader, Flow_Block } from '@next/font/google';
-import React from 'react';
+import React, { Suspense } from 'react';
 import Footer from './footer';
 import Header from './header';
 import SideNav from './sideNav';
@@ -37,9 +37,15 @@ export default function RootLayout({
     >
       <head />
       <body>
-        <SideNav />
+        <Suspense fallback={<h1>Loading...</h1>}>
+          {/* @ts-expect-error Async Server Component */}
+          <SideNav />
+        </Suspense>
         <div>
-          <Header />
+          <Suspense fallback={<h1>Loading...</h1>}>
+            {/* @ts-expect-error Async Server Component */}
+            <Header />
+          </Suspense>
           <main>{children}</main>
           <Footer />
         </div>
