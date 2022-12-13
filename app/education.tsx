@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { getEducationData } from '@/lib/getEducation';
 import { AboutTsc, ComponentCommonDetail, UploadFile } from 'types/types';
+import Button from '@/ui/Button';
 
 export const EducationSkeleton = () => {
   return (
@@ -84,9 +85,9 @@ const Education = async () => {
         </div>
       </div>
       <div className="education__header col-span-2">
-        <Link href="/" className="btn btn--secondary">
+        <Button as={Link} href="/" variant="secondary">
           About Education
-        </Link>
+        </Button>
       </div>
       <span className="education__line"></span>
     </section>

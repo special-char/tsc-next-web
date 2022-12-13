@@ -1,4 +1,5 @@
 import '@/styles/blogSubscribe.css';
+import Button from '@/ui/Button';
 
 type Props = {};
 
@@ -18,9 +19,9 @@ const BlogSubscribe = (props: Props) => {
               name=""
               id=""
             />
-            <button className="btn btn--primary newsletter__btn">
+            <Button as="button" variant="primary" className=" newsletter__btn">
               Subscribe
-            </button>
+            </Button>
           </div>
         </div>
       </div>
