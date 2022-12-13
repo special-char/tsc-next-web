@@ -8,11 +8,17 @@ import Perks from './perks';
 import Testimonial from './testimonial';
 import Blogs from './blogs';
 import { Suspense } from 'react';
+import DescriptionSkeleton from '@/ui/DescriptionSkeleton';
+import TitleSkeleton from '@/ui/TitleSkeleton';
+import ButtonSkeleton from '@/ui/ButtonSkeleton';
 
 const Page = () => {
   return (
     <>
-      <Suspense fallback={<h1>Bannerx...</h1>}>
+      <TitleSkeleton />
+      <DescriptionSkeleton />
+      <ButtonSkeleton />
+      <Suspense fallback={<h1>Loading...</h1>}>
         {/* @ts-expect-error Async Server Component */}
         <Banner />
       </Suspense>

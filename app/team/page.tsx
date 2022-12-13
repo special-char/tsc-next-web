@@ -1,5 +1,4 @@
 import React from 'react';
-
 import EmployeeAchievement from './[slug]/employeeAchievement';
 import EmployeeCertificates from './[slug]/employeeCertificates';
 import EmployeeEducation from './[slug]/employeeEducation';
