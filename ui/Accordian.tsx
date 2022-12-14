@@ -13,8 +13,8 @@ const Accordian = ({ data }: Props) => {
     <>
       {data.map((val) => (
         <details className="rounded-2xl md:py-8">
-          <summary>{val.title}</summary>
-          <p>{val.description}</p>
+          <summary>{val.attributes.question}</summary>
+          <p>{val.attributes.answer}</p>
         </details>
       ))}
     </>

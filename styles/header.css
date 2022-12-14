@@ -1,9 +1,9 @@
 .header {
   grid-template-columns: auto 1fr auto;
 
-  @apply grid items-center justify-items-center py-4 px-container shadow-dark lg:py-2;
+  @apply grid items-center justify-items-center py-4 px-container shadow-dark;
   &__tsclogo {
-    @apply hidden w-44 lg:block;
+    @apply hidden h-14 lg:block;
   }
 
   &__link {

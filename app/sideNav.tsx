@@ -1,6 +1,6 @@
 import React from 'react';
 import '@/styles/sideNav.css';
-import TscLogoSvg from '@/public/icons/tscLogo.svg';
+// import TscLogoSvg from '@/public/icons/tscLogo.svg';
 import { getMenuData } from '@/lib/getMenu';
 import Link from 'next/link';
 
@@ -18,7 +18,10 @@ const SideNav = async (props: Props) => {
     <aside id="sidenav-open">
       <nav>
         <div>
-          <TscLogoSvg className="mx-auto h-[88px] text-center" />
+          <div className="mb-4 shadow-dark">
+            {/* <TscLogoSvg className="h-[88px]  text-center" /> */}
+          </div>
+
           <ul>
             {menuOptions.slice(0, -1).map((x) => {
               const { title, url, children } = x.attributes;
@@ -27,7 +30,7 @@ const SideNav = async (props: Props) => {
                   {children.data.length > 0 ? (
                     <>
                       <details className="nav-item">
-                        <summary className="items-center">{title}</summary>
+                        <summary className="items-center ">{title}</summary>
                         <ul>
                           {children.data.map((y) => {
                             return (

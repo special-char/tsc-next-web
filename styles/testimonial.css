@@ -6,7 +6,7 @@
   }
 
   &__card {
-    @apply max-w-screen-md items-center justify-items-center md:grid-cols-[1fr_2fr];
+    @apply items-center justify-items-center md:grid-cols-[1fr_2fr];
 
     &__image {
       @apply aspect-square w-52 overflow-hidden rounded-full;

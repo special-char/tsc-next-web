@@ -6,7 +6,7 @@
   }
 
   &__description {
-    @apply m-0 text-neutral-100 md:max-w-md md:justify-self-end;
+    @apply m-0 text-neutral-100 md:max-w-lg md:justify-self-end;
   }
   &__links {
     @apply grid grid-cols-1 gap-3;
@@ -16,13 +16,24 @@
   }
 
   &__pages {
-    @apply w-full md:max-w-md md:justify-self-end;
+    @apply w-full md:max-w-lg md:justify-self-end;
     & > h3 {
       @apply pb-8;
     }
   }
 
   &__copyright {
-    @apply text-neutral-100 md:max-w-md md:justify-self-end;
+    @apply text-neutral-100 md:max-w-lg md:justify-self-end;
+  }
+  &__email_section {
+    @media screen and (max-width: 478px) {
+      @apply grid gap-2;
+    }
+    @media screen and (min-width: 478px) {
+      @apply w-4/5;
+      button {
+        @apply absolute right-3 top-2;
+      }
+    }
   }
 }

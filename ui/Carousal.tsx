@@ -58,18 +58,17 @@ const Carousal = ({ children }: Props) => {
 
   return (
     <div className="carousal">
-      <div ref={scrollerRef} className="carousal__scroller">
+      <ul ref={scrollerRef} className="carousal__scroller">
         {React.Children.map(children, (child) => {
           const item = child as ReactElement<PropsWithChildren<any>>;
-
-          const { className } = item?.props;
-          return React.cloneElement(item, {
-            className: clsx('carousal__items', {
-              [className]: !!className,
-            }),
-          });
+          const { style, ...props } = item.props;
+          return (
+            <li className="carousal__items" style={style}>
+              {React.cloneElement(item, { ...props })}
+            </li>
+          );
         })}
-      </div>
+      </ul>
       <div className="carousal__controls">
         <button
           type="button"
