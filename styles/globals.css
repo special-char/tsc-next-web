@@ -427,11 +427,14 @@
       p {
         @apply m-0;
       }
+      .card__heading {
+        @apply mb-4;
+      }
       .card__image {
-        @apply max-h-[319px] flex-1;
+        @apply m-0 flex-1;
       }
       .card__body {
-        @apply grid flex-1;
+        @apply grid flex-1 gap-y-6;
         .card__date {
           @apply flex flex-col items-start md:flex-row;
         }

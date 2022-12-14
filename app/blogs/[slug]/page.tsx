@@ -38,7 +38,7 @@ export default async function Page() {
               <ActionBar />
               <span className="blogPost__content__about-blog">
                 <Link href={'#'}>
-                  <span className="blogPost__content__about-blog__accessory">
+                  <span className="blogPost__content__about-blog__accessory chip chip--white">
                     <Design className="chip__icon" />
                     <span>Design</span>
                   </span>
