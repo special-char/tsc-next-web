@@ -9,8 +9,8 @@ const rating = 4;
 const Page = (props: Props) => {
   return (
     <>
-      <EventDetails />
-      {/* <Event /> */}
+      {/* <EventDetails /> */}
+      <Event />
       {/* <Found /> */}
     </>
   );
