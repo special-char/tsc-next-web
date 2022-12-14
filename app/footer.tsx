@@ -1,6 +1,7 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import '@/styles/footer.css';
 import SocialIcon from '@/ui/SocialIcon';
 import Button from '@/ui/Button';
@@ -40,7 +41,22 @@ const links = [
   { page: 'Contact' },
 ];
 
+function validateEmail(values: any) {
+  let error;
+  if (!values) {
+    error = 'Required email';
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values)) {
+    error = 'Invalid email address';
+  }
+  return error;
+}
 const Footer = (props: Props) => {
+  // const [submit, setsubmit] = useState(false);
+  // const buttonHandler = () => {
+  //   console.log('buttonHandler clicked');
+  //   setsubmit(!submit);
+  //   console.log(submit);
+  // };
   return (
     <section id="footer" className="footer">
       <TscBlueLogoSvg className="w-64" />

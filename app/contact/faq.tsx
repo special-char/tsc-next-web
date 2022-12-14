@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { use } from 'react';
 import '@/styles/faq.css';
 import Accordian from '@/ui/Accordian';
 
@@ -36,7 +36,38 @@ const data = [
   },
 ];
 
+async function getFaqData() {
+  try {
+    const res = await fetch('http://65.20.70.84:1337/graphql', {
+      method: 'POST',
+      body: JSON.stringify({
+        query: `{
+          faqs{
+            data{
+              id
+              attributes{
+                question
+                answer
+              }
+            }
+          }
+        }`,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    });
+    return await res.json();
+  } catch (error) {}
+}
+
 const Faq = (props: Props) => {
+  const faqData = use(getFaqData());
+
+  if (!faqData) return null;
+
+  const faqInfo = faqData?.data?.faqs?.data;
   return (
     <section id="Faq" className="faq">
       <div className="faq__section ">
@@ -48,7 +79,7 @@ const Faq = (props: Props) => {
           </p>
         </div>
         <div className="faq__body">
-          <Accordian data={data} />
+          <Accordian data={faqInfo} />
         </div>
       </div>
     </section>
