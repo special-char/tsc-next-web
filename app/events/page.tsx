@@ -1,3 +1,5 @@
+import Event from './event';
+
 export default async function Page() {
-  return <h1>Events</h1>;
+  return <Event />;
 }
