@@ -58,19 +58,25 @@ const Carousal = ({ children }: Props) => {
 
   return (
     <div className="carousal">
-      <div ref={scrollerRef} className="carousal__scroller">
+      <ul ref={scrollerRef} className="carousal__scroller">
         {React.Children.map(children, (child) => {
           const item = child as ReactElement<PropsWithChildren<any>>;
 
           const { className } = item?.props;
-          return React.cloneElement(item, {
-            className: clsx('carousal__items', {
-              [className]: !!className,
-            }),
-          });
+          return (
+            <li
+              className={clsx('carousal__items', {
+                className: clsx('carousal__items', {
+                  [className || '']: !!className,
+                }),
+              })}
+            >
+              {React.cloneElement(item)}
+            </li>
+          );
         })}
-      </div>
-      <div className="carousal__controls">
+      </ul>
+      {/* <div className="carousal__controls">
         <button
           type="button"
           className={`carousal__control btn btn--white btn--round hover:bg-primary `}
@@ -85,7 +91,7 @@ const Carousal = ({ children }: Props) => {
         >
           <RightSvg className="hover:fill-neutral-100" />
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };

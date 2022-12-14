@@ -363,12 +363,19 @@
       [carousel-pagination] var(--_carousel-pagination-size);
 
     &__scroller {
-      @apply flex snap-x snap-mandatory gap-8 overflow-x-scroll overscroll-contain;
-      scrollbar-width: none;
+      @apply flex gap-8;
+
       scroll-padding-inline: var(--_carousel-gutters);
       padding-inline: var(--_carousel-gutters);
       grid-row: 1;
       grid-column: 1/-1;
+
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+      scroll-snap-type: inline mandatory;
+      scroll-padding-left: var(--gap);
+      scroll-padding-right: var(--gap);
+      scroll-padding-inline: var(--gap);
 
       &::-webkit-scrollbar {
         display: none;
@@ -380,7 +387,7 @@
     }
 
     &__items {
-      @apply max-w-xl flex-shrink-0 flex-grow basis-full snap-center snap-always;
+      @apply max-w-xl flex-shrink-0 flex-grow basis-full snap-center snap-always list-none;
     }
 
     &__controls {
