@@ -66,10 +66,6 @@ const Header = async (props: Props) => {
         <TscLogoSvg className="header__tsclogo" />
         <TscSvg className="h-[56px] w-[52px] lg:hidden " />
       </Link>
-
-        <TscLogoSvg className="header__tsclogo" />
-        <TscSvg className="w-14 lg:hidden " />
-      </Link>
       <nav className="header__nav">
         <ul>
           {menuOptions.slice(0, -1).map((x) => {
@@ -116,7 +112,7 @@ const Header = async (props: Props) => {
       >
         <HemburgerSvg className="h-12 w-12 fill-primary" />
       </a>
-    </header >
+    </header>
   );
 };
 
