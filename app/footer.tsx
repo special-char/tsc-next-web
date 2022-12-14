@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import '@/styles/footer.css';
 import SocialIcon from '@/ui/SocialIcon';
 import Button from '@/ui/Button';
-import TscBlueLogoSvg from '@/public/icons/tscbluelogo.svg';
+import TscBlueLogoSvg from '@/public/icons/tscBlueLogo.svg';
 
 type Props = {};
 
