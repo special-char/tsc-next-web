@@ -157,6 +157,10 @@
         @apply hidden;
       }
 
+      &::-webkit-details-marker {
+        display: none;
+      }
+
       &::before {
         content: '+';
         @apply mr-8 aspect-square h-12 w-12 rotate-180 rounded-full bg-neutral-300 text-center text-6xl font-bold text-neutral-600 duration-300 md:h-12 md:w-12;
