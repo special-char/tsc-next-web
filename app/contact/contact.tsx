@@ -1,5 +1,4 @@
 'use client';
-
 import EmailSvg from '@/public/icons/email.svg';
 import PhoneSvg from '@/public/icons/phone.svg';
 import AddressSvg from '@/public/icons/address.svg';
@@ -7,7 +6,6 @@ import '@/styles/contact.css';
 import { Formik, Form, Field } from 'formik';
 import TextInput from '@/ui/TextInput';
 import TextArea from '@/ui/TextArea';
-import clsx from 'clsx';
 import CustomForm from '@/ui/CustomForm';
 
 type Props = {};
@@ -28,6 +26,7 @@ const fields = [
   {
     name: 'email',
     label: 'Email Address',
+    name: 'email',
     type: 'email',
     placeholder: 'Email',
     component: TextInput,
@@ -42,6 +41,7 @@ const fields = [
   {
     name: 'phone',
     label: 'Phone Number',
+    name: 'contactnumber',
     type: 'tel',
     placeholder: '+91 1234 5678 90',
     component: TextInput,
@@ -98,6 +98,16 @@ const CardData = [
     description: 'B-604/605, Ganesh Glory11,SG-Hwy, Ahmedabad, Gujrat 382470',
   },
 ];
+const initialValues = {
+  name: '',
+  email: '',
+  contactnumber: '',
+  subject: '',
+  message: '',
+};
+const handleSubmit = (values: any) => {
+  console.log('data of submit:', values);
+};
 const Contact = (props: Props) => {
   return (
     <section id="contact" className="contact">

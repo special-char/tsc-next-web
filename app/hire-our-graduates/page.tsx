@@ -1,8 +1,8 @@
 import '@/styles/hireourgraduates.css';
 import React from 'react';
 import Image from 'next/image';
-import SocialIcon from '@/ui/SocialIcon';
 import Link from 'next/link';
+import Icon from '@/ui/Icon';
 
 type Props = {};
 const graduateData = [
@@ -46,10 +46,6 @@ const graduateData = [
 ];
 
 const icons = [
-  // {
-  //   icon: 'facebook',
-  //   link: 'https://www.facebook.com',
-  // },
   {
     icon: 'twitter',
     link: 'https://www.twitter.com',
@@ -62,14 +58,6 @@ const icons = [
     icon: 'linkedin',
     link: 'https://www.linkedin.com',
   },
-  // {
-  //   icon: 'youtube',
-  //   link: 'https://www.youtube.com',
-  // },
-  // {
-  //   icon: 'whatsapp',
-  //   link: 'https://www.whatsapp.com',
-  // },
 ];
 
 const Hirecard = (props: Props) => {
@@ -79,16 +67,26 @@ const Hirecard = (props: Props) => {
       <div className="hirecard">
         {graduateData.map((x) => (
           <div key={x.id} className="overflow-hidden rounded-3xl">
-            <Link href={'#'}>
-              <div className="hirecard__image">
-                <Image src={x.img} alt="" className="" fill />
-              </div>
-              <div className="hirecard__body">
-                <h3 className="hirecard__title">{x.title}</h3>
+            <div className="hirecard__image">
+              <Image src={x.img} alt="" fill />
+            </div>
+            <div className="p-6">
+              <Link href={'#'} className="w-full !no-underline">
+                <div className="hirecard__body">
+                  <h4 className="hirecard__title">{x.title}</h4>
+                </div>
                 <p className="hirecard__desc">{x.desc}</p>
+              </Link>
+              <div className="flex w-full items-center justify-center gap-4 md:justify-start">
+                {icons.map((icon) => (
+                  <span className="max-w-max rounded-full bg-neutral-500 p-2 hover:bg-primary">
+                    <Link key={icon.icon} href={icon.link} target="_blank">
+                      <Icon name={icon.icon} height={20} width={20} />
+                    </Link>
+                  </span>
+                ))}
               </div>
-            </Link>
-            <SocialIcon icons={icons} wrapperClass="mb-6 px-6" />
+            </div>
           </div>
         ))}
       </div>

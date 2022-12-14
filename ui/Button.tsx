@@ -2,9 +2,9 @@ import clsx from 'clsx';
 import React from 'react';
 
 type Props = {
-  variant: string;
-  size: string;
-  isRound: boolean;
+  variant?: 'primary' | 'secondary';
+  size?: 'small' | 'large';
+  isRound?: boolean;
   className?: string;
 };
 

@@ -8,7 +8,7 @@
     @apply grid grid-cols-1 place-items-center justify-center gap-16 md:mx-auto lg:grid-cols-2;
   }
   &__image {
-    @apply relative  min-h-[300px] w-full overflow-hidden rounded-2xl lg:min-h-[600px];
+    @apply relative  min-h-[300px] w-full overflow-hidden rounded-2xl bg-neutral-300 lg:min-h-[600px];
   }
   &__content {
     grid-template-columns: 80px 1fr;

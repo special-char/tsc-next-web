@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import '@/styles/blogs.css';
+import Button from '@/ui/Button';
 import Card from '@/ui/Card';
 
 type Props = {};

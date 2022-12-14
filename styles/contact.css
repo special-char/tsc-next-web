@@ -1,5 +1,5 @@
 .contact {
-  @apply relative grid grid-cols-1 gap-8 px-container py-20 lg:py-32;
+  @apply relative grid grid-cols-1 gap-8 overflow-hidden px-container py-20 lg:py-32;
 
   @media only screen and (min-width: theme(screens.md)) {
     grid-template-columns: 3fr 2fr;

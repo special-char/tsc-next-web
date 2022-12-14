@@ -1,4 +1,5 @@
 import '@/styles/blogSubscribe.css';
+import Button from '@/ui/Button';
 
 type Props = {};
 
@@ -18,14 +19,14 @@ const BlogSubscribe = (props: Props) => {
               name=""
               id=""
             />
-            <button className="btn btn--primary newsletter__btn">
+            <Button as="button" variant="primary" className=" newsletter__btn">
               Subscribe
-            </button>
+            </Button>
           </div>
         </div>
-        <div className="absolute z-10  rounded-full bg-secondary2 md:-top-80  md:-right-52 md:h-[400px] md:w-[400px] lg:-top-60  lg:-right-20"></div>
-        <div className="absolute -left-64 -bottom-64 z-10 h-[380px]  w-[380px] rounded-full bg-secondary3 md:-left-52 lg:-bottom-56 lg:-left-32"></div>
       </div>
+      <div className="absolute z-10  rounded-full bg-secondary2 md:-top-80  md:-right-52 md:h-[400px] md:w-[400px] lg:-top-60  lg:-right-20"></div>
+      <div className="absolute -left-64 -bottom-64 z-10 h-[380px]  w-[380px] rounded-full bg-secondary3 md:-left-52 lg:-bottom-56 lg:-left-32"></div>
     </section>
   );
 };

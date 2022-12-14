@@ -1,8 +1,11 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import '@/styles/footer.css';
 import SocialIcon from '@/ui/SocialIcon';
+import Button from '@/ui/Button';
+import TscBlueLogoSvg from '@/public/icons/tscBlueLogo.svg';
 
 type Props = {};
 
@@ -38,10 +41,25 @@ const links = [
   { page: 'Contact' },
 ];
 
+function validateEmail(values: any) {
+  let error;
+  if (!values) {
+    error = 'Required email';
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values)) {
+    error = 'Invalid email address';
+  }
+  return error;
+}
 const Footer = (props: Props) => {
+  // const [submit, setsubmit] = useState(false);
+  // const buttonHandler = () => {
+  //   console.log('buttonHandler clicked');
+  //   setsubmit(!submit);
+  //   console.log(submit);
+  // };
   return (
     <section id="footer" className="footer">
-      <h1 className="footer__title">TSC</h1>
+      <TscBlueLogoSvg className="w-64" />
 
       <p className="footer__description ">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -70,7 +88,9 @@ const Footer = (props: Props) => {
             name=""
             id=""
           />
-          <button className="btn btn--primary newsletter__btn">Submit</button>
+          <Button as="button" variant="primary" className="newsletter__btn">
+            Submit
+          </Button>
         </div>
       </div>
 

@@ -1,4 +1,5 @@
 import second from '@/styles/newsletter.css';
+import Button from './Button';
 
 const Newsletter = () => {
   return (
@@ -10,7 +11,9 @@ const Newsletter = () => {
         name=""
         id=""
       />
-      <button className="btn btn--primary newsletter__btn">Subscribe</button>
+      <Button as="button" variant="primary" className="newsletter__btn">
+        Subscribe
+      </Button>
     </div>
   );
 };

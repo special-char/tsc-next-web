@@ -7,7 +7,7 @@
   --text2: lch(40 0 0);
 
   display: grid;
-  grid-template-columns: [nav] 2fr [escape] 1fr;
+  grid-template-columns: [nav] 80% [escape] 20%;
   z-index: 9999;
   height: 100vh;
 
@@ -34,29 +34,33 @@
   }
 
   & > nav {
-    display: inline-flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     /* padding: 1rem 0rem; */
     font-size: 1.25rem;
     color: var(--text);
-
-    @media (min-width: 540px) {
-      padding-block-start: 4.5rem;
-    }
+    @apply md:hidden;
 
     background-color: var(--surface2);
     border-inline-end: 1px var(--surface1);
     box-shadow: 5px 0 40px hsla(0 0% 0% / 0.45);
     font-size: 1.5rem;
 
-    & > h4 {
-      text-transform: uppercase;
-
-      &:not(:first-child) {
-        margin-block-start: 2rem;
-      }
+    & > div {
+      @apply p-4 shadow-dark;
     }
 
+    & > ul {
+      @apply p-4;
+    }
+
+    & > a {
+      @apply m-4;
+    }
+
+    /* & li {
+      @apply text-lg;
+    } */
     & a {
       text-decoration: none;
       line-height: 1.25;
@@ -71,11 +75,32 @@
   user-select: none;
   touch-action: manipulation;
 
-  @media (min-width: 540px) {
-    display: none;
+  @apply md:hidden;
+}
+.nav-item {
+  @apply mb-0 p-0 text-base drop-shadow-none;
+  & > ul {
+    @apply pl-3 pt-4;
+    & a {
+      @apply text-xl font-semibold;
+    }
+  }
+  & > summary {
+    justify-content: space-between;
+    &::before {
+      content: '\2023';
+      @apply order-1 m-0 aspect-auto h-12 w-12 rotate-0 rounded-none bg-transparent duration-300;
+    }
   }
 }
-
+.nav-item[open] {
+  & > summary {
+    &::before {
+      content: '\2023';
+      @apply rotate-90 bg-transparent;
+    }
+  }
+}
 /* use this if copying/pasting skeleton */
 /* @media (max-width: 540px) {
     #sidenav-open > nav {

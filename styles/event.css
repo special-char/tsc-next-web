@@ -1,5 +1,5 @@
 .card {
-  @apply grid  justify-items-center rounded-3xl bg-neutral-100 shadow-dark  md:grid-cols-1 lg:grid-cols-2;
+  @apply grid  justify-items-center overflow-hidden rounded-3xl bg-neutral-100 shadow-dark  md:grid-cols-1 lg:grid-cols-2;
   &__image {
     @apply relative mb-4  aspect-video w-full overflow-hidden;
   }
@@ -18,7 +18,10 @@
   }
 }
 .chipbody {
-  @apply content-center items-center justify-between pb-10 text-center lg:flex;
+  @apply content-center items-center justify-between pb-10 lg:flex;
+  & > h2 {
+    @apply m-0 text-3xl md:text-6xl;
+  }
 
   &__header {
     @apply flex flex-row flex-wrap justify-around gap-2 rounded-full bg-neutral-200 p-6;

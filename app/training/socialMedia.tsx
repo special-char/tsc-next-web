@@ -1,6 +1,7 @@
 import React from 'react';
 import '@/styles/socialMedia.css';
 import Link from 'next/link';
+import Button from '@/ui/Button';
 // import ClockSvg from '../../public/icons/clock.svg';
 // import MapSvg from '../../public/icons/map.svg';
 
@@ -30,9 +31,14 @@ const SocialMedia = (props: Props) => {
                   Lorem ipsum dolor sit amet, consectetur dolorili adipiscing
                   elit. Felis donec massa aliquam id.
                 </p>
-                <Link href="/" className="btn btn--primary md:w-[42%]">
+                <Button
+                  as={Link}
+                  href="/"
+                  variant="primary"
+                  className=" md:w-[42%]"
+                >
                   REGISTER TO EVENT
-                </Link>
+                </Button>
               </div>
             </div>
           </div>

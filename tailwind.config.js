@@ -1,3 +1,5 @@
+const { fontFamily } = require('tailwindcss/defaultTheme');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./app/**/*.{js,ts,jsx,tsx}', './ui/**/*.{js,ts,jsx,tsx}'],
@@ -29,8 +31,9 @@ module.exports = {
       xl: '1440px',
     },
     fontFamily: {
-      sans: ['Kumbh Sans', 'sans-serif'],
-      serif: ['Newsreader', 'serif'],
+      sans: ['var(--font-kumbh)', ...fontFamily.sans],
+      serif: ['var(--font-newsreader)', ...fontFamily.serif],
+      cursive: ['var(--font-block)', 'cursive'],
     },
     fontSize: {
       xs: ['14px', '1.5em'],

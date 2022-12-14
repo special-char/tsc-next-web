@@ -1,7 +1,29 @@
+import { BannerSkeleton } from './banner';
+import { CategorySkeleton } from './category';
+import { CoursesSkeleton } from './courses';
+import { EducationSkeleton } from './education';
+import Footer from './footer';
+import { GrowCareerSkeleton } from './growcareer';
+import { HeaderSkeleton } from './header';
+import { LeadersSkeleton } from './leaders';
+import { PerksSkeleton } from './perks';
+import { TestimonialSkeleton } from './testimonial';
+
 export default function Loading() {
   return (
-    <div className="space-y-4">
-      <h1 className="text-gray-400/80 text-xl font-medium">Loading...</h1>
+    <div>
+      <HeaderSkeleton />
+      <main>
+        <BannerSkeleton />
+        <CoursesSkeleton />
+        <PerksSkeleton />
+        <LeadersSkeleton />
+        <GrowCareerSkeleton />
+        <EducationSkeleton />
+        <CategorySkeleton />
+        <TestimonialSkeleton />
+      </main>
+      <Footer />
     </div>
   );
 }

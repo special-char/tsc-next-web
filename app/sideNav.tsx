@@ -1,5 +1,6 @@
 import React from 'react';
 import '@/styles/sideNav.css';
+import TscLogoSvg from '@/public/icons/tscLogo.svg';
 import { getMenuData } from '@/lib/getMenu';
 import Link from 'next/link';
 
@@ -16,29 +17,35 @@ const SideNav = async (props: Props) => {
   return (
     <aside id="sidenav-open">
       <nav>
+        <div>
+          <TscLogoSvg className="h-[56px] w-[184px]" />
+        </div>
+
         <ul>
           {menuOptions.slice(0, -1).map((x) => {
             const { title, url, children } = x.attributes;
             return (
               <li>
                 {children.data.length > 0 ? (
-                  <details>
-                    <summary>{title}</summary>
-                    <ul>
-                      {children.data.map((y) => {
-                        return (
-                          <li>
-                            <Link
-                              href={y.attributes.url}
-                              className="header__link"
-                            >
-                              {y.attributes.title}
-                            </Link>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </details>
+                  <>
+                    <details className="nav-item">
+                      <summary className="items-center ">{title}</summary>
+                      <ul>
+                        {children.data.map((y) => {
+                          return (
+                            <li>
+                              <Link
+                                href={y.attributes.url}
+                                className="header__link"
+                              >
+                                {y.attributes.title}
+                              </Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </details>
+                  </>
                 ) : (
                   <Link href={url} className="header__link">
                     {title}
@@ -48,7 +55,7 @@ const SideNav = async (props: Props) => {
             );
           })}
         </ul>
-        <Link href={attributes.url} className="btn--primary btn btn--small">
+        <Link href={attributes.url} className="btn btn--primary btn--small">
           {attributes.title}
         </Link>
       </nav>
