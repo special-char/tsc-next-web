@@ -66,7 +66,6 @@ const Header = async (props: Props) => {
         <TscLogoSvg className="header__tsclogo" />
         <TscSvg className="h-[56px] w-[52px] lg:hidden " />
       </Link>
-
       <nav className="header__nav">
         <ul>
           {menuOptions.slice(0, -1).map((x) => {

@@ -1,30 +1,21 @@
 .blogs {
-  @apply grid min-h-screen grid-cols-1 content-center justify-items-center gap-8 px-container pt-28 sm:px-sm-container  lg:grid-cols-2 lg:justify-items-start lg:py-0 lg:px-container  lg:pt-32;
-
-  &__title {
-    @apply my-auto;
+  @apply overflow-hidden py-24 px-container sm:px-sm-container md:py-36 lg:px-container xl:py-44;
+  &__header {
+    @apply mb-10 flex flex-col items-center gap-5 lg:mb-14 lg:flex-row lg:justify-between;
   }
-
-  & figure {
-    @apply h-fit transition-all;
-    & img {
-      @apply object-cover duration-300 ease-in-out hover:scale-110;
-    }
-    & ~ div {
-      @apply items-center;
-
-      & h4 {
-        @apply m-0 line-clamp-3 lg:text-xl;
-      }
-    }
+  &__title {
+    @apply my-auto text-3xl md:text-6xl;
   }
   &__btn {
     @apply lg:justify-self-end;
   }
-  &__horizontal {
-    @apply grid grid-rows-3 gap-8;
+  &__grid {
+    @apply grid grid-cols-1 gap-x-4 pb-2 lg:grid-cols-2;
   }
-  &__moreblogs {
+  &__horizontal {
+    @apply grid gap-8;
+  }
+  /* &__moreblogs {
     @apply grid gap-7 gap-y-12 px-sm-container py-8 md:grid-cols-2 md:px-container;
     & figure {
       @apply h-fit transition-all;
@@ -38,7 +29,7 @@
         }
       }
     }
-  }
+  } */
 }
 a {
   @apply text-neutral-400 hover:text-neutral-400;

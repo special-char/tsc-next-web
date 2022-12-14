@@ -1,11 +1,18 @@
 import '@/styles/blogPost.css';
 import ActionBar from '@/ui/ActionBar';
 import Design from '@/public/icons/design.svg';
-// import Chip from '@/ui/Chip';
 import Image from 'next/image';
 import Link from 'next/link';
-import IndividualTeacher from 'app/training/individualteacher';
+import Card from '@/ui/Card';
 export default async function Page() {
+  const data = {
+    id: 1,
+    image_url: "https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f1ff9fd9e0e1686d26497_image-3-profile-picture-small-teacher-education-x-template.jpg",
+    heading: 'Sophie Moore',
+    description: 'Lorem Ipsum is Lorem Ipsum in 4th century Copyright Copyright (c) 2008 The University of Texas at Austin and Rice University (   Rice University ) All rights reserved',
+    teachingCategory: 'Design',
+    icons: true,
+  }
   return (
     <section id="blogPost" className="blogPost">
       <div className="blogPost__background-layout">
@@ -111,7 +118,7 @@ export default async function Page() {
             netus. Dui nunc mattis enim ut tellus elementum sagittis vitae et.
             Quis imperdiet massa tincidunt nunc pulvinar sapien et.
           </p>
-          <IndividualTeacher />
+          <Card data={data} className={'card--profile_Card'} />
         </div>
       </div>
       <div className="blogPost__blogs">
@@ -144,26 +151,6 @@ export default async function Page() {
               </h2>
             </div>
           </Link>
-          {/* <Link href="#" className="card rounded-lg overflow-hidden">
-            <figure className='overflow-hidden !m-0 !translate-y-0 aspect-blog-image'>
-              <div className="card__image">
-                <Image
-                  src="https://images.unsplash.com/photo-1661347335413-e4ef4c97d625?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwyMXx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60"
-                  alt="image"
-                  fill
-                />
-              </div>
-              <span className="chip chip--secondary absolute top-4 right-3">
-                $199.00 USD
-              </span>
-            </figure>
-            <div className="card__body !px-12 !pt-8 !pb-14">
-              <time className="card__date text-neutral-600 font-semibold text-base">December 1,2022</time>
-              <h2 className="card__title line-clamp-2">
-                Lorem, ipsum dolor sit amet consectetur adipisicing.
-              </h2>
-            </div>
-          </Link> */}
         </div>
 
       </div>

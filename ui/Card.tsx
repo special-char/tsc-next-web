@@ -1,18 +1,28 @@
 import '@/styles/card.css';
 import clsx from 'clsx';
-import Image, { ImageProps } from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
+// import Link from 'next/link';
 import Icon from './Icon';
-import SocialIcon from './SocialIcon';
+// import SocialIcon from './SocialIcon';
 type info = {
   avatar_url: any;
   avatar_name: String;
   avatar_Designation: String;
 };
+type date = {
+  month: String,
+  day: Number,
+  year: Number
+}
 type data = {
   image_url: any;
+  eventDate: date;
+  publishedAt: date;
   time: String;
   rate: String;
+  icons: Boolean;
+  teachingCategory: String;
   date: String;
   heading: String;
   description: String;
@@ -24,105 +34,75 @@ type Props = {
   data: data;
   className: any;
 };
+const icons = [
+  {
+    icon: 'linkedin',
+    link: 'https://www.linkedin.com',
+  },
+  {
+    icon: 'twitter',
+    link: 'https://www.twitter.com',
+  },
+  {
+    icon: 'instagram',
+    link: 'https://www.instagram.com',
+  },
+];
+
 export default function Card({ data, className }: Props) {
   return (
     <>
-      <div
-        className={clsx('maincard', {
-          [className]: !!className,
-          maincard__hoz: data.isHorizontal,
-        })}
-      >
-        <figure className="maincard__image">
-          <Image src={data.image_url} alt="image" fill />
-          <div
-            className={clsx('maincard__chipset', {
-              'justify-start': data.chip_align === 'left',
-              'justify-end': data.chip_align === 'right',
-            })}
-          >
-            {data?.time && (
-              <div className="chip chip--secondary">{data.time}</div>
-            )}
-            {data?.rate && (
-              <div className="chip chip--primary">{`$ ${data?.rate} USD`}</div>
-            )}
-          </div>
+      <div className={clsx("card", {
+        [className || 'card']: !!className,
+      })}>
+        <figure className="card__image">
+          <Image src={data.image_url} alt='alt text' fill />
         </figure>
-        <div className="maincard__body">
-          {data?.date && (
-            <div className="maincard__calender flex gap-2">
+        {(data?.date || data?.time) && <div
+          className="card__chipset"
+        >
+          {data?.time && (
+            <div className="chip chip--white">{data.time}</div>
+          )}
+          {data?.rate && (
+            <div className="chip chip--primary">{`$ ${data?.rate} USD`}</div>
+          )}
+        </div>}
+        <div className="card__body">
+          {data?.publishedAt && (
+            <div className="card__date">
               <Icon name="calendar" />
-              <time className="maincard__date">{data.date}</time>
+              <time>{`${data.publishedAt.day} ${data.publishedAt.month}, ${data.publishedAt.year}`}</time>
             </div>
           )}
-
-          <h3 className="maincard__title">{data?.heading}</h3>
-          {data.description && (
-            <p className="maincard__desc">{data.description}</p>
+          {data?.eventDate && (
+            <time className='date flex flex-col gap-0 md:gap-2'><span className='text-xs md:text-base uppercase'>august</span><span className='md:text-[48px] text-4xl'>18</span> </time>
           )}
-          {data?.avatar_info && (
-            <div className="maincard__actionbar">
-              <Image
-                src={data.avatar_info.avatar_url}
-                alt="Kathie Corl"
-                width={100}
-                height={100}
-                className="maincard__avatar"
-              />
-              <div className="maincard__avatar--details">
-                <h4 className="maincard__avatar__name">
-                  {data.avatar_info.avatar_name}
-                </h4>
-                {data?.avatar_info?.avatar_Designation && (
-                  <p className="maincard__avatar__designation">
-                    {data.avatar_info.avatar_Designation}
-                  </p>
-                )}
-              </div>
+          <div className='classy'>
+            <div className="card__heading">
+              <h3 className="card__title">{data?.heading}</h3>
+              {data.teachingCategory && <span className='chip chip--primary'>Design</span>}
             </div>
-          )}
-          {/* <div className="maincard__icons"></div> */}
+            {data?.description && <p className="card__desc">{data?.description}</p>}
+          </div>
+          {data.icons && <div className="flex items-center justify-center gap-4 w-full md:justify-start">{icons.map((icon) => (
+            <span className="max-w-max rounded-full bg-neutral-500 p-2 hover:bg-primary">
+              <Link key={icon.icon} className={'nav-link'} href={icon.link} target="_blank">
+                <Icon name={icon.icon} height={20} width={20} />
+              </Link>
+            </span>
+          ))}</div>}
         </div>
       </div>
-      {/* <Link href="#" className="maincard maincard__hoz">
-        <figure className="maincard__image">
-          <Image
-            src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2e01cbd8323965e6629a_image-6-courses-education-x-template.jpg"
-            alt="image"
-            fill
-          />
-          <div className="maincard__chipset">
-            <div className="chip chip--secondary gap-2">
-              <Icon name="microphone" height={20} width={20} />
-              Marketing
-            </div>
-            <div className="chip chip--primary">$ 99.00 USD</div>
-          </div>
-        </figure>
-        <div className="maincard__body">
-          <p className="maincard__body__date">September 1, 2022</p>
-
-          <h3 className="maincard__title">Lorem ipsum dolor sit.</h3>
-          <p className="maincard__desc">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt,
-            repellat?
-          </p>
-          <div className="maincard__actionbar">
-            <Image
-              src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f1ff9fd9e0e1686d26497_image-3-profile-picture-small-teacher-education-x-template.jpg"
-              alt="Kathie Corl"
-              width={100}
-              height={100}
-              className="maincard__avatar"
-            />
-            <div className="maincard__avatar--details">
-              <h4>Yagnesh Modh</h4>
-              <p>Designer</p>
-            </div>
-          </div>
-        </div>
-      </Link> */}
     </>
   );
 }
+{/* <div className="profile-info">
+            <div className="relative card__avatar w-12 ">
+              <Image src={data.avatar_info.avatar_url} alt='alt text' fill />
+            </div>
+            <div>
+              <div className='profile-info__name'>Yagnesh Modh</div>
+              <div className='profile-info__designation'>Designation</div>
+            </div>
+          </div> */}
