@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import '@/styles/header.css';
-// import TscLogoSvg from '@/public/icons/tsclogo.svg';
+import TscLogoSvg from '@/public/icons/tsclogo.svg';
 import TscSvg from '@/public/icons/tsc.svg';
 import HemburgerSvg from '@/public/icons/hemburger.svg';
 import { getMenuData } from '@/lib/getMenu';
@@ -63,8 +63,8 @@ const Header = async (props: Props) => {
   return (
     <header className="header">
       <Link as={Link} href="/">
-        {/* <TscLogoSvg className="header__tsclogo" /> */}
-        <TscSvg className="w-14 lg:hidden " />
+        <TscLogoSvg className="header__tsclogo" />
+        <TscSvg className="h-[56px] w-[52px] lg:hidden " />
       </Link>
 
       <nav className="header__nav">
