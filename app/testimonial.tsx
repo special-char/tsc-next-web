@@ -20,7 +20,13 @@ export const TestimonialSkeleton = () => {
           //   const { url, alternativeText } = avatar?.data
           //     ?.attributes as UploadFile;
           return (
-            <div className="testimonial__card card" key={testimonial.id}>
+            <div
+              className="testimonial__card card"
+              key={testimonial.id}
+              style={{
+                maxWidth: 768,
+              }}
+            >
               <div className="card__image testimonial__card__image">
                 <div></div>
               </div>
@@ -73,7 +79,13 @@ const Testimonial = async () => {
           const { url, alternativeText } = avatar?.data
             ?.attributes as UploadFile;
           return (
-            <div className="testimonial__card card" key={testimonial.id}>
+            <div
+              className="testimonial__card card"
+              style={{
+                maxWidth: 768,
+              }}
+              key={testimonial.id}
+            >
               <div className="card__image testimonial__card__image">
                 <Image src={url} alt={`${alternativeText}`} fill />
               </div>

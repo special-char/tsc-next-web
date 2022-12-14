@@ -1,6 +1,6 @@
 import React from 'react';
 import '@/styles/sideNav.css';
-import TscLogoSvg from '@/public/icons/tscLogo.svg';
+// import TscLogoSvg from '@/public/icons/tscLogo.svg';
 import { getMenuData } from '@/lib/getMenu';
 import Link from 'next/link';
 
@@ -19,7 +19,7 @@ const SideNav = async (props: Props) => {
       <nav>
         <div>
           <div className="mb-4 shadow-dark">
-            <TscLogoSvg className="h-[88px]  text-center" />
+            {/* <TscLogoSvg className="h-[88px]  text-center" /> */}
           </div>
 
           <ul>
