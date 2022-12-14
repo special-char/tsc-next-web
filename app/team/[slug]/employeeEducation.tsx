@@ -29,9 +29,7 @@ const EmployeeEducation = (props: Props) => {
     <section className="employeeEdu">
       <div className="employeeEdu__main">
         <div className="employeeEdu__title">
-          <h2 className="w-20 capitalize hover:w-36 hover:duration-200">
-            Education
-          </h2>
+          <h2>Education</h2>
         </div>
         <div className="employeeEdu__content">
           {educations.map((education, index) => {
@@ -57,6 +55,7 @@ const EmployeeEducation = (props: Props) => {
           })}
         </div>
       </div>
+      <hr className="col-span-full" />
     </section>
   );
 };

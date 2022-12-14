@@ -18,6 +18,7 @@
     "singleQuote": true
   },
   "dependencies": {
+    "@next/font": "13.0.6",
     "axios": "1.2.1",
     "clsx": "1.2.1",
     "formik": "2.2.9",

@@ -22,7 +22,7 @@
     &__preview {
       @apply relative mb-10 min-h-[260px] w-full  md:min-h-[400px];
       &__body {
-        @apply absolute flex h-full w-full items-center justify-center;
+        @apply absolute z-50 flex h-full w-full items-center justify-center;
       }
       &__body-content {
         @apply flex h-20 w-20 items-center justify-center rounded-full bg-secondary1 md:h-32 md:w-32;
@@ -74,4 +74,53 @@
   &__title {
     @apply text-center;
   }
+}
+.popup-icon {
+  @apply m-auto grid h-full w-full place-content-center;
+}
+a.popup-link {
+  @apply h-full w-full overflow-hidden bg-neutral-400;
+  height: 80px;
+  width: 80px;
+  border-radius: 999px;
+  display: block;
+}
+a.popup-link:hover {
+  @apply bg-secondary2;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  transition: all 1s;
+}
+#popup {
+  position: fixed;
+  visibility: visible;
+  opacity: 0;
+  margin-top: -300px;
+}
+#popup:target {
+  visibility: visible;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  z-index: 99999999999;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  transition: all 1s;
+}
+.popup-container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  position: relative;
+  padding: 30px 50px;
+  color: #fff;
+}
+.popup-close {
+  @apply ml-5 ml-11 grid h-6 w-6 place-content-center place-self-end rounded-full bg-neutral-100 text-neutral-800;
 }

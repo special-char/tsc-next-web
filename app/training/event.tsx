@@ -2,6 +2,8 @@ import '@/styles/event.css';
 import React from 'react';
 import Image from 'next/image';
 import CalendarSvg from '@/public/icons/calendar.svg';
+import Icon from '@/ui/Icon';
+
 type Props = {};
 
 const data = [
@@ -76,30 +78,22 @@ const Event = (props: Props) => {
         {data.map((x) => (
           <>
             <div className="card">
-              <div className="relative">
-                <div className="card__image">
-                  <Image src={x.image} alt="" fill className="" />
+              <figure className="card__image">
+                <Image src={x.image} alt="" fill className="" />
+                <div className="chip chip--white absolute left-4 top-4 items-center gap-2">
+                  <Icon name="developer" />
+                  Development
                 </div>
-                <div className="chip chip--white absolute left-4 top-4">
-                  <div className="flex gap-1">
-                    <Image
-                      src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f21aa2c18150120252017_icon-3-categories-education-x-template.svg"
-                      alt=""
-                      height={16}
-                      width={16}
-                    />
-                    Development
-                  </div>
-                </div>
-              </div>
+              </figure>
               <div className="card__body">
                 <div className="maincontent">
                   <div className="mb-4 items-center gap-4 md:flex">
                     <CalendarSvg />
-                    <p className="small m-0 items-center overflow-hidden">
+                    <p className="m-0 items-center overflow-hidden">
                       {x.day} {x.startTime} -&nbsp; {x.endTime}
                     </p>
                   </div>
+
                   <div className="rightcontent">
                     <h3 className="card__title">{x.title}</h3>
                     <p className="card__desc">{x.description}</p>

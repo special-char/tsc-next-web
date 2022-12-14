@@ -7,7 +7,6 @@ import '@/styles/contact.css';
 import { Formik, Form, Field } from 'formik';
 import TextInput from '@/ui/TextInput';
 import TextArea from '@/ui/TextArea';
-import clsx from 'clsx';
 import CustomForm from '@/ui/CustomForm';
 
 type Props = {};

@@ -2,6 +2,7 @@ import { Formik, Form, Field } from 'formik';
 import Link from 'next/link';
 import React from 'react';
 import Button from './Button';
+import Icon from './Icon';
 
 type Props = {};
 
@@ -13,9 +14,9 @@ const CustomForm = ({ fields, ...rest }: Props) => {
           {fields.map((field) => {
             return <Field key={field.name} {...field} />;
           })}
-          <button type="submit" className="btn btn--primary">
-            submit
-          </button>
+          <Button as="button" type="submit" variant="primary">
+            Submit
+          </Button>
         </Form>
       )}
     </Formik>

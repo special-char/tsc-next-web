@@ -1,3 +1,4 @@
+// 'use client';
 import '@/styles/individualcourse.css';
 import DesignSvg from '@/public/icons/design.svg';
 import PlayVideo from '@/public/icons/playVideo.svg';
@@ -5,7 +6,7 @@ import Image from 'next/image';
 import Price from './price';
 import ChipNavigation from '@/ui/ChipNavigation';
 import Rating from '@/ui/Rating';
-import Link from 'next/link';
+// import Link from 'next/link';
 
 const learnData = [
   {
@@ -90,11 +91,17 @@ export default async function Page() {
               fill
             />
             <div className="main__left-section__preview__body">
-              <Link href="https://media.geeksforgeeks.org/wp-content/uploads/20200513195558/Placement100-_-GeeksforGeeks-1.mp4">
-                <div className="main__left-section__preview__body-content">
-                  <PlayVideo className="w-4 fill-primary md:w-9" />
+              <a href="#popup" className="popup-link">
+                <div className='popup-icon'>
+                  <PlayVideo role="presentation" focusable="false" aria-label="trigram for heaven symbol" className=" w-7 h-9 !m-auto fill-primary" />
                 </div>
-              </Link>
+                <div className="popup-wrapper" id="popup">
+                  <div className="popup-container">
+                    <a className="popup-close" href="#closed">X</a>
+                    <iframe width="1000" height="500" src="https://www.youtube.com/embed/B-f28Y4Nh_8" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
           <div className="lg:hidden">
@@ -152,9 +159,7 @@ export default async function Page() {
             </div>
           </section>
           <section id="review" className="course-review pt-16">
-            <h2 className="mb-14 text-center md:text-left">
-              What our Students say
-            </h2>
+            <h2 className="text-center md:text-left">What our Students say</h2>
             <div className="testimonial">
               {TestimonialInfo.map((testimonial) => {
                 return (
@@ -180,6 +185,17 @@ export default async function Page() {
           </div>
         </div>
       </div>
+      {/* <div id="closed"></div>
+      <a href="#popup" className="popup-link">Click Here</a>
+      <div className="popup-wrapper" id="popup">
+        <div className="popup-container">
+          <center>
+            <iframe id="sidenav-open" width="560" height="315" src="https://www.youtube.com/embed/B-f28Y4Nh_8" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+            <a className="widgetku" href="http://4tipsbd.blogspot.com/" id="widgetku" target="blank">4tipsBD</a>
+          </center>
+          <a className="popup-close" href="#closed">X</a>
+        </div>
+      </div> */}
     </section>
   );
 }

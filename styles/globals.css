@@ -9,7 +9,7 @@
     display: grid;
     grid-template-columns: min-content [stack] 1fr;
 
-    & > :is(aside, main) {
+    & > :is(aside, div) {
       grid-area: stack;
     }
   }
@@ -51,14 +51,14 @@
   }
 
   a {
-    @apply text-neutral-400 no-underline;
+    @apply text-neutral-400 no-underline transition-colors hover:text-secondary3;
     -webkit-transition: color 300ms ease;
     transition: color 300ms ease;
   }
 
-  a:hover {
-    @apply text-secondary3;
-  }
+  /* a {
+    @apply cursor-pointer text-primary underline transition-colors hover:text-secondary3;
+  } */
 
   label {
     @apply mb-4 block font-bold text-neutral-700;
@@ -75,7 +75,7 @@
   }
 
   figcaption {
-    @apply mt-1 text-center;
+    @apply mt-4 text-center;
   }
 
   strong {
@@ -179,6 +179,10 @@
   }
 
   nav {
+    a {
+      @apply no-underline;
+    }
+
     ol {
       @apply m-0 list-none p-0;
     }
@@ -228,7 +232,7 @@
     }
 
     &--small {
-      @apply py-5 px-8 text-base;
+      @apply py-4 px-6 text-base;
     }
 
     &--large {
@@ -268,11 +272,11 @@
     @apply relative inline-flex;
 
     & > :is(div, img) {
-      @apply block aspect-square overflow-hidden rounded-full;
+      @apply block aspect-square overflow-hidden rounded-full bg-neutral-300;
     }
 
     img {
-      @apply h-full w-full object-cover;
+      @apply h-full w-full bg-neutral-300 object-cover;
     }
 
     &.placeholder {
@@ -402,9 +406,8 @@
 
   .card {
     @apply grid overflow-hidden rounded-2xl shadow-dark;
-
     &__image {
-      @apply relative m-0 aspect-video w-full overflow-hidden;
+      @apply relative m-0 aspect-video w-full overflow-hidden bg-neutral-300;
       & > img {
         object-fit: cover;
       }
@@ -456,11 +459,11 @@
   }
 
   .newsletter {
-    @apply grid   gap-5 bg-secondary3;
-    /* grid-template-columns: 3fr 2fr; */
+    @apply grid gap-5;
+    grid-template-columns: 3fr 2fr;
 
     &__input {
-      @apply relative w-full rounded-full bg-neutral-100 py-5 px-6;
+      @apply w-full rounded-full bg-neutral-100 py-5 px-6;
       grid-column: 1 / -1;
       grid-row: 1 / -1;
     }
@@ -469,49 +472,6 @@
       @apply col-span-2 m-0 p-3 py-5 px-4 md:col-[2_/_-1] md:row-span-full md:m-1 md:px-1 md:py-1;
     }
   }
-
-  /* .card {
-    @apply relative flex min-h-full flex-col overflow-hidden rounded-[20px] bg-neutral-100 shadow-base;
-    transform: translate(0px, 0px);
-    transition: box-shadow 300ms ease, transform 300ms ease;
-    transform-style: preserve-3d;
-    color: #62778f;
-    text-decoration: none;
-    &:hover {
-      box-shadow: 0 15px 15px 0.01px rgba(30, 61, 96, 0.03);
-      transform: translate3d(0px, -10px, 0.01px);
-      color: #62778f;
-    }
-    &.compact {
-      .card-body {
-        @apply p-4 text-sm;
-      }
-    }
-    &-tags {
-      @apply absolute top-6 right-4 flex flex-col gap-2 sm:top-8 sm:right-6 sm:flex-row;
-    }
-    &-body {
-      @apply flex flex-auto flex-col px-6 pt-8 pb-10 sm:px-10 sm:pt-9 sm:pb-10 md:px-12 md:pb-12 md:pt-11;
-      :where(p) {
-        @apply mb-6 flex-grow line-clamp-2 sm:mb-7 md:mb-8;
-      }
-      :last-child {
-        @apply mb-0;
-      }
-    }
-    &-date {
-      @apply mb-4 text-base font-bold text-neutral-600 line-clamp-1;
-    }
-    &-title {
-      @apply mb-[6px] flex items-center line-clamp-1 sm:mb-[10px] md:mb-3;
-    }
-    &-actions {
-      @apply flex flex-wrap items-start;
-    }
-    & figure {
-      @apply mb-0 flex min-h-[200px] items-center justify-center;
-    }
-  } */
 
   .form {
     @apply grid w-full grid-cols-1 gap-4 md:grid-cols-2;

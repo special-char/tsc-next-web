@@ -1,6 +1,7 @@
 import IndividualTeacher from 'app/training/individualteacher';
 import React from 'react';
 import '@/styles/teamDetail.css';
+import Button from '@/ui/Button';
 
 type Props = {};
 
@@ -37,12 +38,9 @@ const TeamDetails = (props: Props) => {
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                     Tempora voluptas ipsam deserunt illo nihil eos.
                   </p>
-                  <span
-                    role="button"
-                    className="btn btn--primary !px-3 !py-6 md:!px-10 md:!py-6"
-                  >
+                  <Button as="button" variant="primary">
                     Download Resume
-                  </span>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -54,7 +52,6 @@ const TeamDetails = (props: Props) => {
             <h2 className="text-3xl md:text-5xl">About</h2>
             <h2 className="pl-1 text-3xl md:text-5xl"> Kathie Corl</h2>
           </div>
-
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus
             viverra praesent felis consequat pellentesque turpis et quisque

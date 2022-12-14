@@ -1,5 +1,5 @@
 .actionbar {
-  @apply flex items-center gap-4;
+  @apply flex flex-col items-center justify-start gap-4 md:flex-row;
 
   &__avatar {
     @apply aspect-square w-14 overflow-hidden rounded-full;

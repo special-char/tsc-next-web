@@ -1,22 +1,22 @@
 import React from 'react';
-import EmployeeAchievement from './employeeAchievement';
-import EmployeeCertificates from './employeeCertificates';
-import EmployeeEducation from './employeeEducation';
-import EmployeeHeader from './employeeHeader';
-import EmployeeProject from './employeeProject';
-import EmployeeTechnologies from './employeeTechnologies';
+import EmployeeAchievement from './[slug]/employeeAchievement';
+import EmployeeCertificates from './[slug]/employeeCertificates';
+import EmployeeEducation from './[slug]/employeeEducation';
+import EmployeeProject from './[slug]/employeeProject';
+import EmployeeTechnologies from './[slug]/employeeTechnologies';
+import TeamDetails from './[slug]/teamDetail';
 
 type Props = {};
 
 const page = (props: Props) => {
   return (
     <>
-      <EmployeeTechnologies />
+      <TeamDetails />
+      <EmployeeEducation />
       <EmployeeAchievement />
       <EmployeeCertificates />
-      <EmployeeEducation />
-      {/* <EmployeeProject /> */}
-      {/* <EmployeeHeader /> */}
+      <EmployeeTechnologies />
+      <EmployeeProject />
     </>
   );
 };

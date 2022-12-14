@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Icon from '@/ui/Icon';
 import Link from 'next/link';
 import '@/styles/teacherscard.css';
+import Button from '@/ui/Button';
 
 type Props = {};
 const teacherData = [
@@ -142,10 +143,18 @@ const TeachersCard = (props: Props) => {
               <p className="card__desc">{x.desc}</p>
               <div className="card__actions">
                 {x.svg.map((icon) => (
-                  <span key={icon.icon} className="rounded-full bg-neutral-500 p-2 hover:bg-primary">
-                    <Link key={icon.icon} href={icon.link} target="_blank">
+                  <span
+                    key={icon.icon}
+                    className="rounded-full bg-neutral-500 p-2 hover:bg-primary"
+                  >
+                    <Button
+                      as={Link}
+                      key={icon.icon}
+                      href={icon.link}
+                      target="_blank"
+                    >
                       <Icon name={icon.icon} height={20} width={20} />
-                    </Link>
+                    </Button>
                   </span>
                 ))}
               </div>

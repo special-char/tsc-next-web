@@ -4,8 +4,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import '@/styles/footer.css';
 import SocialIcon from '@/ui/SocialIcon';
-import { Field, Form, Formik } from 'formik';
-import { error } from 'console';
+import Button from '@/ui/Button';
 
 type Props = {};
 
@@ -80,44 +79,17 @@ const Footer = (props: Props) => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmo.
         </p>
-        <div className="">
-          <Formik
-            initialValues={{ name: 'email new' }}
-            onSubmit={(values) => {
-              console.log('data of submit:', values);
-            }}
-          >
-            {({ isSubmitting, touched, errors }) => (
-              <Form className="footer__email_section relative">
-                <div hidden={isSubmitting}>
-                  <Field
-                    className="newsletter__input  relative"
-                    placeholder="Enter your email"
-                    type="text"
-                    name="email"
-                    id=""
-                    validate={validateEmail}
-                  ></Field>
-                  <p className="py-2 pl-9 text-error">
-                    {errors.email && touched.email && <div>{errors.email}</div>}
-                  </p>
-                  <button
-                    type="submit"
-                    className="newsletter__btn btn btn--primary"
-                  >
-                    Submit
-                  </button>
-                </div>
-                <div className="m-0 py-2" hidden={!isSubmitting}>
-                  {isSubmitting && (
-                    <p className="z-50 m-0  w-[80%] rounded-2xl bg-primary py-6 px-10 text-center text-secondary1 line-clamp-2">
-                      Thanks for joining our newsletter.
-                    </p>
-                  )}
-                </div>
-              </Form>
-            )}
-          </Formik>
+        <div className="newsletter">
+          <input
+            className="newsletter__input"
+            placeholder="Enter your email"
+            type="text"
+            name=""
+            id=""
+          />
+          <Button as="button" variant="primary" className="newsletter__btn">
+            Submit
+          </Button>
         </div>
       </div>
 
@@ -160,7 +132,6 @@ const Footer = (props: Props) => {
             link: 'https://www.whatsapp.com',
           },
         ]}
-        wrapperClass="mb-6"
       />
       <p className="footer__copyright">
         Copyright © TSC | Designed by TSC - Powered by TSC

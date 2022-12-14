@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import '@/styles/blogs.css';
+import Button from '@/ui/Button';
+import Card from '@/ui/Card';
 
 type Props = {};
 
@@ -25,11 +27,28 @@ const blogData = [
       'Lorem ipsum, dolor sit amet consectetur adipisicing elit.Beatae, corrupti!',
   },
 ];
-
+const data = {
+  isHorizontal: true,
+  // chip_align: 'left',
+  image_url:
+    'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2e01cbd8323965e6629a_image-6-courses-education-x-template.jpg',
+  // date: 'September 1, 2022',
+  heading: 'This is a lorem ipsum dummy text used to fill the text voids',
+  // time: '8hr 12m',
+  // rate: '199.00',
+  // description:
+  //   'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, corrupti, eius quae accusantium alias eaque facere voluptatum aliquid fugit, harum sed quia quos dolorum nam!',
+  // avatar_info: {
+  //   avatar_url:
+  //     'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f1ff9fd9e0e1686d26497_image-3-profile-picture-small-teacher-education-x-template.jpg',
+  //   avatar_name: 'Yagnesh Modh',
+  //   avatar_Designation: 'Designer',
+  // },
+};
 const Blogs = (props: Props) => {
   return (
     <>
-      <section className="blogs">
+      <section className="blogs mb-12 md:mb-16 lg:mb-28">
         <h2 className="blogs__title">Resources & News</h2>
         <Link href="/blogs" className="btn btn--secondary lg:ml-auto">
           Browse Blog
@@ -41,7 +60,7 @@ const Blogs = (props: Props) => {
               alt="image"
               fill
             />
-            <span className=" chip chip--secondary absolute top-4 right-3">
+            <span className="chip chip--secondary absolute top-4 right-3">
               $199.00 USD
             </span>
           </figure>
@@ -52,6 +71,11 @@ const Blogs = (props: Props) => {
             </h2>
           </div>
         </Link>
+        <div className="blogs__horizontal">
+          {[1, 2, 3].map((blog) => {
+            return <Card className={'classname'} data={data} />;
+          })}
+        </div>
       </section>
     </>
   );
