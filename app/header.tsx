@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import React from 'react';
 import '@/styles/header.css';
-import TscLogoSvg from '@/public/icons/tscLogo.svg';
+import TscLogoSvg from '@/public/icons/tsclogo.svg';
 import TscSvg from '@/public/icons/tsc.svg';
 import HemburgerSvg from '@/public/icons/hemburger.svg';
 import { getMenuData } from '@/lib/getMenu';
+import Button from '@/ui/Button';
 
 type Props = {};
 
@@ -12,7 +13,7 @@ export const HeaderSkeleton = () => {
   return (
     <header className="header animate-pulse">
       <div className="header__svg bg-neutral-400">
-        <div className="header__tsclogo h-12 bg-neutral-800"></div>
+        <div className="header__tsclogo h-12 w-14 bg-neutral-800"></div>
         <div className="h-12 w-14 lg:hidden"></div>
       </div>
 
@@ -62,7 +63,7 @@ const Header = async (props: Props) => {
 
   return (
     <header className="header">
-      <Link href="/">
+      <Link as={Link} href="/">
         <TscLogoSvg className="header__tsclogo" />
         <TscSvg className="w-14 lg:hidden " />
       </Link>

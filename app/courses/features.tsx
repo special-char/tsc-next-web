@@ -1,6 +1,7 @@
 import React from 'react';
 import '@/styles/features.css';
 import Link from 'next/link';
+import Button from '@/ui/Button';
 type Props = {};
 
 const Features = (props: Props) => {

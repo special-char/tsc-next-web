@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import '@/styles/companyhistory.css';
+import Button from '@/ui/Button';
 
 type Props = {};
 const Data = [
@@ -35,9 +36,9 @@ const CompanyHistory = (props: Props) => {
               Presenting Academy, the tech school of the future. We teach you
               the right skills to be prepared for tomorrow.
             </p>
-            <Link href="/" className="btn btn--primary">
+            <Button as={Link} href="/" variant="primary">
               JOIN OUR TEAM
-            </Link>
+            </Button>
           </div>
         </div>
 

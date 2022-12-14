@@ -3,6 +3,8 @@ import Link from 'next/link';
 import React from 'react';
 import '@/styles/footer.css';
 import SocialIcon from '@/ui/SocialIcon';
+import Button from '@/ui/Button';
+import TscBlueLogoSvg from '@/public/icons/tscbluelogo.svg';
 
 type Props = {};
 
@@ -41,7 +43,7 @@ const links = [
 const Footer = (props: Props) => {
   return (
     <section id="footer" className="footer">
-      <h1 className="footer__title">TSC</h1>
+      <TscBlueLogoSvg className="w-64" />
 
       <p className="footer__description ">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -70,7 +72,9 @@ const Footer = (props: Props) => {
             name=""
             id=""
           />
-          <button className="btn btn--primary newsletter__btn">Submit</button>
+          <Button as="button" variant="primary" className="newsletter__btn">
+            Submit
+          </Button>
         </div>
       </div>
 

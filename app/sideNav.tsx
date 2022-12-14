@@ -1,5 +1,6 @@
 import React from 'react';
 import '@/styles/sideNav.css';
+import TscLogoSvg from '@/public/icons/tscLogo.svg';
 import { getMenuData } from '@/lib/getMenu';
 import Link from 'next/link';
 
@@ -16,39 +17,44 @@ const SideNav = async (props: Props) => {
   return (
     <aside id="sidenav-open">
       <nav>
-        <ul>
-          {menuOptions.slice(0, -1).map((x) => {
-            const { title, url, children } = x.attributes;
-            return (
-              <li>
-                {children.data.length > 0 ? (
-                  <details>
-                    <summary>{title}</summary>
-                    <ul>
-                      {children.data.map((y) => {
-                        return (
-                          <li>
-                            <Link
-                              href={y.attributes.url}
-                              className="header__link"
-                            >
-                              {y.attributes.title}
-                            </Link>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </details>
-                ) : (
-                  <Link href={url} className="header__link">
-                    {title}
-                  </Link>
-                )}
-              </li>
-            );
-          })}
-        </ul>
-        <Link href={attributes.url} className="btn--primary btn btn--small">
+        <div>
+          <TscLogoSvg className="mx-auto h-[88px] text-center" />
+          <ul>
+            {menuOptions.slice(0, -1).map((x) => {
+              const { title, url, children } = x.attributes;
+              return (
+                <li>
+                  {children.data.length > 0 ? (
+                    <>
+                      <details className="nav-item">
+                        <summary className="items-center">{title}</summary>
+                        <ul>
+                          {children.data.map((y) => {
+                            return (
+                              <li>
+                                <Link
+                                  href={y.attributes.url}
+                                  className="header__link"
+                                >
+                                  {y.attributes.title}
+                                </Link>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </details>
+                    </>
+                  ) : (
+                    <Link href={url} className="header__link">
+                      {title}
+                    </Link>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <Link href={attributes.url} className="btn btn--primary btn--small">
           {attributes.title}
         </Link>
       </nav>

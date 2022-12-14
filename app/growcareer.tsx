@@ -1,5 +1,6 @@
 import { getGrowCareerData } from '@/lib/getGrowCareer';
 import '@/styles/growcareer.css';
+import Button from '@/ui/Button';
 import Link from 'next/link';
 import { ComponentCommonLink, HomeGrowCareer } from 'types/types';
 
@@ -14,7 +15,7 @@ export const GrowCareerSkeleton = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt.
         </p>
-        <div className="btn btn--secondary btn--small">EXPLORE COURSES</div>
+        <div className="btn btn--secondary">EXPLORE COURSES</div>
       </div>
       <div className="growcareer__cards">
         {[1, 2, 3]?.map((val) => (
@@ -44,9 +45,9 @@ const GrowCareer = async () => {
       <div className="growcareer__details">
         <h2 className="growcareer__title">{title}</h2>
         <p className="growcareer__description">{description}</p>
-        <Link href={`${url}`} className="btn btn--secondary btn--small">
+        <Button as={Link} href={`${url}`} variant="secondary">
           {text}
-        </Link>
+        </Button>
       </div>
       <div className="growcareer__cards">
         {details?.map((val) => (

@@ -1,5 +1,6 @@
 import { getCoursesData } from '@/lib/getCourses';
 import '@/styles/courses.css';
+import Button from '@/ui/Button';
 import Carousal from '@/ui/Carousal';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -81,9 +82,9 @@ const Courses = async () => {
         })}
       </Carousal>
 
-      <Link href={`${button?.url}`} className="btn btn--primary">
+      <Button as={Link} href={`${button?.url}`} variant="primary">
         {button?.text}
-      </Link>
+      </Button>
     </section>
   );
 };
