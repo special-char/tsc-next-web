@@ -1,7 +1,7 @@
 .header {
   grid-template-columns: auto 1fr auto;
 
-  @apply grid items-center justify-items-center py-4 px-container shadow-dark lg:py-0;
+  @apply grid items-center justify-items-center py-4 px-container shadow-dark lg:py-2;
 
   &__tsclogo {
     @apply hidden w-44 lg:block;
