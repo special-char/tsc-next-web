@@ -2,7 +2,6 @@
 import EmailSvg from '@/public/icons/email.svg';
 import PhoneSvg from '@/public/icons/phone.svg';
 import AddressSvg from '@/public/icons/address.svg';
-import clsx from 'clsx';
 import '@/styles/contact.css';
 import { Formik, Form, Field } from 'formik';
 import TextInput from '@/ui/TextInput';

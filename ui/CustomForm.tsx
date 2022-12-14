@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { Formik, Form, Field } from 'formik';
 import Link from 'next/link';
 import React from 'react';
@@ -6,7 +7,7 @@ import Icon from './Icon';
 
 type Props = {};
 
-const CustomForm = ({ fields, ...rest }: Props) => {
+const CustomForm = ({ buttonStyle, fields, ...rest }: Props) => {
   return (
     <Formik {...rest}>
       {({}) => (
@@ -14,9 +15,14 @@ const CustomForm = ({ fields, ...rest }: Props) => {
           {fields.map((field) => {
             return <Field key={field.name} {...field} />;
           })}
-          <Button as="button" type="submit" variant="primary">
-            Submit
-          </Button>
+          <button
+            type="submit"
+            className={clsx('btn btn--primary', {
+              [buttonStyle]: !![buttonStyle],
+            })}
+          >
+            submit
+          </button>
         </Form>
       )}
     </Formik>
