@@ -1,0 +1,19 @@
+.multiselectdropDown {
+  &__container {
+    @apply flex cursor-pointer items-center justify-between;
+  }
+
+  &__dropdownDiv {
+    @apply m-0 mb-0 flex min-h-[64px]  items-center justify-between rounded-full bg-neutral-200 px-7 text-xl text-primary;
+  }
+
+  &__showDropdown {
+    @apply flex w-full  flex-col gap-2 overflow-y-scroll rounded-2xl bg-neutral-200  py-8  px-7;
+  }
+  &__showDropdown::-webkit-scrollbar {
+    width: 10px;
+  }
+  &__listDiv {
+    @apply flex cursor-pointer items-center gap-4;
+  }
+}
