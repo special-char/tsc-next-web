@@ -1,64 +1,13 @@
-.maincard {
-  @apply grid overflow-hidden rounded-2xl shadow-dark;
-
+.profile-info {
+  grid-template-columns: auto 2fr;
+  @apply grid items-center gap-4;
   &__image {
-    @apply relative m-0 aspect-video h-full w-full overflow-hidden;
-    & > img {
-      object-fit: cover;
-    }
+    @apply relative w-12;
   }
-  &__chipset {
-    @apply absolute top-5 grid w-full gap-3 px-5 md:flex md:px-6;
+  &__name {
+    @apply text-base font-bold capitalize text-neutral-700;
   }
-
-  &__body {
-    @apply grid items-center gap-2 p-6;
+  &__designation {
+    @apply text-base capitalize;
   }
-  &__date {
-    @apply text-base font-bold;
-  }
-
-  &__title {
-    @apply text-xl font-bold duration-300 ease-in-out line-clamp-3 hover:text-primary md:line-clamp-1 xl:text-2xl;
-
-    &--line-2 {
-      @apply line-clamp-2;
-    }
-  }
-
-  &__desc {
-    @apply text-lg text-neutral-500 line-clamp-4;
-  }
-  &__actionbar {
-    @apply flex items-center gap-4;
-  }
-
-  &__avatar {
-    @apply aspect-square h-12 w-12 overflow-hidden rounded-full;
-    &--details {
-      @apply grid items-center;
-    }
-    &__name {
-      @apply text-base font-bold md:text-lg;
-    }
-    &__designation {
-      @apply text-base;
-    }
-  }
-  &__icons {
-    & > div {
-      @apply m-0 p-0;
-    }
-  }
-  &__hoz {
-    @apply grid md:grid-cols-2;
-    .maincard__title {
-      @apply line-clamp-3;
-    }
-  }
-}
-p,
-h4,
-h3 {
-  @apply m-0 p-0;
 }

@@ -19,9 +19,11 @@ const Header = async (props: Props) => {
 
   return (
     <header className="header">
-      <TscLogoSvg className="header__tsclogo" />
-      <TscSvg className="w-14 lg:hidden " />
+      <Link href={'/'}>
 
+        <TscLogoSvg className="header__tsclogo" />
+        <TscSvg className="w-14 lg:hidden " />
+      </Link>
       <nav className="header__nav">
         <ul>
           {menuOptions.slice(0, -1).map((x) => {

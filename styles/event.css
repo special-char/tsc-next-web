@@ -18,7 +18,7 @@
   }
 }
 .chipbody {
-  @apply content-center justify-between pb-10 text-center lg:flex;
+  @apply content-center items-center justify-between pb-10 text-center lg:flex;
 
   &__header {
     @apply flex flex-row flex-wrap justify-around gap-2 rounded-full bg-neutral-200 p-6;

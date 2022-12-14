@@ -241,7 +241,7 @@
   }
 
   .chip {
-    @apply flex items-center justify-center  rounded-full py-3 px-4 align-middle text-xs font-bold shadow-base sm:px-6;
+    @apply flex items-center justify-center rounded-full py-3 px-4 align-middle text-xs font-bold shadow-base sm:px-6;
 
     &.icon {
       @apply flex justify-between gap-32 py-8 px-8;
@@ -405,23 +405,78 @@
   }
 
   .card {
-    @apply grid overflow-hidden rounded-2xl shadow-dark;
+    @apply relative grid w-full overflow-hidden rounded-2xl shadow-dark;
+
+    .nav-link {
+      @apply no-underline;
+    }
+    &--event_Card {
+      @apply flex w-full flex-col overflow-hidden md:flex-row;
+      h3,
+      p {
+        @apply m-0;
+      }
+      .card__image {
+        @apply max-h-[319px] flex-1;
+      }
+      .card__body {
+        @apply grid flex-1;
+        .card__date {
+          @apply flex flex-col items-start md:flex-row;
+        }
+        .date {
+          @apply flex flex-col items-center font-bold text-neutral-700 md:row-span-2;
+        }
+
+        .classy {
+          @apply col-span-2 flex flex-col justify-center gap-2 md:col-span-1;
+        }
+      }
+    }
+    &--profile_Card {
+      @apply flex flex-col items-center gap-5 md:flex-row md:gap-4;
+      padding: 47px 50px 53px;
+      @media screen and (min-width: 768px) {
+        padding: 56px 54px 64px;
+      }
+      .card__body {
+        @apply flex-1 p-0;
+      }
+      .card__image {
+        @apply relative !m-0 aspect-square w-40 overflow-hidden rounded-full;
+        & > img {
+          object-fit: cover;
+        }
+      }
+    }
     &__image {
-      @apply relative m-0 aspect-video w-full overflow-hidden;
+      @apply relative m-0  aspect-video w-full overflow-hidden;
       & > img {
         object-fit: cover;
       }
     }
     &__chipset {
-      @apply absolute top-3 flex justify-end gap-3;
+      @apply absolute top-6 flex w-full flex-col items-end gap-3 px-4 md:flex-row md:justify-end md:px-8;
     }
-
+    &__date {
+      @apply flex items-center gap-2 text-base font-semibold;
+    }
     &__body {
-      @apply grid p-6;
-    }
+      padding: 38px 31px 46px;
+      @media screen and (min-width: 1024px) {
+        padding: 48px 31px 56px;
+      }
+      @apply grid gap-y-4 transition-colors;
 
+      h3 {
+        @apply cursor-pointer hover:text-primary;
+      }
+    }
+    &__heading {
+      @apply mb-2 flex w-full flex-col items-center md:mb-4 md:flex-row md:justify-between;
+    }
     &__title {
-      @apply duration-300 ease-in-out line-clamp-1  hover:text-primary;
+      @apply text-xl duration-300 ease-in-out line-clamp-2 hover:text-primary  md:text-2xl;
 
       &--line-2 {
         @apply line-clamp-2;
@@ -431,16 +486,12 @@
         @apply mb-0;
       }
     }
-
-    &__date {
-    }
-    /* &__avatar {
+    &__avatar {
       @apply aspect-square w-14 rounded-full;
-    } */
+    }
 
     &__desc {
-      @apply my-6 text-neutral-500 line-clamp-3;
-
+      @apply mb-6 text-neutral-500 line-clamp-3 md:mb-8;
       &:last-child {
         @apply mb-0;
       }
@@ -450,11 +501,22 @@
     }
 
     &__avatar {
-      @apply aspect-square w-14 overflow-hidden rounded-full;
+      @apply aspect-square overflow-hidden rounded-full;
     }
-
     &--hoz {
       @apply grid md:grid-cols-2;
+      &:nth-last-child(1) {
+        margin-bottom: 10px;
+      }
+      .nav-link {
+        @apply m-auto;
+      }
+      .card__body {
+        @apply py-8 px-6;
+      }
+      .card__image {
+        @apply aspect-video;
+      }
     }
   }
 
