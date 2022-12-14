@@ -7,7 +7,7 @@
   --text2: lch(40 0 0);
 
   display: grid;
-  grid-template-columns: [nav] 3fr [escape] 1fr;
+  grid-template-columns: [nav] 80% [escape] 20%;
   z-index: 9999;
   height: 100vh;
 

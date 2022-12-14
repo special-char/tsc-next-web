@@ -54,7 +54,7 @@ const SideNav = async (props: Props) => {
             })}
           </ul>
         </div>
-        <Link href={attributes.url} className="btn--primary btn btn--small">
+        <Link href={attributes.url} className="btn btn--primary btn--small">
           {attributes.title}
         </Link>
       </nav>

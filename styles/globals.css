@@ -232,7 +232,7 @@
     }
 
     &--small {
-      @apply py-5 px-8 text-base;
+      @apply py-4 px-6 text-base;
     }
 
     &--large {
@@ -472,49 +472,6 @@
       @apply col-span-2 m-0 p-3 py-5 px-4 md:col-[2_/_-1] md:row-span-full md:m-1 md:px-1 md:py-1;
     }
   }
-
-  /* .card {
-    @apply relative flex min-h-full flex-col overflow-hidden rounded-[20px] bg-neutral-100 shadow-base;
-    transform: translate(0px, 0px);
-    transition: box-shadow 300ms ease, transform 300ms ease;
-    transform-style: preserve-3d;
-    color: #62778f;
-    text-decoration: none;
-    &:hover {
-      box-shadow: 0 15px 15px 0.01px rgba(30, 61, 96, 0.03);
-      transform: translate3d(0px, -10px, 0.01px);
-      color: #62778f;
-    }
-    &.compact {
-      .card-body {
-        @apply p-4 text-sm;
-      }
-    }
-    &-tags {
-      @apply absolute top-6 right-4 flex flex-col gap-2 sm:top-8 sm:right-6 sm:flex-row;
-    }
-    &-body {
-      @apply flex flex-auto flex-col px-6 pt-8 pb-10 sm:px-10 sm:pt-9 sm:pb-10 md:px-12 md:pb-12 md:pt-11;
-      :where(p) {
-        @apply mb-6 flex-grow line-clamp-2 sm:mb-7 md:mb-8;
-      }
-      :last-child {
-        @apply mb-0;
-      }
-    }
-    &-date {
-      @apply mb-4 text-base font-bold text-neutral-600 line-clamp-1;
-    }
-    &-title {
-      @apply mb-[6px] flex items-center line-clamp-1 sm:mb-[10px] md:mb-3;
-    }
-    &-actions {
-      @apply flex flex-wrap items-start;
-    }
-    & figure {
-      @apply mb-0 flex min-h-[200px] items-center justify-center;
-    }
-  } */
 
   .form {
     @apply grid w-full grid-cols-1 gap-4 md:grid-cols-2;
