@@ -18,6 +18,7 @@ type Props = {} & PropsWithChildren;
 const Carousal = ({ children }: Props) => {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [element, setElement] = useState<Element | null>(null);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const scrollPort = scrollerRef.current;
@@ -59,6 +60,7 @@ const Carousal = ({ children }: Props) => {
 
   const moveToIndex = useCallback((index: number) => {
     const scrollport = scrollerRef.current;
+    setIndex(index);
     if (scrollport) {
       const element = scrollport.children[index];
 
@@ -110,13 +112,15 @@ const Carousal = ({ children }: Props) => {
       </div>
       {/* bullets */}
 
-      <div className="relative col-span-3 mx-auto flex w-full ">
+      <div className="relative col-span-3 mx-auto flex w-full md:hidden">
         <div className=" absolute mx-auto  flex w-full items-center justify-center gap-3">
-          {React.Children.map(children, (child, index) => {
+          {React.Children.map(children, (child, i) => {
             return (
               <div
-                onClick={() => moveToIndex(index)}
-                className="h-3 w-3 rounded-full bg-neutral-400"
+                onClick={() => moveToIndex(i)}
+                className={clsx('h-2 w-2 rounded-full bg-neutral-400', {
+                  'bg-primary duration-200': i === index,
+                })}
               ></div>
             );
           })}
