@@ -95,12 +95,12 @@ export default async function Page() {
                 <div className='popup-icon'>
                   <PlayVideo role="presentation" focusable="false" aria-label="trigram for heaven symbol" className=" w-7 h-9 !m-auto fill-primary" />
                 </div>
-                <div className="popup-wrapper" id="popup">
+                {/* <div className="popup-wrapper" id="popup">
                   <div className="popup-container">
                     <a className="popup-close" href="#closed">X</a>
                     <iframe width="1000" height="500" src="https://www.youtube.com/embed/B-f28Y4Nh_8" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                   </div>
-                </div>
+                </div> */}
               </a>
             </div>
           </div>
