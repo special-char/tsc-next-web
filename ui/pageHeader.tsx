@@ -2,18 +2,11 @@ import React from 'react';
 import '@/styles/pageHeader.css';
 import clsx from 'clsx';
 import SeparatorArray from './SeparatorArray';
+
 export const PageHeaderSkeleton = () => {
   return (
-    <section
-      className={clsx('page__section animate-pulse', {
-        [className]: !!className,
-      })}
-    >
-      <div
-        className={clsx('page__body', {
-          [className]: !!className,
-        })}
-      >
+    <section className={'page__section animate-pulse'}>
+      <div className="page__body">
         <div className="page__pages">
           <div className="page__detail">
             <h1 className="font-cursive text-neutral-700">
@@ -26,17 +19,14 @@ export const PageHeaderSkeleton = () => {
             </p>
           </div>
         </div>
-        <div
-          className={clsx('circle__right', { [circleRight]: !!circleRight })}
-        ></div>
-        <div
-          className={clsx('circle__left', { [circleRight]: !circleLeft })}
-        ></div>
+        <div className="circle__right"></div>
+        <div className="circle__left"></div>
       </div>
       <SeparatorArray />
     </section>
   );
 };
+
 type Props = {
   className: any;
   title: string;
