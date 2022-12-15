@@ -10,7 +10,7 @@
 
   .leader__actions {
     grid-template-rows: repeat(auto-fit, minmax(260px, 1fr));
-    @apply flex flex-col justify-end gap-4 md:flex-row lg:flex-col lg:justify-start;
+    @apply flex flex-col justify-end gap-4  lg:flex-col lg:justify-start;
     @apply w-full gap-4 lg:w-72;
   }
 

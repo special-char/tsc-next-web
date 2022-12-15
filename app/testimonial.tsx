@@ -103,7 +103,7 @@ const Testimonial = async () => {
         {numbers?.map((number) => (
           <div>
             <h3 className="testimonial__title">{number?.title}</h3>
-            <p>{number?.description}</p>
+            <p className="text-center">{number?.description}</p>
           </div>
         ))}
       </div>
