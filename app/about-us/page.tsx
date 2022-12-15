@@ -4,6 +4,7 @@ import OurWorks from './ourWorks';
 import Achievements from './achievements';
 import CompanyHistory from './companyhistory';
 import OurOffice from './ourOffice';
+import Aboutheader from './aboutheader';
 
 type Props = {};
 
@@ -18,6 +19,7 @@ const page = (props: Props) => {
         circleLeft="bg-secondary3"
       />
       <Achievements />
+      <Aboutheader />
       <OurWorks />
       <CompanyHistory />
       <OurOffice />
