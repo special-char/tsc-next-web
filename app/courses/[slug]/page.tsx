@@ -1,4 +1,3 @@
-//'use client';
 import '@/styles/individualcourse.css';
 import DesignSvg from '@/public/icons/design.svg';
 import PlayVideo from '@/public/icons/playVideo.svg';
@@ -6,7 +5,6 @@ import Image from 'next/image';
 import Price from './price';
 import ChipNavigation from '@/ui/ChipNavigation';
 import Rating from '@/ui/Rating';
-// import Link from 'next/link';
 
 const learnData = [
   {
@@ -100,21 +98,6 @@ export default async function Page() {
                     className=" !m-auto h-9 w-7 fill-primary"
                   />
                 </div>
-                {/* <div className="popup-wrapper" id="popup">
-                  <div className="popup-container">
-                    {/* <a className="popup-close bg-secondary3" href="#closed">
-                      X
-                    </a> */}
-                    <iframe
-                      width="1000"
-                      height="500"
-                      src="https://www.youtube.com/embed/B-f28Y4Nh_8"
-                      title="YouTube video player"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
-                  </div>
-                </div> */}
               </a>
             </div>
           </div>
