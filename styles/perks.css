@@ -21,7 +21,7 @@
     }
 
     &__image {
-      @apply relative mb-10 aspect-square w-48 rounded-full bg-neutral-300;
+      @apply relative mb-10 aspect-square w-48 rounded-full;
       @media screen and (max-width: theme(screens.lg)) and (min-width: theme(screens.sm)) {
         @apply mb-0;
       }

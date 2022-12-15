@@ -1,5 +1,5 @@
 .category {
-  @apply grid min-h-fit content-center items-center px-4 py-16 sm:px-sm-container lg:px-container lg:pt-36;
+  @apply grid min-h-fit content-center items-center px-4 py-16 sm:px-sm-container lg:px-container;
 
   &__title {
     @apply mb-10 text-center text-neutral-700;
@@ -9,24 +9,7 @@
     @apply grid w-full gap-8 pb-16 lg:pb-24;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
-
-  &__card {
-    @apply flex max-w-xl  flex-col justify-between overflow-hidden rounded-2xl bg-neutral-100 shadow-dark duration-500 hover:scale-y-105;
-
-    &__figure {
-      @apply relative m-0 aspect-h-image w-full p-0;
-    }
-
-    &__content {
-      @apply flex h-full flex-col justify-between p-8;
-    }
-
-    &__title {
-      @apply mb-1 h-9 line-clamp-1;
-    }
-
-    &__desc {
-      @apply m-0 my-0 h-16 p-0 line-clamp-2;
-    }
+  .card__image {
+    @apply aspect-h-image;
   }
 }

@@ -84,7 +84,7 @@ const Education = async () => {
           })}
         </div>
       </div>
-      <div className="education__header col-span-2">
+      <div className="education__header col-span-2 mb-20 lg:mb-32">
         <Button as={Link} href="/" variant="secondary">
           About Education
         </Button>

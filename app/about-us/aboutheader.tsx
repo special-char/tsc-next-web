@@ -40,7 +40,7 @@ const Aboutheader = (props: Props) => {
               <Image src={x.image} alt="" fill />
             </div>
             <div className="aboutheader__title">
-              <h2 className="lg:text-6xl">{x.title}</h2>
+              <h2 className=" text-3xl md:text-6xl">{x.title}</h2>
               <p className="lg:text-lg">{x.desc}</p>
             </div>
           </>

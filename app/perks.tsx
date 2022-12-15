@@ -17,7 +17,7 @@ export const PerksSkeleton = () => {
           //   const { url } = image.data?.attributes as UploadFile;
           return (
             <div key={perk} className="perks__item">
-              <div className="perks__item__image ">
+              <div className="perks__item__image  bg-neutral-300">
                 <div></div>
               </div>
               <div className="perks__item__body">
