@@ -167,7 +167,7 @@
       }
     }
     & > p {
-      @apply overflow-hidden border-none pt-2 pl-20 text-left text-base;
+      @apply overflow-hidden border-none pt-2 pl-20 text-left text-base md:pl-20;
     }
   }
 
