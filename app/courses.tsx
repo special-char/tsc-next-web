@@ -2,6 +2,7 @@ import { getCoursesData } from '@/lib/getCourses';
 import '@/styles/courses.css';
 import Button from '@/ui/Button';
 import Carousal from '@/ui/Carousal';
+import CarousalBullets from '@/ui/CarousalBullets';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Course, HomeCourse, UploadFile } from 'types/types';
@@ -81,7 +82,7 @@ const Courses = async () => {
           );
         })}
       </Carousal>
-
+      {/* <CarousalBullets /> */}
       <Button as={Link} href={`${button?.url}`} variant="primary">
         {button?.text}
       </Button>
