@@ -6,7 +6,7 @@ type Props = {};
 const BlogSubscribe = (props: Props) => {
   return (
     <section className="blogSubscribe">
-      <div className="blogSubscribe__body">
+      <div className="blogSubscribe__body z-0">
         <div className="blogSubscribe__content relative">
           <h2 className="blogSubscribe__title">
             Subscribe to our weekly newsletter today!
@@ -19,7 +19,11 @@ const BlogSubscribe = (props: Props) => {
               name=""
               id=""
             />
-            <Button as="button" variant="primary" className=" newsletter__btn">
+            <Button
+              as="button"
+              variant="primary"
+              className="newsletter__btn bg-neutral-700 md:bg-primary"
+            >
               Subscribe
             </Button>
           </div>
