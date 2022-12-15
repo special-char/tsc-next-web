@@ -4,6 +4,33 @@ import TscLogoSvg from '@/public/icons/tscLogo.svg';
 import { getMenuData } from '@/lib/getMenu';
 import Link from 'next/link';
 
+export const SideNavSkeleton = () => {
+  return (
+    <aside id="sidenav-open">
+      <nav>
+        <div>
+          <div>
+            <div className="h-[56px] w-[184px] bg-neutral-300"></div>
+          </div>
+        </div>
+
+        <ul>
+          {[1, 2, 3, 4].map((x) => {
+            return (
+              <li>
+                <div className="font-cursive text-neutral-700">Bootcamps</div>
+              </li>
+            );
+          })}
+        </ul>
+        <button className=" btn btn--primary btn--small mx-auto my-3 font-cursive">
+          Hire our Graduates
+        </button>
+      </nav>
+    </aside>
+  );
+};
+
 type Props = {};
 
 const SideNav = async (props: Props) => {

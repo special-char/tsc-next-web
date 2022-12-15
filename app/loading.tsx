@@ -7,6 +7,7 @@ import { GrowCareerSkeleton } from './growcareer';
 import { HeaderSkeleton } from './header';
 import { LeadersSkeleton } from './leaders';
 import { PerksSkeleton } from './perks';
+import { SideNavSkeleton } from './sideNav';
 import { TestimonialSkeleton } from './testimonial';
 
 export default function Loading() {
