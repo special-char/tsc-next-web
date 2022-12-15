@@ -2,9 +2,7 @@ import '@/styles/card.css';
 import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
-// import Link from 'next/link';
 import Icon from './Icon';
-// import SocialIcon from './SocialIcon';
 type info = {
   avatar_url: any;
   avatar_name: String;
@@ -21,6 +19,7 @@ type data = {
   publishedAt: date;
   time: String;
   rate: String;
+  icon: String;
   icons: Boolean;
   teachingCategory: String;
   date: String;
@@ -62,7 +61,10 @@ export default function Card({ data, className }: Props) {
           className="card__chipset"
         >
           {data?.time && (
-            <div className="chip chip--white">{data.time}</div>
+            <>
+              <Icon name={data.icon} />
+              <div className="chip chip--white">{data.time}</div>
+            </>
           )}
           {data?.rate && (
             <div className="chip chip--primary">{`$ ${data?.rate} USD`}</div>

@@ -427,11 +427,18 @@
       p {
         @apply m-0;
       }
+      .card__chipset {
+        @apply absolute top-6 flex w-full flex-col items-end gap-3 px-4 md:flex-row md:justify-end md:px-8;
+      }
+      .card__heading {
+        @apply mb-4;
+      }
       .card__image {
-        @apply max-h-[319px] flex-1;
+        height: -webkit-fill-available;
+        @apply m-0 flex-1;
       }
       .card__body {
-        @apply grid flex-1;
+        @apply grid flex-1 gap-y-6;
         .card__date {
           @apply flex flex-col items-start md:flex-row;
         }
@@ -484,10 +491,10 @@
       }
     }
     &__heading {
-      @apply mb-2 flex w-full flex-col items-center md:mb-4 md:flex-row md:justify-between;
+      @apply mb-2 flex w-full flex-col items-center md:mb-4 md:flex-row md:justify-between lg:m-0;
     }
     &__title {
-      @apply text-xl duration-300 ease-in-out line-clamp-2 hover:text-primary  md:text-2xl;
+      @apply place-self-start text-xl duration-300 ease-in-out line-clamp-2 hover:text-primary  md:text-2xl;
 
       &--line-2 {
         @apply line-clamp-2;
