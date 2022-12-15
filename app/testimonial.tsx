@@ -80,7 +80,7 @@ const Testimonial = async () => {
             ?.attributes as UploadFile;
           return (
             <div
-              className="testimonial__card card"
+              className="testimonial__card card bg-neutral-100"
               style={{
                 maxWidth: 768,
               }}
