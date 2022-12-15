@@ -72,14 +72,14 @@ const Carousal = ({ children }: Props) => {
       <div className="carousal__controls">
         <button
           type="button"
-          className={`carousal__control btn btn--white btn--round hover:bg-primary `}
+          className={`carousal__control btn btn--white btn--round bg-neutral-200 hover:bg-primary `}
           onClick={scrollRight}
         >
           <LeftSvg className="hover:fill-neutral-100" />
         </button>
         <button
           type="button"
-          className={`carousal__control btn btn--white btn--round  hover:bg-primary`}
+          className={`carousal__control btn btn--white btn--round  bg-neutral-200 hover:bg-primary`}
           onClick={scrollLeft}
         >
           <RightSvg className="hover:fill-neutral-100" />
