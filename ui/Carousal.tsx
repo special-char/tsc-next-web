@@ -57,6 +57,28 @@ const Carousal = ({ children }: Props) => {
     }
   }, [element]);
 
+  const moveToIndex = useCallback((index: number) => {
+    const scrollport = scrollerRef.current;
+    if (scrollport) {
+      const element = scrollport.children[index];
+
+      const delta = Math.abs(scrollport.offsetLeft - element.offsetLeft);
+      const scrollerPadding = parseInt(
+        getComputedStyle(scrollport)['padding-left'],
+      );
+
+      const pos =
+        scrollport.clientWidth / 2 > delta
+          ? delta - scrollerPadding
+          : delta + scrollerPadding;
+
+      scrollport.scrollTo({
+        left: pos,
+        behavior: 'smooth',
+      });
+    }
+  }, []);
+
   return (
     <div className="carousal">
       <ul ref={scrollerRef} className="carousal__scroller">
@@ -87,20 +109,17 @@ const Carousal = ({ children }: Props) => {
         </button>
       </div>
       {/* bullets */}
+
       <div className="relative col-span-3 mx-auto flex w-full ">
         <div className=" absolute mx-auto  flex w-full items-center justify-center gap-3">
-          <div
-            onClick={scrollLeft}
-            className="h-3 w-3 rounded-full bg-neutral-400"
-          ></div>
-          <div
-            onClick={scrollRight}
-            className="h-3 w-3 rounded-full bg-neutral-400"
-          ></div>
-          <div
-            onClick={scrollRight}
-            className="h-3 w-3 rounded-full bg-neutral-400"
-          ></div>
+          {React.Children.map(children, (child, index) => {
+            return (
+              <div
+                onClick={() => moveToIndex(index)}
+                className="h-3 w-3 rounded-full bg-neutral-400"
+              ></div>
+            );
+          })}
         </div>
       </div>
     </div>
