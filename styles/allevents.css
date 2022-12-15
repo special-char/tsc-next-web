@@ -2,36 +2,45 @@
   @apply relative h-auto overflow-hidden;
 
   &__banner {
-    @apply absolute h-96 w-full bg-primary;
+    @apply absolute h-48 w-full bg-primary lg:h-96;
   }
   &__animate-bounce-slow1 {
-    @apply absolute -left-36 -top-20 z-10 h-[250px] w-[250px] rounded-full bg-secondary3 md:-left-80 md:top-24 md:h-[500px] md:w-[500px] lg:top-80 lg:-left-24 lg:h-[500px] lg:w-[500px];
+    @apply absolute -left-40 -top-40 z-10 h-[250px] w-[250px] rounded-full bg-secondary3 md:-left-72 md:top-12 md:h-[400px] md:w-[400px] lg:top-56 lg:-left-16 lg:h-[550px] lg:w-[550px];
   }
   &__animate-bounce-slow2 {
-    @apply absolute top-[350px] -right-[420px] z-10 h-[550px] w-[550px] rounded-full bg-secondary2 md:top-64 md:-right-32 md:h-[500px] md:w-[500px] lg:top-56 lg:-right-0 lg:h-[400px] lg:w-[400px];
+    @apply absolute top-36 -right-56 z-10 h-[250px] w-[250px] rounded-full bg-secondary2 md:top-36 md:-right-32 md:h-[360px] md:w-[360px] lg:top-40 lg:right-8 lg:h-[450px] lg:w-[450px];
   }
 
   &__page {
-    @apply mx-auto flex w-full max-w-7xl flex-col overflow-hidden bg-neutral-100  px-4 pt-40 md:!px-6;
+    @apply mx-auto flex w-full max-w-7xl flex-col overflow-hidden bg-neutral-100 px-container pt-28;
   }
   &__image {
-    @apply relative z-20 h-[640px] w-full overflow-hidden rounded-[40px];
+    @apply relative z-20 h-44 w-full overflow-hidden xs:rounded-[20px] md:h-[400px] md:rounded-[33px] lg:h-[500px] xl:h-[640px];
   }
 
   &__body {
     @apply flex flex-col flex-wrap gap-4 pt-12 md:flex-col md:pt-20 lg:flex-row lg:justify-center lg:gap-24;
   }
   &__header {
-    @apply flex flex-col items-start justify-start text-center uppercase lg:items-center;
+    @apply mb-6 flex flex-col items-start justify-start text-center uppercase lg:items-center;
   }
   &__datails {
     @apply mb-16 w-[600px] md:mb-20 lg:mb-28;
   }
   &__title {
-    @apply flex flex-row items-center justify-start gap-4 font-bold text-neutral-800;
+    @apply flex flex-row justify-start gap-4 font-bold text-neutral-800 md:items-center;
+  }
+  &__tools {
+    @apply flex flex-col md:flex-row;
+  }
+  &__svg {
+    @apply flex flex-row items-center gap-2 pb-4 md:p-0;
+  }
+  &__top {
+    @apply mr-6 text-xs font-bold text-neutral-800 lg:text-base;
   }
   &__chip {
-    @apply gap-2 text-base;
+    @apply hidden gap-2 border border-[#e7eaee] md:flex md:flex-row;
     &:hover {
       path {
         fill: white;
@@ -39,12 +48,12 @@
     }
   }
   &__head {
-    @apply mb-5 block text-3xl font-semibold text-primary md:w-[450px] md:text-6xl;
+    @apply my-6 block text-3xl font-semibold text-primary md:w-[450px] md:text-6xl;
   }
   &__button {
     @apply px-10 py-6 text-center uppercase md:w-72;
   }
   &__paragraph {
-    @apply mx-auto flex w-[750px] flex-col items-start gap-2 pb-20 md:pb-36;
+    @apply mx-auto flex max-w-3xl flex-col items-start gap-2 pb-20 md:pb-36;
   }
 }

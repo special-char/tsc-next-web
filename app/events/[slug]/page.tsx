@@ -2,11 +2,12 @@ import ClockSvg from '@/public/icons/clock.svg';
 import MapSvg from '@/public/icons/map.svg';
 import SpeakerSvg from '@/public/icons/speaker.svg';
 import '@/styles/allevents.css';
+import EventDatailPage from '@/ui/EventDatailPage';
 import Image from 'next/image';
 
 const Page = () => {
   return (
-    <section className="events h-auto w-full">
+    <section className="events h-auto ">
       <div>
         <div className="events__banner "></div>
         <div className="events__animate-bounce-slow1 "></div>
@@ -22,36 +23,7 @@ const Page = () => {
             fill
           />
         </div>
-        <div className="events__body">
-          <div className="events__header">
-            <h5>july</h5>
-            <h1 className="mb-0">24</h1>
-          </div>
-          <div className="events__datails ">
-            <div className="events__title">
-              <ClockSvg className="w-6" />
-              <span className="text-base font-bold md:text-sm">
-                Sunday 5:00 pm - 6:00 pm EDT
-              </span>
-              <MapSvg className="w-6" />
-              <span>Ahmedabad</span>
-              <span className="events__chip chip chip--white">
-                <span className="chip__icon ">
-                  <SpeakerSvg className="w-6" />
-                </span>
-                Marketing
-              </span>
-            </div>
-            <h2 className="events__head">Social Media Marketing Masterclass</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit.
-              Felis donec massa aliquam id.
-            </p>
-            <button className="events__button btn btn--primary">
-              REGISTER TO EVENT
-            </button>
-          </div>
-        </div>
+        <EventDatailPage />
 
         <div className="events__paragraph">
           <h2>Event Agenda</h2>
