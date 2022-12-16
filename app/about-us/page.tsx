@@ -3,7 +3,7 @@ import React, { Suspense } from 'react';
 import OurWorks, { OurWorksSkeleton } from './ourWorks';
 import Achievements, { AchievementsSkeleton } from './achievements';
 import CompanyHistory, { CompanyHistorySkeleton } from './companyhistory';
-import OurOffice from './ourOffice';
+import OurOffice, { OurOfficeSkeleton } from './ourOffice';
 import Aboutheader, { AboutheaderSkeleton } from './aboutheader';
 
 type Props = {};
@@ -38,7 +38,10 @@ const page = (props: Props) => {
         {/* @ts-expect-error Async Server Component */}
         <CompanyHistory />
       </Suspense>
-      <OurOffice />
+      <Suspense fallback={<OurOfficeSkeleton />}>
+        {/* @ts-expect-error Async Server Component */}
+        <OurOffice />
+      </Suspense>
     </>
   );
 };
