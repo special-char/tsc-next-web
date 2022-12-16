@@ -6,7 +6,7 @@ import Icon from './Icon';
 type info = {
   avatar_url: any;
   avatar_name: String;
-  avatar_Designation: String;
+  avatar_designation: String;
 };
 type date = {
   month: String,
@@ -19,8 +19,8 @@ type data = {
   publishedAt: date;
   time: String;
   rate: String;
+  alternativeText: String;
   icon: String;
-  icons: Boolean;
   teachingCategory: String;
   date: String;
   heading: String;
@@ -33,7 +33,7 @@ type Props = {
   data: data;
   className: any;
 };
-const icons = [
+const icon = [
   {
     icon: 'linkedin',
     link: 'https://www.linkedin.com',
@@ -60,14 +60,12 @@ export default function Card({ data, className }: Props) {
         {(data?.date || data?.time) && <div
           className="card__chipset"
         >
-          {data?.time && (
-            <>
-              <Icon name={data.icon} />
-              <div className="chip chip--white">{data.time}</div>
-            </>
-          )}
+
+
+
+          {data?.time && (<div className="chip chip--white flex gap-2">{data.icon && <Image width={24} height={24} alt={data.alternativeText} src={data.icon} />}{data.time}</div>)}
           {data?.rate && (
-            <div className="chip chip--primary">{`$ ${data?.rate} USD`}</div>
+            <div className="chip chip--primary flex gap-2">{`$ ${data?.rate} USD`}</div>
           )}
         </div>}
         <div className="card__body">
@@ -87,24 +85,17 @@ export default function Card({ data, className }: Props) {
             </div>
             {data?.description && <p className="card__desc">{data?.description}</p>}
           </div>
-          {data.icons && <div className="flex items-center justify-center gap-4 w-full md:justify-start">{icons.map((icon) => (
-            <span className="max-w-max rounded-full bg-neutral-500 p-2 hover:bg-primary">
-              <Link key={icon.icon} className={'nav-link'} href={icon.link} target="_blank">
-                <Icon name={icon.icon} height={20} width={20} />
-              </Link>
-            </span>
-          ))}</div>}
+          {data.avatar_info && <div className="profile-info">
+            <div className="relative card__avatar w-12 ">
+              <Image src={data.avatar_info.avatar_url} alt='alt text' fill />
+            </div>
+            <div>
+              <div className='profile-info__name'>{data.avatar_info.avatar_name}</div>
+              <div className='profile-info__designation'>{data.avatar_info.avatar_designation}</div>
+            </div>
+          </div>}
         </div>
       </div>
     </>
   );
 }
-{/* <div className="profile-info">
-            <div className="relative card__avatar w-12 ">
-              <Image src={data.avatar_info.avatar_url} alt='alt text' fill />
-            </div>
-            <div>
-              <div className='profile-info__name'>Yagnesh Modh</div>
-              <div className='profile-info__designation'>Designation</div>
-            </div>
-          </div> */}
