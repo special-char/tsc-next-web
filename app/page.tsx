@@ -48,7 +48,6 @@ const Page = () => {
       </Suspense>
       <Suspense fallback={<BlogsSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
-        <BlogsSkeleton />
         <Blogs />
       </Suspense>
     </>

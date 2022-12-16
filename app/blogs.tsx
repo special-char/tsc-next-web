@@ -20,7 +20,7 @@ export const BlogsSkeleton = () => {
       </div>
       <div className="blogs__grid bg-neutral-200 font-cursive">
         <div className="card">
-          <figure className="card__image h-96 bg-neutral-300">
+          <figure className="card__image lg:h-96 bg-neutral-300">
             <div></div>
           </figure>
           {(data?.date || data?.time) && (
@@ -66,7 +66,7 @@ export const BlogsSkeleton = () => {
           {[1, 2, 3].map((blog) => {
             return (
                 <div className="card classname card--hoz font-cursive">
-                    <figure className="card__image h-[184px] bg-neutral-300">
+                    <figure className="card__image md:h-[184px]  bg-neutral-300">
                       <div></div>
                     </figure>
                     <div className="card__body">
