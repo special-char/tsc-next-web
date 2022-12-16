@@ -12,10 +12,13 @@
   }
 
   &__body {
-    @apply flex flex-col flex-wrap  md:flex-col  lg:flex-row lg:justify-center lg:gap-52;
+    @apply flex flex-col flex-wrap md:flex-col lg:w-[890px] lg:flex-row lg:justify-center lg:gap-52;
   }
   &__header {
-    @apply mb-6 flex flex-col items-start justify-start text-center uppercase lg:items-center;
+    @apply flex flex-col items-start justify-start text-center uppercase lg:items-center;
+  }
+  &__h1 {
+    @apply mb-0 text-[44px] lg:text-[64px];
   }
   &__datails {
     @apply mb-16 md:mb-20 lg:mb-32 lg:w-[600px];
