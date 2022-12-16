@@ -12,7 +12,6 @@ const page = (props: Props) => {
   return (
     <>
       <Suspense fallback={<PageHeaderSkeleton />}>
-        {/* @ts-expect-error Async Server Component */}
         <PageHeader
           title="The big mission behind Educationic"
           desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium pulvinar ac molestie cursus malesuada enim. Massa nec tellus, elit tellus, erat faucibus aenean. Nunc, lacus, dignissim nec sit."
@@ -22,20 +21,16 @@ const page = (props: Props) => {
         />
       </Suspense>
       <Suspense fallback={<AchievementsSkeleton />}>
-        {/* @ts-expect-error Async Server Component */}
         <Achievements />
       </Suspense>
 
       <Suspense fallback={<AboutheaderSkeleton />}>
-        {/* @ts-expect-error Async Server Component */}
         <Aboutheader />
       </Suspense>
       <Suspense fallback={<OurWorksSkeleton />}>
-        {/* @ts-expect-error Async Server Component */}
         <OurWorks />
       </Suspense>
       <Suspense fallback={<CompanyHistorySkeleton />}>
-        {/* @ts-expect-error Async Server Component */}
         <CompanyHistory />
       </Suspense>
       <Suspense fallback={<OurOfficeSkeleton />}>

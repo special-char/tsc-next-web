@@ -3,6 +3,7 @@ import SeparatorArray from '@/ui/SeparatorArray';
 import Image from 'next/image';
 import { getCategoriesData } from '@/lib/getCategories';
 import { Category, HomeCategory, UploadFile } from 'types/types';
+import Card from '@/ui/Card';
 
 export const CategorySkeleton = () => {
   return (
@@ -52,16 +53,18 @@ const Category = async () => {
         {categoriesInfo.map((category) => {
           const { title, description, icon } = category.attributes as Category;
           const { url, alternativeText } = icon?.data?.attributes as UploadFile;
+          let category_data = {
+            heading: title,
+            description: description,
+            image_url: url,
+            time: `asd`,
+            icon: url,
+            alternativeText: alternativeText
+          }
           return (
-            <div key={category.id} className="card">
-              <figure className="card__image aspect-h-image">
-                <Image src={url} alt={`${alternativeText}`} fill />
-              </figure>
-              <div className="card__body">
-                <h3 className="card__title">{title}</h3>
-                <p className="card__desc">{description}</p>
-              </div>
-            </div>
+            <>
+              <Card data={category_data} />
+            </>
           );
         })}
       </div>

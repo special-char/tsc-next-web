@@ -1,21 +1,10 @@
 .hirecard {
   @apply grid  justify-center gap-10 gap-y-5 overflow-hidden rounded-3xl shadow-dark md:grid-cols-2 lg:grid-cols-3;
-
-  &__image {
-    @apply relative mx-auto aspect-square w-full overflow-hidden duration-300 hover:scale-110;
+  .card__body {
+    padding: 32px 32px 48px;
   }
-  h4 {
-    @apply !m-0;
-  }
-  &__body {
-    @apply mx-auto mb-5 flex flex-col gap-2 md:w-full md:flex-row md:justify-between md:gap-0 md:place-self-start;
-  }
-  &__title {
-    @apply grid place-content-center text-xl hover:text-primary md:text-2xl;
-  }
-
-  &__desc {
-    @apply m-0 mb-4 !text-center md:mb-6 md:!text-left;
+  .card__image {
+    @apply aspect-square;
   }
   a {
     @apply hover:text-primary;

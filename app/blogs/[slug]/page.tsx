@@ -5,13 +5,22 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Card from '@/ui/Card';
 export default async function Page() {
-  const data = {
+  const profile = {
     id: 1,
     image_url: "https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f1ff9fd9e0e1686d26497_image-3-profile-picture-small-teacher-education-x-template.jpg",
     heading: 'Sophie Moore',
     description: 'Lorem Ipsum is Lorem Ipsum in 4th century Copyright Copyright (c) 2008 The University of Texas at Austin and Rice University (   Rice University ) All rights reserved',
     teachingCategory: 'Design',
     icons: true,
+  }
+  const data = {
+    image_url: 'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2e01cbd8323965e6629a_image-6-courses-education-x-template-p-1080.jpeg',
+    time: '7hr56m',
+    rate: '199.00',
+    heading: 'Graphic Design 101',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit.Voluptatibus eius nesciunt cupiditate iure obcaecati a dicta nontemporibus quis deserunt.',
+
   }
   return (
     <section id="blogPost" className="blogPost">
@@ -38,7 +47,7 @@ export default async function Page() {
               <ActionBar />
               <span className="blogPost__content__about-blog">
                 <Link href={'#'}>
-                  <span className="blogPost__content__about-blog__accessory">
+                  <span className="blogPost__content__about-blog__accessory chip chip--white">
                     <Design className="chip__icon" />
                     <span>Design</span>
                   </span>
@@ -118,7 +127,7 @@ export default async function Page() {
             netus. Dui nunc mattis enim ut tellus elementum sagittis vitae et.
             Quis imperdiet massa tincidunt nunc pulvinar sapien et.
           </p>
-          <Card data={data} className={'card--profile_Card'} />
+          <Card data={profile} className={'card--profile_Card'} />
         </div>
       </div>
       <div className="blogPost__blogs">
@@ -131,7 +140,7 @@ export default async function Page() {
           </span>
         </div>
         <div className='blogPost__blogs__latest-blogs'>
-          <Link href="#" className="blog-post">
+          {/* <Link href="#" className="blog-post">
             <figure className='blog-post__content'>
               <div className="card__image">
                 <Image
@@ -150,7 +159,9 @@ export default async function Page() {
                 Lorem, ipsum dolor sit amet consectetur adipisicing.
               </h2>
             </div>
-          </Link>
+          </Link> */}
+          <Card data={data} />
+          <Card data={data} />
         </div>
 
       </div>
