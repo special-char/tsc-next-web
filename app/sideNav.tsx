@@ -27,6 +27,13 @@ export const SideNavSkeleton = () => {
           Hire our Graduates
         </button>
       </nav>
+      <a
+        href="#"
+        id="sidenav-close"
+        title="Close Menu"
+        aria-label="Close Menu"
+        // onchange="history.go(-1)"
+      ></a>
     </aside>
   );
 };
