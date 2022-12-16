@@ -1,94 +1,66 @@
-import ClockSvg from '@/public/icons/clock.svg';
-import MapSvg from '@/public/icons/map.svg';
-import SpeakerSvg from '@/public/icons/speaker.svg';
 import '@/styles/allevents.css';
+import '@/styles/blogPost.css';
+
+import EventDatailPage from '@/ui/EventDatailPage';
+
 import Image from 'next/image';
 
 const Page = () => {
   return (
-    <section className="events h-auto w-full">
-      <div>
-        <div className="events__banner "></div>
-        <div className="events__animate-bounce-slow1 "></div>
-        <div className="events__animate-bounce-slow2"></div>
-      </div>
-      <div className="events__page">
-        <div className="events__image">
-          <Image
-            alt="alt"
-            src={
-              'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f23fe55a94aa127fb47b2_image-6-blog-education-x-template.jpg'
-            }
-            fill
-          />
+    <>
+      <section id="blogPost" className="blogPost">
+        <div className="events__banner">
+          <div className="events__animate-bounce-slow1 "></div>
+          <div className="events__animate-bounce-slow2 "></div>
         </div>
-        <div className="events__body">
-          <div className="events__header">
-            <h5>july</h5>
-            <h1 className="mb-0">24</h1>
+        <div className="blogPost__content">
+          <div className="blogPost__content__image z-50">
+            <Image
+              alt="It is the image of the blog post that you are viewing"
+              src={
+                'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f23fe55a94aa127fb47b2_image-6-blog-education-x-template.jpg'
+              }
+              fill
+            />
           </div>
-          <div className="events__datails ">
-            <div className="events__title">
-              <ClockSvg className="w-6" />
-              <span className="text-base font-bold md:text-sm">
-                Sunday 5:00 pm - 6:00 pm EDT
-              </span>
-              <MapSvg className="w-6" />
-              <span>Ahmedabad</span>
-              <span className="events__chip chip chip--white">
-                <span className="chip__icon ">
-                  <SpeakerSvg className="w-6" />
-                </span>
-                Marketing
-              </span>
-            </div>
-            <h2 className="events__head">Social Media Marketing Masterclass</h2>
+          <div className="blogPost__content__text">
+            <EventDatailPage />
+
+            <h2 className="mb-2">What makes a good brand book?</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit.
-              Felis donec massa aliquam id.
+              Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
+              Diam phasellus vestibulum lorem sed risus ultricies. Magna sit
+              amet purus gravida quis blandit. Arcu cursus vitae congue mauris.
+              Nunc mattis enim ut tellus elementum sagittis vitae et leo. Semper
+              risus in hendrerit gravida rutrum quisque non. At urna condimentum
+              mattis pellentesque id nibh tortor. A erat nam at lectus urna duis
+              convallis convallis tellus. Sit amet mauris commodo quis imperdiet
+              massa. Vitae congue eu consequat ac felis
             </p>
+            <ul className="my-10">
+              <li>
+                Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
+              </li>
+              <li>
+                Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
+              </li>
+              <li>
+                Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
+              </li>
+              <li>
+                Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
+              </li>
+              <li>
+                Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
+              </li>
+            </ul>
             <button className="events__button btn btn--primary">
               REGISTER TO EVENT
             </button>
           </div>
         </div>
-
-        <div className="events__paragraph">
-          <h2>Event Agenda</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porta
-            massa, eget natoque tincidunt quis. Suspendisse vitae vestibulum
-            scelerisque egestas. Volutpat, adipiscing a elit platea amet et. At
-            at metus egestas nunc eget. Tempus sapien, augue laoreet morbi
-            habitasse leo mauris arcu amet. Sapien lectus auctor quis in ut
-            morbi risus. Ornare aliquam phasellus consequat amet velit risus.
-          </p>
-          <p>
-            Ac, pellentesque proin tincidunt lobortis sit velit velit dui eget.
-            Massa, lectus orci auctor morbi. A nisl vitae, sagittis elementum
-            placerat nullam id integer leo. Diam venenatis amet diam odio
-            ultrices auctor.
-          </p>
-          <ol style={{ listStyle: 'disc' }}>
-            <li>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem
-              ipsum dor
-            </li>
-            <li>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem
-              ipsum dor
-            </li>
-            <li>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem
-              ipsum dor
-            </li>
-          </ol>
-          <button className="events__button btn btn--primary">
-            REGISTER TO EVENT
-          </button>
-        </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

@@ -7,21 +7,23 @@ import Card from '@/ui/Card';
 export default async function Page() {
   const profile = {
     id: 1,
-    image_url: "https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f1ff9fd9e0e1686d26497_image-3-profile-picture-small-teacher-education-x-template.jpg",
+    image_url:
+      'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f1ff9fd9e0e1686d26497_image-3-profile-picture-small-teacher-education-x-template.jpg',
     heading: 'Sophie Moore',
-    description: 'Lorem Ipsum is Lorem Ipsum in 4th century Copyright Copyright (c) 2008 The University of Texas at Austin and Rice University (   Rice University ) All rights reserved',
+    description:
+      'Lorem Ipsum is Lorem Ipsum in 4th century Copyright Copyright (c) 2008 The University of Texas at Austin and Rice University (   Rice University ) All rights reserved',
     teachingCategory: 'Design',
     icons: true,
-  }
+  };
   const data = {
-    image_url: 'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2e01cbd8323965e6629a_image-6-courses-education-x-template-p-1080.jpeg',
+    image_url:
+      'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2e01cbd8323965e6629a_image-6-courses-education-x-template-p-1080.jpeg',
     time: '7hr56m',
     rate: '199.00',
     heading: 'Graphic Design 101',
     description:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit.Voluptatibus eius nesciunt cupiditate iure obcaecati a dicta nontemporibus quis deserunt.',
-
-  }
+  };
   return (
     <section id="blogPost" className="blogPost">
       <div className="blogPost__background-layout">
@@ -59,12 +61,12 @@ export default async function Page() {
           <div className="blogPost__content__divider"></div>
           <h2 className="mb-2">What makes a good brand book?</h2>
           <p>
-            Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
-            Diam phasellus vestibulum lorem sed risus ultricies. Magna sit
-            amet purus gravida quis blandit. Arcu cursus vitae congue mauris.
-            Nunc mattis enim ut tellus elementum sagittis vitae et leo. Semper
-            risus in hendrerit gravida rutrum quisque non. At urna condimentum
-            mattis pellentesque id nibh tortor. A erat nam at lectus urna duis
+            Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida. Diam
+            phasellus vestibulum lorem sed risus ultricies. Magna sit amet purus
+            gravida quis blandit. Arcu cursus vitae congue mauris. Nunc mattis
+            enim ut tellus elementum sagittis vitae et leo. Semper risus in
+            hendrerit gravida rutrum quisque non. At urna condimentum mattis
+            pellentesque id nibh tortor. A erat nam at lectus urna duis
             convallis convallis tellus. Sit amet mauris commodo quis imperdiet
             massa. Vitae congue eu consequat ac felis
           </p>
@@ -100,14 +102,13 @@ export default async function Page() {
           </figure>
           <h4>This is the h4 tag</h4>
           <p>
-            Eget aliquet nibh praesent tristique magna sit amet purus.
-            Consequat id porta <a>nibh</a> venenatis cras sed felis. Nisl rhoncus
-            mattis rhoncus urna neque viverra justo nec. Habitant morbi
-            tristique senectus et netus et malesuada fames ac. Et tortor
-            consequat id porta nibh venenatis cras sed felis. Fringilla est
-            ullamcorper eget nulla facilisi. Mi sit amet mauris commodo quis.
-            Eget arcu dictum varius duis at consectetur lorem.Venenatis cras
-            sed felis eget velit
+            Eget aliquet nibh praesent tristique magna sit amet purus. Consequat
+            id porta <a>nibh</a> venenatis cras sed felis. Nisl rhoncus mattis
+            rhoncus urna neque viverra justo nec. Habitant morbi tristique
+            senectus et netus et malesuada fames ac. Et tortor consequat id
+            porta nibh venenatis cras sed felis. Fringilla est ullamcorper eget
+            nulla facilisi. Mi sit amet mauris commodo quis. Eget arcu dictum
+            varius duis at consectetur lorem.Venenatis cras sed felis eget velit
           </p>
           <ol>
             <li>Magna eget est lorem ipsum dolor.</li>
@@ -116,9 +117,9 @@ export default async function Page() {
             <li>Magna eget est lorem ipsum dolor.</li>
           </ol>
           <blockquote>
-            Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
-            Diam phasellus vestibulum lorem sed risus ultricies. Magna sit
-            amet purus gravida quis blandit. Arcu cursus vitae congue mauris.
+            Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida. Diam
+            phasellus vestibulum lorem sed risus ultricies. Magna sit amet purus
+            gravida quis blandit. Arcu cursus vitae congue mauris.
           </blockquote>
           <h6>A brand book can always keep evolving</h6>
           <p>
@@ -132,14 +133,10 @@ export default async function Page() {
       </div>
       <div className="blogPost__blogs">
         <div className="blogPost__blogs__header">
-          <h2 className="blogPost__blogs__header__heading">
-            Latest posts
-          </h2>
-          <span className="blogPost__blogs__header__btn">
-            all posts
-          </span>
+          <h2 className="blogPost__blogs__header__heading">Latest posts</h2>
+          <span className="blogPost__blogs__header__btn">all posts</span>
         </div>
-        <div className='blogPost__blogs__latest-blogs'>
+        <div className="blogPost__blogs__latest-blogs">
           {/* <Link href="#" className="blog-post">
             <figure className='blog-post__content'>
               <div className="card__image">
@@ -163,7 +160,6 @@ export default async function Page() {
           <Card data={data} />
           <Card data={data} />
         </div>
-
       </div>
     </section>
   );

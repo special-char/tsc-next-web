@@ -6,8 +6,8 @@ export const OurWorksSkeleton = () => {
   return (
     <section id="OurWorks" className="ourWorks">
       <div className="ourWorks__header animate-pulse">
-        <h2 className="text-neutral-100">Our work values</h2>
-        <p className="ourWorks__line">
+        <h2 className="font-cursive text-neutral-100">Our work values</h2>
+        <p className="ourWorks__line font-cursive">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt.
         </p>
@@ -23,8 +23,8 @@ export const OurWorksSkeleton = () => {
                 <div></div>
               </div>
             </div>
-            <h3 className="ourWorks__h3 ">Company Name</h3>
-            <p className="ourWorks__p">
+            <h3 className="ourWorks__h3 font-cursive">Company Name</h3>
+            <p className="ourWorks__p font-cursive">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus
               egestas non consequat pellentesque iaculis nunc, est, mollis.
               Nulla.

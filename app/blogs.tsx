@@ -9,21 +9,23 @@ type Props = {};
 const blogData = [
   {
     id: 1,
-    image_url: 'https://images.unsplash.com/photo-1667988152364-52ab908cd3bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60',
-    heading: 'Lorem ipsum dolor sit amet, consectetur adip'
-
+    image_url:
+      'https://images.unsplash.com/photo-1667988152364-52ab908cd3bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60',
+    heading: 'Lorem ipsum dolor sit amet, consectetur adip',
   },
   {
     id: 2,
-    image_url: 'https://images.unsplash.com/photo-1667988152364-52ab908cd3bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60',
+    image_url:
+      'https://images.unsplash.com/photo-1667988152364-52ab908cd3bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60',
 
-    heading: 'Lorem ipsum dolor sit amet, consectetur adip'
+    heading: 'Lorem ipsum dolor sit amet, consectetur adip',
   },
   {
     id: 3,
-    image_url: 'https://images.unsplash.com/photo-1667988152364-52ab908cd3bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60',
+    image_url:
+      'https://images.unsplash.com/photo-1667988152364-52ab908cd3bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60',
 
-    heading: 'Lorem ipsum dolor sit amet, consectetur adip'
+    heading: 'Lorem ipsum dolor sit amet, consectetur adip',
   },
 ];
 const data = {
@@ -37,7 +39,7 @@ const data = {
   publishedAt: {
     month: 'August',
     day: '11',
-    year: '2022'
+    year: '2022',
   },
   // description:
   //   'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, corrupti, eius quae accusantium alias eaque facere voluptatum aliquid fugit, harum sed quia quos dolorum nam!',
@@ -65,12 +67,10 @@ const Blogs = (props: Props) => {
           </Link>
         </div>
         <div className="blogs__grid">
-          <Card data={data} />
-          <div className="blogs__horizontal overflow-hidden">
-            {blogData.map((blog) => {
-              return <Card key={blog.id} className={'classname card--hoz'} data={blog} />;
-            })}
-          </div>
+          <Card data={data} className="row-span-full" />
+          {blogData.map((blog) => {
+            return <Card key={blog.id} className="card--hoz" data={blog} />;
+          })}
         </div>
       </section>
     </>
