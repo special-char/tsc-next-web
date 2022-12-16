@@ -457,6 +457,12 @@
       @media screen and (min-width: 768px) {
         padding: 56px 54px 64px;
       }
+      .card__heading {
+        @apply mb-3 gap-1 md:gap-0;
+      }
+      .card__title {
+        @apply mx-auto md:m-0 md:place-self-start;
+      }
       .card__body {
         @apply flex-1 p-0;
       }
@@ -525,6 +531,9 @@
       @apply grid md:grid-cols-2;
       &:nth-last-child(1) {
         margin-bottom: 10px;
+      }
+      .card__chipset {
+        @apply absolute top-6 flex w-full flex-col items-end gap-3 px-4 md:flex-row md:justify-start md:px-8;
       }
       .nav-link {
         @apply m-auto;
