@@ -34,7 +34,6 @@ const page = (props: Props) => {
         <CompanyHistory />
       </Suspense>
       <Suspense fallback={<OurOfficeSkeleton />}>
-        {/* @ts-expect-error Async Server Component */}
         <OurOffice />
       </Suspense>
     </>
