@@ -11,12 +11,14 @@ import React, {
 import clsx from 'clsx';
 import LeftSvg from '@/public/icons/left-arrow.svg';
 import RightSvg from '@/public/icons/right-arrow.svg';
+import CarousalBullets from './CarousalBullets';
 
 type Props = {} & PropsWithChildren;
 
 const Carousal = ({ children }: Props) => {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [element, setElement] = useState<Element | null>(null);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const scrollPort = scrollerRef.current;
@@ -56,6 +58,29 @@ const Carousal = ({ children }: Props) => {
     }
   }, [element]);
 
+  const moveToIndex = useCallback((index: number) => {
+    const scrollport = scrollerRef.current;
+    setIndex(index);
+    if (scrollport) {
+      const element = scrollport.children[index];
+
+      const delta = Math.abs(scrollport.offsetLeft - element.offsetLeft);
+      const scrollerPadding = parseInt(
+        getComputedStyle(scrollport)['padding-left'],
+      );
+
+      const pos =
+        scrollport.clientWidth / 2 > delta
+          ? delta - scrollerPadding
+          : delta + scrollerPadding;
+
+      scrollport.scrollTo({
+        left: pos,
+        behavior: 'smooth',
+      });
+    }
+  }, []);
+
   return (
     <div className="carousal">
       <ul ref={scrollerRef} className="carousal__scroller">
@@ -84,6 +109,22 @@ const Carousal = ({ children }: Props) => {
         >
           <RightSvg className="hover:fill-neutral-100" />
         </button>
+      </div>
+      {/* bullets */}
+
+      <div className="relative col-span-3 mx-auto flex w-full md:hidden">
+        <div className=" absolute mx-auto  flex w-full items-center justify-center gap-3">
+          {React.Children.map(children, (child, i) => {
+            return (
+              <div
+                onClick={() => moveToIndex(i)}
+                className={clsx('h-2 w-2 rounded-full bg-neutral-400', {
+                  'bg-primary duration-200': i === index,
+                })}
+              ></div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

@@ -2,38 +2,29 @@ import React from 'react';
 import Image from 'next/image';
 import '@/styles/featuredcourse.css';
 import ActionBar from '@/ui/ActionBar';
+import Card from '@/ui/Card';
 type Props = {};
 
+const data = {
+  image_url:
+    'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2e01cbd8323965e6629a_image-6-courses-education-x-template-p-1080.jpeg',
+  time: '7hr56m',
+  rate: '$199.00 USD',
+  heading: 'Graphic Design 101',
+  description:
+    'Lorem ipsum dolor sit amet consectetur, adipisicing elit.Voluptatibus eius nesciunt cupiditate iure obcaecati a dicta nontemporibus quis deserunt.',
+  avatar_info: {
+    avatar_url:
+      'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2e01cbd8323965e6629a_image-6-courses-education-x-template-p-1080.jpeg',
+    avatar_name: 'Fname Lname',
+    avatar_designation: 'Developer',
+  },
+};
 const Featuredcourse = (props: Props) => {
   return (
     <section id="featuredcourse" className="featuredcourse">
       <h2 className="featuredcourse__title">Featured Course</h2>
-      <a href="#" className="card card--hoz m-0 ">
-        <div className="relative ">
-          <Image
-            className="card__image aspect-[3/2] h-full"
-            src="https://images.unsplash.com/photo-1667988152364-52ab908cd3bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
-            alt="image"
-            height={6000}
-            width={600}
-          />
-          <div className=" chip chip--primary absolute top-20 left-3  md:top-6  md:left-32 lg:left-36 ">
-            $199.00 USD
-          </div>
-          <div className="chip chip--secondary absolute top-6 left-3 lg:left-6">
-            7hr56m
-          </div>
-        </div>
-        <div className="featuredcourse__body">
-          <h3 className="mb-4">Brand & Indentity Design</h3>
-          <p className=" mb-8 text-xl">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Voluptatibus eius nesciunt cupiditate iure obcaecati a dicta non
-            temporibus quis deserunt.
-          </p>
-          <ActionBar />
-        </div>
-      </a>
+      <Card data={data} className={'card--hoz'} />
     </section>
   );
 };

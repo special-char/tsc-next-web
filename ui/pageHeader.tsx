@@ -2,6 +2,31 @@ import React from 'react';
 import '@/styles/pageHeader.css';
 import clsx from 'clsx';
 import SeparatorArray from './SeparatorArray';
+
+export const PageHeaderSkeleton = () => {
+  return (
+    <section className={'page__section animate-pulse'}>
+      <div className="page__body">
+        <div className="page__pages">
+          <div className="page__detail">
+            <h1 className="font-cursive text-neutral-700">
+              The big mission behind Educationic
+            </h1>
+            <p className="font-cursive">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium
+              pulvinar ac molestie cursus malesuada enim. Massa nec tellus, elit
+              tellus, erat faucibus aenean. Nunc, lacus, dignissim nec sit.
+            </p>
+          </div>
+        </div>
+        <div className="circle__right"></div>
+        <div className="circle__left"></div>
+      </div>
+      <SeparatorArray />
+    </section>
+  );
+};
+
 type Props = {
   className: any;
   title: string;

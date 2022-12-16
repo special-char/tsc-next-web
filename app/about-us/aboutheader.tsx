@@ -1,7 +1,35 @@
 import '@/styles/aboutheader.css';
 import React from 'react';
 import Image from 'next/image';
-
+export const AboutheaderSkeleton = () => {
+  return (
+    <section className="px-container py-20">
+      <div className="aboutheader animate-pulse">
+        {[1, 2].map((x) => (
+          <>
+            <div className="aboutheader__image bg-neutral-300">
+              <div></div>
+            </div>
+            <div className="aboutheader__title">
+              <h2 className=" font-cursive text-3xl md:text-6xl">
+                The mission behind Education platform
+              </h2>
+              <p className="font-cursive lg:text-lg">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus
+                viverra praesent felis consequat pellentesque turpis et quisque
+                platea. Eu, elit ut nunc ac mauris bibendum nulla placerat.
+                Sagittis sit eu sit massa sapien, risus diam. In lorem eu sed
+                euismod laoreet urna, feugiat et. Euismod sem purus rutrum in.
+                Tortor varius a bibendum nisl et tellus. Aliquet elit senectus
+                iaculis netus gravida.
+              </p>
+            </div>
+          </>
+        ))}
+      </div>
+    </section>
+  );
+};
 type Props = {};
 const aboutheaderdata = [
   {
@@ -40,7 +68,7 @@ const Aboutheader = (props: Props) => {
               <Image src={x.image} alt="" fill />
             </div>
             <div className="aboutheader__title">
-              <h2 className="lg:text-6xl">{x.title}</h2>
+              <h2 className=" text-3xl md:text-6xl">{x.title}</h2>
               <p className="lg:text-lg">{x.desc}</p>
             </div>
           </>

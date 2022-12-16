@@ -36,7 +36,7 @@
       @apply my-auto flex gap-5 place-self-start md:place-self-end;
       &__accessory {
         @apply flex gap-2 border border-[#e7eaee] text-xs;
-        .chip-icon {
+        .chip__icon {
           @apply h-5 w-4;
         }
       }
@@ -61,19 +61,16 @@
       a {
         @apply no-underline;
       }
-      .blog-post {
+      /* .blog-post {
         @apply overflow-hidden rounded-lg;
         &__content {
           @apply !m-0 aspect-blog-image !translate-y-0 overflow-hidden;
         }
-      }
+      } */
     }
   }
 }
 
-figure {
-  @apply !mt-14;
-}
 h1 {
   @apply text-[35px] md:text-5xl;
 }
@@ -86,18 +83,4 @@ h6 {
 }
 blockquote {
   @apply !my-14;
-}
-
-figure {
-  @apply transition-all;
-  & img {
-    @apply duration-300 ease-in-out hover:scale-110;
-  }
-  & ~ div {
-    @apply items-center;
-
-    & h4 {
-      @apply m-0 line-clamp-3 lg:text-xl;
-    }
-  }
 }

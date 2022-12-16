@@ -1,20 +1,23 @@
 .aboutheader {
-  @apply grid items-center  gap-8 lg:grid-cols-2;
-  div:nth-child(3) {
-    order: 3;
+  @apply grid items-center gap-10 lg:grid-cols-2;
+  /* mobile screen */
+  div:nth-child(1) {
+    order: 1;
   }
+  @media screen and (min-width: 1023px) {
+    div:nth-child(1) {
+      order: 0;
+    }
+    div:nth-child(3) {
+      order: 3;
+    }
+  }
+
   &__image {
-    @apply relative mx-auto  aspect-square w-full overflow-hidden rounded-xl;
+    @apply relative mx-auto aspect-square w-full overflow-hidden rounded-xl;
   }
 
   &__title {
-    @apply text-center;
+    @apply text-left md:text-center;
   }
-  /* @media screen and (min-width: 768px) {
-    div:nth-of-type(2) {
-      div:nth-child(2) {
-        order: 1;
-      }
-    }
-  } */
 }
