@@ -3,7 +3,7 @@ import React, { Suspense } from 'react';
 import OurWorks, { OurWorksSkeleton } from './ourWorks';
 import Achievements, { AchievementsSkeleton } from './achievements';
 import CompanyHistory, { CompanyHistorySkeleton } from './companyhistory';
-import OurOffice from './ourOffice';
+import OurOffice, { OurOfficeSkeleton } from './ourOffice';
 import Aboutheader, { AboutheaderSkeleton } from './aboutheader';
 
 type Props = {};
@@ -33,7 +33,9 @@ const page = (props: Props) => {
       <Suspense fallback={<CompanyHistorySkeleton />}>
         <CompanyHistory />
       </Suspense>
-      <OurOffice />
+      <Suspense fallback={<OurOfficeSkeleton />}>
+        <OurOffice />
+      </Suspense>
     </>
   );
 };

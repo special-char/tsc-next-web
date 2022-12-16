@@ -3,7 +3,46 @@ import '@/styles/ourOffice.css';
 import OfficeSvg from '@/public/icons/office.svg';
 import Image from 'next/image';
 import WorldMap from '@/public/images/world map.jpg';
+export const OurOfficeSkeleton = () => {
+  return (
+    <section id="ourOffice" className="ourOffice">
+      <div className="animate-pulse text-center md:mx-24 md:mb-6 lg:mx-40">
+        <h2 className="ourOffice__title font-cursive">Our Offices</h2>
+        <p className="font-cursive">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt.
+        </p>
+      </div>
 
+      <div className="ourOffice__content">
+        <div className="ourOffice__item">
+          <div className="ourOffice__card relative overflow-hidden">
+            <div className="ourOffice__card__content">
+              <div></div>
+              <h3 className="ourOffice__card__title font-cursive">Ahmedabad</h3>
+              <address className="grid-rows-span-3 grid text-neutral-600">
+                <a className="w-auto pb-2 font-cursive" href={`#`}>
+                  thespecial@character.com
+                </a>
+                <a className="w-auto pb-2 font-cursive" href={`#`}>
+                  +91 1800180018
+                </a>
+                <div className="mb-2 font-cursive">
+                  B-604/605, Ganesh Glory11
+                  <br />
+                  SG-Hwy, Ahmedabad, <br />
+                  Gujrat 382470
+                </div>
+              </address>
+            </div>
+            <div className="absolute -right-14 -bottom-20 h-32 w-32 rounded-full bg-primary"></div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </section>
+  );
+};
 type Props = {};
 
 const OurOffice = (props: Props) => {
