@@ -23,7 +23,6 @@ const page = (props: Props) => {
       <Suspense fallback={<AchievementsSkeleton />}>
         <Achievements />
       </Suspense>
-
       <Suspense fallback={<AboutheaderSkeleton />}>
         <Aboutheader />
       </Suspense>

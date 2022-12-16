@@ -17,10 +17,10 @@ export const OurOfficeSkeleton = () => {
       <div className="ourOffice__content">
         <div className="ourOffice__item">
           <div className="ourOffice__card relative overflow-hidden">
-            <div className="ourOffice__card__content">
+            <div className="ourOffice__card__content bg-neutral-300">
               <div></div>
               <h3 className="ourOffice__card__title font-cursive">Ahmedabad</h3>
-              <address className="grid-rows-span-3 grid text-neutral-600">
+              <address className="grid-rows-span-3 grid font-cursive text-neutral-600">
                 <a className="w-auto pb-2 font-cursive" href={`#`}>
                   thespecial@character.com
                 </a>
@@ -38,7 +38,7 @@ export const OurOfficeSkeleton = () => {
             <div className="absolute -right-14 -bottom-20 h-32 w-32 rounded-full bg-primary"></div>
           </div>
         </div>
-        <div></div>
+        <div className="bg-neutral-300"></div>
       </div>
     </section>
   );
