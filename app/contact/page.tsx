@@ -1,7 +1,7 @@
 import PageHeader from '@/ui/pageHeader';
 import { Suspense } from 'react';
 import Contact, { ContactSkeleton } from './contact';
-import Faq from './faq';
+import Faq, { FaqSkeleton } from './faq';
 
 const Page = () => {
   return (
@@ -10,8 +10,10 @@ const Page = () => {
         {/* @ts-expect-error Async Server Component */}
         <Contact />
       </Suspense>
-
-      <Faq />
+      <Suspense fallback={<FaqSkeleton />}>
+        {/* @ts-expect-error Async Server Component */}
+        <Faq />
+      </Suspense>
     </>
   );
 };
