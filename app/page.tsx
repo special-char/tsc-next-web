@@ -14,6 +14,7 @@ const Page = () => {
     <>
       <Suspense fallback={<BannerSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
+
         <Banner />
       </Suspense>
       <Suspense fallback={<CoursesSkeleton />}>

@@ -7,23 +7,20 @@ import { GrowCareerSkeleton } from './growcareer';
 import { HeaderSkeleton } from './header';
 import { LeadersSkeleton } from './leaders';
 import { PerksSkeleton } from './perks';
+import { SideNavSkeleton } from './sideNav';
 import { TestimonialSkeleton } from './testimonial';
 
 export default function Loading() {
   return (
-    <div>
-      <HeaderSkeleton />
-      <main>
-        <BannerSkeleton />
-        <CoursesSkeleton />
-        <PerksSkeleton />
-        <LeadersSkeleton />
-        <GrowCareerSkeleton />
-        <EducationSkeleton />
-        <CategorySkeleton />
-        <TestimonialSkeleton />
-      </main>
-      <Footer />
-    </div>
+    <>
+      <BannerSkeleton />
+      <CoursesSkeleton />
+      <PerksSkeleton />
+      <LeadersSkeleton />
+      <GrowCareerSkeleton />
+      <EducationSkeleton />
+      <CategorySkeleton />
+      <TestimonialSkeleton />
+    </>
   );
 }
