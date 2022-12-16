@@ -8,62 +8,86 @@ import PageHeader from '@/ui/pageHeader';
 import Card from '@/ui/Card';
 
 export default async function Page() {
-  // const moreblogData = [
-  //   {
-  //     id: 1,
-  //     url: 'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f23fe55a94aa127fb47b2_image-6-blog-education-x-template-p-1600.jpeg',
-  //     icon: 'design',
-  //     iconname: 'Design',
-  //     description:
-  //       'Lorem ipsum, dolor sit amet consectetur adipisicing elit.Beatae, corrupti!',
-  //     date: '1 September, 2022',
-  //   },
-  //   {
-  //     id: 2,
-  //     url: 'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2623f3809724753fbc65_image-5-blog-education-x-template-p-1600.jpeg',
-  //     icon: 'microphone',
-  //     iconname: 'Marketing',
-  //     description:
-  //       'Lorem ipsum, dolor sit amet consectetur adipisicing elit.Beatae, ',
-  //     date: '1 September, 2022',
-  //   },
-  //   {
-  //     id: 3,
-  //     url: 'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f25e9ca7a36bf7469e0c8_image-4-blog-education-x-template-p-1600.jpeg',
-  //     icon: 'design',
-  //     iconname: 'Design',
-  //     description:
-  //       'Lorem ipsum, dolor sit amet consectetur adipisicing elit.Beatae, corrupti!',
-  //     date: '1 September, 2022',
-  //   },
-  //   {
-  //     id: 4,
-  //     url: 'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f256ca6388c4207dbfb28_image-3-blog-education-x-template-p-1600.jpeg',
-  //     icon: 'microphone',
-  //     iconname: 'Marketing',
-  //     description:
-  //       'Lorem ipsum, dolor sit amet consectetur adipisicing elit.Beatae, corrupti!',
-  //     date: '1 September, 2022',
-  //   },
-  //   {
-  //     id: 5,
-  //     url: 'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f24e214c1a2aef22ce32b_image-2-blog-education-x-template.jpg',
-  //     icon: 'developer',
-  //     iconname: 'Development',
-  //     description:
-  //       'Lorem ipsum, dolor sit amet consectetur adipisicing elit.Beatae, corrupti!',
-  //     date: '1 September, 2022',
-  //   },
-  //   {
-  //     id: 6,
-  //     url: 'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2405097a4b97dde4f6d2_image-1-blog-education-x-template-p-1600.jpeg',
-  //     icon: 'microphone',
-  //     iconname: 'Marketing',
-  //     description:
-  //       'Lorem ipsum, dolor sit amet consectetur adipisicing elit.Beatae, corrupti!',
-  //     date: '1 September, 2022',
-  //   },
-  // ];
+  const moreblogData = [
+    {
+      id: 1,
+      image_url: 'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f23fe55a94aa127fb47b2_image-6-blog-education-x-template-p-1600.jpeg',
+      // icon: 'design',
+      // iconname: 'Design',
+      description:
+        'Lorem ipsum, dolor sit amet consectetur adipisicing elit.Beatae, corrupti!',
+      publishedAt: {
+        day: 1,
+        month: 'Jan',
+        year: 2022
+      }
+    },
+    {
+      id: 2,
+      image_url: 'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2623f3809724753fbc65_image-5-blog-education-x-template-p-1600.jpeg',
+      // icon: 'microphone',
+      // iconname: 'Marketing',
+      description:
+        'Lorem ipsum, dolor sit amet consectetur adipisicing elit.Beatae, ',
+      publishedAt: {
+        day: 1,
+        month: 'Jan',
+        year: 2022
+      }
+    },
+    {
+      id: 3,
+      image_url: 'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f25e9ca7a36bf7469e0c8_image-4-blog-education-x-template-p-1600.jpeg',
+      // icon: 'design',
+      // iconname: 'Design',
+      description:
+        'Lorem ipsum, dolor sit amet consectetur adipisicing elit.Beatae, corrupti!',
+      publishedAt: {
+        day: 1,
+        month: 'Jan',
+        year: 2022
+      }
+    },
+    {
+      id: 4,
+      image_url: 'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f256ca6388c4207dbfb28_image-3-blog-education-x-template-p-1600.jpeg',
+      // icon: 'microphone',
+      // iconname: 'Marketing',
+      description:
+        'Lorem ipsum, dolor sit amet consectetur adipisicing elit.Beatae, corrupti!',
+      publishedAt: {
+        day: 1,
+        month: 'Jan',
+        year: 2022
+      }
+    },
+    {
+      id: 5,
+      image_url: 'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f24e214c1a2aef22ce32b_image-2-blog-education-x-template.jpg',
+      // icon: 'developer',
+      // iconname: 'Development',
+      description:
+        'Lorem ipsum, dolor sit amet consectetur adipisicing elit.Beatae, corrupti!',
+      publishedAt: {
+        day: 1,
+        month: 'Jan',
+        year: 2022
+      }
+    },
+    {
+      id: 6,
+      image_url: 'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2405097a4b97dde4f6d2_image-1-blog-education-x-template-p-1600.jpeg',
+      // icon: 'microphone',
+      // iconname: 'Marketing',
+      description:
+        'Lorem ipsum, dolor sit amet consectetur adipisicing elit.Beatae, corrupti!',
+      publishedAt: {
+        day: 1,
+        month: 'Jan',
+        year: 2022
+      }
+    },
+  ];
   const blogData = [
     {
       id: 1,
@@ -127,25 +151,15 @@ export default async function Page() {
       </section>
       <BlogSubscribe />
       <Features />
-      {/* <section className="blogs__moreblogs">
-        {moreblogData.map((moreblogs) => {
+      <section className="blogs__moreblogs">
+        {moreblogData.map((moreblogs: any) => {
           return (
-            <Link href="#" key={moreblogs.id} className="card ">
-              <figure className="card__image">
-                <Image src={moreblogs.url} alt="" fill />
-                <span className="card__actions chip chip--secondary absolute top-4 right-3 gap-2">
-                  <Icon name={moreblogs.icon} height={20} width={20} />
-                  {moreblogs.iconname}
-                </span>
-              </figure>
-              <div className="card__body">
-                <time className="card__date">{moreblogs.date}</time>
-                <h4 className="card__title--line-2">{moreblogs.description}</h4>
-              </div>
-            </Link>
+
+            <Card data={moreblogs} />
+
           );
         })}
-      </section> */}
+      </section>
     </>
   );
 }

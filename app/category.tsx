@@ -52,17 +52,18 @@ const Category = async () => {
       <div className="category__content">
         {categoriesInfo.map((category) => {
           const { title, description, icon } = category.attributes as Category;
-          const { url, alternativeText, name } = icon?.data?.attributes as UploadFile;
+          const { url, alternativeText } = icon?.data?.attributes as UploadFile;
           let category_data = {
             heading: title,
             description: description,
             image_url: url,
             time: `asd`,
-            icon: name,
+            icon: url,
+            alternativeText: alternativeText
           }
           return (
             <>
-              < Card data={category_data} />
+              <Card data={category_data} />
             </>
           );
         })}
