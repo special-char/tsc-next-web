@@ -172,7 +172,7 @@ export default async function Page() {
               />
             </div>
           </section>
-          <section id="review" className="course-review pt-16">
+          <section id="review" className="course-review pt-12 md:pt-16">
             <h2 className="text-center md:text-left">What our Students say</h2>
             <div className="testimonial">
               {TestimonialInfo.map((testimonial) => {

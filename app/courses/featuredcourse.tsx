@@ -25,7 +25,7 @@ const Featuredcourse = (props: Props) => {
           </div>
         </div>
         <div className="featuredcourse__body">
-          <h3 className=" mb-4">Brand & Indentity Design</h3>
+          <h3 className="mb-4">Brand & Indentity Design</h3>
           <p className=" mb-8 text-xl">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit.
             Voluptatibus eius nesciunt cupiditate iure obcaecati a dicta non

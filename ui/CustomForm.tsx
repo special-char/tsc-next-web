@@ -11,7 +11,7 @@ const CustomForm = ({ buttonStyle, fields, ...rest }: Props) => {
   return (
     <Formik {...rest}>
       {({}) => (
-        <Form className="form">
+        <Form className="form ">
           {fields.map((field) => {
             return <Field key={field.name} {...field} />;
           })}

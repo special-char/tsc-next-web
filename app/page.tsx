@@ -8,6 +8,7 @@ import Perks, { PerksSkeleton } from './perks';
 import Testimonial, { TestimonialSkeleton } from './testimonial';
 import Blogs from './blogs';
 import { Suspense } from 'react';
+import { ContactSkeleton } from './contact/contact';
 
 const Page = () => {
   return (

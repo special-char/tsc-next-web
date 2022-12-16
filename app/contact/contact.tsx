@@ -8,6 +8,50 @@ import TextInput from '@/ui/TextInput';
 import TextArea from '@/ui/TextArea';
 import CustomForm from '@/ui/CustomForm';
 
+export const ContactSkeleton = () => {
+  return (
+    <section id="contact" className="contact animate-pulse">
+      <h1 className="contact__title font-cursive">Get in touch!</h1>
+      <p className="contact__desc font-cursive">
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+        aliquip commodo consequat
+      </p>
+      <div className="contact__body font-cursive">
+        <CustomForm
+          className="font-cursive"
+          initialValues={{
+            name: '',
+            email: '',
+            phone: '',
+            subject: '',
+            message: '',
+          }}
+          onSubmit={(values) => {
+            console.log(values);
+          }}
+          fields={fields}
+        />
+      </div>
+      <div className="contact__cards">
+        {CardData.map((cardData) => (
+          <div className="contact__card_details">
+            <div className="h-16 w-16 overflow-hidden rounded-full bg-neutral-300">
+              <div className=""></div>
+            </div>
+            <h3 className="mt-4 font-cursive">Email</h3>
+            <p className="px-4 font-cursive">
+              Lorem ipsum dolor sit amet, consectetur adipisicing.
+            </p>
+          </div>
+        ))}
+      </div>
+      <div className="contact__yellowcircle "></div>
+      <div className="contact__orangecircle "></div>
+      <div className="contact__blucircle "></div>
+    </section>
+  );
+};
+
 type Props = {};
 const fields = [
   {
