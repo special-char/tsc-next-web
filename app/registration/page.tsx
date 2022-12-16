@@ -8,7 +8,6 @@ const Page = (props: Props) => {
     <div>
       <Suspense fallback={<RegisterSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
-        <RegisterSkeleton />
         <Register />
       </Suspense>
     </div>

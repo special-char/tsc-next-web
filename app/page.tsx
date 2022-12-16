@@ -6,7 +6,7 @@ import GrowCareer, { GrowCareerSkeleton } from './growcareer';
 import Leaders, { LeadersSkeleton } from './leaders';
 import Perks, { PerksSkeleton } from './perks';
 import Testimonial, { TestimonialSkeleton } from './testimonial';
-import Blogs from './blogs';
+import Blogs, { BlogsSkeleton } from './blogs';
 import { Suspense } from 'react';
 import { ContactSkeleton } from './contact/contact';
 
@@ -46,7 +46,11 @@ const Page = () => {
         {/* @ts-expect-error Async Server Component */}
         <Testimonial />
       </Suspense>
-      <Blogs />
+      <Suspense fallback={<BlogsSkeleton />}>
+        {/* @ts-expect-error Async Server Component */}
+        <BlogsSkeleton />
+        <Blogs />
+      </Suspense>
     </>
   );
 };
