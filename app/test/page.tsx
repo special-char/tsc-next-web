@@ -1,16 +1,30 @@
+import ActionBar from '@/ui/ActionBar';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
+import Design from '@/public/icons/design.svg';
 import './style.css';
+import Card from '@/ui/Card';
+import Button from '@/ui/Button';
 
 type Props = {};
 
+const data = {
+  image_url:
+    'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2e01cbd8323965e6629a_image-6-courses-education-x-template-p-1080.jpeg',
+  time: '7hr56m',
+  rate: '199.00',
+  heading: 'Graphic Design 101',
+  description:
+    'Lorem ipsum dolor sit amet consectetur, adipisicing elit.Voluptatibus eius nesciunt cupiditate iure obcaecati a dicta nontemporibus quis deserunt.',
+};
 const page = (props: Props) => {
   return (
     <div className="wrapper">
       <div className="wrapper__header">
-        {/* <div className="absolute top-24 left-0 aspect-square h-[600px] rounded-full bg-secondary2"></div> */}
+        <div className="absolute top-24 left-0 aspect-square h-[600px] rounded-full bg-secondary2"></div>
       </div>
-      <div className="wrapper__body">
+      <div className="wrapper__body py-10 md:py-16 lg:py-20">
         <div className="wrapper__body__image">
           <Image
             alt="It is the image of the blog post that you are viewing"
@@ -24,7 +38,18 @@ const page = (props: Props) => {
           <h1>
             How to design a simple, yet unique and memorable brand identity
           </h1>
-          <div></div>
+          <div className="wrapper__body__content__author-info">
+            <ActionBar />
+            <span className="about-blog">
+              <Link href={'#'}>
+                <span className="about-blog__accessory chip chip--white">
+                  <Design className="chip__icon w-4" />
+                  <span>Design</span>
+                </span>
+              </Link>
+              <span className="chip chip--secondary text-xs">10 m</span>
+            </span>
+          </div>
           <hr className="my-10" />
 
           <div>
@@ -94,6 +119,17 @@ const page = (props: Props) => {
               Quis imperdiet massa tincidunt nunc pulvinar sapien et.
             </p>
           </div>
+        </div>
+      </div>
+      <div className="blogs">
+        <div className="blogs__header">
+          <h2 className="blogs__header__heading">Latest posts</h2>
+          <Button as={Link} href={`#`} variant="secondary" className='uppercase max-w-max place-self-end'>
+            all posts
+          </Button>
+        </div>
+        <div className="blogs__latest-blogs">
+          {[1, 2, 3, 4].map(x => <Card data={data} />)}
         </div>
       </div>
     </div>

@@ -137,26 +137,6 @@ export default async function Page() {
           <span className="blogPost__blogs__header__btn">all posts</span>
         </div>
         <div className="blogPost__blogs__latest-blogs">
-          {/* <Link href="#" className="blog-post">
-            <figure className='blog-post__content'>
-              <div className="card__image">
-                <Image
-                  src="https://images.unsplash.com/photo-1661347335413-e4ef4c97d625?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwyMXx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60"
-                  alt="image"
-                  fill
-                />
-              </div>
-              <span className="chip chip--secondary absolute top-4 right-3">
-                $199.00 USD
-              </span>
-            </figure>
-            <div className="card__body !pb-8 !pt-6 !px-10 md:!px-12 md:!pt-8 md:!pb-14">
-              <time className="card__date text-neutral-600 font-semibold text-base">December 1,2022</time>
-              <h2 className="card__title line-clamp-2 text-xl md:text-2xl">
-                Lorem, ipsum dolor sit amet consectetur adipisicing.
-              </h2>
-            </div>
-          </Link> */}
           <Card data={data} />
           <Card data={data} />
         </div>
