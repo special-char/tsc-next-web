@@ -18,8 +18,14 @@ const page = (props: Props) => {
           circleLeft="bg-secondary3"
         />
       </Suspense>
-      <Featuredcourse />
-      <AllCourses />
+      <Suspense fallback={<h1>Loading...</h1>}>
+        {/* @ts-expect-error Async Server Component */}
+        <Featuredcourse />
+      </Suspense>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        {/* @ts-expect-error Async Server Component */}
+        <AllCourses />
+      </Suspense>
     </>
   );
 };

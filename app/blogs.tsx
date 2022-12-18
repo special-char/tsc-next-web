@@ -3,6 +3,9 @@ import React from 'react';
 import '@/styles/blogs.css';
 import Button from '@/ui/Button';
 import Card from '@/ui/Card';
+import { getHomeBlogData } from '@/lib/getHomeBlog';
+import { HomeBlog } from 'types/types';
+import BlogCard from '@/ui/BlogCard';
 
 type Props = {};
 
@@ -56,21 +59,36 @@ const data1 = {
     'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2e01cbd8323965e6629a_image-6-courses-education-x-template.jpg',
   heading: 'This is a lorem ipsum dummy text used to fill the text voids',
 };
-const Blogs = (props: Props) => {
+const Blogs = async (props: Props) => {
+  const homeBlogData = await getHomeBlogData();
+
+  if (!homeBlogData) return null;
+
+  const blogList = homeBlogData.data.data.blogs.data;
+
+  const { title, button } = homeBlogData.data.data.homeBlog.data
+    ?.attributes as HomeBlog;
+
   return (
     <>
       <section className="blogs">
         <div className="blogs__header">
-          <h2 className="blogs__title">Resources & News</h2>
-          <Link href="/blogs" className="btn btn--secondary lg:ml-auto">
-            Browse Blog
+          <h2 className="blogs__title">{title}</h2>
+          <Link
+            href={`${button?.url}`}
+            className="btn btn--secondary lg:ml-auto"
+          >
+            {button?.text}
           </Link>
         </div>
         <div className="blogs__grid">
-          <Card data={data} className="row-span-full" />
+          {blogList.map((x, i) => (
+            <BlogCard key={x.id} blog={x} index={i} />
+          ))}
+          {/* <Card data={data} />
           {blogData.map((blog) => {
             return <Card key={blog.id} className="card--hoz" data={blog} />;
-          })}
+          })} */}
         </div>
       </section>
     </>

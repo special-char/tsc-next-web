@@ -1,6 +1,14 @@
 .footer {
   @apply grid grid-cols-1 items-center gap-10 overflow-hidden bg-neutral-700 px-container pb-6 pt-20 md:grid-cols-2 md:gap-20;
 
+  & :is(p, a) {
+    @apply text-neutral-300;
+  }
+
+  & hr {
+    @apply text-neutral-600;
+  }
+
   &__title {
     @apply m-0 text-neutral-100;
   }

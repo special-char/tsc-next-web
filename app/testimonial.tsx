@@ -3,9 +3,10 @@ import Image from 'next/image';
 import Rating from '@/ui/Rating';
 import Carousal from '@/ui/Carousal';
 import { getTestimonialData } from '@/lib/getTestimonials';
-import { HomeTestimonial, Testimonial, UploadFile } from 'types/types';
+import { HomeTestimonial } from 'types/types';
 import Link from 'next/link';
 import Button from '@/ui/Button';
+import TestimonialCard from '@/ui/TestimonialCard';
 
 export const TestimonialSkeleton = () => {
   return (
@@ -73,29 +74,9 @@ const Testimonial = async () => {
     <section id="Testimonial" className="testimonial">
       <h2 className="testimonial__header">{title}</h2>
       <Carousal>
-        {testimonialsInfo.map((testimonial: any) => {
-          const { avatar, rating, quote, name, designation, company } =
-            testimonial.attributes as Testimonial;
-          const { url, alternativeText } = avatar?.data
-            ?.attributes as UploadFile;
+        {testimonialsInfo.map((testimonial) => {
           return (
-            <div
-              className="testimonial__card card bg-neutral-100"
-              style={{
-                maxWidth: 768,
-              }}
-              key={testimonial.id}
-            >
-              <div className="card__image testimonial__card__image">
-                <Image src={url} alt={`${alternativeText}`} fill />
-              </div>
-              <div className="card__body testimonial__card__body">
-                <Rating rate={rating} />
-                <p className="card__desc">{`"${quote}"`}</p>
-                <h4>{name}</h4>
-                <p className="card__desc mt-2">{`${designation} at ${company}`}</p>
-              </div>
-            </div>
+            <TestimonialCard key={testimonial.id} testimonial={testimonial} />
           );
         })}
       </Carousal>

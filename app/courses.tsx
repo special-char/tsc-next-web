@@ -3,6 +3,7 @@ import '@/styles/courses.css';
 import Button from '@/ui/Button';
 import Carousal from '@/ui/Carousal';
 import CarousalBullets from '@/ui/CarousalBullets';
+import CourseCard from '@/ui/CourseCard';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Course, HomeCourse, UploadFile } from 'types/types';
@@ -56,30 +57,7 @@ const Courses = async () => {
       <h2 className="courses__title ">{title}</h2>
       <Carousal>
         {coursesInfo?.map((course) => {
-          const { title, description, courseVideoPoster } =
-            course.attributes as Course;
-          const { url, alternativeText } = courseVideoPoster?.data
-            ?.attributes as UploadFile;
-          return (
-            <Link key={course.id} href="/" className="card">
-              <figure className="card__image">
-                <Image src={url} alt={`${alternativeText}`} fill />
-              </figure>
-              <div className="card__body">
-                <h3 className="card__title">{title}</h3>
-                <p className="card__desc">{description}</p>
-                <div className="card__actions">
-                  <div className="avatar placeholder w-16 overflow-hidden rounded-full">
-                    <img
-                      src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f1ff9fd9e0e1686d26497_image-3-profile-picture-small-teacher-education-x-template.jpg"
-                      alt="Kathie Corl"
-                    />
-                  </div>
-                  <h4>Yagnesh Modh</h4>
-                </div>
-              </div>
-            </Link>
-          );
+          return <CourseCard course={course} key={course.id} />;
         })}
       </Carousal>
       {/* <CarousalBullets /> */}
