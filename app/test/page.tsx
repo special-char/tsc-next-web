@@ -35,7 +35,7 @@ const page = (props: Props) => {
           />
         </div>
         <div className="wrapper__body__content">
-          <h1>
+          <h1 className='text-9xl'>
             How to design a simple, yet unique and memorable brand identity
           </h1>
           <div className="wrapper__body__content__author-info">
