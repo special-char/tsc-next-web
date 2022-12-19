@@ -9,15 +9,23 @@ type Props = {};
 const page = (props: Props) => {
   return (
     <>
-      <PageHeader
-        title="Courses"
-        desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
-        className="customClass"
-        circleRight="bg-secondary2"
-        circleLeft="bg-secondary3"
-      />
-      <Featuredcourse />
-      <AllCourses />
+      <Suspense fallback={<h1>Loading...</h1>}>
+        {/* @ts-expect-error Async Server Component */}
+        <PageHeader
+          pageName="courses-page"
+          className="customClass"
+          circleRight="bg-secondary2"
+          circleLeft="bg-secondary3"
+        />
+      </Suspense>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        {/* @ts-expect-error Async Server Component */}
+        <Featuredcourse />
+      </Suspense>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        {/* @ts-expect-error Async Server Component */}
+        <AllCourses />
+      </Suspense>
     </>
   );
 };

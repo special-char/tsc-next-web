@@ -1,8 +1,7 @@
 import React from 'react';
-import Image from 'next/image';
 import '@/styles/featuredcourse.css';
-import ActionBar from '@/ui/ActionBar';
-import Card from '@/ui/Card';
+import CourseCard from '@/ui/CourseCard';
+import { getAllCoursesData } from '@/lib/getAllCourses';
 type Props = {};
 
 const data = {
@@ -20,11 +19,17 @@ const data = {
     avatar_designation: 'Developer',
   },
 };
-const Featuredcourse = (props: Props) => {
+const Featuredcourse = async (props: Props) => {
+  const coursesData = await getAllCoursesData();
+
+  if (!coursesData) return null;
+
+  const coursesInfo = coursesData.data.data.courses.data;
+
   return (
     <section id="featuredcourse" className="featuredcourse">
       <h2 className="featuredcourse__title">Featured Course</h2>
-      <Card data={data} className={'card--hoz'} />
+      <CourseCard course={coursesInfo[0]} isHorizontal />
     </section>
   );
 };

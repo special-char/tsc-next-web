@@ -1,6 +1,8 @@
 import '@/styles/aboutheader.css';
 import React from 'react';
 import Image from 'next/image';
+import { getAboutDetailData } from '@/lib/getAboutDetails';
+import { AboutDetail, UploadFile } from 'types/types';
 export const AboutheaderSkeleton = () => {
   return (
     <section className="px-container py-20">
@@ -58,21 +60,32 @@ const aboutheaderdata = [
   },
 ];
 
-const Aboutheader = (props: Props) => {
+const Aboutheader = async (props: Props) => {
+  const aboutDetailsData = await getAboutDetailData();
+
+  if (!aboutDetailsData) return null;
+
+  const { detail } = aboutDetailsData.data.data.aboutDetail.data
+    ?.attributes as AboutDetail;
+
   return (
     <section className="px-container py-20">
       <div className="aboutheader">
-        {aboutheaderdata.map((x) => (
-          <>
-            <div className="aboutheader__image">
-              <Image src={x.image} alt="" fill />
-            </div>
-            <div className="aboutheader__title">
-              <h2 className=" text-3xl md:text-6xl">{x.title}</h2>
-              <p className="lg:text-lg">{x.desc}</p>
-            </div>
-          </>
-        ))}
+        {detail?.map((x) => {
+          const { url, alternativeText } = x?.image?.data
+            ?.attributes as UploadFile;
+          return (
+            <>
+              <div className="aboutheader__image">
+                <Image src={url} alt={`${alternativeText}`} fill />
+              </div>
+              <div className="aboutheader__title">
+                <h2 className=" text-3xl md:text-6xl">{x?.title}</h2>
+                <p className="lg:text-lg">{x?.description}</p>
+              </div>
+            </>
+          );
+        })}
       </div>
     </section>
   );
