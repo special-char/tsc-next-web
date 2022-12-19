@@ -24,7 +24,7 @@ const page = (props: Props) => {
       <div className="wrapper__header">
         {/* <div className="absolute top-24 left-0 aspect-square h-[600px] rounded-full bg-secondary2"></div> */}
       </div>
-      <div className="wrapper__body py-10 md:py-16 lg:py-20">
+      <div className="wrapper__body">
         <div className="wrapper__body__image">
           <Image
             alt="It is the image of the blog post that you are viewing"
@@ -35,7 +35,7 @@ const page = (props: Props) => {
           />
         </div>
         <div className="wrapper__body__content">
-          <h1 className='lg:text-9xl text-5xl md:text-8xl'>
+          <h1 className="text-5xl md:text-8xl lg:text-9xl">
             How to design a simple, yet unique and memorable brand identity
           </h1>
           <div className="wrapper__body__content__author-info">
@@ -124,12 +124,19 @@ const page = (props: Props) => {
       <div className="blogs">
         <div className="blogs__header">
           <h2 className="blogs__header__heading">Latest posts</h2>
-          <Button as={Link} href={`#`} variant="secondary" className='uppercase max-w-max place-self-end'>
+          <Button
+            as={Link}
+            href={`#`}
+            variant="secondary"
+            className="max-w-max place-self-end uppercase"
+          >
             all posts
           </Button>
         </div>
         <div className="blogs__latest-blogs">
-          {[1, 2, 3, 4].map(x => <Card data={data} />)}
+          {[1, 2, 3, 4].map((x) => (
+            <Card data={data} />
+          ))}
         </div>
       </div>
     </div>

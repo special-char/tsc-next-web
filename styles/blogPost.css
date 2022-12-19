@@ -1,6 +1,6 @@
 .wrapper {
   @apply grid min-h-screen;
-  grid-template-rows: 150px 150px 300px 1fr;
+  grid-template-rows: 100px 250px 300px 1fr;
 
   &__header {
     @apply relative bg-primary;
@@ -10,7 +10,7 @@
   }
 
   &__body {
-    @apply mx-container h-full;
+    @apply mx-auto h-full max-w-5xl px-4;
     grid-row: 2 / -1;
     grid-column: 1 / -1;
 
