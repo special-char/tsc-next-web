@@ -9,10 +9,10 @@ type info = {
   avatar_designation: String;
 };
 type date = {
-  month: String,
-  day: Number,
-  year: Number
-}
+  month: String;
+  day: Number;
+  year: Number;
+};
 type data = {
   image_url: any;
   eventDate: date;
@@ -51,23 +51,35 @@ const icon = [
 export default function Card({ data, className }: Props) {
   return (
     <>
-      <div className={clsx("card", {
-        [className || 'card']: !!className,
-      })}>
+      <div
+        className={clsx('card', {
+          [className || '']: !!className,
+        })}
+      >
         <figure className="card__image">
-          <Image src={data.image_url} alt='alt text' fill />
-        </figure>
-        {(data?.date || data?.time) && <div
-          className="card__chipset"
-        >
-
-
-
-          {data?.time && (<div className="chip chip--white flex gap-2">{data.icon && <Image width={24} height={24} alt={data.alternativeText} src={data.icon} />}{data.time}</div>)}
-          {data?.rate && (
-            <div className="chip chip--primary flex gap-2">{`$ ${data?.rate} USD`}</div>
+          <Image src={data.image_url} alt="alt text" fill />
+          {(data?.date || data?.time) && (
+            <div className="card__chipset">
+              {data?.time && (
+                <div className="chip chip--white flex gap-2">
+                  {data.icon && (
+                    <Image
+                      width={24}
+                      height={24}
+                      alt={data.alternativeText}
+                      src={data.icon}
+                    />
+                  )}
+                  {data.time}
+                </div>
+              )}
+              {data?.rate && (
+                <div className="chip chip--primary flex gap-2">{`$ ${data?.rate}`}</div>
+              )}
+            </div>
           )}
-        </div>}
+        </figure>
+
         <div className="card__body">
           {data?.publishedAt && (
             <div className="card__date">
@@ -76,24 +88,33 @@ export default function Card({ data, className }: Props) {
             </div>
           )}
           {data?.eventDate && (
-            <time className='date flex flex-col gap-0 md:gap-2'><span className='text-xs md:text-base uppercase'>august</span><span className='md:text-[48px] text-4xl'>18</span> </time>
+            <time className="date flex flex-col gap-0 md:gap-2">
+              <span className="text-xs uppercase md:text-base">august</span>
+              <span className="text-4xl md:text-[48px]">18</span>{' '}
+            </time>
           )}
-          <div className='classy'>
-            <div className="card__heading">
-              <h3 className="card__title">{data?.heading}</h3>
-              {data.teachingCategory && <span className='chip chip--primary'>Design</span>}
+          <h3 className="card__title">{data?.heading}</h3>
+          {data.teachingCategory && (
+            <span className="chip chip--primary">Design</span>
+          )}
+          {data?.description && (
+            <p className="card__desc">{data?.description}</p>
+          )}
+          {data.avatar_info && (
+            <div className="profile-info">
+              <div className="card__avatar relative w-12 ">
+                <Image src={data.avatar_info.avatar_url} alt="alt text" fill />
+              </div>
+              <div>
+                <div className="profile-info__name">
+                  {data.avatar_info.avatar_name}
+                </div>
+                <div className="profile-info__designation">
+                  {data.avatar_info.avatar_designation}
+                </div>
+              </div>
             </div>
-            {data?.description && <p className="card__desc">{data?.description}</p>}
-          </div>
-          {data.avatar_info && <div className="profile-info">
-            <div className="relative card__avatar w-12 ">
-              <Image src={data.avatar_info.avatar_url} alt='alt text' fill />
-            </div>
-            <div>
-              <div className='profile-info__name'>{data.avatar_info.avatar_name}</div>
-              <div className='profile-info__designation'>{data.avatar_info.avatar_designation}</div>
-            </div>
-          </div>}
+          )}
         </div>
       </div>
     </>

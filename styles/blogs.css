@@ -10,7 +10,11 @@
     @apply lg:justify-self-end;
   }
   &__grid {
-    @apply grid grid-cols-1 gap-x-4 pb-2 lg:grid-cols-2;
+    @apply grid grid-cols-1 gap-4 pb-2  md:grid-cols-2 md:grid-rows-3;
+
+    & > a {
+      @apply first:row-span-full;
+    }
   }
   &__horizontal {
     @apply grid gap-8;
@@ -18,7 +22,4 @@
   &__moreblogs {
     @apply grid gap-7 gap-y-12 px-sm-container py-8 md:grid-cols-2 md:px-container;
   }
-}
-a {
-  @apply text-neutral-400 hover:text-neutral-400;
 }

@@ -143,10 +143,10 @@ export default async function Page() {
   };
   return (
     <>
-      <Suspense fallback={<PageHeaderSkeleton />}>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        {/* @ts-expect-error Async Server Component */}
         <PageHeader
-          title="Blogss"
-          desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+          pageName="blog-page"
           className="customClass"
           circleRight="bg-primary"
           circleLeft="bg-secondary3"

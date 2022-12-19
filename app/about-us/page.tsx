@@ -1,40 +1,48 @@
 import PageHeader, { PageHeaderSkeleton } from '@/ui/pageHeader';
-import React, { Suspense } from 'react';
-import OurWorks, { OurWorksSkeleton } from './ourWorks';
+import React, { Suspense, use } from 'react';
+import OurWorks from './ourWorks';
 import Achievements, { AchievementsSkeleton } from './achievements';
-import CompanyHistory, { CompanyHistorySkeleton } from './companyhistory';
-import OurOffice, { OurOfficeSkeleton } from './ourOffice';
+import CompanyHistory from './companyhistory';
+import OurOffice from './ourOffice';
 import Aboutheader, { AboutheaderSkeleton } from './aboutheader';
+import { getBannerHeaderData } from '@/lib/getBannerHeader';
 
 type Props = {};
 
-const page = (props: Props) => {
+const page = async (props: Props) => {
+  const bannerHeader = await getBannerHeaderData('about-page');
+
+  if (!bannerHeader) return null;
+
+  const bannerHeaderData =
+    bannerHeader.data.data.bannerHeader.data?.attributes?.bannerHeader;
+
+  if (!bannerHeaderData) return null;
+
+  console.log(bannerHeaderData);
+
   return (
     <>
       <Suspense fallback={<PageHeaderSkeleton />}>
+        {/* @ts-expect-error Async Server Component */}
         <PageHeader
-          title="The big mission behind Educationic"
-          desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium pulvinar ac molestie cursus malesuada enim. Massa nec tellus, elit tellus, erat faucibus aenean. Nunc, lacus, dignissim nec sit."
+          pageName="about-page"
           className="customClass"
           circleRight="bg-primary"
           circleLeft="bg-secondary3"
         />
       </Suspense>
       <Suspense fallback={<AchievementsSkeleton />}>
+        {/* @ts-expect-error Async Server Component */}
         <Achievements />
       </Suspense>
       <Suspense fallback={<AboutheaderSkeleton />}>
+        {/* @ts-expect-error Async Server Component */}
         <Aboutheader />
       </Suspense>
-      <Suspense fallback={<OurWorksSkeleton />}>
-        <OurWorks />
-      </Suspense>
-      <Suspense fallback={<CompanyHistorySkeleton />}>
-        <CompanyHistory />
-      </Suspense>
-      <Suspense fallback={<OurOfficeSkeleton />}>
-        <OurOffice />
-      </Suspense>
+      <OurWorks />
+      <CompanyHistory />
+      <OurOffice />
     </>
   );
 };
