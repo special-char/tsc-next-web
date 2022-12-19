@@ -112,6 +112,7 @@
   }
 
   hr {
+    @apply text-neutral-300;
   }
 
   table {
@@ -416,7 +417,7 @@
   }
 
   .card {
-    @apply relative grid w-full overflow-hidden rounded-2xl shadow-dark;
+    @apply flex h-full w-full flex-col overflow-hidden rounded-2xl shadow-dark;
 
     .nav-link {
       @apply no-underline;
@@ -490,7 +491,7 @@
       @media screen and (min-width: 1024px) {
         padding: 48px 31px 56px;
       }
-      @apply grid gap-y-4 transition-colors;
+      @apply flex grow flex-col justify-between transition-colors;
 
       h3 {
         @apply cursor-pointer hover:text-primary;
@@ -528,8 +529,8 @@
       @apply aspect-square overflow-hidden rounded-full;
     }
     &--hoz {
-      @apply grid md:grid-cols-2;
-      &:nth-last-child(1) {
+      @apply flex-row;
+      /* &:nth-last-child(1) {
         margin-bottom: 10px;
       }
       .card__chipset {
@@ -543,7 +544,7 @@
       }
       .card__image {
         @apply aspect-video;
-      }
+      } */
     }
   }
 

@@ -147,13 +147,7 @@ const Blogs = (props: Props) => {
           <Card data={data} />
           <div className="blogs__horizontal overflow-hidden">
             {blogData.map((blog) => {
-              return (
-                <Card
-                  key={blog.id}
-                  className={'classname card--hoz'}
-                  data={blog}
-                />
-              );
+              return <Card key={blog.id} className={'classname card--hoz'} data={blog} />;
             })}
           </div>
         </div>

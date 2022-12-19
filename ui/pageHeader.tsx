@@ -2,6 +2,7 @@ import React from 'react';
 import '@/styles/pageHeader.css';
 import clsx from 'clsx';
 import SeparatorArray from './SeparatorArray';
+import { getBannerHeaderData } from '@/lib/getBannerHeader';
 
 export const PageHeaderSkeleton = () => {
   return (
@@ -29,26 +30,35 @@ export const PageHeaderSkeleton = () => {
 
 type Props = {
   className: any;
-  title: string;
-  desc: string;
+  pageName: string;
   circleRight: any;
   circleLeft: any;
 };
 
-const PageHeader = ({
+const PageHeader = async ({
   className,
-  title,
-  desc,
+  pageName,
   circleRight,
   circleLeft,
 }: Props) => {
+  const bannerHeader = await getBannerHeaderData(pageName);
+
+  if (!bannerHeader) return null;
+
+  const bannerHeaderData =
+    bannerHeader.data.data.bannerHeader.data?.attributes?.bannerHeader;
+
+  if (!bannerHeaderData) return null;
+
+  console.log(bannerHeaderData);
+
   return (
     <section className={clsx('page__section', { [className]: !!className })}>
       <div className={clsx('page__body', { [className]: !!className })}>
         <div className="page__pages">
           <div className="page__detail">
-            <h1 className="text-neutral-700">{title}</h1>
-            <p>{desc}</p>
+            <h1 className="text-neutral-700">{`${bannerHeaderData[0]?.title}`}</h1>
+            <p>{`${bannerHeaderData[0]?.description}`}</p>
           </div>
         </div>
         <div
