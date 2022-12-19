@@ -1,5 +1,5 @@
 .ourOffice {
-  @apply grid min-h-screen content-center justify-items-center overflow-hidden py-24 px-container text-neutral-700 md:py-36 lg:py-48;
+  @apply grid min-h-screen content-center justify-items-center overflow-hidden px-container pt-24 pb-12 text-neutral-700 md:pt-36 md:pb-16 lg:pt-48 lg:pb-24;
   grid-template-rows: repeat(3, auto);
 
   &__title {
@@ -7,12 +7,27 @@
   }
 
   &__content {
-    @apply w-full;
+    @apply grid w-full;
+    grid-template-rows: auto 70px auto;
+
+    @media screen and (min-width: theme(screens.md)) {
+      grid-template-rows: auto 100px auto;
+    }
+
+    @media screen and (min-width: theme(screens.lg)) {
+      grid-template-rows: auto 150px auto;
+    }
   }
 
   &__item {
-    @apply grid justify-items-center;
+    @apply col-span-full grid justify-items-center;
     grid-template-rows: repeat(3, auto);
+    grid-row: 1 / -2;
+  }
+
+  &__map {
+    @apply relative col-span-full aspect-video w-full;
+    grid-row: 2 / -1;
   }
   &__card {
     @apply max-w-xl justify-between overflow-hidden rounded-2xl border border-neutral-300 bg-neutral-100 shadow-dark;

@@ -1,10 +1,9 @@
 import React from 'react';
 import '@/styles/ourOffice.css';
-import OfficeSvg from '@/public/icons/office.svg';
 import Image from 'next/image';
-import WorldMap from '@/public/images/world map.jpg';
 import { getContactDetail } from '@/lib/getContactDetail';
 import { ContactDetail, UploadFile } from 'types/types';
+
 export const OurOfficeSkeleton = () => {
   return (
     <section id="ourOffice" className="ourOffice">
@@ -98,7 +97,7 @@ const OurOffice = async (props: Props) => {
             );
           })}
         </div>
-        <div className="relative aspect-blog-image">
+        <div className="ourOffice__map">
           <Image
             src={url}
             fill
