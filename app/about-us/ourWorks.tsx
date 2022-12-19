@@ -7,7 +7,7 @@ import { AboutWorkValue, UploadFile } from 'types/types';
 
 export const OurWorksSkeleton = () => {
   return (
-    <section id="OurWorks" className="ourWorks">
+    <section id="OurWorks" className="ourWorks ">
       <div className="ourWorks__header animate-pulse">
         <h2 className="font-cursive text-neutral-100">Our work values</h2>
         <p className="ourWorks__line font-cursive">

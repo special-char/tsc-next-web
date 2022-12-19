@@ -1,10 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import '@/styles/blogs.css';
-import BlogSubscribe from 'app/training/blogSubscribe';
+import BlogSubscribe, {
+  BlogSubscribeSkeleton,
+} from 'app/training/blogSubscribe';
 import Icon from '@/ui/Icon';
-import Features from 'app/courses/features';
-import PageHeader from '@/ui/pageHeader';
+import Features, { FeaturesSkeleton } from 'app/courses/features';
+import PageHeader, { PageHeaderSkeleton } from '@/ui/pageHeader';
 import Card from '@/ui/Card';
 import { Suspense } from 'react';
 
@@ -166,8 +168,12 @@ export default async function Page() {
           </div>
         </div>
       </section>
-      <BlogSubscribe />
-      <Features />
+      <Suspense fallback={<BlogSubscribeSkeleton />}>
+        <BlogSubscribe />
+      </Suspense>
+      <Suspense fallback={<FeaturesSkeleton />}>
+        <Features />
+      </Suspense>
       <section className="blogs__moreblogs">
         {moreblogData.map((moreblogs: any) => {
           return <Card data={moreblogs} />;

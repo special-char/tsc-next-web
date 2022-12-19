@@ -2,7 +2,7 @@
   @apply flex h-full flex-col overflow-hidden rounded-2xl shadow-dark;
 
   &__img {
-    @apply relative m-0 aspect-video w-full overflow-hidden;
+    @apply relative m-0 aspect-video w-full  overflow-hidden;
 
     & > img {
       @apply object-cover;
@@ -14,7 +14,7 @@
   }
 
   &__body {
-    @apply flex grow flex-col justify-between p-12;
+    @apply flex grow flex-col justify-between p-4;
   }
 
   &__title {
@@ -22,7 +22,7 @@
   }
 
   &__desc {
-    @apply mb-8 text-neutral-700;
+    @apply mb-6 text-neutral-700;
   }
 
   &__action {
@@ -31,7 +31,7 @@
 
   @media screen and (min-width: theme(screens.md)) {
     &--hoz {
-      @apply flex-row;
+      @apply flex-col lg:flex-row;
 
       & > * {
         flex: 1;
@@ -42,7 +42,7 @@
       }
 
       .course_card__body {
-        @apply flex justify-center;
+        @apply flex justify-center lg:p-10;
       }
     }
   }
