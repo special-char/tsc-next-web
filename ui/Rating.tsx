@@ -2,11 +2,17 @@ import clsx from 'clsx';
 
 type Props = {
   rate?: number;
+  className?: string;
 };
 
-const Rating = ({ rate = 0 }: Props) => {
+const Rating = ({ rate = 0, className, ...props }: Props) => {
   return (
-    <div className="flex flex-row gap-2">
+    <div
+      className={clsx('flex flex-row gap-2', {
+        [className || '']: !!className,
+      })}
+      {...props}
+    >
       {[1, 2, 3, 4, 5].map((x) => (
         <div
           className={clsx('mask mask--star h-6 w-6 bg-secondary2', {

@@ -1,9 +1,8 @@
 import '@/styles/category.css';
 import SeparatorArray from '@/ui/SeparatorArray';
-import Image from 'next/image';
 import { getCategoriesData } from '@/lib/getCategories';
-import { Category, HomeCategory, UploadFile } from 'types/types';
-import Card from '@/ui/Card';
+import { HomeCategory } from 'types/types';
+import CategoryCard from '@/ui/CategoryCard';
 
 export const CategorySkeleton = () => {
   return (
@@ -51,21 +50,7 @@ const Category = async () => {
       <h2 className="category__title">{title}</h2>
       <div className="category__content">
         {categoriesInfo.map((category) => {
-          const { title, description, icon } = category.attributes as Category;
-          const { url, alternativeText } = icon?.data?.attributes as UploadFile;
-          let category_data = {
-            heading: title,
-            description: description,
-            image_url: url,
-            time: `asd`,
-            icon: url,
-            alternativeText: alternativeText
-          }
-          return (
-            <>
-              <Card data={category_data} />
-            </>
-          );
+          return <CategoryCard category={category} key={category.id} />;
         })}
       </div>
       <SeparatorArray />

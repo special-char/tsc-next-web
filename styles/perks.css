@@ -28,9 +28,12 @@
     }
 
     &__body {
-      @apply text-center;
+      @apply text-center text-neutral-100;
       @media screen and (max-width: theme(screens.lg)) and (min-width: theme(screens.sm)) {
         @apply text-left;
+      }
+      & > p {
+        @apply text-neutral-300;
       }
     }
   }

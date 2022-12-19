@@ -1,0 +1,35 @@
+.category_card {
+  @apply flex h-full flex-col overflow-hidden rounded-2xl shadow-base;
+
+  &__img {
+    @apply relative m-0 aspect-h-image w-full overflow-hidden;
+
+    & > img {
+      @apply object-cover;
+    }
+  }
+
+  &__chips {
+    @apply absolute top-4 right-4 z-10 flex gap-4;
+  }
+
+  &__body {
+    @apply flex grow flex-col justify-between px-8 py-10;
+  }
+
+  &__title {
+    @apply mb-3;
+
+    &:last-child {
+      @apply mb-0;
+    }
+  }
+
+  &__desc {
+    @apply text-neutral-700;
+  }
+
+  &__action {
+    @apply flex items-center gap-2 text-lg font-bold text-neutral-700;
+  }
+}

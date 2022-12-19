@@ -1,10 +1,10 @@
 import PageHeader, { PageHeaderSkeleton } from '@/ui/pageHeader';
 import React, { Suspense, use } from 'react';
 import OurWorks from './ourWorks';
-import Achievements from './achievements';
+import Achievements, { AchievementsSkeleton } from './achievements';
 import CompanyHistory from './companyhistory';
 import OurOffice from './ourOffice';
-import Aboutheader from './aboutheader';
+import Aboutheader, { AboutheaderSkeleton } from './aboutheader';
 import { getBannerHeaderData } from '@/lib/getBannerHeader';
 
 type Props = {};
@@ -32,9 +32,15 @@ const page = async (props: Props) => {
           circleLeft="bg-secondary3"
         />
       </Suspense>
-      <Achievements />
+      <Suspense fallback={<AchievementsSkeleton />}>
+        {/* @ts-expect-error Async Server Component */}
+        <Achievements />
+      </Suspense>
 
-      <Aboutheader />
+      <Suspense fallback={<AboutheaderSkeleton />}>
+        {/* @ts-expect-error Async Server Component */}
+        <Aboutheader />
+      </Suspense>
       <OurWorks />
       <CompanyHistory />
       <OurOffice />
