@@ -3,9 +3,20 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import './style.css';
+import Card from '@/ui/Card';
+import Button from '@/ui/Button';
 
 type Props = {};
 
+const data = {
+  image_url:
+    'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2e01cbd8323965e6629a_image-6-courses-education-x-template-p-1080.jpeg',
+  time: '7hr56m',
+  rate: '199.00',
+  heading: 'Graphic Design 101',
+  description:
+    'Lorem ipsum dolor sit amet consectetur, adipisicing elit.Voluptatibus eius nesciunt cupiditate iure obcaecati a dicta nontemporibus quis deserunt.',
+};
 const page = (props: Props) => {
   return (
     <>

@@ -17,7 +17,7 @@
   @apply mb-10 flex items-center justify-between;
 }
 .ourWorks__svg {
-  @apply w-16  bg-secondary2;
+  @apply w-16;
 }
 .ourWorks__chip {
   @apply border-[1px] border-neutral-300 text-lg font-bold  text-neutral-700 shadow-dark;
