@@ -8,7 +8,7 @@ type Props = {
 const Rating = ({ rate = 0, className, ...props }: Props) => {
   return (
     <div
-      className={clsx('flex flex-row gap-2', {
+      className={clsx('flex flex-row justify-center gap-2 md:justify-start', {
         [className || '']: !!className,
       })}
       {...props}

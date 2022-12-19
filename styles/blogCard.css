@@ -26,7 +26,7 @@
   }
 
   &--hoz {
-    @apply flex-row rounded-xl;
+    @apply flex-col rounded-xl md:flex-row;
 
     & > * {
       flex: 1;
