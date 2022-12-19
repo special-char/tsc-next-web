@@ -51,18 +51,15 @@ const OurOffice = async (props: Props) => {
 
   if (!contactDetail) return null;
 
-  const { map, addresses, phoneNumber, email } = contactDetail.data.data
-    .contactDetail.data?.attributes as ContactDetail;
+  const { map, addresses, phoneNumber, email, title, description } =
+    contactDetail.data.data.contactDetail.data?.attributes as ContactDetail;
 
   const { url, alternativeText } = map?.data?.attributes as UploadFile;
   return (
     <section id="ourOffice" className="ourOffice">
       <div className="text-center md:mx-24 md:mb-6 lg:mx-40">
-        <h2 className="ourOffice__title">Our Offices</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt.
-        </p>
+        <h2 className="ourOffice__title">{title}</h2>
+        <p>{description}</p>
       </div>
 
       <div className="ourOffice__content">

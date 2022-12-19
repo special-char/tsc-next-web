@@ -48,7 +48,10 @@ const page = async (props: Props) => {
         {/* @ts-expect-error Async Server Component */}
         <CompanyHistory />
       </Suspense>
-      <OurOffice />
+      <Suspense fallback={<h1>Loading...</h1>}>
+        {/* @ts-expect-error Async Server Component */}
+        <OurOffice />
+      </Suspense>
     </>
   );
 };

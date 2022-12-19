@@ -14,6 +14,8 @@ export const getContactDetail = async () => {
         contactDetail {
           data {
             attributes {
+              title
+              description
               map {
                 data {
                   attributes {
@@ -43,8 +45,8 @@ export const getContactDetail = async () => {
             }
           }
         }
-        
-      }`,
+      }
+      `,
     });
   } catch (error) {}
 };
