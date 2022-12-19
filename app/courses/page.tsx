@@ -1,8 +1,9 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import PageHeader from '@/ui/pageHeader';
 import Featuredcourse from './featuredcourse';
 import AllCourses from './allCourses';
 import Courses from '../courses';
+import { Suspense } from 'react';
 
 type Props = {};
 

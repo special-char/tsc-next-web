@@ -1,12 +1,19 @@
 import PageHeader from '@/ui/pageHeader';
-import Contact from './contact';
-import Faq from './faq';
+import { Suspense } from 'react';
+import Contact, { ContactSkeleton } from './contact';
+import Faq, { FaqSkeleton } from './faq';
 
 const Page = () => {
   return (
     <>
-      <Contact />
-      <Faq />
+      <Suspense fallback={<ContactSkeleton />}>
+        {/* @ts-expect-error Async Server Component */}
+        <Contact />
+      </Suspense>
+      <Suspense fallback={<FaqSkeleton />}>
+        {/* @ts-expect-error Async Server Component */}
+        <Faq />
+      </Suspense>
     </>
   );
 };

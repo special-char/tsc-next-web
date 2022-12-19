@@ -2,6 +2,36 @@ import React, { use } from 'react';
 import '@/styles/faq.css';
 import Accordian from '@/ui/Accordian';
 
+export const FaqSkeleton = () => {
+  return (
+    <section id="Faq" className="faq animate-pulse">
+      <div className="faq__section ">
+        <div className="faq__header font-cursive">
+          <h2 className="font-cursive">Frequently Asked Questions.</h2>
+          <p>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat.
+          </p>
+        </div>
+        <div className="faq__body">
+          <div>
+            {[1, 2, 3, 4].map((val) => (
+              <details className="rounded-2xl font-cursive md:py-8">
+                <summary>Do you offer special pricing for big teams?</summary>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Facere laborum quaerat quis repellat velit harum cupiditate
+                  pariatur aspernatur aperiam suscipit.
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 interface Props {}
 const data = [
   {

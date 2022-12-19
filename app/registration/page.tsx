@@ -1,13 +1,15 @@
-import React from 'react';
-import Register from './register';
-import RegisterForm from './registration';
+import React, { Suspense } from 'react';
+import Register, { RegisterSkeleton } from './register';
 
 type Props = {};
 
 const Page = (props: Props) => {
   return (
     <div>
-      <Register />
+      <Suspense fallback={<RegisterSkeleton />}>
+        {/* @ts-expect-error Async Server Component */}
+        <Register />
+      </Suspense>
     </div>
   );
 };

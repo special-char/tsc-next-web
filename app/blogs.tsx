@@ -9,6 +9,83 @@ import BlogCard from '@/ui/BlogCard';
 
 type Props = {};
 
+export const BlogsSkeleton = () => {
+  return (
+    <section className="blogs animate-pulse">
+      <div className="blogs__header">
+        <h2 className="blogs__title font-cursive">Resources & News</h2>
+        <Link
+          href="/blogs"
+          className="btn btn--secondary font-cursive lg:ml-auto"
+        >
+          Browse Blog
+        </Link>
+      </div>
+      <div className="blogs__grid bg-neutral-200 font-cursive">
+        <div className="card">
+          <figure className="card__image lg:h-96 bg-neutral-300">
+            <div></div>
+          </figure>
+          {(data?.date || data?.time) && (
+            <div className="card__chipset">
+              {data?.time && (
+                <div className="chip chip--white flex gap-2">
+                  {data.icon && <div></div>}
+                  {data.time}
+                </div>
+              )}
+              {data?.rate && (
+                <div className="chip chip--primary flex gap-2">{`$ ${data?.rate} USD`}</div>
+              )}
+            </div>
+          )}
+          <div className="card__body">
+            {data?.publishedAt && (
+              <div className="card__date ">
+                <div className="h-5 w-5 bg-neutral-300"></div>
+                <time>{`${data.publishedAt.day} ${data.publishedAt.month}, ${data.publishedAt.year}`}</time>
+              </div>
+            )}
+            <div className="classy">
+              <div className="card__heading">
+                <h3 className="card__title">{data?.heading}</h3>
+              </div>
+            </div>
+            {data.avatar_info && (
+              <div className="profile-info">
+                <div className="card__avatar relative w-12 bg-neutral-300">
+                  <div></div>
+                </div>
+                <div>
+                  <div className="profile-info__name">
+                    {data.avatar_info.avatar_name}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+        <div className="blogs__horizontal overflow-hidden bg-neutral-200 font-cursive">
+          {[1, 2, 3].map((blog) => {
+            return (
+                <div className="card classname card--hoz font-cursive">
+                    <figure className="card__image md:h-[184px]  bg-neutral-300">
+                      <div></div>
+                    </figure>
+                    <div className="card__body">
+                      <div className='classy'>
+                         <p className="card__desc font-cursive">Lorem ipsum dolor sit amet, consectetur adipisicing</p>}
+                      </div>
+                    </div>
+                  </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const blogData = [
   {
     id: 1,
