@@ -50,8 +50,8 @@ const OurWorks = async () => {
 
   if (!aboutWorkValue) return null;
 
-  const { title, description, values } = aboutWorkValue.data.data
-    ?.aboutWorkValue.data?.attributes as AboutWorkValue;
+  const { title, description, values } = aboutWorkValue.data?.aboutWorkValue
+    .data?.attributes as AboutWorkValue;
 
   return (
     <section id="OurWorks" className="ourWorks">

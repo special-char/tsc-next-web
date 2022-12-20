@@ -46,7 +46,7 @@ const PageHeader = async ({
   if (!bannerHeader) return null;
 
   const bannerHeaderData =
-    bannerHeader.data.data.bannerHeader.data?.attributes?.bannerHeader;
+    bannerHeader.data.bannerHeader.data?.attributes?.bannerHeader;
 
   if (!bannerHeaderData) return null;
 

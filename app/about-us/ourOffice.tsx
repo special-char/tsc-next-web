@@ -52,7 +52,7 @@ const OurOffice = async (props: Props) => {
   if (!contactDetail) return null;
 
   const { map, addresses, phoneNumber, email, title, description } =
-    contactDetail.data.data.contactDetail.data?.attributes as ContactDetail;
+    contactDetail.data.contactDetail.data?.attributes as ContactDetail;
 
   const { url, alternativeText } = map?.data?.attributes as UploadFile;
   return (

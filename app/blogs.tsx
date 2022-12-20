@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
 import '@/styles/blogs.css';
-import Button from '@/ui/Button';
-import Card from '@/ui/Card';
 import { getHomeBlogData } from '@/lib/getHomeBlog';
 import { HomeBlog } from 'types/types';
 import BlogCard from '@/ui/BlogCard';
@@ -141,9 +139,9 @@ const Blogs = async (props: Props) => {
 
   if (!homeBlogData) return null;
 
-  const blogList = homeBlogData.data.data.blogs.data;
+  const blogList = homeBlogData.data.blogs.data;
 
-  const { title, button } = homeBlogData.data.data.homeBlog.data
+  const { title, button } = homeBlogData.data.homeBlog.data
     ?.attributes as HomeBlog;
 
   return (

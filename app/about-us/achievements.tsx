@@ -54,7 +54,7 @@ const Achievements = async (props: Props) => {
 
   if (!achievementsData) return null;
 
-  const { title, numbers } = achievementsData.data.data.aboutNumber.data
+  const { title, numbers } = achievementsData.data.aboutNumber.data
     ?.attributes as AboutNumber;
 
   return (
