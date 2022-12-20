@@ -87,7 +87,7 @@ const Testimonial = async () => {
         ))}
       </div>
       <div className="flex justify-center">
-        <Button as={Link} href={`{btn?.url}`} variant="primary">
+        <Button as={Link} href={`${btn?.url}`} variant="primary">
           {btn?.text}
         </Button>
       </div>

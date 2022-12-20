@@ -3,13 +3,11 @@ import EmailSvg from '@/public/icons/email.svg';
 import PhoneSvg from '@/public/icons/phone.svg';
 import AddressSvg from '@/public/icons/address.svg';
 import '@/styles/contact.css';
-import { Formik, Form, Field } from 'formik';
 import TextInput from '@/ui/TextInput';
 import TextArea from '@/ui/TextArea';
 import CustomForm from '@/ui/CustomForm';
 import { useCallback, useEffect, useState } from 'react';
-import { getOurWorksData } from '@/lib/getOurWorks';
-import { AboutWorkValue, ContactDetail } from 'types/types';
+import { ContactDetail } from 'types/types';
 import { getContactDetail } from '@/lib/getContactDetail';
 
 export const ContactSkeleton = () => {
@@ -142,16 +140,19 @@ const Contact = (props: Props) => {
 
     setContactDetails([
       {
+        id: 1,
         svg: <EmailSvg />,
         title: 'Email',
         description: email,
       },
       {
+        id: 2,
         svg: <PhoneSvg />,
         title: 'Phone',
         description: phoneNumber,
       },
       {
+        id: 3,
         svg: <AddressSvg />,
         title: 'Address',
         description: `${addresses[0]?.line1}, ${addresses[0]?.line2}, ${addresses[0]?.city} ${addresses[0]?.state}-${addresses[0]?.pincode} ${addresses[0]?.country}`,
@@ -187,7 +188,7 @@ const Contact = (props: Props) => {
       </div>
       <div className="contact__cards">
         {contactDetails.map((cardData) => (
-          <div className="contact__card_details">
+          <div key={cardData.id} className="contact__card_details">
             <div className="contact__svg">{cardData.svg}</div>
             <h3 className="mt-4">{cardData.title}</h3>
             <p className="px-4">{cardData.description}</p>

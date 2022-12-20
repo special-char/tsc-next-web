@@ -9,7 +9,7 @@ export type GrowCareerType = () => Promise<{
 
 export const getGrowCareerData: GrowCareerType = async () => {
   try {
-    const res = await fetch(`${process.env.API_URL}/graphql`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
       method: 'POST',
       body: JSON.stringify({
         query: `{

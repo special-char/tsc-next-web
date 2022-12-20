@@ -13,7 +13,7 @@ export type HomeBlogType = () => Promise<{
 
 export const getHomeBlogData: HomeBlogType = async () => {
   try {
-    const res = await fetch(`${process.env.API_URL}/graphql`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
       method: 'POST',
       body: JSON.stringify({
         query: `{
