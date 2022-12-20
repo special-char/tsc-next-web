@@ -62,9 +62,9 @@ type Props = {
 
 const Page = ({ params }: Props) => {
     params.form = data.route_name;
-    console.log("params assigned", params.form);
+    // console.log("params assigned", params.form);
 
-    const initialvalues = data.fields.reduce((acc, val) => {
+    let initialvalues = data.fields.reduce((acc, val) => {
         return { ...acc, [val.name]: val.initialvalue };
     }, {});
 
@@ -76,8 +76,9 @@ const Page = ({ params }: Props) => {
                     <CustomForm
                         buttonStyle="register__btn"
                         initialValues={initialvalues}
-                        onSubmit={(values: any) => {
+                        onSubmit={(values: any, actions) => {
                             console.log(values);
+                            actions.resetForm()
                         }}
                         fields={data.fields}
                     />
