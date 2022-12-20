@@ -7,6 +7,10 @@ import { Formik, Form, Field } from 'formik';
 import TextInput from '@/ui/TextInput';
 import TextArea from '@/ui/TextArea';
 import CustomForm from '@/ui/CustomForm';
+import { useCallback, useEffect, useState } from 'react';
+import { getOurWorksData } from '@/lib/getOurWorks';
+import { AboutWorkValue, ContactDetail } from 'types/types';
+import { getContactDetail } from '@/lib/getContactDetail';
 
 export const ContactSkeleton = () => {
   return (
@@ -125,34 +129,40 @@ const fields = [
   },
 ];
 
-const CardData = [
-  {
-    svg: <EmailSvg />,
-    title: 'Email',
-    description: 'contact@thespecialcharacter.com',
-  },
-  {
-    svg: <PhoneSvg />,
-    title: 'Phone',
-    description: '+91 1234 5678 90',
-  },
-  {
-    svg: <AddressSvg />,
-    title: 'Address',
-    description: 'B-604/605, Ganesh Glory11,SG-Hwy, Ahmedabad, Gujrat 382470',
-  },
-];
-const initialValues = {
-  name: '',
-  email: '',
-  contactnumber: '',
-  subject: '',
-  message: '',
-};
-const handleSubmit = (values: any) => {
-  console.log('data of submit:', values);
-};
 const Contact = (props: Props) => {
+  const [contactDetails, setContactDetails] = useState([]);
+
+  const loadData = useCallback(async () => {
+    const contactDetail = await getContactDetail();
+
+    if (!contactDetail) return null;
+
+    const { addresses, phoneNumber, email } = contactDetail.data.data
+      .contactDetail.data?.attributes as ContactDetail;
+
+    setContactDetails([
+      {
+        svg: <EmailSvg />,
+        title: 'Email',
+        description: email,
+      },
+      {
+        svg: <PhoneSvg />,
+        title: 'Phone',
+        description: phoneNumber,
+      },
+      {
+        svg: <AddressSvg />,
+        title: 'Address',
+        description: `${addresses[0]?.line1}, ${addresses[0]?.line2}, ${addresses[0]?.city} ${addresses[0]?.state}-${addresses[0]?.pincode} ${addresses[0]?.country}`,
+      },
+    ]);
+  }, []);
+
+  useEffect(() => {
+    loadData();
+  }, [loadData]);
+
   return (
     <section id="contact" className="contact">
       <h1 className="contact__title">Get in touch!</h1>
@@ -176,7 +186,7 @@ const Contact = (props: Props) => {
         />
       </div>
       <div className="contact__cards">
-        {CardData.map((cardData) => (
+        {contactDetails.map((cardData) => (
           <div className="contact__card_details">
             <div className="contact__svg">{cardData.svg}</div>
             <h3 className="mt-4">{cardData.title}</h3>

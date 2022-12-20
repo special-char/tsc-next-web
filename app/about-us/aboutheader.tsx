@@ -70,7 +70,7 @@ const Aboutheader = async (props: Props) => {
 
   return (
     <section className="px-container py-20">
-      <div className="aboutheader">
+      <div className="aboutheader mx-0 md:mx-20 lg:mx-0">
         {detail?.map((x) => {
           const { url, alternativeText } = x?.image?.data
             ?.attributes as UploadFile;

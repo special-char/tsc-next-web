@@ -6,6 +6,11 @@ import Price from './price';
 import ChipNavigation from '@/ui/ChipNavigation';
 import Rating from '@/ui/Rating';
 
+const loader = () => {
+  console.log('====================================');
+  console.log('hello');
+  console.log('====================================');
+}
 const learnData = [
   {
     desc: 'Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.',
@@ -89,13 +94,13 @@ export default async function Page() {
               fill
             />
             <div className="main__left-section__preview__body">
-              <a href="#popup" className="popup-link">
+              <a href="#popup-open" id="popup-button" className="hamburger" title="Open Menu" aria-label="Open Menu">
                 <div className="popup-icon">
                   <PlayVideo
                     role="presentation"
                     focusable="false"
                     aria-label="trigram for heaven symbol"
-                    className=" !m-auto h-9 w-7 fill-primary"
+                    className="!m-auto h-9 w-7 fill-primary"
                   />
                 </div>
               </a>
@@ -182,17 +187,13 @@ export default async function Page() {
           </div>
         </div>
       </div>
-      {/* <div id="closed"></div>
-      <a href="#popup" className="popup-link">Click Here</a>
-      <div className="popup-wrapper" id="popup">
-        <div className="popup-container">
-          <center>
-            <iframe id="sidenav-open" width="560" height="315" src="https://www.youtube.com/embed/B-f28Y4Nh_8" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-            <a className="widgetku" href="http://4tipsbd.blogspot.com/" id="widgetku" target="blank">4tipsBD</a>
-          </center>
-          <a className="popup-close" href="#closed">X</a>
-        </div>
-      </div> */}
+      <aside id="popup-open">
+        <span id="popup-close">
+          <a href="#" title="Close Menu" aria-label="Close Menu" >X</a>
+        </span>
+
+        <iframe loading='lazy' className='popup-video' src="https://www.youtube.com/embed/Icf5D3fEKbM" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+      </aside>
     </section>
   );
 }

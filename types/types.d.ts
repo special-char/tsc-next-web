@@ -792,11 +792,13 @@ export type ContactDetail = {
   __typename?: 'ContactDetail';
   addresses?: Maybe<Array<Maybe<ComponentCommonAdress>>>;
   createdAt?: Maybe<Scalars['DateTime']>;
+  description?: Maybe<Scalars['String']>;
   email?: Maybe<Scalars['String']>;
   map?: Maybe<UploadFileEntityResponse>;
   phoneNumber?: Maybe<Scalars['String']>;
   publishedAt?: Maybe<Scalars['DateTime']>;
   socialMedia?: Maybe<Array<Maybe<ComponentCommonLink>>>;
+  title?: Maybe<Scalars['String']>;
   updatedAt?: Maybe<Scalars['DateTime']>;
 };
 
@@ -827,11 +829,13 @@ export type ContactDetailEntityResponse = {
 
 export type ContactDetailInput = {
   addresses?: InputMaybe<Array<InputMaybe<ComponentCommonAdressInput>>>;
+  description?: InputMaybe<Scalars['String']>;
   email?: InputMaybe<Scalars['String']>;
   map?: InputMaybe<Scalars['ID']>;
   phoneNumber?: InputMaybe<Scalars['String']>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
   socialMedia?: InputMaybe<Array<InputMaybe<ComponentCommonLinkInput>>>;
+  title?: InputMaybe<Scalars['String']>;
 };
 
 export type ContactEntity = {
