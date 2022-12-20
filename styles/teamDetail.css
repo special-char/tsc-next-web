@@ -1,7 +1,7 @@
 .teamDetail {
   @apply h-full overflow-hidden;
   &__desc {
-    @apply mx-0 px-container pt-64 pb-20 sm:px-sm-container  md:pt-40 lg:mx-44 lg:px-container;
+    @apply mx-0 px-container pt-64 pb-4 sm:px-sm-container md:pb-20  md:pt-40 lg:mx-44 lg:px-container;
   }
 }
 .individualteacher {
