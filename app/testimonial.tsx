@@ -1,6 +1,4 @@
 import '@/styles/testimonial.css';
-import Image from 'next/image';
-import Rating from '@/ui/Rating';
 import Carousal from '@/ui/Carousal';
 import { getTestimonialData } from '@/lib/getTestimonials';
 import { HomeTestimonial } from 'types/types';
