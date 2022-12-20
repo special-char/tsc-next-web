@@ -1,5 +1,5 @@
 .projects {
-  @apply py-20 px-container sm:px-sm-container lg:px-container;
+  @apply py-12 px-container sm:px-sm-container md:py-16 lg:px-container;
 
   &__content {
     @apply my-8 grid grid-cols-1 gap-8  lg:grid-cols-2;
