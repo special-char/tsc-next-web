@@ -1,20 +1,33 @@
 import { AboutTscEntityResponse } from 'types/types';
 import axiosInstance from './axiosInstance';
 
-export type EducationType = {
+export type EducationType = () => Promise<{
   data: {
     aboutTsc: AboutTscEntityResponse;
   };
-};
+}>;
 
-export const getEducationData = async () => {
+export const getEducationData: EducationType = async () => {
   try {
-    return await axiosInstance.post<EducationType>('/graphql', {
-      query: `{
-            aboutTsc {
-              data {
-                id
-                attributes {
+    const res = await fetch(`${process.env.API_URL}/graphql`, {
+      method: 'POST',
+      body: JSON.stringify({
+        query: `{
+          aboutTsc {
+            data {
+              id
+              attributes {
+                title
+                description
+                image {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+                details {
+                  id
                   title
                   description
                   image {
@@ -24,26 +37,26 @@ export const getEducationData = async () => {
                       }
                     }
                   }
-                  details {
-                    id
-                    title
-                    description
-                    image {
-                      data {
-                        attributes {
-                          url
-                        }
-                      }
-                    }
-                  }
-                  button {
-                    text
-                    url
-                  }
+                }
+                button {
+                  text
+                  url
                 }
               }
             }
-          }`,
+          }
+        }`,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      cache: 'no-cache',
+      next: {
+        revalidate: 0,
+      },
     });
+
+    return await res.json();
   } catch (error) {}
 };

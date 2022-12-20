@@ -66,9 +66,9 @@ const Testimonial = async () => {
 
   if (!testimonialsData) return null;
 
-  const testimonialsInfo = testimonialsData.data.data.testimonials.data;
-  const { title, numbers, btn } = testimonialsData.data.data.homeTestimonial
-    .data?.attributes as HomeTestimonial;
+  const testimonialsInfo = testimonialsData.data.testimonials.data;
+  const { title, numbers, btn } = testimonialsData.data.homeTestimonial.data
+    ?.attributes as HomeTestimonial;
 
   return (
     <section id="Testimonial" className="testimonial">

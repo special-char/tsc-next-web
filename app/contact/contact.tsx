@@ -137,8 +137,8 @@ const Contact = (props: Props) => {
 
     if (!contactDetail) return null;
 
-    const { addresses, phoneNumber, email } = contactDetail.data.data
-      .contactDetail.data?.attributes as ContactDetail;
+    const { addresses, phoneNumber, email } = contactDetail.data.contactDetail
+      .data?.attributes as ContactDetail;
 
     setContactDetails([
       {

@@ -65,7 +65,7 @@ const Aboutheader = async (props: Props) => {
 
   if (!aboutDetailsData) return null;
 
-  const { detail } = aboutDetailsData.data.data.aboutDetail.data
+  const { detail } = aboutDetailsData.data.aboutDetail.data
     ?.attributes as AboutDetail;
 
   return (

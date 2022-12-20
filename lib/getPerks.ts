@@ -1,36 +1,49 @@
 import { PerkEntityResponse } from 'types/types';
 import axiosInstance from './axiosInstance';
 
-export type PerksType = {
+export type PerksType = () => Promise<{
   data: {
     perk: PerkEntityResponse;
   };
-};
+}>;
 
-export const getPerksData = async () => {
+export const getPerksData: PerksType = async () => {
   try {
-    return await axiosInstance.post<PerksType>('/graphql', {
-      query: `{
-            perk {
-              data {
-                attributes {
-                 title
-                   benifits {
-                    id
-                    title
-                    description
-                    image {
-                      data {
-                        attributes {
-                          url
-                        }
+    const res = await fetch(`${process.env.API_URL}/graphql`, {
+      method: 'POST',
+      body: JSON.stringify({
+        query: `{
+          perk {
+            data {
+              attributes {
+               title
+                 benifits {
+                  id
+                  title
+                  description
+                  image {
+                    data {
+                      attributes {
+                        url
                       }
                     }
-                  } 
-                }
+                  }
+                } 
               }
             }
-          }`,
+          }
+        }`,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      cache: 'no-cache',
+      next: {
+        revalidate: 0,
+      },
     });
+
+    return await res.json();
   } catch (error) {}
 };

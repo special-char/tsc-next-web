@@ -48,8 +48,8 @@ const CompanyHistory = async () => {
 
   if (!aboutHistory) return null;
 
-  const { title, description, history, button } = aboutHistory.data.data
-    .aboutHistory.data?.attributes as AboutHistory;
+  const { title, description, history, button } = aboutHistory.data.aboutHistory
+    .data?.attributes as AboutHistory;
 
   return (
     <section id="companyHistory" className="companyHistory">

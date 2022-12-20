@@ -48,7 +48,7 @@ const Leaders = async () => {
 
   if (!leaderData) return null;
 
-  const { title, description, btns, image, testimonial } = leaderData.data.data
+  const { title, description, btns, image, testimonial } = leaderData.data
     .homeLeader.data?.attributes as HomeLeader;
 
   const { url, alternativeText } = image?.data?.attributes as UploadFile;

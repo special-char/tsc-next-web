@@ -1,16 +1,18 @@
 import { CourseEntityResponseCollection } from 'types/types';
 import axiosInstance from './axiosInstance';
 
-export type CoursesType = {
+export type CoursesType = () => Promise<{
   data: {
     courses: CourseEntityResponseCollection;
   };
-};
+}>;
 
-export const getAllCoursesData = async () => {
+export const getAllCoursesData: CoursesType = async () => {
   try {
-    return await axiosInstance.post<CoursesType>('/graphql', {
-      query: `{
+    const res = await fetch(`${process.env.API_URL}/graphql`, {
+      method: 'POST',
+      body: JSON.stringify({
+        query: `{
           courses {
             data {
               id
@@ -30,6 +32,17 @@ export const getAllCoursesData = async () => {
           }
         }
         `,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      cache: 'no-cache',
+      next: {
+        revalidate: 0,
+      },
     });
+
+    return await res.json();
   } catch (error) {}
 };

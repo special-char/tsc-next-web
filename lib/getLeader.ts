@@ -1,49 +1,62 @@
 import { HomeLeaderEntityResponse } from 'types/types';
 import axiosInstance from './axiosInstance';
 
-export type LeaderType = {
+export type LeaderType = () => Promise<{
   data: {
     homeLeader: HomeLeaderEntityResponse;
   };
-};
+}>;
 
-export const getLeaderData = async () => {
+export const getLeaderData: LeaderType = async () => {
   try {
-    return await axiosInstance.post<LeaderType>('/graphql', {
-      query: `{
-            homeLeader {
-              data {
-                attributes {
-                  title
-                  description
-                  btns {
-                    id
-                    text
-                    url
-                  }
-                  image {
-                    data {
-                      attributes {
-                        alternativeText
-                        url
-                      }
+    const res = await fetch(`${process.env.API_URL}/graphql`, {
+      method: 'POST',
+      body: JSON.stringify({
+        query: `{
+          homeLeader {
+            data {
+              attributes {
+                title
+                description
+                btns {
+                  id
+                  text
+                  url
+                }
+                image {
+                  data {
+                    attributes {
+                      alternativeText
+                      url
                     }
                   }
-                  testimonial {
-                    data {
-                      attributes {
-                        quote
-                        name
-                        company
-                        designation
-                        tag
-                      }
+                }
+                testimonial {
+                  data {
+                    attributes {
+                      quote
+                      name
+                      company
+                      designation
+                      tag
                     }
                   }
                 }
               }
             }
-          }`,
+          }
+        }`,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      cache: 'no-cache',
+      next: {
+        revalidate: 0,
+      },
     });
+
+    return await res.json();
   } catch (error) {}
 };

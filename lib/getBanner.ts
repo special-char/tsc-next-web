@@ -1,11 +1,13 @@
 import { BannerEntityResponse } from 'types/types';
 import axiosInstance from './axiosInstance';
 
-export type BannerType = {
-  banner: BannerEntityResponse;
-};
+export type BannerType = () => Promise<{
+  data: {
+    banner: BannerEntityResponse;
+  };
+}>;
 
-export const getBannerData = async () => {
+export const getBannerData: BannerType = async () => {
   try {
     const res = await fetch(`${process.env.API_URL}/graphql`, {
       method: 'POST',
