@@ -10,23 +10,21 @@ type Props = {};
 const UserCard = (props: Props) => {
   return (
     <section className=" px-container">
-      <div className="user_card">
-        <div className="user_card__image">
-          <Image
+      <div className="user_card mx-auto w-4/5">
+        <div className="avatar mr-4">
+          <img
             src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f1ff9fd9e0e1686d26497_image-3-profile-picture-small-teacher-education-x-template.jpg"
             alt="avatar"
-            height={220}
-            width={220}
           />
         </div>
-        <div className="user_card__details items-center">
-          <div className=" flex flex-col items-center justify-between md:flex-row">
-            <h3 className="!m-0">Kathie Corl</h3>
-            <div className="chip chip--white w-1/2 hover:bg-primary md:w-1/5">
+        <div className="user_card__details">
+          <div className=" user_card__heading">
+            <h2 className="!m-0">Kathie Corl</h2>
+            <div className="chip chip--white w-auto hover:bg-primary">
               Design
             </div>
           </div>
-          <p className="pt-3 text-center md:text-start">
+          <p className="user_card__desc">
             Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida. Diam
             phasellus vestibulum lorem sed risus ultricies.
           </p>
