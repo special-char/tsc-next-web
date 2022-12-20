@@ -1,0 +1,24 @@
+.hire_card {
+  @apply flex w-full flex-col items-center gap-5 overflow-hidden rounded-2xl bg-neutral-200 md:gap-4;
+  .card__body {
+    /* padding: 32px 32px 48px; */
+  }
+  &__img {
+    @apply relative m-0 aspect-h-image w-full;
+
+    & > img {
+      @apply object-cover;
+    }
+  }
+  /* a {
+    @apply hover:text-primary;
+  } */
+
+  &__body {
+    @apply px-8 pb-8;
+  }
+
+  &__footer {
+    @apply flex items-center gap-3;
+  }
+}

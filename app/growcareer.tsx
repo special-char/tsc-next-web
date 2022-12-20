@@ -35,7 +35,7 @@ const GrowCareer = async () => {
 
   if (!growCareerData) return null;
 
-  const { title, description, link, details } = growCareerData.data.data
+  const { title, description, link, details } = growCareerData.data
     .homeGrowCareer.data?.attributes as HomeGrowCareer;
 
   const { url, text } = link as ComponentCommonLink;

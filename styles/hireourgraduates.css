@@ -1,9 +1,10 @@
-.hirecard {
-  @apply grid  justify-center gap-10 gap-y-5 overflow-hidden rounded-3xl shadow-dark md:grid-cols-2 lg:grid-cols-3;
-  .card__body {
-    padding: 32px 32px 48px;
+.hireourgraduates {
+  @apply px-container py-16;
+  &__card__body {
+    @apply grid  justify-center gap-10 gap-y-8 overflow-hidden shadow-dark md:grid-cols-2 lg:grid-cols-3;
+    /* padding: 32px 32px 48px; */
   }
-  .card__image {
+  &__card__image {
     @apply aspect-square;
   }
   a {

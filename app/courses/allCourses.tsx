@@ -11,7 +11,7 @@ const AllCourses = async (props: Props) => {
 
   if (!coursesData) return null;
 
-  const coursesInfo = coursesData.data.data.courses.data;
+  const coursesInfo = coursesData.data.courses.data;
 
   return (
     <section id="allcourses">

@@ -50,8 +50,8 @@ const Education = async () => {
 
   if (!educationData) return null;
 
-  const { title, description, details, image } = educationData.data.data
-    .aboutTsc.data?.attributes as AboutTsc;
+  const { title, description, details, image } = educationData.data.aboutTsc
+    .data?.attributes as AboutTsc;
 
   const { url, alternativeText } = image?.data?.attributes as UploadFile;
 

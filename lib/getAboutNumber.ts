@@ -4,31 +4,44 @@ import {
 } from 'types/types';
 import axiosInstance from './axiosInstance';
 
-export type AboutNumberType = {
+export type AboutNumberType = () => Promise<{
   data: {
     aboutNumber: AboutNumberEntityResponse;
   };
-};
+}>;
 
-export const getAboutNumberData = async () => {
+export const getAboutNumberData: AboutNumberType = async () => {
   try {
-    return await axiosInstance.post<AboutNumberType>('/graphql', {
-      query: `{
-        aboutNumber {
-          data {
-            attributes {
-              title
-              numbers {
-                id
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
+      method: 'POST',
+      body: JSON.stringify({
+        query: `{
+          aboutNumber {
+            data {
+              attributes {
                 title
-                number
-                description
+                numbers {
+                  id
+                  title
+                  number
+                  description
+                }
               }
             }
           }
         }
-      }
-      `,
+        `,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      cache: 'no-cache',
+      next: {
+        revalidate: 0,
+      },
     });
+
+    return await res.json();
   } catch (error) {}
 };
