@@ -37,7 +37,7 @@ type Props = {};
 const Banner = async (props: Props) => {
   const bannerData = await getBannerData();
 
-  console.log(bannerData);
+  console.log("bannerData", bannerData);
 
   if (!bannerData) return null;
 
