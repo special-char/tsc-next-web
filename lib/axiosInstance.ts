@@ -8,6 +8,9 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
   function (config) {
+    config.headers = {
+      'Cache-Control': 'no-cache',
+    };
     // Do something before request is sent
     return config;
   },

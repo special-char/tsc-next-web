@@ -2,36 +2,47 @@ import { BannerEntityResponse } from 'types/types';
 import axiosInstance from './axiosInstance';
 
 export type BannerType = {
-  data: {
-    banner: BannerEntityResponse;
-  };
+  banner: BannerEntityResponse;
 };
 
 export const getBannerData = async () => {
   try {
-    return await axiosInstance.post<BannerType>('/graphql', {
-      query: `{
-          banner {
-            data {
-              attributes {
-                title
-                description
-                image {
-                  data {
-                    attributes {
-                      url
+    const res = await fetch(`${process.env.API_URL}/graphql`, {
+      method: 'POST',
+      body: JSON.stringify({
+        query: `{
+            banner {
+              data {
+                attributes {
+                  title
+                  description
+                  image {
+                    data {
+                      attributes {
+                        url
+                      }
                     }
                   }
-                }
-                buttons {
-                  id
-                  text
-                  url
+                  buttons {
+                    id
+                    text
+                    url
+                  }
                 }
               }
             }
-          }
-        }`,
+          }`,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      cache: 'no-cache',
+      next: {
+        revalidate: 0,
+      },
     });
+
+    return await res.json();
   } catch (error) {}
 };
