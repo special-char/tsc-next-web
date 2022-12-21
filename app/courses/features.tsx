@@ -32,6 +32,7 @@ export const FeaturesSkeleton = () => {
     </section>
   );
 };
+
 const Features = ({ title, chips }: Props) => {
   return (
     <section id="features" className="features">
