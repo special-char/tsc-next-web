@@ -1,7 +1,7 @@
-.card {
-  @apply grid  justify-items-center overflow-hidden rounded-3xl bg-neutral-100 shadow-dark  md:grid-cols-1 lg:grid-cols-2;
+/* .card {
+  @apply grid justify-items-center  overflow-hidden rounded-3xl bg-neutral-100 px-container shadow-dark  md:grid-cols-1 lg:grid-cols-2;
   &__image {
-    @apply relative mb-4  aspect-video w-full overflow-hidden;
+    @apply relative mb-4 aspect-video w-full overflow-hidden;
   }
   &__body {
     grid-template-columns: 80% 20%;
@@ -26,4 +26,4 @@
   &__header {
     @apply flex flex-row flex-wrap justify-around gap-2 rounded-full bg-neutral-200 p-6;
   }
-}
+} */
