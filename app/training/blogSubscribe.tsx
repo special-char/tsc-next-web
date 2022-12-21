@@ -1,5 +1,6 @@
 import '@/styles/blogSubscribe.css';
 import Button from '@/ui/Button';
+
 export const BlogSubscribeSkeleton = () => {
   return (
     <section className="blogSubscribe">
