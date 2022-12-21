@@ -36,18 +36,44 @@
         {
             "label": "College Name",
             "name": "collegename",
-            "type": "text",
+            "type": "checkbox",
             "placeholder": "College Name",
-            "component": "TextInput",
-            "initialvalue": ""
+            "component": "SingleSelect",
+            "initialvalue": "",
+            "obj": {
+                "name": "collegename",
+                "id": "collegename",
+                "options": [
+                    {
+                        "value": "one",
+                        "title": "One"
+                    },
+                    {
+                        "value": "two",
+                        "title": "Two"
+                    }
+                ]
+            }
         },
         {
             "label": "Branch",
             "name": "branch",
-            "type": "text",
+            "type": "checkbox",
             "placeholder": "Branch",
-            "component": "TextInput",
-            "initialvalue": ""
+            "component": "Checkbox",
+            "initialvalue": [],
+            "checkboxes": [
+                {
+                    "label": "One",
+                    "value": "one",
+                    "name": "branch"
+                },
+                {
+                    "label": "Two",
+                    "value": "two",
+                    "name": "branch"
+                }
+            ]
         },
         {
             "name": "interestedFor",

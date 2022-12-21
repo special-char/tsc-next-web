@@ -8,7 +8,7 @@ type Props = {};
 
 const MultiSelect = ({
     field: { name, value, onChange, onBlur },
-    form: { touched, errors, setFieldValue }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
+    form: { setFieldValue }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
     label,
     wrapperClassName,
     className,
