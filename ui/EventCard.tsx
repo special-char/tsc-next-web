@@ -46,9 +46,9 @@ const EventCard = (props: Props) => {
             <figure className="card__image">
               <Image src={data.image_url} alt="alt text" fill />
             </figure>
-            <div className="card__body">
+            <div className="event__body">
               {data?.publishedAt && (
-                <div className="card__date">
+                <div className="event__date">
                   <Icon name="calendar" />
                   <time>{`${data.publishedAt.day} ${data.publishedAt.month}, ${data.publishedAt.year}`}</time>
                 </div>
@@ -66,7 +66,7 @@ const EventCard = (props: Props) => {
               <div className="event__datails ">
                 <h3 className="card__title">{data?.heading}</h3>
                 {data?.description && (
-                  <p className="card__desc ">{data?.description}</p>
+                  <p className="card__desc">{data?.description}</p>
                 )}
               </div>
             </div>
