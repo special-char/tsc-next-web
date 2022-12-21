@@ -1,0 +1,53 @@
+{
+    "route_name": "react-registration-form",
+    "fields": [
+        {
+            "name": "firstname",
+            "label": "First Name",
+            "type": "text",
+            "placeholder": "First Name",
+            "component": "TextInput",
+            "initialvalue": ""
+        },
+        {
+            "name": "lastname",
+            "label": "Last Name",
+            "type": "text",
+            "placeholder": "Last Name",
+            "component": "TextInput",
+            "initialvalue": ""
+        },
+        {
+            "label": "Phone Number",
+            "name": "phonenumber",
+            "type": "tel",
+            "placeholder": "+91 1234 5678 90",
+            "component": "TextInput",
+            "initialvalue": ""
+        },
+        {
+            "label": "Email Address",
+            "name": "email",
+            "type": "email",
+            "placeholder": "Email",
+            "component": "TextInput",
+            "initialvalue": ""
+        },
+        {
+            "label": "College Name",
+            "name": "collegename",
+            "type": "text",
+            "placeholder": "College Name",
+            "component": "TextInput",
+            "initialvalue": ""
+        },
+        {
+            "label": "Branch",
+            "name": "branch",
+            "type": "text",
+            "placeholder": "Branch",
+            "component": "TextInput",
+            "initialvalue": ""
+        }
+    ]
+}
