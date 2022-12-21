@@ -83,10 +83,6 @@ const Blogs = async (props: Props) => {
           {blogList.map((x, i) => (
             <BlogCard key={x.id} blog={x} index={i} />
           ))}
-          {/* <Card data={data} />
-          {blogData.map((blog) => {
-            return <Card key={blog.id} className="card--hoz" data={blog} />;
-          })} */}
         </div>
       </section>
     </>

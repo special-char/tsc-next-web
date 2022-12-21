@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { Field } from 'formik';
 import React from 'react';
 
 type Props = {
@@ -21,7 +22,7 @@ const TextInput = ({
       })}
     >
       <label className="form__group__label">{label}</label>
-      <input type="text" className="form__group__input" {...field} {...rest} />
+      <Field type="text" className="form__group__input" {...field} {...rest} />
       {touched[field.name] && errors[field.name] && (
         <p className="form__group__error">{errors[field.name]}</p>
       )}

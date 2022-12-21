@@ -1,0 +1,45 @@
+.multiselect {
+  &__label {
+  }
+  &__form-control {
+    @apply relative w-full;
+    &__options {
+      @apply absolute top-12 max-h-36 w-full overflow-y-scroll rounded-b-3xl bg-neutral-200 p-0 py-6 text-primary shadow-dark;
+      &__options-list {
+        @apply rounded-b-sm py-2 pl-6 hover:bg-primary hover:text-neutral-100;
+      }
+    }
+  }
+  &__group {
+    @apply mb-0 flex max-h-[100px] min-h-[64px] items-center justify-between rounded-full bg-neutral-200 px-7 text-xl text-primary;
+    &__selected {
+      @apply flex w-full items-center justify-between;
+    }
+    &__dropdown-icon {
+      svg {
+        @apply fill-primary;
+        /* path {
+        } */
+      }
+    }
+    &__selected-items {
+      @apply m-0 flex max-w-full items-center gap-2 overflow-x-scroll p-0 hover:bg-neutral-400 hover:text-neutral-100;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      @media (--motionOK) {
+        scroll-behavior: smooth;
+      }
+      &__selected-item {
+        @apply flex items-center gap-2 rounded-md bg-primary px-3 text-neutral-100;
+      }
+    }
+  }
+
+  ul {
+    @apply list-none;
+    li {
+      @apply m-0;
+    }
+  }
+}
