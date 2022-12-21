@@ -9,6 +9,7 @@ import Features, { FeaturesSkeleton } from 'app/courses/features';
 import PageHeader, { PageHeaderSkeleton } from '@/ui/pageHeader';
 import Card from '@/ui/Card';
 import { Suspense } from 'react';
+import Blog from 'app/training/blog';
 
 export default async function Page() {
   const moreblogData = [
@@ -152,22 +153,10 @@ export default async function Page() {
           circleLeft="bg-secondary3"
         />
       </Suspense>
-      <section className="blogs">
-        <div className="blogs__grid">
-          <Card data={data} />
-          <div className="blogs__horizontal overflow-hidden">
-            {blogData.map((blog) => {
-              return (
-                <Card
-                  key={blog.id}
-                  className={'classname card--hoz'}
-                  data={blog}
-                />
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <Suspense fallback={<h1>heading...</h1>}>
+        <Blog />
+      </Suspense>
+
       <Suspense fallback={<BlogSubscribeSkeleton />}>
         <BlogSubscribe />
       </Suspense>

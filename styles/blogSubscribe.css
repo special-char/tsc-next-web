@@ -1,5 +1,5 @@
 .blogSubscribe {
-  @apply relative h-full w-full overflow-hidden px-container py-20;
+  @apply relative h-full w-full overflow-hidden px-container pb-20;
 
   &__body {
     @apply items-center justify-center;
