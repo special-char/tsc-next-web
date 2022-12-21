@@ -1,5 +1,4 @@
-import clsx from 'clsx';
-import { FieldProps } from 'formik';
+import { Field, FieldProps } from 'formik';
 import React, { useState } from 'react';
 import DropDown from '../public/icons/rightarrow.svg';
 import '@/styles/multiSelectDropDown.css';
@@ -47,7 +46,7 @@ const MultiSelectDropDown = ({
                   <label className="mb-0" htmlFor={option.name}>
                     {option.name}
                   </label>
-                  <input
+                  <Field
                     placeholder={placeholder}
                     type="checkbox"
                     id={option.name}

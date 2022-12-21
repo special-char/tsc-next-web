@@ -5,7 +5,7 @@ import { getAboutDetailData } from '@/lib/getAboutDetails';
 import { AboutDetail, UploadFile } from 'types/types';
 export const AboutheaderSkeleton = () => {
   return (
-    <section className="px-container py-20">
+    <section className="px-container py-20 sm:px-sm-container lg:px-container">
       <div className="aboutheader animate-pulse">
         {[1, 2].map((x) => (
           <>
@@ -65,12 +65,12 @@ const Aboutheader = async (props: Props) => {
 
   if (!aboutDetailsData) return null;
 
-  const { detail } = aboutDetailsData.data.data.aboutDetail.data
+  const { detail } = aboutDetailsData.data.aboutDetail.data
     ?.attributes as AboutDetail;
 
   return (
     <section className="px-container py-20">
-      <div className="aboutheader">
+      <div className="aboutheader mx-0 md:mx-20 lg:mx-0">
         {detail?.map((x) => {
           const { url, alternativeText } = x?.image?.data
             ?.attributes as UploadFile;

@@ -2,9 +2,6 @@ import Icon from '@/ui/Icon';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import './style.css';
-import Card from '@/ui/Card';
-import Button from '@/ui/Button';
 
 type Props = {};
 

@@ -5,7 +5,7 @@ import { AboutNumber } from 'types/types';
 export const AchievementsSkeleton = () => {
   return (
     <section className="achieve">
-      <h2 className="mx-0 mb-10 text-center text-6xl md:mb-8 lg:mx-72">
+      <h2 className="mx-0 mb-10 text-center font-cursive text-6xl md:mb-8 lg:mx-72">
         A few numbers that we are proud of
       </h2>
       <div className="achieve__content">
@@ -54,7 +54,7 @@ const Achievements = async (props: Props) => {
 
   if (!achievementsData) return null;
 
-  const { title, numbers } = achievementsData.data.data.aboutNumber.data
+  const { title, numbers } = achievementsData.data.aboutNumber.data
     ?.attributes as AboutNumber;
 
   return (

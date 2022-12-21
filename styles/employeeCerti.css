@@ -1,7 +1,7 @@
 .employeeCerti {
-  @apply px-container pt-24 sm:px-sm-container lg:px-container;
+  @apply px-container pt-8 sm:px-sm-container md:pt-16 lg:px-container;
   &__main {
-    @apply mx-0 pb-24 lg:mx-44;
+    @apply mx-0 pb-4 md:pb-12 lg:mx-44;
   }
   &__content {
     @apply grid;

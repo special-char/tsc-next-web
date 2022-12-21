@@ -1,11 +1,11 @@
 .employeeAchive {
-  @apply px-container  pt-24  sm:px-sm-container lg:px-container;
+  @apply px-container pt-8 sm:px-sm-container  md:pt-16 lg:px-container;
 
   &__main {
     @apply p-0;
   }
   &__content {
-    @apply mx-0 grid pb-24 lg:mx-44;
+    @apply mx-0 grid pb-8 md:pb-14 lg:mx-44;
   }
 
   &__list {

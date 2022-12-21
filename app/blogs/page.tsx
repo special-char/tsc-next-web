@@ -1,12 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import '@/styles/blogs.css';
-import BlogSubscribe from 'app/training/blogSubscribe';
+import BlogSubscribe, {
+  BlogSubscribeSkeleton,
+} from 'app/training/blogSubscribe';
 import Icon from '@/ui/Icon';
-import Features from 'app/courses/features';
-import PageHeader from '@/ui/pageHeader';
+import Features, { FeaturesSkeleton } from 'app/courses/features';
+import PageHeader, { PageHeaderSkeleton } from '@/ui/pageHeader';
 import Card from '@/ui/Card';
 import { Suspense } from 'react';
+import Blog from 'app/training/blog';
 
 export default async function Page() {
   const moreblogData = [
@@ -150,24 +153,16 @@ export default async function Page() {
           circleLeft="bg-secondary3"
         />
       </Suspense>
-      <section className="blogs">
-        <div className="blogs__grid">
-          <Card data={data} />
-          <div className="blogs__horizontal overflow-hidden">
-            {blogData.map((blog) => {
-              return (
-                <Card
-                  key={blog.id}
-                  className={'classname card--hoz'}
-                  data={blog}
-                />
-              );
-            })}
-          </div>
-        </div>
-      </section>
-      <BlogSubscribe />
-      <Features />
+      <Suspense fallback={<h1>heading...</h1>}>
+        <Blog />
+      </Suspense>
+
+      <Suspense fallback={<BlogSubscribeSkeleton />}>
+        <BlogSubscribe />
+      </Suspense>
+      <Suspense fallback={<FeaturesSkeleton />}>
+        <Features />
+      </Suspense>
       <section className="blogs__moreblogs">
         {moreblogData.map((moreblogs: any) => {
           return <Card data={moreblogs} />;

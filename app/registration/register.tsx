@@ -1,15 +1,41 @@
 'use client';
-import EmailSvg from '@/public/icons/email.svg';
-import PhoneSvg from '@/public/icons/phone.svg';
-import AddressSvg from '@/public/icons/address.svg';
 import '@/styles/registration.css';
-import { Formik, Form, Field } from 'formik';
 import TextInput from '@/ui/TextInput';
-import TextArea from '@/ui/TextArea';
-import clsx from 'clsx';
 import CustomForm from '@/ui/CustomForm';
 import RadioButtons from '@/ui/RadioButtons';
 import MultiSelectDropDown from '@/ui/MultiSelectDropDown';
+
+export const RegisterSkeleton = () => {
+  return (
+    <section id="register" className="register animate-pulse">
+      <h1 className="text-center font-cursive">Registration Form!</h1>
+      <div className="register__form-container font-cursive">
+        <CustomForm
+          className="font-cursive"
+          buttonStyle="register__btn"
+          initialValues={{
+            firstname: '',
+            lastname: '',
+            phonenumber: '',
+            email: '',
+            collegename: '',
+            branch: '',
+            interestedFor: '',
+            technologyInterests: [],
+          }}
+          onSubmit={(values: any) => {
+            console.log(values);
+          }}
+          fields={fields}
+        />
+      </div>
+
+      <div className="register__bg-circle1 "></div>
+      <div className="register__bg-circle2 "></div>
+      <div className="register__bg-circle3 "></div>
+    </section>
+  );
+};
 
 type Props = {};
 const options = [

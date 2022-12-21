@@ -1,6 +1,4 @@
 import '@/styles/testimonial.css';
-import Image from 'next/image';
-import Rating from '@/ui/Rating';
 import Carousal from '@/ui/Carousal';
 import { getTestimonialData } from '@/lib/getTestimonials';
 import { HomeTestimonial } from 'types/types';
@@ -66,9 +64,9 @@ const Testimonial = async () => {
 
   if (!testimonialsData) return null;
 
-  const testimonialsInfo = testimonialsData.data.data.testimonials.data;
-  const { title, numbers, btn } = testimonialsData.data.data.homeTestimonial
-    .data?.attributes as HomeTestimonial;
+  const testimonialsInfo = testimonialsData.data.testimonials.data;
+  const { title, numbers, btn } = testimonialsData.data.homeTestimonial.data
+    ?.attributes as HomeTestimonial;
 
   return (
     <section id="Testimonial" className="testimonial">
@@ -89,7 +87,7 @@ const Testimonial = async () => {
         ))}
       </div>
       <div className="flex justify-center">
-        <Button as={Link} href={`{btn?.url}`} variant="primary">
+        <Button as={Link} href={`${btn?.url}`} variant="primary">
           {btn?.text}
         </Button>
       </div>

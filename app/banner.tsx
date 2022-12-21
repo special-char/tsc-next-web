@@ -37,10 +37,12 @@ type Props = {};
 const Banner = async (props: Props) => {
   const bannerData = await getBannerData();
 
+  console.log("bannerData", bannerData);
+
   if (!bannerData) return null;
 
-  const { title, description, buttons, image } = bannerData.data.data.banner
-    .data?.attributes as Banner;
+  const { title, description, buttons, image } = bannerData.data.banner.data
+    ?.attributes as Banner;
 
   const { url } = image.data?.attributes as UploadFile;
 

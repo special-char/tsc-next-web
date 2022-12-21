@@ -49,8 +49,8 @@ const Courses = async () => {
 
   if (!coursesData) return null;
 
-  const coursesInfo = coursesData.data.data.courses.data;
-  const { title, button } = coursesData.data.data.homeCourse.data
+  const coursesInfo = coursesData.data.courses.data;
+  const { title, button } = coursesData.data.homeCourse.data
     ?.attributes as HomeCourse;
   return (
     <section id="courses" className="courses">
