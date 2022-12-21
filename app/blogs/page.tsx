@@ -115,31 +115,24 @@ export default async function Page() {
       <Suspense fallback={<BlogSubscribeSkeleton />}>
         <BlogSubscribe />
       </Suspense>
-      <Suspense fallback={<FeaturesSkeleton />}>
-        <Features
-          title="All Courses"
-          chips={[
-            {
-              name: 'All',
-              selected: true,
-            },
-            {
-              name: 'Development',
-            },
-            {
-              name: 'Design',
-            },
-            {
-              name: 'Marketing',
-            },
-          ]}
-        />
-      </Suspense>
-      {/* <section className="blogs__moreblogs">
-        {moreblogData.map((moreblogs: any) => {
-          return <Card data={moreblogs} />;
-        })}
-      </section> */}
+      <Features
+        title="All Courses"
+        chips={[
+          {
+            name: 'All',
+            selected: true,
+          },
+          {
+            name: 'Development',
+          },
+          {
+            name: 'Design',
+          },
+          {
+            name: 'Marketing',
+          },
+        ]}
+      />
     </>
   );
 }
