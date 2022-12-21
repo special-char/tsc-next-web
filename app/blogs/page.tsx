@@ -9,7 +9,7 @@ import Features, { FeaturesSkeleton } from 'app/courses/features';
 import PageHeader, { PageHeaderSkeleton } from '@/ui/pageHeader';
 import Card from '@/ui/Card';
 import { Suspense } from 'react';
-import Blogs from 'app/blogs';
+import Blog from 'app/training/blog';
 
 export default async function Page() {
   const moreblogData = [
@@ -153,8 +153,8 @@ export default async function Page() {
           circleLeft="bg-secondary3"
         />
       </Suspense>
-      <Suspense fallback={<BlogSkeleton />}>
-        <Blogs />
+      <Suspense fallback={<h1>heading...</h1>}>
+        <Blog />
       </Suspense>
 
       <Suspense fallback={<BlogSubscribeSkeleton />}>
