@@ -1,7 +1,7 @@
 import React from 'react';
-import { FieldProps } from 'formik';
+import { Field, FieldProps } from 'formik';
 import clsx from 'clsx';
-
+import '@/styles/radiobutton.css';
 export interface RadioButtonsProps {
   options: any;
   name?: string;
@@ -25,13 +25,12 @@ const RadioButtons = ({
         {options.map(({ ...option }) => {
           return (
             <div key={option.key} className="flex items-center gap-3">
-              <input
+              <Field
                 className=""
                 type="radio"
                 id={option.value}
                 {...field}
                 value={option.value}
-                defaultChecked={field.value === option.value}
               />
               <label className="m-0" htmlFor={option.value}>
                 {option.key}
@@ -43,26 +42,6 @@ const RadioButtons = ({
       {touched[field.name] && errors[field.name] && (
         <p className="form__group__error">{errors[field.name]}</p>
       )}
-      <style jsx>{`
-        .dropdownDiv {
-          min-height: 4rem;
-          max-width: 100%;
-          min-width: 100%;
-          margin-bottom: 0px;
-          padding-right: 1.875rem;
-          padding-left: 1.875rem;
-          border: 1px solid transparent;
-          border-radius: 6.25rem;
-          background-color: #f9fafb;
-          color: #0f437f;
-          font-size: 18px;
-          line-height: 1.111em;
-          appearance: none;
-          display: flex;
-          gap: 3rem;
-          align-items: center;
-        }
-      `}</style>
     </div>
   );
 };
