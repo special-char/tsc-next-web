@@ -1,7 +1,5 @@
 import '@/styles/blogs.css';
-import BlogSubscribe, {
-  BlogSubscribeSkeleton,
-} from 'app/training/blogSubscribe';
+import BlogSubscribe, { BlogSubscribeSkeleton } from './blogSubscribe';
 import PageHeader from '@/ui/pageHeader';
 import { Suspense } from 'react';
 import FeatureBlog from '@/ui/FeatureBlog';
