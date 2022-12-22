@@ -37,7 +37,7 @@ type Props = {};
 const Banner = async (props: Props) => {
   const bannerData = await getBannerData();
 
-  console.log("bannerData", bannerData);
+  console.log('bannerData', bannerData);
 
   if (!bannerData) return null;
 
@@ -55,7 +55,13 @@ const Banner = async (props: Props) => {
         ></div>
         <div className="banner__actions">
           {buttons?.map((item: any) => (
-            <Button as={Link} key={item.id} href={item.url} variant="primary">
+            <Button
+              as={Link}
+              prefetch={false}
+              key={item.id}
+              href={item.url}
+              variant="primary"
+            >
               {item.text}
             </Button>
           ))}

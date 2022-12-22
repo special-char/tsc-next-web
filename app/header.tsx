@@ -62,7 +62,7 @@ const Header = async (props: Props) => {
 
   return (
     <header className="header">
-      <Link as={Link} href="/">
+      <Link prefetch={false} href="/">
         <TscLogoSvg className="header__tsclogo" />
         <TscSvg className="h-[56px] w-[52px] lg:hidden " />
       </Link>
@@ -72,7 +72,7 @@ const Header = async (props: Props) => {
             const { title, url, children } = x.attributes;
             return (
               <li>
-                <Link href={url} className="header__link">
+                <Link href={url} prefetch={false} className="header__link">
                   {title}
                 </Link>
                 {children.data.length > 0 && (
@@ -82,6 +82,7 @@ const Header = async (props: Props) => {
                         return (
                           <li>
                             <Link
+                              prefetch={false}
                               href={y.attributes.url}
                               className="header__link"
                             >
@@ -100,6 +101,7 @@ const Header = async (props: Props) => {
       </nav>
       <Link
         href={attributes.url}
+        prefetch={false}
         className="header__button btn btn--primary btn--small "
       >
         {attributes.title}

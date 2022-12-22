@@ -61,7 +61,12 @@ const Courses = async () => {
         })}
       </Carousal>
       {/* <CarousalBullets /> */}
-      <Button as={Link} href={`${button?.url}`} variant="primary">
+      <Button
+        as={Link}
+        prefetch={false}
+        href={`${button?.url}`}
+        variant="primary"
+      >
         {button?.text}
       </Button>
     </section>
