@@ -567,7 +567,10 @@
     }
 
     &__btn {
-      @apply col-span-2 m-0 p-3 py-5 px-4 md:col-[2_/_-1] md:row-span-full md:m-1 md:px-1 md:py-1;
+      @apply col-span-2 m-0 p-3 py-5 px-4 md:col-[2/-1] md:row-span-full md:m-1 md:px-1 md:py-1;
+    }
+    &__subscribed {
+      @apply w-full rounded-xl bg-primary py-5 px-3 text-center text-neutral-100;
     }
   }
 

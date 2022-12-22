@@ -1,12 +1,11 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React from 'react';
 import '@/styles/footer.css';
 import SocialIcon from '@/ui/SocialIcon';
-import Button from '@/ui/Button';
 import TscBlueLogoSvg from '@/public/icons/tscBlueLogo.svg';
-import { Field, Form, Formik } from 'formik';
+import Newsletter from '@/ui/Newsletter';
 
 type Props = {};
 
@@ -52,12 +51,7 @@ function validateEmail(values: any) {
   return error;
 }
 const Footer = (props: Props) => {
-  // const [submit, setsubmit] = useState(false);
-  // const buttonHandler = () => {
-  //   console.log('buttonHandler clicked');
-  //   setsubmit(!submit);
-  //   console.log(submit);
-  // };
+
   return (
     <section id="footer" className="footer">
       <TscBlueLogoSvg className="w-64" />
@@ -81,40 +75,8 @@ const Footer = (props: Props) => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmo.
         </p>
-        <div className="">
-          <Formik
-            initialValues={{ email: '' }}
-            onSubmit={(values) => {
-              console.log(values);
-            }}
-          >
-            {({ isSubmitting }) => (
-              <Form className="newsletter relative">
-                <Field
-                  className="newsletter__input"
-                  type="email"
-                  name="email"
-                  id=""
-                />
-                <Button
-                  type="submit"
-                  as="button"
-                  variant="primary"
-                  className="newsletter__btn"
-                >
-                  Submit
-                </Button>
-                {isSubmitting && (
-                  <div className="absolute top-0 col-span-2 flex h-40 w-full items-center justify-center rounded-xl bg-primary md:h-20">
-                    <p className=" mb-0 text-center text-secondary2">
-                      Thanks for joining our newsletter....
-                    </p>
-                  </div>
-                )}
-              </Form>
-            )}
-          </Formik>
-        </div>
+
+        <Newsletter />
       </div>
 
       <div className="footer__pages">
@@ -128,7 +90,6 @@ const Footer = (props: Props) => {
         </div>
       </div>
       <hr className="col-span-full" />
-      {/* <div className="footer__line"></div> */}
       <SocialIcon
         icons={[
           {
