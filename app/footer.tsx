@@ -6,6 +6,7 @@ import '@/styles/footer.css';
 import SocialIcon from '@/ui/SocialIcon';
 import Button from '@/ui/Button';
 import TscBlueLogoSvg from '@/public/icons/tscBlueLogo.svg';
+import { Field, Form, Formik } from 'formik';
 
 type Props = {};
 
@@ -80,17 +81,39 @@ const Footer = (props: Props) => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmo.
         </p>
-        <div className="newsletter">
-          <input
-            className="newsletter__input"
-            placeholder="Enter your email"
-            type="text"
-            name=""
-            id=""
-          />
-          <Button as="button" variant="primary" className="newsletter__btn">
-            Submit
-          </Button>
+        <div className="">
+          <Formik
+            initialValues={{ email: '' }}
+            onSubmit={(values) => {
+              console.log(values);
+            }}
+          >
+            {({ isSubmitting }) => (
+              <Form className="newsletter relative">
+                <Field
+                  className="newsletter__input"
+                  type="email"
+                  name="email"
+                  id=""
+                />
+                <Button
+                  type="submit"
+                  as="button"
+                  variant="primary"
+                  className="newsletter__btn"
+                >
+                  Submit
+                </Button>
+                {isSubmitting && (
+                  <div className="absolute top-0 col-span-2 flex h-40 w-full items-center justify-center rounded-xl bg-primary md:h-20">
+                    <p className=" mb-0 text-center text-secondary2">
+                      Thanks for joining our newsletter....
+                    </p>
+                  </div>
+                )}
+              </Form>
+            )}
+          </Formik>
         </div>
       </div>
 

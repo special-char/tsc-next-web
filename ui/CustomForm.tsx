@@ -5,16 +5,20 @@ import FieldItem from './Field';
 
 type Props = {};
 
-const CustomForm = ({ buttonStyle, fields, ...rest }: Props) => {
+const CustomForm = ({
+  buttonStyle,
+  notification,
+  data,
+  fields,
+  ...rest
+}: Props) => {
   return (
     <>
       <Formik {...rest}>
-        {() => (
-          <Form className="form">
+        {({ isSubmitting }) => (
+          <Form className="form relative">
             {fields.map((field) => {
-              return (
-                <FieldItem key={field.name} {...field} />
-              )
+              return <FieldItem key={field.name} {...field} />;
             })}
             <button
               type="submit"
@@ -24,6 +28,17 @@ const CustomForm = ({ buttonStyle, fields, ...rest }: Props) => {
             >
               submit
             </button>
+            {isSubmitting && (
+              <div className="absolute flex h-full w-full items-center justify-center bg-neutral-100">
+                <p
+                  className={clsx('', {
+                    [notification]: !![notification],
+                  })}
+                >
+                  {data}
+                </p>
+              </div>
+            )}
           </Form>
         )}
       </Formik>

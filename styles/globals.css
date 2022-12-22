@@ -548,6 +548,14 @@
     }
   }
 
+  /* .notification_container {
+    @apply ;
+
+    &__notification {
+      @apply w-4/5 rounded-xl bg-primary py-10 text-center text-neutral-100;
+    }
+  } */
+
   .newsletter {
     @apply grid gap-5;
     grid-template-columns: 3fr 2fr;
