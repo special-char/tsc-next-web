@@ -32,12 +32,15 @@ export const FeaturesSkeleton = () => {
     </section>
   );
 };
+
 const Features = ({ title, chips }: Props) => {
+  console.log('chips data:', chips);
+
   return (
     <section id="features" className="features">
       <h2 className="features__title">{title}</h2>
       <div className="features__body">
-        {chips.map((x) => (
+        {chips?.map((x) => (
           <button
             className={clsx('chip chip--white features__chip ', {
               'bg-primary text-neutral-100': x.selected,

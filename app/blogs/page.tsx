@@ -4,9 +4,9 @@ import BlogSubscribe, {
 } from 'app/training/blogSubscribe';
 import Features, { FeaturesSkeleton } from '@/ui/features';
 import PageHeader from '@/ui/pageHeader';
-import Card from '@/ui/Card';
 import { Suspense } from 'react';
 import Blog from 'app/training/blog';
+import FeatureBlog from '@/ui/FeatureBlog';
 
 export default async function Page() {
   const moreblogData = [
@@ -107,39 +107,42 @@ export default async function Page() {
           circleLeft="bg-secondary3"
         />
       </Suspense>
-      <Suspense fallback={<h1>heading...</h1>}>
-        {/* @ts-expect-error Async Server Component */}
-        <Blog />
-      </Suspense>
+      <section className="blogs">
+        <Suspense fallback={<h1>heading...</h1>}>
+          {/* @ts-expect-error Async Server Component */}
+
+          <FeatureBlog />
+        </Suspense>
+      </section>
 
       <Suspense fallback={<BlogSubscribeSkeleton />}>
         <BlogSubscribe />
       </Suspense>
-      <Suspense fallback={<FeaturesSkeleton />}>
-        <Features
-          title="All Courses"
-          chips={[
-            {
-              name: 'All',
-              selected: true,
-            },
-            {
-              name: 'Development',
-            },
-            {
-              name: 'Design',
-            },
-            {
-              name: 'Marketing',
-            },
-          ]}
-        />
-      </Suspense>
-      {/* <section className="blogs__moreblogs">
-        {moreblogData.map((moreblogs: any) => {
-          return <Card data={moreblogs} />;
-        })}
-      </section> */}
+      <Features
+        title="All Courses"
+        chips={[
+          {
+            name: 'All',
+            selected: true,
+          },
+          {
+            name: 'Development',
+          },
+          {
+            name: 'Design',
+          },
+          {
+            name: 'Marketing',
+          },
+        ]}
+      />
+      <section className="blogs">
+        <Suspense fallback={<h1>heading...</h1>}>
+          {/* @ts-expect-error Async Server Component */}
+
+          <FeatureBlog />
+        </Suspense>
+      </section>
     </>
   );
 }

@@ -1,31 +1,28 @@
 .event_Card {
-  @apply flex items-center justify-center px-container;
+  @apply flex w-full flex-col items-center justify-center gap-8 px-container py-10;
   h3,
   p {
     @apply m-0;
   }
 
-  .card__heading {
-    @apply mb-4;
-  }
   .event__section {
     @apply flex flex-col  rounded-2xl bg-neutral-100 drop-shadow-2xl lg:flex-row;
   }
   .card__image {
     height: -webkit-fill-available;
-    @apply m-0 flex-1 rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none;
+    @apply m-0 aspect-video w-full flex-1 rounded-t-2xl lg:h-[360px] lg:rounded-l-2xl lg:rounded-tr-none;
   }
-  .card__body {
-    @apply grid flex-1 grid-cols-[1fr,auto] gap-y-3 px-5 py-8 md:p-12 lg:px-12 lg:py-6;
+  .event__body {
+    @apply grid flex-1 grid-cols-[1fr,auto] gap-y-3 px-5 py-8 md:p-12 lg:px-12 lg:py-16;
 
-    .card__date {
-      @apply flex flex-col items-start md:flex-row;
+    .event__date {
+      @apply flex flex-col items-start gap-2 md:flex-row md:items-center;
     }
     .date {
       @apply flex flex-1 flex-col items-center font-bold text-neutral-700 md:row-span-2;
     }
-    event__datails {
-      @apply col-span-2 flex flex-col gap-4 md:col-auto;
-    }
+  }
+  .event__datails {
+    @apply col-span-2 flex flex-col gap-4 md:col-auto;
   }
 }

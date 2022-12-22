@@ -1,0 +1,6 @@
+.checkbox-group {
+  @apply mb-0 flex min-h-[3.5rem] min-w-full max-w-full appearance-none items-center gap-12 rounded-full border border-solid border-transparent bg-neutral-100 text-lg leading-5 text-primary;
+  &__item {
+    @apply m-0 flex gap-2;
+  }
+}

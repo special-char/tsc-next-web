@@ -9,6 +9,7 @@ import CustomForm from '@/ui/CustomForm';
 import { useCallback, useEffect, useState } from 'react';
 import { ContactDetail } from 'types/types';
 import { getContactDetail } from '@/lib/getContactDetail';
+import DynamicForm from '@/ui/DynamicForm';
 
 export const ContactSkeleton = () => {
   return (
@@ -172,19 +173,7 @@ const Contact = (props: Props) => {
         aliquip commodo consequat
       </p>
       <div className="contact__body">
-        <CustomForm
-          initialValues={{
-            name: '',
-            email: '',
-            phone: '',
-            subject: '',
-            message: '',
-          }}
-          onSubmit={(values) => {
-            console.log(values);
-          }}
-          fields={fields}
-        />
+        <DynamicForm id={1} />
       </div>
       <div className="contact__cards">
         {contactDetails.map((cardData) => (
