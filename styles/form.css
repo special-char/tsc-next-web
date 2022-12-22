@@ -1,0 +1,20 @@
+.register {
+  @apply relative grid h-full grid-cols-1  gap-8 overflow-hidden px-container pb-40 pt-20 lg:py-32;
+
+  &__btn {
+    @apply mt-10 md:col-span-2 md:mx-auto;
+  }
+  &__form-container {
+    @apply mx-auto  w-full rounded-2xl bg-neutral-100 p-4 shadow-dark md:p-8 md:pt-20;
+  }
+
+  &__bg-circle1 {
+    @apply absolute -right-[900px] -z-10 h-[400px] w-[400px] rounded-full bg-secondary2 md:top-[10%] md:-right-[49%] lg:top-24 lg:-right-48;
+  }
+  &__bg-circle2 {
+    @apply absolute top-[68%] -left-[40%] -z-10 h-[400px] w-[400px] rounded-full bg-secondary3 md:top-[63%] md:-left-36 lg:top-[65%] lg:-left-20;
+  }
+  &__bg-circle3 {
+    @apply absolute -left-[900px] -z-10 h-[400px] w-[400px] rounded-full bg-secondary1 md:-top-80 md:-left-44 lg:-top-[24%] lg:-left-20;
+  }
+}

@@ -1,12 +1,6 @@
 'use client';
-import EmailSvg from '@/public/icons/email.svg';
-import PhoneSvg from '@/public/icons/phone.svg';
-import AddressSvg from '@/public/icons/address.svg';
 import '@/styles/registration.css';
-import { Formik, Form, Field } from 'formik';
 import TextInput from '@/ui/TextInput';
-import TextArea from '@/ui/TextArea';
-import clsx from 'clsx';
 import CustomForm from '@/ui/CustomForm';
 import RadioButtons from '@/ui/RadioButtons';
 import MultiSelectDropDown from '@/ui/MultiSelectDropDown';

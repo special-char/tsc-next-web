@@ -1,0 +1,125 @@
+{
+  "route_name": "registration-form",
+  "fields": [
+    {
+      "name": "firstname",
+      "label": "First Name",
+      "type": "text",
+      "placeholder": "First Name",
+      "component": "TextInput",
+      "initialvalue": ""
+    },
+    {
+      "name": "lastname",
+      "label": "Last Name",
+      "type": "text",
+      "placeholder": "Last Name",
+      "component": "TextInput",
+      "initialvalue": ""
+    },
+    {
+      "label": "Phone Number",
+      "name": "phonenumber",
+      "type": "tel",
+      "placeholder": "+91 1234 5678 90",
+      "component": "TextInput",
+      "initialvalue": ""
+    },
+    {
+      "label": "Email Address",
+      "name": "email",
+      "type": "email",
+      "placeholder": "Email",
+      "component": "TextInput",
+      "initialvalue": ""
+    },
+    {
+      "label": "College Name",
+      "name": "collegename",
+      "type": "text",
+      "placeholder": "College Name",
+      "component": "TextInput",
+      "initialvalue": ""
+    },
+    {
+      "label": "Branch",
+      "name": "branch",
+      "type": "text",
+      "placeholder": "Branch",
+      "component": "TextInput",
+      "initialvalue": ""
+    },
+    {
+      "name": "interestedFor",
+      "label": "Interested For",
+      "options": [
+        {
+          "key": "Online",
+          "value": "online",
+          "checked": true
+        },
+        {
+          "key": "Offline",
+          "value": "offline"
+        }
+      ],
+      "component": "RadioButtons",
+      "initialvalue": ""
+    },
+    {
+      "name": "technologyInterests",
+      "placeholder": "Choose Options",
+      "label": "Technology Interests",
+      "options": [
+        {
+          "id": 1,
+          "name": "foo"
+        },
+        {
+          "id": 2,
+          "name": "foo1"
+        },
+        {
+          "id": 3,
+          "name": "foo2"
+        },
+        {
+          "id": 4,
+          "name": "foo3"
+        },
+        {
+          "id": 5,
+          "name": "foo4"
+        },
+        {
+          "id": 6,
+          "name": "foo5"
+        },
+        {
+          "id": 7,
+          "name": "foo6"
+        },
+        {
+          "id": 8,
+          "name": "foo7"
+        },
+        {
+          "id": 9,
+          "name": "foo8"
+        }
+      ],
+      "component": "MultiSelect",
+      "initialvalue": ["foo7", "foo8"]
+    },
+    {
+      "name": "query",
+      "label": "Query",
+      "type": "text",
+      "placeholder": "type your message here",
+      "component": "TextArea",
+      "initialvalue": "",
+      "wrapperClassName": "col-span-full",
+      "rows": 5
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+.singleSelect {
+  select {
+    @apply mb-0 flex max-h-[100px] min-h-[64px] w-full items-center justify-between rounded-full border-0 bg-neutral-200 px-7 text-xl text-primary;
+  }
+}

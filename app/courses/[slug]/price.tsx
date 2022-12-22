@@ -43,14 +43,12 @@ const Price = (props: Props) => {
           Lorem ipsum dolor sit amet, dolor consectetur adipiscing elit purus
           vivera.
         </p>
-        <div className="">
-          <select className="">
-            <option value="">Select Course Plan</option>
-            <option value="basic">Basic</option>
-            <option value="premium">Premium</option>
-          </select>
+        <div className="flex flex-col gap-3">
           <Link href="/" className="btn btn--primary">
-            Add to cart
+            Register
+          </Link>
+          <Link href="/" className="btn btn--primary">
+            Download Brochure
           </Link>
         </div>
       </div>

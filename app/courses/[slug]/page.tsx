@@ -10,7 +10,7 @@ const loader = () => {
   console.log('====================================');
   console.log('hello');
   console.log('====================================');
-}
+};
 const learnData = [
   {
     desc: 'Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.',
@@ -94,8 +94,14 @@ export default async function Page() {
               fill
             />
             <div className="main__left-section__preview__body">
-              <a href="#popup-open" id="popup-button" className="hamburger" title="Open Menu" aria-label="Open Menu">
-                <div className="popup-icon">
+              <a
+                href="#popup-open"
+                id="popup-button"
+                className="hamburger"
+                title="Open Menu"
+                aria-label="Open Menu"
+              >
+                <div className="popup-icon flex h-20 w-20 items-center justify-center rounded-full bg-secondary1 md:h-32 md:w-32">
                   <PlayVideo
                     role="presentation"
                     focusable="false"
@@ -189,10 +195,20 @@ export default async function Page() {
       </div>
       <aside id="popup-open">
         <span id="popup-close">
-          <a href="#" title="Close Menu" aria-label="Close Menu" >X</a>
+          <a href="#" title="Close Menu" aria-label="Close Menu">
+            X
+          </a>
         </span>
 
-        <iframe loading='lazy' className='popup-video' src="https://www.youtube.com/embed/Icf5D3fEKbM" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+        <iframe
+          loading="lazy"
+          className="popup-video"
+          src="https://www.youtube.com/embed/Icf5D3fEKbM"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
       </aside>
     </section>
   );

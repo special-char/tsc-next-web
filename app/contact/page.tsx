@@ -7,12 +7,8 @@ import Faq, { FaqSkeleton } from './faq';
 const Page = () => {
   return (
     <>
-      <Suspense fallback={<ContactSkeleton />}>
-        {/* @ts-expect-error Async Server Component */}
-        <Contact />
-      </Suspense>
+      <Contact />
       <Suspense fallback={<FaqSkeleton />}>
-        {/* @ts-expect-error Async Server Component */}
         <Faq />
       </Suspense>
     </>

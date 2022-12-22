@@ -41,7 +41,7 @@ const Perks = async () => {
 
   if (!perksData) return null;
 
-  const { benifits, title } = perksData.data.data.perk.data?.attributes as Perk;
+  const { benifits, title } = perksData.data.perk.data?.attributes as Perk;
 
   return (
     <section id="perks" className="perks">

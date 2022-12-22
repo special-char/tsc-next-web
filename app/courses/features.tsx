@@ -1,8 +1,16 @@
+'use client';
+
 import React from 'react';
 import '@/styles/features.css';
-import Link from 'next/link';
-import Button from '@/ui/Button';
-type Props = {};
+import clsx from 'clsx';
+type Props = {
+  title: string;
+  chips: {
+    name: string;
+    selected?: boolean;
+  }[];
+};
+
 export const FeaturesSkeleton = () => {
   return (
     <section id="features" className="features animate-pulse">
@@ -24,17 +32,24 @@ export const FeaturesSkeleton = () => {
     </section>
   );
 };
-const Features = (props: Props) => {
+
+const Features = ({ title, chips }: Props) => {
+  console.log('chips data:', chips);
+
   return (
     <section id="features" className="features">
-      <h2 className="features__title">All Courses</h2>
+      <h2 className="features__title">{title}</h2>
       <div className="features__body">
-        <button className="chip chip--white features__chip bg-primary text-neutral-100 ">
-          All
-        </button>
-        <button className="chip chip--white features__chip">Development</button>
-        <button className="chip chip--white features__chip">Design</button>
-        <button className="chip chip--white features__chip">Marketing</button>
+        {chips?.map((x) => (
+          <button
+            className={clsx('chip chip--white features__chip ', {
+              'bg-primary text-neutral-100': x.selected,
+            })}
+            onClick={() => {}}
+          >
+            {x.name}
+          </button>
+        ))}
       </div>
     </section>
   );

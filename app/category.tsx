@@ -40,9 +40,9 @@ const Category = async () => {
 
   if (!categoriesData) return null;
 
-  const categoriesInfo = categoriesData.data.data.categories.data;
+  const categoriesInfo = categoriesData.data.categories.data;
 
-  const { title } = categoriesData.data.data.homeCategory.data
+  const { title } = categoriesData.data.homeCategory.data
     ?.attributes as HomeCategory;
 
   return (
