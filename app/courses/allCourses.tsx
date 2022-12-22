@@ -1,5 +1,5 @@
 import React from 'react';
-import Features from './features';
+import Features from '../../ui/features';
 import '@/styles/allCourses.css';
 import CourseCard from '@/ui/CourseCard';
 import { getAllCoursesData } from '@/lib/getAllCourses';
