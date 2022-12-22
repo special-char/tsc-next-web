@@ -15,7 +15,24 @@ const AllCourses = async (props: Props) => {
 
   return (
     <section id="allcourses">
-      <Features />
+      <Features
+        title="All Courses"
+        chips={[
+          {
+            name: 'All',
+            selected: true,
+          },
+          {
+            name: 'Development',
+          },
+          {
+            name: 'Design',
+          },
+          {
+            name: 'Marketing',
+          },
+        ]}
+      />
       <div className="allcourses__content">
         {coursesInfo.map((data) => {
           return <CourseCard key={data.id} course={data} />;
