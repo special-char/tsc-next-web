@@ -1,3 +1,4 @@
+import { getBannerHeaderData } from '@/lib/getBannerHeader';
 import PageHeader from '@/ui/pageHeader';
 import { Suspense } from 'react';
 import Contact, { ContactSkeleton } from './contact';

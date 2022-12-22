@@ -1,20 +1,37 @@
-import second from '@/styles/newsletter.css';
+import { Field, Form, Formik } from 'formik';
+import { useState } from 'react';
 import Button from './Button';
 
 const Newsletter = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false)
   return (
-    <div className="newsletter">
-      <input
-        className="newsletter__input"
-        placeholder="Enter your email"
-        type="text"
-        name=""
-        id=""
-      />
-      <Button as="button" variant="primary" className="newsletter__btn">
-        Subscribe
-      </Button>
-    </div>
+    <>
+      {isSubmitted ? <div className='newsletter__subscribed'>Thanks for joining our newsletter</div> : <Formik
+        initialValues={{
+          email: ''
+        }}
+        onSubmit={(values, actions) => {
+          actions.setSubmitting(true);
+          setTimeout(() => {
+            alert(JSON.stringify(values, null, 2));
+            actions.setSubmitting(false);
+            setIsSubmitted(true)
+            actions.resetForm();
+          }, 2000);
+        }}
+        className="w-full"
+      >
+        {({ isSubmitting }) => (
+          <Form>
+            <div className="newsletter">
+              <Field id="firstName" type="email" className='newsletter__input' name="email" placeholder="enter your email address" />
+              <Button className='newsletter__btn' variant='primary' as="button" type="submit">{isSubmitting ? "Please wait..." : "Submit"}</Button>
+            </div>
+          </Form>
+        )}
+
+      </Formik>}
+    </>
   );
 };
 

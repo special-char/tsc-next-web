@@ -1,11 +1,11 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React from 'react';
 import '@/styles/footer.css';
 import SocialIcon from '@/ui/SocialIcon';
-import Button from '@/ui/Button';
 import TscBlueLogoSvg from '@/public/icons/tscBlueLogo.svg';
+import Newsletter from '@/ui/Newsletter';
 
 type Props = {};
 
@@ -51,12 +51,7 @@ function validateEmail(values: any) {
   return error;
 }
 const Footer = (props: Props) => {
-  // const [submit, setsubmit] = useState(false);
-  // const buttonHandler = () => {
-  //   console.log('buttonHandler clicked');
-  //   setsubmit(!submit);
-  //   console.log(submit);
-  // };
+
   return (
     <section id="footer" className="footer">
       <TscBlueLogoSvg className="w-64" />
@@ -80,18 +75,8 @@ const Footer = (props: Props) => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmo.
         </p>
-        <div className="newsletter">
-          <input
-            className="newsletter__input"
-            placeholder="Enter your email"
-            type="text"
-            name=""
-            id=""
-          />
-          <Button as="button" variant="primary" className="newsletter__btn">
-            Submit
-          </Button>
-        </div>
+
+        <Newsletter />
       </div>
 
       <div className="footer__pages">
@@ -105,7 +90,6 @@ const Footer = (props: Props) => {
         </div>
       </div>
       <hr className="col-span-full" />
-      {/* <div className="footer__line"></div> */}
       <SocialIcon
         icons={[
           {
