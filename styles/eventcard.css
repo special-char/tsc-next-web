@@ -26,13 +26,3 @@
     @apply col-span-2 flex flex-col gap-4 md:col-auto;
   }
 }
-.chipbody {
-  @apply content-center items-center justify-between px-container pb-10 lg:flex;
-  & > h2 {
-    @apply m-0 text-3xl md:text-6xl;
-  }
-
-  &__header {
-    @apply flex flex-row flex-wrap justify-around gap-2 rounded-full bg-neutral-200 p-6;
-  }
-}
