@@ -11,9 +11,9 @@ const EventDatailPage = (props: Props) => {
     <>
       <section className="events__body">
         <div className="events__header">
-          <div>
-            <h6 className="font-bold lg:mt-3">july</h6>
-            <h1 className="events__h1">24</h1>
+          <div className="">
+            <h5 className="events__h6">july</h5>
+            <h6 className="events__h1">24</h6>
           </div>
         </div>
         <div className="events__datails ">
