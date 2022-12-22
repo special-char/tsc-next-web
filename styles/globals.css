@@ -603,4 +603,12 @@
       @apply m-0 p-0;
     }
   }
+
+  .items {
+    @apply py-20 px-sm-container lg:px-container;
+
+    &__item {
+      @apply my-8 grid grid-cols-1 gap-8 lg:grid-cols-2;
+    }
+  }
 }

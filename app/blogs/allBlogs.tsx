@@ -1,16 +1,17 @@
 import React from 'react';
-import Features from '../../ui/features';
-import CourseCard from '@/ui/CourseCard';
-import { getAllCoursesData } from '@/lib/getAllCourses';
+import '@/styles/blogs.css';
+import { getHomeBlogData } from '@/lib/getHomeBlog';
+import BlogCard from '@/ui/BlogCard';
+import Features from '@/ui/features';
 
 type Props = {};
 
-const AllCourses = async (props: Props) => {
-  const coursesData = await getAllCoursesData();
+const AllBlogs = async () => {
+  const homeBlogData = await getHomeBlogData();
 
-  if (!coursesData) return null;
+  if (!homeBlogData) return null;
 
-  const coursesInfo = coursesData.data.courses.data;
+  const blogList = homeBlogData.data.blogs.data;
 
   return (
     <section className="items bg-neutral-200">
@@ -33,12 +34,12 @@ const AllCourses = async (props: Props) => {
         ]}
       />
       <div className="items__item">
-        {coursesInfo.map((data) => {
-          return <CourseCard key={data.id} course={data} />;
-        })}
+        {blogList.map((x, i) => (
+          <BlogCard key={x.id} blog={x} />
+        ))}
       </div>
     </section>
   );
 };
 
-export default AllCourses;
+export default AllBlogs;

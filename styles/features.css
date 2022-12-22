@@ -1,11 +1,11 @@
 .features {
-  @apply grid min-h-full w-full  items-center gap-4 px-container;
+  @apply grid min-h-full w-full items-center gap-4;
   @media only screen and (min-width: 1010px) {
     grid-template-columns: 1fr auto;
   }
 
   &__body {
-    @apply grid grid-cols-2 gap-3 rounded-3xl bg-neutral-200 px-5 py-4 shadow-dark md:grid-cols-4 md:rounded-full lg:grid-cols-4;
+    @apply grid grid-cols-2 gap-3 rounded-3xl bg-neutral-200 px-4 py-4 shadow-dark md:grid-cols-4 md:rounded-full lg:grid-cols-4;
   }
 
   &__title {

@@ -8,10 +8,10 @@ import clsx from 'clsx';
 
 type Props = {
   blog: BlogEntity;
-  index: number;
+  index?: number;
 };
 
-const BlogCard = ({ blog, index }: Props) => {
+const BlogCard = ({ blog, index = 0 }: Props) => {
   const { title, bannerImage, updatedAt, category } = blog.attributes as Blog;
   const { url, alternativeText } = bannerImage?.data?.attributes as UploadFile;
 
