@@ -2,7 +2,7 @@ import '@/styles/blogs.css';
 import BlogSubscribe, {
   BlogSubscribeSkeleton,
 } from 'app/training/blogSubscribe';
-import Features, { FeaturesSkeleton } from 'app/courses/features';
+import Features, { FeaturesSkeleton } from '@/ui/features';
 import PageHeader from '@/ui/pageHeader';
 import Card from '@/ui/Card';
 import { Suspense } from 'react';
