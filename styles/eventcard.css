@@ -1,5 +1,5 @@
 .event_Card {
-  @apply flex items-center justify-center px-container;
+  @apply flex w-full flex-col items-center justify-center gap-8 px-container py-10;
   h3,
   p {
     @apply m-0;
@@ -10,7 +10,7 @@
   }
   .card__image {
     height: -webkit-fill-available;
-    @apply m-0 aspect-video flex-1 rounded-t-2xl lg:aspect-h-image lg:rounded-l-2xl lg:rounded-tr-none;
+    @apply m-0 aspect-video w-full flex-1 rounded-t-2xl lg:h-[360px] lg:rounded-l-2xl lg:rounded-tr-none;
   }
   .event__body {
     @apply grid flex-1 grid-cols-[1fr,auto] gap-y-3 px-5 py-8 md:p-12 lg:px-12 lg:py-16;
