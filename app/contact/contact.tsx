@@ -170,8 +170,12 @@ const Contact = (props: Props) => {
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
         aliquip commodo consequat
       </p>
-      <div className="contact__body">
+      <div className="contact__body relative">
         <CustomForm
+          data="Your message has been submitted. We will get back to you within
+        24-48 hours."
+          // notificationContainer="absolute flex h-full w-full items-center justify-center bg-neutral-100"
+          notification="w-4/5 rounded-xl bg-primary py-10 text-center text-neutral-100"
           initialValues={{
             name: '',
             email: '',
@@ -188,7 +192,7 @@ const Contact = (props: Props) => {
       <div className="contact__cards">
         {contactDetails.map((cardData) => (
           <div className="contact__card_details">
-            <div className="contact__svg">{cardData.svg}</div>
+            <div className="contact__svg">{cardData.svg} some</div>
             <h3 className="mt-4">{cardData.title}</h3>
             <p className="px-4">{cardData.description}</p>
           </div>

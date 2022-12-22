@@ -4,7 +4,7 @@ import { Suspense } from 'react';
 import Contact, { ContactSkeleton } from './contact';
 import Faq, { FaqSkeleton } from './faq';
 
-const Page = async () => {
+const Page = () => {
   return (
     <>
       <Suspense fallback={<ContactSkeleton />}>
