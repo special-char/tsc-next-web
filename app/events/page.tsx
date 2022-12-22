@@ -1,6 +1,6 @@
 import EventCard, { EventCardSkeleton } from '@/ui/EventCard';
 import PageHeader, { PageHeaderSkeleton } from '@/ui/pageHeader';
-import Features, { FeaturesSkeleton } from 'app/courses/features';
+import Features, { FeaturesSkeleton } from '@/ui/features';
 import { Suspense } from 'react';
 import Event from './event';
 
@@ -75,7 +75,7 @@ export default async function Page() {
         </section>
       </Suspense>
 
-      <Suspense fallback={<EventCardSkeleton />}>
+      <Suspense fallback={<h1>Loading...</h1>}>
         <EventCard data={data} />
       </Suspense>
     </>
