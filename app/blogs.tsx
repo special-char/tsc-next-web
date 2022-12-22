@@ -1,9 +1,10 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { Suspense } from 'react';
 import '@/styles/blogs.css';
 import { getHomeBlogData } from '@/lib/getHomeBlog';
 import { HomeBlog } from 'types/types';
 import BlogCard from '@/ui/BlogCard';
+import FeatureBlog from '@/ui/FeatureBlog';
 
 type Props = {};
 
@@ -25,11 +26,9 @@ const Blogs = async (props: Props) => {
           {button?.text}
         </Link>
       </div>
-      <div className="blogs__grid">
-        {blogList.map((x, i) => (
-          <BlogCard key={x.id} blog={x} index={i} />
-        ))}
-      </div>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <FeatureBlog />
+      </Suspense>
     </section>
   );
 };

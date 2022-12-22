@@ -10,7 +10,7 @@
     @apply lg:justify-self-end;
   }
   &__grid {
-    @apply grid grid-cols-1 gap-4 pb-2  md:grid-cols-1 md:grid-rows-3 lg:grid-cols-2;
+    @apply grid grid-cols-1 gap-4 pb-2 md:grid-rows-3 lg:grid-cols-2;
 
     & > a {
       @apply first:row-span-full;
