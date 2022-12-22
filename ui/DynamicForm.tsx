@@ -10,7 +10,7 @@ type Props = {
 };
 
 const DynamicForm = ({ id }: Props) => {
-    console.log('id: ', id);
+    const [isSubmitted, setIsSubmitted] = useState(false)
 
     const [fields, setFields] = useState(null)
     const [initialValues, setInitialValues] = useState(null)
@@ -34,16 +34,28 @@ const DynamicForm = ({ id }: Props) => {
 
     return (
         <>
-            {initialValues && fields && (
-                <CustomForm
-                    buttonStyle="register__btn"
-                    initialValues={initialValues}
-                    onSubmit={(actions) => {
-                        actions.resetForm();
-                    }}
-                    fields={fields}
-                />
-            )}
+            {
+                isSubmitted ? <div className="flex items-center h-full"><div className="newsletter__subscribed">Your message has been submitted.<br />
+                    We will get back to you within 24-48 hours</div></div> :
+                    <> {initialValues && fields && (
+                        <CustomForm
+                            buttonStyle="register__btn"
+                            initialValues={initialValues}
+                            onSubmit={(values, actions) => {
+                                actions.setSubmitting(true);
+                                setTimeout(() => {
+                                    alert(JSON.stringify(values, null, 2));
+                                    actions.setSubmitting(false);
+                                    setIsSubmitted(true)
+                                    actions.resetForm();
+                                }, 2000);
+                            }}
+                            fields={fields}
+                        />
+                    )}
+                    </>
+            }
+
         </>
     );
 };
