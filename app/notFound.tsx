@@ -5,7 +5,7 @@ import Button from '@/ui/Button';
 
 type Props = {};
 
-const Found = (props: Props) => {
+const NotFound = (props: Props) => {
   return (
     <section className="found">
       <div className="found__content">
@@ -27,4 +27,4 @@ const Found = (props: Props) => {
   );
 };
 
-export default Found;
+export default NotFound;
