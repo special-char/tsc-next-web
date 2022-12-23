@@ -11,7 +11,7 @@ const page = (props: Props) => {
   return (
     <>
       <TeamDetails />
-      <hr />
+      <hr />x
       <EmployeeTechnologies />
       <hr />
       <EmployeeEducation />
