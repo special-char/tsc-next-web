@@ -9,79 +9,23 @@
       @apply absolute -right-96 -top-96 -z-10 h-[500px] w-[500px] rounded-full bg-secondary3 md:-right-48 md:-top-80 lg:-right-36 lg:-top-60;
     }
   }
-  #popup-open {
-    --easeOutExpo: cubic-bezier(0.16, 1, 0.3, 1);
-    --duration: 0.6s;
-
-    display: grid;
-    grid-template-rows: 2;
-    place-items: end;
-    grid-template-columns: [a] [iframe];
-
-    position: fixed;
-    z-index: 999999;
-    top: 0;
-    aspect-ratio: 16/9;
-    width: 100vw;
-    overflow: hidden auto;
-    overscroll-behavior: contain;
-    background-color: rgba(0, 0, 0, 0.6);
-    display: grid; /* not keyboard accessible when closed */
-    transform: translateX(-110vw);
-    will-change: transform;
-    transition: transform var(--duration) var(--easeOutExpo),
-      visibility 0s linear var(--duration);
-
-    &:target {
-      display: grid;
-      height: 100vh;
-      place-content: center;
-      transform: translateX(0);
-      transition: transform var(--duration) var(--easeOutExpo);
+  .video {
+    @apply relative aspect-video max-h-[600px] w-screen;
+    @media (max-width: 300px) and (orientation: landscape) {
+      @apply max-h-[200px];
     }
-
-    @media (prefers-reduced-motion: reduce) {
-      --duration: 1ms;
+    @media (max-width: 1024px) and (orientation: landscape) {
+      @apply max-h-[300px];
     }
-    a {
+    @media (min-width: 1024px) and (max-width: 1279px) (orientation: landscape) {
+      @apply max-h-[450px];
     }
-    .popup-video {
-      @apply aspect-video w-full;
-      @media screen and (min-width: 768px) {
-        width: 700px;
-      }
-      @media screen and (min-width: 1024px) {
-        width: 900px;
-      }
-      @media screen and (min-width: 1440px) {
-        width: 1100px;
-      }
+    @media (min-width: 1280px) and (orientation: landscape) {
+      @apply max-h-[650px];
     }
-  }
-
-  #popup-button {
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    user-select: none;
-    touch-action: manipulation;
-    display: block;
-  }
-  #popup-close {
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    user-select: none;
-    touch-action: manipulation;
-    display: block;
-    width: 3rem;
-    height: 3rem;
-    display: grid;
-    color: navajowhite;
-    place-content: center;
-    background-color: aliceblue;
-    border-radius: 50%;
-  }
-  iframe {
-    @apply rounded-xl;
+    /* @media screen and (min-width: 426px) {
+        @apply max-h-[600px];
+      } */
   }
 }
 .main {
