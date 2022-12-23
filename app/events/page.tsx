@@ -75,7 +75,7 @@ export default async function Page() {
         </section>
       </Suspense>
 
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<EventCardSkeleton />}>
         <EventCard data={data} />
       </Suspense>
     </>

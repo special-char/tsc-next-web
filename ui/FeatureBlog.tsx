@@ -1,9 +1,19 @@
 import React from 'react';
 import '@/styles/blogs.css';
 import { getHomeBlogData } from '@/lib/getHomeBlog';
-import BlogCard from '@/ui/BlogCard';
+import BlogCard, { BlogCardSkeleton } from '@/ui/BlogCard';
 
 type Props = {};
+
+export const FeatureBlogsSkeleton = () => {
+  return (
+    <div className="blogs__grid">
+      {[1, 2, 3, 4].map((x, i) => (
+        <BlogCardSkeleton key={x} index={i} />
+      ))}
+    </div>
+  );
+};
 
 const FeatureBlogs = async () => {
   const homeBlogData = await getHomeBlogData();

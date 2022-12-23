@@ -11,6 +11,35 @@ type Props = {
   index?: number;
 };
 
+export const BlogCardSkeleton = ({ index }: { index: number }) => {
+  return (
+    <Link
+      href="#"
+      className={clsx('blog_card animate-pulse', {
+        'blog_card--hoz': index > 0,
+      })}
+    >
+      <figure className="blog_card__img bg-neutral-300">
+        {index === 0 && (
+          <div className="blog_card__chips">
+            <div className="chip chip--white font-cursive">Design</div>
+          </div>
+        )}
+      </figure>
+      <div className="blog_card__body">
+        {index === 0 && (
+          <time className="blog_card__time font-cursive">
+            September 1, 2022
+          </time>
+        )}
+        <h3 className="blog_card__title font-cursive">
+          How to design a simple, yet unique and memorable brand identity
+        </h3>
+      </div>
+    </Link>
+  );
+};
+
 const BlogCard = ({ blog, index = 0 }: Props) => {
   const { title, bannerImage, updatedAt, category } = blog.attributes as Blog;
   const { url, alternativeText } = bannerImage?.data?.attributes as UploadFile;

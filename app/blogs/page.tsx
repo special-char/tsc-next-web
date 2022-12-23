@@ -1,14 +1,14 @@
 import '@/styles/blogs.css';
 import BlogSubscribe, { BlogSubscribeSkeleton } from './blogSubscribe';
-import PageHeader from '@/ui/pageHeader';
+import PageHeader, { PageHeaderSkeleton } from '@/ui/pageHeader';
 import { Suspense } from 'react';
-import FeatureBlog from '@/ui/FeatureBlog';
-import AllBlogs from './allBlogs';
+import FeatureBlog, { FeatureBlogsSkeleton } from '@/ui/FeatureBlog';
+import AllBlogs, { AllBlogsSkeleton } from './allBlogs';
 
 export default async function Page() {
   return (
     <>
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<PageHeaderSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
         <PageHeader
           pageName="blog-page"
@@ -18,7 +18,7 @@ export default async function Page() {
         />
       </Suspense>
       <section className="blogs">
-        <Suspense fallback={<h1>heading...</h1>}>
+        <Suspense fallback={<FeatureBlogsSkeleton />}>
           {/* @ts-expect-error Async Server Component */}
           <FeatureBlog />
         </Suspense>
@@ -28,7 +28,7 @@ export default async function Page() {
         <BlogSubscribe />
       </Suspense>
 
-      <Suspense fallback={<h1>heading...</h1>}>
+      <Suspense fallback={<AllBlogsSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
         <AllBlogs />
       </Suspense>
