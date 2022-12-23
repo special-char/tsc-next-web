@@ -1,21 +1,21 @@
 .events {
-  @apply relative h-auto overflow-hidden;
+  @apply relative  overflow-hidden;
 
   &__banner {
     @apply absolute h-48 w-full bg-primary lg:h-96;
   }
   &__animate-bounce-slow1 {
-    @apply absolute -top-40 z-10  rounded-full bg-secondary3 xs:!-left-28 xs:!-top-[58px] xs:h-36  xs:w-36 md:!top-20 md:!-left-60 md:min-h-[410px] md:w-[410px] lg:!-left-72 lg:!top-24 lg:min-h-[500px] lg:w-[500px] xl:!-left-24 xl:!top-48 xl:min-h-[550px] xl:w-[550px];
+    @apply absolute -left-40 -top-[74px] z-10 h-52 w-52 rounded-full  bg-secondary3 md:top-4 md:-left-80 md:min-h-[432px] md:w-[432px] lg:-left-80 lg:top-20 lg:min-h-[523px] lg:w-[523px] xl:!-left-44 xl:!top-80 xl:min-h-[523px] xl:w-[523px];
   }
   &__animate-bounce-slow2 {
-    @apply absolute z-10 rounded-full bg-secondary2 xs:!-right-28 xs:!top-48 xs:h-36 xs:w-36 md:!top-40 md:!-right-40 md:min-h-[325px] md:w-[325px] lg:!-right-32 lg:!top-32 lg:min-h-[400px] lg:w-[400px] xl:!-right-12 xl:!top-40 xl:min-h-[450px] xl:w-[450px];
+    @apply absolute -right-40 top-44 z-10 h-52 w-52 rounded-full bg-secondary2 md:top-36 md:-right-52 md:min-h-[345px] md:w-[373px] lg:-right-96 lg:top-40 lg:min-h-[450px] lg:w-[503px] xl:-right-12 xl:top-60 xl:min-h-[450px] xl:w-[450px];
   }
 
   &__page {
-    @apply mx-auto flex w-full max-w-7xl flex-col overflow-hidden bg-neutral-100 px-container pt-28;
+    @apply overflow-hidden bg-neutral-100 px-container pt-28 md:pt-32;
   }
   &__image {
-    @apply relative -top-8 z-20 h-44 w-full overflow-hidden xs:rounded-[20px] md:h-[400px] md:rounded-[33px] lg:h-[500px] xl:h-[640px];
+    @apply relative z-20 aspect-video overflow-hidden rounded-2xl pt-5;
   }
 
   &__body {
@@ -64,3 +64,38 @@
     @apply mx-auto mb-6 flex max-w-3xl flex-col items-start gap-2 md:pb-36;
   }
 }
+
+/* .wrapper {
+  @apply grid min-h-screen;
+  grid-template-rows: 100px 250px 300px 1fr;
+
+  &__header {
+    @apply relative bg-primary;
+    grid-row: 1 / 3;
+    grid-column: 1 / -1;
+    z-index: -1;
+  }
+
+  &__body {
+    @apply mx-auto h-full max-w-5xl px-4;
+    grid-row: 2 / -1;
+    grid-column: 1 / -1;
+
+    &__image {
+      @apply relative aspect-video overflow-hidden rounded-2xl;
+    }
+
+    &__content {
+      @apply mx-auto max-w-5xl pt-12 md:pt-16 lg:pt-20;
+      &__author-info {
+        @apply grid grid-rows-2 place-content-start gap-y-8 md:grid-cols-2 md:grid-rows-none;
+        .about-blog {
+          @apply my-auto flex gap-5 place-self-start md:place-self-end;
+          &__accessory {
+            @apply flex gap-2 border border-[#e7eaee] text-xs;
+          }
+        }
+      }
+    }
+  }
+} */
