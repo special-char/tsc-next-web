@@ -13,7 +13,13 @@ const CategoryCard = ({ category }: Props) => {
   const { url, alternativeText } = icon?.data?.attributes as UploadFile;
 
   return (
-    <Link href="#" className="category_card">
+    <Link
+      style={{
+        maxWidth: '24rem',
+      }}
+      href="#"
+      className="category_card"
+    >
       <figure className="category_card__img">
         <Image src={url} alt={`${alternativeText}`} fill />
         <div className="category_card__chips">
