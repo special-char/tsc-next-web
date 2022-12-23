@@ -1,20 +1,19 @@
 import React from 'react';
 import '@/styles/usercard.css';
-import Image from 'next/image';
-import Link from 'next/link';
-import SocialIcon from './SocialIcon';
 import Button from '@/ui/Button';
+import Image from 'next/image';
 
 type Props = {};
 
 const UserCard = (props: Props) => {
   return (
-    <section className=" px-container">
-      <div className="user_card mx-auto w-4/5">
-        <div className="avatar mr-4">
-          <img
+    <section className="px-container">
+      <div className="user_card ">
+        <div className="user_card__image avatar">
+          <Image
             src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f1ff9fd9e0e1686d26497_image-3-profile-picture-small-teacher-education-x-template.jpg"
             alt="avatar"
+            fill
           />
         </div>
         <div className="user_card__details">

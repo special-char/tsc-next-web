@@ -47,12 +47,6 @@
       a {
         @apply no-underline;
       }
-      /* .blog-post {
-        @apply overflow-hidden rounded-lg;
-        &__content {
-          @apply !m-0 aspect-blog-image !translate-y-0 overflow-hidden;
-        }
-      } */
     }
   }
   h1 {
