@@ -4,9 +4,15 @@ import Icon from '@/ui/Icon';
 import Image from 'next/image';
 import '@/styles/hirecard.css';
 
-type Props = {};
+type graduate = {
+  attributes: any;
+}[];
+type Props = {
+  data: graduate;
+};
 
-const HireCard = (props: Props) => {
+const HireCard = ({ data }: Props) => {
+  const { firstName, lastName } = data.attributes;
   return (
     <div className="hire_card">
       <figure className="hire_card__img">
@@ -17,12 +23,12 @@ const HireCard = (props: Props) => {
         />
       </figure>
       <div className="hire_card__body">
-        <h3 className="hire_card__title">Andrew lorem</h3>
+        <h3 className="hire_card__title">{`${firstName} ${lastName}`}</h3>
         <p className="hire_card__desc">
           Lorem ipsum dolor sit amet consectetur adipisicing.
         </p>
         <div className="hire_card__footer ">
-          <Link href="#" className="hire_card__action">
+          <Link href="#" className="hire_card__action" download={"employeeName.cv"}>
             <Icon name="download" height={24} width={24} />
           </Link>
           <h6>Download Profile</h6>
