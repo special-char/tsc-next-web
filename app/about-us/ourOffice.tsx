@@ -7,7 +7,7 @@ import { ContactDetail, UploadFile } from 'types/types';
 export const OurOfficeSkeleton = () => {
   return (
     <section id="ourOffice" className="ourOffice">
-      <div className="animate-pulse text-center md:mx-24 md:mb-6 lg:mx-40">
+      <div className="ourOffice__body animate-pulse">
         <h2 className="ourOffice__title font-cursive">Our Offices</h2>
         <p className="font-cursive">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -21,7 +21,7 @@ export const OurOfficeSkeleton = () => {
             <div className="ourOffice__card__content bg-neutral-300">
               <div></div>
               <h3 className="ourOffice__card__title font-cursive">Ahmedabad</h3>
-              <address className="grid-rows-span-3 grid font-cursive text-neutral-600">
+              <address className="ourOffice__card__connect text-neutral-600">
                 <a className="w-auto pb-2 font-cursive" href={`#`}>
                   thespecial@character.com
                 </a>
@@ -36,7 +36,7 @@ export const OurOfficeSkeleton = () => {
                 </div>
               </address>
             </div>
-            <div className="absolute -right-14 -bottom-20 h-32 w-32 rounded-full bg-primary"></div>
+            <div className="ouroffice__circle"></div>
           </div>
         </div>
         <div className="bg-neutral-300"></div>
@@ -57,7 +57,7 @@ const OurOffice = async (props: Props) => {
   const { url, alternativeText } = map?.data?.attributes as UploadFile;
   return (
     <section id="ourOffice" className="ourOffice">
-      <div className="text-center md:mx-24 md:mb-6 lg:mx-40">
+      <div className="ourOffice__body">
         <h2 className="ourOffice__title">{title}</h2>
         <p>{description}</p>
       </div>
@@ -70,11 +70,11 @@ const OurOffice = async (props: Props) => {
             return (
               <div className="ourOffice__card relative overflow-hidden">
                 <div className="ourOffice__card__content">
-                  <div className="relative mr-auto min-h-[64px] w-16">
+                  <div className="ourOffice__card__image">
                     <Image src={url} alt={`${alternativeText}`} fill />
                   </div>
                   <h3 className="ourOffice__card__title">{val?.city}</h3>
-                  <address className="grid-rows-span-3 grid text-neutral-600">
+                  <address className="ourOffice__card__connect">
                     <a className="w-auto pb-2" href={`#`}>
                       {email}
                     </a>
@@ -89,7 +89,7 @@ const OurOffice = async (props: Props) => {
                     </div>
                   </address>
                 </div>
-                <div className="absolute -right-14 -bottom-20 h-32 w-32 rounded-full bg-primary"></div>
+                <div className="ouroffice__circle"></div>
               </div>
             );
           })}
