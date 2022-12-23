@@ -1,5 +1,5 @@
 .event_Card {
-  @apply flex w-full flex-col items-center justify-center gap-8 overflow-hidden px-container py-10;
+  @apply flex w-full flex-col items-center justify-center gap-8 overflow-hidden px-container py-8;
   h3,
   p {
     @apply m-0;
