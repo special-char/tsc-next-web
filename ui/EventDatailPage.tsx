@@ -11,7 +11,7 @@ const EventDatailPage = (props: Props) => {
     <>
       <section className="events__body">
         <div className="events__header">
-          <div className="my-7">
+          <div>
             <h5 className="events__h6">july</h5>
             <h6 className="events__h1">24</h6>
           </div>

@@ -23,7 +23,7 @@ const Page = () => {
         <EventDatailPage />
 
         <div className="events__paragraph">
-          <h2>Event Agenda</h2>
+          <h2 className="mb-0 text-3xl md:mb-2 md:text-6xl">Event Agenda</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porta
             massa, eget natoque tincidunt quis. Suspendisse vitae vestibulum
