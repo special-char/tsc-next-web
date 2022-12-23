@@ -3,6 +3,7 @@ import SeparatorArray from '@/ui/SeparatorArray';
 import { getCategoriesData } from '@/lib/getCategories';
 import { HomeCategory } from 'types/types';
 import CategoryCard from '@/ui/CategoryCard';
+import Carousal from '@/ui/Carousal';
 
 export const CategorySkeleton = () => {
   return (
@@ -46,12 +47,14 @@ const Category = async () => {
     ?.attributes as HomeCategory;
 
   return (
-    <section id="category" className="category relative ">
+    <section id="category" className="category">
       <h2 className="category__title">{title}</h2>
       <div className="category__content">
-        {categoriesInfo.map((category) => {
-          return <CategoryCard category={category} key={category.id} />;
-        })}
+        <Carousal>
+          {categoriesInfo.map((category) => {
+            return <CategoryCard category={category} key={category.id} />;
+          })}
+        </Carousal>
       </div>
       <SeparatorArray />
     </section>

@@ -19,11 +19,11 @@ export const OurWorksSkeleton = () => {
         {[1, 2, 3, 4].map((val) => (
           <div className="ourWorks__sections">
             <div className="ourWorks__chipLine">
-              <div className="ourWorks__svg rounded-full">
+              <div className="ourWorks__svg h-12 w-12 rounded-full bg-neutral-300">
                 <div></div>
               </div>
               <div className="ourWorks__chip chip chip--white font-bold text-neutral-700">
-                <div></div>
+                <h3 className="font-cursive">01</h3>
               </div>
             </div>
             <h3 className="ourWorks__h3 font-cursive">Company Name</h3>

@@ -1,10 +1,23 @@
 import React from 'react';
 import '@/styles/blogs.css';
 import { getHomeBlogData } from '@/lib/getHomeBlog';
-import BlogCard from '@/ui/BlogCard';
-import Features from '@/ui/features';
+import BlogCard, { BlogCardSkeleton } from '@/ui/BlogCard';
+import Features, { FeaturesSkeleton } from '@/ui/features';
 
 type Props = {};
+
+export const AllBlogsSkeleton = () => {
+  return (
+    <section className="items bg-neutral-100">
+      <FeaturesSkeleton />
+      <div className="items__item">
+        {['1', '2', '3', '4'].map((x) => (
+          <BlogCardSkeleton key={x} index={0} />
+        ))}
+      </div>
+    </section>
+  );
+};
 
 const AllBlogs = async () => {
   const homeBlogData = await getHomeBlogData();
@@ -14,7 +27,7 @@ const AllBlogs = async () => {
   const blogList = homeBlogData.data.blogs.data;
 
   return (
-    <section className="items bg-neutral-200">
+    <section className="items bg-neutral-100">
       <Features
         title="All Courses"
         chips={[

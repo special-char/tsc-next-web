@@ -70,12 +70,12 @@ export default async function Page() {
         />
       </Suspense>
       <Suspense fallback={<FeaturesSkeleton />}>
-        <section className="bg-neutral-100 py-24">
+        <section className="bg-neutral-100 py-4 px-container pt-40">
           <Features title="All Events" chips={chips} />
         </section>
       </Suspense>
 
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<EventCardSkeleton />}>
         <EventCard data={data} />
       </Suspense>
     </>
