@@ -1,10 +1,13 @@
+'use client';
 import '@/styles/individualcourse.css';
 import DesignSvg from '@/public/icons/design.svg';
+import CloseIcon from '@/public/icons/close-icon.svg';
 import PlayVideo from '@/public/icons/playVideo.svg';
 import Image from 'next/image';
 import Price from './price';
 import ChipNavigation from '@/ui/ChipNavigation';
 import Rating from '@/ui/Rating';
+import { useState } from 'react';
 
 const loader = () => {
   console.log('====================================');
@@ -66,7 +69,8 @@ const chipNavData = [
   },
 ];
 
-export default async function Page() {
+export default function Page() {
+  const [open, setOpen] = useState(false);
   return (
     <section id="individualcourse" className="individualcourse">
       <div className="individualcourse__content">
@@ -94,22 +98,20 @@ export default async function Page() {
               fill
             />
             <div className="main__left-section__preview__body">
-              <a
-                href="#popup-open"
-                id="popup-button"
-                className="hamburger"
-                title="Open Menu"
-                aria-label="Open Menu"
+              <div
+                role={'button'}
+                onClick={() => {
+                  setOpen(true);
+                }}
+                className="popup-icon flex h-20 w-20 items-center justify-center rounded-full bg-secondary1 md:h-32 md:w-32"
               >
-                <div className="popup-icon flex h-20 w-20 items-center justify-center rounded-full bg-secondary1 md:h-32 md:w-32">
-                  <PlayVideo
-                    role="presentation"
-                    focusable="false"
-                    aria-label="trigram for heaven symbol"
-                    className="!m-auto h-9 w-7 fill-primary"
-                  />
-                </div>
-              </a>
+                <PlayVideo
+                  role="presentation"
+                  focusable="false"
+                  aria-label="trigram for heaven symbol"
+                  className="!m-auto h-9 w-7 fill-primary"
+                />
+              </div>
             </div>
           </div>
           <div className="lg:hidden">
@@ -143,7 +145,7 @@ export default async function Page() {
               }}
             >
               {learnData.map((data) => (
-                <li>{data.desc}</li>
+                <li key={data.desc}>{data.desc}</li>
               ))}
             </ol>
           </section>
@@ -193,23 +195,37 @@ export default async function Page() {
           </div>
         </div>
       </div>
-      <aside id="popup-open">
-        <span id="popup-close">
-          <a href="#" title="Close Menu" aria-label="Close Menu">
-            X
-          </a>
-        </span>
+      {open && (
+        <div
+          style={{
+            backgroundColor: 'rgba(0,0,0,0.6)',
+          }}
+          className="fixed top-0 z-50 grid h-screen w-screen place-content-center bg-secondary2"
+        >
+          <div className="px-container mb-4  flex w-full justify-end md:ml-4 lg:ml-20">
+            <div
+              className="close-btn bg-neutral-100 w-12 h-12 grid place-content-center rounded-full"
+              role={'button'}
+              onClick={() => setOpen(false)}
+            >
+              <CloseIcon />
+            </div>
+          </div>
+          <div className="relative w-screen h-[200px] md:h-[350px] lg:h-[470px] xl:h-[600px]">
+            <iframe
+              className="absolute px-container top-0 left-0"
+              height={'100%'}
+              width={'100%'}
+              src="https://www.youtube.com/embed/cw21m2S5PXQ"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
 
-        <iframe
-          loading="lazy"
-          className="popup-video"
-          src="https://www.youtube.com/embed/Icf5D3fEKbM"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
-      </aside>
+        </div>
+      )}
     </section>
   );
 }

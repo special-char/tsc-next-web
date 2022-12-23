@@ -54,7 +54,7 @@ const Price = (props: Props) => {
       </div>
       <div className=" price__features ">
         {PriceData.map((data) => (
-          <div className="price__content">
+          <div key={data.title} className="price__content">
             <figure className="w-9">{data.svg}</figure>
             <p className="pl-5 text-lg">{data.title}</p>
             <p className="pl-2 text-lg font-bold text-neutral-700">
