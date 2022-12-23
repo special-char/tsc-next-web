@@ -1,10 +1,10 @@
 import PageHeader, { PageHeaderSkeleton } from '@/ui/pageHeader';
 import React, { Suspense, use } from 'react';
-import OurWorks from './ourWorks';
-import Achievements from './achievements';
-import CompanyHistory from './companyhistory';
-import OurOffice from './ourOffice';
-import Aboutheader from './aboutheader';
+import OurWorks, { OurWorksSkeleton } from './ourWorks';
+import Achievements, { AchievementsSkeleton } from './achievements';
+import CompanyHistory, { CompanyHistorySkeleton } from './companyhistory';
+import OurOffice, { OurOfficeSkeleton } from './ourOffice';
+import Aboutheader, { AboutheaderSkeleton } from './aboutheader';
 import { getBannerHeaderData } from '@/lib/getBannerHeader';
 
 type Props = {};
@@ -32,23 +32,23 @@ const page = async (props: Props) => {
           circleLeft="bg-secondary3"
         />
       </Suspense>
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<AchievementsSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
         <Achievements />
       </Suspense>
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<AboutheaderSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
         <Aboutheader />
       </Suspense>
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<OurWorksSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
         <OurWorks />
       </Suspense>
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<CompanyHistorySkeleton />}>
         {/* @ts-expect-error Async Server Component */}
         <CompanyHistory />
       </Suspense>
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<OurOfficeSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
         <OurOffice />
       </Suspense>
