@@ -12,6 +12,7 @@ export type Scalars = {
   Float: number;
   Date: any;
   DateTime: any;
+  FormFieldsDynamicZoneInput: any;
   JSON: any;
   Upload: any;
 };
@@ -557,6 +558,73 @@ export type ComponentCourseCurriculamInput = {
   title?: InputMaybe<Scalars['String']>;
 };
 
+export type ComponentFieldsCheckbox = {
+  __typename?: 'ComponentFieldsCheckbox';
+  component?: Maybe<Scalars['String']>;
+  field_id?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  initialvalue?: Maybe<Scalars['String']>;
+  label?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+  options?: Maybe<Array<Maybe<ComponentFieldsOptions>>>;
+  wrapperClass?: Maybe<Scalars['String']>;
+};
+
+
+export type ComponentFieldsCheckboxOptionsArgs = {
+  filters?: InputMaybe<ComponentFieldsOptionsFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type ComponentFieldsMultiSelect = {
+  __typename?: 'ComponentFieldsMultiSelect';
+  component?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  initialvalue?: Maybe<Scalars['JSON']>;
+  label?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+  options?: Maybe<Array<Maybe<ComponentFieldsOptions>>>;
+  placeholder?: Maybe<Scalars['String']>;
+  wrapperClass?: Maybe<Scalars['String']>;
+};
+
+
+export type ComponentFieldsMultiSelectOptionsArgs = {
+  filters?: InputMaybe<ComponentFieldsOptionsFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type ComponentFieldsOptions = {
+  __typename?: 'ComponentFieldsOptions';
+  id: Scalars['ID'];
+  key: Scalars['String'];
+  value?: Maybe<Scalars['String']>;
+};
+
+export type ComponentFieldsOptionsFiltersInput = {
+  and?: InputMaybe<Array<InputMaybe<ComponentFieldsOptionsFiltersInput>>>;
+  key?: InputMaybe<StringFilterInput>;
+  not?: InputMaybe<ComponentFieldsOptionsFiltersInput>;
+  or?: InputMaybe<Array<InputMaybe<ComponentFieldsOptionsFiltersInput>>>;
+  value?: InputMaybe<StringFilterInput>;
+};
+
+export type ComponentFieldsTextInput = {
+  __typename?: 'ComponentFieldsTextInput';
+  component?: Maybe<Enum_Componentfieldstextinput_Component>;
+  field_id?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  initialvalue?: Maybe<Scalars['String']>;
+  label?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+  placeholder?: Maybe<Scalars['String']>;
+  rows?: Maybe<Scalars['Int']>;
+  type?: Maybe<Enum_Componentfieldstextinput_Type>;
+  wrapperClass?: Maybe<Scalars['String']>;
+};
+
 export type ComponentPersonalInfoCertification = {
   __typename?: 'ComponentPersonalInfoCertification';
   credentialID?: Maybe<Scalars['String']>;
@@ -1018,6 +1086,23 @@ export type DateTimeFilterInput = {
   startsWith?: InputMaybe<Scalars['DateTime']>;
 };
 
+export enum Enum_Componentfieldstextinput_Component {
+  TextArea = 'TextArea',
+  TextInput = 'TextInput'
+}
+
+export enum Enum_Componentfieldstextinput_Type {
+  Date = 'date',
+  DatetimeLocal = 'datetime_local',
+  Email = 'email',
+  Number = 'number',
+  Password = 'password',
+  Tel = 'tel',
+  Text = 'text',
+  Url = 'url',
+  Week = 'week'
+}
+
 export enum Enum_Componentpersonalinfoexperiance_Employeetype {
   Freelancer = 'Freelancer',
   FullTime = 'Full_Time',
@@ -1033,6 +1118,12 @@ export enum Enum_Menusmenuitem_Target {
   Self = 'self',
   Top = 'top'
 }
+
+export type Error = {
+  __typename?: 'Error';
+  code: Scalars['String'];
+  message?: Maybe<Scalars['String']>;
+};
 
 export type Faq = {
   __typename?: 'Faq';
@@ -1108,7 +1199,55 @@ export type FloatFilterInput = {
   startsWith?: InputMaybe<Scalars['Float']>;
 };
 
-export type GenericMorph = AboutDetail | AboutHistory | AboutNumber | AboutTsc | AboutWorkValue | Banner | BannerHeader | Blog | Category | ComponentCommonAdress | ComponentCommonDetail | ComponentCommonHeaders | ComponentCommonLink | ComponentCommonNumbers | ComponentCourseCurriculam | ComponentPersonalInfoCertification | ComponentPersonalInfoEducation | ComponentPersonalInfoExperiance | ComponentPersonalInfoProject | ComponentPersonalInfoTechnology | ComponentUserUserInfo | Contact | ContactDetail | Course | Faq | Header | History | HomeBlog | HomeCategory | HomeCourse | HomeGrowCareer | HomeLeader | HomeTestimonial | I18NLocale | MenusMenu | MenusMenuItem | Perk | Team | Technology | Testimonial | Trainer | UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
+export type Form = {
+  __typename?: 'Form';
+  createdAt?: Maybe<Scalars['DateTime']>;
+  fields?: Maybe<Array<Maybe<FormFieldsDynamicZone>>>;
+  publishedAt?: Maybe<Scalars['DateTime']>;
+  slug?: Maybe<Scalars['String']>;
+  submitURL?: Maybe<Scalars['String']>;
+  updatedAt?: Maybe<Scalars['DateTime']>;
+};
+
+export type FormEntity = {
+  __typename?: 'FormEntity';
+  attributes?: Maybe<Form>;
+  id?: Maybe<Scalars['ID']>;
+};
+
+export type FormEntityResponse = {
+  __typename?: 'FormEntityResponse';
+  data?: Maybe<FormEntity>;
+};
+
+export type FormEntityResponseCollection = {
+  __typename?: 'FormEntityResponseCollection';
+  data: Array<FormEntity>;
+  meta: ResponseCollectionMeta;
+};
+
+export type FormFieldsDynamicZone = ComponentFieldsCheckbox | ComponentFieldsMultiSelect | ComponentFieldsTextInput | Error;
+
+export type FormFiltersInput = {
+  and?: InputMaybe<Array<InputMaybe<FormFiltersInput>>>;
+  createdAt?: InputMaybe<DateTimeFilterInput>;
+  id?: InputMaybe<IdFilterInput>;
+  not?: InputMaybe<FormFiltersInput>;
+  or?: InputMaybe<Array<InputMaybe<FormFiltersInput>>>;
+  publishedAt?: InputMaybe<DateTimeFilterInput>;
+  slug?: InputMaybe<StringFilterInput>;
+  submitURL?: InputMaybe<StringFilterInput>;
+  updatedAt?: InputMaybe<DateTimeFilterInput>;
+};
+
+export type FormInput = {
+  fields?: InputMaybe<Array<Scalars['FormFieldsDynamicZoneInput']>>;
+  publishedAt?: InputMaybe<Scalars['DateTime']>;
+  slug?: InputMaybe<Scalars['String']>;
+  submitURL?: InputMaybe<Scalars['String']>;
+};
+
+export type GenericMorph = AboutDetail | AboutHistory | AboutNumber | AboutTsc | AboutWorkValue | Banner | BannerHeader | Blog | Category | ComponentCommonAdress | ComponentCommonDetail | ComponentCommonHeaders | ComponentCommonLink | ComponentCommonNumbers | ComponentCourseCurriculam | ComponentFieldsCheckbox | ComponentFieldsMultiSelect | ComponentFieldsOptions | ComponentFieldsTextInput | ComponentPersonalInfoCertification | ComponentPersonalInfoEducation | ComponentPersonalInfoExperiance | ComponentPersonalInfoProject | ComponentPersonalInfoTechnology | ComponentUserUserInfo | Contact | ContactDetail | Course | Faq | Form | Header | History | HomeBlog | HomeCategory | HomeCourse | HomeGrowCareer | HomeLeader | HomeTestimonial | I18NLocale | MenusMenu | MenusMenuItem | Perk | Team | Technology | Testimonial | Trainer | UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
 
 export type Header = {
   __typename?: 'Header';
@@ -1635,6 +1774,7 @@ export type Mutation = {
   createContact?: Maybe<ContactEntityResponse>;
   createCourse?: Maybe<CourseEntityResponse>;
   createFaq?: Maybe<FaqEntityResponse>;
+  createForm?: Maybe<FormEntityResponse>;
   createHeader?: Maybe<HeaderEntityResponse>;
   createHistory?: Maybe<HistoryEntityResponse>;
   createMenusMenu?: Maybe<MenusMenuEntityResponse>;
@@ -1662,6 +1802,7 @@ export type Mutation = {
   deleteContactDetail?: Maybe<ContactDetailEntityResponse>;
   deleteCourse?: Maybe<CourseEntityResponse>;
   deleteFaq?: Maybe<FaqEntityResponse>;
+  deleteForm?: Maybe<FormEntityResponse>;
   deleteHeader?: Maybe<HeaderEntityResponse>;
   deleteHistory?: Maybe<HistoryEntityResponse>;
   deleteHomeBlog?: Maybe<HomeBlogEntityResponse>;
@@ -1708,6 +1849,7 @@ export type Mutation = {
   updateCourse?: Maybe<CourseEntityResponse>;
   updateFaq?: Maybe<FaqEntityResponse>;
   updateFileInfo: UploadFileEntityResponse;
+  updateForm?: Maybe<FormEntityResponse>;
   updateHeader?: Maybe<HeaderEntityResponse>;
   updateHistory?: Maybe<HistoryEntityResponse>;
   updateHomeBlog?: Maybe<HomeBlogEntityResponse>;
@@ -1762,6 +1904,11 @@ export type MutationCreateCourseArgs = {
 
 export type MutationCreateFaqArgs = {
   data: FaqInput;
+};
+
+
+export type MutationCreateFormArgs = {
+  data: FormInput;
 };
 
 
@@ -1846,6 +1993,11 @@ export type MutationDeleteCourseArgs = {
 
 
 export type MutationDeleteFaqArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type MutationDeleteFormArgs = {
   id: Scalars['ID'];
 };
 
@@ -2023,6 +2175,12 @@ export type MutationUpdateFaqArgs = {
 export type MutationUpdateFileInfoArgs = {
   id: Scalars['ID'];
   info?: InputMaybe<FileInfoInput>;
+};
+
+
+export type MutationUpdateFormArgs = {
+  data: FormInput;
+  id: Scalars['ID'];
 };
 
 
@@ -2214,6 +2372,8 @@ export type Query = {
   courses?: Maybe<CourseEntityResponseCollection>;
   faq?: Maybe<FaqEntityResponse>;
   faqs?: Maybe<FaqEntityResponseCollection>;
+  form?: Maybe<FormEntityResponse>;
+  forms?: Maybe<FormEntityResponseCollection>;
   header?: Maybe<HeaderEntityResponse>;
   headers?: Maybe<HeaderEntityResponseCollection>;
   histories?: Maybe<HistoryEntityResponseCollection>;
@@ -2350,6 +2510,19 @@ export type QueryFaqArgs = {
 
 export type QueryFaqsArgs = {
   filters?: InputMaybe<FaqFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  publicationState?: InputMaybe<PublicationState>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+
+export type QueryFormArgs = {
+  id?: InputMaybe<Scalars['ID']>;
+};
+
+
+export type QueryFormsArgs = {
+  filters?: InputMaybe<FormFiltersInput>;
   pagination?: InputMaybe<PaginationArg>;
   publicationState?: InputMaybe<PublicationState>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;

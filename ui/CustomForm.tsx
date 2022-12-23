@@ -21,18 +21,9 @@ const CustomForm = ({
             {fields.map((field) => {
               return <FieldItem key={field.name} {...field} />;
             })}
-            <Button className='' variant='primary' as="button" type="submit">{isSubmitting ? "Please wait..." : "Submit"}</Button>
-            {/* {isSubmitting && (
-              <div className="absolute flex h-full w-full items-center justify-center bg-neutral-100">
-                <p
-                  className={clsx('', {
-                    [notification]: !![notification],
-                  })}
-                >
-                  {data}
-                </p>
-              </div>
-            )} */}
+            <Button className="" variant="primary" as="button" type="submit">
+              {isSubmitting ? 'Please wait...' : 'Submit'}
+            </Button>
           </Form>
         )}
       </Formik>
