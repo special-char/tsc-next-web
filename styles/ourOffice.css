@@ -2,8 +2,11 @@
   @apply grid min-h-screen content-center justify-items-center overflow-hidden px-container pt-24 pb-12 text-neutral-700 md:pt-36 md:pb-16 lg:pt-48 lg:pb-24;
   grid-template-rows: repeat(3, auto);
 
+  &__body {
+    @apply text-center md:mx-24 md:mb-6 lg:mx-40;
+  }
   &__title {
-    @apply text-neutral-700;
+    @apply text-3xl text-neutral-700 md:text-6xl;
   }
 
   &__content {
@@ -39,13 +42,22 @@
     &__content {
       @apply h-full flex-col justify-between p-8;
     }
+    &__image {
+      @apply relative mr-auto min-h-[64px] w-16;
+    }
 
     &__title {
       @apply mb-1 h-9 line-clamp-1;
+    }
+    &__connect {
+      @apply row-span-3 grid text-neutral-600;
     }
 
     &__desc {
       @apply m-0 my-0 h-16 p-0 line-clamp-2;
     }
+  }
+  &__circle {
+    @apply absolute -right-14 -bottom-20 h-32 w-32 rounded-full bg-primary;
   }
 }

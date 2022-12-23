@@ -63,7 +63,7 @@ const CompanyHistory = async () => {
       <div className="companyHistory__section">
         <div>
           <div className="companyHistory__leftSection">
-            <h2 className="text-6xl text-primary">{title}</h2>
+            <h2 className="companyHistory__h2">{title}</h2>
             <p className="text-neutral-500">{description}</p>
             <div>
               {button?.map((x) => (
@@ -78,7 +78,9 @@ const CompanyHistory = async () => {
         <div className="companyHistory__info">
           {history?.map((val) => (
             <div key={val?.id} className="companyHistory__RightSection">
-              <span className="chip chip--white max-w-max">{val?.number}</span>
+              <span className="chip chip--white max-w-max text-lg text-neutral-700">
+                {val?.number}
+              </span>
               <h3 className="py-3">{val?.title}</h3>
               <p className="text-neutral-500">{val?.description}</p>
               <div className="companyHistory__circle"></div>

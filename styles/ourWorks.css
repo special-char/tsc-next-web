@@ -14,7 +14,7 @@
   @apply items-center rounded-3xl bg-neutral-100 p-4 pb-8 md:p-12;
 }
 .ourWorks__chipLine {
-  @apply mb-10 flex items-center justify-between;
+  @apply mb-6 flex items-center justify-between md:mb-9 lg:mb-10;
 }
 .ourWorks__svg {
   @apply w-16;

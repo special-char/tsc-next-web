@@ -1,5 +1,5 @@
 .achieve {
-  @apply grid  content-center items-center justify-center gap-4 bg-neutral-200 px-4 py-40 text-center sm:px-sm-container lg:px-container;
+  @apply grid  content-center items-center justify-center gap-4 bg-neutral-200 px-4 py-24 text-center sm:px-sm-container md:py-32 lg:px-container;
   grid-template-rows: 1/2fr 1fr;
   min-height: calc(theme(height.screen) - theme(spacing.16) - 30px);
 
