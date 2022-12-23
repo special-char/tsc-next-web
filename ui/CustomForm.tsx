@@ -6,19 +6,13 @@ import FieldItem from './Field';
 
 type Props = {};
 
-const CustomForm = ({
-  buttonStyle,
-  notification,
-  data,
-  fields,
-  ...rest
-}: Props) => {
+const CustomForm = ({ buttonStyle, fields, ...rest }: Props) => {
   return (
     <>
       <Formik {...rest}>
         {({ isSubmitting }) => (
           <Form className="form relative">
-            {fields.map((field) => {
+            {fields.map(({ ...field }) => {
               return <FieldItem key={field.name} {...field} />;
             })}
             <Button className="" variant="primary" as="button" type="submit">

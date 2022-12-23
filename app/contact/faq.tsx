@@ -92,8 +92,8 @@ async function getFaqData() {
   } catch (error) {}
 }
 
-const Faq = (props: Props) => {
-  const faqData = use(getFaqData());
+const Faq = async (props: Props) => {
+  const faqData = await getFaqData();
 
   if (!faqData) return null;
 
