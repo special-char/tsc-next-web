@@ -4,6 +4,8 @@ import '@/styles/companyhistory.css';
 import Button from '@/ui/Button';
 import { getAboutHistory } from '@/lib/getAboutHistory';
 import { AboutHistory } from 'types/types';
+
+
 export const CompanyHistorySkeleton = () => {
   return (
     <section id="companyHistory" className="companyHistory">
@@ -12,11 +14,20 @@ export const CompanyHistorySkeleton = () => {
           <div className="companyHistory__leftSection">
             <h2 className="companyHistory__h2">Our company history</h2>
             <p className="text-neutral-500">
+            <h2 className="font-cursive text-6xl text-primary">
+              Our company history
+            </h2>
+            <p className="font-cursive text-neutral-500">
               Presenting Academy, the tech school of the future. We teach you
               the right skills to be prepared for tomorrow.
             </p>{' '}
             <div>
-              <Button as={Link} href="/" variant="primary">
+              <Button
+                as={Link}
+                href="/"
+                variant="primary"
+                className="font-cursive"
+              >
                 JOIN OUR TEAM
               </Button>
             </div>
@@ -24,7 +35,7 @@ export const CompanyHistorySkeleton = () => {
         </div>
 
         <div className="companyHistory__info">
-          {Data.map((val) => (
+          {[1, 2, 3].map((val) => (
             <div key={val.Date} className="companyHistory__RightSection">
               <div className="companyHistory__ChipSection chip chip--white w-1/4 lg:w-[20%]">
                 <span className="companyHistory__Date font-cursive">2023</span>
