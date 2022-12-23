@@ -1,32 +1,65 @@
-.teamDetail {
-  @apply h-full overflow-hidden;
-  &__desc {
-    @apply mx-0 px-container pt-64 pb-4 sm:px-sm-container md:pb-20  md:pt-40 lg:mx-44 lg:px-container;
+.wrapper {
+  @apply grid min-h-screen;
+  grid-template-rows: 100px 250px 300px 1fr;
+
+  &__header {
+    @apply relative bg-primary;
+    grid-row: 1 / 3;
+    grid-column: 1 / -1;
+    z-index: -1;
   }
-}
-.individualteacher {
-  @apply h-auto w-auto content-center justify-items-center overflow-hidden px-container lg:px-container;
 
-  &__content {
-    @apply mx-0 lg:mx-28;
+  &__body {
+    @apply mx-auto h-full max-w-5xl px-4;
+    grid-row: 2 / -1;
+    grid-column: 1 / -1;
 
-    &__card {
-      @apply grid justify-items-center rounded-2xl bg-neutral-200 p-10 md:justify-items-start md:gap-7;
-      @media only screen and (min-width: 768px) {
-        grid-template-columns: 1fr 3fr;
-      }
+    &__image {
+      @apply relative aspect-video overflow-hidden rounded-2xl;
+    }
 
-      &__body {
-        @apply mt-4 justify-center md:mb-7 md:flex md:flex-row-reverse md:justify-between;
-      }
-
-      &__title {
-        @apply mb-1 mt-4 h-9 text-center line-clamp-1 md:text-left;
-      }
-
-      &__desc {
-        @apply my-0 mb-6 p-0 text-center line-clamp-3 md:mb-7 md:text-left;
+    &__content {
+      @apply mx-auto max-w-5xl pt-12 md:pt-16 lg:pt-20;
+      &__author-info {
+        @apply grid grid-rows-2 place-content-start gap-y-8 md:grid-cols-2 md:grid-rows-none;
+        .about-blog {
+          @apply my-auto flex gap-5 place-self-start md:place-self-end;
+          &__accessory {
+            @apply flex gap-2 border border-[#e7eaee] text-xs;
+          }
+        }
       }
     }
+  }
+  .blogs {
+    @apply grid grid-cols-1 gap-y-12 bg-neutral-200 px-container pb-14 pt-24 md:pb-36 lg:pt-44;
+    &__header {
+      @apply grid grid-cols-1 place-content-center gap-y-5 md:grid-cols-2 md:gap-y-0;
+      &__heading {
+        @apply my-auto place-self-center text-3xl md:place-self-start md:text-5xl;
+      }
+      &__btn {
+        @apply w-full place-self-center py-4 px-10 text-base uppercase md:max-w-max md:place-self-end;
+      }
+    }
+    &__latest-blogs {
+      @apply grid grid-cols-1 gap-x-7 md:grid-cols-2;
+      a {
+        @apply no-underline;
+      }
+    }
+  }
+  h1 {
+    @apply text-[35px] md:text-5xl;
+  }
+  h4,
+  h5 {
+    @apply !mt-4;
+  }
+  h6 {
+    @apply !mb-3;
+  }
+  blockquote {
+    @apply !my-14;
   }
 }
