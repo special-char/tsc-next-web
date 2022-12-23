@@ -202,16 +202,16 @@ export default function Page() {
           }}
           className="fixed top-0 z-50 grid h-screen w-screen place-content-center bg-secondary2"
         >
-          <div className="px-container mb-4  flex w-full justify-end md:ml-4 lg:ml-20">
+          <div className="px-container mb-4 flex w-full justify-end ">
             <div
-              className="close-btn bg-neutral-100 w-12 h-12 grid place-content-center rounded-full"
+              className="close-btn bg-neutral-100 w-8 h-8 grid place-content-center rounded-full "
               role={'button'}
               onClick={() => setOpen(false)}
             >
               <CloseIcon />
             </div>
           </div>
-          <div className="relative w-screen h-[200px] md:h-[350px] lg:h-[470px] xl:h-[600px]">
+          <div className="video">
             <iframe
               className="absolute px-container top-0 left-0"
               height={'100%'}
