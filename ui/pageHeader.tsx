@@ -3,6 +3,7 @@ import '@/styles/pageHeader.css';
 import clsx from 'clsx';
 import SeparatorArray from './SeparatorArray';
 import { getBannerHeaderData } from '@/lib/getBannerHeader';
+import { ComponentCommonHeaders } from 'types/types';
 
 export const PageHeaderSkeleton = () => {
   return (
@@ -48,17 +49,15 @@ const PageHeader = async ({
   const bannerHeaderData =
     bannerHeader.data.bannerHeader.data?.attributes?.bannerHeader;
 
-  if (!bannerHeaderData) return null;
+  const [{ title, description }] = bannerHeaderData as ComponentCommonHeaders[];
 
   return (
     <section className={clsx('page__section', { [className]: !!className })}>
       <div className={clsx('page__body', { [className]: !!className })}>
         <div className="page__pages">
           <div className="page__detail">
-            <h1 className="text-neutral-700">{`${
-              bannerHeaderData[0]?.title || ''
-            }`}</h1>
-            <p>{`${bannerHeaderData[0]?.description || ''}`}</p>
+            {title && <h1 className="text-neutral-700">{title}</h1>}
+            {description && <p>{description}</p>}
           </div>
         </div>
         <div
