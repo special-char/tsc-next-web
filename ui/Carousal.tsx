@@ -97,17 +97,17 @@ const Carousal = ({ children }: Props) => {
       <div className="carousal__controls">
         <button
           type="button"
-          className={`carousal__control btn btn--white btn--round bg-neutral-200 hover:bg-primary `}
+          className="carousal__control btn btn--white btn--round bg-neutral-200 hover:bg-primary hover:fill-neutral-100"
           onClick={scrollRight}
         >
-          <LeftSvg className="hover:fill-neutral-100" />
+          <LeftSvg />
         </button>
         <button
           type="button"
-          className={`carousal__control btn btn--white btn--round  bg-neutral-200 hover:bg-primary`}
+          className="carousal__control btn btn--white btn--round  bg-neutral-200 hover:bg-primary hover:fill-neutral-100"
           onClick={scrollLeft}
         >
-          <RightSvg className="hover:fill-neutral-100" />
+          <RightSvg />
         </button>
       </div>
       {/* bullets */}
