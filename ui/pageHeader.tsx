@@ -55,8 +55,10 @@ const PageHeader = async ({
       <div className={clsx('page__body', { [className]: !!className })}>
         <div className="page__pages">
           <div className="page__detail">
-            <h1 className="text-neutral-700">{`${bannerHeaderData[0]?.title}`}</h1>
-            <p>{`${bannerHeaderData[0]?.description}`}</p>
+            <h1 className="text-neutral-700">{`${
+              bannerHeaderData[0]?.title || ''
+            }`}</h1>
+            <p>{`${bannerHeaderData[0]?.description || ''}`}</p>
           </div>
         </div>
         <div
