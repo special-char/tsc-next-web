@@ -50,8 +50,6 @@ const PageHeader = async ({
 
   if (!bannerHeaderData) return null;
 
-  console.log(bannerHeaderData);
-
   return (
     <section className={clsx('page__section', { [className]: !!className })}>
       <div className={clsx('page__body', { [className]: !!className })}>

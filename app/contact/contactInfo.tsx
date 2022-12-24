@@ -10,8 +10,6 @@ type Props = {};
 const ContactInfo = (props: Props) => {
   const contactDetail = use(getContactDetail());
 
-  console.log(contactDetail);
-
   if (!contactDetail) {
     return null;
   }

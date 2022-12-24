@@ -34,8 +34,6 @@ export const FeaturesSkeleton = () => {
 };
 
 const Features = ({ title, chips }: Props) => {
-  console.log('chips data:', chips);
-
   return (
     <section id="features" className="features">
       <h2 className="features__title">{title}</h2>

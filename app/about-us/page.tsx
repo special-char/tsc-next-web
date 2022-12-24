@@ -19,8 +19,6 @@ const page = async (props: Props) => {
 
   if (!bannerHeaderData) return null;
 
-  console.log(bannerHeaderData);
-
   return (
     <>
       <Suspense fallback={<PageHeaderSkeleton />}>

@@ -9,11 +9,6 @@ import ChipNavigation from '@/ui/ChipNavigation';
 import Rating from '@/ui/Rating';
 import { useState } from 'react';
 
-const loader = () => {
-  console.log('====================================');
-  console.log('hello');
-  console.log('====================================');
-};
 const learnData = [
   {
     desc: 'Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.',
@@ -202,9 +197,9 @@ export default function Page() {
           }}
           className="fixed top-0 z-50 grid h-screen w-screen place-content-center bg-secondary2"
         >
-          <div className="px-container mb-4 flex w-full justify-end ">
+          <div className="mb-4 flex w-full justify-end px-container ">
             <div
-              className="close-btn bg-neutral-100 w-8 h-8 grid place-content-center rounded-full "
+              className="close-btn grid h-8 w-8 place-content-center rounded-full bg-neutral-100 "
               role={'button'}
               onClick={() => setOpen(false)}
             >
@@ -213,7 +208,7 @@ export default function Page() {
           </div>
           <div className="video">
             <iframe
-              className="absolute px-container top-0 left-0"
+              className="absolute top-0 left-0 px-container"
               height={'100%'}
               width={'100%'}
               src="https://www.youtube.com/embed/cw21m2S5PXQ"
@@ -223,7 +218,6 @@ export default function Page() {
               allowFullScreen
             ></iframe>
           </div>
-
         </div>
       )}
     </section>
