@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import CustomForm from './CustomForm';
 import { useState } from 'react';
 import { FormFieldsDynamicZone } from 'types/types';

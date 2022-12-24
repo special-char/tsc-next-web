@@ -1,6 +1,6 @@
 .custom-chip {
   border: 1px solid #e7eaee;
-  @apply chip chip--white max-w-max cursor-pointer gap-1 !py-[14px] !px-6 transition-colors transition-transform;
+  @apply max-w-max cursor-pointer gap-1 !py-[14px] !px-6 transition-colors transition-transform;
   &__icon {
     @apply h-5 w-6;
   }

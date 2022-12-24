@@ -1,43 +1,28 @@
 'use client';
 
 import useDynamicFieldImport from '@/hooks/useDynamicFieldImport';
-import { Field } from 'formik'
-import TextInput from './TextInput';
+import { Field } from 'formik';
+import dynamic from 'next/dynamic';
+
+const TextInput = dynamic(() => import('./TextInput'), {
+  loading: () => 'Loading...',
+});
+
+const TextArea = dynamic(() => import('./TextArea'), {
+  loading: () => 'Loading...',
+});
 
 interface IconProps extends React.SVGProps<SVGSVGElement> {
-    name: string;
+  name: string;
 }
 
 const FieldItem: React.FC<IconProps> = ({
-    component,
-    ...rest
+  component,
+  field_id,
+  initialvalue,
+  ...rest
 }): React.ReactNode | null => {
-    const { error, loading, SvgIcon } = useDynamicFieldImport(component);
-
-    if (loading) {
-        return (
-            <div
-                className="rounded-full bg-neutral-400"
-                style={{
-                    height: rest?.height || 0,
-                    width: rest?.width || 0,
-                    backgroundColor: rest?.fill || '#000',
-                }}
-            ></div>
-        );
-    }
-
-    if (error) {
-        return <Field component={TextInput} {...rest} />;
-    }
-
-
-
-    if (SvgIcon) {
-        return <Field component={SvgIcon} {...rest} />;
-    }
-
-    return <Field component={TextInput} {...rest} />;
+  return <Field component={[component]} {...rest} />;
 };
 
 export default FieldItem;

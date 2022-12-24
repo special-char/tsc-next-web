@@ -11,14 +11,14 @@ const TextInput = ({
   field,
   form: { touched, errors }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
   label,
-  wrapperClassName,
+  wrapperClass,
   className,
   ...rest
 }: Props) => {
   return (
     <div
       className={clsx('form__group', {
-        [wrapperClassName]: !!wrapperClassName,
+        [wrapperClass]: !!wrapperClass,
       })}
     >
       <label className="form__group__label">{label}</label>
