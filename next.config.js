@@ -29,8 +29,6 @@ const nextConfig = {
     loader: 'custom',
     loaderFile: './lib/imageLoader.ts',
     formats: ['image/avif', 'image/webp'],
-    deviceSizes: [640, 1024, 1280],
-    imageSizes: [16, 64, 384],
   },
   typescript: {
     ignoreBuildErrors: true,

@@ -54,12 +54,25 @@ const BlogCard = ({ blog, index = 0 }: Props) => {
       })}
     >
       <figure className="blog_card__img">
-        <Image
-          src={`${url}?tr=ar-16-9`}
-          alt={`${alternativeText}`}
-          fill
-          sizes="(max-width: 640px) 100vw,(max-width: 1024px) 518px,640px"
-        />
+        {index > 0 ? (
+          <Image
+            src={`${url}?tr=ar-16-9`}
+            alt={`${alternativeText}`}
+            fill
+            sizes="(max-width: 640px) 100vw,
+                   (max-width: 1024px) 235px,
+                   284px"
+          />
+        ) : (
+          <Image
+            src={`${url}?tr=ar-16-9`}
+            alt={`${alternativeText}`}
+            fill
+            sizes="(max-width: 640px) 100vw,
+                   (max-width: 1024px) 518px,
+                   640px"
+          />
+        )}
         {index === 0 && (
           <div className="blog_card__chips">
             <div className="chip chip--white">{categoryInfo?.title}</div>
