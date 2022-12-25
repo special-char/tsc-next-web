@@ -3,7 +3,7 @@ export function DefaultTags() {
   return (
     <>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link
+      {/* <link
         href="/favicon/apple-touch-icon.png"
         rel="apple-touch-icon"
         sizes="180x180"
@@ -26,7 +26,7 @@ export function DefaultTags() {
         href="/favicon/safari-pinned-tab.svg"
         rel="mask-icon"
       />
-      <link href="/favicon/favicon.ico" rel="shortcut icon" />
+      <link href="/favicon/favicon.ico" rel="shortcut icon" /> */}
     </>
   );
 }

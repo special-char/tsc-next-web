@@ -63,7 +63,12 @@ const Education = async () => {
       </div>
       <div className="education__body col-span-2">
         <div className="education__image">
-          <Image src={`${url}`} alt={`${alternativeText}`} fill />
+          <Image
+            src={`${url}?tr=ar-1-1.2`}
+            alt={`${alternativeText}`}
+            fill
+            sizes="(max-width: 640px) 100vw,(max-width: 1024px) 518px,(max-width: 1280px) 45vw,592px"
+          />
         </div>
         <div className="education__content ">
           {details?.map((x) => {

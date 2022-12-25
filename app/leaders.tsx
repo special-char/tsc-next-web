@@ -76,7 +76,12 @@ const Leaders = async () => {
       </div>
       <div className="leader__image_content">
         <div className="leader__image">
-          <Image src={url} alt={`${alternativeText}`} fill />
+          <Image
+            src={`${url}?tr=ar-2-2.5`}
+            alt={`${alternativeText}`}
+            fill
+            sizes="(max-width: 640px) 100vw,(max-width: 1024px) 518px,(max-width: 1280px) 45vw,576px"
+          />
         </div>
         <div className="leader__content">
           <span className="leader__ContentData">{tag}</span>

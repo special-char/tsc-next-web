@@ -23,7 +23,12 @@ const CourseCard = ({ course, isHorizontal }: Props) => {
     >
       <Link href="#">
         <figure className="course_card__img">
-          <Image src={url} alt={`${alternativeText}`} fill />
+          <Image
+            src={`${url}?tr=ar-16-9`}
+            alt={`${alternativeText}`}
+            fill
+            sizes="(max-width: 640px) 100vw,576px"
+          />
           <div className="course_card__chips">
             <div className="chip chip--white">24 days</div>
             <div className="chip chip--primary">Rs. 40,000</div>
