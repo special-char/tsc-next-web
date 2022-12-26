@@ -6,7 +6,7 @@
   }
 
   &__content {
-    @apply grid w-full gap-8 pb-16 lg:pb-24;
+    @apply mb-0 grid w-full gap-8;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
   .card__image {
