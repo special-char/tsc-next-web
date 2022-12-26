@@ -29,12 +29,28 @@ const DynamicForm = ({ fields, submitUrl }: Props) => {
 
   const onSubmit = async (values, actions) => {
     try {
-      await axiosInstance.post(submitUrl, {
-        data: values,
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}${submitUrl}`,
+        {
+          method: 'POST',
+          body: JSON.stringify({
+            data: values,
+          }),
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          cache: 'no-cache',
+          next: {
+            revalidate: 0,
+          },
+        },
+      );
       setIsSubmitted(true);
       actions.resetForm();
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
