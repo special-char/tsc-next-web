@@ -1,21 +1,21 @@
 import '@/styles/allevents.css';
-import EventDatailPage from '@/ui/EventDatailPage';
+import EventDatailPage, { EventDatailPageSkeleton } from '@/ui/EventDatailPage';
 import Image from 'next/image';
 
-const PageSkeleton = () => {
+export const PageSkeleton = () => {
   return (
-    <section className="events">
+    <section className="events animate-pulse">
       <div>
-        <div className="events__banner bg-neutral-300 "></div>
-        <div className="events__animate-bounce-slow1 bg-neutral-300 "></div>
-        <div className="events__animate-bounce-slow2 bg-neutral-300"></div>
+        <div className="events__banner  "></div>
+        <div className="events__animate-bounce-slow1  "></div>
+        <div className="events__animate-bounce-slow2 "></div>
       </div>
       <div className="events__page">
         <div className="events__image bg-neutral-300">
           <div></div>
         </div>
         <div className="pt-8">
-          <EventDatailPage />
+          <EventDatailPageSkeleton />
         </div>
         <div className="events__paragraph">
           <h2 className="mb-0 font-cursive text-3xl md:mb-2 md:text-6xl">

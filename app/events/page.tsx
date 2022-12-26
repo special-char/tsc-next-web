@@ -4,6 +4,7 @@ import Features, { FeaturesSkeleton } from '@/ui/features';
 import { Suspense } from 'react';
 import Event from './event';
 import { EventDatailPageSkeleton } from '@/ui/EventDatailPage';
+import { PageSkeleton } from './[slug]/page';
 
 export default async function Page() {
   const data = [
@@ -78,7 +79,8 @@ export default async function Page() {
 
       <Suspense fallback={<EventCardSkeleton />}>
         <EventCard data={data} />
-        <EventDatailPageSkeleton />
+
+        <PageSkeleton />
       </Suspense>
     </>
   );
