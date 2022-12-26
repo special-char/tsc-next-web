@@ -44,10 +44,10 @@ const Price = (props: Props) => {
           vivera.
         </p>
         <div className="flex flex-col gap-3">
-          <Link href="/" className="btn btn--primary">
+          <Link href="/" className="btn btn--secondary btn--small">
             Register
           </Link>
-          <Link href="/" className="btn btn--primary">
+          <Link href="/" className="btn btn--primary btn--small">
             Download Brochure
           </Link>
         </div>
