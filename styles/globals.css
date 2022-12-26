@@ -164,7 +164,7 @@
 
       &::before {
         content: '\002B';
-        @apply mr-8 aspect-square h-16 w-16 rotate-180 rounded-full bg-neutral-300 text-center text-4xl font-bold text-neutral-600 duration-300 md:h-12 md:w-12;
+        @apply mr-8 aspect-square h-12 w-12 rotate-180 rounded-full bg-neutral-300 text-center text-4xl font-bold text-neutral-600 duration-300;
       }
     }
     & > p {
@@ -564,10 +564,12 @@
       @apply w-full rounded-full bg-neutral-100 py-5 px-6;
       grid-column: 1 / -1;
       grid-row: 1 / -1;
+      z-index: 1;
     }
 
     &__btn {
       @apply col-span-2 m-0 p-3 py-5 px-4 md:col-[2/-1] md:row-span-full md:m-1 md:px-1 md:py-1;
+      z-index: 2;
     }
     &__subscribed {
       @apply w-full rounded-xl bg-primary py-5 px-3 text-center text-neutral-100;
