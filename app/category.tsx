@@ -56,7 +56,9 @@ const Category = async () => {
           })}
         </Carousal>
       </div>
-      <SeparatorArray />
+      <div className=" relative -bottom-[74px] flex  md:-bottom-[100px]">
+        <SeparatorArray />
+      </div>
     </section>
   );
 };
