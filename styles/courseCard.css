@@ -22,7 +22,8 @@
   }
 
   &__desc {
-    @apply mb-6 text-neutral-700;
+    @apply mb-6 text-neutral-700
+    line-clamp-3;
   }
 
   &__action {
