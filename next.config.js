@@ -26,6 +26,9 @@ const nextConfig = {
       'images.pexels.com',
       'placeimg.com',
     ],
+    loader: 'custom',
+    loaderFile: './lib/imageLoader.ts',
+    formats: ['image/avif', 'image/webp'],
   },
   typescript: {
     ignoreBuildErrors: true,

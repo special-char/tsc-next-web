@@ -54,7 +54,12 @@ const Perks = async () => {
           return (
             <div key={id} className="perks__item">
               <div className="perks__item__image">
-                <Image src={url} alt="" fill />
+                <Image
+                  src={`${url}?tr=h-192,w-192`}
+                  alt=""
+                  height={192}
+                  width={192}
+                />
               </div>
               <div className="perks__item__body">
                 <h3 className="mb-4 text-neutral-100">{title}</h3>

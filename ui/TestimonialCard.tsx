@@ -22,7 +22,12 @@ const TestimonialCard = ({ testimonial }: Props) => {
       className="testimonial_card"
     >
       <figure className="testimonial_card__img">
-        <Image src={url} alt={`${alternativeText}`} fill />
+        <Image
+          src={`${url}?tr=h-200,w-200`}
+          alt={`${alternativeText}`}
+          height={200}
+          width={200}
+        />
       </figure>
       <div className="testimonial_card__body">
         <Rating rate={rating} className="testimonial_card__rating" />

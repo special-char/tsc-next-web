@@ -21,7 +21,12 @@ const CategoryCard = ({ category }: Props) => {
       className="category_card"
     >
       <figure className="category_card__img">
-        <Image src={url} alt={`${alternativeText}`} fill />
+        <Image
+          src={`${url}?tr=ar-4-3`}
+          alt={`${alternativeText}`}
+          fill
+          sizes="(max-width: 640px) 100vw,384px"
+        />
         <div className="category_card__chips">
           <div className="chip chip--white">24 days</div>
         </div>

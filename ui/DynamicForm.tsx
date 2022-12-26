@@ -4,6 +4,7 @@ import { useMemo } from 'react';
 import CustomForm from './CustomForm';
 import { useState } from 'react';
 import { FormFieldsDynamicZone } from 'types/types';
+import axiosInstance from '@/lib/axiosInstance';
 
 const wait = (time: number) =>
   new Promise((resolve) => {
@@ -12,9 +13,10 @@ const wait = (time: number) =>
 
 type Props = {
   fields?: FormFieldsDynamicZone[];
+  submitUrl: string;
 };
 
-const DynamicForm = ({ fields }: Props) => {
+const DynamicForm = ({ fields, submitUrl }: Props) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const initialValues = useMemo(
@@ -26,9 +28,29 @@ const DynamicForm = ({ fields }: Props) => {
   );
 
   const onSubmit = async (values, actions) => {
-    await wait(2000);
-    setIsSubmitted(true);
-    actions.resetForm();
+    try {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}${submitUrl}`,
+        {
+          method: 'POST',
+          body: JSON.stringify({
+            data: values,
+          }),
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          cache: 'no-cache',
+          next: {
+            revalidate: 0,
+          },
+        },
+      );
+      setIsSubmitted(true);
+      actions.resetForm();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

@@ -12,9 +12,11 @@ const ContactForm = async (props: Props) => {
 
   const fields = formDetails.data.data?.attributes?.fields;
 
+  const submitUrl = formDetails.data.data?.attributes?.submitURL as string;
+
   return (
     <div className="contact__body">
-      <DynamicForm fields={fields} />
+      <DynamicForm fields={fields} submitUrl={submitUrl} />
     </div>
   );
 };

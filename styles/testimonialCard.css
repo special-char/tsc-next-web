@@ -2,7 +2,7 @@
   @apply flex w-full flex-col items-center gap-8 py-20 px-14 md:flex-row;
 
   &__img {
-    @apply relative aspect-square w-52 overflow-hidden rounded-full;
+    @apply overflow-hidden rounded-full;
   }
 
   &__body {

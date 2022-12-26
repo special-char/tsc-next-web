@@ -51,7 +51,6 @@ function validateEmail(values: any) {
   return error;
 }
 const Footer = (props: Props) => {
-
   return (
     <section id="footer" className="footer">
       <TscBlueLogoSvg className="w-64" />
