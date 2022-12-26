@@ -68,7 +68,7 @@ const data = [
 
 async function getFaqData() {
   try {
-    const res = await fetch('http://65.20.70.84:1337/graphql', {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
       method: 'POST',
       body: JSON.stringify({
         query: `{
