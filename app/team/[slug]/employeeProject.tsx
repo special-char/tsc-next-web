@@ -51,7 +51,7 @@ const CardData = [
 const EmployeeProject = (props: Props) => {
   return (
     <section id="projects" className="projects">
-      <h2>Projects</h2>
+      <h2 className="text-6xl">Projects</h2>
       <div className="projects__content">
         {CardData.map((Data) => {
           return (

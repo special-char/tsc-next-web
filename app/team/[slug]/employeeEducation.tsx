@@ -29,7 +29,7 @@ const EmployeeEducation = (props: Props) => {
     <section className="employeeEdu">
       <div className="employeeEdu__main">
         <div className="employeeEdu__title">
-          <h2>Education</h2>
+          <h2 className="text-6xl">Education</h2>
         </div>
         <div className="employeeEdu__content">
           {educations.map((education, index) => {
@@ -54,8 +54,8 @@ const EmployeeEducation = (props: Props) => {
             );
           })}
         </div>
+        <hr className="my-16" />
       </div>
-      <hr className="col-span-full" />
     </section>
   );
 };

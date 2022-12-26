@@ -21,6 +21,11 @@ const HireCard = ({ data }: Props) => {
           alt="alt-img"
           fill
         />
+        <div className="hire_card__chips">
+          <div className="chip chip--primary !px-4 hover:bg-neutral-100 hover:text-primary">
+            Hire Me
+          </div>
+        </div>
       </figure>
       <div className="hire_card__body">
         <h3 className="hire_card__title">{`${firstName} ${lastName}`}</h3>
@@ -28,7 +33,11 @@ const HireCard = ({ data }: Props) => {
           Lorem ipsum dolor sit amet consectetur adipisicing.
         </p>
         <div className="hire_card__footer ">
-          <Link href="#" className="hire_card__action" download={"employeeName.cv"}>
+          <Link
+            href="#"
+            className="hire_card__action"
+            download={'employeeName.cv'}
+          >
             <Icon name="download" height={24} width={24} />
           </Link>
           <h6>Download Profile</h6>

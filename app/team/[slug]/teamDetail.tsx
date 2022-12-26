@@ -14,7 +14,7 @@ const page = (props: Props) => {
       <div className="wrapper__body">
         <UserCard />
         <div className="wrapper__body__content ">
-          <h2 className="">About Kathie Crol</h2>
+          <h2 className="text-6xl">About Kathie Crol</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus
             viverra praesent felis consequat pellentesque turpis et quisque

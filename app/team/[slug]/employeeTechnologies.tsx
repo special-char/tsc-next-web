@@ -42,7 +42,7 @@ const EmployeeTechnologies = (props: Props) => {
       <section id="employeeTechno" className="employeeTechno">
         <div className="employeeTechno__main">
           <div className="employeeTechno__title">
-            <h2 className=" w-20">Technologies</h2>
+            <h2 className="text-6xl">Technologies</h2>
           </div>
           <div className="flex-[2]">
             <div id="technologies" className="employeeTechno__content">
@@ -63,9 +63,9 @@ const EmployeeTechnologies = (props: Props) => {
                 </div>
               ))}
             </div>
+            <hr className="my-16" />
           </div>
         </div>
-        <hr className="col-span-full" />
       </section>
     </>
   );
