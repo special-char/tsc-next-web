@@ -7,13 +7,15 @@ type Props = {};
 
 const UserCard = (props: Props) => {
   return (
-    <section className="px-container">
+    <section className="">
       <div className="user_card ">
-        <div className="user_card__image avatar">
+        <div className="user_card__image">
           <Image
             src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f1ff9fd9e0e1686d26497_image-3-profile-picture-small-teacher-education-x-template.jpg"
             alt="avatar"
-            fill
+            width={200}
+            height={200}
+            className="rounded-full"
           />
         </div>
         <div className="user_card__details">
@@ -27,8 +29,8 @@ const UserCard = (props: Props) => {
             Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida. Diam
             phasellus vestibulum lorem sed risus ultricies.
           </p>
-          <div>
-            <Button as="button" variant="primary">
+          <div className="flex justify-center md:justify-start">
+            <Button as="button" className="btn btn--small btn--primary">
               Download Resume
             </Button>
           </div>

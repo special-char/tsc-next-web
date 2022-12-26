@@ -1,117 +1,30 @@
-import ActionBar from '@/ui/ActionBar';
-import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
-import Design from '@/public/icons/design.svg';
-import '@/styles/blogPost.css';
-import Card from '@/ui/Card';
-import Button from '@/ui/Button';
+import '@/styles/teamDetail.css';
+import UserCard from '@/ui/UserCard';
 
 type Props = {};
-
 
 const page = (props: Props) => {
   return (
     <div className="wrapper">
-      <div className="wrapper__header overflow-y-hidden">
-        <div className="absolute -top-48 left-0 aspect-square h-[600px] rounded-full bg-secondary3"></div>
-        <div className="absolute top-24 -right-10 aspect-square h-[600px] rounded-full bg-secondary2"></div>
+      <div className="wrapper__header overflow-hidden">
+        <div className="lg:-left-22 absolute -top-28 -left-32 h-52 w-52 rounded-full bg-secondary3 md:-top-24 md:-left-32 md:h-64 md:w-64 lg:-top-96 lg:h-[573px] lg:w-[573px]"></div>
+        <div className="absolute bottom-0 -right-44 h-72 w-72 rounded-full bg-secondary2 md:-bottom-2 md:-right-28 md:h-64 md:w-64 lg:-bottom-96 lg:-right-24 lg:h-[573px] lg:w-[573px]"></div>
       </div>
       <div className="wrapper__body">
-        <div className="wrapper__body__image">
-          <Image
-            alt="It is the image of the blog post that you are viewing"
-            src={
-              'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f23fe55a94aa127fb47b2_image-6-blog-education-x-template.jpg'
-            }
-            fill
-          />
-        </div>
-        <div className="wrapper__body__content">
-          <h1 className="text-5xl md:text-8xl lg:text-9xl">
-            How to design a simple, yet unique and memorable brand identity
-          </h1>
-          <div className="wrapper__body__content__author-info">
-            <ActionBar />
-            <span className="about-blog">
-              <Link href={'#'}>
-                <span className="about-blog__accessory chip chip--white">
-                  <Design className="chip__icon w-4" />
-                  <span>Design</span>
-                </span>
-              </Link>
-              <span className="chip chip--secondary text-xs">10 m</span>
-            </span>
-          </div>
-          <hr className="my-10" />
-
-          <div>
-            <h2 className="mb-2">What makes a good brand book?</h2>
-            <div></div>
-            <p>
-              Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
-              Diam phasellus vestibulum lorem sed risus ultricies. Magna sit
-              amet purus gravida quis blandit. Arcu cursus vitae congue mauris.
-              Nunc mattis enim ut tellus elementum sagittis vitae et leo. Semper
-              risus in hendrerit gravida rutrum quisque non. At urna condimentum
-              mattis pellentesque id nibh tortor. A erat nam at lectus urna duis
-              convallis convallis tellus. Sit amet mauris commodo quis imperdiet
-              massa. Vitae congue eu consequat ac felis
-            </p>
-            <ul>
-              <li>
-                Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
-              </li>
-              <li>
-                Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
-              </li>
-              <li>
-                Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
-              </li>
-              <li>
-                Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
-              </li>
-              <li>
-                Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
-              </li>
-            </ul>
-            <h3>How to create a good brand book?</h3>
-            <img
-              src={
-                'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f23fe55a94aa127fb47b2_image-6-blog-education-x-template.jpg'
-              }
-              alt=""
-            />
-            <h4>This is the h4 tag</h4>
-            <p>
-              Eget aliquet nibh praesent tristique magna sit amet purus.
-              Consequat id porta <a>nibh</a> venenatis cras sed felis. Nisl
-              rhoncus mattis rhoncus urna neque viverra justo nec. Habitant
-              morbi tristique senectus et netus et malesuada fames ac. Et tortor
-              consequat id porta nibh venenatis cras sed felis. Fringilla est
-              ullamcorper eget nulla facilisi. Mi sit amet mauris commodo quis.
-              Eget arcu dictum varius duis at consectetur lorem.Venenatis cras
-              sed felis eget velit
-            </p>
-            <ol>
-              <li>Magna eget est lorem ipsum dolor.</li>
-              <li>Magna eget est lorem ipsum dolor.</li>
-              <li>Magna eget est lorem ipsum dolor.</li>
-              <li>Magna eget est lorem ipsum dolor.</li>
-            </ol>
-            <blockquote>
-              Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
-              Diam phasellus vestibulum lorem sed risus ultricies. Magna sit
-              amet purus gravida quis blandit. Arcu cursus vitae congue mauris.
-            </blockquote>
-            <h6>A brand book can always keep evolving</h6>
-            <p>
-              Tortor dignissim convallis aenean et tortor at risus. Condimentum
-              vitae sapien pellentesque habitant morbi tristique senectus et
-              netus. Dui nunc mattis enim ut tellus elementum sagittis vitae et.
-              Quis imperdiet massa tincidunt nunc pulvinar sapien et.
-            </p>
-          </div>
+        <UserCard />
+        <div className="wrapper__body__content ">
+          <h2 className="">About Kathie Crol</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus
+            viverra praesent felis consequat pellentesque turpis et quisque
+            platea. Eu, elit ut nunc ac mauris bibendum nulla placerat. Sagittis
+            sit eu sit massa sapien, risus diam. In lorem eu sed euismod laoreet
+            urna, feugiat et. Euismod sem purus rutrum in. Tortor varius a
+            bibendum nisl et tellus. Aliquet elit senectus iaculis netus
+            gravida.
+          </p>
+          <hr className="my-20" />
         </div>
       </div>
     </div>

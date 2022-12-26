@@ -1,17 +1,17 @@
 .user_card {
-  @apply mx-0 flex w-full flex-col items-center gap-5 overflow-hidden rounded-2xl bg-neutral-200 md:flex-row md:gap-4;
+  @apply mx-0 flex w-full flex-col items-center gap-5 overflow-hidden rounded-2xl bg-neutral-100 md:flex-row md:gap-4;
   padding: 47px 50px 53px;
   @media screen and (min-width: 768px) {
     padding: 56px 54px 64px;
   }
   &__image {
-    @apply relative mr-4 aspect-square w-[50%];
+    @apply relative  md:w-11/12 lg:w-2/5;
   }
   &__details {
     @apply items-center;
   }
   &__heading {
-    @apply flex flex-col items-center justify-between gap-4 md:flex-row;
+    @apply flex flex-col items-center justify-between gap-4 md:flex-row md:items-end;
   }
   &__desc {
     @apply pt-3 text-center md:text-start;
