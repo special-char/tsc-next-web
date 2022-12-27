@@ -18,11 +18,11 @@ const Accordian = ({ data }: Props) => {
       {data.map((val) => (
         <details key={val.id} className="rounded-2xl md:py-8">
           <summary>{val.title}</summary>
-          <p
+          <div
             dangerouslySetInnerHTML={{
               __html: md().render(val.description),
             }}
-          ></p>
+          ></div>
         </details>
       ))}
     </>

@@ -1,12 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import {
-  ComponentCommonPrice,
-  Course,
-  CourseEntity,
-  UploadFile,
-} from 'types/types';
+import { Course, CourseEntity, UploadFile } from 'types/types';
 import Icon from './Icon';
 import '@/styles/courseCard.css';
 import clsx from 'clsx';
@@ -29,13 +24,6 @@ const CourseCard = ({ course, isHorizontal }: Props) => {
   const { url, alternativeText } = courseVideoPoster?.data
     ?.attributes as UploadFile;
   const brochureUrl = brochure?.data?.attributes?.url;
-
-  // const {
-  //   currency,
-  //   format,
-  //   price: coursePrice,
-  //   unit,
-  // } = price as ComponentCommonPrice;
 
   return (
     <div
