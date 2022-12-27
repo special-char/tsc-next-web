@@ -1,6 +1,7 @@
 type ValidationParamsType = {
   value: string | [];
   message?: string;
+  validation?: string;
 };
 
 const required = ({ value, message }: ValidationParamsType) =>
@@ -20,34 +21,26 @@ const url = ({ value, message }: ValidationParamsType) =>
     message) ||
   'Please enter valid email';
 
-const min = ({
-  value,
-  limit,
-  message,
-}: ValidationParamsType & { limit: number }) =>
-  value.length < limit && (message || `min ${limit} items required...`);
+const min = ({ value, validation, message }: ValidationParamsType) =>
+  value.length < Number(validation) &&
+  (message || `min ${validation} items required...`);
 
-const max = ({
-  value,
-  message,
-  limit,
-}: ValidationParamsType & { limit: number }) =>
-  value.length > limit && (message || `min ${limit} items required...`);
+const max = ({ value, message, validation }: ValidationParamsType) =>
+  value.length > Number(validation) &&
+  (message || `min ${validation} items required...`);
 
-const length = ({
-  value,
-  message,
-  limit,
-}: ValidationParamsType & { limit: number }) =>
-  value.length !== limit && (message || `min ${limit} items required...`);
+const length = ({ value, message, validation }: ValidationParamsType) =>
+  value.length !== Number(validation) &&
+  (message || `min ${validation} items required...`);
 
-const pattern = ({
-  value,
-  message,
-  pattern,
-}: ValidationParamsType & { pattern: string }) => {
-  const reg = new RegExp(pattern);
-  return !reg.test(value as string) && (message || 'Please enter valid email');
+const pattern = ({ value, message, validation }: ValidationParamsType) => {
+  if (validation) {
+    const reg = new RegExp(validation);
+    return (
+      !reg.test(value as string) && (message || 'Please enter valid email')
+    );
+  }
+  return false;
 };
 
 export default {
