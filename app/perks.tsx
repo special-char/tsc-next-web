@@ -63,7 +63,10 @@ const Perks = async () => {
               </div>
               <div className="perks__item__body">
                 <h3 className="mb-4 text-neutral-100">{title}</h3>
-                <p className="mb-0">{description}</p>
+                <p
+                  className="mb-0"
+                  dangerouslySetInnerHTML={{ __html: description }}
+                ></p>
               </div>
             </div>
           );

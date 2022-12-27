@@ -10,6 +10,9 @@
       @apply object-cover;
     }
   }
+  &__chips {
+    @apply absolute top-4 right-2 z-10 flex gap-4;
+  }
   /* a {
     @apply hover:text-primary;
   } */
