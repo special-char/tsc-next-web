@@ -67,7 +67,6 @@ const EmployeeProject = (props: Props) => {
               <div className="projects__card__body">
                 <h2 className="projects__card__title">{Data.title}</h2>
                 <p className="projects__card__desc">{Data.description}</p>
-                <figure>{Data.avtar}</figure>
               </div>
             </Link>
           );
