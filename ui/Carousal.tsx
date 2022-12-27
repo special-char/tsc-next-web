@@ -11,7 +11,6 @@ import React, {
 import clsx from 'clsx';
 import LeftSvg from '@/public/icons/left-arrow.svg';
 import RightSvg from '@/public/icons/right-arrow.svg';
-import CarousalBullets from './CarousalBullets';
 
 type Props = {} & PropsWithChildren;
 
@@ -97,20 +96,19 @@ const Carousal = ({ children }: Props) => {
       <div className="carousal__controls">
         <button
           type="button"
-          className="carousal__control btn btn--white btn--round bg-neutral-200 hover:bg-primary hover:fill-neutral-100"
+          className="carousal__control btn btn--white btn--round "
           onClick={scrollRight}
         >
           <LeftSvg />
         </button>
         <button
           type="button"
-          className="carousal__control btn btn--white btn--round  bg-neutral-200 hover:bg-primary hover:fill-neutral-100"
+          className="carousal__control btn btn--white btn--round"
           onClick={scrollLeft}
         >
           <RightSvg />
         </button>
       </div>
-      {/* bullets */}
 
       <div className="relative col-span-3 mx-auto flex w-full md:hidden">
         <div className=" absolute mx-auto  flex w-full items-center justify-center gap-3">

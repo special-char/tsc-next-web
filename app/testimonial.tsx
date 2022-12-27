@@ -74,7 +74,13 @@ const Testimonial = async () => {
       <Carousal>
         {testimonialsInfo.map((testimonial) => {
           return (
-            <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+            <TestimonialCard
+              key={testimonial.id}
+              testimonial={testimonial}
+              style={{
+                maxWidth: '48rem',
+              }}
+            />
           );
         })}
       </Carousal>

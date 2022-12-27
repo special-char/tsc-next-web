@@ -1,5 +1,5 @@
 .category_card {
-  @apply flex h-full flex-col overflow-hidden rounded-2xl shadow-base;
+  @apply flex h-full flex-col;
 
   &__img {
     @apply relative m-0 aspect-h-image w-full overflow-hidden;

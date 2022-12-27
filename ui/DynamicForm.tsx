@@ -4,7 +4,6 @@ import { useMemo } from 'react';
 import CustomForm from './CustomForm';
 import { useState } from 'react';
 import { FormFieldsDynamicZone } from 'types/types';
-import axiosInstance from '@/lib/axiosInstance';
 
 const wait = (time: number) =>
   new Promise((resolve) => {
