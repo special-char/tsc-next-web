@@ -68,7 +68,10 @@ const CourseCard = ({ course, isHorizontal }: Props) => {
         </figure>
       </Link>
       <div className="course_card__body">
-        <Link href="#" className="course_card__main">
+        <Link
+          href={`/courses/${encodeURIComponent(slug)}`}
+          className="course_card__main"
+        >
           <h3 className="course_card__title">{title}</h3>
           <p className="course_card__desc">{description}</p>
         </Link>
