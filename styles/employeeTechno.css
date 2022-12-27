@@ -1,7 +1,7 @@
 .employeeTechno {
-  @apply h-auto px-container sm:px-sm-container lg:px-container;
+  @apply h-auto px-container md:px-16 lg:px-container;
   &__main {
-    @apply mx-0 grid lg:mx-44;
+    @apply mx-0 grid lg:mx-12 xl:mx-44;
   }
   &__title {
     @apply flex-1 lg:flex-[0.8];

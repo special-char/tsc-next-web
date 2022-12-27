@@ -1,5 +1,5 @@
 .projects {
-  @apply px-container pb-12 sm:px-sm-container md:pb-16 lg:px-container;
+  @apply mx-0 px-container pb-12 md:px-16 md:pb-16 lg:mx-12 lg:px-container xl:mx-44;
 
   &__content {
     @apply my-8 grid grid-cols-1 gap-8  lg:grid-cols-2;
@@ -31,10 +31,6 @@
     }
     &__actions {
       @apply flex items-center gap-4;
-    }
-
-    &__avatar {
-      @apply aspect-square w-10 overflow-hidden rounded-full;
     }
   }
 }

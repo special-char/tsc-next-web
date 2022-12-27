@@ -21,7 +21,16 @@ const TextInput = ({
       })}
     >
       <label className="form__group__label">{label}</label>
-      <input type="text" className="form__group__input" {...field} {...rest} />
+      <input
+        type="text"
+        className={clsx('form__group__input', {
+          'border border-error outline-error': !!(
+            touched[field.name] && errors[field.name]
+          ),
+        })}
+        {...field}
+        {...rest}
+      />
       {touched[field.name] && errors[field.name] && (
         <p className="form__group__error">{errors[field.name]}</p>
       )}
