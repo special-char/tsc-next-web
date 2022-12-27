@@ -2,9 +2,6 @@ import EventCard, { EventCardSkeleton } from '@/ui/EventCard';
 import PageHeader, { PageHeaderSkeleton } from '@/ui/pageHeader';
 import Features, { FeaturesSkeleton } from '@/ui/features';
 import { Suspense } from 'react';
-import Event from './event';
-import { EventDatailPageSkeleton } from '@/ui/EventDatailPage';
-import { PageSkeleton } from './[slug]/page';
 
 export default async function Page() {
   const data = [
