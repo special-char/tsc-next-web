@@ -9,7 +9,7 @@
 
   &__actions {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    @apply mt-6 grid gap-4;
+    @apply my-8 grid gap-4 md:my-12;
   }
 
   &__image {
