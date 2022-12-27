@@ -12,7 +12,7 @@ export const getCourseDetails: CoursesType = async (slug: string) => {
       method: 'POST',
       body: JSON.stringify({
         query: `{
-          courses(filters: { slug: { eq: "full-stack-development" } }) {
+          courses(filters: { slug: { eq: "${slug}" } }) {
             data {
               attributes {
                 title

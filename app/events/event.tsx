@@ -40,13 +40,13 @@ const data = [
     publishedAt: {
       month: 'August',
       day: '11',
-      year: '2022'
+      year: '2022',
     },
     eventDate: {
       month: 'August',
       day: '11',
-      year: '2022'
-    }
+      year: '2022',
+    },
     // startTime: '5:00 pm',
     // endTime: '6:00 pm EDT',
   },

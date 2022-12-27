@@ -141,19 +141,23 @@ export default function Page({ params }: PageProps) {
               />
             </div>
           </section>
-          <section id="review" className="course-review pt-12 md:pt-16">
-            <h2 className="text-center md:text-left">What our Students say</h2>
-            <div>
-              {testimonials?.data.map((testimonial) => {
-                return (
-                  <TestimonialCard
-                    key={testimonial.id}
-                    testimonial={testimonial}
-                  />
-                );
-              })}
-            </div>
-          </section>
+          {testimonials?.data && testimonials?.data.length > 0 && (
+            <section id="review" className="course-review pt-12 md:pt-16">
+              <h2 className="text-center md:text-left">
+                What our Students say
+              </h2>
+              <div>
+                {testimonials?.data.map((testimonial) => {
+                  return (
+                    <TestimonialCard
+                      key={testimonial.id}
+                      testimonial={testimonial}
+                    />
+                  );
+                })}
+              </div>
+            </section>
+          )}
         </div>
         <div className="sticky top-0 hidden self-start lg:block">
           <div className="individualcourse__right-section">
