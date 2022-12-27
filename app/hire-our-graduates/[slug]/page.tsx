@@ -11,12 +11,10 @@ const page = (props: Props) => {
   return (
     <>
       <TeamDetails />
-      <hr />x
       <EmployeeTechnologies />
-      <hr />
       <EmployeeEducation />
-      <EmployeeAchievement />
       <EmployeeCertificates />
+      <EmployeeAchievement />
       <EmployeeProject />
     </>
   );
