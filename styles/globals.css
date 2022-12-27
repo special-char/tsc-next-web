@@ -79,7 +79,7 @@
   }
 
   strong {
-    @apply font-bold;
+    @apply font-bold md:ml-20;
   }
 
   em {
@@ -95,7 +95,7 @@
   }
 
   li {
-    @apply mb-4;
+    @apply mb-4 md:ml-[75px];
   }
 
   img {
@@ -172,7 +172,7 @@
     }
   }
 
-  /* details[open] {
+  details[open] {
     & > summary {
       @apply text-neutral-600;
 
@@ -181,7 +181,7 @@
         @apply bottom-2 flex rotate-[15px] items-center justify-center bg-primary pb-2 text-neutral-100 duration-300;
       }
     }
-  } */
+  }
 
   nav {
     a {
