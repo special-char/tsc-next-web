@@ -164,15 +164,19 @@
 
       &::before {
         content: '\002B';
+<<<<<<< HEAD
         @apply mr-4 aspect-square h-12 w-12 rotate-180 rounded-full bg-neutral-300 text-center text-4xl font-bold text-neutral-600 duration-300;
+=======
+        @apply mr-8 aspect-square h-12 w-12 rotate-180 rounded-full bg-neutral-300 text-center text-6xl font-bold text-neutral-600 duration-300 md:h-12 md:w-12;
+>>>>>>> dd4b4bf404f3a8dccee0a6a75c6936c73a01c8ac
       }
     }
-    & > p {
+    & > div {
       @apply overflow-hidden border-none pt-2 pl-20 text-left text-base md:pl-20;
     }
   }
 
-  details[open] {
+  /* details[open] {
     & > summary {
       @apply text-neutral-600;
 
@@ -181,7 +185,7 @@
         @apply bottom-2 flex rotate-[15px] items-center justify-center bg-primary pb-2 text-neutral-100 duration-300;
       }
     }
-  }
+  } */
 
   nav {
     a {
@@ -374,7 +378,6 @@
       padding-inline: var(--_carousel-gutters);
       grid-row: 1;
       grid-column: 1/-1;
-      margin: 0;
 
       overflow-x: auto;
       overscroll-behavior-inline: contain;
@@ -393,7 +396,7 @@
     }
 
     &__items {
-      @apply m-0 max-w-xl flex-shrink-0 flex-grow basis-full snap-center snap-always list-none overflow-hidden rounded-xl bg-neutral-100 p-0 shadow-dark;
+      @apply m-0 max-w-xl flex-shrink-0 flex-grow basis-full snap-center snap-always list-none bg-neutral-100 p-0;
     }
 
     &__controls {
@@ -406,7 +409,7 @@
     &__control {
       grid-row: 1;
       place-self: center;
-      @apply z-50 mx-container !w-20 bg-neutral-200 hover:bg-primary hover:fill-neutral-100;
+      @apply z-50 mx-container w-20;
 
       &:first-child {
         grid-column: 1;
@@ -565,12 +568,10 @@
       @apply w-full rounded-full bg-neutral-100 py-5 px-6;
       grid-column: 1 / -1;
       grid-row: 1 / -1;
-      z-index: 1;
     }
 
     &__btn {
       @apply col-span-2 m-0 p-3 py-5 px-4 md:col-[2/-1] md:row-span-full md:m-1 md:px-1 md:py-1;
-      z-index: 2;
     }
     &__subscribed {
       @apply w-full rounded-xl bg-primary py-5 px-3 text-center text-neutral-100;
