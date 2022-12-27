@@ -42,12 +42,15 @@ const Price = ({
 }: Props) => {
   return (
     <div className="price">
-      <div>
-        <h2>{`${new Intl.NumberFormat(format?.replace('_', '-'), {
-          style: 'currency',
-          currency,
-          minimumFractionDigits: 0,
-        }).format(price)}/${unit}`}</h2>
+      <div className="overflow-hidden">
+        <h2 className="text-2xl md:text-4xl">{`${new Intl.NumberFormat(
+          format?.replace('_', '-'),
+          {
+            style: 'currency',
+            currency,
+            minimumFractionDigits: 0,
+          },
+        ).format(price)}/${unit}`}</h2>
         <p>{description}</p>
         <div className="flex flex-col gap-3">
           <Link href="/" className="btn btn--secondary btn--small">
