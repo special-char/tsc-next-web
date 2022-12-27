@@ -3,6 +3,7 @@
 import '@/styles/individualcourse.css';
 import DesignSvg from '@/public/icons/design.svg';
 import Image from 'next/image';
+import PlayVideo from '@/public/icons/playVideo.svg';
 import md from 'markdown-it';
 import Price from './price';
 import ChipNavigation from '@/ui/ChipNavigation';
@@ -11,21 +12,6 @@ import { Course, CourseEntity, UploadFile } from 'types/types';
 import { use } from 'react';
 import TestimonialCard from '@/ui/TestimonialCard';
 import Accordian, { AccordianType } from '@/ui/Accordian';
-
-const learnData = [
-  {
-    desc: 'Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.',
-  },
-  {
-    desc: 'Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.',
-  },
-  {
-    desc: 'Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.',
-  },
-  {
-    desc: 'Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.',
-  },
-];
 
 const chipNavData = [
   {
@@ -105,14 +91,8 @@ export default function Page({ params }: PageProps) {
                 fill
               />
             )}
-            {/* <div className="main__left-section__preview__body">
-              <div
-                role={'button'}
-                onClick={() => {
-                  setOpen(true);
-                }}
-                className="popup-icon flex h-20 w-20 items-center justify-center rounded-full bg-secondary1 md:h-32 md:w-32"
-              >
+            <div className="main__left-section__preview__body">
+              <div className="popup-icon flex h-20 w-20 items-center justify-center rounded-full bg-secondary1 md:h-32 md:w-32">
                 <PlayVideo
                   role="presentation"
                   focusable="false"
@@ -120,7 +100,7 @@ export default function Page({ params }: PageProps) {
                   className="!m-auto h-9 w-7 fill-primary"
                 />
               </div>
-            </div> */}
+            </div>
           </div>
           <div className="lg:hidden">
             <Price price={price} />
@@ -129,19 +109,21 @@ export default function Page({ params }: PageProps) {
             <ChipNavigation chipData={chipNavData} />
           </div>
           <section id="about" className="main__left-section__about">
-            <h2>About the course</h2>
+            <h2 className="text-3xl md:text-6xl">About the course</h2>
             {aboutCourse && (
-              <p
+              <div
                 dangerouslySetInnerHTML={{ __html: md().render(aboutCourse) }}
-              ></p>
+              ></div>
             )}
           </section>
           <section id="topic" className="main__left-section__topic">
-            <h2>What will you learn</h2>
+            <h2 className="text-3xl md:text-6xl">What will you learn</h2>
             <Accordian data={accordianData} />
           </section>
           <section id="result" className="main__left-section__result">
-            <h2>Results after course completion</h2>
+            <h2 className="text-3xl md:text-6xl">
+              Results after course completion
+            </h2>
             <p>
               Eget aliquet nibh praesent tristique magna sit amet purus.
               Consequat id porta nibh venenatis cras sed felis. Nisl rhoncus
@@ -160,8 +142,15 @@ export default function Page({ params }: PageProps) {
             </div>
           </section>
           <section id="review" className="course-review pt-12 md:pt-16">
-            <h2 className="text-center md:text-left">What our Students say</h2>
+<<<<<<< HEAD
+            <h2 className="text-center text-3xl md:text-left md:text-6xl">
+              What our Students say
+            </h2>
             <div className="testimonial">
+=======
+            <h2 className="text-center md:text-left">What our Students say</h2>
+            <div>
+>>>>>>> dd4b4bf404f3a8dccee0a6a75c6936c73a01c8ac
               {testimonials?.data.map((testimonial) => {
                 return (
                   <TestimonialCard

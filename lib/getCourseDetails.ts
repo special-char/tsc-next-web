@@ -1,7 +1,4 @@
-import {
-  CourseEntityResponseCollection,
-  HomeCourseEntityResponse,
-} from 'types/types';
+import { CourseEntityResponseCollection } from 'types/types';
 
 export type CoursesType = (slug: string) => Promise<{
   data: {

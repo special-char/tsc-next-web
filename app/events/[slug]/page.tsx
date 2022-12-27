@@ -115,24 +115,6 @@ const Page = () => {
         </div>
       </div>
     </section>
-    // <div className="wrapper">
-    //   <div className="wrapper__header">
-    //     <div className="events__animate-bounce-slow1 "></div>
-    //     <div className="events__animate-bounce-slow2"></div>
-    //     <div className="wrapper__body">
-    //       <div className="wrapper__body__image">
-    //         <Image
-    //           alt="It is the image of the blog post that you are viewing"
-    //           src={
-    //             'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f23fe55a94aa127fb47b2_image-6-blog-education-x-template.jpg'
-    //           }
-    //           fill
-    //         />
-    //       </div>
-    //       <EventDatailPage />
-    //     </div>
-    //   </div>
-    // </div>
   );
 };
 
