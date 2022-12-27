@@ -542,11 +542,11 @@ export type ComponentCommonNumbersInput = {
 
 export type ComponentCommonPrice = {
   __typename?: 'ComponentCommonPrice';
-  currency?: Maybe<Enum_Componentcommonprice_Currency>;
+  currency: Enum_Componentcommonprice_Currency;
   description?: Maybe<Scalars['String']>;
-  format?: Maybe<Enum_Componentcommonprice_Format>;
+  format: Enum_Componentcommonprice_Format;
   id: Scalars['ID'];
-  price?: Maybe<Scalars['Float']>;
+  price: Scalars['Float'];
   unit?: Maybe<Enum_Componentcommonprice_Unit>;
 };
 
@@ -685,7 +685,7 @@ export type ComponentFieldsOptionsFiltersInput = {
 
 export type ComponentFieldsTextInput = {
   __typename?: 'ComponentFieldsTextInput';
-  autocomplete?: Maybe<Scalars['String']>;
+  autoComplete?: Maybe<Scalars['String']>;
   component?: Maybe<Enum_Componentfieldstextinput_Component>;
   field_id?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -1048,25 +1048,25 @@ export type ContactInput = {
 export type Course = {
   __typename?: 'Course';
   aboutCourse?: Maybe<Scalars['String']>;
-  brochure?: Maybe<UploadFileEntityResponse>;
+  brochure: UploadFileEntityResponse;
   categories?: Maybe<CategoryRelationResponseCollection>;
   complitionResult?: Maybe<Scalars['String']>;
   courseFeatures?: Maybe<Array<Maybe<ComponentCourseCourseFeatures>>>;
   courseVideo?: Maybe<UploadFileEntityResponse>;
-  courseVideoPoster?: Maybe<UploadFileEntityResponse>;
+  courseVideoPoster: UploadFileEntityResponse;
   createdAt?: Maybe<Scalars['DateTime']>;
   curriculam?: Maybe<Array<Maybe<ComponentCourseCurriculam>>>;
-  description?: Maybe<Scalars['String']>;
+  description: Scalars['String'];
   duration?: Maybe<Scalars['String']>;
   index?: Maybe<Scalars['Int']>;
   isFeatured?: Maybe<Scalars['Boolean']>;
   level: Enum_Course_Level;
-  price?: Maybe<ComponentCommonPrice>;
+  price: ComponentCommonPrice;
   publishedAt?: Maybe<Scalars['DateTime']>;
-  slug?: Maybe<Scalars['String']>;
+  slug: Scalars['String'];
   technologies?: Maybe<TechnologyRelationResponseCollection>;
   testimonials?: Maybe<TestimonialRelationResponseCollection>;
-  title?: Maybe<Scalars['String']>;
+  title: Scalars['String'];
   updatedAt?: Maybe<Scalars['DateTime']>;
 };
 
@@ -1301,7 +1301,7 @@ export type Event = {
   image?: Maybe<UploadFileEntityResponse>;
   location?: Maybe<ComponentCommonAdress>;
   publishedAt?: Maybe<Scalars['DateTime']>;
-  slug?: Maybe<Scalars['String']>;
+  slug: Scalars['String'];
   title?: Maybe<Scalars['String']>;
   updatedAt?: Maybe<Scalars['DateTime']>;
 };
@@ -1433,7 +1433,7 @@ export type Form = {
   createdAt?: Maybe<Scalars['DateTime']>;
   fields?: Maybe<Array<Maybe<FormFieldsDynamicZone>>>;
   publishedAt?: Maybe<Scalars['DateTime']>;
-  slug?: Maybe<Scalars['String']>;
+  slug: Scalars['String'];
   submitURL?: Maybe<Scalars['String']>;
   updatedAt?: Maybe<Scalars['DateTime']>;
 };
