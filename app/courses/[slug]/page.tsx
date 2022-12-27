@@ -142,15 +142,10 @@ export default function Page({ params }: PageProps) {
             </div>
           </section>
           <section id="review" className="course-review pt-12 md:pt-16">
-<<<<<<< HEAD
             <h2 className="text-center text-3xl md:text-left md:text-6xl">
               What our Students say
             </h2>
             <div className="testimonial">
-=======
-            <h2 className="text-center md:text-left">What our Students say</h2>
-            <div>
->>>>>>> dd4b4bf404f3a8dccee0a6a75c6936c73a01c8ac
               {testimonials?.data.map((testimonial) => {
                 return (
                   <TestimonialCard
