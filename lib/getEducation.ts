@@ -1,5 +1,4 @@
 import { AboutTscEntityResponse } from 'types/types';
-import axiosInstance from './axiosInstance';
 
 export type EducationType = () => Promise<{
   data: {

@@ -30,14 +30,12 @@ const CourseCard = ({ course, isHorizontal }: Props) => {
     ?.attributes as UploadFile;
   const brochureUrl = brochure?.data?.attributes?.url;
 
-  const {
-    currency,
-    format,
-    price: coursePrice,
-    unit,
-  } = price as ComponentCommonPrice;
-
-  console.log(slug);
+  // const {
+  //   currency,
+  //   format,
+  //   price: coursePrice,
+  //   unit,
+  // } = price as ComponentCommonPrice;
 
   return (
     <div
@@ -55,13 +53,13 @@ const CourseCard = ({ course, isHorizontal }: Props) => {
           />
           <div className="course_card__chips">
             <div className="chip chip--white">{duration}</div>
-            {currency && format && coursePrice && (
+            {price && (
               <div className="chip chip--primary">
-                {`${new Intl.NumberFormat(format?.replace('_', '-'), {
+                {`${new Intl.NumberFormat(price.format.replace('_', '-'), {
                   style: 'currency',
-                  currency,
+                  currency: price.currency,
                   minimumFractionDigits: 0,
-                }).format(coursePrice)}/${unit}`}
+                }).format(price.price)}/${price.unit}`}
               </div>
             )}
           </div>

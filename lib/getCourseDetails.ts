@@ -15,56 +15,55 @@ export const getCourseDetails: CoursesType = async (slug: string) => {
       method: 'POST',
       body: JSON.stringify({
         query: `{
-            courses(filters: { slug: { eq: "full-stack-development" } }) {
-              data {
-                attributes {
+          courses(filters: { slug: { eq: "full-stack-development" } }) {
+            data {
+              attributes {
+                title
+                description
+                courseVideoPoster {
+                  data {
+                    attributes {
+                      alternativeText
+                      url
+                    }
+                  }
+                }
+                aboutCourse
+                curriculam {
+                  id
                   title
+                  content
+                }
+                complitionResult
+                price {
+                  price
+                  currency
+                  format
+                  unit
                   description
-                  courseVideoPoster {
-                    data {
-                      attributes {
-                        alternativeText
-                        url
-                      }
+                }
+                level
+                duration
+                brochure {
+                  data {
+                    attributes {
+                      url
                     }
                   }
-                  aboutCourse
-                  curriculam {
-                    id
-                    title
-                    content
-                  }
-                  complitionResult
-                  price {
-                    price
-                    currency
-                    format
-                    unit
-                    description
-                  }
-                  level
-                  duration
-                  brochure {
-                    data {
-                      attributes {
-                        url
-                      }
-                    }
-                  }
-                  testimonials {
-                    data {
-                      attributes {
-                        quote
-                        rating
-                        name
-                        company
-                        designation
-                        avatar {
-                          data {
-                            attributes {
-                              url
-                              alternativeText
-                            }
+                }
+                testimonials {
+                  data {
+                    attributes {
+                      quote
+                      rating
+                      name
+                      company
+                      designation
+                      avatar {
+                        data {
+                          attributes {
+                            url
+                            alternativeText
                           }
                         }
                       }
@@ -73,7 +72,8 @@ export const getCourseDetails: CoursesType = async (slug: string) => {
                 }
               }
             }
-          }`,
+          }
+        }`,
       }),
       headers: {
         'Content-Type': 'application/json',
