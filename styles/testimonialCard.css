@@ -1,5 +1,5 @@
 .testimonial_card {
-  @apply flex w-full flex-col items-center gap-8 rounded-2xl py-14 px-8 shadow-dark md:flex-row;
+  @apply flex w-full flex-col items-center gap-8 overflow-hidden rounded-3xl py-14 px-8 shadow-dark md:flex-row;
 
   &__img {
     @apply overflow-hidden rounded-full;

@@ -4,17 +4,19 @@ import React from 'react';
 import { Testimonial, TestimonialEntity, UploadFile } from 'types/types';
 import Rating from './Rating';
 import '@/styles/testimonialCard.css';
+import clsx from 'clsx';
 
 type Props = {
   testimonial: TestimonialEntity;
+  style?: React.CSSProperties;
 };
 
-const TestimonialCard = ({ testimonial }: Props) => {
+const TestimonialCard = ({ testimonial, style }: Props) => {
   const { avatar, rating, quote, name, designation, company } =
     testimonial.attributes as Testimonial;
   const { url, alternativeText } = avatar?.data?.attributes as UploadFile;
   return (
-    <Link href="#" className="testimonial_card">
+    <Link href="#" style={style} className={clsx('testimonial_card', {})}>
       <figure className="testimonial_card__img">
         <Image
           src={`${url}?tr=h-200,w-200`}

@@ -18,8 +18,6 @@ type Props = {
 const DynamicForm = ({ fields, submitUrl }: Props) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  console.log(fields);
-
   const initialValues = useMemo(
     () =>
       fields?.reduce((acc, val) => {

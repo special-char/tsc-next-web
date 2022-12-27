@@ -10,6 +10,7 @@ import { getCourseDetails } from '@/lib/getCourseDetails';
 import { Course, CourseEntity, UploadFile } from 'types/types';
 import { use } from 'react';
 import TestimonialCard from '@/ui/TestimonialCard';
+import Accordian, { AccordianType } from '@/ui/Accordian';
 
 const learnData = [
   {
@@ -64,10 +65,20 @@ export default function Page({ params }: PageProps) {
     aboutCourse,
     testimonials,
     price,
+    curriculam,
   } = attributes as Course;
 
   const { url, alternativeText } = courseVideoPoster.data
     ?.attributes as UploadFile;
+
+  const accordianData =
+    curriculam?.map<AccordianType>((item) => {
+      return {
+        id: item?.id || '',
+        title: item?.title || '',
+        description: item?.content || '',
+      };
+    }) || [];
 
   return (
     <section id="individualcourse" className="individualcourse">
@@ -127,19 +138,7 @@ export default function Page({ params }: PageProps) {
           </section>
           <section id="topic" className="main__left-section__topic">
             <h2>What will you learn</h2>
-            <p>
-              Euismod sem purus rutrum in. Tortor varius a bibendum nisl et
-              tellus. Aliquet elit senectus iaculis netus gravida
-            </p>
-            <ol
-              style={{
-                listStyle: 'decimal',
-              }}
-            >
-              {learnData.map((data) => (
-                <li key={data.desc}>{data.desc}</li>
-              ))}
-            </ol>
+            <Accordian data={accordianData} />
           </section>
           <section id="result" className="main__left-section__result">
             <h2>Results after course completion</h2>
