@@ -1,23 +1,15 @@
 'use client';
 
 import { Formik, Form, Field } from 'formik';
-import dynamic from 'next/dynamic';
 import React from 'react';
 import Button from './Button';
-
-const TextInput = dynamic(() => import('./TextInput'), {
-  loading: () => 'Loading...',
-});
-
-const TextArea = dynamic(() => import('./TextArea'), {
-  loading: () => 'Loading...',
-});
+import checkValidation from '@/lib/validation';
+import TextInput from './TextInput';
+import TextArea from './TextArea';
 
 type Props = {};
 
 const CustomForm = ({ buttonStyle, fields, ...rest }: Props) => {
-  console.log(rest.initialValues);
-
   return (
     <Formik {...rest}>
       {({ isSubmitting }) => (
@@ -29,6 +21,7 @@ const CustomForm = ({ buttonStyle, fields, ...rest }: Props) => {
               __component,
               field_id,
               initialvalue,
+              validation,
               ...rest
             }) => {
               if (component === 'TextArea') {
@@ -46,6 +39,21 @@ const CustomForm = ({ buttonStyle, fields, ...rest }: Props) => {
                     key={id}
                     id={field_id}
                     component={TextInput}
+                    validate={(value) => {
+                      let message = '';
+                      for (let i = 0; i < validation.length; i++) {
+                        const { validationType, ...rest } = validation[i];
+                        const res = checkValidation[validationType]({
+                          value,
+                          ...rest,
+                        });
+                        if (res) {
+                          message = res;
+                          break;
+                        }
+                      }
+                      return message;
+                    }}
                     {...rest}
                   />
                 );

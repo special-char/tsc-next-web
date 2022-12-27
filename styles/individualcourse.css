@@ -76,7 +76,7 @@
 }
 
 .testimonial {
-  @apply grid min-h-screen content-center items-center justify-center gap-8 lg:gap-12;
+  @apply grid content-center items-center justify-center gap-8 lg:gap-12;
 
   &__header {
     @apply justify-center text-center md:p-12 md:py-8;

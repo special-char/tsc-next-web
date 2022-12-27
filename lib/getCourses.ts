@@ -2,7 +2,6 @@ import {
   CourseEntityResponseCollection,
   HomeCourseEntityResponse,
 } from 'types/types';
-import axiosInstance from './axiosInstance';
 
 export type CoursesType = () => Promise<{
   data: {
@@ -19,18 +18,33 @@ export const getCoursesData: CoursesType = async () => {
         query: `{
           courses {
             data {
-              id
               attributes {
                 title
                 description
                 courseVideoPoster {
                   data {
                     attributes {
-                      url
                       alternativeText
+                      url
                     }
                   }
                 }
+                brochure {
+                  data {
+                    attributes {
+                      alternativeText
+                      url
+                    }
+                  }
+                }
+                price {
+                  price
+                  currency
+                  format
+                  unit
+                }
+                duration
+                slug
               }
             }
           }
