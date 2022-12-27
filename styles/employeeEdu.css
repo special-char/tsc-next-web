@@ -1,7 +1,7 @@
 .employeeEdu {
   @apply h-auto w-full px-container  sm:px-sm-container lg:px-container;
   &__main {
-    @apply mx-0 grid pb-8 md:pb-16 lg:mx-44;
+    @apply mx-0 grid lg:mx-44;
   }
   &__title {
     @apply md:flex-1 lg:flex-[0.8];

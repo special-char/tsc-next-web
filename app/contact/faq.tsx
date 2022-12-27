@@ -1,6 +1,7 @@
 import React, { use } from 'react';
 import '@/styles/faq.css';
-import Accordian from '@/ui/Accordian';
+import Accordian, { AccordianType } from '@/ui/Accordian';
+import { getFaqData } from '@/lib/getFaqData';
 
 export const FaqSkeleton = () => {
   return (
@@ -33,71 +34,20 @@ export const FaqSkeleton = () => {
 };
 
 interface Props {}
-const data = [
-  {
-    id: '1',
-    title: 'Do you offer discounts for students?',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id dolor.',
-  },
-  {
-    id: '2',
-    title: 'Do you offer discounts for students?',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id dolor.',
-  },
-  {
-    id: '3',
-    title: 'Do you offer discounts for students?',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id dolor.',
-  },
-  {
-    id: '4',
-    title: 'Do you offer discounts for students?',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id dolor.',
-  },
-  {
-    id: '5',
-    title: 'Do you offer discounts for students?',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id dolor.',
-  },
-];
-
-async function getFaqData() {
-  try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
-      method: 'POST',
-      body: JSON.stringify({
-        query: `{
-          faqs{
-            data{
-              id
-              attributes{
-                question
-                answer
-              }
-            }
-          }
-        }`,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-    });
-    return await res.json();
-  } catch (error) {}
-}
 
 const Faq = async (props: Props) => {
   const faqData = await getFaqData();
 
   if (!faqData) return null;
 
-  const faqInfo = faqData?.data?.faqs?.data;
+  const faqInfo = faqData.data.faqs.data.map<AccordianType>((item) => {
+    return {
+      id: item.id || '',
+      title: item.attributes?.question || '',
+      description: item.attributes?.answer || '',
+    };
+  });
+
   return (
     <section id="Faq" className="faq">
       <div className="faq__section ">

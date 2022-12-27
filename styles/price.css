@@ -24,20 +24,3 @@
     @apply mb-8 h-16 w-full rounded-full bg-neutral-100 px-7 transition ease-in-out hover:border-2 hover:border-primary lg:mb-4;
   }
 }
-.btn {
-  @apply inline-block w-full rounded-full text-center text-base font-bold uppercase tracking-[0.08em];
-  transition: transform 300ms ease, background-color 300ms ease;
-  transform-style: preserve-3d;
-
-  &:hover {
-    transform: scale3d(0.96, 0.96, 1.01);
-  }
-
-  &--primary {
-    @apply bg-primary text-neutral-100;
-  }
-
-  &--primary:hover {
-    @apply bg-neutral-800 text-neutral-100;
-  }
-}

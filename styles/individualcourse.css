@@ -28,6 +28,7 @@
       } */
   }
 }
+
 .main {
   @apply grid gap-8 px-container;
   @media only screen and (min-width: 1010px) {
@@ -72,32 +73,5 @@
   }
   &__right-section {
     @apply sticky top-0;
-  }
-}
-
-.testimonial {
-  @apply grid min-h-screen content-center items-center justify-center gap-8 lg:gap-12;
-
-  &__header {
-    @apply justify-center text-center md:p-12 md:py-8;
-  }
-
-  &__card {
-    @apply grid max-w-screen-md items-center justify-items-center md:grid-cols-[1fr_2fr];
-
-    &__image {
-      @apply aspect-square w-44 overflow-hidden rounded-full;
-    }
-
-    &__body {
-      @apply justify-items-center text-center md:justify-items-start md:text-start;
-    }
-  }
-
-  &__content {
-    @apply grid grid-cols-2 justify-items-center px-container lg:grid-cols-4;
-  }
-  &__title {
-    @apply text-center;
   }
 }

@@ -1,7 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { Course, CourseEntity, UploadFile } from 'types/types';
+import {
+  ComponentCommonPrice,
+  Course,
+  CourseEntity,
+  UploadFile,
+} from 'types/types';
 import Icon from './Icon';
 import '@/styles/courseCard.css';
 import clsx from 'clsx';
@@ -12,16 +17,33 @@ type Props = {
 };
 
 const CourseCard = ({ course, isHorizontal }: Props) => {
-  const { title, description, courseVideoPoster } = course.attributes as Course;
+  const {
+    title,
+    description,
+    courseVideoPoster,
+    brochure,
+    duration,
+    price,
+    slug,
+  } = course.attributes as Course;
   const { url, alternativeText } = courseVideoPoster?.data
     ?.attributes as UploadFile;
+  const brochureUrl = brochure?.data?.attributes?.url;
+
+  // const {
+  //   currency,
+  //   format,
+  //   price: coursePrice,
+  //   unit,
+  // } = price as ComponentCommonPrice;
+
   return (
     <div
       className={clsx('course_card', {
         'course_card--hoz': !!isHorizontal,
       })}
     >
-      <Link href="#">
+      <Link href={`/courses/${encodeURIComponent(slug)}`}>
         <figure className="course_card__img">
           <Image
             src={`${url}?tr=ar-16-9`}
@@ -30,21 +52,34 @@ const CourseCard = ({ course, isHorizontal }: Props) => {
             sizes="(max-width: 640px) 100vw,576px"
           />
           <div className="course_card__chips">
-            <div className="chip chip--white">24 days</div>
-            <div className="chip chip--primary">Rs. 40,000</div>
+            <div className="chip chip--white">{duration}</div>
+            {price && (
+              <div className="chip chip--primary">
+                {`${new Intl.NumberFormat(price.format.replace('_', '-'), {
+                  style: 'currency',
+                  currency: price.currency,
+                  minimumFractionDigits: 0,
+                }).format(price.price)}/${price.unit}`}
+              </div>
+            )}
           </div>
         </figure>
       </Link>
       <div className="course_card__body">
-        <Link href="#" className="course_card__main">
+        <Link
+          href={`/courses/${encodeURIComponent(slug)}`}
+          className="course_card__main"
+        >
           <h3 className="course_card__title">{title}</h3>
           <p className="course_card__desc">{description}</p>
         </Link>
         <div className="course_card__footer">
-          <Link href="#" className="course_card__action">
-            <Icon name="download" height={24} width={24} />
-            Download Curriculum
-          </Link>
+          {brochureUrl && (
+            <Link href={brochureUrl} className="course_card__action" download>
+              <Icon name="download" height={24} width={24} />
+              Download Curriculum
+            </Link>
+          )}
         </div>
       </div>
     </div>

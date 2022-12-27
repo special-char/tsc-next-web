@@ -5,8 +5,11 @@ import DurationSvg from '@/public/icons/duration.svg';
 import LessonSvg from '@/public/icons/lesson.svg';
 import LifetimeSvg from '@/public/icons/lifetime.svg';
 import AccessSvg from '@/public/icons/access.svg';
+import { ComponentCommonPrice } from 'types/types';
 
-type Props = {};
+type Props = {
+  price: ComponentCommonPrice;
+};
 
 const PriceData = [
   {
@@ -34,15 +37,18 @@ const PriceData = [
   },
 ];
 
-const Price = (props: Props) => {
+const Price = ({
+  price: { format, price, currency, unit, description },
+}: Props) => {
   return (
     <div className="price">
       <div>
-        <h2>$199.00 USD</h2>
-        <p>
-          Lorem ipsum dolor sit amet, dolor consectetur adipiscing elit purus
-          vivera.
-        </p>
+        <h2>{`${new Intl.NumberFormat(format?.replace('_', '-'), {
+          style: 'currency',
+          currency,
+          minimumFractionDigits: 0,
+        }).format(price)}/${unit}`}</h2>
+        <p>{description}</p>
         <div className="flex flex-col gap-3">
           <Link href="/" className="btn btn--secondary btn--small">
             Register
