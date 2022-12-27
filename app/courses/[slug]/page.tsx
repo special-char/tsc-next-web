@@ -109,7 +109,7 @@ export default function Page({ params }: PageProps) {
             <ChipNavigation chipData={chipNavData} />
           </div>
           <section id="about" className="main__left-section__about">
-            <h2>About the course</h2>
+            <h2 className="text-3xl md:text-6xl">About the course</h2>
             {aboutCourse && (
               <div
                 dangerouslySetInnerHTML={{ __html: md().render(aboutCourse) }}
@@ -117,11 +117,13 @@ export default function Page({ params }: PageProps) {
             )}
           </section>
           <section id="topic" className="main__left-section__topic">
-            <h2>What will you learn</h2>
+            <h2 className="text-3xl md:text-6xl">What will you learn</h2>
             <Accordian data={accordianData} />
           </section>
           <section id="result" className="main__left-section__result">
-            <h2>Results after course completion</h2>
+            <h2 className="text-3xl md:text-6xl">
+              Results after course completion
+            </h2>
             <p>
               Eget aliquet nibh praesent tristique magna sit amet purus.
               Consequat id porta nibh venenatis cras sed felis. Nisl rhoncus
@@ -140,8 +142,15 @@ export default function Page({ params }: PageProps) {
             </div>
           </section>
           <section id="review" className="course-review pt-12 md:pt-16">
+<<<<<<< HEAD
+            <h2 className="text-center text-3xl md:text-left md:text-6xl">
+              What our Students say
+            </h2>
+            <div className="testimonial">
+=======
             <h2 className="text-center md:text-left">What our Students say</h2>
             <div>
+>>>>>>> dd4b4bf404f3a8dccee0a6a75c6936c73a01c8ac
               {testimonials?.data.map((testimonial) => {
                 return (
                   <TestimonialCard
