@@ -91,7 +91,7 @@
   }
 
   ul {
-    @apply mt-0 mb-2 list-disc pl-10;
+    @apply mt-0 mb-2 list-disc pl-4;
   }
 
   li {
