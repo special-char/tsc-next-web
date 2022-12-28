@@ -43,7 +43,6 @@ const Features = ({ title, chips }: Props) => {
             className={clsx('chip chip--white features__chip ', {
               'bg-primary text-neutral-100': x.selected,
             })}
-            onClick={() => {}}
           >
             {x.name}
           </button>

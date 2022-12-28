@@ -72,13 +72,16 @@ type Props = {
 };
 
 const EventCard = ({ data }: Props) => {
+  const [{ attributes }] = data;
+  const { image, eventStartDate, eventEndDate, title, description, slug } = attributes
   return (
     <>
       <div className="event_Card">
         {data.map((data) => (
           <div className="event__section">
+            {JSON.stringify(attributes, null)}
             <figure className="card__image">
-              <Image src={data.image_url} alt="alt text" fill />
+              <Image src={image.data.attributes.url} alt={`${image.data.attributes.alternativeText}`} fill />
             </figure>
             <div className="event__body">
               {data?.publishedAt && (

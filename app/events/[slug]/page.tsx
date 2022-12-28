@@ -68,6 +68,7 @@ const Page = () => {
       </div>
       <div className="events__page">
         <div className="events__image">
+
           <Image
             alt="alt"
             src={
