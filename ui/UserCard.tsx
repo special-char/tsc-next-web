@@ -20,7 +20,7 @@ const UserCard = (props: Props) => {
         </div>
         <div className="user_card__details">
           <div className=" user_card__heading">
-            <h2 className="!m-0">Kathie Corl</h2>
+            <h2 className="!m-0 mt-3 md:text-5xl">Kathie Corl</h2>
             <div className="chip chip--primary w-auto shadow-dark hover:bg-neutral-100 hover:text-primary">
               Design
             </div>

@@ -23,6 +23,13 @@ export const getCategoriesData: CategoriesType = async () => {
               attributes {
                 title
                 description
+                courses {
+                  data {
+                    attributes {
+                      title
+                    }
+                  }
+                }
                 icon {
                   data {
                     attributes {

@@ -37,7 +37,9 @@ const BlogSubscribe = (props: Props) => {
           <h2 className="blogSubscribe__title">
             Subscribe to our weekly newsletter today!
           </h2>
-          <Newsletter btnClass="btn--white md:btn--primary" />
+          <div className="z-10">
+            <Newsletter btnClass="btn--white md:btn--primary" />
+          </div>
           {/* <div className="newsletter z-10">
             <input
               className="newsletter__input"
