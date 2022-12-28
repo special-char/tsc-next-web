@@ -9,8 +9,10 @@ type Props = {
 };
 
 const CategoryCard = ({ category }: Props) => {
-  const { title, description, icon } = category.attributes as Category;
+  const { title, description, icon, courses } = category.attributes as Category;
   const { url, alternativeText } = icon?.data?.attributes as UploadFile;
+
+  const coursesLength = courses?.data.length || 0;
 
   return (
     <Link
@@ -28,7 +30,9 @@ const CategoryCard = ({ category }: Props) => {
           sizes="(max-width: 640px) 100vw,384px"
         />
         <div className="category_card__chips">
-          <div className="chip chip--white">24 days</div>
+          <div className="chip chip--white">{`${coursesLength} ${
+            coursesLength > 1 ? 'Courses' : 'Course'
+          }`}</div>
         </div>
       </figure>
       <div className="category_card__body">
