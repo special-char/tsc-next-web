@@ -23,19 +23,19 @@
   }
 
   h3 {
-    @apply text-xl font-bold text-neutral-700 sm:text-xxl md:text-2xl;
+    @apply mb-4 text-xl font-bold text-neutral-700 sm:text-xxl md:text-2xl;
   }
 
   h4 {
-    @apply text-lg font-bold text-neutral-700 sm:text-xl;
+    @apply mb-4 text-lg font-bold text-neutral-700 sm:text-xl;
   }
 
   h5 {
-    @apply text-base font-semibold text-neutral-800 sm:text-lg;
+    @apply mb-2 text-base font-semibold text-neutral-800 sm:text-lg;
   }
 
   h6 {
-    @apply text-xs font-semibold text-neutral-800 sm:text-base;
+    @apply mb-2 text-xs font-semibold text-neutral-800 sm:text-base;
   }
 
   p {
