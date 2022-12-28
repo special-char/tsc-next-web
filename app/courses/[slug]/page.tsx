@@ -14,19 +14,19 @@ import Accordian, { AccordianType } from '@/ui/Accordian';
 const chipNavData = [
   {
     link: '#about',
-    label: 'About',
+    name: 'About',
   },
   {
     link: '#topic',
-    label: 'Results',
+    name: 'Results',
   },
   {
     link: '#result',
-    label: 'Topics',
+    name: 'Topics',
   },
   {
     link: '#review',
-    label: 'Reviews',
+    name: 'Reviews',
   },
 ];
 
@@ -109,7 +109,7 @@ export default function Page({ params }: PageProps) {
           <div className="main__left-section__course-navigation">
             <ChipNavigation chipData={chipNavData} />
           </div>
-          <section id="about" className="main__left-section__about">
+          <section id="about">
             <h2 className="text-3xl md:text-6xl">About the course</h2>
             {aboutCourse && (
               <div
@@ -117,11 +117,13 @@ export default function Page({ params }: PageProps) {
               ></div>
             )}
           </section>
-          <section id="topic" className="main__left-section__topic">
+          <hr className="my-8 md:my-12 lg:my-16" />
+          <section id="topic">
             <h2 className="text-3xl md:text-6xl">What will you learn</h2>
             <Accordian data={accordianData} />
           </section>
-          <section id="result" className="main__left-section__result">
+          <hr className="my-8 md:my-12 lg:my-16" />
+          <section id="result">
             <h2 className="text-3xl md:text-6xl">
               Results after course completion
             </h2>
@@ -140,8 +142,9 @@ export default function Page({ params }: PageProps) {
               />
             </div> */}
           </section>
+          <hr className="my-8 md:my-12 lg:my-16" />
           {testimonials?.data && testimonials?.data.length > 0 && (
-            <section id="review" className="course-review pt-12 md:pt-16">
+            <section id="review">
               <h2 className="text-center md:text-left">
                 What our Students say
               </h2>

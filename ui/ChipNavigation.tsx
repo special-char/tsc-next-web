@@ -1,16 +1,20 @@
+import clsx from 'clsx';
 import Link from 'next/link';
 import React from 'react';
 
 const ChipNavigation = ({ chipData }) => {
   return (
-    <div className=" grid gap-4 rounded-3xl bg-neutral-200 px-8 py-4 xs:grid-cols-2 md:grid-cols-4 md:rounded-full">
+    <div className="grid shrink-0 grid-cols-2 gap-4 rounded-3xl bg-neutral-200 px-8 py-4 md:grid-flow-col-dense md:rounded-full">
       {chipData.map((data) => (
-        <Link key={data.label} href={data.link}>
-          <div className="chip chip--white items-center border border-neutral-400 duration-300 hover:bg-neutral-700 hover:text-secondary1">
-            <div className="font-bold">
-              <span className="">{data.label}</span>
-            </div>
-          </div>
+        <Link
+          key={data?.name}
+          href={`${data?.link || ''}`}
+          className={clsx('chip w-full', {
+            'chip--primary': !!data.selected,
+            'chip--white': !data.selected,
+          })}
+        >
+          {data?.name}
         </Link>
       ))}
     </div>
