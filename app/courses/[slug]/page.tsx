@@ -138,23 +138,6 @@ export default function Page({ params }: PageProps) {
               />
             </div> */}
           </section>
-<<<<<<< HEAD
-          <section id="review" className="course-review pt-12 md:pt-16">
-            <h2 className="text-center text-3xl md:text-left md:text-6xl">
-              What our Students say
-            </h2>
-            <div className="testimonial">
-              {testimonials?.data.map((testimonial) => {
-                return (
-                  <TestimonialCard
-                    key={testimonial.id}
-                    testimonial={testimonial}
-                  />
-                );
-              })}
-            </div>
-          </section>
-=======
           {testimonials?.data && testimonials?.data.length > 0 && (
             <section id="review" className="course-review pt-12 md:pt-16">
               <h2 className="text-center md:text-left">
@@ -172,7 +155,6 @@ export default function Page({ params }: PageProps) {
               </div>
             </section>
           )}
->>>>>>> 1a8e589a61db610f5fedab53ac4cb0d1a08592e8
         </div>
         <div className="sticky top-0 hidden self-start lg:block">
           <div className="individualcourse__right-section">
