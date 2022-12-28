@@ -235,8 +235,11 @@
       @apply bg-neutral-100 text-neutral-800;
     }
 
-    &-white:hover {
-      @apply bg-secondary1 text-neutral-800;
+    &--white:hover {
+      @apply bg-primary text-neutral-100;
+      & > svg {
+        @apply fill-neutral-100;
+      }
     }
 
     &--small {
