@@ -1,8 +1,8 @@
 .user_card {
-  @apply mx-0 flex w-full flex-col items-center gap-5 overflow-hidden rounded-2xl bg-neutral-100 shadow-dark md:flex-row md:gap-4;
+  @apply mx-0 flex w-full flex-col items-center gap-5 overflow-hidden rounded-2xl bg-neutral-100 shadow-dark md:flex-row md:gap-12;
   padding: 47px 50px 53px;
   @media screen and (min-width: 768px) {
-    padding: 56px 54px 64px;
+    padding: 56px 58px 70px 54px;
   }
   &__image {
     @apply relative  md:w-11/12 lg:w-2/5;
