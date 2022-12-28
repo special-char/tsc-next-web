@@ -23,23 +23,26 @@
   }
 
   h3 {
-    @apply text-xl font-bold text-neutral-700 sm:text-xxl md:text-2xl;
+    @apply mb-4 text-xl font-bold text-neutral-700 sm:text-xxl md:text-2xl;
   }
 
   h4 {
-    @apply text-lg font-bold text-neutral-700 sm:text-xl;
+    @apply mb-4 text-lg font-bold text-neutral-700 sm:text-xl;
   }
 
   h5 {
-    @apply text-base font-semibold text-neutral-800 sm:text-lg;
+    @apply mb-2 text-base font-semibold text-neutral-800 sm:text-lg;
   }
 
   h6 {
-    @apply text-xs font-semibold text-neutral-800 sm:text-base;
+    @apply mb-2 text-xs font-semibold text-neutral-800 sm:text-base;
   }
 
   p {
     @apply mb-5 text-neutral-600;
+    &:last-child {
+      @apply mb-0 pb-0;
+    }
   }
 
   p.small {
@@ -152,7 +155,7 @@
     @apply mb-4 max-w-full rounded-md bg-neutral-100 px-8 py-4 text-left drop-shadow-lg;
 
     & > summary {
-      @apply flex cursor-pointer list-none items-start justify-start text-3xl font-bold text-neutral-800 md:items-center;
+      @apply flex cursor-pointer list-none items-start justify-start text-2xl font-bold text-neutral-800 md:items-center;
 
       &::marker {
         @apply hidden;
@@ -167,7 +170,7 @@
         @apply mr-4 aspect-square h-12 w-12 rotate-90 rounded-full bg-neutral-300 text-center text-4xl font-bold text-neutral-600 duration-300;
       }
     }
-    & > div {
+    & > div:last-child {
       @apply overflow-hidden border-none py-4 text-left text-base md:pl-16;
     }
   }
@@ -246,10 +249,10 @@
   }
 
   .chip {
-    @apply flex items-center justify-center rounded-full py-3 px-4 align-middle text-xs font-bold shadow-base sm:px-6;
+    @apply flex w-fit items-center justify-center rounded-full py-3 px-4 align-middle text-xs font-bold shadow-base sm:px-6;
 
     &.icon {
-      @apply flex justify-between gap-32 py-8 px-8;
+      @apply gap-2;
     }
 
     &--primary {
@@ -263,12 +266,12 @@
     &--white {
       @apply bg-neutral-100 text-neutral-800 transition-colors transition-transform;
       &:hover {
-        @apply scale-95 bg-primary text-neutral-100;
-      }
-    }
-    &:hover > &__icon {
-      path {
-        stroke: white;
+        @apply scale-95 bg-primary  text-neutral-100;
+        & svg {
+          & path {
+            @apply stroke-neutral-100;
+          }
+        }
       }
     }
   }
