@@ -36,7 +36,7 @@ const Page = (props: Props) => {
               id: 2,
               svg: <PhoneSvg />,
               title: 'Phone',
-              url: 'https://api.whatsapp.com/send?phone+9016620489',
+              url: 'tel:+918690090417',
               description: phoneNumber,
             },
             {
@@ -50,15 +50,17 @@ const Page = (props: Props) => {
             },
           ].map((cardData) => (
             <div key={cardData.id} className="connecting__details">
-              <div className="w-16">{cardData.svg}</div>
-              <Link href={`/${cardData.url}`} target={'_blank'}>
-                <h4 className="text-lg">{cardData.title}</h4>
+              <figure className="connecting__svg">{cardData.svg}</figure>
+              <a href={cardData.url} target={'_blank'}>
+                <h4 className="text-lg hover:text-primary">{cardData.title}</h4>
                 <p className="connecting__p">{cardData.description}</p>
-              </Link>
+              </a>
             </div>
           ))}
         </div>
       </div>
+      {/* <div className="connecting__blucircle"></div>
+      <div className="connecting__yellowcircle"></div> */}
     </section>
   );
 };

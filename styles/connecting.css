@@ -1,5 +1,5 @@
 .connecting {
-  @apply overflow-hidden bg-neutral-200 px-container py-28;
+  @apply relative overflow-hidden bg-neutral-200 px-container py-28;
 
   &__title {
     @apply mb-0 text-center lg:text-left;
@@ -16,9 +16,21 @@
     @apply grid grid-cols-1 gap-8 lg:grid-cols-3;
   }
   &__details {
-    @apply grid w-full justify-center justify-items-center overflow-hidden rounded-2xl bg-neutral-100 py-10 text-center shadow-dark;
+    @apply flex w-full flex-col items-center justify-start overflow-hidden rounded-2xl bg-neutral-100 py-10 text-center shadow-dark;
+  }
+  &__svg {
+    @apply w-16;
   }
   &__p {
-    @apply overflow-hidden px-4 text-neutral-500 md:text-xl;
+    @apply overflow-hidden px-4 text-neutral-500 md:text-lg;
+  }
+  &__yellowcircle {
+    @apply absolute -right-[900px] -z-10 h-[400px] w-[400px] rounded-full bg-secondary2 md:top-[10%] md:-right-[49%] lg:top-24 lg:-right-48;
+  }
+  &__orangecircle {
+    @apply absolute top-[68%] -left-[40%] -z-10 h-[400px] w-[400px] rounded-full bg-secondary3 md:top-[63%] md:-left-36 lg:top-[65%] lg:-left-20;
+  }
+  &__blucircle {
+    @apply absolute -left-[900px] -z-10 h-[400px] w-[400px] rounded-full bg-secondary1 md:-top-80 md:-left-44 lg:-top-[24%] lg:-left-20;
   }
 }
