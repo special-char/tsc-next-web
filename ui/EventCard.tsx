@@ -25,6 +25,7 @@ type dataType = {
   image_url: any;
   eventDate: date;
   publishedAt: publishedAt;
+  title: String;
   alternativeText: String;
   icon: String;
   date: String;
@@ -84,8 +85,22 @@ const EventCard = ({ data }: Props) => {
       <div className="event_Card">
         {data.map((data) => (
           <div className="event__section">
+            {/* <figure className="card__image">
+              <Image src={data.image_url} alt="alt text" fill />
+            </figure> */}
             <figure className="card__image">
               <Image src={data.image_url} alt="alt text" fill />
+
+              <div className="card__chipset">
+                {data?.title && (
+                  <div className="chip chip--white flex gap-2">
+                    {data.icon && (
+                      <Icon width={20} height={20} name="speaker" />
+                    )}
+                    {data.title}
+                  </div>
+                )}
+              </div>
             </figure>
             <div className="event__body">
               {data?.publishedAt && (

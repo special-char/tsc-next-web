@@ -2,7 +2,7 @@ import EventCard, { EventCardSkeleton } from '@/ui/EventCard';
 import PageHeader, { PageHeaderSkeleton } from '@/ui/pageHeader';
 import Features, { FeaturesSkeleton } from '@/ui/features';
 import { Suspense } from 'react';
-
+import SpeakerSvg from '@/public/icons/speaker.svg';
 export default async function Page() {
   const data = [
     {
@@ -12,6 +12,8 @@ export default async function Page() {
         'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id.',
       image_url:
         'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/6081bcda0eb70e6127b5b859_image-4-events-education-x-template.jpg',
+      icon: <SpeakerSvg />,
+      title: 'marketing',
       publishedAt: {
         startTime: '5:00 pm',
         day: 'Sunday',
@@ -30,6 +32,8 @@ export default async function Page() {
         'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id.',
       image_url:
         'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/6081bcda0eb70e6127b5b859_image-4-events-education-x-template.jpg',
+      icon: <SpeakerSvg />,
+      title: 'marketing',
       publishedAt: {
         startTime: '5:00 pm',
         day: 'Sunday',
