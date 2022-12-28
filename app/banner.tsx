@@ -52,13 +52,13 @@ const Banner = async (props: Props) => {
           dangerouslySetInnerHTML={{ __html: md().render(description) }}
         ></div>
         <div className="banner__actions">
-          {buttons?.map((item: any) => (
+          {buttons?.map((item: any, index) => (
             <Button
               as={Link}
               prefetch={false}
               key={item.id}
               href={item.url}
-              variant="primary"
+              variant={index === 0 ? 'primary' : 'secondary'}
             >
               {item.text}
             </Button>

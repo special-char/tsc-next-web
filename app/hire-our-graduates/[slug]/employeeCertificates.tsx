@@ -25,7 +25,7 @@ const EmployeeCertificates = (props: Props) => {
     <section className="employeeCerti">
       <div className="employeeCerti__main">
         <div className="employeeCerti__content">
-          <h2>Certificates</h2>
+          <h2 className="text-6xl">Certificates</h2>
           <div className="flex-[2]">
             <ul id="list " className="employeeCerti__list">
               {CertificateData.map((val) => {
@@ -41,9 +41,9 @@ const EmployeeCertificates = (props: Props) => {
               })}
             </ul>
           </div>
+          <hr className="my-16" />
         </div>
       </div>
-      <hr className="col-span-full" />
     </section>
   );
 };
