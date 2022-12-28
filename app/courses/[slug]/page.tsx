@@ -51,8 +51,10 @@ export default function Page({ params }: PageProps) {
     price,
     curriculam,
     complitionResult,
-    categories,
+    category,
   } = attributes as Course;
+
+  const categoryTitle = category?.data?.attributes?.title || '';
 
   const { url, alternativeText } = courseVideoPoster.data
     ?.attributes as UploadFile;
@@ -74,12 +76,12 @@ export default function Page({ params }: PageProps) {
       </div>
       <div className="main py-16">
         <div>
-          {categories?.data.map((x) => (
-            <div className="chip chip--white icon" key={x.id}>
+          {categoryTitle && (
+            <div className="chip chip--white icon">
               <DesignSvg className="w-4" />
-              <span className="font-bold">{x.attributes?.title}</span>
+              <span className="font-bold">{categoryTitle}</span>
             </div>
-          ))}
+          )}
 
           <h2 className="main__left-section__title">{title}</h2>
           <p className="pb-6 text-neutral-100">{description}</p>

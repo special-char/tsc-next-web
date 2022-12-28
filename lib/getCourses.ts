@@ -16,9 +16,10 @@ export const getCoursesData: CoursesType = async () => {
       method: 'POST',
       body: JSON.stringify({
         query: `{
-          courses {
+          courses(sort: "index") {
             data {
               attributes {
+                index
                 title
                 description
                 courseVideoPoster {
@@ -59,7 +60,7 @@ export const getCoursesData: CoursesType = async () => {
               }
             }
           }
-        }
+        }        
         `,
       }),
       headers: {
