@@ -155,7 +155,7 @@
     @apply mb-4 max-w-full rounded-md bg-neutral-100 px-8 py-4 text-left drop-shadow-lg;
 
     & > summary {
-      @apply flex cursor-pointer list-none items-start justify-start text-3xl font-bold text-neutral-800 md:items-center;
+      @apply flex cursor-pointer list-none items-start justify-start text-2xl font-bold text-neutral-800 md:items-center;
 
       &::marker {
         @apply hidden;
