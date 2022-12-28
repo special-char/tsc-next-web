@@ -15,7 +15,7 @@ export const getCourseDetails: CoursesType = async (slug: string) => {
           courses(filters: { slug: { eq: "${slug}" } }) {
             data {
               attributes {
-                categories {
+                category {
                   data {
                     attributes {
                       title
