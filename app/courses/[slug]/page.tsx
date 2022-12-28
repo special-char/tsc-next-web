@@ -3,7 +3,7 @@ import DesignSvg from '@/public/icons/design.svg';
 import Image from 'next/image';
 import PlayVideo from '@/public/icons/playVideo.svg';
 import md from 'markdown-it';
-import Price from './price';
+import Price from './priceCard';
 import ChipNavigation from '@/ui/ChipNavigation';
 import { getCourseDetails } from '@/lib/getCourseDetails';
 import { Course, CourseEntity, UploadFile } from 'types/types';
