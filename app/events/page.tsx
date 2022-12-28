@@ -13,9 +13,9 @@ export default async function Page() {
       image_url:
         'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/6081bcda0eb70e6127b5b859_image-4-events-education-x-template.jpg',
       publishedAt: {
-        month: 'August',
-        day: '11',
-        year: '2022 EDT',
+        startTime: '5:00 pm',
+        day: 'Sunday',
+        endTime: '6:00 pm EDT',
       },
       eventDate: {
         month: 'August',
@@ -31,9 +31,9 @@ export default async function Page() {
       image_url:
         'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/6081bcda0eb70e6127b5b859_image-4-events-education-x-template.jpg',
       publishedAt: {
-        month: 'August',
-        day: '11',
-        year: '2022 EDT',
+        startTime: '5:00 pm',
+        day: 'Sunday',
+        endTime: '6:00 pm EDT',
       },
       eventDate: {
         month: 'August',
