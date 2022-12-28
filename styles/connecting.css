@@ -24,7 +24,7 @@
   &__p {
     @apply overflow-hidden px-4 text-neutral-500 md:text-lg;
   }
-  &__yellowcircle {
+  /* &__yellowcircle {
     @apply absolute -right-[900px] -z-10 h-[400px] w-[400px] rounded-full bg-secondary2 md:top-[10%] md:-right-[49%] lg:top-24 lg:-right-48;
   }
   &__orangecircle {
@@ -32,5 +32,5 @@
   }
   &__blucircle {
     @apply absolute -left-[900px] -z-10 h-[400px] w-[400px] rounded-full bg-secondary1 md:-top-80 md:-left-44 lg:-top-[24%] lg:-left-20;
-  }
+  } */
 }
