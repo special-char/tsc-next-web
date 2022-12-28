@@ -3,7 +3,7 @@ import DesignSvg from '@/public/icons/design.svg';
 import Image from 'next/image';
 import PlayVideo from '@/public/icons/playVideo.svg';
 import md from 'markdown-it';
-import Price from './price';
+import Price from './priceCard';
 import ChipNavigation from '@/ui/ChipNavigation';
 import { getCourseDetails } from '@/lib/getCourseDetails';
 import { Course, CourseEntity, UploadFile } from 'types/types';
@@ -14,19 +14,19 @@ import Accordian, { AccordianType } from '@/ui/Accordian';
 const chipNavData = [
   {
     link: '#about',
-    label: 'About',
+    name: 'About',
   },
   {
     link: '#topic',
-    label: 'Results',
+    name: 'Results',
   },
   {
     link: '#result',
-    label: 'Topics',
+    name: 'Topics',
   },
   {
     link: '#review',
-    label: 'Reviews',
+    name: 'Reviews',
   },
 ];
 
@@ -51,6 +51,7 @@ export default function Page({ params }: PageProps) {
     price,
     curriculam,
     complitionResult,
+    categories,
   } = attributes as Course;
 
   const { url, alternativeText } = courseVideoPoster.data
@@ -72,13 +73,14 @@ export default function Page({ params }: PageProps) {
         <div className="individualcourse__content__round"></div>
       </div>
       <div className="main py-16">
-        <div className="main__left-section">
-          <div className="chip justify-start px-0">
-            <div className="chip chip--white top-28 left-0 gap-1 py-3">
+        <div>
+          {categories?.data.map((x) => (
+            <div className="chip chip--white icon" key={x.id}>
               <DesignSvg className="w-4" />
-              <span className="font-bold">Design</span>
+              <span className="font-bold">{x.attributes?.title}</span>
             </div>
-          </div>
+          ))}
+
           <h2 className="main__left-section__title">{title}</h2>
           <p className="pb-6 text-neutral-100">{description}</p>
           <div className="main__left-section__preview">
@@ -107,7 +109,7 @@ export default function Page({ params }: PageProps) {
           <div className="main__left-section__course-navigation">
             <ChipNavigation chipData={chipNavData} />
           </div>
-          <section id="about" className="main__left-section__about">
+          <section id="about">
             <h2 className="text-3xl md:text-6xl">About the course</h2>
             {aboutCourse && (
               <div
@@ -115,11 +117,13 @@ export default function Page({ params }: PageProps) {
               ></div>
             )}
           </section>
-          <section id="topic" className="main__left-section__topic">
+          <hr className="my-8 md:my-12 lg:my-16" />
+          <section id="topic">
             <h2 className="text-3xl md:text-6xl">What will you learn</h2>
             <Accordian data={accordianData} />
           </section>
-          <section id="result" className="main__left-section__result">
+          <hr className="my-8 md:my-12 lg:my-16" />
+          <section id="result">
             <h2 className="text-3xl md:text-6xl">
               Results after course completion
             </h2>
@@ -138,8 +142,9 @@ export default function Page({ params }: PageProps) {
               />
             </div> */}
           </section>
+          <hr className="my-8 md:my-12 lg:my-16" />
           {testimonials?.data && testimonials?.data.length > 0 && (
-            <section id="review" className="course-review pt-12 md:pt-16">
+            <section id="review">
               <h2 className="text-center md:text-left">
                 What our Students say
               </h2>
