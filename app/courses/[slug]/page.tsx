@@ -51,6 +51,7 @@ export default function Page({ params }: PageProps) {
     price,
     curriculam,
     complitionResult,
+    categories,
   } = attributes as Course;
 
   const { url, alternativeText } = courseVideoPoster.data
@@ -72,13 +73,14 @@ export default function Page({ params }: PageProps) {
         <div className="individualcourse__content__round"></div>
       </div>
       <div className="main py-16">
-        <div className="main__left-section">
-          <div className="chip justify-start px-0">
-            <div className="chip chip--white top-28 left-0 gap-1 py-3">
+        <div>
+          {categories?.data.map((x) => (
+            <div className="chip chip--white icon" key={x.id}>
               <DesignSvg className="w-4" />
-              <span className="font-bold">Design</span>
+              <span className="font-bold">{x.attributes?.title}</span>
             </div>
-          </div>
+          ))}
+
           <h2 className="main__left-section__title">{title}</h2>
           <p className="pb-6 text-neutral-100">{description}</p>
           <div className="main__left-section__preview">

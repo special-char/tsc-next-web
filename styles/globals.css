@@ -40,6 +40,9 @@
 
   p {
     @apply mb-5 text-neutral-600;
+    &:last-child {
+      @apply mb-0 pb-0;
+    }
   }
 
   p.small {
@@ -167,7 +170,7 @@
         @apply mr-4 aspect-square h-12 w-12 rotate-90 rounded-full bg-neutral-300 text-center text-4xl font-bold text-neutral-600 duration-300;
       }
     }
-    & > div {
+    & > div:last-child {
       @apply overflow-hidden border-none py-4 text-left text-base md:pl-16;
     }
   }
@@ -246,10 +249,10 @@
   }
 
   .chip {
-    @apply flex items-center justify-center rounded-full py-3 px-4 align-middle text-xs font-bold shadow-base sm:px-6;
+    @apply flex w-fit items-center justify-center rounded-full py-3 px-4 align-middle text-xs font-bold shadow-base sm:px-6;
 
     &.icon {
-      @apply flex justify-between gap-32 py-8 px-8;
+      @apply gap-2;
     }
 
     &--primary {
@@ -263,12 +266,12 @@
     &--white {
       @apply bg-neutral-100 text-neutral-800 transition-colors transition-transform;
       &:hover {
-        @apply scale-95 bg-primary text-neutral-100;
-      }
-    }
-    &:hover > &__icon {
-      path {
-        stroke: white;
+        @apply scale-95 bg-primary  text-neutral-100;
+        & svg {
+          & path {
+            @apply stroke-neutral-100;
+          }
+        }
       }
     }
   }
