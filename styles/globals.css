@@ -79,7 +79,7 @@
   }
 
   strong {
-    @apply font-bold md:ml-20;
+    @apply ml-6 font-bold md:ml-[102px];
   }
 
   em {
@@ -164,7 +164,7 @@
 
       &::before {
         content: '\002B';
-        @apply mr-7 ml-2 aspect-square h-12 w-12 rotate-180 rounded-full bg-neutral-300 text-center text-4xl font-bold text-neutral-600 duration-300 md:ml-6 md:mr-8;
+        @apply mr-2 ml-5 aspect-square h-12 w-12 rotate-180 rounded-full bg-neutral-300 text-center text-4xl font-bold text-neutral-600 duration-300 md:ml-6 md:mr-8;
       }
     }
     & > div {
