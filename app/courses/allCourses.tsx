@@ -1,17 +1,13 @@
 import React from 'react';
 import Features from '../../ui/features';
 import CourseCard from '@/ui/CourseCard';
-import { getAllCoursesData } from '@/lib/getAllCourses';
+import { CourseEntity } from 'types/types';
 
-type Props = {};
+type Props = {
+  courses: CourseEntity[];
+};
 
-const AllCourses = async (props: Props) => {
-  const coursesData = await getAllCoursesData();
-
-  if (!coursesData) return null;
-
-  const coursesInfo = coursesData.data.courses.data;
-
+const AllCourses = ({ courses }: Props) => {
   return (
     <section className="items bg-neutral-200">
       <Features
@@ -33,7 +29,7 @@ const AllCourses = async (props: Props) => {
         ]}
       />
       <div className="items__item">
-        {coursesInfo.map((data) => {
+        {courses.map((data) => {
           return <CourseCard key={data.id} course={data} />;
         })}
       </div>
