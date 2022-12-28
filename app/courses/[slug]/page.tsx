@@ -1,5 +1,3 @@
-'use client';
-
 import '@/styles/individualcourse.css';
 import DesignSvg from '@/public/icons/design.svg';
 import Image from 'next/image';
@@ -52,6 +50,7 @@ export default function Page({ params }: PageProps) {
     testimonials,
     price,
     curriculam,
+    complitionResult,
   } = attributes as Course;
 
   const { url, alternativeText } = courseVideoPoster.data
@@ -124,22 +123,20 @@ export default function Page({ params }: PageProps) {
             <h2 className="text-3xl md:text-6xl">
               Results after course completion
             </h2>
-            <p>
-              Eget aliquet nibh praesent tristique magna sit amet purus.
-              Consequat id porta nibh venenatis cras sed felis. Nisl rhoncus
-              mattis rhoncus urna neque viverra justo nec. Habitant morbi
-              tristique senectus et netus et malesuada fames ac. Et tortor
-              consequat id porta nibh venenatis cras sed felis.
-            </p>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: md().render(complitionResult || ''),
+              }}
+            ></div>
 
-            <div className="main__left-section__image">
+            {/* <div className="main__left-section__image">
               <Image
                 className="rounded-3xl"
                 alt="result"
                 fill
                 src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f294e56e6b00b752780af_image-course-results-education-x-template.jpg"
               />
-            </div>
+            </div> */}
           </section>
 <<<<<<< HEAD
           <section id="review" className="course-review pt-12 md:pt-16">

@@ -29,11 +29,11 @@ const PriceData = [
   },
   {
     svg: <LifetimeSvg />,
-    title: 'Lifetime Access',
+    title: '24/7 Support',
   },
   {
     svg: <AccessSvg className=" xs:w-9 md:w-9" />,
-    title: 'Access From Any Computer, Tablet or Mobile',
+    title: 'Session recordings are accessible forever',
   },
 ];
 
