@@ -10,7 +10,7 @@ const AllCourses = async (props: Props) => {
 
   if (!coursesData) return null;
 
-  const coursesInfo = coursesData.data.courses.data;
+  const [, ...allCourses] = coursesData.data.courses.data;
 
   return (
     <section className="items bg-neutral-200">
@@ -33,7 +33,7 @@ const AllCourses = async (props: Props) => {
         ]}
       />
       <div className="items__item">
-        {coursesInfo.map((data) => {
+        {allCourses.map((data) => {
           return <CourseCard key={data.id} course={data} />;
         })}
       </div>

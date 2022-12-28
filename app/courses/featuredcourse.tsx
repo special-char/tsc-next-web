@@ -24,12 +24,12 @@ const Featuredcourse = async (props: Props) => {
 
   if (!coursesData) return null;
 
-  const coursesInfo = coursesData.data.courses.data;
+  const [featuredcourse] = coursesData.data.courses.data;
 
   return (
     <section id="featuredcourse" className="featuredcourse">
       <h2 className="featuredcourse__title">Featured Course</h2>
-      <CourseCard course={coursesInfo[0]} isHorizontal />
+      <CourseCard course={featuredcourse} isHorizontal />
     </section>
   );
 };
