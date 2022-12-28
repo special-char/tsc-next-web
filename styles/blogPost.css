@@ -10,16 +10,16 @@
   }
 
   &__body {
-    @apply mx-auto h-full max-w-5xl px-4;
+    @apply mx-auto h-full w-full max-w-7xl px-4;
     grid-row: 2 / -1;
     grid-column: 1 / -1;
 
     &__image {
-      @apply relative aspect-video overflow-hidden rounded-2xl;
+      @apply relative aspect-video max-h-[600px] min-w-full overflow-hidden rounded-2xl;
     }
 
     &__content {
-      @apply mx-auto max-w-5xl pt-12 md:pt-16 lg:pt-20;
+      @apply mx-auto max-w-5xl pt-12 md:pt-16 lg:pt-16;
       &__author-info {
         @apply grid grid-rows-2 place-content-start gap-y-8 md:grid-cols-2 md:grid-rows-none;
         .about-blog {

@@ -1,7 +1,8 @@
 import '@/styles/card.css';
 import '@/styles/actionBar.css';
-import DownArrowSvg from '@/public/icons/downarrow.svg';
-import Link from 'next/link';
+import Image from 'next/image';
+import format from 'date-fns/format';
+
 
 type Props = {};
 
@@ -11,20 +12,25 @@ const avatarData = {
   url: 'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f1ff9fd9e0e1686d26497_image-3-profile-picture-small-teacher-education-x-template.jpg',
   date: '1 September, 2022',
 };
-const ActionBar = (props: Props) => {
+const ActionBar = ({ data }: Props) => {
+  const { attributes } = data?.data;
+  const {
+    firstName,
+    lastName,
+    publishedAt,
+    avatar,
+  } = attributes;
   return (
     <div className="actionbar">
-      <>
-        <div className="flex items-center gap-3">
-          <div className="actionbar__avatar">
-            <img src={avatarData.url} alt={avatarData.name} />
-          </div>
-          <span>
-            <h3>{avatarData.name}</h3>
-            <time>{avatarData.date}</time>
-          </span>
+      <div className="flex items-center gap-3">
+        <div className="actionbar__avatar">
+          <Image fill src={avatar.data ? avatar.data.attributes.url : avatarData.url} alt={avatarData.name} />
         </div>
-      </>
+        <span>
+          <h3>{`${firstName} ${lastName}`}</h3>
+          <time>{format(new Date(publishedAt), 'MMMM d, yyyy')}</time>
+        </span>
+      </div>
     </div>
   );
 };

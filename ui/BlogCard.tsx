@@ -41,14 +41,14 @@ export const BlogCardSkeleton = ({ index }: { index: number }) => {
 };
 
 const BlogCard = ({ blog, index = 0 }: Props) => {
-  const { title, bannerImage, updatedAt, category } = blog.attributes as Blog;
+  const { title, bannerImage, updatedAt, category, slug } = blog.attributes as Blog;
   const { url, alternativeText } = bannerImage?.data?.attributes as UploadFile;
 
   const categoryInfo = category?.data?.attributes;
 
   return (
     <Link
-      href="#"
+      href={`/blogs/${slug}`}
       className={clsx('blog_card', {
         'blog_card--hoz': index > 0,
       })}

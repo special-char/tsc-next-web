@@ -46,9 +46,12 @@ const AllBlogs = async () => {
           },
         ]}
       />
+
       <div className="items__item">
-        {blogList.map((x, i) => (
-          <BlogCard key={x.id} blog={x} />
+        {blogList.map((x) => (
+          <>
+            <BlogCard key={x.id} blog={x} />
+          </>
         ))}
       </div>
     </section>
