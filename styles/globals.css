@@ -264,7 +264,7 @@
     }
 
     &--white {
-      @apply bg-neutral-100 text-neutral-800 transition-colors transition-transform;
+      @apply bg-neutral-100 text-neutral-800 transition-all;
       &:hover {
         @apply scale-95 bg-primary  text-neutral-100;
         & svg {

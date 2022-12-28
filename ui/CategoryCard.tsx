@@ -18,7 +18,7 @@ const CategoryCard = ({ category }: Props) => {
         maxWidth: '24rem',
       }}
       href="#"
-      className="category_card"
+      className="category_card "
     >
       <figure className="category_card__img">
         <Image
