@@ -79,7 +79,7 @@ export default function Page({ params }: PageProps) {
               <span className="font-bold">Design</span>
             </div>
           </div>
-          <h2 className="main__left-section__title">{title}</h2>
+          <h1 className="main__left-section__title">{title}</h1>
           <p className="pb-6 text-neutral-100">{description}</p>
           <div className="main__left-section__preview">
             {url && (
@@ -108,7 +108,7 @@ export default function Page({ params }: PageProps) {
             <ChipNavigation chipData={chipNavData} />
           </div>
           <section id="about" className="main__left-section__about">
-            <h2 className="text-3xl md:text-6xl">About the course</h2>
+            <h2>About the course</h2>
             {aboutCourse && (
               <div
                 dangerouslySetInnerHTML={{ __html: md().render(aboutCourse) }}
@@ -116,13 +116,11 @@ export default function Page({ params }: PageProps) {
             )}
           </section>
           <section id="topic" className="main__left-section__topic">
-            <h2 className="text-3xl md:text-6xl">What will you learn</h2>
+            <h2>What will you learn</h2>
             <Accordian data={accordianData} />
           </section>
           <section id="result" className="main__left-section__result">
-            <h2 className="text-3xl md:text-6xl">
-              Results after course completion
-            </h2>
+            <h2>Results after course completion</h2>
             <div
               dangerouslySetInnerHTML={{
                 __html: md().render(complitionResult || ''),
