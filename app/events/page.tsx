@@ -4,44 +4,6 @@ import Features, { FeaturesSkeleton } from '@/ui/features';
 import React, { Suspense, use } from 'react';
 import { getEvents } from '@/lib/getEvents';
 
-const data = [
-  {
-    id: 1,
-    heading: 'Social Media Marketing Masterclass',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id.',
-    image_url:
-      'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/6081bcda0eb70e6127b5b859_image-4-events-education-x-template.jpg',
-    publishedAt: {
-      month: 'August',
-      day: '11',
-      year: '2022 EDT',
-    },
-    eventDate: {
-      month: 'August',
-      day: '11',
-      year: '2022',
-    },
-  },
-  {
-    id: 2,
-    heading: 'Social Media Marketing Masterclass',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id.',
-    image_url:
-      'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/6081bcda0eb70e6127b5b859_image-4-events-education-x-template.jpg',
-    publishedAt: {
-      month: 'August',
-      day: '11',
-      year: '2022 EDT',
-    },
-    eventDate: {
-      month: 'August',
-      day: '11',
-      year: '2022',
-    },
-  },
-];
 const chips = [
   {
     name: 'All',
@@ -60,7 +22,6 @@ const chips = [
 
 export default function Page() {
   const eventData = use(getEvents());
-  const [{ attributes }] = eventData.data.events.data;
 
   return (
     <>
@@ -81,7 +42,7 @@ export default function Page() {
 
       <Suspense fallback={<EventCardSkeleton />}>
         {/* {JSON.stringify(eventData.data.events.data, null)} */}
-        <EventCard data={eventData.data.events.data} />
+        <EventCard data={eventData.data.allEvents.data} />
       </Suspense>
     </>
   );

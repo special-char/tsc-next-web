@@ -1,6 +1,10 @@
+import { getEvents } from '@/lib/getEvents';
 import '@/styles/allevents.css';
 import EventDatailPage, { EventDatailPageSkeleton } from '@/ui/EventDatailPage';
 import Image from 'next/image';
+import { use } from 'react';
+import md from 'markdown-it';
+import Link from 'next/link';
 
 export const PageSkeleton = () => {
   return (
@@ -57,8 +61,20 @@ export const PageSkeleton = () => {
     </section>
   );
 };
+export type Props = {
+  params: {
+    slug: string;
+  };
+  children?: React.ReactNode;
+}
 
-const Page = () => {
+const Page = ({ params }: Props) => {
+  const eventData = use(getEvents(params.slug));
+  const [{ attributes }] = eventData.data.Event.data;
+  const {
+    image,
+    content
+  } = attributes
   return (
     <section className="events">
       <div>
@@ -68,51 +84,23 @@ const Page = () => {
       </div>
       <div className="events__page">
         <div className="events__image">
-
           <Image
             alt="alt"
             src={
-              'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f23fe55a94aa127fb47b2_image-6-blog-education-x-template.jpg'
+              image.data.attributes.url
             }
             fill
           />
         </div>
         <div className="pt-8">
-          <EventDatailPage />
+          <EventDatailPage data={attributes} />
         </div>
-        <div className="events__paragraph">
-          <h2 className="mb-0 text-3xl md:mb-2 md:text-6xl">Event Agenda</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porta
-            massa, eget natoque tincidunt quis. Suspendisse vitae vestibulum
-            scelerisque egestas. Volutpat, adipiscing a elit platea amet et. At
-            at metus egestas nunc eget. Tempus sapien, augue laoreet morbi
-            habitasse leo mauris arcu amet. Sapien lectus auctor quis in ut
-            morbi risus. Ornare aliquam phasellus consequat amet velit risus.
-          </p>
-          <p>
-            Ac, pellentesque proin tincidunt lobortis sit velit velit dui eget.
-            Massa, lectus orci auctor morbi. A nisl vitae, sagittis elementum
-            placerat nullam id integer leo. Diam venenatis amet diam odio
-            ultrices auctor.
-          </p>
-          <ol style={{ listStyle: 'disc' }}>
-            <li>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem
-              ipsum dor
-            </li>
-            <li>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem
-              ipsum dor
-            </li>
-            <li>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem
-              ipsum dor
-            </li>
-          </ol>
-          <button className="events__button btn btn--primary">
+        <div className="events__paragraph" >
+
+          <div dangerouslySetInnerHTML={{ __html: md().render(content) }}></div>
+          <Link href={"#"} role={'button'} className="events__button btn btn--primary mt-4">
             REGISTER TO EVENT
-          </button>
+          </Link>
         </div>
       </div>
     </section>
