@@ -14,7 +14,7 @@
   }
 
   &__body {
-    @apply flex grow flex-col justify-between p-4;
+    @apply flex grow flex-col justify-between gap-4 p-4;
   }
 
   &__title {
@@ -22,8 +22,7 @@
   }
 
   &__desc {
-    @apply mb-6 text-neutral-700
-    line-clamp-3;
+    @apply mb-6 text-neutral-700 line-clamp-3;
   }
 
   &__action {
