@@ -135,7 +135,7 @@ const Event = (props: Props) => {
                 </div>
               </div>
             </div> */}
-            <Card key={x.id} className={'card--event_Card'} />
+            <Card data={x} className={'card--event_Card'} />
           </>
         ))}
       </div>

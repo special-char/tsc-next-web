@@ -69,7 +69,7 @@ const OurWorks = async () => {
               <div className="ourWorks__chipLine">
                 <div className="ourWorks__svg">
                   <Image
-                    src={url}
+                    src={`${url}?tr=h-200,w-200`}
                     className="rounded-full"
                     alt={`${alternativeText}`}
                     width={200}
