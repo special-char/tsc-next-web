@@ -14,7 +14,6 @@ type ChipsType = { children: string; onClick?: () => void };
 
 const AllCourses = ({ courses, category }: Props) => {
   // const router = useRouter();
-
   const [selectedCategory, setSelectedCategory] = useState(category || 'All');
 
   const chips = courses.reduce(

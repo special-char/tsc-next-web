@@ -4,8 +4,7 @@ import '@/styles/eventcard.css';
 import Image from 'next/image';
 import format from 'date-fns/format';
 import Link from 'next/link';
-import { EventEntity } from 'types/types';
-
+import { Event, EventEntity } from 'types/types';
 
 export const EventCardSkeleton = () => {
   return (
@@ -52,7 +51,6 @@ type Props = {
 };
 
 const EventCard = ({ data }: Props) => {
-  const [{ attributes }] = data;
   const {
     image,
     eventStartDate,
@@ -61,59 +59,51 @@ const EventCard = ({ data }: Props) => {
     description,
     slug,
     category,
-  } = attributes;
+  } = data.attributes as Event;
+
   return (
-    <div>
-      <Features title="All Events" chips={chips} />
-      <div className="event_Card">
-        {data.map((data) => (
-          <Link href={`/events/${slug}`} className="event__section">
-            <figure className="card__image">
-              <Image
-                src={`${image.data.attributes.url}?tr=ar-16-9`}
-                alt={`${image.data.attributes.alternativeText}`}
-                fill
-                sizes="(max-width: 640px) 100vw,
+    <Link href={`/events/${slug}`} className="event__section">
+      <figure className="card__image">
+        <Image
+          src={`${image.data.attributes.url}?tr=ar-16-9`}
+          alt={`${image.data.attributes.alternativeText}`}
+          fill
+          sizes="(max-width: 640px) 100vw,
                 (max-width: 1024px) 50vw,
                 560px"
-              />
+        />
 
-              <div className="card__chipset">
-                {data?.title && (
-                  <div className="chip chip--white flex gap-2">
-                    {data.icon && (
-                      <Icon width={20} height={20} name="speaker" />
-                    )}
-                    {category.data.attributes.title}
-                  </div>
-                )}
-              </div>
-            </figure>
-            <div className="event__body">
-              <div className="event__date">
-                <Icon name="calendar" />
-                <time>{`${format(new Date(eventStartDate), 'EEEE')} ${format(
-                  new Date(eventStartDate),
-                  'p',
-                )}  - ${format(new Date(eventEndDate), 'p')}`}</time>
-              </div>
-              <time className="date">
-                <span className="text-xs uppercase md:text-base">
-                  {format(new Date(eventStartDate), 'MMMM')}
-                </span>
-                <span className="text-4xl md:text-[48px]">
-                  {format(new Date(eventStartDate), 'dd')}
-                </span>
-              </time>
-              <div className="event__datails ">
-                <h3 className="card__title !m-0">{title}</h3>
-                <p className="card__desc">{description}</p>
-              </div>
+        <div className="card__chipset">
+          {data?.title && (
+            <div className="chip chip--white flex gap-2">
+              {data.icon && <Icon width={20} height={20} name="speaker" />}
+              {category.data.attributes.title}
             </div>
-          </Link>
-        ))}
+          )}
+        </div>
+      </figure>
+      <div className="event__body">
+        <div className="event__date">
+          <Icon name="calendar" />
+          <time>{`${format(new Date(eventStartDate), 'EEEE')} ${format(
+            new Date(eventStartDate),
+            'p',
+          )}  - ${format(new Date(eventEndDate), 'p')}`}</time>
+        </div>
+        <time className="date">
+          <span className="text-xs uppercase md:text-base">
+            {format(new Date(eventStartDate), 'MMMM')}
+          </span>
+          <span className="text-4xl md:text-[48px]">
+            {format(new Date(eventStartDate), 'dd')}
+          </span>
+        </time>
+        <div className="event__datails ">
+          <h3 className="card__title !m-0">{title}</h3>
+          <p className="card__desc">{description}</p>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
