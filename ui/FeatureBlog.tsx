@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { use } from 'react';
 import '@/styles/blogs.css';
 import { getHomeBlogData } from '@/lib/getHomeBlog';
 import BlogCard, { BlogCardSkeleton } from '@/ui/BlogCard';
+import { getBlogs } from '@/lib/getBlogs';
 
 type Props = {};
 

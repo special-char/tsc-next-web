@@ -1,8 +1,8 @@
 .category_card {
-  @apply flex h-full flex-col;
+  @apply flex h-full flex-col rounded-b-2xl shadow-dark;
 
   &__img {
-    @apply relative m-0 aspect-h-image w-full overflow-hidden;
+    @apply relative m-0 aspect-h-image w-full overflow-hidden rounded-t-2xl;
 
     & > img {
       @apply object-cover;

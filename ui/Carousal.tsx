@@ -96,7 +96,7 @@ const Carousal = ({ children }: Props) => {
       <div className="carousal__controls">
         <button
           type="button"
-          className="carousal__control btn btn--white btn--round "
+          className="carousal__control btn btn--white btn--round"
           onClick={scrollRight}
         >
           <LeftSvg />

@@ -13,20 +13,36 @@ export const getAllCoursesData: CoursesType = async () => {
       method: 'POST',
       body: JSON.stringify({
         query: `{
-          courses {
+          courses(sort: "index") {
             data {
-              id
               attributes {
+                index
                 title
                 description
                 courseVideoPoster {
                   data {
                     attributes {
-                      url
                       alternativeText
+                      url
                     }
                   }
                 }
+                brochure {
+                  data {
+                    attributes {
+                      alternativeText
+                      url
+                    }
+                  }
+                }
+                price {
+                  price
+                  currency
+                  format
+                  unit
+                }
+                duration
+                slug
               }
             }
           }

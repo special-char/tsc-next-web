@@ -2,7 +2,6 @@ import {
   BlogEntityResponseCollection,
   HomeBlogEntityResponse,
 } from 'types/types';
-import axiosInstance from './axiosInstance';
 
 export type HomeBlogType = () => Promise<{
   data: {
@@ -28,10 +27,11 @@ export const getHomeBlogData: HomeBlogType = async () => {
               }
             }
           }
-          blogs(pagination: { pageSize: 4 }) {
+          blogs(pagination: { limit: 4 }) {
             data {
               id
               attributes {
+                slug
                 title
                 updatedAt
                 category {
