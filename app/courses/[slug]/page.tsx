@@ -134,15 +134,6 @@ export default function Page({ params }: PageProps) {
                 __html: md().render(complitionResult || ''),
               }}
             ></div>
-
-            {/* <div className="main__left-section__image">
-              <Image
-                className="rounded-3xl"
-                alt="result"
-                fill
-                src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f294e56e6b00b752780af_image-course-results-education-x-template.jpg"
-              />
-            </div> */}
           </section>
           <hr className="my-8 md:my-12 lg:my-16" />
           {testimonials?.data && testimonials?.data.length > 0 && (
