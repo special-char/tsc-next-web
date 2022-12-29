@@ -29,13 +29,13 @@ const EmployeeEducation = (props: Props) => {
     <section className="employeeEdu">
       <div className="employeeEdu__main">
         <div className="employeeEdu__title">
-          <h2 className="text-6xl">Education</h2>
+          <h2>Education</h2>
         </div>
         <div className="employeeEdu__content">
           {educations.map((education, index) => {
             return (
               <>
-                <div className="employeeEdu__content-main">
+                <div key={education.id} className="employeeEdu__content-main">
                   <span className="employeeEdu__content-course">
                     {education.course}
                   </span>

@@ -5,32 +5,32 @@ type Props = {};
 
 const TechnologiesData = [
   {
-    id: '1',
+    id: 1,
     title: 'Html',
     proficiency: 70,
   },
   {
-    id: '2',
+    id: 2,
     title: 'Css',
     proficiency: 70,
   },
   {
-    id: '3',
+    id: 3,
     title: 'Javascript',
     proficiency: 40,
   },
   {
-    id: '4',
+    id: 4,
     title: 'React',
     proficiency: 60,
   },
   {
-    id: '5',
+    id: 5,
     title: 'Tailwind css',
     proficiency: 60,
   },
   {
-    id: '6',
+    id: 6,
     title: 'Next.js',
     proficiency: 50,
   },
@@ -47,7 +47,7 @@ const EmployeeTechnologies = (props: Props) => {
           <div className="flex-[2]">
             <div id="technologies" className="employeeTechno__content">
               {TechnologiesData.map((val) => (
-                <div className="skill-item">
+                <div key={val.id} className="skill-item">
                   <span className="employeeTechno__content-item ">
                     <p>{val.title}</p>
                     <p>{val.proficiency}%</p>

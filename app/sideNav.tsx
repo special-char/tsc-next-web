@@ -60,7 +60,7 @@ const SideNav = async (props: Props) => {
           {menuOptions?.slice(0, -1).map((x) => {
             const { title, url, children } = x.attributes as MenusMenuItem;
             return (
-              <li>
+              <li key={x.id}>
                 {children.data.length > 0 ? (
                   <>
                     <details className="nav-item">
@@ -68,7 +68,7 @@ const SideNav = async (props: Props) => {
                       <ul>
                         {children.data.map((y) => {
                           return (
-                            <li>
+                            <li key={y.id}>
                               <Link
                                 prefetch={false}
                                 href={y.attributes.url}

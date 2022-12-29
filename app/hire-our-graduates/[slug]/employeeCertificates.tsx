@@ -25,12 +25,12 @@ const EmployeeCertificates = (props: Props) => {
     <section className="employeeCerti">
       <div className="employeeCerti__main">
         <div className="employeeCerti__content">
-          <h2 className="text-6xl">Certificates</h2>
+          <h2>Certificates</h2>
           <div className="flex-[2]">
             <ul id="list " className="employeeCerti__list">
               {CertificateData.map((val) => {
                 return (
-                  <li className="flex items-center gap-4 ">
+                  <li key={val.title} className="flex items-center gap-4 ">
                     <div>
                       <h3>{val.title}</h3>
                       <p className="mb-2">{val.issuingOrganization}</p>

@@ -8,7 +8,7 @@ type Props = {};
 
 const data = [
   {
-    id: '1',
+    id: 1,
     image_url:
       'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2e01cbd8323965e6629a_image-6-courses-education-x-template-p-1080.jpeg',
     heading: 'Graphic Design 101',
@@ -17,7 +17,7 @@ const data = [
   },
 
   {
-    id: '2',
+    id: 2,
     image_url:
       'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2e01cbd8323965e6629a_image-6-courses-education-x-template-p-1080.jpeg',
     heading: 'Graphic Design 101',
@@ -25,7 +25,7 @@ const data = [
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit.Voluptatibus eius nesciunt cupiditate iure obcaecati a dicta nontemporibus quis deserunt.',
   },
   {
-    id: '3',
+    id: 3,
     image_url:
       'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2e01cbd8323965e6629a_image-6-courses-education-x-template-p-1080.jpeg',
     heading: 'Graphic Design 101',
@@ -33,7 +33,7 @@ const data = [
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit.Voluptatibus eius nesciunt cupiditate iure obcaecati a dicta nontemporibus quis deserunt.',
   },
   {
-    id: '4',
+    id: 4,
     image_url:
       'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2e01cbd8323965e6629a_image-6-courses-education-x-template-p-1080.jpeg',
     heading: 'Graphic Design 101',

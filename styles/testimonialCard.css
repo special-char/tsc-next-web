@@ -6,7 +6,7 @@
   }
 
   &__body {
-    @apply flex flex-1 flex-col items-center gap-6 md:items-start;
+    @apply flex flex-1 flex-col items-center justify-between gap-6 md:items-start;
 
     & > * {
       @apply text-center md:text-start;
@@ -14,6 +14,6 @@
   }
 
   &__desc {
-    @apply m-0 p-0;
+    @apply m-0 p-0 line-clamp-4;
   }
 }

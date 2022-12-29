@@ -77,7 +77,10 @@ const Education = async () => {
               ?.attributes as UploadFile;
             return (
               <>
-                <figure className="relative aspect-square w-16 overflow-hidden rounded-full">
+                <figure
+                  key={x?.id}
+                  className="relative aspect-square w-16 overflow-hidden rounded-full"
+                >
                   <Image src={url} alt={`${alternativeText}`} fill />
                 </figure>
                 <div className="">

@@ -19,7 +19,7 @@ const ProjectCard = ({ data }: Props) => {
     <>
       <div className="project_Card">
         {data.map((data) => (
-          <div className="project__section">
+          <div key={data.id} className="project__section">
             <figure className="card__image">
               <Image src={data.image_url} alt="alt text" fill />
             </figure>

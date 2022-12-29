@@ -101,7 +101,10 @@ const OurOffice = async (props: Props) => {
             const { url, alternativeText } = val?.icon?.data
               ?.attributes as UploadFile;
             return (
-              <div className="ourOffice__card relative overflow-hidden">
+              <div
+                key={val?.id}
+                className="ourOffice__card relative overflow-hidden"
+              >
                 <div className="ourOffice__card__content">
                   <div className="ourOffice__card__image">
                     <Image src={url} alt={`${alternativeText}`} fill />

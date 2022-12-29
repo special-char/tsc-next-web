@@ -65,7 +65,7 @@ const OurWorks = async () => {
             ?.attributes as UploadFile;
 
           return (
-            <div className="ourWorks__sections">
+            <div key={val?.id} className="ourWorks__sections">
               <div className="ourWorks__chipLine">
                 <div className="ourWorks__svg">
                   <Image
