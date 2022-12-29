@@ -106,37 +106,7 @@ const Event = (props: Props) => {
       </div>
       <div className="grid gap-8">
         {data.map((x) => (
-          <>
-            {/* <div className="card">
-              <figure className="card__image">
-                <Image src={x.image} alt="" fill className="" />
-                <div className="chip chip--white absolute left-4 top-4 items-center gap-2">
-                  <Icon name="developer" />
-                  Development
-                </div>
-              </figure>
-              <div className="card__body">
-                <div className="maincontent">
-                  <div className="mb-4 items-center gap-4 md:flex">
-                    <CalendarSvg />
-                    <p className="m-0 items-center overflow-hidden">
-                      {x.day} {x.startTime} -&nbsp; {x.endTime}
-                    </p>
-                  </div>
-
-                  <div className="rightcontent">
-                    <h3 className="card__title">{x.title}</h3>
-                    <p className="card__desc">{x.description}</p>
-                  </div>
-                </div>
-                <div className="">
-                  <div>{x.month}</div>
-                  <h2 className="m-0 md:text-7xl">{x.date}</h2>
-                </div>
-              </div>
-            </div> */}
-            <Card data={x} className={'card--event_Card'} />
-          </>
+          <Card data={x} className={'card--event_Card'} />
         ))}
       </div>
     </section>
