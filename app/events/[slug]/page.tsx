@@ -66,15 +66,12 @@ export type Props = {
     slug: string;
   };
   children?: React.ReactNode;
-}
+};
 
 const Page = ({ params }: Props) => {
   const eventData = use(getEvents(params.slug));
   const [{ attributes }] = eventData.data.Event.data;
-  const {
-    image,
-    content
-  } = attributes
+  const { image, content } = attributes;
   return (
     <section className="events">
       <div>
@@ -86,19 +83,22 @@ const Page = ({ params }: Props) => {
         <div className="events__image">
           <Image
             alt="alt"
-            src={
-              image.data.attributes.url
-            }
+            src={`${image.data.attributes.url}?tr=ar-16-9`}
             fill
+            sizes="(min-width: 1024px) 100vw,
+            600px"
           />
         </div>
         <div className="pt-8">
           <EventDatailPage data={attributes} />
         </div>
-        <div className="events__paragraph" >
-
+        <div className="events__paragraph">
           <div dangerouslySetInnerHTML={{ __html: md().render(content) }}></div>
-          <Link href={"#"} role={'button'} className="events__button btn btn--primary mt-4">
+          <Link
+            href={'#'}
+            role={'button'}
+            className="events__button btn btn--primary mt-4"
+          >
             REGISTER TO EVENT
           </Link>
         </div>

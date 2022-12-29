@@ -6,7 +6,7 @@ import { getContactDetail } from '@/lib/getContactDetail';
 import { ContactDetail } from 'types/types';
 import Link from 'next/link';
 import ContactHeader from 'app/contact/contactHeader';
-import '@/styles/connecting.css';
+import '@/styles/connect.css';
 
 type Props = {};
 

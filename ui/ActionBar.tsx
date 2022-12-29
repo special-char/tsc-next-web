@@ -3,7 +3,6 @@ import '@/styles/actionBar.css';
 import Image from 'next/image';
 import format from 'date-fns/format';
 
-
 type Props = {};
 
 const avatarData = {
@@ -14,17 +13,20 @@ const avatarData = {
 };
 const ActionBar = ({ data }: Props) => {
   const { attributes } = data?.data;
-  const {
-    firstName,
-    lastName,
-    publishedAt,
-    avatar,
-  } = attributes;
+  const { firstName, lastName, publishedAt, avatar } = attributes;
   return (
     <div className="actionbar">
       <div className="flex items-center gap-3">
         <div className="actionbar__avatar">
-          <Image fill src={avatar.data ? avatar.data.attributes.url : avatarData.url} alt={avatarData.name} />
+          <Image
+            fill
+            src={`${
+              avatar.data ? avatar.data.attributes.url : avatarData.url
+            }?tr=ar-1-1`}
+            alt={avatarData.name}
+            sizes="(max-width: 1024px) 100vw,
+            560px"
+          />
         </div>
         <span>
           <h3>{`${firstName} ${lastName}`}</h3>
