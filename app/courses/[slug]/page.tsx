@@ -10,23 +10,28 @@ import { Course, CourseEntity, UploadFile } from 'types/types';
 import { use } from 'react';
 import TestimonialCard from '@/ui/TestimonialCard';
 import Accordian, { AccordianType } from '@/ui/Accordian';
+import Link from 'next/link';
 
 const chipNavData = [
   {
-    link: '#about',
-    name: 'About',
+    href: '#about',
+    children: 'About',
+    as: Link
   },
   {
-    link: '#topic',
-    name: 'Results',
+    href: '#topic',
+    children: 'Results',
+    as: Link
   },
   {
-    link: '#result',
-    name: 'Topics',
+    href: '#result',
+    children: 'Topics',
+    as: Link
   },
   {
-    link: '#review',
-    name: 'Reviews',
+    href: '#review',
+    children: 'Reviews',
+    as: Link
   },
 ];
 
@@ -39,7 +44,6 @@ export type PageProps = {
 
 export default function Page({ params }: PageProps) {
   const coursesData = use(getCourseDetails(params.slug));
-
   const [{ attributes }] = coursesData.data.courses.data as CourseEntity[];
 
   const {

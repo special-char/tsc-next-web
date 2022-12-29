@@ -4,37 +4,8 @@ import '@/styles/eventcard.css';
 import Image from 'next/image';
 import format from 'date-fns/format';
 import Link from 'next/link';
+import { EventEntity } from 'types/types';
 
-type date = {
-  day: number;
-  month: String;
-  year: number;
-};
-
-type chip = {
-  name: string;
-  selected?: boolean;
-}[];
-
-type publishedAt = {
-  day: String;
-  startTime: number;
-  endTime: number;
-};
-
-type dataType = {
-  image_url: any;
-  eventDate: date;
-  publishedAt: publishedAt;
-  title: String;
-  alternativeText: String;
-  icon: String;
-  date: String;
-  heading: String;
-  description: String;
-  isHorizontal: boolean;
-  chips: chip;
-}[];
 
 export const EventCardSkeleton = () => {
   return (
@@ -77,14 +48,15 @@ export const EventCardSkeleton = () => {
 };
 
 type Props = {
-  data: dataType;
+  data: EventEntity[];
 };
 
 const EventCard = ({ data }: Props) => {
   const [{ attributes }] = data;
   const { image, eventStartDate, eventEndDate, title, description, slug, category } = attributes
   return (
-    <>
+    <div>
+      <Features title="All Events" chips={chips} />
       <div className="event_Card">
         {data.map((data) => (
           <Link href={`/events/${slug}`} className="event__section">
@@ -123,7 +95,7 @@ const EventCard = ({ data }: Props) => {
           </Link>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

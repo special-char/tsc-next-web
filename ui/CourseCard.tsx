@@ -25,8 +25,6 @@ const CourseCard = ({ course, isHorizontal }: Props) => {
     ?.attributes as UploadFile;
   const brochureUrl = brochure?.data?.attributes?.url;
 
-  console.log(duration);
-
   return (
     <div
       className={clsx('course_card', {
