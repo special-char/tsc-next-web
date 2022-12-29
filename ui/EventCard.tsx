@@ -82,14 +82,29 @@ type Props = {
 
 const EventCard = ({ data }: Props) => {
   const [{ attributes }] = data;
-  const { image, eventStartDate, eventEndDate, title, description, slug, category } = attributes
+  const {
+    image,
+    eventStartDate,
+    eventEndDate,
+    title,
+    description,
+    slug,
+    category,
+  } = attributes;
   return (
     <>
       <div className="event_Card">
         {data.map((data) => (
           <Link href={`/events/${slug}`} className="event__section">
             <figure className="card__image">
-              <Image src={image.data.attributes.url} alt={`${image.data.attributes.alternativeText}`} fill />
+              <Image
+                src={`${image.data.attributes.url}?tr=ar-16-9`}
+                alt={`${image.data.attributes.alternativeText}`}
+                fill
+                sizes="(max-width: 640px) 100vw,
+                (max-width: 1024px) 50vw,
+                560px"
+              />
 
               <div className="card__chipset">
                 {data?.title && (
@@ -105,14 +120,17 @@ const EventCard = ({ data }: Props) => {
             <div className="event__body">
               <div className="event__date">
                 <Icon name="calendar" />
-                <time>{`${format(new Date(eventStartDate), "EEEE")} ${format(new Date(eventStartDate), "p")}  - ${format(new Date(eventEndDate), "p")}`}</time>
+                <time>{`${format(new Date(eventStartDate), 'EEEE')} ${format(
+                  new Date(eventStartDate),
+                  'p',
+                )}  - ${format(new Date(eventEndDate), 'p')}`}</time>
               </div>
               <time className="date">
                 <span className="text-xs uppercase md:text-base">
-                  {format(new Date(eventStartDate), "MMMM")}
+                  {format(new Date(eventStartDate), 'MMMM')}
                 </span>
                 <span className="text-4xl md:text-[48px]">
-                  {format(new Date(eventStartDate), "dd")}
+                  {format(new Date(eventStartDate), 'dd')}
                 </span>
               </time>
               <div className="event__datails ">

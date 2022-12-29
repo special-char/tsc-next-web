@@ -21,7 +21,14 @@ const ProjectCard = ({ data }: Props) => {
         {data.map((data) => (
           <div className="project__section">
             <figure className="card__image">
-              <Image src={data.image_url} alt="alt text" fill />
+              <Image
+                src={`${data.image_url} ?tr=ar-16-9`}
+                alt="alt text"
+                fill
+                sizes="(max-width: 640px) 100vw,
+                (max-width: 1024px) 50vw,
+                560px"
+              />
             </figure>
             <div className="project__body">
               <div className="project__datails ">
