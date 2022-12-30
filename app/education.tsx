@@ -77,7 +77,7 @@ const Education = async () => {
               ?.attributes as UploadFile;
             return (
               <>
-                <figure>
+                <figure key={x?.id}>
                   <Image
                     src={`${url}?tr=h-64,w-64`}
                     alt={`${alternativeText}`}

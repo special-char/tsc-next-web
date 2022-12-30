@@ -64,6 +64,7 @@ const DynamicForm = ({ fields, submitUrl }: Props) => {
         </div>
       ) : (
         <CustomForm
+          key={'id'}
           buttonStyle="register__btn"
           initialValues={initialValues}
           onSubmit={onSubmit}

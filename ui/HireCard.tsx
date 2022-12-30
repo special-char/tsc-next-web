@@ -23,7 +23,7 @@ const HireCard = ({ data }: Props) => {
         />
         <div className="hire_card__chips">
           <div className="chip chip--primary !px-4 hover:bg-neutral-100 hover:text-primary">
-            Hire Me
+            Schedule Interview
           </div>
         </div>
       </figure>

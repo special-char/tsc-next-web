@@ -71,7 +71,7 @@ const Header = async (props: Props) => {
           {menuOptions.slice(0, -1).map((x) => {
             const { title, url, children } = x.attributes;
             return (
-              <li>
+              <li key={x.id}>
                 <Link href={url} prefetch={false} className="header__link">
                   {title}
                 </Link>
@@ -80,7 +80,7 @@ const Header = async (props: Props) => {
                     <ul>
                       {children.data.map((y) => {
                         return (
-                          <li>
+                          <li key={y.id}>
                             <Link
                               prefetch={false}
                               href={y.attributes.url}

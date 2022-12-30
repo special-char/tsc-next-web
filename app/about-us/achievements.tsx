@@ -5,7 +5,7 @@ import { AboutNumber } from 'types/types';
 export const AchievementsSkeleton = () => {
   return (
     <section className="achieve animate-pulse">
-      <h2 className="mx-0 mb-10 text-center font-cursive text-6xl md:mb-8 lg:mx-72">
+      <h2 className="mx-0 mb-10 text-center font-cursive  md:mb-8 lg:mx-72">
         A few numbers that we are proud of
       </h2>
       <div className="achieve__content">
@@ -54,12 +54,10 @@ const Achievements = async (props: Props) => {
 
   return (
     <section className="achieve">
-      <h2 className="mx-0 mb-10 text-center text-6xl md:mb-8 lg:mx-72">
-        {title}
-      </h2>
+      <h2 className="mx-0 mb-4 text-center md:mb-8 lg:mx-72">{title}</h2>
       <div className="achieve__content">
         {numbers?.map((x) => (
-          <div className="overflow-hidden">
+          <div key={x?.id} className="overflow-hidden">
             <h1 className="text-secondary3">
               {new Intl.NumberFormat('en-IN', {
                 maximumSignificantDigits: 3,
