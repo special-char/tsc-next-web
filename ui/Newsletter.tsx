@@ -18,7 +18,7 @@ const Newsletter = ({ btnClass }) => {
           }}
           onSubmit={async (values, actions) => {
             try {
-              const res = await fetch(
+              await fetch(
                 `${process.env.NEXT_PUBLIC_API_URL}/api/newsletters`,
                 {
                   method: 'POST',
@@ -28,6 +28,10 @@ const Newsletter = ({ btnClass }) => {
                   headers: {
                     'Content-Type': 'application/json',
                     Accept: 'application/json',
+                  },
+                  cache: 'no-cache',
+                  next: {
+                    revalidate: 0,
                   },
                 },
               );
@@ -42,8 +46,9 @@ const Newsletter = ({ btnClass }) => {
             <Form>
               <div className="newsletter">
                 <Field
-                  id="firstName"
+                  id="email"
                   type="email"
+                  autocomplete="email"
                   className="newsletter__input"
                   name="email"
                   placeholder="enter your email address"

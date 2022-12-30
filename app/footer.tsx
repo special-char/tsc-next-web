@@ -63,13 +63,6 @@ const Footer = (props: Props) => {
 
       <hr className="col-span-full" />
       <div className="footer__newsletter">
-        {/* <Image
-          className="mb-3 rounded-full"
-          src={`${(<EmailSvg />)}?tr=h-90,w-90`}
-          alt=""
-          height={90}
-          width={90}
-        /> */}
         <figure className="mb-3 h-20 w-20 overflow-hidden rounded-full bg-secondary1">
           <EmailSvg />
         </figure>
@@ -78,7 +71,6 @@ const Footer = (props: Props) => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmo.
         </p>
-
         <Newsletter />
       </div>
 
