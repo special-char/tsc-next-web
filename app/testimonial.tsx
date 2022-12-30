@@ -14,12 +14,12 @@ export const TestimonialSkeleton = () => {
       </h2>
       <Carousal>
         {[1, 2, 3].map((testimonial: any) => {
-          return <TestimonialCardSkeleton />;
+          return <TestimonialCardSkeleton key={testimonial} />;
         })}
       </Carousal>
       <div className="testimonial__content">
         {[1, 2, 3, 4].map((number) => (
-          <div>
+          <div key={number}>
             <h3 className="testimonial__title font-cursive">100,000+</h3>
             <p className="font-cursive">Five-star course reviews</p>
           </div>

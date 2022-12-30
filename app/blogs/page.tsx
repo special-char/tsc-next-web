@@ -30,7 +30,6 @@ export default function Page() {
           <FeatureBlog />
         </Suspense>
       </section>
-
       <Suspense fallback={<BlogSubscribeSkeleton />}>
         <BlogSubscribe />
       </Suspense>
