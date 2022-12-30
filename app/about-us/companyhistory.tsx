@@ -10,23 +10,12 @@ export const CompanyHistorySkeleton = () => {
       <div className="companyHistory__section animate-pulse">
         <div>
           <div className="companyHistory__leftSection">
-            <h2 className="font-cursive text-6xl text-primary">
-              Our company history
-            </h2>
+            <h2 className="font-cursive  text-primary">Our company history</h2>
             <p className="font-cursive text-neutral-500">
               Presenting Academy, the tech school of the future. We teach you
               the right skills to be prepared for tomorrow.
             </p>{' '}
-            <div>
-              <Button
-                as={Link}
-                href="/"
-                variant="primary"
-                className="font-cursive"
-              >
-                JOIN OUR TEAM
-              </Button>
-            </div>
+            <div className="btn btn--primary font-cursive">JOIN OUR TEAM</div>
           </div>
         </div>
 
@@ -63,7 +52,7 @@ const CompanyHistory = async () => {
       <div className="companyHistory__section">
         <div>
           <div className="companyHistory__leftSection">
-            <h2 className="companyHistory__h2">{title}</h2>
+            <h2 className="text-primary">{title}</h2>
             <p className="text-neutral-500">{description}</p>
             <div>
               {button?.map((x) => (

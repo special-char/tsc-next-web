@@ -19,19 +19,12 @@ export type PageProps = {
 const Page = ({ params }: PageProps) => {
   const blogData = use(getBlogDetails(params.slug));
   const [{ attributes }] = blogData.data.individualBlog.data;
-  const latestPosts = blogData.data.latestPost.data
-  const {
-    title,
-    bannerImage,
-    readTime,
-    author,
-    category,
-    content
-  } = attributes
+  const latestPosts = blogData.data.latestPost.data;
+  const { title, bannerImage, readTime, author, category, content } =
+    attributes;
   return (
     <div className="wrapper">
-      <div className="wrapper__header">
-      </div>
+      <div className="wrapper__header"></div>
 
       <div className="wrapper__body">
         <div className="wrapper__body__image">
@@ -42,9 +35,7 @@ const Page = ({ params }: PageProps) => {
           />
         </div>
         <div className="wrapper__body__content">
-          <h1 className="text-5xl md:text-8xl lg:text-9xl">
-            {title}
-          </h1>
+          <h1>{title}</h1>
           <div className="wrapper__body__content__author-info">
             <ActionBar data={author} />
             <span className="about-blog">

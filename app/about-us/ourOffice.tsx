@@ -22,12 +22,10 @@ export const OurOfficeSkeleton = () => {
               <div></div>
               <h3 className="ourOffice__card__title font-cursive">Ahmedabad</h3>
               <address className="ourOffice__card__connect text-neutral-600">
-                <a className="w-auto pb-2 font-cursive" href={`#`}>
+                <a className="w-auto pb-2 font-cursive">
                   thespecial@character.com
                 </a>
-                <a className="w-auto pb-2 font-cursive" href={`#`}>
-                  +91 1800180018
-                </a>
+                <a className="w-auto pb-2 font-cursive">+91 1800180018</a>
                 <div className="mb-2 font-cursive">
                   B-604/605, Ganesh Glory11
                   <br />
@@ -51,13 +49,11 @@ export const OurOfficeSkeleton = () => {
                     Ahmedabad
                   </h3>
                   <address className="grid-rows-span-3 grid font-cursive text-neutral-600">
-                    <a className="w-auto pb-2" href={`#`}>
+                    <a className="w-auto pb-2 font-cursive">
                       contact@thespecialcharacter.com
                     </a>
-                    <a className="w-auto pb-2" href={`#`}>
-                      +91 8690090417
-                    </a>
-                    <div className="mb-2">
+                    <a className="w-auto pb-2 font-cursive">+91 8690090417</a>
+                    <div className="mb-2 font-cursive">
                       B-604/605 Ganesh Glory 11
                       <br />
                       Jagarpur Road, SG Highway <br />

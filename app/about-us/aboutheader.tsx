@@ -16,7 +16,7 @@ export const AboutheaderSkeleton = () => {
               <div></div>
             </div>
             <div className="aboutheader__title">
-              <h2 className=" font-cursive text-3xl md:text-6xl">
+              <h2 className=" font-cursive">
                 The mission behind Education platform
               </h2>
               <p className="font-cursive lg:text-lg">
@@ -63,7 +63,7 @@ const Aboutheader = async (props: Props) => {
                 />
               </div>
               <div className="aboutheader__title">
-                <h2 className=" text-3xl md:text-6xl">{x?.title}</h2>
+                <h2>{x?.title}</h2>
                 <p className="m-0 lg:text-lg">{x?.description}</p>
               </div>
             </>

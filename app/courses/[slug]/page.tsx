@@ -16,22 +16,22 @@ const chipNavData = [
   {
     href: '#about',
     children: 'About',
-    as: Link
+    as: Link,
   },
   {
     href: '#topic',
     children: 'Results',
-    as: Link
+    as: Link,
   },
   {
     href: '#result',
     children: 'Topics',
-    as: Link
+    as: Link,
   },
   {
     href: '#review',
     children: 'Reviews',
-    as: Link
+    as: Link,
   },
 ];
 
@@ -125,14 +125,12 @@ export default function Page({ params }: PageProps) {
           </section>
           <hr className="my-8 md:my-12 lg:my-16" />
           <section id="topic">
-            <h2 className="text-3xl md:text-6xl">What will you learn</h2>
+            <h2>What will you learn</h2>
             <Accordian data={accordianData} />
           </section>
           <hr className="my-8 md:my-12 lg:my-16" />
           <section id="result">
-            <h2 className="text-3xl md:text-6xl">
-              Results after course completion
-            </h2>
+            <h2>Results after course completion</h2>
             <div
               dangerouslySetInnerHTML={{
                 __html: md().render(complitionResult || ''),
