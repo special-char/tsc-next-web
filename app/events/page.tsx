@@ -15,6 +15,7 @@ export default function Page() {
           className="customClass"
           circleRight="bg-secondary3"
           circleLeft="bg-secondary2"
+          hasSeprator={false}
         />
       </Suspense>
       <AllEvents events={data} />
