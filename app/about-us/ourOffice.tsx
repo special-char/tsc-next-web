@@ -21,18 +21,18 @@ export const OurOfficeSkeleton = () => {
             <div className="ourOffice__card__content bg-neutral-300">
               <div></div>
               <h3 className="ourOffice__card__title font-cursive">Ahmedabad</h3>
-              <address className="ourOffice__card__connect text-neutral-600">
-                <a className="w-auto pb-2 font-cursive">
+              <div className="ourOffice__card__connect text-neutral-600">
+                <div className="w-auto pb-2 font-cursive">
                   thespecial@character.com
-                </a>
-                <a className="w-auto pb-2 font-cursive">+91 1800180018</a>
+                </div>
+                <div className="w-auto pb-2 font-cursive">+91 1800180018</div>
                 <div className="mb-2 font-cursive">
                   B-604/605, Ganesh Glory11
                   <br />
                   SG-Hwy, Ahmedabad, <br />
                   Gujrat 382470
                 </div>
-              </address>
+              </div>
             </div>
             <div className="ouroffice__circle"></div>
           </div>
@@ -48,18 +48,20 @@ export const OurOfficeSkeleton = () => {
                   <h3 className="ourOffice__card__title font-cursive">
                     Ahmedabad
                   </h3>
-                  <address className="grid-rows-span-3 grid font-cursive text-neutral-600">
-                    <a className="w-auto pb-2 font-cursive">
+                  <div className="grid-rows-span-3 grid font-cursive text-neutral-600">
+                    <div className="w-auto pb-2 font-cursive">
                       contact@thespecialcharacter.com
-                    </a>
-                    <a className="w-auto pb-2 font-cursive">+91 8690090417</a>
+                    </div>
+                    <div className="w-auto pb-2 font-cursive">
+                      +91 8690090417
+                    </div>
                     <div className="mb-2 font-cursive">
                       B-604/605 Ganesh Glory 11
                       <br />
                       Jagarpur Road, SG Highway <br />
                       Gujarat 382470
                     </div>
-                  </address>
+                  </div>
                 </div>
                 <div className="absolute -right-14 -bottom-20 h-32 w-32 rounded-full bg-primary"></div>
               </div>
