@@ -4,12 +4,14 @@ import React from 'react';
 import '@/styles/features.css';
 import clsx from 'clsx';
 import ChipNavigation from './ChipNavigation';
+import Link from 'next/link';
 type Props = {
   title: string;
   chips: {
-    name: string;
+    children: string;
     selected?: boolean;
   }[];
+  selectedCategory?: string;
 };
 
 export const FeaturesSkeleton = () => {
@@ -20,21 +22,24 @@ export const FeaturesSkeleton = () => {
         <ChipNavigation
           chipData={[
             {
-              name: 'All',
-              link: '#',
-              selected: true,
+              href: '#about',
+              children: 'About',
+              as: Link
             },
             {
-              name: 'Development',
-              link: '#',
+              href: '#topic',
+              children: 'Results',
+              as: Link
             },
             {
-              name: 'Design',
-              link: '#',
+              href: '#result',
+              children: 'Topics',
+              as: Link
             },
             {
-              name: 'Marketing',
-              link: '#',
+              href: '#review',
+              children: 'Reviews',
+              as: Link
             },
           ]}
         />
@@ -43,11 +48,11 @@ export const FeaturesSkeleton = () => {
   );
 };
 
-const Features = ({ title, chips }: Props) => {
+const Features = ({ title, chips, selectedCategory }: Props) => {
   return (
     <section id="features" className="features">
       <h2 className="features__title">{title}</h2>
-      <ChipNavigation chipData={chips} />
+      <ChipNavigation chipData={chips} selectedCategory={selectedCategory} />
     </section>
   );
 };

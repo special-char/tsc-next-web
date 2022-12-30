@@ -44,7 +44,6 @@ const Page = ({ params }: PageProps) => {
         <div className="wrapper__body__content">
           <h1 className="text-5xl md:text-8xl lg:text-9xl">
             {title}
-            {/* {JSON.stringify(bannerImage.data.attributes.url, null)} */}
           </h1>
           <div className="wrapper__body__content__author-info">
             <ActionBar data={author} />
