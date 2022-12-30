@@ -12,7 +12,7 @@ export const getCourseDetails: CoursesType = async (slug: string) => {
       method: 'POST',
       body: JSON.stringify({
         query: `{
-          courses(filters: { slug: { eq: "docker-bootcamp" } }) {
+          courses(filters: { slug: { eq: "${slug}" } }) {
             data {
               attributes {
                 category {

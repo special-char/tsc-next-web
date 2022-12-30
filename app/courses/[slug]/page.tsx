@@ -16,22 +16,22 @@ const chipNavData = [
   {
     href: '#about',
     children: 'About',
-    as: Link
+    as: Link,
   },
   {
     href: '#topic',
     children: 'Results',
-    as: Link
+    as: Link,
   },
   {
     href: '#result',
     children: 'Topics',
-    as: Link
+    as: Link,
   },
   {
     href: '#review',
     children: 'Reviews',
-    as: Link
+    as: Link,
   },
 ];
 
@@ -42,8 +42,8 @@ export type PageProps = {
   children?: React.ReactNode;
 };
 
-export default function Page({ params }: PageProps) {
-  const coursesData = use(getCourseDetails(params.slug));
+export default async function Page({ params }: PageProps) {
+  const coursesData = await getCourseDetails(params.slug);
   const [{ attributes }] = coursesData.data.courses.data as CourseEntity[];
 
   const {
