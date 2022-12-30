@@ -5,6 +5,24 @@ import DurationSvg from '@/public/icons/duration.svg';
 import LessonSvg from '@/public/icons/lesson.svg';
 import LifetimeSvg from '@/public/icons/lifetime.svg';
 import AccessSvg from '@/public/icons/access.svg';
+export const CoursesPriceSkeleton = () => {
+  return (
+    <div className=" price__features animate-pulse">
+      {[1, 2, 3, 4].map((data) => (
+        <div key={data} className="price__content">
+          <div className="h-9 w-9 overflow-hidden rounded-2xl bg-neutral-300">
+            <div></div>
+          </div>
+          <p className="pl-5 font-cursive text-lg">Level</p>
+          <p className="pl-2 font-cursive text-lg font-bold text-neutral-700">
+            Lorem ipsum dolor sit.
+          </p>
+        </div>
+      ))}
+    </div>
+  );
+};
+
 type Props = {};
 
 const PriceData = [

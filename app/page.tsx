@@ -9,6 +9,7 @@ import Testimonial, { TestimonialSkeleton } from './testimonial';
 import Blogs, { BlogsSkeleton } from './blogs';
 import { Suspense } from 'react';
 import { ContactSkeleton } from './contact/contact';
+import PriceCard, { PriceCardSkeleton } from './courses/[slug]/priceCard';
 
 const Page = () => {
   return (

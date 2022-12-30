@@ -5,6 +5,7 @@ import { Suspense, use } from 'react';
 import FeatureBlog, { FeatureBlogsSkeleton } from '@/ui/FeatureBlog';
 import AllBlogs, { AllBlogsSkeleton } from './allBlogs';
 import { getHomeBlogData } from '@/lib/getHomeBlog';
+import { PriceCardSkeleton } from 'app/courses/[slug]/priceCard';
 
 export default function Page() {
   const homeBlogData = use(getHomeBlogData());
@@ -34,7 +35,9 @@ export default function Page() {
       <Suspense fallback={<BlogSubscribeSkeleton />}>
         <BlogSubscribe />
       </Suspense>
-
+      <Suspense fallback={<PriceCardSkeleton />}>
+        <PriceCardSkeleton />
+      </Suspense>
       <AllBlogs blogList={blogList} />
     </>
   );
