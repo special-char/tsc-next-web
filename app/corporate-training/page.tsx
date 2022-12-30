@@ -1,7 +1,7 @@
 import Accordian from '@/ui/Accordian';
 import React, { use } from 'react';
 import DownloadSvg from '@/public/icons/download.svg';
-import '@/styles/corporatetraining.css';
+import '@/styles/corporateTraining.css';
 
 type Props = {};
 
