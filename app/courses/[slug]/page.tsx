@@ -56,6 +56,7 @@ export default function Page({ params }: PageProps) {
     curriculam,
     complitionResult,
     category,
+    courseFeatures
   } = attributes as Course;
 
   const categoryTitle = category?.data?.attributes?.title || '';
@@ -110,7 +111,7 @@ export default function Page({ params }: PageProps) {
             </div>
           </div>
           <div className="lg:hidden">
-            <Price price={price} />
+            <Price price={price} features={courseFeatures} />
           </div>
           <div className="main__left-section__course-navigation">
             <ChipNavigation chipData={chipNavData} />
@@ -160,7 +161,7 @@ export default function Page({ params }: PageProps) {
         </div>
         <div className="sticky top-0 hidden self-start lg:block">
           <div className="individualcourse__right-section">
-            <Price price={price} />
+            <Price price={price} features={courseFeatures} />
           </div>
         </div>
       </div>
