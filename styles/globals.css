@@ -19,7 +19,7 @@
   }
 
   h2 {
-    @apply mb-4 font-serif text-5xl font-semibold text-neutral-800 sm:text-2xl md:text-4xl;
+    @apply mb-4 font-serif text-3xl font-semibold text-neutral-800 md:text-6xl;
   }
 
   h3 {
