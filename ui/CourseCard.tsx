@@ -11,12 +11,16 @@ type Props = {
   isHorizontal?: boolean;
 };
 
-export const CourseCardSkeleton = () => {
+export const CourseCardSkeleton = ({
+  isHorizontal,
+}: {
+  isHorizontal?: boolean;
+}) => {
   return (
     <div
-    //   className={clsx('course_card', {
-    //     'course_card--hoz': !!isHorizontal,
-    //   })}
+      className={clsx('course_card', {
+        'course_card--hoz': !!isHorizontal,
+      })}
     >
       <div className="animate-pulse">
         <div className="course_card__img bg-neutral-300">
