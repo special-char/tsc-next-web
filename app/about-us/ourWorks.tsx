@@ -17,7 +17,7 @@ export const OurWorksSkeleton = () => {
       </div>
       <div className="ourWorks__content mx-auto lg:w-4/5">
         {[1, 2, 3, 4].map((val) => (
-          <div className="ourWorks__sections">
+          <div key={val} className="ourWorks__sections">
             <div className="ourWorks__chipLine">
               <div className="ourWorks__svg h-12 w-12 rounded-full bg-neutral-300">
                 <div></div>
@@ -63,7 +63,7 @@ const OurWorks = async () => {
             ?.attributes as UploadFile;
 
           return (
-            <div className="ourWorks__sections">
+            <div key={val?.id} className="ourWorks__sections">
               <div className="ourWorks__chipLine">
                 <div className="ourWorks__svg">
                   <Image

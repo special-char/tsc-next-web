@@ -21,7 +21,7 @@ export const CompanyHistorySkeleton = () => {
 
         <div className="companyHistory__info">
           {[1, 2, 3].map((val) => (
-            <div className="companyHistory__RightSection">
+            <div key={val?.id} className="companyHistory__RightSection">
               <div className="companyHistory__ChipSection chip chip--white w-1/4 lg:w-[20%]">
                 <span className="companyHistory__Date font-cursive">2023</span>
               </div>

@@ -10,7 +10,7 @@ export const AchievementsSkeleton = () => {
       </h2>
       <div className="achieve__content">
         {[1, 2, 3].map((x) => (
-          <div className="overflow-hidden">
+          <div key={x?.id} className="overflow-hidden">
             <h1 className="font-cursive text-secondary3">10,000+</h1>
             <h3 className="font-cursive">Students</h3>
             <p className="font-cursive">
@@ -57,7 +57,7 @@ const Achievements = async (props: Props) => {
       <h2 className="mx-0  text-center  md:mb-8 lg:mx-72">{title}</h2>
       <div className="achieve__content">
         {numbers?.map((x) => (
-          <div className="overflow-hidden">
+          <div key={x?.id} className="overflow-hidden">
             <h1 className="text-secondary3">
               {new Intl.NumberFormat('en-IN', {
                 maximumSignificantDigits: 3,
