@@ -6,11 +6,11 @@ import CoursesPrice from '@/ui/CoursesPrice';
 import { CourseCourseFeaturesArgs } from 'types/types';
 
 type Props = {
-  price: any;
-  features: CourseCourseFeaturesArgs[];
+  data: any;
 };
 
-const PriceCard = ({ price, features }: Props) => {
+const PriceCard = ({ data }: Props) => {
+  const { price, courseFeatures, brochure } = data;
   return (
     <aside className="price">
       <div className="price__body">
@@ -18,11 +18,11 @@ const PriceCard = ({ price, features }: Props) => {
         <Link href="/" className="btn btn--secondary btn--small">
           Register
         </Link>
-        <Link href="/" className="btn btn--primary btn--small">
+        <Link href={brochure?.data.attributes.url} className="btn btn--primary btn--small" download>
           Download Brochure
         </Link>
       </div>
-      <CoursesPrice features={features} />
+      <CoursesPrice features={courseFeatures} />
     </aside>
   );
 };

@@ -1,7 +1,6 @@
 import React from 'react';
 import '@/styles/pageHeader.css';
 import clsx from 'clsx';
-import SeparatorArray from './SeparatorArray';
 import { getBannerHeaderData } from '@/lib/getBannerHeader';
 import { ComponentCommonHeaders } from 'types/types';
 
@@ -24,7 +23,6 @@ export const PageHeaderSkeleton = () => {
         <div className="circle__right"></div>
         <div className="circle__left"></div>
       </div>
-      <SeparatorArray />
     </section>
   );
 };
@@ -67,7 +65,6 @@ const PageHeader = async ({
           className={clsx('circle__left', { [circleRight]: !circleLeft })}
         ></div>
       </div>
-      <SeparatorArray />
     </section>
   );
 };

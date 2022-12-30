@@ -32,6 +32,13 @@ export const getCourseDetails: CoursesType = async (slug: string) => {
                     }
                   }
                 }
+                brochure{
+                  data{
+                    attributes{
+                      url
+                    }
+                  }
+                }
                 aboutCourse
                 curriculam {
                   id

@@ -52,11 +52,10 @@ export default function Page({ params }: PageProps) {
     courseVideoPoster,
     aboutCourse,
     testimonials,
-    price,
     curriculam,
     complitionResult,
     category,
-    courseFeatures
+    ...data
   } = attributes as Course;
 
   const categoryTitle = category?.data?.attributes?.title || '';
@@ -111,7 +110,7 @@ export default function Page({ params }: PageProps) {
             </div>
           </div>
           <div className="lg:hidden">
-            <Price price={price} features={courseFeatures} />
+            <Price data={attributes} />
           </div>
           <div className="main__left-section__course-navigation">
             <ChipNavigation chipData={chipNavData} />
@@ -161,7 +160,7 @@ export default function Page({ params }: PageProps) {
         </div>
         <div className="sticky top-0 hidden self-start lg:block">
           <div className="individualcourse__right-section">
-            <Price price={price} features={courseFeatures} />
+            <Price data={attributes} />
           </div>
         </div>
       </div>
