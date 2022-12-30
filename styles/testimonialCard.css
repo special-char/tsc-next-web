@@ -1,12 +1,12 @@
 .testimonial_card {
-  @apply flex w-full flex-col items-center gap-8 overflow-hidden rounded-3xl py-14 px-8 shadow-dark md:flex-row;
+  @apply flex h-full w-full flex-col items-center gap-8 overflow-hidden rounded-3xl py-14 px-8 shadow-dark md:flex-row;
 
   &__img {
     @apply overflow-hidden rounded-full;
   }
 
   &__body {
-    @apply flex flex-1 flex-col items-center gap-6 md:items-start;
+    @apply flex h-full flex-1 flex-col items-center gap-6 md:items-start;
 
     & > * {
       @apply text-center md:text-start;
@@ -14,6 +14,6 @@
   }
 
   &__desc {
-    @apply m-0 p-0;
+    @apply m-0 h-full p-0 line-clamp-4;
   }
 }

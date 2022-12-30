@@ -19,30 +19,25 @@ export type PageProps = {
 const Page = ({ params }: PageProps) => {
   const blogData = use(getBlogDetails(params.slug));
   const [{ attributes }] = blogData.data.individualBlog.data;
-  const latestPosts = blogData.data.latestPost.data
-  const {
-    title,
-    bannerImage,
-    readTime,
-    author,
-    category,
-    content
-  } = attributes
+  const latestPosts = blogData.data.latestPost.data;
+  const { title, bannerImage, readTime, author, category, content } =
+    attributes;
   return (
     <div className="wrapper">
-      <div className="wrapper__header">
-      </div>
+      <div className="wrapper__header"></div>
 
       <div className="wrapper__body">
         <div className="wrapper__body__image">
           <Image
             alt="It is the image of the blog post that you are viewing"
-            src={bannerImage.data.attributes.url}
+            src={`${bannerImage.data.attributes.url}?tr=ar-16-9`}
             fill
+            sizes="(min-width: 1024px) 100vw,
+            600px"
           />
         </div>
         <div className="wrapper__body__content">
-          <h1 className="text-5xl md:text-8xl lg:text-9xl">
+          <h1 className=" pt-10 text-5xl md:pt-0 md:text-8xl lg:pt-0 lg:text-9xl">
             {title}
             {/* {JSON.stringify(bannerImage.data.attributes.url, null)} */}
           </h1>
