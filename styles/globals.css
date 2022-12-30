@@ -179,7 +179,7 @@
     & > summary {
       &::after {
         content: 'Download';
-        @apply chip chip--primary absolute right-0 flex w-fit items-end justify-end text-left font-bold;
+        @apply absolute right-0 flex w-fit items-end justify-end text-left font-bold;
       }
     }
   }
