@@ -11,12 +11,16 @@ type Props = {
   isHorizontal?: boolean;
 };
 
-export const CourseCardSkeleton = () => {
+export const CourseCardSkeleton = ({
+  isHorizontal,
+}: {
+  isHorizontal?: boolean;
+}) => {
   return (
     <div
-    //   className={clsx('course_card', {
-    //     'course_card--hoz': !!isHorizontal,
-    //   })}
+      className={clsx('course_card', {
+        'course_card--hoz': !!isHorizontal,
+      })}
     >
       <div className="animate-pulse">
         <div className="course_card__img bg-neutral-300">
@@ -64,15 +68,13 @@ const CourseCard = ({ course, isHorizontal }: Props) => {
     ?.attributes as UploadFile;
   const brochureUrl = brochure?.data?.attributes?.url;
 
-  console.log(duration);
-
   return (
     <div
       className={clsx('course_card', {
         'course_card--hoz': !!isHorizontal,
       })}
     >
-      <Link href={`/courses/${encodeURIComponent(slug)}`}>
+      <Link prefetch={false} href={`/courses/${encodeURIComponent(slug)}`}>
         <figure className="course_card__img">
           <Image
             src={`${url}?tr=ar-16-9`}
@@ -96,6 +98,7 @@ const CourseCard = ({ course, isHorizontal }: Props) => {
       </Link>
       <div className="course_card__body">
         <Link
+          prefetch={false}
           href={`/courses/${encodeURIComponent(slug)}`}
           className="course_card__main"
         >
@@ -104,7 +107,12 @@ const CourseCard = ({ course, isHorizontal }: Props) => {
         </Link>
         <div className="course_card__footer">
           {brochureUrl && (
-            <Link href={brochureUrl} className="course_card__action" download>
+            <Link
+              href={brochureUrl}
+              prefetch={false}
+              className="course_card__action"
+              download
+            >
               <Icon name="download" height={24} width={24} />
               Download Curriculum
             </Link>

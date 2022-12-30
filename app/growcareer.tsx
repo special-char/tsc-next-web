@@ -45,7 +45,7 @@ const GrowCareer = async () => {
       <div className="growcareer__details">
         <h2 className="growcareer__title">{title}</h2>
         <p className="growcareer__description">{description}</p>
-        <Button as={Link} href={`${url}`} variant="secondary">
+        <Button as={Link} prefetch={false} href={`${url}`} variant="secondary">
           {text}
         </Button>
       </div>
@@ -63,5 +63,3 @@ const GrowCareer = async () => {
 };
 
 export default GrowCareer;
-
-// grid grid-cols-1 items-center gap-3 md:grid-cols-2

@@ -1,12 +1,6 @@
 import { DefaultTags } from '@/ui/DefaultTags';
 
-// { params }: PageProps
 export default async function Head() {
-  //   const category = await fetchSubCategory(
-  //     params.categorySlug,
-  //     params.subCategorySlug,
-  //   );
-
   const category = {
     name: 'hello',
   };

@@ -1,11 +1,18 @@
 import '@/styles/blogs.css';
 import BlogSubscribe, { BlogSubscribeSkeleton } from './blogSubscribe';
 import PageHeader, { PageHeaderSkeleton } from '@/ui/pageHeader';
-import { Suspense } from 'react';
+import { Suspense, use } from 'react';
 import FeatureBlog, { FeatureBlogsSkeleton } from '@/ui/FeatureBlog';
-import AllBlogs, { AllBlogsSkeleton } from './allBlogs';
+import AllBlogs from './allBlogs';
+import { getHomeBlogData } from '@/lib/getHomeBlog';
 
-export default async function Page() {
+export default function Page() {
+  const homeBlogData = use(getHomeBlogData());
+
+  if (!homeBlogData) return null;
+
+  const blogList = homeBlogData.data.blogs.data;
+
   return (
     <>
       <Suspense fallback={<PageHeaderSkeleton />}>
@@ -27,10 +34,7 @@ export default async function Page() {
         <BlogSubscribe />
       </Suspense>
 
-      <Suspense fallback={<AllBlogsSkeleton />}>
-        {/* @ts-expect-error Async Server Component */}
-        <AllBlogs />
-      </Suspense>
+      <AllBlogs blogList={blogList} />
     </>
   );
 }

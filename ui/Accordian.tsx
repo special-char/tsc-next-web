@@ -1,5 +1,6 @@
 'use client';
 
+import clsx from 'clsx';
 import md from 'markdown-it';
 
 export type AccordianType = {
@@ -10,13 +11,19 @@ export type AccordianType = {
 
 type Props = {
   data: AccordianType[];
+  hasTag?: boolean;
 };
 
-const Accordian = ({ data }: Props) => {
+const Accordian = ({ data, hasTag }: Props) => {
   return (
     <>
       {data.map((val) => (
-        <details key={val.id}>
+        <details
+          key={val.id}
+          className={clsx({
+            'with-tag': hasTag,
+          })}
+        >
           <summary>{val.title}</summary>
           <div
             dangerouslySetInnerHTML={{

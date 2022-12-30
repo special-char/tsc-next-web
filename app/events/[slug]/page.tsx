@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { use } from 'react';
 import md from 'markdown-it';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
 export const PageSkeleton = () => {
   return (
@@ -69,7 +70,10 @@ export type Props = {
 };
 
 const Page = ({ params }: Props) => {
-  const eventData = use(getEvents(params.slug));
+  const eventData = use(getEvents(params?.slug));
+  if (!eventData) {
+    notFound();
+  }
   const [{ attributes }] = eventData.data.Event.data;
   const { image, content } = attributes;
   return (

@@ -1,6 +1,7 @@
 import clsx from 'clsx';
-import Link from 'next/link';
+
 import React from 'react';
+import Button from './Button';
 
 export const ChipNavigationSkeleton = () => {
   return (
@@ -17,17 +18,16 @@ export const ChipNavigationSkeleton = () => {
 const ChipNavigation = ({ chipData }) => {
   return (
     <div className="grid shrink-0 grid-cols-2 gap-4 rounded-3xl bg-neutral-200 px-8 py-4 md:grid-flow-col-dense md:rounded-full">
-      {chipData.map((data) => (
-        <Link
-          key={data?.name}
-          href={`${data?.link || ''}`}
+      {chipData.map(({ selected, ...data }, index) => (
+        <Button
+          key={index}
+          as="button"
           className={clsx('chip w-full', {
-            'chip--primary': !!data.selected,
-            'chip--white': !data.selected,
+            'chip--primary': data.children === selectedCategory,
+            'chip--white': data.children !== selectedCategory,
           })}
-        >
-          {data?.name}
-        </Link>
+          {...data}
+        />
       ))}
     </div>
   );

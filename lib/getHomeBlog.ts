@@ -31,6 +31,13 @@ export const getHomeBlogData: HomeBlogType = async () => {
             data {
               id
               attributes {
+                category{
+                  data{
+                    attributes{
+                      title
+                    }
+                  }
+                }
                 slug
                 title
                 updatedAt

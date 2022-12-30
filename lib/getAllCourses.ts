@@ -1,13 +1,13 @@
 import { CourseEntityResponseCollection } from 'types/types';
 import axiosInstance from './axiosInstance';
 
-export type CoursesType = () => Promise<{
+export type CoursesType = (category?: string) => Promise<{
   data: {
     courses: CourseEntityResponseCollection;
   };
 }>;
 
-export const getAllCoursesData: CoursesType = async () => {
+export const getAllCoursesData: CoursesType = async (category?: string) => {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
       method: 'POST',
@@ -24,6 +24,13 @@ export const getAllCoursesData: CoursesType = async () => {
                     attributes {
                       alternativeText
                       url
+                    }
+                  }
+                }
+                category {
+                  data {
+                    attributes {
+                      title
                     }
                   }
                 }
@@ -46,7 +53,7 @@ export const getAllCoursesData: CoursesType = async () => {
               }
             }
           }
-        }
+        }        
         `,
       }),
       headers: {

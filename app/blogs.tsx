@@ -3,7 +3,6 @@ import React, { Suspense } from 'react';
 import '@/styles/blogs.css';
 import { getHomeBlogData } from '@/lib/getHomeBlog';
 import { HomeBlog } from 'types/types';
-import BlogCard from '@/ui/BlogCard';
 import FeatureBlog, { FeatureBlogsSkeleton } from '@/ui/FeatureBlog';
 
 type Props = {};
@@ -34,7 +33,11 @@ const Blogs = async (props: Props) => {
     <section className="blogs">
       <div className="blogs__header">
         <h2 className="blogs__title">{title}</h2>
-        <Link href={`${button?.url}`} className="btn btn--secondary lg:ml-auto">
+        <Link
+          href={`${button?.url}`}
+          prefetch={false}
+          className="btn btn--secondary lg:ml-auto"
+        >
           {button?.text}
         </Link>
       </div>

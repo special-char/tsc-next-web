@@ -19,7 +19,7 @@
   }
 
   h2 {
-    @apply mb-4 font-serif text-5xl font-semibold text-neutral-800 sm:text-2xl md:text-4xl;
+    @apply mb-4 font-serif text-3xl font-semibold text-neutral-800 md:text-6xl;
   }
 
   h3 {
@@ -155,7 +155,7 @@
     @apply mb-4 max-w-full rounded-md bg-neutral-100 px-8 py-4 text-left drop-shadow-lg;
 
     & > summary {
-      @apply flex cursor-pointer list-none items-start justify-start text-2xl font-bold text-neutral-800 md:items-center;
+      @apply relative flex cursor-pointer list-none items-start justify-start text-2xl font-bold text-neutral-800 md:items-center;
 
       &::marker {
         @apply hidden;
@@ -172,6 +172,15 @@
     }
     & > div:last-child {
       @apply overflow-hidden border-none py-4 text-left text-base md:pl-16;
+    }
+  }
+
+  details.with-tag {
+    & > summary {
+      &::after {
+        content: 'Download';
+        @apply absolute right-0 flex w-fit items-end justify-end text-left font-bold;
+      }
     }
   }
 

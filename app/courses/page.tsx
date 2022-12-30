@@ -7,7 +7,9 @@ import { getAllCoursesData } from '@/lib/getAllCourses';
 
 type Props = {};
 
-const page = (props: Props) => {
+const page = ({ searchParams }: {
+  searchParams?: { category?: string };
+}) => {
   const coursesData = use(getAllCoursesData());
 
   if (!coursesData) return null;
@@ -26,7 +28,7 @@ const page = (props: Props) => {
         />
       </Suspense>
       <Featuredcourse data={featuredCourse} />
-      <AllCourses courses={allCourses} />
+      <AllCourses courses={allCourses} category={searchParams?.category} />
     </>
   );
 };
