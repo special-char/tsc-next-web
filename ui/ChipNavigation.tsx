@@ -20,7 +20,6 @@ type ChipNavigationType = {
 };
 
 const ChipNavigation = ({ chipData, selectedCategory }) => {
-  const handleClick = () => {};
   return (
     <div className="grid shrink-0 grid-cols-2 gap-4 rounded-3xl bg-neutral-200 px-8 py-4 md:grid-flow-col-dense md:rounded-full">
       {chipData.map(({ ...data }, index) => (
