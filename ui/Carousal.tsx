@@ -87,7 +87,7 @@ const Carousal = ({ children }: Props) => {
           const item = child as ReactElement<PropsWithChildren<any>>;
           const { style, ...props } = item.props;
           return (
-            <li className="carousal__items" style={style}>
+            <li className="carousal__items " style={style}>
               {React.cloneElement(item, { ...props })}
             </li>
           );

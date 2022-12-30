@@ -16,22 +16,22 @@ const chipNavData = [
   {
     href: '#about',
     children: 'About',
-    as: Link
+    as: Link,
   },
   {
     href: '#topic',
     children: 'Results',
-    as: Link
+    as: Link,
   },
   {
     href: '#result',
     children: 'Topics',
-    as: Link
+    as: Link,
   },
   {
     href: '#review',
     children: 'Reviews',
-    as: Link
+    as: Link,
   },
 ];
 
@@ -42,8 +42,8 @@ export type PageProps = {
   children?: React.ReactNode;
 };
 
-export default function Page({ params }: PageProps) {
-  const coursesData = use(getCourseDetails(params.slug));
+export default async function Page({ params }: PageProps) {
+  const coursesData = await getCourseDetails(params.slug);
   const [{ attributes }] = coursesData.data.courses.data as CourseEntity[];
 
   const {
@@ -52,10 +52,10 @@ export default function Page({ params }: PageProps) {
     courseVideoPoster,
     aboutCourse,
     testimonials,
-    price,
     curriculam,
     complitionResult,
     category,
+    ...data
   } = attributes as Course;
 
   const categoryTitle = category?.data?.attributes?.title || '';
@@ -110,7 +110,7 @@ export default function Page({ params }: PageProps) {
             </div>
           </div>
           <div className="lg:hidden">
-            <Price price={price} />
+            <Price data={attributes} />
           </div>
           <div className="main__left-section__course-navigation">
             <ChipNavigation chipData={chipNavData} />
@@ -160,7 +160,7 @@ export default function Page({ params }: PageProps) {
         </div>
         <div className="sticky top-0 hidden self-start lg:block">
           <div className="individualcourse__right-section">
-            <Price price={price} />
+            <Price data={attributes} />
           </div>
         </div>
       </div>

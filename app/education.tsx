@@ -50,8 +50,8 @@ const Education = async () => {
 
   if (!educationData) return null;
 
-  const { title, description, details, image } = educationData.data.aboutTsc
-    .data?.attributes as AboutTsc;
+  const { title, description, details, image, button } = educationData.data
+    .aboutTsc.data?.attributes as AboutTsc;
 
   const { url, alternativeText } = image?.data?.attributes as UploadFile;
 
@@ -96,8 +96,13 @@ const Education = async () => {
         </div>
       </div>
       <div className="education__header col-span-2 mb-20 lg:mb-32">
-        <Button as={Link} prefetch={false} href="/" variant="secondary">
-          About Education
+        <Button
+          as={Link}
+          prefetch={false}
+          href={button?.url}
+          variant="secondary"
+        >
+          {button?.text}
         </Button>
       </div>
       <span className="education__line"></span>

@@ -71,7 +71,6 @@ const Footer = (props: Props) => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmo.
         </p>
-
         <Newsletter />
       </div>
 

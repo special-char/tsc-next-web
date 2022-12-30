@@ -3,10 +3,10 @@ import '@/styles/courses.css';
 import Button from '@/ui/Button';
 import Carousal from '@/ui/Carousal';
 import CarousalBullets from '@/ui/CarousalBullets';
-import CourseCard from '@/ui/CourseCard';
+import CourseCard, { CourseCardSkeleton } from '@/ui/CourseCard';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Course, HomeCourse, UploadFile } from 'types/types';
+import { HomeCourse } from 'types/types';
 
 export const CoursesSkeleton = () => {
   return (
@@ -15,30 +15,10 @@ export const CoursesSkeleton = () => {
         Browse our popular courses
       </h2>
       <Carousal>
-        {[1, 2, 3].map((course) => {
-          return (
-            <Link key={course} href="/" className="card">
-              <figure className="card__image">
-                <div></div>
-              </figure>
-              <div className="card__body">
-                <h3 className="card__title font-cursive">Graduate</h3>
-                <p className="card__desc font-cursive">
-                  Lorem ipsum dolor sit amet, consectetur dolorili adipiscing
-                  elit. Felis donec massa aliqua.
-                </p>
-                <div className="card__actions">
-                  <div className="avatar placeholder w-16 overflow-hidden rounded-full bg-neutral-300">
-                    <div className="h-full w-full"></div>
-                  </div>
-                  <h4 className="font-cursive">Yagnesh Modh</h4>
-                </div>
-              </div>
-            </Link>
-          );
+        {[1, 2, 3]?.map((course) => {
+          return <CourseCardSkeleton key={course} />;
         })}
       </Carousal>
-
       <div className="btn btn--primary font-cursive">Explore All Courses</div>
     </section>
   );

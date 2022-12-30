@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import '@/styles/blogs.css';
-
 import BlogCard, { BlogCardSkeleton } from '@/ui/BlogCard';
 import Features, { FeaturesSkeleton } from '@/ui/features';
 import { BlogEntity } from 'types/types';

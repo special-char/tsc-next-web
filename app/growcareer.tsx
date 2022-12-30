@@ -15,7 +15,7 @@ export const GrowCareerSkeleton = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt.
         </p>
-        <div className="btn btn--secondary">EXPLORE COURSES</div>
+        <div className="btn btn--secondary font-cursive">EXPLORE COURSES</div>
       </div>
       <div className="growcareer__cards">
         {[1, 2, 3]?.map((val) => (
@@ -45,7 +45,7 @@ const GrowCareer = async () => {
       <div className="growcareer__details">
         <h2 className="growcareer__title">{title}</h2>
         <p className="growcareer__description">{description}</p>
-        <Button as={Link} href={`${url}`} variant="secondary">
+        <Button as={Link} prefetch={false} href={`${url}`} variant="secondary">
           {text}
         </Button>
       </div>

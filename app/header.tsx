@@ -22,7 +22,6 @@ export const HeaderSkeleton = () => {
             return (
               <li>
                 <div className="header__link font-cursive">Bootcamps</div>
-
                 <nav className="header__nested_nav">
                   <ul>
                     return (

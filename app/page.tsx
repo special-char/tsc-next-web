@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import Banner, { BannerSkeleton } from './banner';
 import Category, { CategorySkeleton } from './category';
 import Courses, { CoursesSkeleton } from './courses';
@@ -7,8 +8,6 @@ import Leaders, { LeadersSkeleton } from './leaders';
 import Perks, { PerksSkeleton } from './perks';
 import Testimonial, { TestimonialSkeleton } from './testimonial';
 import Blogs, { BlogsSkeleton } from './blogs';
-import { Suspense } from 'react';
-import { ContactSkeleton } from './contact/contact';
 
 const Page = () => {
   return (
@@ -37,7 +36,7 @@ const Page = () => {
       <Suspense fallback={<TestimonialSkeleton />}>
         <Testimonial />
       </Suspense>
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<BlogsSkeleton />}>
         <Blogs />
       </Suspense>
     </>
