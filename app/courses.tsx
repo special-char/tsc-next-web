@@ -6,7 +6,7 @@ import CarousalBullets from '@/ui/CarousalBullets';
 import CourseCard from '@/ui/CourseCard';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Course, HomeCourse, UploadFile } from 'types/types';
+import { HomeCourse } from 'types/types';
 
 export const CoursesSkeleton = () => {
   return (
@@ -38,7 +38,6 @@ export const CoursesSkeleton = () => {
           );
         })}
       </Carousal>
-
       <div className="btn btn--primary font-cursive">Explore All Courses</div>
     </section>
   );

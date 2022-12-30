@@ -29,7 +29,7 @@ const ActionBar = ({ data }: Props) => {
           />
         </div>
         <span>
-          <h3>{`${firstName} ${lastName}`}</h3>
+          <h3 className="!mb-0">{`${firstName} ${lastName}`}</h3>
           <time>{format(new Date(publishedAt), 'MMMM d, yyyy')}</time>
         </span>
       </div>

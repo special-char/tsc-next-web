@@ -55,6 +55,7 @@ const CourseCard = ({ course, isHorizontal }: Props) => {
       </Link>
       <div className="course_card__body">
         <Link
+          prefetch={false}
           href={`/courses/${encodeURIComponent(slug)}`}
           className="course_card__main"
         >
@@ -63,7 +64,12 @@ const CourseCard = ({ course, isHorizontal }: Props) => {
         </Link>
         <div className="course_card__footer">
           {brochureUrl && (
-            <Link href={brochureUrl} className="course_card__action" download>
+            <Link
+              href={brochureUrl}
+              prefetch={false}
+              className="course_card__action"
+              download
+            >
               <Icon name="download" height={24} width={24} />
               Download Curriculum
             </Link>
