@@ -18,58 +18,41 @@ export const OurOfficeSkeleton = () => {
       <div className="ourOffice__content">
         <div className="ourOffice__item">
           <div className="ourOffice__card relative overflow-hidden">
-            <div className="ourOffice__card__content bg-neutral-300">
-              <div></div>
-              <h3 className="ourOffice__card__title font-cursive">Ahmedabad</h3>
-              <div className="ourOffice__card__connect text-neutral-600">
-                <div className="w-auto pb-2 font-cursive">
-                  thespecial@character.com
+            {[1].map((val) => {
+              // const { url, alternativeText } = val?.icon?.data
+              //   ?.attributes as UploadFile;
+              return (
+                <div
+                  key={val}
+                  className="ourOffice__card relative overflow-hidden"
+                >
+                  <div className="ourOffice__card__content">
+                    <div className="relative mr-auto min-h-[64px] w-16 rounded-full bg-neutral-300">
+                      <div></div>
+                    </div>
+                    <h3 className="ourOffice__card__title font-cursive">
+                      Ahmedabad
+                    </h3>
+                    <div className="grid-rows-span-3 grid font-cursive text-neutral-600">
+                      <div className="w-auto pb-2 font-cursive">
+                        contact@thespecialcharacter.com
+                      </div>
+                      <div className="w-auto pb-2 font-cursive">
+                        +91 8690090417
+                      </div>
+                      <div className="mb-2 font-cursive">
+                        B-604/605 Ganesh Glory 11
+                        <br />
+                        Jagarpur Road, SG Highway <br />
+                        Gujarat 382470
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute -right-14 -bottom-20 h-32 w-32 rounded-full bg-primary"></div>
                 </div>
-                <div className="w-auto pb-2 font-cursive">+91 1800180018</div>
-                <div className="mb-2 font-cursive">
-                  B-604/605, Ganesh Glory11
-                  <br />
-                  SG-Hwy, Ahmedabad, <br />
-                  Gujrat 382470
-                </div>
-              </div>
-            </div>
-            <div className="ouroffice__circle"></div>
+              );
+            })}
           </div>
-          {[1].map((val) => {
-            // const { url, alternativeText } = val?.icon?.data
-            //   ?.attributes as UploadFile;
-            return (
-              <div
-                key={val}
-                className="ourOffice__card relative overflow-hidden"
-              >
-                <div className="ourOffice__card__content">
-                  <div className="relative mr-auto min-h-[64px] w-16 rounded-full bg-neutral-300">
-                    <div></div>
-                  </div>
-                  <h3 className="ourOffice__card__title font-cursive">
-                    Ahmedabad
-                  </h3>
-                  <div className="grid-rows-span-3 grid font-cursive text-neutral-600">
-                    <div className="w-auto pb-2 font-cursive">
-                      contact@thespecialcharacter.com
-                    </div>
-                    <div className="w-auto pb-2 font-cursive">
-                      +91 8690090417
-                    </div>
-                    <div className="mb-2 font-cursive">
-                      B-604/605 Ganesh Glory 11
-                      <br />
-                      Jagarpur Road, SG Highway <br />
-                      Gujarat 382470
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute -right-14 -bottom-20 h-32 w-32 rounded-full bg-primary"></div>
-              </div>
-            );
-          })}
         </div>
         <div className="ourOffice__map -z-10 min-h-[300px] rounded-2xl bg-neutral-300">
           <div></div>
