@@ -15,10 +15,15 @@ export const ChipNavigationSkeleton = () => {
   );
 };
 
-const ChipNavigation = ({ chipData }) => {
+type ChipNavigationType = {
+  selectedCategory?: string;
+};
+
+const ChipNavigation = ({ chipData, selectedCategory }) => {
+  const handleClick = () => {};
   return (
     <div className="grid shrink-0 grid-cols-2 gap-4 rounded-3xl bg-neutral-200 px-8 py-4 md:grid-flow-col-dense md:rounded-full">
-      {chipData.map(({ selected, ...data }, index) => (
+      {chipData.map(({ ...data }, index) => (
         <Button
           key={index}
           as="button"
@@ -32,5 +37,4 @@ const ChipNavigation = ({ chipData }) => {
     </div>
   );
 };
-
 export default ChipNavigation;

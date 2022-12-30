@@ -9,9 +9,7 @@ import { getSocialMediaLinks } from '@/lib/getSocialMediaDetails';
 import Image from 'next/image';
 import { getMenuData } from '@/lib/getMenu';
 
-type Props = {
-};
-
+type Props = {};
 
 const links = [
   { page: 'Home' },
@@ -31,7 +29,6 @@ const Footer = (props: Props) => {
   const socialMediaLInks = use(getSocialMediaLinks());
   const menuData = use(getMenuData());
 
-
   if (!menuData) return null;
   if (!socialMediaLInks) return null;
 
@@ -47,7 +44,7 @@ const Footer = (props: Props) => {
       acc.push(curr);
       return acc;
     }, initial);
-  }
+  };
 
   return (
     <section id="footer" className="footer">
@@ -81,25 +78,34 @@ const Footer = (props: Props) => {
         </div>
       </div>
       <hr className="col-span-full" />
-      {
-        socialMedia.length > 0 && (
-          <div className="flex gap-4">
-            {socialMedia.map((val) => (
-              <Link key={val.id} href={val.url} className='bg-primary w-12 aspect-square rounded-full flex items-stretch justify-center'>
-                <Image src={val.icon.data?.attributes?.url || ""} alt="social media icon" height={26} width={26} />
-              </Link>
-            ))}
-          </div>)
-      }
+      {socialMedia.length > 0 && (
+        <div className="flex gap-4">
+          {socialMedia.map((val) => (
+            <Link
+              key={val.id}
+              href={val.url}
+              className="flex aspect-square w-12 items-stretch justify-center rounded-full bg-primary"
+            >
+              <Image
+                src={val.icon.data?.attributes?.url || ''}
+                alt="social media icon"
+                height={26}
+                width={26}
+              />
+            </Link>
+          ))}
+        </div>
+      )}
       <p className="footer__copyright">
-        Copyright © TSC | Designed by TSC - Powered by TSC
+        Copyright © TSC | Designed by TSC - Powered by Next.js
       </p>
     </section>
   );
 };
 
 export default Footer;
-{/* <SocialIcon
+{
+  /* <SocialIcon
         icons={[
           {
             icon: 'facebook',
@@ -126,4 +132,5 @@ export default Footer;
             link: 'https://www.whatsapp.com',
           },
         ]}
-      /> */}
+      /> */
+}
