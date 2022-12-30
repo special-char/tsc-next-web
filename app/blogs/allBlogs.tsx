@@ -1,6 +1,6 @@
 'use client';
 
-import React, { use, useState } from 'react';
+import React, { useState } from 'react';
 import '@/styles/blogs.css';
 import BlogCard, { BlogCardSkeleton } from '@/ui/BlogCard';
 import Features, { FeaturesSkeleton } from '@/ui/features';
@@ -39,7 +39,6 @@ const AllBlogs = ({ blogList }: Props) => {
             children,
             onClick: () => {
               setSelectedCategory(children || 'All');
-              // router.push(`/blogList?category=${children}`, { scroll: false });
             },
           },
         ];

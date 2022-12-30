@@ -1,5 +1,5 @@
 'use client';
-import Image from 'next/image';
+
 import Link from 'next/link';
 import React from 'react';
 import '@/styles/footer.css';
@@ -121,5 +121,3 @@ const Footer = (props: Props) => {
 };
 
 export default Footer;
-
-// lg:mr-[46px] lg:w-2/3

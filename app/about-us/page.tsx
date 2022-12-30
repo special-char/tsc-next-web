@@ -1,5 +1,5 @@
 import PageHeader, { PageHeaderSkeleton } from '@/ui/pageHeader';
-import React, { Suspense, use } from 'react';
+import React, { Suspense } from 'react';
 import OurWorks, { OurWorksSkeleton } from './ourWorks';
 import Achievements, { AchievementsSkeleton } from './achievements';
 import CompanyHistory, { CompanyHistorySkeleton } from './companyhistory';

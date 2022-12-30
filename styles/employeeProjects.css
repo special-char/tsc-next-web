@@ -4,33 +4,4 @@
   &__content {
     @apply my-8;
   }
-  /* &__card {
-    @apply grid overflow-hidden rounded-2xl shadow-dark;
-
-    &__image {
-      @apply relative aspect-[3/2] w-full;
-    }
-    &__chipset {
-      @apply absolute top-3 flex justify-end gap-3;
-    }
-
-    &__body {
-      @apply p-6;
-    }
-
-    &__title {
-      @apply line-clamp-1  hover:text-primary;
-
-      &--line-2 {
-        @apply line-clamp-2;
-      }
-    }
-
-    &__desc {
-      @apply text-neutral-500 line-clamp-3;
-    }
-    &__actions {
-      @apply flex items-center gap-4;
-    }
-  } */
 }

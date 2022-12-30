@@ -1,6 +1,6 @@
 .aboutheader {
   @apply grid items-center gap-10 lg:grid-cols-2;
-  /* mobile screen */
+
   div:nth-child(1) {
     order: 1;
   }

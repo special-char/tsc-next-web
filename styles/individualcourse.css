@@ -23,9 +23,6 @@
     @media (min-width: 1280px) and (orientation: landscape) {
       @apply max-h-[650px];
     }
-    /* @media screen and (min-width: 426px) {
-        @apply max-h-[600px];
-      } */
   }
 }
 
@@ -43,7 +40,6 @@
       &__body {
         @apply absolute z-50 flex h-full w-full items-center justify-center;
         display: flex;
-        /* grid: [stack] 1fr / min-content [stack] 1fr; */
 
         @media (min-width: 540px) {
           & > :is(aside, section) {

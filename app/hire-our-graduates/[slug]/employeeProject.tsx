@@ -1,8 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
 import '@/styles/employeeProjects.css';
-import ActionBar from '@/ui/ActionBar';
 import ProjectCard from '@/ui/ProjectCard';
 type Props = {};
 
