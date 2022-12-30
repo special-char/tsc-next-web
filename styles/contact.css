@@ -25,6 +25,10 @@
     @apply grid w-full justify-items-center rounded-2xl bg-neutral-100 text-center shadow-dark;
   }
 
+  &__card_info {
+    @apply flex flex-col items-center justify-center;
+  }
+
   &__svg {
     @apply w-16 overflow-hidden rounded-full;
   }
