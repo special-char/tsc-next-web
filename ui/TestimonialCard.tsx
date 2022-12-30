@@ -11,6 +11,31 @@ type Props = {
   style?: React.CSSProperties;
 };
 
+export const TestimonialCardSkeleton = () => {
+  return (
+    <div className={clsx('testimonial_card', {})}>
+      <div className="testimonial_card__img h-[200px] w-[200px] rounded-full bg-neutral-300">
+        <div></div>
+      </div>
+      <div className="testimonial_card__body">
+        <div className="testimonial_card__rating" />
+        <p className="testimonial_card__desc font-cursive">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+          corrupti commodi consequatur, alias in modi fuga architecto ipsa
+          quaerat rem.
+        </p>
+        <div className="user_info">
+          <h4 className="font-cursive">Lorem ipsum.</h4>
+          <p className="font-cursive">
+            <span>Lorem ipsum dolor sit amet.</span>
+            <span>lorem ispojf</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const TestimonialCard = ({ testimonial, style }: Props) => {
   const { avatar, rating, quote, name, designation, company } =
     testimonial.attributes as Testimonial;

@@ -11,6 +11,45 @@ type Props = {
   isHorizontal?: boolean;
 };
 
+export const CourseCardSkeleton = () => {
+  return (
+    <div
+    //   className={clsx('course_card', {
+    //     'course_card--hoz': !!isHorizontal,
+    //   })}
+    >
+      <div className="animate-pulse">
+        <div className="course_card__img bg-neutral-300">
+          <div></div>
+          <div className="course_card__chips">
+            <span className="chip chip--white font-cursive">4 months</span>
+            <span className="chip chip--primary font-cursive">5,000/Month</span>
+          </div>
+        </div>
+      </div>
+      <div className="course_card__body">
+        <div className="course_card__main">
+          <h3 className="course_card__title font-cursive">
+            Full-stack Development
+          </h3>
+          <p className="course_card__desc font-cursive">
+            Full-stack development refers to the end-to-end application software
+            development, including the front end and back end. The front end
+            consists of the user interface, and the back end takes care of the
+            business logic and application workflows.
+          </p>
+        </div>
+        <div className="course_card__footer">
+          <div className="course_card__action font-cursive">
+            <div></div>
+            Download Curriculum
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const CourseCard = ({ course, isHorizontal }: Props) => {
   const {
     title,
