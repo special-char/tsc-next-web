@@ -12,7 +12,7 @@ export const AboutheaderSkeleton = () => {
       <div className="aboutheader animate-pulse">
         {[1, 2].map((x) => (
           <>
-            <div key={x?.id} className="aboutheader__image bg-neutral-300">
+            <div key={x} className="aboutheader__image bg-neutral-300">
               <div></div>
             </div>
             <div className="aboutheader__title">

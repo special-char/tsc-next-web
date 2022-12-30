@@ -2,6 +2,7 @@ import { getAboutNumberData } from '@/lib/getAboutNumber';
 import '@/styles/achieve.css';
 import React from 'react';
 import { AboutNumber } from 'types/types';
+
 export const AchievementsSkeleton = () => {
   return (
     <section className="achieve animate-pulse">
@@ -10,7 +11,7 @@ export const AchievementsSkeleton = () => {
       </h2>
       <div className="achieve__content">
         {[1, 2, 3].map((x) => (
-          <div key={x?.id} className="overflow-hidden">
+          <div key={x} className="overflow-hidden">
             <h1 className="font-cursive text-secondary3">10,000+</h1>
             <h3 className="font-cursive">Students</h3>
             <p className="font-cursive">
@@ -23,26 +24,6 @@ export const AchievementsSkeleton = () => {
   );
 };
 type Props = {};
-const achievedetails = [
-  {
-    id: 1,
-    number: 10000,
-    title: 'Students',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing.',
-  },
-  {
-    id: 2,
-    number: 5000,
-    title: 'Five-star reviews',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing.',
-  },
-  {
-    id: 3,
-    number: 75000,
-    title: 'Students community',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing.',
-  },
-];
 
 const Achievements = async (props: Props) => {
   const achievementsData = await getAboutNumberData();

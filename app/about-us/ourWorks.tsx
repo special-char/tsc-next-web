@@ -36,7 +36,6 @@ export const OurWorksSkeleton = () => {
         ))}
       </div>
       <div>
-        {' '}
         <div className="ourWorks__arrow"></div>
       </div>
     </section>

@@ -41,7 +41,7 @@ export const OurOfficeSkeleton = () => {
             //   ?.attributes as UploadFile;
             return (
               <div
-                key={val?.id}
+                key={val}
                 className="ourOffice__card relative overflow-hidden"
               >
                 <div className="ourOffice__card__content">
