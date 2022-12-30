@@ -31,7 +31,7 @@ const CourseCard = ({ course, isHorizontal }: Props) => {
         'course_card--hoz': !!isHorizontal,
       })}
     >
-      <Link href={`/courses/${encodeURIComponent(slug)}`}>
+      <Link prefetch={false} href={`/courses/${encodeURIComponent(slug)}`}>
         <figure className="course_card__img">
           <Image
             src={`${url}?tr=ar-16-9`}

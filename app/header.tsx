@@ -19,23 +19,18 @@ export const HeaderSkeleton = () => {
       <nav className="header__nav">
         <ul>
           {[1, 2, 3, 4, 5].slice(0, -1).map((x) => {
-            // const { title, url, children } = x.attributes;
             return (
               <li>
                 <div className="header__link font-cursive">Bootcamps</div>
-                {/* {children.data.length > 0 && ( */}
                 <nav className="header__nested_nav">
                   <ul>
-                    {/* {children.data.map((y) => { */}
                     return (
                     <li>
                       <div className="font-cursive">Full Stack Bootcamp</div>
                     </li>
                     );
-                    {/* })} */}
                   </ul>
                 </nav>
-                {/* )} */}
               </li>
             );
           })}
