@@ -8,6 +8,28 @@ type Props = {
   category: CategoryEntity;
 };
 
+export const CategoryCardSkeleton = () => {
+  return (
+    <div className="category_card animate-pulse">
+      <figure className="category_card__img bg-neutral-300">
+        <div></div>
+        <div className="category_card__chips">
+          <div className="chip chip--white font-cursive">1 courses</div>
+        </div>
+      </figure>
+      <div className="category_card__body">
+        <h3 className="category_card__title font-cursive">Moblie</h3>
+        <p className="category_card__desc font-cursive">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
+          molestiae nostrum asperiores praesentium, repellendus aliquid mollitia
+          quo dolorem quisquam necessitatibus eius natus, unde magni quia velit
+          atque harum. Dolorum, fugit!
+        </p>
+      </div>
+    </div>
+  );
+};
+
 const CategoryCard = ({ category }: Props) => {
   const { title, description, icon, courses } = category.attributes as Category;
   const { url, alternativeText } = icon?.data?.attributes as UploadFile;

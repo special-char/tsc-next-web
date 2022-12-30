@@ -39,7 +39,6 @@ export const OurOfficeSkeleton = () => {
             <div className="ouroffice__circle"></div>
           </div>
           {[1].map((val) => {
-            // const { url, alternativeText } = val?.icon?.data
             //   ?.attributes as UploadFile;
             return (
               <div className="ourOffice__card relative overflow-hidden">

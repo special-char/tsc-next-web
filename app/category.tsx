@@ -2,7 +2,7 @@ import '@/styles/category.css';
 import SeparatorArray from '@/ui/SeparatorArray';
 import { getCategoriesData } from '@/lib/getCategories';
 import { HomeCategory } from 'types/types';
-import CategoryCard from '@/ui/CategoryCard';
+import CategoryCard, { CategoryCardSkeleton } from '@/ui/CategoryCard';
 import Carousal from '@/ui/Carousal';
 
 export const CategorySkeleton = () => {
@@ -12,26 +12,12 @@ export const CategorySkeleton = () => {
         Browse our courses by category
       </h2>
       <div className="category__content">
-        {[1, 2, 3].map((category) => {
-          //   const { title, description, icon } = category.attributes as Category;
-          //   const { url, alternativeText } = icon?.data?.attributes as UploadFile;
-          return (
-            <div key={category} className="card">
-              <figure className="card__image aspect-h-image">
-                <div></div>
-              </figure>
-              <div className="card__body">
-                <h3 className="card__title font-cursive">Design</h3>
-                <p className="card__desc font-cursive">
-                  Lorem ipsum dolor sit amet, dolor sit consectetur adipiscing
-                  elit.
-                </p>
-              </div>
-            </div>
-          );
-        })}
+        <Carousal>
+          {[1, 2, 3].map((category) => {
+            return <CategoryCardSkeleton />;
+          })}
+        </Carousal>
       </div>
-      <SeparatorArray />
     </section>
   );
 };

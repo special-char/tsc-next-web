@@ -25,7 +25,6 @@ const AllCourses = ({ courses, category }: Props) => {
             children,
             onClick: () => {
               setSelectedCategory(children || 'All');
-              // router.push(`/courses?category=${children}`, { scroll: false });
             },
           },
         ];

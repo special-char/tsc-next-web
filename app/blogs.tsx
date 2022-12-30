@@ -3,10 +3,23 @@ import React, { Suspense } from 'react';
 import '@/styles/blogs.css';
 import { getHomeBlogData } from '@/lib/getHomeBlog';
 import { HomeBlog } from 'types/types';
-import BlogCard from '@/ui/BlogCard';
 import FeatureBlog, { FeatureBlogsSkeleton } from '@/ui/FeatureBlog';
 
 type Props = {};
+
+export const BlogsSkeleton = () => {
+  return (
+    <section className="blogs animate-pulse">
+      <div className="blogs__header">
+        <h2 className="blogs__title font-cursive">Resources & News</h2>
+        <div className="btn btn--secondary font-cursive lg:ml-auto">
+          Browse Blog
+        </div>
+      </div>
+      <FeatureBlogsSkeleton />
+    </section>
+  );
+};
 
 const Blogs = async (props: Props) => {
   const homeBlogData = await getHomeBlogData();
@@ -28,9 +41,8 @@ const Blogs = async (props: Props) => {
           {button?.text}
         </Link>
       </div>
-      <Suspense fallback={<FeatureBlogsSkeleton />}>
-        <FeatureBlog />
-      </Suspense>
+
+      <FeatureBlog />
     </section>
   );
 };
