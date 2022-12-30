@@ -1,5 +1,3 @@
-import SocialIcon from '@/ui/SocialIcon';
-
 type Props = {};
 
 const Page = (props: Props) => {

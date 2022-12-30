@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-export default function Error({ error, reset }: any) {
+export default function Error({ error }: any) {
   React.useEffect(() => {
     console.log('logging error:', error);
   }, [error]);
@@ -12,7 +12,6 @@ export default function Error({ error, reset }: any) {
       <div className="text-vercel-pink text-sm">
         <strong className="font-bold">Error:</strong> {error?.message}
       </div>
-      <div>{/* <Button onClick={() => reset()}>Try Again</Button> */}</div>
     </div>
   );
 }

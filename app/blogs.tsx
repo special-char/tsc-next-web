@@ -3,7 +3,6 @@ import React, { Suspense } from 'react';
 import '@/styles/blogs.css';
 import { getHomeBlogData } from '@/lib/getHomeBlog';
 import { HomeBlog } from 'types/types';
-import BlogCard from '@/ui/BlogCard';
 import FeatureBlog, { FeatureBlogsSkeleton } from '@/ui/FeatureBlog';
 
 type Props = {};

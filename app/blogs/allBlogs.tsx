@@ -1,15 +1,14 @@
-
 'use client';
 
-import React, { use, useState } from 'react';
+import React, { useState } from 'react';
 import '@/styles/blogs.css';
-import { getHomeBlogData } from '@/lib/getHomeBlog';
+
 import BlogCard, { BlogCardSkeleton } from '@/ui/BlogCard';
 import Features, { FeaturesSkeleton } from '@/ui/features';
 import { BlogEntity } from 'types/types';
 
 type Props = {
-  blogList: BlogEntity[]
+  blogList: BlogEntity[];
 };
 
 type ChipsType = { children: string; onClick?: () => void };
@@ -30,7 +29,6 @@ export const AllBlogsSkeleton = () => {
 const AllBlogs = ({ blogList }: Props) => {
   const [selectedCategory, setSelectedCategory] = useState('All');
 
-
   const chips = blogList.reduce(
     (acc: ChipsType[], blog) => {
       const children = blog.attributes?.category?.data?.attributes?.title;
@@ -42,7 +40,6 @@ const AllBlogs = ({ blogList }: Props) => {
             children,
             onClick: () => {
               setSelectedCategory(children || 'All');
-              // router.push(`/blogList?category=${children}`, { scroll: false });
             },
           },
         ];
@@ -67,19 +64,16 @@ const AllBlogs = ({ blogList }: Props) => {
         selectedCategory={selectedCategory}
       />
 
-
       <div className="items__item">
         {blogList.map((data) => {
           if (
             selectedCategory === 'All' ||
             data.attributes?.category?.data?.attributes?.title ===
-            selectedCategory
+              selectedCategory
           ) {
-            return (
-              <BlogCard key={data.id} blog={data} />
-            )
+            return <BlogCard key={data.id} blog={data} />;
           }
-          return null
+          return null;
         })}
       </div>
     </section>

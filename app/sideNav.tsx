@@ -33,7 +33,6 @@ export const SideNavSkeleton = () => {
         id="sidenav-close"
         title="Close Menu"
         aria-label="Close Menu"
-        // onchange="history.go(-1)"
       ></a>
     </aside>
   );
@@ -104,7 +103,6 @@ const SideNav = async (props: Props) => {
         id="sidenav-close"
         title="Close Menu"
         aria-label="Close Menu"
-        // onchange="history.go(-1)"
       ></a>
     </aside>
   );

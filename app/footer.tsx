@@ -1,5 +1,5 @@
 'use client';
-import Image from 'next/image';
+
 import Link from 'next/link';
 import React from 'react';
 import '@/styles/footer.css';
@@ -63,13 +63,6 @@ const Footer = (props: Props) => {
 
       <hr className="col-span-full" />
       <div className="footer__newsletter">
-        {/* <Image
-          className="mb-3 rounded-full"
-          src={`${(<EmailSvg />)}?tr=h-90,w-90`}
-          alt=""
-          height={90}
-          width={90}
-        /> */}
         <figure className="mb-3 h-20 w-20 overflow-hidden rounded-full bg-secondary1">
           <EmailSvg />
         </figure>
@@ -129,5 +122,3 @@ const Footer = (props: Props) => {
 };
 
 export default Footer;
-
-// lg:mr-[46px] lg:w-2/3

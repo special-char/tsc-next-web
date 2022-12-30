@@ -18,8 +18,6 @@
     &__dropdown-icon {
       svg {
         @apply fill-primary;
-        /* path {
-        } */
       }
     }
     &__selected-items {

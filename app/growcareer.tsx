@@ -63,5 +63,3 @@ const GrowCareer = async () => {
 };
 
 export default GrowCareer;
-
-// grid grid-cols-1 items-center gap-3 md:grid-cols-2

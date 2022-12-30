@@ -6,7 +6,7 @@ type Props = {};
 
 const Checkbox = ({
   field: { name, value, onChange, onBlur },
-  form: { setFieldValue }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
+  form: { setFieldValue },
   checkboxes,
   label,
 }: Props) => {

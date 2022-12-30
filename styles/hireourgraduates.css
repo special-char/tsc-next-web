@@ -2,7 +2,6 @@
   @apply px-container py-16;
   &__card__body {
     @apply grid  justify-center gap-10 gap-y-8 overflow-hidden shadow-dark md:grid-cols-2 lg:grid-cols-3;
-    /* padding: 32px 32px 48px; */
   }
   &__card__image {
     @apply aspect-square;

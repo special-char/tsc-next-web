@@ -2,7 +2,6 @@
 
 import React from 'react';
 import '@/styles/features.css';
-import clsx from 'clsx';
 import ChipNavigation from './ChipNavigation';
 import Link from 'next/link';
 type Props = {
@@ -24,22 +23,22 @@ export const FeaturesSkeleton = () => {
             {
               href: '#about',
               children: 'About',
-              as: Link
+              as: Link,
             },
             {
               href: '#topic',
               children: 'Results',
-              as: Link
+              as: Link,
             },
             {
               href: '#result',
               children: 'Topics',
-              as: Link
+              as: Link,
             },
             {
               href: '#review',
               children: 'Reviews',
-              as: Link
+              as: Link,
             },
           ]}
         />

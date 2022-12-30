@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Features from '../../ui/features';
 import CourseCard from '@/ui/CourseCard';
 import { CourseEntity } from 'types/types';
-// import { useRouter } from 'next/navigation';
+
 type Props = {
   courses: CourseEntity[];
   category?: string;
@@ -13,7 +13,6 @@ type Props = {
 type ChipsType = { children: string; onClick?: () => void };
 
 const AllCourses = ({ courses, category }: Props) => {
-  // const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState(category || 'All');
 
   const chips = courses.reduce(
@@ -27,7 +26,6 @@ const AllCourses = ({ courses, category }: Props) => {
             children,
             onClick: () => {
               setSelectedCategory(children || 'All');
-              // router.push(`/courses?category=${children}`, { scroll: false });
             },
           },
         ];
@@ -63,7 +61,7 @@ const AllCourses = ({ courses, category }: Props) => {
             if (
               selectedCategory === 'All' ||
               data.attributes?.category?.data?.attributes?.title ===
-              selectedCategory
+                selectedCategory
             ) {
               return <CourseCard key={data.id} course={data} />;
             }

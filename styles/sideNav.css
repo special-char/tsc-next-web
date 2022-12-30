@@ -36,7 +36,7 @@
   & > nav {
     display: grid;
     grid-template-rows: auto 1fr auto;
-    /* padding: 1rem 0rem; */
+
     font-size: 1.25rem;
     color: var(--text);
     @apply md:hidden;
@@ -58,9 +58,6 @@
       @apply m-4;
     }
 
-    /* & li {
-      @apply text-lg;
-    } */
     & a {
       text-decoration: none;
       line-height: 1.25;
@@ -101,18 +98,3 @@
     }
   }
 }
-/* use this if copying/pasting skeleton */
-/* @media (max-width: 540px) {
-    #sidenav-open > nav {
-      background-color: white;
-    }
-  }
-  
-  #sidenav-button > svg {
-    max-width: 50px;
-  
-    & > line {
-      stroke: black;
-      stroke-width: 7px;
-    }
-  } */
