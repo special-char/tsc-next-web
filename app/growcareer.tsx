@@ -15,7 +15,7 @@ export const GrowCareerSkeleton = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt.
         </p>
-        <div className="btn btn--secondary">EXPLORE COURSES</div>
+        <div className="btn btn--secondary font-cursive">EXPLORE COURSES</div>
       </div>
       <div className="growcareer__cards">
         {[1, 2, 3]?.map((val) => (

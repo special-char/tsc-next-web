@@ -37,7 +37,7 @@ const Page = () => {
       <Suspense fallback={<TestimonialSkeleton />}>
         <Testimonial />
       </Suspense>
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<BlogsSkeleton />}>
         <Blogs />
       </Suspense>
     </>

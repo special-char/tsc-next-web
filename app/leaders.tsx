@@ -16,13 +16,6 @@ export const LeadersSkeleton = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt.
         </p>
-        <div className="leader__actions">
-          {[1].map((val) => (
-            <div className="btn btn--primary font-cursive">
-              BECOME A TEACHER
-            </div>
-          ))}
-        </div>
       </div>
       <div className="leader__image_content">
         <div className="leader__image">
