@@ -1,6 +1,4 @@
-import EventCard, { EventCardSkeleton } from '@/ui/EventCard';
 import PageHeader, { PageHeaderSkeleton } from '@/ui/pageHeader';
-import Features, { FeaturesSkeleton } from '@/ui/features';
 import React, { Suspense, use } from 'react';
 import { getEvents } from '@/lib/getEvents';
 import AllEvents from './allEvents';
@@ -20,7 +18,6 @@ export default function Page() {
         />
       </Suspense>
       <AllEvents events={data} />
-
     </>
   );
 }
