@@ -106,7 +106,7 @@ const OurOffice = async (props: Props) => {
                 className="ourOffice__card relative overflow-hidden"
               >
                 <div className="ourOffice__card__content">
-                  <div className="ourOffice__card__image">
+                  <div className="ourOffice__card__image ">
                     <Image src={url} alt={`${alternativeText}`} fill />
                   </div>
                   <h3 className="ourOffice__card__title">{val?.city}</h3>
@@ -132,10 +132,12 @@ const OurOffice = async (props: Props) => {
         </div>
         <div className="ourOffice__map">
           <Image
-            src={url}
+            src={`${url}?tr=ar-16-9`}
             fill
             alt={`${alternativeText}`}
             className="-z-10 min-h-[300px]"
+            sizes="(max-width: 1024px) 100vw,
+            606px"
           />
         </div>
       </div>

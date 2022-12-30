@@ -52,8 +52,15 @@ const Aboutheader = async (props: Props) => {
             ?.attributes as UploadFile;
           return (
             <>
-              <div key={x?.id} className="aboutheader__image">
-                <Image src={url} alt={`${alternativeText}`} fill />
+              <div className="aboutheader__image">
+                <Image
+                  src={`${url}?tr=ar-1-1`}
+                  alt={`${alternativeText}`}
+                  fill
+                  sizes="(max-width: 1024px) 100vw,
+                        (max-width: 1280px) 50vw,
+                         604px"
+                />
               </div>
               <div className="aboutheader__title">
                 <h2 className=" text-3xl md:text-6xl">{x?.title}</h2>

@@ -6,6 +6,7 @@ import '@/styles/footer.css';
 import SocialIcon from '@/ui/SocialIcon';
 import TscBlueLogoSvg from '@/public/icons/tscBlueLogo.svg';
 import Newsletter from '@/ui/Newsletter';
+import EmailSvg from '@/public/icons/email.svg';
 
 type Props = {};
 
@@ -62,13 +63,16 @@ const Footer = (props: Props) => {
 
       <hr className="col-span-full" />
       <div className="footer__newsletter">
-        <Image
+        {/* <Image
           className="mb-3 rounded-full"
-          src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607f5ea5d227324cf40fa52d_icon-newsletter-footer-education-x-template.svg"
+          src={`${(<EmailSvg />)}?tr=h-90,w-90`}
           alt=""
           height={90}
           width={90}
-        />
+        /> */}
+        <figure className="mb-3 h-20 w-20 overflow-hidden rounded-full bg-secondary1">
+          <EmailSvg />
+        </figure>
         <h3 className="mb-3 text-neutral-100">Subscribe to our newsletter</h3>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

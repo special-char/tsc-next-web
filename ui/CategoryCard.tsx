@@ -19,8 +19,8 @@ const CategoryCard = ({ category }: Props) => {
       style={{
         maxWidth: '24rem',
       }}
-      href="#"
-      className="category_card "
+      href={`/courses?category=${title}`}
+      className="category_card"
     >
       <figure className="category_card__img">
         <Image
@@ -30,9 +30,8 @@ const CategoryCard = ({ category }: Props) => {
           sizes="(max-width: 640px) 100vw,384px"
         />
         <div className="category_card__chips">
-          <div className="chip chip--white">{`${coursesLength} ${
-            coursesLength > 1 ? 'Courses' : 'Course'
-          }`}</div>
+          <div className="chip chip--white">{`${coursesLength} ${coursesLength > 1 ? 'Courses' : 'Course'
+            }`}</div>
         </div>
       </figure>
       <div className="category_card__body">

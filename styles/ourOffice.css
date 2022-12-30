@@ -33,14 +33,14 @@
     grid-row: 2 / -1;
   }
   &__card {
-    @apply max-w-xl justify-between overflow-hidden rounded-2xl border border-neutral-300 bg-neutral-100 shadow-dark;
+    @apply max-w-[318px] justify-between overflow-hidden rounded-2xl border border-neutral-300 bg-neutral-100 shadow-dark md:max-w-xl;
 
     &__figure {
       @apply relative m-0 aspect-h-image w-full p-0;
     }
 
     &__content {
-      @apply h-full flex-col justify-between p-8;
+      @apply h-full flex-col justify-between py-8 px-3 md:px-8;
     }
     &__image {
       @apply relative mr-auto min-h-[64px] w-16;

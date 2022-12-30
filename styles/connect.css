@@ -1,0 +1,45 @@
+.connecting {
+  @apply relative overflow-hidden bg-neutral-200 px-container py-28;
+
+  &__flow {
+    @apply relative z-10;
+  }
+
+  &__title {
+    @apply mb-0 text-center lg:text-left;
+  }
+
+  &__desc {
+    @apply text-center md:mx-12 lg:mx-0 lg:text-left;
+  }
+
+  &__section {
+    @apply h-full;
+  }
+  &__body {
+    @apply grid grid-cols-1 gap-8 lg:grid-cols-3;
+  }
+  &__details {
+    @apply w-full justify-start overflow-hidden rounded-2xl bg-neutral-100 py-10 text-center shadow-dark;
+  }
+
+  &__info {
+    @apply flex flex-col items-center justify-center;
+  }
+
+  &__svg {
+    @apply w-16;
+  }
+  &__p {
+    @apply overflow-hidden px-4 text-neutral-500 md:text-lg;
+  }
+  &__yellowcircle {
+    @apply absolute -right-[900px] z-0 h-[400px] w-[400px] rounded-full bg-secondary2 md:top-[10%] md:-right-[49%] lg:top-24 lg:-right-56;
+  }
+  &__orangecircle {
+    @apply absolute top-[42%] -left-[86%] z-0 h-[400px] w-[400px] rounded-full bg-secondary3 md:top-[40%] md:-left-36 lg:top-[78%] lg:-left-20;
+  }
+  &__blucircle {
+    @apply absolute -left-[900px]  z-0 h-[400px] w-[400px] rounded-full bg-secondary1 md:-top-80 md:-left-44 lg:-top-[39%] lg:-left-24;
+  }
+}

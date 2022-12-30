@@ -87,7 +87,7 @@ export const getEvents: EventDetailsType = async (slug: string) => {
               }
             }
           }
-        }
+        }        
         `,
       }),
       cache: 'no-cache',
