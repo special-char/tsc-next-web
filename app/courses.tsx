@@ -16,7 +16,7 @@ export const CoursesSkeleton = () => {
       </h2>
       <Carousal>
         {[1, 2, 3]?.map((course) => {
-          return <CourseCardSkeleton />;
+          return <CourseCardSkeleton key={course} />;
         })}
       </Carousal>
       <div className="btn btn--primary font-cursive">Explore All Courses</div>
