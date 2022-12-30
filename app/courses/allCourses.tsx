@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Features from '../../ui/features';
 import CourseCard from '@/ui/CourseCard';
 import { CourseEntity } from 'types/types';
-// import { useRouter } from 'next/navigation';
 type Props = {
   courses: CourseEntity[];
   category?: string;
@@ -13,7 +12,6 @@ type Props = {
 type ChipsType = { children: string; onClick?: () => void };
 
 const AllCourses = ({ courses, category }: Props) => {
-  // const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState(category || 'All');
 
   const chips = courses.reduce(
