@@ -49,9 +49,9 @@ const Footer = (props: Props) => {
   return (
     <section id="footer" className="footer">
       <TscBlueLogoSvg className="w-64" />
-      <p className="footer__description ">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt aliqua.
+      <p className="footer__description text-xl font-bold">
+        Take your development skills to the next level with our comprehensive
+        courses.
       </p>
 
       <hr className="col-span-full" />
@@ -60,10 +60,7 @@ const Footer = (props: Props) => {
           <EmailSvg />
         </figure>
         <h3 className="mb-3 text-neutral-100">Subscribe to our newsletter</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmo.
-        </p>
+        <p>Stay up-to-date with the latest news and insights from TSC</p>
         <Newsletter />
       </div>
 
