@@ -10,7 +10,13 @@ import clsx from 'clsx';
 
 type Props = {};
 
-const CustomForm = ({ buttonStyle, fields, formMethod, wrapperClass, ...rest }: Props) => {
+const CustomForm = ({
+  buttonStyle,
+  fields,
+  formMethod,
+  wrapperClass,
+  ...rest
+}: Props) => {
   const formProps = {};
 
   if (formMethod) {
@@ -18,11 +24,14 @@ const CustomForm = ({ buttonStyle, fields, formMethod, wrapperClass, ...rest }: 
   }
 
   return (
-    <Formik {...rest}>
+    <Formik enableReinitialize {...rest}>
       {({ isSubmitting }) => (
-        <Form className={clsx('form relative', {
-          [wrapperClass || '']: !!wrapperClass,
-        })} {...formMethod}>
+        <Form
+          className={clsx('form relative', {
+            [wrapperClass || '']: !!wrapperClass,
+          })}
+          {...formMethod}
+        >
           {fields.map(
             ({
               id,
@@ -40,8 +49,10 @@ const CustomForm = ({ buttonStyle, fields, formMethod, wrapperClass, ...rest }: 
                     [key]: rest[key],
                   };
                 }
-                return acc
+                return acc;
               }, {});
+
+              console.log(fieldProps);
 
               if (component === 'TextArea') {
                 return (
@@ -79,9 +90,14 @@ const CustomForm = ({ buttonStyle, fields, formMethod, wrapperClass, ...rest }: 
               }
             },
           )}
-          <Button className={clsx({
-            [buttonStyle || '']: !!buttonStyle,
-          })} variant="primary" as="button" type="submit">
+          <Button
+            className={clsx({
+              [buttonStyle || '']: !!buttonStyle,
+            })}
+            variant="primary"
+            as="button"
+            type="submit"
+          >
             {isSubmitting ? 'Please wait...' : 'Submit'}
           </Button>
         </Form>

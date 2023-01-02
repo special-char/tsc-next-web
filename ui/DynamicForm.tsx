@@ -17,7 +17,13 @@ type Props = {
   wrapperClass?: string;
 };
 
-const DynamicForm = ({ fields, submitUrl, formMethod, wrapperClass, buttonStyle }: Props) => {
+const DynamicForm = ({
+  fields,
+  submitUrl,
+  formMethod,
+  wrapperClass,
+  buttonStyle,
+}: Props) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const initialValues = useMemo(
@@ -55,6 +61,8 @@ const DynamicForm = ({ fields, submitUrl, formMethod, wrapperClass, buttonStyle 
     }
   };
 
+  console.log(initialValues);
+
   return (
     <>
       {isSubmitted ? (
@@ -62,7 +70,8 @@ const DynamicForm = ({ fields, submitUrl, formMethod, wrapperClass, buttonStyle 
           <div className="newsletter__subscribed">
             Your message has been submitted.
             <br />
-            We will get back to you within 1-2 working days (within 10 a.m. to 6 p.m. IST).
+            We will get back to you within 1-2 working days (within 10 a.m. to 6
+            p.m. IST).
           </div>
         </div>
       ) : (

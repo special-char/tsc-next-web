@@ -98,6 +98,7 @@ export default async function Page({ params }: PageProps) {
                   alt={`${alternativeText}`}
                   className="brightness-50"
                   fill
+                  priority
                 />
               )}
               {/* <div className="main__left-section__preview__body">
