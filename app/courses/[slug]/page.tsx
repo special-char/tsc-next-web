@@ -6,10 +6,11 @@ import md from 'markdown-it';
 import Price from './priceCard';
 import ChipNavigation from '@/ui/ChipNavigation';
 import { getCourseDetails } from '@/lib/getCourseDetails';
-import { Course, CourseEntity, UploadFile } from 'types/types';
+import { Course, CourseEntity, Form, UploadFile } from 'types/types';
 import TestimonialCard from '@/ui/TestimonialCard';
 import Accordian, { AccordianType } from '@/ui/Accordian';
 import Link from 'next/link';
+import { getFormDetails } from '@/lib/getFormDetails';
 
 const chipNavData = [
   {
@@ -43,6 +44,7 @@ export type PageProps = {
 
 export default async function Page({ params }: PageProps) {
   const coursesData = await getCourseDetails(params.slug);
+
   const [{ attributes }] = coursesData.data.courses.data as CourseEntity[];
 
   const {
@@ -73,20 +75,6 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <>
-      <dialog
-        id="MegaDialog"
-        className="fixed inset-0 z-50 rounded-2xl shadow-base backdrop:bg-primary"
-        open
-        inert={true}
-        loading
-        modal-mode="mega"
-      >
-        <header></header>
-        <form method="dialog">
-          <h1>Hello</h1>
-        </form>
-        <footer></footer>
-      </dialog>
       <section id="individualcourse" className="individualcourse">
         <div className="individualcourse__content">
           <div className="individualcourse__content__bg"></div>
@@ -173,9 +161,7 @@ export default async function Page({ params }: PageProps) {
             )}
           </div>
           <div className="sticky top-0 hidden self-start lg:block">
-            <div className="individualcourse__right-section">
-              <Price data={attributes} />
-            </div>
+            <Price data={attributes} />
           </div>
         </div>
         {/* {open && (

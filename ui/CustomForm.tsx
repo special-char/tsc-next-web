@@ -6,10 +6,11 @@ import Button from './Button';
 import checkValidation from '@/lib/validation';
 import TextInput from './TextInput';
 import TextArea from './TextArea';
+import clsx from 'clsx';
 
 type Props = {};
 
-const CustomForm = ({ buttonStyle, fields, formMethod, ...rest }: Props) => {
+const CustomForm = ({ buttonStyle, fields, formMethod, wrapperClass, ...rest }: Props) => {
   const formProps = {};
 
   if (formMethod) {
@@ -19,7 +20,9 @@ const CustomForm = ({ buttonStyle, fields, formMethod, ...rest }: Props) => {
   return (
     <Formik {...rest}>
       {({ isSubmitting }) => (
-        <Form className="form relative" {...formMethod}>
+        <Form className={clsx('form relative', {
+          [wrapperClass || '']: !!wrapperClass,
+        })} {...formMethod}>
           {fields.map(
             ({
               id,
@@ -30,13 +33,23 @@ const CustomForm = ({ buttonStyle, fields, formMethod, ...rest }: Props) => {
               validation,
               ...rest
             }) => {
+              const fieldProps = Object.keys(rest).reduce((acc, key) => {
+                if (rest[key]) {
+                  return {
+                    ...acc,
+                    [key]: rest[key],
+                  };
+                }
+                return acc
+              }, {});
+
               if (component === 'TextArea') {
                 return (
                   <Field
                     key={id}
                     id={field_id}
                     component={TextArea}
-                    {...rest}
+                    {...fieldProps}
                   />
                 );
               } else {
@@ -60,13 +73,15 @@ const CustomForm = ({ buttonStyle, fields, formMethod, ...rest }: Props) => {
                       }
                       return message;
                     }}
-                    {...rest}
+                    {...fieldProps}
                   />
                 );
               }
             },
           )}
-          <Button className="" variant="primary" as="button" type="submit">
+          <Button className={clsx({
+            [buttonStyle || '']: !!buttonStyle,
+          })} variant="primary" as="button" type="submit">
             {isSubmitting ? 'Please wait...' : 'Submit'}
           </Button>
         </Form>
