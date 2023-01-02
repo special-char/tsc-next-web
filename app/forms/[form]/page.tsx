@@ -15,7 +15,7 @@ const Page = async ({ params }: Props) => {
     notFound();
   }
 
-  const fields = formDetails.data.data?.attributes?.fields;
+  const fields = formDetails.data?.attributes?.fields;
   return (
     <>
       <section id="register" className="register">

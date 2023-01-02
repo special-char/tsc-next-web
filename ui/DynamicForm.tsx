@@ -13,9 +13,11 @@ const wait = (time: number) =>
 type Props = {
   fields?: FormFieldsDynamicZone[];
   submitUrl: string;
+  formMethod?: string;
+  wrapperClass?: string;
 };
 
-const DynamicForm = ({ fields, submitUrl }: Props) => {
+const DynamicForm = ({ fields, submitUrl, formMethod, wrapperClass, buttonStyle }: Props) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const initialValues = useMemo(
@@ -45,6 +47,7 @@ const DynamicForm = ({ fields, submitUrl }: Props) => {
           },
         },
       );
+      console.log(values);
       setIsSubmitted(true);
       actions.resetForm();
     } catch (error) {
@@ -59,15 +62,17 @@ const DynamicForm = ({ fields, submitUrl }: Props) => {
           <div className="newsletter__subscribed">
             Your message has been submitted.
             <br />
-            We will get back to you within 24-48 hours
+            We will get back to you within 1-2 working days (within 10 a.m. to 6 p.m. IST).
           </div>
         </div>
       ) : (
         <CustomForm
-          buttonStyle="register__btn"
           initialValues={initialValues}
           onSubmit={onSubmit}
           fields={fields}
+          formMethod={formMethod}
+          wrapperClass={wrapperClass}
+          buttonStyle={buttonStyle}
         />
       )}
     </>

@@ -10,6 +10,7 @@ import { Course, CourseEntity, UploadFile } from 'types/types';
 import TestimonialCard from '@/ui/TestimonialCard';
 import Accordian, { AccordianType } from '@/ui/Accordian';
 import Link from 'next/link';
+import DialogForm from '@/ui/DialogForm';
 
 const chipNavData = [
   {
@@ -73,20 +74,7 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <>
-      <dialog
-        id="MegaDialog"
-        className="fixed inset-0 z-50 rounded-2xl shadow-base backdrop:bg-primary"
-        open
-        inert={true}
-        loading
-        modal-mode="mega"
-      >
-        <header></header>
-        <form method="dialog">
-          <h1>Hello</h1>
-        </form>
-        <footer></footer>
-      </dialog>
+      <DialogForm open={false} />
       <section id="individualcourse" className="individualcourse">
         <div className="individualcourse__content">
           <div className="individualcourse__content__bg"></div>
