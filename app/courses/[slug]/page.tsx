@@ -6,11 +6,11 @@ import md from 'markdown-it';
 import Price from './priceCard';
 import ChipNavigation from '@/ui/ChipNavigation';
 import { getCourseDetails } from '@/lib/getCourseDetails';
-import { Course, CourseEntity, UploadFile } from 'types/types';
+import { Course, CourseEntity, Form, UploadFile } from 'types/types';
 import TestimonialCard from '@/ui/TestimonialCard';
 import Accordian, { AccordianType } from '@/ui/Accordian';
 import Link from 'next/link';
-import DialogForm from '@/ui/DialogForm';
+import { getFormDetails } from '@/lib/getFormDetails';
 
 const chipNavData = [
   {
@@ -44,6 +44,10 @@ export type PageProps = {
 
 export default async function Page({ params }: PageProps) {
   const coursesData = await getCourseDetails(params.slug);
+  const res = await getFormDetails(2);
+
+  const { fields, submitURL } = res.data?.attributes as Form;
+
   const [{ attributes }] = coursesData.data.courses.data as CourseEntity[];
 
   const {
@@ -74,7 +78,6 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <>
-      <DialogForm open={false} />
       <section id="individualcourse" className="individualcourse">
         <div className="individualcourse__content">
           <div className="individualcourse__content__bg"></div>
@@ -112,7 +115,7 @@ export default async function Page({ params }: PageProps) {
               </div> */}
             </div>
             <div className="lg:hidden">
-              <Price data={attributes} />
+              <Price data={attributes} fields={fields} submitURL={submitURL} />
             </div>
             <div className="main__left-section__course-navigation">
               <ChipNavigation chipData={chipNavData} />
@@ -162,7 +165,7 @@ export default async function Page({ params }: PageProps) {
           </div>
           <div className="sticky top-0 hidden self-start lg:block">
             <div className="individualcourse__right-section">
-              <Price data={attributes} />
+              <Price data={attributes} fields={fields} submitURL={submitURL} />
             </div>
           </div>
         </div>

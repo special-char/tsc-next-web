@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  html:has(dialog[open][modal-mode='mega']) {
-    overflow: hidden;
-  }
-
   body {
     @apply min-h-screen font-sans text-lg text-neutral-600;
 
