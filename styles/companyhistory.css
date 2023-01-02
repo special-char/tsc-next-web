@@ -8,9 +8,6 @@
   .companyHistory__leftSection {
     @apply top-0 flex flex-col items-stretch md:sticky md:mr-8 md:items-start;
   }
-  .companyHistory__h2 {
-    @apply text-3xl text-primary md:text-6xl;
-  }
 
   .companyHistory__info {
     @apply mt-12 grid gap-8 border-l-2 border-neutral-300 md:mt-1 md:grid-cols-2 md:gap-12;

@@ -5,6 +5,17 @@ import Price from '@/ui/Price';
 import CoursesPrice from '@/ui/CoursesPrice';
 import { CourseCourseFeaturesArgs } from 'types/types';
 
+        <div className="btn btn--secondary btn--small font-cursive">
+          Register
+        </div>
+        <div className="btn btn--primary btn--small font-cursive">
+          Download Brochure
+        </div>
+      </div>
+      <CoursesPriceSkeleton />
+    </aside>
+  );
+};
 type Props = {
   data: any;
 };

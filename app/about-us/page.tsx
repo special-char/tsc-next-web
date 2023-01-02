@@ -13,32 +13,38 @@ const page = (props: Props) => {
     <>
       <Suspense fallback={<PageHeaderSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
-        <PageHeader
+        <PageHeaderSkeleton />
+        {/* <PageHeader
           pageName="about-page"
           className="customClass"
           circleRight="bg-primary"
           circleLeft="bg-secondary3"
-        />
+        /> */}
       </Suspense>
       <Suspense fallback={<AchievementsSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
-        <Achievements />
+        <AchievementsSkeleton />
+        {/* <Achievements /> */}
       </Suspense>
       <Suspense fallback={<AboutheaderSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
-        <Aboutheader />
+        <AboutheaderSkeleton />
+        {/* <Aboutheader /> */}
       </Suspense>
       <Suspense fallback={<OurWorksSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
-        <OurWorks />
+        <OurWorksSkeleton />
+        {/* <OurWorks /> */}
       </Suspense>
       <Suspense fallback={<CompanyHistorySkeleton />}>
         {/* @ts-expect-error Async Server Component */}
-        <CompanyHistory />
+        <CompanyHistorySkeleton />
+        {/* <CompanyHistory /> */}
       </Suspense>
       <Suspense fallback={<OurOfficeSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
-        <OurOffice />
+        <OurOfficeSkeleton />
+        {/* <OurOffice /> */}
       </Suspense>
     </>
   );

@@ -3,7 +3,7 @@ import DesignSvg from '@/public/icons/design.svg';
 import Image from 'next/image';
 import PlayVideo from '@/public/icons/playVideo.svg';
 import md from 'markdown-it';
-import Price from './priceCard';
+import Price, { PriceCardSkeleton } from './priceCard';
 import ChipNavigation from '@/ui/ChipNavigation';
 import { getCourseDetails } from '@/lib/getCourseDetails';
 import { Course, CourseEntity, UploadFile } from 'types/types';
@@ -11,6 +11,7 @@ import { use } from 'react';
 import TestimonialCard from '@/ui/TestimonialCard';
 import Accordian, { AccordianType } from '@/ui/Accordian';
 import Link from 'next/link';
+import PriceCard from './priceCard';
 
 const chipNavData = [
   {
@@ -125,14 +126,12 @@ export default async function Page({ params }: PageProps) {
           </section>
           <hr className="my-8 md:my-12 lg:my-16" />
           <section id="topic">
-            <h2 className="text-3xl md:text-6xl">What will you learn</h2>
+            <h2>What will you learn</h2>
             <Accordian data={accordianData} />
           </section>
           <hr className="my-8 md:my-12 lg:my-16" />
           <section id="result">
-            <h2 className="text-3xl md:text-6xl">
-              Results after course completion
-            </h2>
+            <h2>Results after course completion</h2>
             <div
               dangerouslySetInnerHTML={{
                 __html: md().render(complitionResult || ''),
@@ -164,36 +163,6 @@ export default async function Page({ params }: PageProps) {
           </div>
         </div>
       </div>
-      {/* {open && (
-        <div
-          style={{
-            backgroundColor: 'rgba(0,0,0,0.6)',
-          }}
-          className="fixed top-0 z-50 grid h-screen w-screen place-content-center bg-secondary2"
-        >
-          <div className="mb-4 flex w-full justify-end px-container ">
-            <div
-              className="close-btn grid h-8 w-8 place-content-center rounded-full bg-neutral-100 "
-              role={'button'}
-              onClick={() => setOpen(false)}
-            >
-              <CloseIcon />
-            </div>
-          </div>
-          <div className="video">
-            <iframe
-              className="absolute top-0 left-0 px-container"
-              height={'100%'}
-              width={'100%'}
-              src="https://www.youtube.com/embed/cw21m2S5PXQ"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-      )} */}
     </section>
   );
 }

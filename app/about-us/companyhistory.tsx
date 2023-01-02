@@ -4,35 +4,25 @@ import '@/styles/companyhistory.css';
 import Button from '@/ui/Button';
 import { getAboutHistory } from '@/lib/getAboutHistory';
 import { AboutHistory } from 'types/types';
+
 export const CompanyHistorySkeleton = () => {
   return (
     <section id="companyHistory" className="companyHistory">
       <div className="companyHistory__section animate-pulse">
         <div>
           <div className="companyHistory__leftSection">
-            <h2 className="font-cursive text-6xl text-primary">
-              Our company history
-            </h2>
+            <h2 className="font-cursive  text-primary">Our company history</h2>
             <p className="font-cursive text-neutral-500">
               Presenting Academy, the tech school of the future. We teach you
               the right skills to be prepared for tomorrow.
             </p>{' '}
-            <div>
-              <Button
-                as={Link}
-                href="/"
-                variant="primary"
-                className="font-cursive"
-              >
-                JOIN OUR TEAM
-              </Button>
-            </div>
+            <div className="btn btn--primary font-cursive">JOIN OUR TEAM</div>
           </div>
         </div>
 
         <div className="companyHistory__info">
           {[1, 2, 3].map((val) => (
-            <div className="companyHistory__RightSection">
+            <div key={val} className="companyHistory__RightSection">
               <div className="companyHistory__ChipSection chip chip--white w-1/4 lg:w-[20%]">
                 <span className="companyHistory__Date font-cursive">2023</span>
               </div>
@@ -63,7 +53,7 @@ const CompanyHistory = async () => {
       <div className="companyHistory__section">
         <div>
           <div className="companyHistory__leftSection">
-            <h2 className="companyHistory__h2">{title}</h2>
+            <h2 className="text-primary">{title}</h2>
             <p className="text-neutral-500">{description}</p>
             <div>
               {button?.map((x) => (

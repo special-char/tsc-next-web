@@ -12,11 +12,11 @@ export const AboutheaderSkeleton = () => {
       <div className="aboutheader animate-pulse">
         {[1, 2].map((x) => (
           <>
-            <div className="aboutheader__image bg-neutral-300">
+            <div key={x} className="aboutheader__image bg-neutral-300">
               <div></div>
             </div>
             <div className="aboutheader__title">
-              <h2 className=" font-cursive text-3xl md:text-6xl">
+              <h2 className=" font-cursive">
                 The mission behind Education platform
               </h2>
               <p className="font-cursive lg:text-lg">
@@ -52,7 +52,7 @@ const Aboutheader = async (props: Props) => {
             ?.attributes as UploadFile;
           return (
             <>
-              <div className="aboutheader__image">
+              <div key={x?.id} className="aboutheader__image">
                 <Image
                   src={`${url}?tr=ar-1-1`}
                   alt={`${alternativeText}`}
@@ -63,7 +63,7 @@ const Aboutheader = async (props: Props) => {
                 />
               </div>
               <div className="aboutheader__title">
-                <h2 className=" text-3xl md:text-6xl">{x?.title}</h2>
+                <h2>{x?.title}</h2>
                 <p className="m-0 lg:text-lg">{x?.description}</p>
               </div>
             </>

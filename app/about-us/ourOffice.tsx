@@ -64,10 +64,9 @@ export const OurOfficeSkeleton = () => {
                     </div>
                   </address>
                 </div>
-                <div className="absolute -right-14 -bottom-20 h-32 w-32 rounded-full bg-primary"></div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
         <div className="ourOffice__map -z-10 min-h-[300px] rounded-2xl bg-neutral-300">
           <div></div>
@@ -100,7 +99,10 @@ const OurOffice = async (props: Props) => {
             const { url, alternativeText } = val?.icon?.data
               ?.attributes as UploadFile;
             return (
-              <div className="ourOffice__card relative overflow-hidden">
+              <div
+                key={val?.id}
+                className="ourOffice__card relative overflow-hidden"
+              >
                 <div className="ourOffice__card__content">
                   <div className="ourOffice__card__image ">
                     <Image src={url} alt={`${alternativeText}`} fill />
