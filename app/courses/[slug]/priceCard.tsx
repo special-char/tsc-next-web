@@ -17,9 +17,9 @@ const PriceCard = ({ data, fields, submitURL }: Props) => {
     <>
       <dialog
         open={isOpen}
-        className="fixed z-50 h-screen w-screen rounded-lg bg-transparent"
+        className="fixed inset-0 z-50 h-screen w-screen rounded-lg bg-neutral-800 bg-opacity-60 shadow-base"
       >
-        <div className="top-10 m-auto max-w-5xl self-center rounded-3xl bg-neutral-100 p-10">
+        <div className="top-10 m-auto max-w-5xl rounded-3xl bg-neutral-100 p-10">
           <DynamicForm
             fields={fields}
             submitUrl={submitURL}

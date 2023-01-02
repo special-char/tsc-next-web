@@ -164,9 +164,7 @@ export default async function Page({ params }: PageProps) {
             )}
           </div>
           <div className="sticky top-0 hidden self-start lg:block">
-            <div className="individualcourse__right-section">
-              <Price data={attributes} fields={fields} submitURL={submitURL} />
-            </div>
+            <Price data={attributes} fields={fields} submitURL={submitURL} />
           </div>
         </div>
         {/* {open && (
