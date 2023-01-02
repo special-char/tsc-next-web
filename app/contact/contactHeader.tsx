@@ -1,3 +1,15 @@
+export const ContactHeaderSkeleton = () => {
+  return (
+    <>
+      <h1 className="contact__title font-cursive">Get in touch!</h1>
+      <p className="contact__desc font-cursive">
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+        aliquip commodo consequat
+      </p>
+    </>
+  );
+};
+
 type Props = {};
 
 const ContactHeader = (props: Props) => {

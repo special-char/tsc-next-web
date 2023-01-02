@@ -4,8 +4,29 @@ import PhoneSvg from '@/public/icons/phone.svg';
 import AddressSvg from '@/public/icons/address.svg';
 import { getContactDetail } from '@/lib/getContactDetail';
 import { ContactDetail } from 'types/types';
-import ContactHeader from 'app/contact/contactHeader';
+import ContactHeader, {
+  ContactHeaderSkeleton,
+} from 'app/contact/contactHeader';
 import '@/styles/connect.css';
+import { ContactInfoSkeleton } from 'app/contact/contactInfo';
+
+export const PageSkeleton = () => {
+  return (
+    <section id="connecting" className="connecting animate-pulse">
+      <div className="connecting__flow">
+        <ContactHeaderSkeleton />
+        <div className="connecting__section">
+          <div className="connecting__body grid grid-cols-1 gap-8 lg:grid-cols-3">
+            <ContactInfoSkeleton />
+          </div>
+        </div>
+      </div>
+      <div className="connecting__blucircle"></div>
+      <div className="connecting__yellowcircle"></div>
+      <div className="connecting__orangecircle "></div>
+    </section>
+  );
+};
 
 type Props = {};
 

@@ -5,6 +5,24 @@ import { getContactDetail } from '@/lib/getContactDetail';
 import { ContactDetail } from 'types/types';
 import { use } from 'react';
 
+export const ContactInfoSkeleton = () => {
+  return (
+    <div className="contact__cards animate-pulse">
+      {[1, 2, 3].map((cardData) => (
+        <div key={cardData} className="contact__card_details">
+          <div className="contact__card_info ">
+            <div className="contact__svg">
+              <div className="h-8 w-8 rounded-full bg-neutral-300"></div>
+            </div>
+            <h3 className="mt-4 font-cursive">phone</h3>
+            <p className="px-4 font-cursive">Phone Number</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
 type Props = {};
 
 const ContactInfo = (props: Props) => {
