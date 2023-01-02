@@ -44,9 +44,6 @@ export type PageProps = {
 
 export default async function Page({ params }: PageProps) {
   const coursesData = await getCourseDetails(params.slug);
-  const res = await getFormDetails(2);
-
-  const { fields, submitURL } = res.data?.attributes as Form;
 
   const [{ attributes }] = coursesData.data.courses.data as CourseEntity[];
 
@@ -115,7 +112,7 @@ export default async function Page({ params }: PageProps) {
               </div> */}
             </div>
             <div className="lg:hidden">
-              <Price data={attributes} fields={fields} submitURL={submitURL} />
+              <Price data={attributes} />
             </div>
             <div className="main__left-section__course-navigation">
               <ChipNavigation chipData={chipNavData} />
@@ -164,7 +161,7 @@ export default async function Page({ params }: PageProps) {
             )}
           </div>
           <div className="sticky top-0 hidden self-start lg:block">
-            <Price data={attributes} fields={fields} submitURL={submitURL} />
+            <Price data={attributes} />
           </div>
         </div>
         {/* {open && (
