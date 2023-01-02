@@ -13,7 +13,9 @@ const Register = ({}: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const loadformData = useCallback(async () => {
-    const res = await getFormDetails(2);
+    const res = await getFormDetails(1);
+    console.log('res', res.data?.attributes?.fields);
+
     const { fields, submitURL } = res.data?.attributes as Form;
 
     if (fields && submitURL) {
@@ -36,7 +38,7 @@ const Register = ({}: Props) => {
       </button>
       <dialog
         open={isOpen}
-        className="fixed inset-0 z-50 h-screen w-screen rounded-lg bg-neutral-800 bg-opacity-60 shadow-base"
+        className="fixed inset-0 z-50 h-screen w-screen overflow-y-auto rounded-lg bg-neutral-800 bg-opacity-60 shadow-base"
       >
         <div className="top-10 m-auto grid max-w-5xl rounded-3xl bg-neutral-100 p-10">
           <DynamicForm
