@@ -1,7 +1,5 @@
 .hire_card {
   @apply flex w-full flex-col items-center gap-5 overflow-hidden rounded-2xl bg-neutral-200 md:gap-4;
-  .card__body {
-  }
   &__img {
     @apply relative m-0 aspect-h-image w-full;
 
@@ -14,7 +12,7 @@
   }
 
   &__body {
-    @apply px-8 pb-8;
+    @apply flex w-full flex-col items-start px-8 pb-8;
   }
 
   &__footer {

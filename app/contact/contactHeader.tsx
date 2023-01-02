@@ -1,25 +1,21 @@
-export const ContactHeaderSkeleton = () => {
-  return (
-    <>
-      <h1 className="contact__title font-cursive">Get in touch!</h1>
-      <p className="contact__desc font-cursive">
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-        aliquip commodo consequat
-      </p>
-    </>
-  );
-};
+import { getBannerHeaderData } from '@/lib/getBannerHeader';
+import { ComponentCommonHeaders } from 'types/types';
 
 type Props = {};
 
-const ContactHeader = (props: Props) => {
+const ContactHeader = async (props: Props) => {
+  const bannerHeader = await getBannerHeaderData('contact-page');
+
+  if (!bannerHeader) return null;
+
+  const bannerHeaderData =
+    bannerHeader.data.bannerHeader.data?.attributes?.bannerHeader;
+
+  const [{ title, description }] = bannerHeaderData as ComponentCommonHeaders[];
   return (
     <>
-      <h1 className="contact__title">Get in touch!</h1>
-      <p className="contact__desc">
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-        aliquip commodo consequat
-      </p>
+      <h1 className="contact__title">{title}</h1>
+      <p className="contact__desc">{description}</p>
     </>
   );
 };

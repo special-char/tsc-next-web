@@ -17,7 +17,7 @@ export const FeaturesSkeleton = () => {
   return (
     <section id="features" className="features animate-pulse">
       <h2 className="features__title font-cursive">All Courses</h2>
-      <div className="features__body font-cursive">
+      <div className="font-cursive">
         <ChipNavigation
           chipData={[
             {
