@@ -2,7 +2,6 @@
 
 import React from 'react';
 import '@/styles/features.css';
-import clsx from 'clsx';
 import ChipNavigation from './ChipNavigation';
 import Link from 'next/link';
 type Props = {
@@ -18,28 +17,28 @@ export const FeaturesSkeleton = () => {
   return (
     <section id="features" className="features animate-pulse">
       <h2 className="features__title font-cursive">All Courses</h2>
-      <div className="features__body font-cursive">
+      <div className="font-cursive">
         <ChipNavigation
           chipData={[
             {
               href: '#about',
               children: 'About',
-              as: Link
+              as: Link,
             },
             {
               href: '#topic',
               children: 'Results',
-              as: Link
+              as: Link,
             },
             {
               href: '#result',
               children: 'Topics',
-              as: Link
+              as: Link,
             },
             {
               href: '#review',
               children: 'Reviews',
-              as: Link
+              as: Link,
             },
           ]}
         />

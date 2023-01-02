@@ -1,24 +1,14 @@
 import PageHeader, { PageHeaderSkeleton } from '@/ui/pageHeader';
-import React, { Suspense, use } from 'react';
+import React, { Suspense } from 'react';
 import OurWorks, { OurWorksSkeleton } from './ourWorks';
 import Achievements, { AchievementsSkeleton } from './achievements';
 import CompanyHistory, { CompanyHistorySkeleton } from './companyhistory';
 import OurOffice, { OurOfficeSkeleton } from './ourOffice';
 import Aboutheader, { AboutheaderSkeleton } from './aboutheader';
-import { getBannerHeaderData } from '@/lib/getBannerHeader';
 
 type Props = {};
 
-const page = async (props: Props) => {
-  const bannerHeader = await getBannerHeaderData('about-page');
-
-  if (!bannerHeader) return null;
-
-  const bannerHeaderData =
-    bannerHeader.data.bannerHeader.data?.attributes?.bannerHeader;
-
-  if (!bannerHeaderData) return null;
-
+const page = (props: Props) => {
   return (
     <>
       <Suspense fallback={<PageHeaderSkeleton />}>

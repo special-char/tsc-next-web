@@ -31,7 +31,6 @@ export const PerksSkeleton = () => {
           );
         })}
       </div>
-      <PinkSeparatorArrow />
     </section>
   );
 };

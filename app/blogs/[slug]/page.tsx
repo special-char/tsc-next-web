@@ -30,12 +30,16 @@ const Page = ({ params }: PageProps) => {
         <div className="wrapper__body__image">
           <Image
             alt="It is the image of the blog post that you are viewing"
-            src={bannerImage.data.attributes.url}
+            src={`${bannerImage.data.attributes.url}?tr=ar-16-9`}
             fill
+            sizes="(min-width: 1024px) 100vw,
+            600px"
           />
         </div>
         <div className="wrapper__body__content">
-          <h1>{title}</h1>
+          <h1 className=" pt-10 text-5xl md:pt-0 md:text-8xl lg:pt-0 lg:text-9xl">
+            {title}
+          </h1>
           <div className="wrapper__body__content__author-info">
             <ActionBar data={author} />
             <span className="about-blog">

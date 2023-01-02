@@ -26,7 +26,7 @@
   }
 
   &__desc {
-    @apply text-neutral-700;
+    @apply h-full text-neutral-700 line-clamp-3;
   }
 
   &__action {

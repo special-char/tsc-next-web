@@ -1,9 +1,9 @@
 import React from 'react';
 import '@/styles/pageHeader.css';
 import clsx from 'clsx';
-import SeparatorArray from './SeparatorArray';
 import { getBannerHeaderData } from '@/lib/getBannerHeader';
 import { ComponentCommonHeaders } from 'types/types';
+import SeparatorArray from './SeparatorArray';
 
 export const PageHeaderSkeleton = () => {
   return (
@@ -24,7 +24,6 @@ export const PageHeaderSkeleton = () => {
         <div className="circle__right"></div>
         <div className="circle__left"></div>
       </div>
-      <SeparatorArray />
     </section>
   );
 };
@@ -34,6 +33,7 @@ type Props = {
   pageName: string;
   circleRight: any;
   circleLeft: any;
+  hasSeprator?: boolean;
 };
 
 const PageHeader = async ({
@@ -41,6 +41,7 @@ const PageHeader = async ({
   pageName,
   circleRight,
   circleLeft,
+  hasSeprator = true,
 }: Props) => {
   const bannerHeader = await getBannerHeaderData(pageName);
 
@@ -67,7 +68,7 @@ const PageHeader = async ({
           className={clsx('circle__left', { [circleRight]: !circleLeft })}
         ></div>
       </div>
-      <SeparatorArray />
+      {hasSeprator && <SeparatorArray />}
     </section>
   );
 };

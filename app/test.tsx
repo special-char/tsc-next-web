@@ -1,24 +1,4 @@
-// import { useEffect, useState } from "react";
-// import "./styles.css";
-
 import { useCallback, useEffect, useReducer } from 'react';
-
-// export default function App() {
-//   const [data, setData] = useState();
-
-//   const url = "https://jsonplaceholder.typicode.com/posts";
-
-//   if (!data) {
-//     setData(useFetch(url));
-//   }
-
-//   return (
-//     <div className="App">
-//       <h1>User posts</h1>
-//       <h2>Render the POST list</h2>
-//     </div>
-//   );
-// }
 
 const initialState = {
   isLoading: false,

@@ -8,7 +8,7 @@ type Props = { label: string } & React.DetailedHTMLProps<
 
 const TextArea = ({
   field,
-  form: { touched, errors }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
+  form: { touched, errors },
   label,
   wrapperClass,
   className,

@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React from 'react';
 import '@/styles/faq.css';
 import Accordian, { AccordianType } from '@/ui/Accordian';
 import { getFaqData } from '@/lib/getFaqData';

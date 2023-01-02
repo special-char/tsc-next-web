@@ -3,7 +3,7 @@ import BlogSubscribe, { BlogSubscribeSkeleton } from './blogSubscribe';
 import PageHeader, { PageHeaderSkeleton } from '@/ui/pageHeader';
 import { Suspense, use } from 'react';
 import FeatureBlog, { FeatureBlogsSkeleton } from '@/ui/FeatureBlog';
-import AllBlogs, { AllBlogsSkeleton } from './allBlogs';
+import AllBlogs from './allBlogs';
 import { getHomeBlogData } from '@/lib/getHomeBlog';
 import { PriceCardSkeleton } from 'app/courses/[slug]/priceCard';
 
@@ -31,7 +31,6 @@ export default function Page() {
           <FeatureBlog />
         </Suspense>
       </section>
-
       <Suspense fallback={<BlogSubscribeSkeleton />}>
         <BlogSubscribe />
       </Suspense>

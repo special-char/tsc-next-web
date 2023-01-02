@@ -32,6 +32,13 @@ export const getCourseDetails: CoursesType = async (slug: string) => {
                     }
                   }
                 }
+                brochure{
+                  data{
+                    attributes{
+                      url
+                    }
+                  }
+                }
                 aboutCourse
                 curriculam {
                   id
@@ -39,6 +46,18 @@ export const getCourseDetails: CoursesType = async (slug: string) => {
                   content
                 }
                 complitionResult
+                courseFeatures{
+                  id
+                  key
+                  value
+                  icons{
+                    data{
+                      attributes{
+                        url
+                      }
+                    }
+                  }
+                }
                 price {
                   price
                   currency
