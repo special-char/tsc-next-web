@@ -1,3 +1,5 @@
+'use client';
+
 import clsx from 'clsx';
 import { Field, Form, Formik } from 'formik';
 import { useState } from 'react';

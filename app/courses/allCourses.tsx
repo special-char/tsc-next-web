@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Features from '../../ui/features';
 import CourseCard from '@/ui/CourseCard';
 import { CourseEntity } from 'types/types';
-
 type Props = {
   courses: CourseEntity[];
   category?: string;
@@ -61,7 +60,7 @@ const AllCourses = ({ courses, category }: Props) => {
             if (
               selectedCategory === 'All' ||
               data.attributes?.category?.data?.attributes?.title ===
-                selectedCategory
+              selectedCategory
             ) {
               return <CourseCard key={data.id} course={data} />;
             }

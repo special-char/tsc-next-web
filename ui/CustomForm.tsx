@@ -9,11 +9,17 @@ import TextArea from './TextArea';
 
 type Props = {};
 
-const CustomForm = ({ buttonStyle, fields, ...rest }: Props) => {
+const CustomForm = ({ buttonStyle, fields, formMethod, ...rest }: Props) => {
+  const formProps = {};
+
+  if (formMethod) {
+    formProps.method = formMethod;
+  }
+
   return (
     <Formik {...rest}>
       {({ isSubmitting }) => (
-        <Form className="form relative">
+        <Form className="form relative" {...formMethod}>
           {fields.map(
             ({
               id,

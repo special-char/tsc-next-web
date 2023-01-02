@@ -1,5 +1,4 @@
 import { CourseEntityResponseCollection } from 'types/types';
-import axiosInstance from './axiosInstance';
 
 export type CoursesType = (category?: string) => Promise<{
   data: {
