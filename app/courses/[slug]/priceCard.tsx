@@ -8,14 +8,14 @@ type Props = {
   data: any;
 };
 
-const PriceCard = ({ data }: Props) => {
+const PriceCard = ({ data, additionalField }: Props) => {
   const { price, courseFeatures, brochure } = data;
   return (
     <>
       <aside className="price">
         <div className="price__body">
           <Price price={price} />
-          <Register />
+          <Register formId={2} btnText='register' additionalField={additionalField} />
           <Link
             href={brochure?.data.attributes.url}
             className="btn btn--primary btn--small"
