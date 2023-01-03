@@ -8,6 +8,7 @@ import '@/styles/blogPost.css';
 import Button from '@/ui/Button';
 import { getBlogDetails } from '@/lib/getBlogDetails';
 import BlogCard from '@/ui/BlogCard';
+import { notFound } from 'next/navigation';
 
 export type PageProps = {
   params: {
@@ -18,10 +19,15 @@ export type PageProps = {
 
 const Page = ({ params }: PageProps) => {
   const blogData = use(getBlogDetails(params.slug));
+  if (!blogData.data.individualBlog.data) {
+    notFound();
+  }
   const [{ attributes }] = blogData.data.individualBlog.data;
-  const latestPosts = blogData.data.latestPost.data;
+
   const { title, bannerImage, readTime, author, category, content } =
     attributes;
+  const latestPosts = blogData.data.latestPost.data;
+
   return (
     <div className="wrapper">
       <div className="wrapper__header"></div>

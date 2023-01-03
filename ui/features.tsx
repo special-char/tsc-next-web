@@ -23,22 +23,18 @@ export const FeaturesSkeleton = () => {
             {
               href: '#about',
               children: 'About',
-              as: Link,
             },
             {
               href: '#topic',
               children: 'Results',
-              as: Link,
             },
             {
               href: '#result',
               children: 'Topics',
-              as: Link,
             },
             {
               href: '#review',
               children: 'Reviews',
-              as: Link,
             },
           ]}
         />

@@ -56,13 +56,15 @@ const Register = ({ formId, btnText, btnClass, additionalField }: Props) => {
             fields={fields}
             submitUrl={submitURL}
             formMethod="dialog"
-            buttonStyle={'col-span-full'}
             additionalField={additionalField}
           />
           <button
             type="button"
             onClick={() => setIsOpen(false)}
             className="btn btn--secondary"
+            style={{
+              gridRow: 'revert'
+            }}
           >
             Close
           </button>

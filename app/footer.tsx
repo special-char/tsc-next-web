@@ -81,13 +81,13 @@ const Footer = (props: Props) => {
             <Link
               key={val.id}
               href={val.url}
-              className="flex aspect-square w-12 items-stretch justify-center rounded-full bg-primary"
+              className="flex aspect-square w-10 items-stretch justify-center rounded-full bg-neutral-500 hover:bg-primary"
             >
               <Image
                 src={val.icon.data?.attributes?.url || ''}
                 alt="social media icon"
-                height={26}
-                width={26}
+                height={20}
+                width={20}
               />
             </Link>
           ))}
