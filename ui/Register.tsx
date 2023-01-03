@@ -1,56 +1,68 @@
 'use client';
 
 import { getFormDetails } from '@/lib/getFormDetails';
-import React, { useCallback, useEffect, useState } from 'react';
+import clsx from 'clsx';
+import React, { memo, useCallback, useEffect, useState } from 'react';
 import { Form, FormFieldsDynamicZone, Maybe } from 'types/types';
 import DynamicForm from './DynamicForm';
+import { usePathname } from 'next/navigation';
 
-type Props = {};
+type Props = {
+  formId: number;
+  btnText?: string;
+  btnClass?: string;
+};
 
-const Register = ({}: Props) => {
+const Register = ({ formId, btnText, btnClass, additionalField }: Props) => {
+
   const [fields, setFields] = useState<Maybe<FormFieldsDynamicZone>[]>([]);
   const [submitURL, setSubmitURL] = useState('');
   const [isOpen, setIsOpen] = useState(false);
 
-  const loadformData = useCallback(async () => {
-    const res = await getFormDetails(1);
-    console.log('res', res.data?.attributes?.fields);
+  const loadformData = useCallback(async (formId: number) => {
+    const res = await getFormDetails(formId);
+    // console.log('res', res.data?.attributes?.fields);
 
     const { fields, submitURL } = res.data?.attributes as Form;
-
     if (fields && submitURL) {
+
       setFields(fields);
       setSubmitURL(submitURL);
     }
   }, []);
 
   useEffect(() => {
-    loadformData();
+    loadformData(formId);
   }, []);
+
+
 
   return (
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="btn btn--secondary btn--small"
+        className={clsx("btn btn--small uppercase", {
+          [btnClass || 'btn--secondary']: !![btnClass]
+        })}
       >
-        Register
+        {btnText}
       </button>
       <dialog
         open={isOpen}
         className="fixed inset-0 z-50 h-screen w-screen overflow-y-auto rounded-lg bg-neutral-800 bg-opacity-60 shadow-base"
       >
-        <div className="top-10 m-auto grid max-w-5xl rounded-3xl bg-neutral-100 p-10">
+        <div className="top-10 gap-y-3 m-auto grid max-w-5xl rounded-3xl bg-neutral-100 p-10">
           <DynamicForm
             fields={fields}
             submitUrl={submitURL}
             formMethod="dialog"
             buttonStyle={'col-span-full'}
+            additionalField={additionalField}
           />
           <button
             type="button"
             onClick={() => setIsOpen(false)}
-            className="btn"
+            className="btn btn--secondary"
           >
             Close
           </button>
@@ -60,4 +72,4 @@ const Register = ({}: Props) => {
   );
 };
 
-export default Register;
+export default memo(Register);

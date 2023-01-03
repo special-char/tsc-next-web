@@ -23,6 +23,7 @@ const DynamicForm = ({
   formMethod,
   wrapperClass,
   buttonStyle,
+  additionalField
 }: Props) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -41,7 +42,7 @@ const DynamicForm = ({
         {
           method: 'POST',
           body: JSON.stringify({
-            data: values,
+            data: { ...values, ...(additionalField || {}) },
           }),
           headers: {
             'Content-Type': 'application/json',

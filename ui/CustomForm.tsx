@@ -52,8 +52,6 @@ const CustomForm = ({
                 return acc;
               }, {});
 
-              console.log(fieldProps);
-
               if (component === 'TextArea') {
                 return (
                   <Field
@@ -71,7 +69,7 @@ const CustomForm = ({
                     component={TextInput}
                     validate={(value) => {
                       let message = '';
-                      for (let i = 0; i < validation.length; i++) {
+                      for (let i = 0; i < validation?.length; i++) {
                         const { validationType, ...rest } = validation[i];
                         const res = checkValidation[validationType]({
                           value,
