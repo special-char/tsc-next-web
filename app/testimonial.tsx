@@ -35,7 +35,11 @@ export const TestimonialSkeleton = () => {
 const Testimonial = async () => {
   const testimonialsData = await getTestimonialData();
 
-  if (!testimonialsData) return null;
+  if (!testimonialsData) {
+    throw new Error(
+      'something went wrong! try refreshing the page or please come back later.',
+    );
+  }
 
   const testimonialsInfo = testimonialsData.data.testimonials.data;
   const { title, numbers, btn } = testimonialsData.data.homeTestimonial.data

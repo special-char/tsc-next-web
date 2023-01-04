@@ -25,7 +25,11 @@ export const CategorySkeleton = () => {
 const Category = async () => {
   const categoriesData = await getCategoriesData();
 
-  if (!categoriesData) return null;
+  if (!categoriesData) {
+    throw new Error(
+      'something went wrong! try refreshing the page or please come back later.',
+    );
+  }
 
   const categoriesInfo = categoriesData.data.categories.data;
 

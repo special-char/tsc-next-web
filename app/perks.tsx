@@ -38,7 +38,11 @@ export const PerksSkeleton = () => {
 const Perks = async () => {
   const perksData = await getPerksData();
 
-  if (!perksData) return null;
+  if (!perksData) {
+    throw new Error(
+      'something went wrong! try refreshing the page or please come back later.',
+    );
+  }
 
   const { benifits, title } = perksData.data.perk.data?.attributes as Perk;
 

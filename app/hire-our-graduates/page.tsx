@@ -8,8 +8,13 @@ type Props = {};
 
 const HireOurGraduates = async (props: Props) => {
   const ourGraduatesData = await getOurGraduatesData();
+  // if (!ourGraduatesData) {
+  //   notFound();
+  // }
   if (!ourGraduatesData) {
-    notFound();
+    throw new Error(
+      'something went wrong! try refreshing the page or please come back later.',
+    );
   }
   const graduates = ourGraduatesData.data.teams.data;
 

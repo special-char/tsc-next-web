@@ -53,7 +53,11 @@ export const CompanyHistorySkeleton = () => {
 const CompanyHistory = async () => {
   const aboutHistory = await getAboutHistory();
 
-  if (!aboutHistory) return null;
+  if (!aboutHistory) {
+    throw new Error(
+      'something went wrong! try refreshing the page or please come back later.',
+    );
+  }
 
   const { title, description, history, button } = aboutHistory.data.aboutHistory
     .data?.attributes as AboutHistory;

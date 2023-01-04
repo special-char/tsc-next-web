@@ -48,7 +48,11 @@ export const EducationSkeleton = () => {
 const Education = async () => {
   const educationData = await getEducationData();
 
-  if (!educationData) return null;
+  if (!educationData) {
+    throw new Error(
+      'something went wrong! try refreshing the page or please come back later.',
+    );
+  }
 
   const { title, description, details, image, button } = educationData.data
     .aboutTsc.data?.attributes as AboutTsc;

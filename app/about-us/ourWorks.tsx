@@ -48,7 +48,11 @@ export const OurWorksSkeleton = () => {
 const OurWorks = async () => {
   const aboutWorkValue = await getOurWorksData();
 
-  if (!aboutWorkValue) return null;
+  if (!aboutWorkValue) {
+    throw new Error(
+      'something went wrong! try refreshing the page or please come back later.',
+    );
+  }
 
   const { title, description, values } = aboutWorkValue.data?.aboutWorkValue
     .data?.attributes as AboutWorkValue;

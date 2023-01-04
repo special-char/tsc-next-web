@@ -11,7 +11,9 @@ const ContactInfo = (props: Props) => {
   const contactDetail = use(getContactDetail());
 
   if (!contactDetail) {
-    return null;
+    throw new Error(
+      'something went wrong! try refreshing the page or please come back later.',
+    );
   }
 
   const { addresses, phoneNumber, email } = contactDetail.data.contactDetail

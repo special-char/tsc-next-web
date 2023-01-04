@@ -38,7 +38,11 @@ interface Props {}
 const Faq = async (props: Props) => {
   const faqData = await getFaqData();
 
-  if (!faqData) return null;
+  if (!faqData) {
+    throw new Error(
+      'something went wrong! try refreshing the page or please come back later.',
+    );
+  }
 
   const faqInfo = faqData.data.faqs.data.map<AccordianType>((item) => {
     return {

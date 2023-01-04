@@ -8,31 +8,32 @@ import { getCourseDetails } from '@/lib/getCourseDetails';
 import { Course, CourseEntity, Form, UploadFile } from 'types/types';
 import TestimonialCard from '@/ui/TestimonialCard';
 import Accordian, { AccordianType } from '@/ui/Accordian';
+import { notFound } from 'next/navigation';
 
 const chipNavData = [
   {
     href: '#about',
     children: 'About',
-    as: "a",
-    key: "aboutCourse"
+    as: 'a',
+    key: 'aboutCourse',
   },
   {
     href: '#topic',
     children: 'Topics',
-    as: "a",
-    key: "curriculam"
+    as: 'a',
+    key: 'curriculam',
   },
   {
     href: '#result',
     children: 'Results',
-    as: "a",
-    key: "complitionResult"
+    as: 'a',
+    key: 'complitionResult',
   },
   {
     href: '#review',
     children: 'Reviews',
-    as: "a",
-    key: "testimonials"
+    as: 'a',
+    key: 'testimonials',
   },
 ];
 
@@ -45,6 +46,10 @@ export type PageProps = {
 
 export default async function Page({ params }: PageProps) {
   const coursesData = await getCourseDetails(params.slug);
+
+  if (!coursesData.data.courses.data[0]) {
+    notFound();
+  }
 
   const [{ attributes }] = coursesData.data.courses.data as CourseEntity[];
 
@@ -116,9 +121,12 @@ export default async function Page({ params }: PageProps) {
               </div> */}
             </div>
             <div className="lg:hidden">
-              <Price data={attributes} additionalField={{
-                courseName: params.slug
-              }} />
+              <Price
+                data={attributes}
+                additionalField={{
+                  courseName: params.slug,
+                }}
+              />
             </div>
             <div className="main__left-section__course-navigation">
               <ChipNavigation attributes={attributes} chipData={chipNavData} />
@@ -167,9 +175,12 @@ export default async function Page({ params }: PageProps) {
             )}
           </div>
           <div className="sticky top-0 hidden self-start lg:block">
-            <Price data={attributes} additionalField={{
-              courseName: params.slug
-            }} />
+            <Price
+              data={attributes}
+              additionalField={{
+                courseName: params.slug,
+              }}
+            />
           </div>
         </div>
         {/* {open && (

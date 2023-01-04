@@ -39,7 +39,11 @@ export const LeadersSkeleton = () => {
 const Leaders = async () => {
   const leaderData = await getLeaderData();
 
-  if (!leaderData) return null;
+  if (!leaderData) {
+    throw new Error(
+      'something went wrong! try refreshing the page or please come back later.',
+    );
+  }
 
   const { title, description, btns, image, testimonial } = leaderData.data
     .homeLeader.data?.attributes as HomeLeader;
