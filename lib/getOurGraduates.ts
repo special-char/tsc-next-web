@@ -24,6 +24,13 @@ export const getOurGraduatesData: HireOurGraduatesType = async () => {
                     }
                   }
                 }
+                resume{
+                  data{
+                    attributes{
+                      url
+                    }
+                  }
+                }
               }
             }
           }
