@@ -29,7 +29,7 @@ const HireCard = ({ data }: Props) => {
           </div>
         </figure>
         <div className="hire_card__body">
-          <h3 className="hire_card__title">{`${firstName} ${lastName}`}</h3>
+          <h3 className="hire_card__title">{`${firstName}`}</h3>
           <p className="hire_card__desc">
             {about}
           </p>
@@ -38,6 +38,7 @@ const HireCard = ({ data }: Props) => {
               href={url}
               className="hire_card__action"
               download
+              target={"_blank"}
             >
               <Icon name="download" height={24} width={24} />
             </Link>
