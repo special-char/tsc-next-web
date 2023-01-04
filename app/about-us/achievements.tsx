@@ -47,7 +47,9 @@ const achievedetails = [
 const Achievements = async (props: Props) => {
   const achievementsData = await getAboutNumberData();
 
-  if (!achievementsData) return null;
+  if (!achievementsData) {
+    throw new Error("something went wrong! try refreshing the page or please come back later.");
+  };
 
   const { title, numbers } = achievementsData.data.aboutNumber.data
     ?.attributes as AboutNumber;

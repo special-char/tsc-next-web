@@ -19,7 +19,7 @@ export type PageProps = {
 
 const Page = ({ params }: PageProps) => {
   const blogData = use(getBlogDetails(params.slug));
-  if (!blogData.data.individualBlog.data) {
+  if (!blogData.data.individualBlog.data[0]) {
     notFound();
   }
   const [{ attributes }] = blogData.data.individualBlog.data;
