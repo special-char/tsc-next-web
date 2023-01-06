@@ -8,9 +8,10 @@ import Aboutheader, { AboutheaderSkeleton } from './aboutheader';
 
 type Props = {};
 
-const page = (props: Props) => {
+const Page = (props: Props) => {
   return (
     <>
+
       <Suspense fallback={<PageHeaderSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
         <PageHeader
@@ -44,4 +45,4 @@ const page = (props: Props) => {
   );
 };
 
-export default page;
+export default Page;

@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://api.thespecialcharacter.com
+
+# Sitemaps
+Sitemap: https://api.thespecialcharacter.com/sitemap.xml
