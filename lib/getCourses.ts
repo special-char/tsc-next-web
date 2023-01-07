@@ -18,6 +18,7 @@ export const getCoursesData: CoursesType = async () => {
         query: `{
           courses(sort: "index") {
             data {
+              id
               attributes {
                 index
                 title
