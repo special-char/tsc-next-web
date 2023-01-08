@@ -6,8 +6,8 @@ import FeatureBlog, { FeatureBlogsSkeleton } from '@/ui/FeatureBlog';
 import AllBlogs from './allBlogs';
 import { getHomeBlogData } from '@/lib/getHomeBlog';
 
-export default function Page() {
-  const homeBlogData = use(getHomeBlogData());
+export default async function Page() {
+  const homeBlogData = await getHomeBlogData();
 
   if (!homeBlogData) return null;
 

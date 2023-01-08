@@ -16,12 +16,13 @@ export type PageProps = {
   children?: React.ReactNode;
 };
 
-const Page = ({ params }: PageProps) => {
-  const blogData = use(getBlogDetails(params.slug));
+const Page = async ({ params }: PageProps) => {
+  const blogData = await getBlogDetails(params.slug);
   const [{ attributes }] = blogData.data.individualBlog.data;
   const latestPosts = blogData.data.latestPost.data;
   const { title, bannerImage, readTime, author, category, content } =
     attributes;
+
   return (
     <div className="wrapper">
       <div className="wrapper__header"></div>
