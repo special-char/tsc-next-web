@@ -8,6 +8,7 @@ const Page = () => {
     <>
       <Contact />
       <Suspense fallback={<FaqSkeleton />}>
+        {/* @ts-expect-error Async Server Component */}
         <Faq />
       </Suspense>
     </>

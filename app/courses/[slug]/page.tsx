@@ -110,9 +110,12 @@ export default async function Page({ params }: PageProps) {
               </div> */}
             </div>
             <div className="lg:hidden">
-              <Price data={attributes} additionalField={{
-                courseName: params.slug
-              }} />
+              <Price
+                data={attributes}
+                additionalField={{
+                  courseName: params.slug,
+                }}
+              />
             </div>
             <div className="main__left-section__course-navigation">
               <ChipNavigation chipData={chipNavData} />
@@ -161,41 +164,14 @@ export default async function Page({ params }: PageProps) {
             )}
           </div>
           <div className="sticky top-0 hidden self-start lg:block">
-            <Price data={attributes} additionalField={{
-              courseName: params.slug
-            }} />
+            <Price
+              data={attributes}
+              additionalField={{
+                courseName: params.slug,
+              }}
+            />
           </div>
         </div>
-        {/* {open && (
-        <div
-          style={{
-            backgroundColor: 'rgba(0,0,0,0.6)',
-          }}
-          className="fixed top-0 z-50 grid h-screen w-screen place-content-center bg-secondary2"
-        >
-          <div className="mb-4 flex w-full justify-end px-container ">
-            <div
-              className="close-btn grid h-8 w-8 place-content-center rounded-full bg-neutral-100 "
-              role={'button'}
-              onClick={() => setOpen(false)}
-            >
-              <CloseIcon />
-            </div>
-          </div>
-          <div className="video">
-            <iframe
-              className="absolute top-0 left-0 px-container"
-              height={'100%'}
-              width={'100%'}
-              src="https://www.youtube.com/embed/cw21m2S5PXQ"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-      )} */}
       </section>
     </>
   );

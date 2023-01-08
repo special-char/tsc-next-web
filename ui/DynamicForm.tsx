@@ -23,7 +23,7 @@ const DynamicForm = ({
   formMethod,
   wrapperClass,
   buttonStyle,
-  additionalField
+  additionalField,
 }: Props) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -61,8 +61,6 @@ const DynamicForm = ({
       console.log(error);
     }
   };
-
-  console.log(initialValues);
 
   return (
     <>

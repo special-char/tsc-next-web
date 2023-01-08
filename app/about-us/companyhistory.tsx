@@ -16,7 +16,7 @@ export const CompanyHistorySkeleton = () => {
             <p className="font-cursive text-neutral-500">
               Presenting Academy, the tech school of the future. We teach you
               the right skills to be prepared for tomorrow.
-            </p>{' '}
+            </p>
             <div>
               <Button
                 as={Link}
@@ -32,7 +32,7 @@ export const CompanyHistorySkeleton = () => {
 
         <div className="companyHistory__info">
           {[1, 2, 3].map((val) => (
-            <div className="companyHistory__RightSection">
+            <div key={val} className="companyHistory__RightSection">
               <div className="companyHistory__ChipSection chip chip--white w-1/4 lg:w-[20%]">
                 <span className="companyHistory__Date font-cursive">2023</span>
               </div>

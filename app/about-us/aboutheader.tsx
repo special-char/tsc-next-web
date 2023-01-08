@@ -45,31 +45,29 @@ const Aboutheader = async (props: Props) => {
     ?.attributes as AboutDetail;
 
   return (
-    <section className="px-container py-20">
-      <div className="aboutheader mx-0 md:mx-20 lg:mx-0">
-        {detail?.map((x) => {
-          const { url, alternativeText } = x?.image?.data
-            ?.attributes as UploadFile;
-          return (
-            <>
-              <div className="aboutheader__image">
-                <Image
-                  src={`${url}?tr=ar-1-1`}
-                  alt={`${alternativeText}`}
-                  fill
-                  sizes="(max-width: 1024px) 100vw,
+    <section className="about">
+      {detail?.map((x) => {
+        const { url, alternativeText } = x?.image?.data
+          ?.attributes as UploadFile;
+        return (
+          <div className="about__item">
+            <div className="about__image">
+              <Image
+                src={`${url}?tr=ar-1-1`}
+                alt={`${alternativeText}`}
+                fill
+                sizes="(max-width: 1024px) 100vw,
                         (max-width: 1280px) 50vw,
                          604px"
-                />
-              </div>
-              <div className="aboutheader__title">
-                <h2 className=" text-3xl md:text-6xl">{x?.title}</h2>
-                <p className="m-0 lg:text-lg">{x?.description}</p>
-              </div>
-            </>
-          );
-        })}
-      </div>
+              />
+            </div>
+            <div>
+              <h2 className=" text-3xl md:text-6xl">{x?.title}</h2>
+              <p className="m-0 lg:text-lg">{x?.description}</p>
+            </div>
+          </div>
+        );
+      })}
     </section>
   );
 };
