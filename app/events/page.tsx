@@ -1,11 +1,11 @@
 import PageHeader, { PageHeaderSkeleton } from '@/ui/pageHeader';
 import React, { Suspense, use } from 'react';
-import { getEvents } from '@/lib/getEvents';
+import { getAllEvents } from '@/lib/getAllEvents';
 import AllEvents from './allEvents';
 
-export default function Page() {
-  const eventData = use(getEvents());
-  const { data } = eventData.data.allEvents;
+export default async function Page() {
+  const eventData = await getAllEvents();
+  const { data } = eventData.data.events;
 
   return (
     <>
