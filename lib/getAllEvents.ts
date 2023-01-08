@@ -50,6 +50,12 @@ export const getAllEvents: AllEventDetailsType = async () => {
         revalidate: 0,
       },
     });
-    return await response.json();
+    const json = await response.json();
+
+    if (!response.ok) {
+      throw new Error(json);
+    }
+
+    return json;
   } catch (error) {}
 };

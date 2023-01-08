@@ -6,7 +6,7 @@ import FeatureBlog, { FeatureBlogsSkeleton } from '@/ui/FeatureBlog';
 import AllBlogs from './allBlogs';
 import { getHomeBlogData } from '@/lib/getHomeBlog';
 
-export default async function Page() {
+export default async () => {
   const homeBlogData = await getHomeBlogData();
 
   if (!homeBlogData) return null;
@@ -37,4 +37,4 @@ export default async function Page() {
       <AllBlogs blogList={blogList} />
     </>
   );
-}
+};

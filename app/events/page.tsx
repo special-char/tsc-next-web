@@ -1,15 +1,20 @@
 import PageHeader, { PageHeaderSkeleton } from '@/ui/pageHeader';
 import React, { Suspense, use } from 'react';
-import { getAllEvents } from '@/lib/getAllEvents';
 import AllEvents from './allEvents';
+import { getAllEvents } from '@/lib/getAllEvents';
+import { EventEntity } from 'types/types';
 
-export default function Page() {
-  const eventData = use(getAllEvents());
-  const { data } = eventData.data.events;
+export default async () => {
+  const eventData = await getAllEvents();
+
+  if (!eventData) return null;
+
+  const eventsData = eventData.data.events.data as EventEntity[];
 
   return (
     <>
       <Suspense fallback={<PageHeaderSkeleton />}>
+        {/* @ts-expect-error Async Server Component */}
         <PageHeader
           pageName="events"
           className="customClass"
@@ -18,7 +23,7 @@ export default function Page() {
           hasSeprator={false}
         />
       </Suspense>
-      <AllEvents events={data} />
+      <AllEvents events={eventsData} />
     </>
   );
-}
+};
