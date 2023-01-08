@@ -1,6 +1,5 @@
 import { Suspense } from 'react';
 import Contact from './contact';
-import ContactInfo from './contactInfo';
 import Faq, { FaqSkeleton } from './faq';
 
 const Page = () => {

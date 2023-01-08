@@ -3,8 +3,8 @@ import React, { Suspense, use } from 'react';
 import { getAllEvents } from '@/lib/getAllEvents';
 import AllEvents from './allEvents';
 
-export default async function Page() {
-  const eventData = await getAllEvents();
+export default function Page() {
+  const eventData = use(getAllEvents());
   const { data } = eventData.data.events;
 
   return (

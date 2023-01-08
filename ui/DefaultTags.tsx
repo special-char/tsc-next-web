@@ -29,7 +29,7 @@ export function DefaultTags() {
       <meta name="application-name" content="TSC" />
       <meta name="msapplication-TileColor" content="#ffc40d" />
       <meta name="theme-color" content="#ffffff" />
-      <link rel="icon" href="./icons/tsc.svg" type="image/svg+xml"></link>
+      <link rel="icon" href="/icons/tsc.svg" type="image/svg+xml"></link>
     </>
   );
 }
