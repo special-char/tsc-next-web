@@ -1,12 +1,12 @@
 import { CourseEntityResponseCollection } from 'types/types';
 
-export type CoursesType = (slug: string) => Promise<{
+export type CoursesType = (slug?: string) => Promise<{
   data: {
     courses: CourseEntityResponseCollection;
   };
 }>;
 
-export const getCourseDetails: CoursesType = async (slug: string) => {
+export const getCourseDetails: CoursesType = async (slug?: string) => {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
       method: 'POST',
@@ -109,5 +109,33 @@ export const getCourseDetails: CoursesType = async (slug: string) => {
     });
 
     return await res.json();
+  } catch (error) {}
+};
+
+export const getCoursesSiteMap: CoursesType = async () => {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({
+        query: `{
+          courses {
+            data {
+              attributes {
+                slug
+              }
+            }
+          }
+        }`,
+      }),
+      cache: 'no-cache',
+      next: {
+        revalidate: 0,
+      },
+    });
+    return await response.json();
   } catch (error) {}
 };

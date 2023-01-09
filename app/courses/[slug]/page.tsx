@@ -4,7 +4,7 @@ import Image from 'next/image';
 import md from 'markdown-it';
 import Price from './priceCard';
 import ChipNavigation from '@/ui/ChipNavigation';
-import { getCourseDetails } from '@/lib/getCourseDetails';
+import { getCourseDetails, getCoursesSiteMap } from '@/lib/getCourseDetails';
 import { Course, CourseEntity, Form, UploadFile } from 'types/types';
 import TestimonialCard from '@/ui/TestimonialCard';
 import Accordian, { AccordianType } from '@/ui/Accordian';
@@ -176,3 +176,10 @@ export default async function Page({ params }: PageProps) {
     </>
   );
 }
+
+// export async function generateStaticParams() {
+//   const blogData = await getCoursesSiteMap();
+//   return blogData.data.courses.data.map((x) => ({
+//     slug: x.attributes?.slug,
+//   }));
+// }
