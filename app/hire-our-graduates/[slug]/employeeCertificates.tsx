@@ -20,7 +20,7 @@ const CertificateData = [
   },
 ];
 
-const EmployeeCertificates = (props: Props) => {
+const EmployeeCertificates = ({ data }: Props) => {
   return (
     <section className="employeeCerti">
       <div className="employeeCerti__main">
@@ -28,7 +28,7 @@ const EmployeeCertificates = (props: Props) => {
           <h2 className="text-6xl">Certificates</h2>
           <div className="flex-[2]">
             <ul id="list " className="employeeCerti__list">
-              {CertificateData.map((val) => {
+              {data.map((val) => {
                 return (
                   <li className="flex items-center gap-4 ">
                     <div>

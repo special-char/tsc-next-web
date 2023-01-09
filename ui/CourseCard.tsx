@@ -67,6 +67,7 @@ const CourseCard = ({ course, isHorizontal }: Props) => {
   const { url, alternativeText } = courseVideoPoster?.data
     ?.attributes as UploadFile;
   const brochureUrl = brochure?.data?.attributes?.url;
+  console.log('CourseCard slug:', slug);
 
   return (
     <div

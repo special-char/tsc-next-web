@@ -5,13 +5,13 @@ import Image from 'next/image';
 
 type Props = {};
 
-const UserCard = (props: Props) => {
+const UserCard = ({ data }: Props) => {
   return (
     <section className="">
       <div className="user_card ">
         <div className="user_card__image">
           <Image
-            src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f1ff9fd9e0e1686d26497_image-3-profile-picture-small-teacher-education-x-template.jpg"
+            src={data.avatar.data.attributes.url}
             alt="avatar"
             width={200}
             height={200}
@@ -20,15 +20,12 @@ const UserCard = (props: Props) => {
         </div>
         <div className="user_card__details">
           <div className=" user_card__heading">
-            <h2 className="!m-0 mt-3 md:text-5xl">Kathie Corl</h2>
+            <h2 className="!m-0 mt-3 md:text-5xl">{data.firstName}</h2>
             <div className="chip chip--primary w-auto shadow-dark hover:bg-neutral-100 hover:text-primary">
               Design
             </div>
           </div>
-          <p className="user_card__desc">
-            Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida. Diam
-            phasellus vestibulum lorem sed risus ultricies.
-          </p>
+          <p className="user_card__desc">{data.about}</p>
           <div className="flex justify-center md:justify-start">
             <Button as="button" className="btn btn--small btn--primary">
               Download Resume

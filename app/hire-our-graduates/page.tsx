@@ -5,9 +5,15 @@ import { getOurGraduatesData } from '@/lib/getOurGraduates';
 import { notFound } from 'next/navigation';
 
 type Props = {};
+export type PageProps = {
+  params: {
+    slug: string;
+  };
+  children?: React.ReactNode;
+};
 
-const HireOurGraduates = async (props: Props) => {
-  const ourGraduatesData = await getOurGraduatesData();
+const HireOurGraduates = async ({ params }: PageProps) => {
+  const ourGraduatesData = await getOurGraduatesData(params.slug);
   // if (!ourGraduatesData) {
   //   notFound();
   // }
@@ -24,7 +30,7 @@ const HireOurGraduates = async (props: Props) => {
       <div className="hireourgraduates__card__body">
         {graduates.map((graduate): any => (
           <>
-            <HireCard data={graduate} key={graduate.firstname} />
+            <HireCard data={graduate} key={graduate.id} />
           </>
         ))}
       </div>

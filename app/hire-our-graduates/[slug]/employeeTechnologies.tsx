@@ -36,7 +36,9 @@ const TechnologiesData = [
   },
 ];
 
-const EmployeeTechnologies = (props: Props) => {
+const EmployeeTechnologies = ({ data }: Props) => {
+  console.log('EmployeeTechnologies data:', data);
+
   return (
     <>
       <section id="employeeTechno" className="employeeTechno">
@@ -46,10 +48,10 @@ const EmployeeTechnologies = (props: Props) => {
           </div>
           <div className="flex-[2]">
             <div id="technologies" className="employeeTechno__content">
-              {TechnologiesData.map((val) => (
+              {data.map((val) => (
                 <div className="skill-item">
                   <span className="employeeTechno__content-item ">
-                    <p>{val.title}</p>
+                    <p>{val.technology.data.attributes.name}</p>
                     <p>{val.proficiency}%</p>
                   </span>
                   <div className="m-3 rounded-full bg-neutral-300">

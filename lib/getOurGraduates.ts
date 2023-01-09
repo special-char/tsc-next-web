@@ -17,6 +17,8 @@ export const getOurGraduatesData: HireOurGraduatesType = async () => {
               attributes {
                 firstName
                 lastName
+                slug
+                about
                 avatar {
                   data {
                     attributes {

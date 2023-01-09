@@ -3,7 +3,7 @@ import '@/styles/employeeEdu.css';
 
 type Props = {};
 
-const EmployeeEducation = (props: Props) => {
+const EmployeeEducation = ({ data }: Props) => {
   const educations = [
     {
       id: '1',
@@ -32,15 +32,15 @@ const EmployeeEducation = (props: Props) => {
           <h2 className="text-6xl">Education</h2>
         </div>
         <div className="employeeEdu__content">
-          {educations.map((education, index) => {
+          {data.map((education, index) => {
             return (
               <>
                 <div className="employeeEdu__content-main">
                   <span className="employeeEdu__content-course">
-                    {education.course}
+                    {education.degree}
                   </span>
                   <span className="employeeEdu__content-univ">
-                    {education.university}
+                    {education.school}
                   </span>
                   <span className="mb-4 text-xs italic md:text-sm">{`${education.startDate} - ${education.endDate}`}</span>
                   <p className="text-sm font-medium text-neutral-700">
