@@ -4,6 +4,7 @@ import Icon from '@/ui/Icon';
 import Image from 'next/image';
 import '@/styles/hirecard.css';
 import { Team, TeamEntity, UploadFile } from 'types/types';
+import Register from './Register';
 
 type Props = {
   data: TeamEntity;
@@ -20,17 +21,12 @@ const HireCard = ({ data }: Props) => {
         href={`/hire-our-graduates/${encodeURIComponent(slug)}`}
       >
         <figure className="hire_card__img">
-          <Image
-            src={`${avatar.data?.attributes?.url}`}
-            alt="alt-img"
-            width={400}
-            height={300}
-          />
-          <div className="hire_card__chips">
+          <Image src={`${avatar.data?.attributes?.url}`} alt="alt-img" fill />
+          {/* <div className="hire_card__chips">
             <div className="chip chip--primary !px-4 hover:bg-neutral-100 hover:text-primary">
               Hire Me
             </div>
-          </div>
+          </div> */}
         </figure>
       </Link>
       <div className="hire_card__body">
@@ -51,6 +47,13 @@ const HireCard = ({ data }: Props) => {
             <Icon name="download" height={24} width={24} />
           </Link>
           <h6>Download Profile</h6>
+          <div className="absolute top-4 right-3">
+            <Register
+              formId={2}
+              btnText="Hire"
+              btnClass="btn--primary py-3 px-6"
+            />
+          </div>
         </div>
       </div>
     </div>

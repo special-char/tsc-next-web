@@ -5,7 +5,7 @@
     padding: 56px 58px 70px 54px;
   }
   &__image {
-    @apply relative m-0 aspect-square min-h-[200px] overflow-hidden md:w-[110%] lg:w-4/5;
+    @apply relative m-0 aspect-square min-w-[200px] overflow-hidden object-cover;
     /* @apply relative  md:w-11/12 lg:w-2/5; */
   }
   &__details {

@@ -32,7 +32,7 @@ const EmployeeCertificates = ({ data }: Props) => {
                 return (
                   <li className="flex items-center gap-4 ">
                     <div>
-                      <h3>{val.title}</h3>
+                      <h3>{val.name}</h3>
                       <p className="mb-2">{val.issuingOrganization}</p>
                       <p className="mb-2">{val.issueDate}</p>
                     </div>

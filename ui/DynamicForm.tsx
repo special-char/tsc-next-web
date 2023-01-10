@@ -23,7 +23,7 @@ const DynamicForm = ({
   formMethod,
   wrapperClass,
   buttonStyle,
-  additionalField
+  additionalField,
 }: Props) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
