@@ -26,13 +26,8 @@ const UserCard = ({ data }: Props) => {
               Design
             </div>
           </div>
-          <p className="user_card__desc">
-            {data.about} Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Debitis veritatis tenetur, obcaecati nisi nihil ex beatae
-            voluptatibus odio, quibusdam quasi quis id. Necessitatibus, facere
-            dolores.
-          </p>
-          <div className="flex flex-col justify-center gap-4 md:flex-row md:justify-start">
+          <p className="user_card__desc ">{data.about}</p>
+          <div className="user_card__buttons ">
             <Link
               href="#"
               download={'employeeName.cv'}
@@ -47,13 +42,6 @@ const UserCard = ({ data }: Props) => {
             />
           </div>
         </div>
-        {/* <div className="absolute top-4 right-3">
-          <Register
-            formId={2}
-            btnText="Hire"
-            btnClass="btn--primary py-3 px-6"
-          />
-        </div> */}
       </div>
     </section>
   );

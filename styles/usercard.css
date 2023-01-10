@@ -15,6 +15,9 @@
     @apply flex flex-col items-center justify-between gap-4 md:flex-row md:items-end;
   }
   &__desc {
-    @apply pt-3 text-center md:text-start;
+    @apply pt-3 text-center line-clamp-3 md:text-start;
+  }
+  &__buttons {
+    @apply flex flex-col justify-center gap-4 md:flex-row md:justify-start;
   }
 }
