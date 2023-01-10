@@ -2,6 +2,7 @@ import React from 'react';
 import '@/styles/usercard.css';
 import Button from '@/ui/Button';
 import Image from 'next/image';
+import Link from 'next/link';
 
 type Props = {};
 
@@ -13,8 +14,7 @@ const UserCard = ({ data }: Props) => {
           <Image
             src={data.avatar.data.attributes.url}
             alt="avatar"
-            width={200}
-            height={200}
+            fill
             className="rounded-full"
           />
         </div>
@@ -25,11 +25,20 @@ const UserCard = ({ data }: Props) => {
               Design
             </div>
           </div>
-          <p className="user_card__desc">{data.about}</p>
+          <p className="user_card__desc">
+            {data.about} Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Debitis veritatis tenetur, obcaecati nisi nihil ex beatae
+            voluptatibus odio, quibusdam quasi quis id. Necessitatibus, facere
+            dolores.
+          </p>
           <div className="flex justify-center md:justify-start">
-            <Button as="button" className="btn btn--small btn--primary">
+            <Link
+              href="#"
+              download={'employeeName.cv'}
+              className="btn btn--small btn--primary"
+            >
               Download Resume
-            </Button>
+            </Link>
           </div>
         </div>
       </div>

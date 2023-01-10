@@ -30,6 +30,15 @@ export const getGraduatesDetails: HireOurGraduatesType = async (
                   credentialID
                   credentialURL
                   neverExpire
+                  logo{
+                    data{
+                      id
+                      attributes{
+                        url
+                        alternativeText
+                      }
+                    }
+                  }
                 }
                 projects{
                   id

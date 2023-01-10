@@ -15,7 +15,12 @@ const page = ({ data }: Props) => {
         <UserCard data={data} />
         <div className="wrapper__body__content ">
           <h2 className="text-6xl">About {data.firstName}</h2>
-          <p>{data.about}</p>
+          <p>
+            {data.about} Lorem ipsum dolor, sit amet consectetur adipisicing
+            elit. Consequuntur non ipsum a? Labore expedita libero nostrum
+            dignissimos sint asperiores, quod consequatur laudantium iste
+            impedit vitae doloremque, magni, delectus illo qui.
+          </p>
           <hr className="my-20" />
         </div>
       </div>
