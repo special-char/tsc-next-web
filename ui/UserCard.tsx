@@ -22,9 +22,9 @@ const UserCard = ({ data }: Props) => {
         <div className="user_card__details">
           <div className=" user_card__heading">
             <h2 className="!m-0 mt-3 md:text-5xl">{data.firstName}</h2>
-            <div className="user_card__chips ">
-              <span className="chip chip--secondary pointer-events-none w-auto shadow-dark ">
-                Front-end developer
+            <div className="user_card__chips">
+              <span className="chip chip--secondary pointer-events-none w-auto px-3.5 shadow-dark ">
+                Full-stack developer
               </span>
               <Register
                 formId={2}
