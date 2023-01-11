@@ -10,7 +10,7 @@ type Props = {};
 const UserCard = ({ data }: Props) => {
   return (
     <section className="">
-      <div className="user_card relative">
+      <div className="user_card">
         <div className="user_card__image">
           <Image
             src={data.avatar.data.attributes.url}
@@ -22,8 +22,15 @@ const UserCard = ({ data }: Props) => {
         <div className="user_card__details">
           <div className=" user_card__heading">
             <h2 className="!m-0 mt-3 md:text-5xl">{data.firstName}</h2>
-            <div className="chip chip--primary w-auto shadow-dark hover:bg-neutral-100 hover:text-primary">
-              Design
+            <div className="user_card__chips ">
+              <span className="chip chip--secondary pointer-events-none w-auto shadow-dark ">
+                Front-end developer
+              </span>
+              <Register
+                formId={2}
+                btnText="Hire"
+                btnClass="btn--primary text-[14px] w-auto p-3 md:px-10"
+              />
             </div>
           </div>
           <p className="user_card__desc ">{data.about}</p>
@@ -31,15 +38,10 @@ const UserCard = ({ data }: Props) => {
             <Link
               href="#"
               download={'employeeName.cv'}
-              className="btn btn--small btn--primary"
+              className="btn btn--small btn--primary text-[14px]"
             >
-              Download Resume
+              Download
             </Link>
-            <Register
-              formId={2}
-              btnText="Hire"
-              btnClass="btn--primary px-3 py-4 md:px-10"
-            />
           </div>
         </div>
       </div>

@@ -9,7 +9,10 @@
     /* @apply relative  md:w-11/12 lg:w-2/5; */
   }
   &__details {
-    @apply items-center;
+    @apply w-4/5 items-center;
+  }
+  &__chips {
+    @apply flex flex-col gap-3 md:flex-row;
   }
   &__heading {
     @apply flex flex-col items-center justify-between gap-4 md:flex-row md:items-end;
