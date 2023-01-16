@@ -2,13 +2,14 @@ import '@/styles/individualcourse.css';
 import DesignSvg from '@/public/icons/design.svg';
 import Image from 'next/image';
 import md from 'markdown-it';
-import Price from './priceCard';
+import Price, { PriceCardSkeleton } from './priceCard';
 import ChipNavigation from '@/ui/ChipNavigation';
 import { getCourseDetails, getCoursesSiteMap } from '@/lib/getCourseDetails';
 import { Course, CourseEntity, Form, UploadFile } from 'types/types';
 import TestimonialCard from '@/ui/TestimonialCard';
 import Accordian, { AccordianType } from '@/ui/Accordian';
 import Link from 'next/link';
+import PriceCard from './priceCard';
 
 const chipNavData = [
   {

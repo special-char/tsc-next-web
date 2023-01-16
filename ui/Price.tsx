@@ -1,5 +1,13 @@
 import React from 'react';
 import { ComponentCommonPrice } from 'types/types';
+export const PriceSkeleton = () => {
+  return (
+    <div>
+      <span className="font-cursive">5,000</span>
+      <span className="!mb-0 font-cursive md:!mb-4">Month</span>
+    </div>
+  );
+};
 type Props = {
   price: ComponentCommonPrice;
 };

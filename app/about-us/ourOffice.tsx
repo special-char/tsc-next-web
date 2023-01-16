@@ -67,10 +67,9 @@ export const OurOfficeSkeleton = () => {
                     </div>
                   </address>
                 </div>
-                <div className="absolute -right-14 -bottom-20 h-32 w-32 rounded-full bg-primary"></div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
         <div className="ourOffice__map -z-10 min-h-[300px] rounded-2xl bg-neutral-300">
           <div></div>

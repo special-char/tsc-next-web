@@ -5,6 +5,7 @@ import { Suspense, use } from 'react';
 import FeatureBlog, { FeatureBlogsSkeleton } from '@/ui/FeatureBlog';
 import AllBlogs from './allBlogs';
 import { getHomeBlogData } from '@/lib/getHomeBlog';
+import { PriceCardSkeleton } from 'app/courses/[slug]/priceCard';
 
 export default async () => {
   const homeBlogData = await getHomeBlogData();
@@ -33,7 +34,9 @@ export default async () => {
       <Suspense fallback={<BlogSubscribeSkeleton />}>
         <BlogSubscribe />
       </Suspense>
-
+      <Suspense fallback={<PriceCardSkeleton />}>
+        <PriceCardSkeleton />
+      </Suspense>
       <AllBlogs blogList={blogList} />
     </>
   );

@@ -2,6 +2,7 @@ import { getAboutNumberData } from '@/lib/getAboutNumber';
 import '@/styles/achieve.css';
 import React from 'react';
 import { AboutNumber } from 'types/types';
+
 export const AchievementsSkeleton = () => {
   return (
     <section className="achieve animate-pulse">
