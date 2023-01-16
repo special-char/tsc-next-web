@@ -15,6 +15,7 @@ export const getContactDetail: ContactDetailType = async () => {
         query: `{
           contactDetail {
             data {
+              id
               attributes {
                 title
                 description
@@ -29,6 +30,7 @@ export const getContactDetail: ContactDetailType = async () => {
                 email
                 phoneNumber
                 addresses {
+                  id
                   line1
                   line2
                   city
@@ -47,8 +49,7 @@ export const getContactDetail: ContactDetailType = async () => {
               }
             }
           }
-        }
-        `,
+        }`,
       }),
       headers: {
         'Content-Type': 'application/json',

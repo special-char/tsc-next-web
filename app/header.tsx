@@ -5,6 +5,10 @@ import TscLogoSvg from '@/public/icons/tscLogo.svg';
 import TscSvg from '@/public/icons/tsc.svg';
 import HemburgerSvg from '@/public/icons/hemburger.svg';
 import { getMenuData } from '@/lib/getMenu';
+import {
+  MenusMenuItem,
+  MenusMenuItemRelationResponseCollection,
+} from 'types/types';
 
 type Props = {};
 
@@ -20,12 +24,12 @@ export const HeaderSkeleton = () => {
         <ul>
           {[1, 2, 3, 4, 5].slice(0, -1).map((x) => {
             return (
-              <li>
+              <li key={x}>
                 <div className="header__link font-cursive">Bootcamps</div>
                 <nav className="header__nested_nav">
                   <ul>
                     return (
-                    <li>
+                    <li key={x}>
                       <div className="font-cursive">Full Stack Bootcamp</div>
                     </li>
                     );
@@ -51,9 +55,10 @@ const Header = async (props: Props) => {
 
   if (!menuData) return null;
 
-  const { data: menuOptions } = menuData.data.data.attributes.items;
+  const { data: menuOptions } = menuData.data.data?.attributes
+    ?.items as MenusMenuItemRelationResponseCollection;
 
-  const { attributes } = menuOptions.at(-1);
+  const attributes = menuOptions.at(-1)?.attributes;
 
   return (
     <header className="header">
@@ -64,10 +69,11 @@ const Header = async (props: Props) => {
       <nav className="header__nav">
         <ul>
           {menuOptions.slice(0, -1).map((x) => {
-            const { title, url, children } = x.attributes;
+            const { title, url, children, order } =
+              x.attributes as MenusMenuItem;
             return (
-              <li>
-                <Link href={url} prefetch={false} className="header__link">
+              <li key={order}>
+                <Link href={`${url}`} prefetch={false} className="header__link">
                   {title}
                 </Link>
                 {children.data.length > 0 && (
@@ -75,7 +81,7 @@ const Header = async (props: Props) => {
                     <ul>
                       {children.data.map((y) => {
                         return (
-                          <li>
+                          <li key={y.id}>
                             <Link
                               prefetch={false}
                               href={y.attributes.url}

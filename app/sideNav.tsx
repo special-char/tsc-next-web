@@ -18,7 +18,7 @@ export const SideNavSkeleton = () => {
         <ul>
           {[1, 2, 3, 4].map((x) => {
             return (
-              <li>
+              <li key={x}>
                 <div className="font-cursive text-neutral-700">Bootcamps</div>
               </li>
             );
@@ -57,9 +57,10 @@ const SideNav = async (props: Props) => {
 
         <ul>
           {menuOptions?.slice(0, -1).map((x) => {
-            const { title, url, children } = x.attributes as MenusMenuItem;
+            const { title, url, children, order } =
+              x.attributes as MenusMenuItem;
             return (
-              <li>
+              <li key={order}>
                 {children.data.length > 0 ? (
                   <>
                     <details className="nav-item">
@@ -67,7 +68,7 @@ const SideNav = async (props: Props) => {
                       <ul>
                         {children.data.map((y) => {
                           return (
-                            <li>
+                            <li key={y.id}>
                               <Link
                                 prefetch={false}
                                 href={y.attributes.url}

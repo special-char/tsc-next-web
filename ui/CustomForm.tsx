@@ -6,14 +6,32 @@ import Button from './Button';
 import checkValidation from '@/lib/validation';
 import TextInput from './TextInput';
 import TextArea from './TextArea';
+import clsx from 'clsx';
 
 type Props = {};
 
-const CustomForm = ({ buttonStyle, fields, ...rest }: Props) => {
+const CustomForm = ({
+  buttonStyle,
+  fields,
+  formMethod,
+  wrapperClass,
+  ...rest
+}: Props) => {
+  const formProps = {};
+
+  if (formMethod) {
+    formProps.method = formMethod;
+  }
+
   return (
-    <Formik {...rest}>
+    <Formik enableReinitialize {...rest}>
       {({ isSubmitting }) => (
-        <Form className="form relative">
+        <Form
+          className={clsx('form relative', {
+            [wrapperClass || '']: !!wrapperClass,
+          })}
+          {...formMethod}
+        >
           {fields.map(
             ({
               id,
@@ -24,13 +42,23 @@ const CustomForm = ({ buttonStyle, fields, ...rest }: Props) => {
               validation,
               ...rest
             }) => {
+              const fieldProps = Object.keys(rest).reduce((acc, key) => {
+                if (rest[key]) {
+                  return {
+                    ...acc,
+                    [key]: rest[key],
+                  };
+                }
+                return acc;
+              }, {});
+
               if (component === 'TextArea') {
                 return (
                   <Field
                     key={id}
                     id={field_id}
                     component={TextArea}
-                    {...rest}
+                    {...fieldProps}
                   />
                 );
               } else {
@@ -41,7 +69,7 @@ const CustomForm = ({ buttonStyle, fields, ...rest }: Props) => {
                     component={TextInput}
                     validate={(value) => {
                       let message = '';
-                      for (let i = 0; i < validation.length; i++) {
+                      for (let i = 0; i < validation?.length; i++) {
                         const { validationType, ...rest } = validation[i];
                         const res = checkValidation[validationType]({
                           value,
@@ -54,13 +82,20 @@ const CustomForm = ({ buttonStyle, fields, ...rest }: Props) => {
                       }
                       return message;
                     }}
-                    {...rest}
+                    {...fieldProps}
                   />
                 );
               }
             },
           )}
-          <Button className="" variant="primary" as="button" type="submit">
+          <Button
+            className={clsx({
+              [buttonStyle || '']: !!buttonStyle,
+            })}
+            variant="primary"
+            as="button"
+            type="submit"
+          >
             {isSubmitting ? 'Please wait...' : 'Submit'}
           </Button>
         </Form>

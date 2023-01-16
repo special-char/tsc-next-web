@@ -17,7 +17,7 @@ export const FaqSkeleton = () => {
         <div className="faq__body">
           <div>
             {[1, 2, 3, 4].map((val) => (
-              <details className="rounded-2xl font-cursive md:py-8">
+              <details key={val} className="rounded-2xl font-cursive md:py-8">
                 <summary>Do you offer special pricing for big teams?</summary>
                 <p>
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.

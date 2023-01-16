@@ -4,9 +4,9 @@ import MapSvg from '@/public/icons/map.svg';
 import SpeakerSvg from '@/public/icons/speaker.svg';
 import '@/styles/allevents.css';
 import format from 'date-fns/format';
-import Link from 'next/link';
+import Register from './Register';
 
-export const EventDatailPageSkeleton = () => {
+export const EventDetailPageSkeleton = () => {
   return (
     <>
       <section className="events__body animate-pulse">
@@ -57,7 +57,7 @@ type Props = {
   // data: 
 }
 
-const EventDatailPage = ({ data }: Props) => {
+const EventDetailPage = ({ data, additionalField }: Props) => {
   const {
     eventStartDate,
     eventEndDate,
@@ -66,6 +66,7 @@ const EventDatailPage = ({ data }: Props) => {
     title,
     description,
   } = data;
+
   return (
     <>
       <section className="events__body">
@@ -100,13 +101,11 @@ const EventDatailPage = ({ data }: Props) => {
           <p>
             {description}
           </p>
-          <Link href={"#"} role={'button'} className="events__button btn btn--primary mt-4">
-            REGISTER TO EVENT
-          </Link>
+          <Register btnText='register for event' btnClass='btn--primary' formId={2} additionalField={additionalField} />
         </div>
       </section>
     </>
   );
 };
 
-export default EventDatailPage;
+export default EventDetailPage;

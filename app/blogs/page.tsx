@@ -7,8 +7,8 @@ import AllBlogs from './allBlogs';
 import { getHomeBlogData } from '@/lib/getHomeBlog';
 import { PriceCardSkeleton } from 'app/courses/[slug]/priceCard';
 
-export default function Page() {
-  const homeBlogData = use(getHomeBlogData());
+export default async () => {
+  const homeBlogData = await getHomeBlogData();
 
   if (!homeBlogData) return null;
 
@@ -40,4 +40,4 @@ export default function Page() {
       <AllBlogs blogList={blogList} />
     </>
   );
-}
+};
