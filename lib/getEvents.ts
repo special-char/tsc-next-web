@@ -1,6 +1,6 @@
 import { EventEntityResponseCollection } from 'types/types';
 
-export type EventDetailsType = () => Promise<{
+export type EventDetailsType = (slug: string) => Promise<{
   data: {
     allEvents: EventEntityResponseCollection;
     Event: EventEntityResponseCollection;

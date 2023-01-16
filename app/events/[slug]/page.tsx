@@ -1,11 +1,12 @@
 import { getEvents } from '@/lib/getEvents';
 import '@/styles/allevents.css';
-import EventDatailPage, { EventDatailPageSkeleton } from '@/ui/EventDatailPage';
+import EventDetailPage, { EventDetailPageSkeleton } from '@/ui/EventDetailPage';
 import Image from 'next/image';
 import { use } from 'react';
 import md from 'markdown-it';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import Register from '@/ui/Register';
 
 export const PageSkeleton = () => {
   return (
@@ -20,7 +21,7 @@ export const PageSkeleton = () => {
           <div></div>
         </div>
         <div className="pt-8">
-          <EventDatailPageSkeleton />
+          <EventDetailPageSkeleton />
         </div>
         <div className="events__paragraph">
           <h2 className="mb-0 font-cursive text-3xl md:mb-2 md:text-6xl">
@@ -54,8 +55,8 @@ export const PageSkeleton = () => {
               ipsum dor
             </li>
           </ol>
-          <button className="events__button btn btn--primary font-cursive">
-            REGISTER TO EVENT
+          <button className="events__button btn btn--primary font-cursive uppercase">
+            register for event
           </button>
         </div>
       </div>
@@ -70,7 +71,7 @@ export type Props = {
 };
 
 const Page = ({ params }: Props) => {
-  const eventData = use(getEvents(params?.slug));
+  const eventData = use(getEvents(params.slug));
   if (!eventData) {
     notFound();
   }
@@ -92,19 +93,16 @@ const Page = ({ params }: Props) => {
             sizes="(min-width: 1024px) 100vw,
             600px"
           />
+
         </div>
         <div className="pt-8">
-          <EventDatailPage data={attributes} />
+          <EventDetailPage data={attributes} additionalField={{
+            eventName: params.slug
+          }} />
         </div>
         <div className="events__paragraph">
           <div dangerouslySetInnerHTML={{ __html: md().render(content) }}></div>
-          <Link
-            href={'#'}
-            role={'button'}
-            className="events__button btn btn--primary mt-4"
-          >
-            REGISTER TO EVENT
-          </Link>
+          {/* <Register btnText='register for event' btnClass='btn--primary' formId={3} /> */}
         </div>
       </div>
     </section>

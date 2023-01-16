@@ -50,7 +50,7 @@ const Newsletter = ({ btnClass }) => {
                 <Field
                   id="email"
                   type="email"
-                  autocomplete="email"
+                  autoComplete="email"
                   className="newsletter__input"
                   name="email"
                   placeholder="enter your email address"

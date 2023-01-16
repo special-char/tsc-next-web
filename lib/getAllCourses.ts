@@ -14,6 +14,7 @@ export const getAllCoursesData: CoursesType = async (category?: string) => {
         query: `{
           courses(sort: "index") {
             data {
+              id
               attributes {
                 index
                 title
@@ -52,8 +53,7 @@ export const getAllCoursesData: CoursesType = async (category?: string) => {
               }
             }
           }
-        }        
-        `,
+        }`,
       }),
       headers: {
         'Content-Type': 'application/json',

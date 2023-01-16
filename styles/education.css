@@ -12,13 +12,10 @@
     aspect-ratio: 1 / 1.2;
   }
   &__content {
-    grid-template-columns: 80px 1fr;
-    @apply my-auto  grid  max-w-[600px] items-start justify-items-center gap-6 
-    text-center md:text-left lg:py-16;
-
-    @media screen and (max-width: 767px) {
-      @apply grid-cols-1;
-    }
+    @apply flex flex-col gap-6;
+  }
+  &__item {
+    @apply grid grid-flow-col gap-6;
   }
   &__line {
     @apply col-span-2 h-[1px] w-[100%] rounded-full  bg-neutral-300;

@@ -1,23 +1,27 @@
-.aboutheader {
-  @apply grid items-center gap-10 lg:grid-cols-2;
+.about {
+  @apply flex flex-col gap-8 px-container py-20 sm:py-28 md:gap-0 md:py-36 lg:py-44;
 
-  div:nth-child(1) {
-    order: 1;
-  }
-  @media screen and (min-width: 1023px) {
-    div:nth-child(1) {
-      order: 0;
+  &__item {
+    @apply flex flex-col items-center gap-6 md:flex-row;
+
+    & > * {
+      @apply flex-1;
     }
-    div:nth-child(3) {
-      order: 3;
+
+    &:nth-child(1) {
+      & > div:nth-child(1) {
+        @apply order-1 md:-order-1;
+      }
+    }
+
+    &:nth-child(2) {
+      & > div:nth-child(1) {
+        @apply order-1;
+      }
     }
   }
 
   &__image {
-    @apply relative mx-auto aspect-square w-full overflow-hidden rounded-xl;
-  }
-
-  &__title {
-    @apply text-left md:text-center;
+    @apply relative aspect-square w-full overflow-hidden rounded-xl;
   }
 }

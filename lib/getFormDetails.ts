@@ -1,10 +1,13 @@
 import { FormEntityResponse } from 'types/types';
 import axiosInstance from './axiosInstance';
 
-export const getFormDetails = async (id: number) => {
+export type FormDetailsType = (id: number) => Promise<FormEntityResponse>;
+
+export const getFormDetails: FormDetailsType = async (id: number) => {
   try {
-    return await axiosInstance.get<FormEntityResponse>(
-      `/api/forms/${id}?populate=fields,fields.validation`,
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/forms/${id}?populate=fields,fields.validation`,
     );
+    return await res.json();
   } catch (error) {}
 };

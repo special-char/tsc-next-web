@@ -11,9 +11,9 @@ const ContactForm = (props: Props) => {
     return null;
   }
 
-  const fields = formDetails.data.data?.attributes?.fields;
+  const fields = formDetails.data?.attributes?.fields;
 
-  const submitUrl = formDetails.data.data?.attributes?.submitURL as string;
+  const submitUrl = formDetails.data?.attributes?.submitURL as string;
 
   return (
     <div className="contact__body">

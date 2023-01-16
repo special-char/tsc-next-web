@@ -14,7 +14,7 @@ export const CategorySkeleton = () => {
       <div className="category__content">
         <Carousal>
           {[1, 2, 3].map((category) => {
-            return <CategoryCardSkeleton />;
+            return <CategoryCardSkeleton key={category} />;
           })}
         </Carousal>
       </div>

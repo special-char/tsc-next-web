@@ -8,6 +8,7 @@ import { EventEntity } from 'types/types';
 type Props = {
   events: EventEntity[];
 };
+
 type ChipsType = { children: string; onClick?: () => void };
 
 const AllEvents = ({ events }: Props) => {
@@ -41,7 +42,7 @@ const AllEvents = ({ events }: Props) => {
   );
 
   return (
-    <div className='px-container py-20'>
+    <div className="px-container py-20">
       <Features
         title="All Events"
         chips={chips}
@@ -49,7 +50,7 @@ const AllEvents = ({ events }: Props) => {
       />
       <div className="event_Card">
         {events.map((data) => (
-          <EventCard data={data} />
+          <EventCard data={data} key={data.id} />
         ))}
       </div>
     </div>

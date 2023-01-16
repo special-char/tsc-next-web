@@ -15,8 +15,17 @@ export const CompanyHistorySkeleton = () => {
             <p className="font-cursive text-neutral-500">
               Presenting Academy, the tech school of the future. We teach you
               the right skills to be prepared for tomorrow.
-            </p>{' '}
-            <div className="btn btn--primary font-cursive">JOIN OUR TEAM</div>
+            </p>
+            <div>
+              <Button
+                as={Link}
+                href="/"
+                variant="primary"
+                className="font-cursive"
+              >
+                JOIN OUR TEAM
+              </Button>
+            </div>
           </div>
         </div>
 
