@@ -3,13 +3,14 @@
 import clsx from 'clsx';
 import md from 'markdown-it';
 import Link from 'next/link';
+import Icon from './Icon';
 
 export type AccordianType = {
   id: string;
   title: string;
   description: string;
   curriculam?: { title: string; content: string }[];
-  brochure?: {};
+  brochure?: { url: string; alternativeText: string }[];
 };
 
 type Props = {
@@ -22,13 +23,20 @@ const Accordian = ({ data, hasTag }: Props) => {
     <>
       {data.map((val, index) => {
         return (
-          <details
-            key={val.id}
-            className={clsx({
-              'with-tag': hasTag,
-            })}
-          >
-            <summary>{val.title}</summary>
+          <details key={val.id} className={clsx({})}>
+            <summary>
+              <div className="flex w-full items-center justify-between">
+                {val.title}
+
+                <Link
+                  className="flex items-center gap-3"
+                  href={val.brochure?.url}
+                >
+                  <Icon name="download" height={24} width={24} />
+                  <span className="hover:text-primary">Download</span>
+                </Link>
+              </div>
+            </summary>
             {val?.curriculam?.map((item) => (
               <>
                 <div

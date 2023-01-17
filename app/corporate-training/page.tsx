@@ -25,7 +25,7 @@ const Page = async (props: Props) => {
       title: item?.attributes?.title || '',
       description: '' || '',
       curriculam: item?.attributes?.curriculam || [],
-      brochure: item.attributes?.brochure || {},
+      brochure: item.attributes?.brochure.data?.attributes || {},
     };
   });
 
