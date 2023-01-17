@@ -63,7 +63,7 @@ const Testimonial = async () => {
       </Carousal>
       <div className="testimonial__content">
         {numbers?.map((number) => (
-          <div>
+          <div key={number?.id}>
             <h3 className="testimonial__title">{number?.title}</h3>
             <p className="text-center">{number?.description}</p>
           </div>

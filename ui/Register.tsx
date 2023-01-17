@@ -20,7 +20,6 @@ const Register = ({ formId, btnText, btnClass, additionalField }: Props) => {
 
   const loadformData = useCallback(async (formId: number) => {
     const res = await getFormDetails(formId);
-    // console.log('res', res.data?.attributes?.fields);
 
     const { fields, submitURL } = res.data?.attributes as Form;
     if (fields && submitURL) {

@@ -21,7 +21,7 @@ export const EducationSkeleton = () => {
         <div className="education__content ">
           {[1, 2, 3]?.map((x) => {
             return (
-              <>
+              <div key={x} className="education__item">
                 <figure className="relative aspect-square w-16 overflow-hidden rounded-full bg-neutral-300">
                   <div></div>
                 </figure>
@@ -32,7 +32,7 @@ export const EducationSkeleton = () => {
                     elit. Felis donec massa aliquam id dolor .
                   </p>
                 </div>
-              </>
+              </div>
             );
           })}
         </div>
@@ -76,11 +76,12 @@ const Education = async () => {
         </div>
         <div className="education__content ">
           {details?.map((x) => {
-            const { title, description, image } = x as ComponentCommonDetail;
+            const { title, description, image, id } =
+              x as ComponentCommonDetail;
             const { url, alternativeText } = image.data
               ?.attributes as UploadFile;
             return (
-              <>
+              <div key={x?.id} className="education__item">
                 <figure>
                   <Image
                     src={`${url}?tr=h-64,w-64`}
@@ -90,11 +91,11 @@ const Education = async () => {
                     className="rounded-full"
                   />
                 </figure>
-                <div className="">
+                <div>
                   <h3>{title}</h3>
                   <p>{description}</p>
                 </div>
-              </>
+              </div>
             );
           })}
         </div>

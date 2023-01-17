@@ -62,8 +62,6 @@ const DynamicForm = ({
     }
   };
 
-  console.log(initialValues);
-
   return (
     <>
       {isSubmitted ? (

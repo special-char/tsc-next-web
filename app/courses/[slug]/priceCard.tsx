@@ -15,7 +15,11 @@ const PriceCard = ({ data, additionalField }: Props) => {
       <aside className="price">
         <div className="price__body">
           <Price price={price} />
-          <Register formId={2} btnText='register' additionalField={additionalField} />
+          <Register
+            formId={2}
+            btnText="register"
+            additionalField={additionalField}
+          />
           <Link
             href={brochure?.data.attributes.url}
             className="btn btn--primary btn--small"

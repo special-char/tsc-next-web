@@ -6,9 +6,9 @@ import md from 'markdown-it';
 import Design from '@/public/icons/design.svg';
 import '@/styles/blogPost.css';
 import Button from '@/ui/Button';
-import { getBlogDetails } from '@/lib/getBlogDetails';
+import { getBlogDetails, getBlogSiteMap } from '@/lib/getBlogDetails';
 import BlogCard from '@/ui/BlogCard';
-import { notFound } from 'next/navigation';
+import { Blog } from 'types/types';
 
 export type PageProps = {
   params: {
@@ -17,16 +17,12 @@ export type PageProps = {
   children?: React.ReactNode;
 };
 
-const Page = ({ params }: PageProps) => {
-  const blogData = use(getBlogDetails(params.slug));
-  if (!blogData.data.individualBlog.data[0]) {
-    notFound();
-  }
+export default async ({ params }: PageProps) => {
+  const blogData = await getBlogDetails(params.slug);
   const [{ attributes }] = blogData.data.individualBlog.data;
 
   const { title, bannerImage, readTime, author, category, content } =
-    attributes;
-  const latestPosts = blogData.data.latestPost.data;
+    attributes as Blog;
 
   return (
     <div className="wrapper">
@@ -91,4 +87,9 @@ const Page = ({ params }: PageProps) => {
   );
 };
 
-export default Page;
+export async function getServerSideSitemap() {
+  const blogData = await getBlogSiteMap();
+  return blogData.data.blogs.data.map((x) => ({
+    slug: x.attributes?.slug,
+  }));
+}

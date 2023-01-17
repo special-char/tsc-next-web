@@ -9,7 +9,8 @@
     "tailwind": "tailwindcss -i styles/globals.css -o styles/dist.css",
     "format": "prettier --write \"**/*.{js,ts,tsx,md}\"",
     "postinstall": "npm run tailwind",
-    "codegen": "graphql-codegen --config codegen.yml"
+    "codegen": "graphql-codegen --config codegen.yml",
+    "postbuild": "next-sitemap"
   },
   "prettier": {
     "arrowParens": "always",
@@ -26,6 +27,7 @@
     "markdown-it": "13.0.1",
     "next": "latest",
     "next-seo": "5.15.0",
+    "next-sitemap": "3.1.44",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

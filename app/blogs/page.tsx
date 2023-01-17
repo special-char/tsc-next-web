@@ -7,8 +7,8 @@ import AllBlogs from './allBlogs';
 import { getHomeBlogData } from '@/lib/getHomeBlog';
 import { notFound } from "next/navigation";
 
-export default function Page() {
-  const homeBlogData = use(getHomeBlogData());
+export default async () => {
+  const homeBlogData = await getHomeBlogData();
 
   if (!homeBlogData) { notFound(); }
 
@@ -38,4 +38,4 @@ export default function Page() {
       <AllBlogs blogList={blogList} />
     </>
   );
-}
+};
