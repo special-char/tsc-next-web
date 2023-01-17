@@ -46,18 +46,19 @@ const Accordian = ({ data, hasTag }: Props) => {
               )}
             </summary>
             {val?.curriculam?.map((item) => (
-              <>
-                <div
+              <div className="pl-16 ">
+                <h6
+                  className="pt-3 text-xl"
                   dangerouslySetInnerHTML={{
                     __html: md().render(item.title),
                   }}
-                ></div>
+                ></h6>
                 <div
                   dangerouslySetInnerHTML={{
                     __html: md().render(item.content),
                   }}
                 ></div>
-              </>
+              </div>
             ))}
             {
               <div
