@@ -23,11 +23,17 @@ const Accordian = ({ data, hasTag }: Props) => {
     <>
       {data.map((val, index) => {
         return (
-          <details key={val.id} className={clsx({})}>
+          <details
+            key={val.id}
+            // className={clsx({
+            //   'with-tag': hasTag,
+            // })}
+          >
             <summary>
               <div className="flex w-full items-center justify-between">
                 {val.title}
-
+              </div>
+              {val.brochure ? (
                 <Link
                   className="flex items-center gap-3"
                   href={val.brochure?.url}
@@ -35,7 +41,9 @@ const Accordian = ({ data, hasTag }: Props) => {
                   <Icon name="download" height={24} width={24} />
                   <span className="hover:text-primary">Download</span>
                 </Link>
-              </div>
+              ) : (
+                ''
+              )}
             </summary>
             {val?.curriculam?.map((item) => (
               <>
@@ -51,14 +59,13 @@ const Accordian = ({ data, hasTag }: Props) => {
                 ></div>
               </>
             ))}
-            {typeof val.description === 'string' &&
-              index === data.length - 1 && (
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: md().render(val.description),
-                  }}
-                ></div>
-              )}
+            {
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: md().render(val.description),
+                }}
+              ></div>
+            }
           </details>
         );
       })}
