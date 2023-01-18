@@ -18,6 +18,14 @@ export const getOurGraduatesData: HireOurGraduatesType = async () => {
                 firstName
                 lastName
                 slug
+                resume{
+                  data{
+                    attributes{
+                      url
+                      alternativeText
+                    }
+                  }
+                }
                 about
                 avatar {
                   data {

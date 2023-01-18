@@ -11,7 +11,8 @@ type Props = {
 };
 
 const HireCard = ({ data }: Props) => {
-  const { firstName, lastName, about, avatar, slug } = data.attributes as Team;
+  const { firstName, lastName, about, avatar, slug, resume } =
+    data.attributes as Team;
   console.log('HireCard slug:', slug);
   return (
     <div className="hire_card">
@@ -40,7 +41,7 @@ const HireCard = ({ data }: Props) => {
 
         <div className="hire_card__footer ">
           <Link
-            href="#"
+            href={resume.data?.attributes?.url}
             className="hire_card__action"
             download={'employeeName.cv'}
           >
