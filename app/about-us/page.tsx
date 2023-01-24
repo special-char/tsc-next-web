@@ -11,7 +11,6 @@ type Props = {};
 const Page = (props: Props) => {
   return (
     <>
-
       <Suspense fallback={<PageHeaderSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
         <PageHeader

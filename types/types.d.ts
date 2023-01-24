@@ -210,6 +210,13 @@ export type Banner = {
   publishedAt?: Maybe<Scalars['DateTime']>;
   title: Scalars['String'];
   updatedAt?: Maybe<Scalars['DateTime']>;
+  SEO: {
+    id: string;
+    title: string;
+    description: string;
+    keywords: string;
+    images: MetaImage;
+  };
 };
 
 export type BannerButtonsArgs = {
@@ -501,6 +508,13 @@ export type ComponentCommonHeaders = {
   id: Scalars['ID'];
   slug?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
+  SEO: {
+    id: string;
+    title: string;
+    description: string;
+    keywords: string;
+    images: MetaImage;
+  };
 };
 
 export type ComponentCommonHeadersFiltersInput = {

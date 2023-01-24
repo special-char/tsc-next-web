@@ -20,6 +20,7 @@ export type PageProps = {
 export default async ({ params }: PageProps) => {
   const blogData = await getBlogDetails(params.slug);
   const [{ attributes }] = blogData.data.individualBlog.data;
+  const latestPosts = blogData.data.latestPost.data;
 
   const { title, bannerImage, readTime, author, category, content } =
     attributes as Blog;
@@ -77,11 +78,11 @@ export default async ({ params }: PageProps) => {
             all posts
           </Button>
         </div>
-        {/* <div className="blogs__latest-blogs">
+        <div className="blogs__latest-blogs">
           {latestPosts.map((x, i) => (
             <BlogCard key={x.id} blog={x} />
           ))}
-        </div> */}
+        </div>
       </div>
     </div>
   );
