@@ -1,10 +1,11 @@
 import { getBlogPageMeta } from '@/lib/getBlogPageMeta';
 import { getBlogsMeta } from '@/lib/getBlogsMeta';
+import { getPageMeta } from '@/lib/getPageMeta';
 import { DefaultTags } from '@/ui/DefaultTags';
+import { ComponentCommonHeaders } from 'types/types';
 
 export default async function Head() {
-  const metaData = await getBlogPageMeta();
-
+  const metaData = await getPageMeta('blog-page');
   const [data] = metaData.data.bannerHeader?.data?.attributes
     ?.bannerHeader as ComponentCommonHeaders[];
   console.log('attributes:', data);

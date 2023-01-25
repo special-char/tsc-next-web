@@ -1,12 +1,14 @@
 import { getEventsPageMeta } from '@/lib/getEventsPageMeta';
+import { getPageMeta } from '@/lib/getPageMeta';
 import { DefaultTags } from '@/ui/DefaultTags';
+import { ComponentCommonHeaders } from 'types/types';
 
 export default async function Head() {
-  const metaData = await getEventsPageMeta();
+  const metaData = await getPageMeta('events');
 
   const [data] = metaData.data.bannerHeader?.data?.attributes
     ?.bannerHeader as ComponentCommonHeaders[];
-  console.log('attributes:', data);
+  console.log('attributes events:', data);
   return (
     <>
       <DefaultTags />

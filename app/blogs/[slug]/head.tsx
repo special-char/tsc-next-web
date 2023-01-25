@@ -19,6 +19,7 @@ export default async function Head({ params }: PageProps) {
 
   const metaData = await getBlogsMeta(params.slug);
   const [{ attributes }] = metaData.data.individualBlog.data;
+  console.log('attributes:', attributes?.seo.structuredData);
 
   return (
     <>
@@ -34,10 +35,12 @@ export default async function Head({ params }: PageProps) {
         property="og:image"
         content={attributes?.seo.metaImage.data.attributes.url}
       />
-      {/* <script
+      <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(attributes?.seo.structuredData) }}
-      /> */}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(attributes?.seo?.structuredData),
+        }}
+      />
     </>
   );
 }

@@ -1,6 +1,6 @@
-import { getAboutPageMeta } from '@/lib/getAboutPageMeta';
+import { getPageMeta } from '@/lib/getPageMeta';
 import { DefaultTags } from '@/ui/DefaultTags';
-import { BannerEntity, ComponentCommonHeaders } from 'types/types';
+import { ComponentCommonHeaders } from 'types/types';
 
 export type PageProps = {
   params: {
@@ -10,11 +10,10 @@ export type PageProps = {
 };
 
 export default async function Head() {
-  const metaData = await getAboutPageMeta();
+  const metaData = await getPageMeta('about-page');
 
   const [data] = metaData.data.bannerHeader?.data?.attributes
     ?.bannerHeader as ComponentCommonHeaders[];
-  console.log('attributes:', data);
 
   return (
     <>

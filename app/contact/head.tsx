@@ -1,8 +1,10 @@
 import { getContactPageMeta } from '@/lib/getContactPageMeta';
+import { getPageMeta } from '@/lib/getPageMeta';
 import { DefaultTags } from '@/ui/DefaultTags';
+import { ComponentCommonHeaders } from 'types/types';
 
 export default async function Head() {
-  const metaData = await getContactPageMeta();
+  const metaData = await getPageMeta('contact-page');
 
   const [data] = metaData.data.bannerHeader?.data?.attributes
     ?.bannerHeader as ComponentCommonHeaders[];
