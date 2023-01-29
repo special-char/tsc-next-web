@@ -62,35 +62,8 @@ const DynamicForm = ({
     }
   };
 
-  const saveContact = () => {
-    navigator.permissions
-      .query({ name: 'contacts' })
-      .then((permissionStatus) => {
-        if (permissionStatus.state === 'granted') {
-          var contact = new Contact();
-          contact.name = new ContactName();
-          contact.name.givenName = 'John';
-          contact.name.familyName = 'Doe';
-          contact.phoneNumbers = [new ContactField('mobile', '+1234567890')];
-          contact.save().then(
-            function () {
-              console.log('Contact saved!');
-            },
-            function (error) {
-              console.error('Error saving contact: ' + error.code);
-            },
-          );
-        } else {
-          console.log('Permission denied');
-        }
-      });
-  };
-
   return (
     <>
-      <button type="button" onClick={saveContact}>
-        click me
-      </button>
       {isSubmitted ? (
         <div className="flex h-full items-center">
           <div className="newsletter__subscribed">
