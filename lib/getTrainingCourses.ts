@@ -1,44 +1,37 @@
-import { TeamEntityResponseCollection } from 'types/types';
+import { CourseEntityResponseCollection } from 'types/types';
 
-export type HireOurGraduatesType = () => Promise<{
+export type CoursesType = () => Promise<{
   data: {
-    teams: TeamEntityResponseCollection;
+    courses: CourseEntityResponseCollection;
   };
 }>;
 
-export const getOurGraduatesData: HireOurGraduatesType = async () => {
+export const getTrainingCourses: CoursesType = async () => {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
       method: 'POST',
       body: JSON.stringify({
         query: `{
-          teams {
+          courses {
             data {
               attributes {
-                firstName
-                lastName
-                slug
-                resume{
-                  data{
-                    attributes{
+                title
+                brochure {
+                  data {
+                    attributes {
                       url
                       alternativeText
                     }
                   }
                 }
-                about
-                avatar {
-                  data {
-                    attributes {
-                      url
-                    }
-                  }
+                curriculam {
+                  title
+                  content
                 }
               }
             }
           }
-        }
-        `,
+        }`,
       }),
       headers: {
         'Content-Type': 'application/json',

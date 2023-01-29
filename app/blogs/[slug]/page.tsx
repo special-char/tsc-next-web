@@ -21,6 +21,7 @@ export default async ({ params }: PageProps) => {
   const blogData = await getBlogDetails(params.slug);
   const [{ attributes }] = blogData.data.individualBlog.data;
   const latestPosts = blogData.data.latestPost.data;
+
   const { title, bannerImage, readTime, author, category, content } =
     attributes as Blog;
 

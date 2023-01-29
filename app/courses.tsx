@@ -27,7 +27,11 @@ export const CoursesSkeleton = () => {
 const Courses = async () => {
   const coursesData = await getCoursesData();
 
-  if (!coursesData) return null;
+  if (!coursesData) {
+    throw new Error(
+      'something went wrong! try refreshing the page or please come back later.',
+    );
+  }
 
   const coursesInfo = coursesData.data.courses.data;
   const { title, button } = coursesData.data.homeCourse.data

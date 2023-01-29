@@ -5,11 +5,12 @@ import { Suspense, use } from 'react';
 import FeatureBlog, { FeatureBlogsSkeleton } from '@/ui/FeatureBlog';
 import AllBlogs from './allBlogs';
 import { getHomeBlogData } from '@/lib/getHomeBlog';
+import { notFound } from "next/navigation";
 
 export default async () => {
   const homeBlogData = await getHomeBlogData();
 
-  if (!homeBlogData) return null;
+  if (!homeBlogData) { notFound(); }
 
   const blogList = homeBlogData.data.blogs.data;
 

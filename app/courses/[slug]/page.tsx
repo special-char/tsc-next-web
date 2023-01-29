@@ -8,28 +8,32 @@ import { getCourseDetails, getCoursesSiteMap } from '@/lib/getCourseDetails';
 import { Course, CourseEntity, Form, UploadFile } from 'types/types';
 import TestimonialCard from '@/ui/TestimonialCard';
 import Accordian, { AccordianType } from '@/ui/Accordian';
-import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
 const chipNavData = [
   {
     href: '#about',
     children: 'About',
-    as: Link,
+    as: 'a',
+    key: 'aboutCourse',
   },
   {
     href: '#topic',
-    children: 'Results',
-    as: Link,
+    children: 'Topics',
+    as: 'a',
+    key: 'curriculam',
   },
   {
     href: '#result',
-    children: 'Topics',
-    as: Link,
+    children: 'Results',
+    as: 'a',
+    key: 'complitionResult',
   },
   {
     href: '#review',
     children: 'Reviews',
-    as: Link,
+    as: 'a',
+    key: 'testimonials',
   },
 ];
 
@@ -42,6 +46,10 @@ export type PageProps = {
 
 export default async function Page({ params }: PageProps) {
   const coursesData = await getCourseDetails(params.slug);
+
+  if (!coursesData.data.courses.data[0]) {
+    notFound();
+  }
 
   const [{ attributes }] = coursesData.data.courses.data as CourseEntity[];
 
@@ -70,6 +78,9 @@ export default async function Page({ params }: PageProps) {
         description: item?.content || '',
       };
     }) || [];
+
+  // const chipNavData = coursesData.data.courses.data.reduce()
+
   return (
     <>
       <section id="individualcourse" className="individualcourse">
@@ -118,7 +129,7 @@ export default async function Page({ params }: PageProps) {
               />
             </div>
             <div className="main__left-section__course-navigation">
-              <ChipNavigation chipData={chipNavData} />
+              <ChipNavigation attributes={attributes} chipData={chipNavData} />
             </div>
             <section id="about">
               <h2 className="text-3xl md:text-6xl">About the course</h2>

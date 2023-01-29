@@ -6,7 +6,11 @@ type Props = {};
 const ContactHeader = async (props: Props) => {
   const bannerHeader = await getBannerHeaderData('contact-page');
 
-  if (!bannerHeader) return null;
+  if (!bannerHeader) {
+    throw new Error(
+      'something went wrong! try refreshing the page or please come back later.',
+    );
+  }
 
   const bannerHeaderData =
     bannerHeader.data.bannerHeader.data?.attributes?.bannerHeader;

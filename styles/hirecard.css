@@ -1,7 +1,8 @@
 .hire_card {
-  @apply flex w-full flex-col items-center gap-5 overflow-hidden rounded-2xl bg-neutral-200 md:gap-4;
+  @apply relative flex w-full flex-col items-center gap-5 overflow-hidden rounded-2xl bg-neutral-200 md:gap-4;
   &__img {
-    @apply relative m-0 aspect-h-image w-full;
+    @apply relative m-0 aspect-h-image min-h-[300px]  overflow-hidden object-fill;
+    /* @apply relative m-0 aspect-h-image w-full; */
 
     & > img {
       @apply object-cover;

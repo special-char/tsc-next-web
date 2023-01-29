@@ -1,7 +1,7 @@
 .hireourgraduates {
   @apply px-container py-16;
   &__card__body {
-    @apply grid  justify-center gap-10 gap-y-8 overflow-hidden shadow-dark md:grid-cols-2 lg:grid-cols-3;
+    @apply grid  justify-center gap-10 gap-y-8 overflow-hidden  md:grid-cols-2 lg:grid-cols-3;
   }
   &__card__image {
     @apply aspect-square;

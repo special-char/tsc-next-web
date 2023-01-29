@@ -24,7 +24,11 @@ export const BlogsSkeleton = () => {
 const Blogs = async (props: Props) => {
   const homeBlogData = await getHomeBlogData();
 
-  if (!homeBlogData) return null;
+  if (!homeBlogData) {
+    throw new Error(
+      'something went wrong! try refreshing the page or please come back later.',
+    );
+  }
 
   const { title, button } = homeBlogData.data.homeBlog.data
     ?.attributes as HomeBlog;

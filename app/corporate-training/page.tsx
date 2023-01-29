@@ -1,46 +1,34 @@
-import Accordian from '@/ui/Accordian';
+import Accordian, { AccordianType } from '@/ui/Accordian';
 import React from 'react';
 import DownloadSvg from '@/public/icons/download.svg';
 import '@/styles/corporateTraining.css';
+import { getTrainingCourses } from '@/lib/getTrainingCourses';
+import { Course, CourseEntity } from 'types/types';
+import FieldItem from '@/ui/Field';
 
 type Props = {};
 
-const data = [
-  {
-    id: '1',
-    title: 'courses',
-    description:
-      'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    chip: 'download',
-    svg: <DownloadSvg />,
-  },
-  {
-    id: '1',
-    title: 'courses',
-    description:
-      'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    chip: 'download',
-    svg: <DownloadSvg />,
-  },
-  {
-    id: '1',
-    title: 'courses',
-    description:
-      'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    chip: 'download',
-    svg: <DownloadSvg />,
-  },
-  {
-    id: '1',
-    title: 'courses',
-    description:
-      'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    chip: 'download',
-    svg: <DownloadSvg />,
-  },
-];
+const Page = async (props: Props) => {
+  const trainingData = await getTrainingCourses();
 
-const Page = (props: Props) => {
+  if (!trainingData) {
+    throw new Error(
+      'something went wrong! try refreshing the page or please come back later.',
+    );
+  }
+
+  const { data } = trainingData.data.courses;
+
+  const accordianData = data?.map<AccordianType>((item) => {
+    return {
+      id: item?.id || '',
+      title: item?.attributes?.title || '',
+      description: '' || '',
+      curriculam: item?.attributes?.curriculam || [],
+      brochure: item.attributes?.brochure.data?.attributes || {},
+    };
+  });
+
   return (
     <section id="Corporate" className="corporate">
       <div className="corporate__section ">
@@ -52,7 +40,7 @@ const Page = (props: Props) => {
           </p>
         </div>
         <div className="corporate__body">
-          <Accordian data={data} hasTag />
+          <Accordian data={accordianData} hasTag />
         </div>
       </div>
     </section>

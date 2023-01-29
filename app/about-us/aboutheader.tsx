@@ -25,7 +25,11 @@ export const AboutheaderSkeleton = () => {
 const Aboutheader = async (props: Props) => {
   const aboutDetailsData = await getAboutDetailData();
 
-  if (!aboutDetailsData) return null;
+  if (!aboutDetailsData) {
+    throw new Error(
+      'something went wrong! try refreshing the page or please come back later.',
+    );
+  }
 
   const { detail } = aboutDetailsData.data.aboutDetail.data
     ?.attributes as AboutDetail;

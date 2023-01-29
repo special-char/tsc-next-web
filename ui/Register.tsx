@@ -48,16 +48,19 @@ const Register = ({ formId, btnText, btnClass, additionalField }: Props) => {
       >
         <div className="top-10 m-auto grid max-w-5xl gap-y-3 rounded-3xl bg-neutral-100 p-10">
           <DynamicForm
+            buttonStyle={'col-span-2'}
             fields={fields}
             submitUrl={submitURL}
             formMethod="dialog"
-            buttonStyle={'col-span-full'}
             additionalField={additionalField}
           />
           <button
             type="button"
             onClick={() => setIsOpen(false)}
             className="btn btn--secondary"
+            style={{
+              gridRow: 'revert',
+            }}
           >
             Close
           </button>

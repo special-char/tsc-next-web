@@ -32,7 +32,7 @@ const ProjectCard = ({ data }: Props) => {
             </figure>
             <div className="project__body">
               <div className="project__datails ">
-                <h3 className="card__title">{data?.heading}</h3>
+                <h3 className="card__title">{data?.projectName}</h3>
                 {data?.description && (
                   <p className="card__desc">{data?.description}</p>
                 )}

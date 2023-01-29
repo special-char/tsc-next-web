@@ -12,6 +12,7 @@ import Blogs, { BlogsSkeleton } from './blogs';
 const Page = () => {
   return (
     <>
+      {/* error */}
       <Suspense fallback={<BannerSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
         <Banner />

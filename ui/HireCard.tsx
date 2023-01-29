@@ -4,43 +4,57 @@ import Icon from '@/ui/Icon';
 import Image from 'next/image';
 import '@/styles/hirecard.css';
 import { Team, TeamEntity, UploadFile } from 'types/types';
-
+import Register from './Register';
 
 type Props = {
   data: TeamEntity;
 };
 
 const HireCard = ({ data }: Props) => {
-  const { firstName, lastName, about, avatar } = data.attributes as Team;
+  const { firstName, lastName, about, avatar, slug, resume } =
+    data.attributes as Team;
+  console.log('HireCard slug:', slug);
   return (
     <div className="hire_card">
       {/* {JSON.stringify(data, null)} */}
-      <figure className="hire_card__img">
-        <Image
-          src={avatar.data?.attributes?.url || 'https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f1ff4698e5af4686c9948_image-3-profile-picture-teacher-education-x-template.jpg'}
-          alt="alt-img"
-          fill
-        />
-        <div className="hire_card__chips">
-          <div className="chip chip--primary !px-4 hover:bg-neutral-100 hover:text-primary">
-            Hire Me
-          </div>
-        </div>
-      </figure>
+      <Link
+        prefetch={false}
+        href={`/hire-our-graduates/${encodeURIComponent(slug)}`}
+      >
+        <figure className="hire_card__img">
+          <Image src={`${avatar.data?.attributes?.url}`} alt="alt-img" fill />
+          {/* <div className="hire_card__chips">
+            <div className="chip chip--primary !px-4 hover:bg-neutral-100 hover:text-primary">
+              Hire Me
+            </div>
+          </div> */}
+        </figure>
+      </Link>
       <div className="hire_card__body">
-        <h3 className="hire_card__title">{`${firstName} ${lastName}`}</h3>
-        <p className="hire_card__desc">
-          {about}
-        </p>
+        <Link
+          prefetch={false}
+          href={`/hire-our-graduates/${encodeURIComponent(slug)}`}
+        >
+          <h3 className="hire_card__title">{`${firstName}`}</h3>
+          {/* <p className="hire_card__desc">{about}</p> */}
+        </Link>
+
         <div className="hire_card__footer ">
           <Link
-            href="#"
+            href={resume.data?.attributes?.url}
             className="hire_card__action"
             download={'employeeName.cv'}
           >
             <Icon name="download" height={24} width={24} />
           </Link>
           <h6>Download Profile</h6>
+          <div className="absolute top-4 right-3">
+            <Register
+              formId={2}
+              btnText="Hire"
+              btnClass="btn--primary py-3 px-6"
+            />
+          </div>
         </div>
       </div>
     </div>

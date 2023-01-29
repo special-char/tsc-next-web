@@ -39,7 +39,7 @@ const data = [
   },
 ];
 
-const EmployeeProject = (props: Props) => {
+const EmployeeProject = ({ data }: Props) => {
   return (
     <section id="projects" className="projects">
       <h2 className="text-6xl">Projects</h2>

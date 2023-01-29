@@ -33,7 +33,11 @@ export const GrowCareerSkeleton = () => {
 const GrowCareer = async () => {
   const growCareerData = await getGrowCareerData();
 
-  if (!growCareerData) return null;
+  if (!growCareerData) {
+    throw new Error(
+      'something went wrong! try refreshing the page or please come back later.',
+    );
+  }
 
   const { title, description, link, details } = growCareerData.data
     .homeGrowCareer.data?.attributes as HomeGrowCareer;

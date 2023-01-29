@@ -2,37 +2,46 @@ import React from 'react';
 import '@/styles/usercard.css';
 import Button from '@/ui/Button';
 import Image from 'next/image';
+import Link from 'next/link';
+import Register from './Register';
 
 type Props = {};
 
-const UserCard = (props: Props) => {
+const UserCard = ({ data }: Props) => {
   return (
     <section className="">
-      <div className="user_card ">
+      <div className="user_card">
         <div className="user_card__image">
           <Image
-            src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f1ff9fd9e0e1686d26497_image-3-profile-picture-small-teacher-education-x-template.jpg"
+            src={data.avatar.data.attributes.url}
             alt="avatar"
-            width={200}
-            height={200}
-            className="rounded-full"
+            fill
+            className="rounded-full object-cover"
           />
         </div>
         <div className="user_card__details">
           <div className=" user_card__heading">
-            <h2 className="!m-0 mt-3 md:text-5xl">Kathie Corl</h2>
-            <div className="chip chip--primary w-auto shadow-dark hover:bg-neutral-100 hover:text-primary">
-              Design
+            <h2 className="!m-0 mt-3 md:text-5xl">{data.firstName}</h2>
+            <div className="user_card__chips">
+              <span className="chip chip--secondary pointer-events-none w-auto px-3.5 shadow-dark ">
+                Full-stack developer
+              </span>
+              <Register
+                formId={2}
+                btnText="Hire"
+                btnClass="btn--primary text-[14px] w-auto p-3 md:px-10"
+              />
             </div>
           </div>
-          <p className="user_card__desc">
-            Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida. Diam
-            phasellus vestibulum lorem sed risus ultricies.
-          </p>
-          <div className="flex justify-center md:justify-start">
-            <Button as="button" className="btn btn--small btn--primary">
-              Download Resume
-            </Button>
+          <p className="user_card__desc ">{data.about}</p>
+          <div className="user_card__buttons ">
+            <Link
+              href="#"
+              download={'employeeName.cv'}
+              className="btn btn--small btn--primary text-[14px]"
+            >
+              Download
+            </Link>
           </div>
         </div>
       </div>

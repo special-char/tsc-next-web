@@ -8,7 +8,9 @@ const ContactForm = (props: Props) => {
   const formDetails = use(getFormDetails(1));
 
   if (!formDetails) {
-    return null;
+    throw new Error(
+      'something went wrong! try refreshing the page or please come back later.',
+    );
   }
 
   const fields = formDetails.data?.attributes?.fields;

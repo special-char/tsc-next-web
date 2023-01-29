@@ -84,7 +84,11 @@ type Props = {};
 const OurOffice = async (props: Props) => {
   const contactDetail = await getContactDetail();
 
-  if (!contactDetail) return null;
+  if (!contactDetail) {
+    throw new Error(
+      'something went wrong! try refreshing the page or please come back later.',
+    );
+  }
 
   const { map, addresses, phoneNumber, email, title, description } =
     contactDetail.data.contactDetail.data?.attributes as ContactDetail;
