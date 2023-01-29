@@ -8,7 +8,6 @@ export default async function Head() {
   const metaData = await getPageMeta('blog-page');
   const [data] = metaData.data.bannerHeader?.data?.attributes
     ?.bannerHeader as ComponentCommonHeaders[];
-  console.log('attributes:', data);
   return (
     <>
       <DefaultTags />

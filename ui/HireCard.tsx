@@ -13,7 +13,6 @@ type Props = {
 const HireCard = ({ data }: Props) => {
   const { firstName, lastName, about, avatar, slug, resume } =
     data.attributes as Team;
-  console.log('HireCard slug:', slug);
   return (
     <div className="hire_card">
       {/* {JSON.stringify(data, null)} */}
@@ -23,11 +22,6 @@ const HireCard = ({ data }: Props) => {
       >
         <figure className="hire_card__img">
           <Image src={`${avatar.data?.attributes?.url}`} alt="alt-img" fill />
-          {/* <div className="hire_card__chips">
-            <div className="chip chip--primary !px-4 hover:bg-neutral-100 hover:text-primary">
-              Hire Me
-            </div>
-          </div> */}
         </figure>
       </Link>
       <div className="hire_card__body">

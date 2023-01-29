@@ -37,8 +37,6 @@ const TechnologiesData = [
 ];
 
 const EmployeeTechnologies = ({ data }: Props) => {
-  console.log('EmployeeTechnologies data:', data);
-
   return (
     <>
       <section id="employeeTechno" className="employeeTechno">

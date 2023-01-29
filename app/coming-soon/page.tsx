@@ -1,6 +1,4 @@
-type Props = {};
-
-const Page = (props: Props) => {
+export default () => {
   return (
     <section className="px-container py-10">
       <h1 className="text-center lg:text-[150px]">WE'RE COMING SOON</h1>
@@ -11,5 +9,3 @@ const Page = (props: Props) => {
     </section>
   );
 };
-
-export default Page;

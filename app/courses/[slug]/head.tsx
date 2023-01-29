@@ -25,7 +25,6 @@ export default async function Head({ params }: PageProps) {
 
   const metaData = await getCoursesMeta(params.slug);
   const [{ attributes }] = metaData.data.courses.data as CourseEntity[];
-  console.log('attributes ', attributes);
 
   return (
     <>

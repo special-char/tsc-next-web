@@ -19,7 +19,6 @@ export default async function Head({ params }: PageProps) {
 
   const metaData = await getBlogsMeta(params.slug);
   const [{ attributes }] = metaData.data.individualBlog.data;
-  console.log('attributes:', attributes?.seo.structuredData);
 
   return (
     <>

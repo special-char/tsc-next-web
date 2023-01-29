@@ -6,7 +6,6 @@ export default async function Head() {
 
   const [data] = metaData.data.bannerHeader?.data?.attributes
     ?.bannerHeader as ComponentCommonHeaders[];
-  console.log('attributes:', data);
   return (
     <>
       <DefaultTags />

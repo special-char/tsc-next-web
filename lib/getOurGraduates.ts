@@ -14,13 +14,14 @@ export const getOurGraduatesData: HireOurGraduatesType = async () => {
         query: `{
           teams {
             data {
+              id
               attributes {
                 firstName
                 lastName
                 slug
-                resume{
-                  data{
-                    attributes{
+                resume {
+                  data {
+                    attributes {
                       url
                       alternativeText
                     }
@@ -37,7 +38,7 @@ export const getOurGraduatesData: HireOurGraduatesType = async () => {
               }
             }
           }
-        }
+        }        
         `,
       }),
       headers: {
