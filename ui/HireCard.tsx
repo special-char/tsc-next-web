@@ -15,7 +15,6 @@ const HireCard = ({ data }: Props) => {
     data.attributes as Team;
   return (
     <div className="hire_card">
-      {/* {JSON.stringify(data, null)} */}
       <Link
         prefetch={false}
         href={`/hire-our-graduates/${encodeURIComponent(slug)}`}
@@ -35,7 +34,7 @@ const HireCard = ({ data }: Props) => {
 
         <div className="hire_card__footer ">
           <Link
-            href={resume.data?.attributes?.url}
+            href={`${resume.data?.attributes?.url}`}
             className="hire_card__action"
             download={'employeeName.cv'}
           >
