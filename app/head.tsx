@@ -1,14 +1,20 @@
+import { getBannerData } from '@/lib/getBanner';
+import { getBannerMeta } from '@/lib/getBannerMeta';
 import { DefaultTags } from '@/ui/DefaultTags';
 
-export default function Head() {
+export default async function Head() {
+  const metaData = await getBannerMeta();
+  const data = metaData.data.banner.data?.attributes;
+
   return (
     <>
       <DefaultTags />
-      <title>Home | The Special Character</title>
-      <meta
-        name="description"
-        content="A playground to explore new Next.js 13 app directory features such as nested layouts, instant loading states, streaming, and component level data fetching."
-      />
+
+      <title>{data?.SEO.title}</title>
+      <meta name="description" content={data?.SEO.description} />
+      <meta name="title" content={data?.SEO.title} />
+      <meta name="keywords" content={data?.SEO.keywords} />
+      <meta property="og:image" content={data?.SEO.images?.attributes?.url} />
     </>
   );
 }
