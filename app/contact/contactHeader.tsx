@@ -7,9 +7,11 @@ const ContactHeader = async (props: Props) => {
   const bannerHeader = await getBannerHeaderData('contact-page');
 
   if (!bannerHeader) {
-    throw new Error(
-      'something went wrong! try refreshing the page or please come back later.',
-    );
+    // TODO: fix error issue
+    // throw new Error(
+    //   'something went wrong! try refreshing the page or please come back later.',
+    // );
+    return null;
   }
 
   const bannerHeaderData =
