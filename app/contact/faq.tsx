@@ -10,8 +10,9 @@ export const FaqSkeleton = () => {
         <div className="faq__header font-cursive">
           <h2 className="font-cursive">Frequently Asked Questions.</h2>
           <p>
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat.
+            Got a quentions? We're here to answer! If you don't see your
+            question here, drop us a line on our
+            <a href="#contactInfo">Contact Page.</a>
           </p>
         </div>
         <div className="faq__body">
