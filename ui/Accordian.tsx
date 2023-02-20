@@ -54,6 +54,7 @@ const Accordian = ({ data, hasTag }: Props) => {
                   }}
                 ></h6>
                 <div
+                  className="ml-5"
                   dangerouslySetInnerHTML={{
                     __html: md().render(item.content),
                   }}
