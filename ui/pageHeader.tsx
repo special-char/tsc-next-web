@@ -2,8 +2,9 @@ import React from 'react';
 import '@/styles/pageHeader.css';
 import clsx from 'clsx';
 import { getBannerHeaderData } from '@/lib/getBannerHeader';
-import { ComponentCommonHeaders } from 'types/types';
+import { Banner, ComponentCommonHeaders } from 'types/types';
 import SeparatorArray from './SeparatorArray';
+import { getBannerData } from '@/lib/getBanner';
 
 export const PageHeaderSkeleton = () => {
   return (
@@ -43,12 +44,10 @@ const PageHeader = async ({
   circleLeft,
   hasSeprator = true,
 }: Props) => {
-  const bannerHeader = await getBannerHeaderData(pageName);
+  const bannerData = await getBannerData(pageName);
 
-  const bannerHeaderData =
-    bannerHeader.data.bannerHeader.data?.attributes?.bannerHeader;
-
-  const [{ title, description }] = bannerHeaderData as ComponentCommonHeaders[];
+  const { title, description } = bannerData.data.banner.data
+    ?.attributes as Banner;
 
   return (
     <section className={clsx('page__section', { [className]: !!className })}>

@@ -5,12 +5,14 @@ import { Suspense, use } from 'react';
 import FeatureBlog, { FeatureBlogsSkeleton } from '@/ui/FeatureBlog';
 import AllBlogs from './allBlogs';
 import { getHomeBlogData } from '@/lib/getHomeBlog';
-import { notFound } from "next/navigation";
+import { notFound } from 'next/navigation';
 
 export default async () => {
   const homeBlogData = await getHomeBlogData();
 
-  if (!homeBlogData) { notFound(); }
+  if (!homeBlogData) {
+    notFound();
+  }
 
   const blogList = homeBlogData.data.blogs.data;
 
@@ -19,7 +21,7 @@ export default async () => {
       <Suspense fallback={<PageHeaderSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
         <PageHeader
-          pageName="blog-page"
+          pageName="blogs"
           className="customClass"
           circleRight="bg-primary"
           circleLeft="bg-secondary3"

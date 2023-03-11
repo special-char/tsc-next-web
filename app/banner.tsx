@@ -35,7 +35,7 @@ export const BannerSkeleton = () => {
 type Props = {};
 
 const Banner = async (props: Props) => {
-  const bannerData = await getBannerData(1);
+  const bannerData = await getBannerData('home');
 
   const { title, description, buttons, image } = bannerData.data.banner.data
     ?.attributes as Banner;
@@ -46,9 +46,7 @@ const Banner = async (props: Props) => {
     <section id="banner" className="banner">
       <div className="banner__details">
         <h1 className="banner__title">{title}</h1>
-        <div
-          dangerouslySetInnerHTML={{ __html: md().render(description) }}
-        ></div>
+        <p>{description}</p>
         <div className="banner__actions">
           {buttons?.map((item: any, index) => (
             <Button

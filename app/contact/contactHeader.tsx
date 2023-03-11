@@ -1,15 +1,13 @@
-import { getBannerHeaderData } from '@/lib/getBannerHeader';
-import { ComponentCommonHeaders } from 'types/types';
+import { getBannerData } from '@/lib/getBanner';
+import { Banner } from 'types/types';
 
 type Props = {};
 
 const ContactHeader = async (props: Props) => {
-  const bannerHeader = await getBannerHeaderData('contact-page');
+  const bannerData = await getBannerData('contact');
 
-  const bannerHeaderData =
-    bannerHeader.data.bannerHeader.data?.attributes?.bannerHeader;
-
-  const [{ title, description }] = bannerHeaderData as ComponentCommonHeaders[];
+  const { title, description } = bannerData.data.banner.data
+    ?.attributes as Banner;
   return (
     <>
       <h1 className="contact__title">{title}</h1>

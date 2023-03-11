@@ -21,7 +21,7 @@ const page = async ({
       <Suspense fallback={<h1>Loading...</h1>}>
         {/* @ts-expect-error Async Server Component */}
         <PageHeader
-          pageName="courses-page"
+          pageName="courses"
           className="customClass"
           circleRight="bg-secondary2"
           circleLeft="bg-secondary3"
