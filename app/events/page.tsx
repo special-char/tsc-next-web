@@ -7,8 +7,6 @@ import { EventEntity } from 'types/types';
 export default async () => {
   const eventData = await getAllEvents();
 
-  if (!eventData) return null;
-
   const eventsData = eventData.data.events.data as EventEntity[];
 
   return (

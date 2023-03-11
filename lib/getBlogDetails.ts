@@ -100,15 +100,14 @@ export const getBlogDetails: BlogDetailsType = async (slug: string) => {
 };
 
 export const getBlogSiteMap: BlogSiteMapType = async () => {
-  try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify({
-        query: `{
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify({
+      query: `{
           blogs {
             data {
               attributes {
@@ -117,12 +116,16 @@ export const getBlogSiteMap: BlogSiteMapType = async () => {
             }
           }
         }`,
-      }),
-      cache: 'no-cache',
-      next: {
-        revalidate: 0,
-      },
-    });
-    return await response.json();
-  } catch (error) {}
+    }),
+    cache: 'no-cache',
+    next: {
+      revalidate: 0,
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch Blog Site map Data');
+  }
+
+  return await response.json();
 };

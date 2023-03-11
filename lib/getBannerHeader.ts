@@ -10,11 +10,10 @@ export type BannerHeaderType = (pageName: string) => Promise<{
 export const getBannerHeaderData: BannerHeaderType = async (
   pageName: string,
 ) => {
-  try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
-      method: 'POST',
-      body: JSON.stringify({
-        query: `{
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
+    method: 'POST',
+    body: JSON.stringify({
+      query: `{
           bannerHeader {
             data {
               attributes {
@@ -35,17 +34,20 @@ export const getBannerHeaderData: BannerHeaderType = async (
             }
           }
         }`,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      cache: 'no-cache',
-      next: {
-        revalidate: 0,
-      },
-    });
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    cache: 'no-cache',
+    next: {
+      revalidate: 0,
+    },
+  });
 
-    return await res.json();
-  } catch (error) {}
+  if (!res.ok) {
+    throw new Error('Failed to fetch Banner Header Data');
+  }
+
+  return await res.json();
 };

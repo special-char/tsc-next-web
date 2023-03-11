@@ -45,8 +45,10 @@ const Blogs = async (props: Props) => {
           {button?.text}
         </Link>
       </div>
-
-      <FeatureBlog />
+      <Suspense fallback={<FeatureBlogsSkeleton />}>
+        {/* @ts-expect-error Async Server Component */}
+        <FeatureBlog />
+      </Suspense>
     </section>
   );
 };

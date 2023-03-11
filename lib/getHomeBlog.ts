@@ -11,11 +11,10 @@ export type HomeBlogType = () => Promise<{
 }>;
 
 export const getHomeBlogData: HomeBlogType = async () => {
-  try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
-      method: 'POST',
-      body: JSON.stringify({
-        query: `{
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
+    method: 'POST',
+    body: JSON.stringify({
+      query: `{
           homeBlog {
             data {
               attributes {
@@ -60,17 +59,20 @@ export const getHomeBlogData: HomeBlogType = async () => {
             }
           }
         }`,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      cache: 'no-cache',
-      next: {
-        revalidate: 0,
-      },
-    });
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    cache: 'no-cache',
+    next: {
+      revalidate: 0,
+    },
+  });
 
-    return await res.json();
-  } catch (error) {}
+  if (!res.ok) {
+    throw new Error('Failed to fetch Home Blog Data');
+  }
+
+  return await res.json();
 };

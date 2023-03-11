@@ -37,14 +37,6 @@ type Props = {};
 const Banner = async (props: Props) => {
   const bannerData = await getBannerData(1);
 
-  if (!bannerData) {
-    // TODO: fix error issue
-    // throw new Error(
-    //   'something went wrong! try refreshing the page or please come back later.',
-    // );
-    return null;
-  }
-
   const { title, description, buttons, image } = bannerData.data.banner.data
     ?.attributes as Banner;
 

@@ -12,10 +12,6 @@ type Props = {};
 const Page = (props: Props) => {
   const contactDetail = use(getContactDetail());
 
-  if (!contactDetail) {
-    return null;
-  }
-
   const { addresses, phoneNumber, email } = contactDetail.data.contactDetail
     .data?.attributes as ContactDetail;
   return (

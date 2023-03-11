@@ -11,14 +11,6 @@ type Props = {};
 const Page = async (props: Props) => {
   const trainingData = await getTrainingCourses();
 
-  if (!trainingData) {
-    // TODO: fix error issue
-    // throw new Error(
-    //   'something went wrong! try refreshing the page or please come back later.',
-    // );
-    return null;
-  }
-
   const { data } = trainingData.data.courses;
 
   const accordianData = data?.map<AccordianType>((item) => {

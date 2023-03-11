@@ -53,9 +53,7 @@ export const HeaderSkeleton = () => {
 const Header = async (props: Props) => {
   const menuData = await getMenuData();
 
-  if (!menuData) return null;
-
-  const { data: menuOptions } = menuData.data.data?.attributes
+  const { data: menuOptions } = menuData?.data.data?.attributes
     ?.items as MenusMenuItemRelationResponseCollection;
 
   const attributes = menuOptions.at(-1)?.attributes;

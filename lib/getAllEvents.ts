@@ -7,15 +7,14 @@ export type AllEventDetailsType = () => Promise<{
 }>;
 
 export const getAllEvents: AllEventDetailsType = async () => {
-  try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify({
-        query: `{
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify({
+      query: `{
             events {
               data {
                 id
@@ -44,18 +43,16 @@ export const getAllEvents: AllEventDetailsType = async () => {
               }
             }
           }`,
-      }),
-      cache: 'no-cache',
-      next: {
-        revalidate: 0,
-      },
-    });
-    const json = await response.json();
+    }),
+    cache: 'no-cache',
+    next: {
+      revalidate: 0,
+    },
+  });
 
-    if (!response.ok) {
-      throw new Error(json);
-    }
+  if (!response.ok) {
+    throw new Error('Failed to fetch All Events Data');
+  }
 
-    return json;
-  } catch (error) {}
+  return await response.json();
 };

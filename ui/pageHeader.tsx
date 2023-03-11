@@ -45,8 +45,6 @@ const PageHeader = async ({
 }: Props) => {
   const bannerHeader = await getBannerHeaderData(pageName);
 
-  if (!bannerHeader) return null;
-
   const bannerHeaderData =
     bannerHeader.data.bannerHeader.data?.attributes?.bannerHeader;
 

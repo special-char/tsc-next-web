@@ -7,11 +7,10 @@ export type HireOurGraduatesType = () => Promise<{
 }>;
 
 export const getOurGraduatesData: HireOurGraduatesType = async () => {
-  try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
-      method: 'POST',
-      body: JSON.stringify({
-        query: `{
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
+    method: 'POST',
+    body: JSON.stringify({
+      query: `{
           teams {
             data {
               id
@@ -47,17 +46,20 @@ export const getOurGraduatesData: HireOurGraduatesType = async () => {
           }
         }        
         `,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      cache: 'no-cache',
-      next: {
-        revalidate: 0,
-      },
-    });
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    cache: 'no-cache',
+    next: {
+      revalidate: 0,
+    },
+  });
 
-    return await res.json();
-  } catch (error) {}
+  if (!res.ok) {
+    throw new Error('Failed to fetch Our Graduates Data');
+  }
+
+  return await res.json();
 };

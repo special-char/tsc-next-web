@@ -2,7 +2,6 @@ import React, { use } from 'react';
 import '@/styles/blogs.css';
 import { getHomeBlogData } from '@/lib/getHomeBlog';
 import BlogCard, { BlogCardSkeleton } from '@/ui/BlogCard';
-import { getBlogs } from '@/lib/getBlogs';
 
 type Props = {};
 
@@ -18,8 +17,6 @@ export const FeatureBlogsSkeleton = () => {
 
 const FeatureBlogs = async () => {
   const homeBlogData = await getHomeBlogData();
-
-  if (!homeBlogData) return null;
 
   const blogList = homeBlogData.data.blogs.data;
 

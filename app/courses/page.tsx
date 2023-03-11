@@ -7,12 +7,12 @@ import { getAllCoursesData } from '@/lib/getAllCourses';
 
 type Props = {};
 
-const page = ({ searchParams }: {
+const page = async ({
+  searchParams,
+}: {
   searchParams?: { category?: string };
 }) => {
-  const coursesData = use(getAllCoursesData());
-
-  if (!coursesData) return null;
+  const coursesData = await getAllCoursesData();
 
   const [featuredCourse, ...allCourses] = coursesData.data.courses.data;
 
