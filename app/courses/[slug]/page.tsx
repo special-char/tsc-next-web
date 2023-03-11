@@ -134,9 +134,9 @@ export default async function Page({ params }: PageProps) {
             <section id="about">
               <h2 className="text-3xl md:text-6xl">About the course</h2>
               {aboutCourse && (
-                <div
+                <article
                   dangerouslySetInnerHTML={{ __html: md().render(aboutCourse) }}
-                ></div>
+                ></article>
               )}
             </section>
             <hr className="my-8 md:my-12 lg:my-16" />
@@ -149,11 +149,12 @@ export default async function Page({ params }: PageProps) {
               <h2 className="text-3xl md:text-6xl">
                 Results after course completion
               </h2>
-              <div
+              <article
+                className="prose prose-ul:pl-8 lg:prose-xl"
                 dangerouslySetInnerHTML={{
                   __html: md().render(complitionResult || ''),
                 }}
-              ></div>
+              ></article>
             </section>
             <hr className="my-8 md:my-12 lg:my-16" />
             {testimonials?.data && testimonials?.data.length > 0 && (

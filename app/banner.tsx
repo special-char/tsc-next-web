@@ -35,7 +35,7 @@ export const BannerSkeleton = () => {
 type Props = {};
 
 const Banner = async (props: Props) => {
-  const bannerData = await getBannerData();
+  const bannerData = await getBannerData(1);
 
   if (!bannerData) {
     // TODO: fix error issue
