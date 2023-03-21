@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router';
+import { ComponentSharedSeo } from 'types/types';
 
 export function SEOTags({
   metaTitle,
@@ -9,20 +9,18 @@ export function SEOTags({
   metaRobots,
   structuredData,
   canonicalURL,
-}) {
-  const { asPath } = useRouter();
-  const cleanPath = asPath.split('#')[0].split('?')[0];
-
+  path,
+}: ComponentSharedSeo & { path: string }) {
   return (
     <>
-      {metaTitle && <title>{metaTitle} | The Special Character</title>}
+      {metaTitle && <title>{metaTitle}</title>}
 
       {metaDescription && <meta name="description" content={metaDescription} />}
 
-      <meta name="keywords" content={keywords} />
+      {keywords && <meta name="keywords" content={keywords} />}
 
-      {metaSocial.map((x) => {
-        switch (x.socialNetwork) {
+      {metaSocial?.map((x) => {
+        switch (x?.socialNetwork) {
           case 'Facebook':
             return (
               <>
@@ -38,12 +36,12 @@ export function SEOTags({
                 )}
                 <meta
                   property="og:url"
-                  content={`https://thespecialcharacter.com/${cleanPath}`}
+                  content={`https://thespecialcharacter.com/${path}`}
                 />
                 {x.image && (
                   <meta
                     property="og:image"
-                    content={x.image.data.attributes.url}
+                    content={x?.image?.data?.attributes?.url}
                   />
                 )}
               </>
@@ -69,7 +67,7 @@ export function SEOTags({
                 {x.image && (
                   <meta
                     property="twitter:image"
-                    content={x.image.data.attributes.url}
+                    content={x?.image?.data?.attributes?.url}
                   />
                 )}
               </>
@@ -86,14 +84,14 @@ export function SEOTags({
 
       {metaRobots && <meta name="robots" content={metaRobots} />}
 
-      {structuredData && (
+      {/* {structuredData && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(structuredData),
           }}
         />
-      )}
+      )} */}
     </>
   );
 }

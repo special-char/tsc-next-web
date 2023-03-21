@@ -7,11 +7,10 @@ export type EducationType = () => Promise<{
 }>;
 
 export const getEducationData: EducationType = async () => {
-  try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
-      method: 'POST',
-      body: JSON.stringify({
-        query: `{
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
+    method: 'POST',
+    body: JSON.stringify({
+      query: `{
           aboutTsc {
             data {
               id
@@ -25,18 +24,6 @@ export const getEducationData: EducationType = async () => {
                     }
                   }
                 }
-                details {
-                  id
-                  title
-                  description
-                  image {
-                    data {
-                      attributes {
-                        url
-                      }
-                    }
-                  }
-                }
                 button {
                   text
                   url
@@ -45,17 +32,16 @@ export const getEducationData: EducationType = async () => {
             }
           }
         }`,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      cache: 'no-cache',
-      next: {
-        revalidate: 0,
-      },
-    });
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    cache: 'no-cache',
+    next: {
+      revalidate: 0,
+    },
+  });
 
-    return await res.json();
-  } catch (error) {}
+  return await res.json();
 };

@@ -1,6 +1,8 @@
 import { getPageMeta } from '@/lib/getPageMeta';
+import { getSEOData } from '@/lib/getSEO';
 import { DefaultTags } from '@/ui/DefaultTags';
-import { ComponentCommonHeaders } from 'types/types';
+import { SEOTags } from '@/ui/SEOTags';
+import { ComponentCommonHeaders, ComponentSharedSeo } from 'types/types';
 
 export type PageProps = {
   params: {
@@ -10,23 +12,15 @@ export type PageProps = {
 };
 
 export default async function Head() {
-  // TODO: fix head issue
-  // const metaData = await getPageMeta('about-page');
+  const metaData = await getSEOData('about');
 
-  // const [data] = metaData.data.bannerHeader?.data?.attributes
-  //   ?.bannerHeader as ComponentCommonHeaders[];
+  const seo = metaData?.data?.banner?.data?.attributes
+    ?.seo as ComponentSharedSeo;
 
   return (
     <>
       <DefaultTags />
-      {/* <title>{data?.SEO?.title}</title>
-      <meta name="title" content={data?.SEO?.title} />
-      <meta name="description" content={data?.SEO?.description} />
-      <meta name="keywords" content={data?.SEO?.keywords} />
-      <meta
-        property="og:image"
-        content={data?.SEO?.images?.data?.attributes?.url}
-      /> */}
+      {seo && <SEOTags {...seo} path="about-us" />}
     </>
   );
 }

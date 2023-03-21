@@ -48,11 +48,7 @@ export const EducationSkeleton = () => {
 const Education = async () => {
   const educationData = await getEducationData();
 
-  if (!educationData) {
-    throw new Error(
-      'something went wrong! try refreshing the page or please come back later.',
-    );
-  }
+  console.log(educationData);
 
   const { title, description, details, image, button } = educationData.data
     .aboutTsc.data?.attributes as AboutTsc;
@@ -75,7 +71,7 @@ const Education = async () => {
           />
         </div>
         <div className="education__content ">
-          {details?.map((x) => {
+          {/* {details?.map((x) => {
             const { title, description, image, id } =
               x as ComponentCommonDetail;
             const { url, alternativeText } = image.data
@@ -97,7 +93,7 @@ const Education = async () => {
                 </div>
               </div>
             );
-          })}
+          })} */}
         </div>
       </div>
       <div className="education__header col-span-2 mb-20 lg:mb-32">

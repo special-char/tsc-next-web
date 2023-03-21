@@ -1,15 +1,19 @@
-import { getBannerData } from '@/lib/getBanner';
-import { getBannerMeta } from '@/lib/getBannerMeta';
+import { getSEOData } from '@/lib/getSEO';
 import { DefaultTags } from '@/ui/DefaultTags';
+import { SEOTags } from '@/ui/SEOTags';
+import { ComponentSharedSeo } from 'types/types';
 
 export default async function Head() {
-  // TODO: fix head issue
-  // const metaData = await getBannerMeta();
-  // const data = metaData.data.banner.data?.attributes;
+  const metaData = await getSEOData('home');
+
+  const seo = metaData?.data?.banner.data?.attributes
+    ?.seo as ComponentSharedSeo;
 
   return (
     <>
       <DefaultTags />
+
+      {seo && <SEOTags {...seo} path="" />}
 
       {/* <title>{data?.SEO.title}</title>
       <meta name="description" content={data?.SEO.description} />
