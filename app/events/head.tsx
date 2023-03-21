@@ -4,7 +4,7 @@ import { SEOTags } from '@/ui/SEOTags';
 import { ComponentSharedSeo } from 'types/types';
 
 export default async function Head() {
-  const metaData = await getSEOData('blogs');
+  const metaData = await getSEOData('events');
 
   const seo = metaData.data.banner.data?.attributes?.seo as ComponentSharedSeo;
   return (
