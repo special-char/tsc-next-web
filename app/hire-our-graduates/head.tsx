@@ -1,14 +1,18 @@
+import { getSEOData } from '@/lib/getSEO';
 import { DefaultTags } from '@/ui/DefaultTags';
+import { SEOTags } from '@/ui/SEOTags';
+import { ComponentSharedSeo } from 'types/types';
 
-export default function Head() {
+export default async function Head() {
+  const metaData = await getSEOData('home');
+
+  const seo = metaData?.data?.banner.data?.attributes
+    ?.seo as ComponentSharedSeo;
+
   return (
     <>
       <DefaultTags />
-      <title>Head.js Example | Next.js App Directory</title>
-      <meta
-        name="description"
-        content="Configure the <head> tag of a route segment"
-      />
+      {seo && <SEOTags {...seo} path="" />}
     </>
   );
 }
