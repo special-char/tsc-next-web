@@ -13,7 +13,7 @@ export function SEOTags({
 }: ComponentSharedSeo & { path: string }) {
   return (
     <>
-      {metaTitle && <title>{metaTitle}</title>}
+      {metaTitle && <title>{`${metaTitle} | The Special Character`}</title>}
 
       {metaDescription && <meta name="description" content={metaDescription} />}
 
