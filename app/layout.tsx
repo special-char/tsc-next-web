@@ -35,7 +35,6 @@ export default function RootLayout({
       lang="en"
       className={`${kumbSans.variable} font-sans ${newsreader.variable} font-serif ${flowBlock.variable} font-cursive`}
     >
-      <head />
       <body>
         <Suspense fallback={<SideNavSkeleton />}>
           {/* @ts-expect-error Async Server Component */}

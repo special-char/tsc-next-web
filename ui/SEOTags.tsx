@@ -87,6 +87,13 @@ export function SEOTags({
       {/* {structuredData && (
         <script
           type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      )} */}
+
+      {/* {structuredData && (
+        <script
+          type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(structuredData),
           }}

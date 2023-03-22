@@ -5,6 +5,7 @@ import { getBannerHeaderData } from '@/lib/getBannerHeader';
 import { Banner, ComponentCommonHeaders } from 'types/types';
 import SeparatorArray from './SeparatorArray';
 import { getBannerData } from '@/lib/getBanner';
+import Script from 'next/script';
 
 export const PageHeaderSkeleton = () => {
   return (
@@ -46,7 +47,7 @@ const PageHeader = async ({
 }: Props) => {
   const bannerData = await getBannerData(pageName);
 
-  const { title, description } = bannerData.data.banner.data
+  const { title, description, seo } = bannerData.data.banner.data
     ?.attributes as Banner;
 
   return (
@@ -66,6 +67,14 @@ const PageHeader = async ({
         ></div>
       </div>
       {hasSeprator && <SeparatorArray />}
+      {seo?.structuredData && (
+        <Script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(seo.structuredData),
+          }}
+        />
+      )}
     </section>
   );
 };

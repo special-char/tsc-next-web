@@ -5,6 +5,7 @@ import md from 'markdown-it';
 import { getBannerData } from '@/lib/getBanner';
 import { Banner, UploadFile } from 'types/types';
 import Button from '@/ui/Button';
+import Script from 'next/script';
 
 export const BannerSkeleton = () => {
   return (
@@ -37,8 +38,8 @@ type Props = {};
 const Banner = async (props: Props) => {
   const bannerData = await getBannerData('home');
 
-  const { title, description, buttons, image } = bannerData.data.banner.data
-    ?.attributes as Banner;
+  const { title, description, buttons, image, seo } = bannerData.data.banner
+    .data?.attributes as Banner;
 
   const { url } = image.data?.attributes as UploadFile;
 
@@ -74,6 +75,14 @@ const Banner = async (props: Props) => {
           />
         )}
       </div>
+      {seo?.structuredData && (
+        <Script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(seo.structuredData),
+          }}
+        />
+      )}
     </section>
   );
 };
