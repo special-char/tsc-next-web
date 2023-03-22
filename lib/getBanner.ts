@@ -29,6 +29,9 @@ export const getBannerData: BannerType = async (slug: string) => {
                     text
                     url
                   }
+                  seo {
+                    structuredData
+                  }
                 }
               }
             }
