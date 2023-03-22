@@ -4,6 +4,7 @@ import { Suspense } from 'react';
 import Footer from './footer';
 import Header, { HeaderSkeleton } from './header';
 import SideNav, { SideNavSkeleton } from './sideNav';
+import Script from 'next/script';
 
 const kumbSans = Kumbh_Sans({
   style: ['normal'],
@@ -36,6 +37,19 @@ export default function RootLayout({
       className={`${kumbSans.variable} font-sans ${newsreader.variable} font-serif ${flowBlock.variable} font-cursive`}
     >
       <body>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-WS7JTT5H0J"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-WS7JTT5H0J');
+        `}
+        </Script>
         <Suspense fallback={<SideNavSkeleton />}>
           {/* @ts-expect-error Async Server Component */}
           <SideNav />
