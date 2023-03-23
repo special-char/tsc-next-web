@@ -34,12 +34,6 @@ export default async function Head({ params }: PageProps) {
         property="og:image"
         content={attributes?.seo.metaImage.data.attributes.url}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(attributes?.seo?.structuredData),
-        }}
-      />
     </>
   );
 }

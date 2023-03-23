@@ -9,6 +9,7 @@ import Button from '@/ui/Button';
 import { getBlogDetails, getBlogSiteMap } from '@/lib/getBlogDetails';
 import BlogCard from '@/ui/BlogCard';
 import { Blog } from 'types/types';
+import Script from 'next/script';
 
 export type PageProps = {
   params: {
@@ -22,11 +23,19 @@ export default async ({ params }: PageProps) => {
   const [{ attributes }] = blogData.data.individualBlog.data;
   const latestPosts = blogData.data.latestPost.data;
 
-  const { title, bannerImage, readTime, author, category, content } =
+  const { title, bannerImage, readTime, author, category, content, seo } =
     attributes as Blog;
 
   return (
     <div className="wrapper">
+      {seo?.structuredData && (
+        <Script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(seo.structuredData),
+          }}
+        />
+      )}
       <div className="wrapper__header"></div>
 
       <div className="wrapper__body">
