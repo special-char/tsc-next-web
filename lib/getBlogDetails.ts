@@ -1,8 +1,8 @@
-import { BlogEntityResponseCollection } from 'types/types';
+import { BlogEntityResponse, BlogEntityResponseCollection } from 'types/types';
 
 export type BlogDetailsType = (slug: string) => Promise<{
   data: {
-    individualBlog: BlogEntityResponseCollection;
+    individualBlog: BlogEntityResponse;
     latestPost: BlogEntityResponseCollection;
   };
 }>;
@@ -23,7 +23,7 @@ export const getBlogDetails: BlogDetailsType = async (slug: string) => {
       },
       body: JSON.stringify({
         query: `{
-          individualBlog: blogs(filters: { slug: { eq: "${slug}" } }) {
+          individualBlog: blog(slug: "${slug}") {
             data {
               id
               attributes {

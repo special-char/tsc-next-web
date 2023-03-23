@@ -20,11 +20,9 @@ export type PageProps = {
 
 export default async ({ params }: PageProps) => {
   const blogData = await getBlogDetails(params.slug);
-  const [{ attributes }] = blogData.data.individualBlog.data;
-  const latestPosts = blogData.data.latestPost.data;
-
   const { title, bannerImage, readTime, author, category, content, seo } =
-    attributes as Blog;
+    blogData.data.individualBlog.data?.attributes as Blog;
+  const latestPosts = blogData.data.latestPost.data;
 
   return (
     <div className="wrapper">
