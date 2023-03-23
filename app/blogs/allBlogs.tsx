@@ -58,7 +58,7 @@ const AllBlogs = ({ blogList }: Props) => {
   return (
     <section className="items bg-neutral-100">
       <Features
-        title="All Courses"
+        title="All Blogs"
         chips={chips}
         selectedCategory={selectedCategory}
       />
