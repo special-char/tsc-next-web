@@ -93,9 +93,7 @@ const Footer = (props: Props) => {
           ))}
         </div>
       )}
-      <p className="footer__copyright">
-        Copyright © TSC | Designed by TSC - Powered by Next.js
-      </p>
+      <p className="footer__copyright">Copyright © Specialchar Pvt Ltd</p>
     </section>
   );
 };

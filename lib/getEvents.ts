@@ -1,49 +1,21 @@
-import { EventEntityResponseCollection } from 'types/types';
+import { EventEntityResponse } from 'types/types';
 
 export type EventDetailsType = (slug: string) => Promise<{
   data: {
-    allEvents: EventEntityResponseCollection;
-    Event: EventEntityResponseCollection;
+    event: EventEntityResponse;
   };
 }>;
 
 export const getEvents: EventDetailsType = async (slug: string) => {
-  try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify({
-        query: `{
-          allEvents: events {
-            data {
-              attributes {
-                image {
-                  data {
-                    attributes {
-                      url
-                      alternativeText
-                    }
-                  }
-                }
-                eventStartDate
-                eventEndDate
-                title
-                description
-                slug
-                category {
-                  data {
-                    attributes {
-                      title
-                    }
-                  }
-                }
-              }
-            }
-          }
-          Event: events(filters: { slug: { eq: "${slug}" } }) {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify({
+      query: `{
+          event(slug: "${slug}") {
             data {
               attributes {
                 image {
@@ -89,12 +61,11 @@ export const getEvents: EventDetailsType = async (slug: string) => {
           }
         }        
         `,
-      }),
-      cache: 'no-cache',
-      next: {
-        revalidate: 0,
-      },
-    });
-    return await response.json();
-  } catch (error) {}
+    }),
+    cache: 'no-cache',
+    next: {
+      revalidate: 0,
+    },
+  });
+  return await response.json();
 };

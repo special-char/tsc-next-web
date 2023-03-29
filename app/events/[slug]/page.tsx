@@ -7,6 +7,7 @@ import md from 'markdown-it';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Register from '@/ui/Register';
+import { Event } from 'types/types';
 
 export const PageSkeleton = () => {
   return (
@@ -70,13 +71,12 @@ export type Props = {
   children?: React.ReactNode;
 };
 
-const Page = ({ params }: Props) => {
-  const eventData = use(getEvents(params.slug));
-  if (!eventData) {
-    notFound();
-  }
-  const [{ attributes }] = eventData.data.Event.data;
-  const { image, content } = attributes;
+const Page = async ({ params }: Props) => {
+  const eventData = await getEvents(params.slug);
+
+  const { image, content, ...rest } = eventData.data.event.data
+    ?.attributes as Event;
+
   return (
     <section className="events">
       <div>
@@ -88,21 +88,22 @@ const Page = ({ params }: Props) => {
         <div className="events__image">
           <Image
             alt="alt"
-            src={`${image.data.attributes.url}?tr=ar-16-9`}
+            src={`${image?.data?.attributes?.url}?tr=ar-16-9`}
             fill
             sizes="(min-width: 1024px) 100vw,
             600px"
           />
-
         </div>
         <div className="pt-8">
-          <EventDetailPage data={attributes} additionalField={{
-            eventName: params.slug
-          }} />
+          <EventDetailPage
+            data={rest}
+            additionalField={{
+              eventName: params.slug,
+            }}
+          />
         </div>
         <div className="events__paragraph">
           <div dangerouslySetInnerHTML={{ __html: md().render(content) }}></div>
-          {/* <Register btnText='register for event' btnClass='btn--primary' formId={3} /> */}
         </div>
       </div>
     </section>

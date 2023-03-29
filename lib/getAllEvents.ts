@@ -50,9 +50,5 @@ export const getAllEvents: AllEventDetailsType = async () => {
     },
   });
 
-  if (!response.ok) {
-    throw new Error('Failed to fetch All Events Data');
-  }
-
   return await response.json();
 };
