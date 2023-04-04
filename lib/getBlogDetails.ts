@@ -60,6 +60,36 @@ export const getBlogDetails: BlogDetailsType = async (slug: string) => {
                   }
                 }
                 content
+                seo {
+                  metaTitle
+                  metaDescription
+                  metaImage {
+                    data {
+                      attributes {
+                        url
+                        alternativeText
+                      }
+                    }
+                  }
+                  metaSocial {
+                    socialNetwork
+                    title
+                    description
+                    image {
+                      data {
+                        attributes {
+                          url
+                          alternativeText
+                        }
+                      }
+                    }
+                  }
+                  keywords
+                  metaRobots
+                  structuredData
+                  metaViewport
+                  canonicalURL
+                }
               }
             }
           }
