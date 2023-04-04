@@ -1,10 +1,11 @@
 import { getFormDetails } from '@/lib/getFormDetails';
 import DynamicForm from '@/ui/DynamicForm';
+import { use } from 'react';
 
 type Props = {};
 
-const ContactForm = async (props: Props) => {
-  const formDetails = await getFormDetails(1);
+const ContactForm = (props: Props) => {
+  const formDetails = use(getFormDetails(1));
 
   const fields = formDetails.data?.attributes?.fields;
 
