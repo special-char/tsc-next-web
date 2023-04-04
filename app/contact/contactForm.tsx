@@ -1,17 +1,10 @@
 import { getFormDetails } from '@/lib/getFormDetails';
 import DynamicForm from '@/ui/DynamicForm';
-import { use } from 'react';
 
 type Props = {};
 
-const ContactForm = (props: Props) => {
-  const formDetails = use(getFormDetails(1));
-
-  if (!formDetails) {
-    throw new Error(
-      'something went wrong! try refreshing the page or please come back later.',
-    );
-  }
+const ContactForm = async (props: Props) => {
+  const formDetails = await getFormDetails(1);
 
   const fields = formDetails.data?.attributes?.fields;
 

@@ -22,7 +22,7 @@
   }
 
   &__card_details {
-    @apply grid w-full justify-items-center rounded-2xl bg-neutral-100 text-center shadow-dark;
+    @apply grid w-full justify-items-center rounded-2xl bg-neutral-100 py-4 text-center shadow-dark;
   }
 
   &__card_info {

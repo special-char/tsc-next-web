@@ -36,7 +36,7 @@ const Aboutheader = async (props: Props) => {
 
   return (
     <section className="about">
-      {detail?.map((x) => {
+      {/* {detail?.map((x) => {
         const { url, alternativeText } = x?.image?.data
           ?.attributes as UploadFile;
         return (
@@ -57,7 +57,7 @@ const Aboutheader = async (props: Props) => {
             </div>
           </div>
         );
-      })}
+      })} */}
     </section>
   );
 };
