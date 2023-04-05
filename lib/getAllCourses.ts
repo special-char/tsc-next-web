@@ -64,9 +64,5 @@ export const getAllCoursesData: CoursesType = async (category?: string) => {
     },
   });
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch All Courses Data');
-  }
-
   return await res.json();
 };

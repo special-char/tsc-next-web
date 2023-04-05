@@ -47,9 +47,5 @@ export const getBannerData: BannerType = async (slug: string) => {
     },
   });
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch Banner Data');
-  }
-
   return await res.json();
 };

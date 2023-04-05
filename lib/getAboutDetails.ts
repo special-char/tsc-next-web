@@ -43,9 +43,5 @@ export const getAboutDetailData: AboutDetailType = async () => {
     },
   });
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch About Detail Data');
-  }
-
   return await res.json();
 };

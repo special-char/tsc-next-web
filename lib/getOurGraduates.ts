@@ -57,9 +57,5 @@ export const getOurGraduatesData: HireOurGraduatesType = async () => {
     },
   });
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch Our Graduates Data');
-  }
-
   return await res.json();
 };

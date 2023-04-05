@@ -41,9 +41,5 @@ export const getAboutNumberData: AboutNumberType = async () => {
     },
   });
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch About Numbers Data');
-  }
-
   return await res.json();
 };

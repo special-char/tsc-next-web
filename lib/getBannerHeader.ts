@@ -45,9 +45,5 @@ export const getBannerHeaderData: BannerHeaderType = async (
     },
   });
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch Banner Header Data');
-  }
-
   return await res.json();
 };

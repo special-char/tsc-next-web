@@ -70,9 +70,5 @@ export const getHomeBlogData: HomeBlogType = async () => {
     },
   });
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch Home Blog Data');
-  }
-
   return await res.json();
 };

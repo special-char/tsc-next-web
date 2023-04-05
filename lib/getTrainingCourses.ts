@@ -42,9 +42,5 @@ export const getTrainingCourses: CoursesType = async () => {
     },
   });
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch Training Courses');
-  }
-
   return await res.json();
 };

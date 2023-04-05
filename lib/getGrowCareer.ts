@@ -41,9 +41,5 @@ export const getGrowCareerData: GrowCareerType = async () => {
     },
   });
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch Grow Carreer Data');
-  }
-
   return await res.json();
 };

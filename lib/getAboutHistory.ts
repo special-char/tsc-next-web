@@ -44,9 +44,5 @@ export const getAboutHistory: AboutHistoryType = async () => {
     },
   });
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch About History Data');
-  }
-
   return await res.json();
 };
