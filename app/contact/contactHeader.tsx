@@ -9,6 +9,7 @@ const ContactHeader = async (props: Props) => {
 
   const { title, description, seo } = bannerData.data.banner.data
     ?.attributes as Banner;
+
   return (
     <>
       <h1 className="contact__title">{title}</h1>

@@ -1,3 +1,4 @@
+'use client';
 import { getFormDetails } from '@/lib/getFormDetails';
 import DynamicForm from '@/ui/DynamicForm';
 import { use } from 'react';
