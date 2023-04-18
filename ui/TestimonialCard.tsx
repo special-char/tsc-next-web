@@ -25,7 +25,7 @@ export const TestimonialCardSkeleton = () => {
           quaerat rem.
         </p>
         <div className="user_info">
-          <h4 className="font-cursive">Lorem ipsum.</h4>
+          <h5 className="font-cursive">Lorem ipsum.</h5>
           <p className="font-cursive">
             <span>Lorem ipsum dolor sit amet.</span>
             <span>lorem ispojf</span>
@@ -54,7 +54,7 @@ const TestimonialCard = ({ testimonial, style }: Props) => {
         <Rating rate={rating} className="testimonial_card__rating" />
         <p className="testimonial_card__desc">{`"${quote}"`}</p>
         <div className="user_info">
-          <h4>{name}</h4>
+          <h5>{name}</h5>
           <p>{`${designation} at ${company}`}</p>
         </div>
       </div>

@@ -61,6 +61,7 @@ const Header = async (props: Props) => {
   return (
     <header className="header">
       <Link prefetch={false} href="/">
+        <p className="sr-only">The Special Character Logo</p>
         <TscLogoSvg className="header__tsclogo" />
         <TscSvg className="h-[56px] w-[52px] lg:hidden " />
       </Link>
