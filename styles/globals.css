@@ -39,7 +39,7 @@
   }
 
   p {
-    @apply mb-5 text-neutral-600;
+    @apply mb-5 text-neutral-700;
     &:last-child {
       @apply mb-0 pb-0;
     }

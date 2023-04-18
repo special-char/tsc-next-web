@@ -84,7 +84,7 @@ const Leaders = async () => {
           <span className="leader__ContentData">{tag}</span>
           <h3 className="py-4 text-neutral-700">{`“${quote}”`}</h3>
           <h5 className="text-neutral-700">{name}</h5>
-          <h6 className="mb-0 text-neutral-600">{`${designation} at ${company}`}</h6>
+          <h6 className="mb-0">{`${designation} at ${company}`}</h6>
         </div>
       </div>
     </section>
