@@ -1,7 +1,6 @@
 import { Kumbh_Sans, Newsreader, Flow_Block } from '@next/font/google';
 import '@/styles/globals.css';
 import { Suspense } from 'react';
-import { Partytown } from '@builder.io/partytown/react';
 import Footer from './footer';
 import Header, { HeaderSkeleton } from './header';
 import SideNav, { SideNavSkeleton } from './sideNav';
@@ -37,7 +36,21 @@ export default function RootLayout({
       lang="en"
       className={`${kumbSans.variable} font-sans ${newsreader.variable} font-serif ${flowBlock.variable} font-cursive`}
     >
+      <head />
       <body>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-WS7JTT5H0J"
+          strategy="worker"
+        />
+        <Script id="google-analytics" strategy="worker">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-WS7JTT5H0J');
+        `}
+        </Script>
         <Suspense fallback={<SideNavSkeleton />}>
           {/* @ts-expect-error Async Server Component */}
           <SideNav />

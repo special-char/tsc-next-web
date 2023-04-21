@@ -5,6 +5,7 @@ const nextConfig = {
   experimental: {
     // Required:
     appDir: true,
+    nextScriptWorkers: true,
   },
   webpack(config) {
     config.module.rules.push({
