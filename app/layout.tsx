@@ -63,6 +63,14 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </div>
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `
+                    var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:"cdea135c17538d4cc3ccec6d9d85d171ded207c9843813e91d42a6f4bf06b039f7dd2932db4019f30578c12be02d9036", values:{},ready:function(){}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zoho.in/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);
+                        `,
+          }}
+        ></script>
       </body>
     </html>
   );
