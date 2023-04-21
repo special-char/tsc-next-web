@@ -19,6 +19,7 @@
     "singleQuote": true
   },
   "dependencies": {
+    "@builder.io/partytown": "0.8.0",
     "@next/font": "13.1.0",
     "axios": "1.2.1",
     "clsx": "1.2.1",
