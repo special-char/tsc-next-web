@@ -12,31 +12,20 @@ import clsx from 'clsx';
 import LeftSvg from '@/public/icons/left-arrow.svg';
 import RightSvg from '@/public/icons/right-arrow.svg';
 
-type Props = {
-  isFull?: boolean;
-} & PropsWithChildren;
+type Props = {} & PropsWithChildren;
 
-const Carousal = ({ children, isFull }: Props) => {
+const FullCarousal = ({ children }: Props) => {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [element, setElement] = useState<Element | null>(null);
   const [index, setIndex] = useState(0);
-
-  const obCallback = useCallback((payload) => {
-    console.log(payload);
-  }, []);
 
   useEffect(() => {
     const scrollPort = scrollerRef.current;
     if (scrollPort) {
       const element = scrollPort.firstElementChild;
       setElement(element);
-
-      const ob = new IntersectionObserver(obCallback);
-      if (element) {
-        ob.observe(document.querySelector('h1'));
-      }
     }
-  }, [obCallback]);
+  }, []);
 
   const scrollLeft = useCallback(() => {
     if (scrollerRef.current && element) {
@@ -93,43 +82,35 @@ const Carousal = ({ children, isFull }: Props) => {
 
   return (
     <div className="carousal">
-      <ul
-        ref={scrollerRef}
-        className={clsx('carousal__scroller', {
-          '!p-0': !!isFull,
-        })}
-      >
+      <ul ref={scrollerRef} className="carousal__scroller p-0">
         {React.Children.map(children, (child) => {
           const item = child as ReactElement<PropsWithChildren<any>>;
           const { style, ...props } = item.props;
-
           return (
-            <li className="carousal__items" style={style}>
+            <li className="carousal__items">
               {React.cloneElement(item, { ...props })}
             </li>
           );
         })}
       </ul>
-      {!isFull && (
-        <div className="carousal__controls">
-          <button
-            type="button"
-            className="carousal__control btn btn--white btn--round"
-            onClick={scrollRight}
-          >
-            <LeftSvg />
-          </button>
-          <button
-            type="button"
-            className="carousal__control btn btn--white btn--round"
-            onClick={scrollLeft}
-          >
-            <RightSvg />
-          </button>
-        </div>
-      )}
+      <div className="carousal__controls">
+        <button
+          type="button"
+          className="carousal__control btn btn--white btn--round m-0"
+          onClick={scrollRight}
+        >
+          <LeftSvg />
+        </button>
+        <button
+          type="button"
+          className="carousal__control btn btn--white btn--round mx-4"
+          onClick={scrollLeft}
+        >
+          <RightSvg />
+        </button>
+      </div>
 
-      <div className="relative col-span-3 mx-auto flex w-full">
+      <div className="relative col-span-3 mx-auto flex w-full md:hidden">
         <div className=" absolute mx-auto  flex w-full items-center justify-center gap-3">
           {React.Children.map(children, (child, i) => {
             return (
@@ -147,4 +128,4 @@ const Carousal = ({ children, isFull }: Props) => {
   );
 };
 
-export default Carousal;
+export default FullCarousal;

@@ -1,7 +1,7 @@
 .banner {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  min-height: calc(theme(height.screen) - theme(spacing.16) - 30px);
-  @apply grid grid-cols-1 content-center items-center gap-4 px-4 py-16 sm:px-sm-container lg:grid-cols-2 lg:gap-32 lg:px-container;
+  min-height: calc(theme(height.screen) - theme(spacing.16) - 88px);
+  @apply grid grid-cols-1 content-center items-center gap-4 px-4 py-8 sm:px-sm-container lg:grid-cols-2 lg:gap-32 lg:px-container;
 
   & :is(.banner__title, .banner__description) {
     @apply text-center;
