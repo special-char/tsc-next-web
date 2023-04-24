@@ -4,6 +4,7 @@ import { Suspense } from 'react';
 import Footer from './footer';
 import Header, { HeaderSkeleton } from './header';
 import SideNav, { SideNavSkeleton } from './sideNav';
+import WhatsAppIcon from '@/public/icons/whatsapp.svg';
 import Script from 'next/script';
 
 const kumbSans = Kumbh_Sans({
@@ -62,6 +63,19 @@ export default function RootLayout({
           </Suspense>
           <main>{children}</main>
           <Footer />
+          <div className="fixed bottom-[86px] right-[6px] z-50 h-16 w-16">
+            <a
+              className="relative flex h-[60px] w-[60px]"
+              href="https://api.whatsapp.com/send/?phone=%2B917600096432&text&type=phone_number&text=I%20want%20to%20understand%20about"
+              target="_blank"
+            >
+              <span className="sr-only">Whats App Icon</span>
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#25D366] opacity-75"></span>
+              <span className="relative flex h-[60px] w-[60px] items-center justify-center rounded-full bg-[#25D366]">
+                <WhatsAppIcon height={30} width={30} fill="#FFF" />
+              </span>
+            </a>
+          </div>
         </div>
         <Script
           strategy="afterInteractive"
