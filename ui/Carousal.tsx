@@ -35,6 +35,21 @@ const Carousal = ({ children, isFull }: Props) => {
       if (element) {
         ob.observe(document.querySelector('h1'));
       }
+      scrollPort.addEventListener('scroll', () => {
+        if (scrollPort && element) {
+          const scrollerPadding = parseInt(
+            getComputedStyle(scrollPort)['padding-left'],
+          );
+
+          // calculate index of visible banner based on scroll position
+          const index = Math.round(
+            (scrollPort.scrollLeft + scrollerPadding) /
+              (element.clientWidth + scrollerPadding * 2),
+          );
+
+          setIndex(index);
+        }
+      });
     }
   }, [obCallback]);
 
