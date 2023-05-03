@@ -37,7 +37,7 @@ export default function RootLayout({
       lang="en"
       className={`${kumbSans.variable} font-sans ${newsreader.variable} font-serif ${flowBlock.variable} font-cursive`}
     >
-      <head />
+      {/* <head /> */}
       <body>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-WS7JTT5H0J"
