@@ -9,6 +9,68 @@ import { Course, CourseEntity, Form, UploadFile } from 'types/types';
 import TestimonialCard from '@/ui/TestimonialCard';
 import Accordian, { AccordianType } from '@/ui/Accordian';
 import { notFound } from 'next/navigation';
+import { getCoursesMeta } from '@/lib/getCoursesMeta';
+import { Metadata } from 'next';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const metaData = await getCoursesMeta(params.slug);
+  const [{ attributes }] = metaData.data.courses.data as CourseEntity[];
+
+  const facebook = attributes?.seo?.metaSocial?.find(
+    (x) => x?.socialNetwork === 'Facebook',
+  );
+  const twitter = attributes?.seo?.metaSocial?.find(
+    (x) => x?.socialNetwork === 'Twitter',
+  );
+
+  let twitterMeta: Metadata = {};
+  if (twitter) {
+    twitterMeta = {
+      twitter: {
+        card: 'summary_large_image',
+        title: twitter.title,
+        description: twitter.description,
+        siteId: '1467726470533754880',
+        creator: '@nextjs',
+        creatorId: '1467726470533754880',
+        images: [twitter.image?.data?.attributes?.url || ''],
+      },
+    };
+  }
+
+  let facebookMeta: Metadata = {};
+  if (facebook) {
+    facebookMeta = {
+      openGraph: {
+        title: facebook.title,
+        description: facebook.description,
+        url: `https://thespecialcharacter.com/blogs`,
+        siteName: 'The Special Character',
+        images: [
+          {
+            url: facebook.image?.data?.attributes?.url || '',
+            width: 800,
+            height: 600,
+          },
+        ],
+        locale: 'en-US',
+        type: 'website',
+      },
+    };
+  }
+
+  return {
+    title: attributes?.seo?.metaTitle,
+    description: attributes?.seo?.metaDescription,
+    keywords: attributes?.seo?.keywords,
+    ...twitterMeta,
+    ...facebookMeta,
+  };
+}
 
 const chipNavData = [
   {
@@ -150,7 +212,7 @@ export default async function Page({ params }: PageProps) {
                 Results after course completion
               </h2>
               <article
-                className="prose prose-ul:pl-8 lg:prose-xl"
+                className="prose lg:prose-xl prose-ul:pl-8"
                 dangerouslySetInnerHTML={{
                   __html: md().render(complitionResult || ''),
                 }}
