@@ -6,6 +6,9 @@ import Header, { HeaderSkeleton } from './header';
 import SideNav, { SideNavSkeleton } from './sideNav';
 import WhatsAppIcon from '@/public/icons/whatsapp.svg';
 import Script from 'next/script';
+import { Metadata } from 'next';
+import { getSEOData } from '@/lib/getSEO';
+import { ComponentSharedSeo } from 'types/types';
 
 const kumbSans = Kumbh_Sans({
   style: ['normal'],
@@ -26,6 +29,129 @@ const flowBlock = Flow_Block({
   variable: '--font-block',
   preload: true,
 });
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const metaData = await getSEOData('home');
+
+  const seo = metaData?.data?.banner.data?.attributes
+    ?.seo as ComponentSharedSeo;
+
+  const facebook = seo.metaSocial?.find((x) => x?.socialNetwork === 'Facebook');
+  const twitter = seo.metaSocial?.find((x) => x?.socialNetwork === 'Twitter');
+
+  let twitterMeta: Metadata = {};
+  if (twitter) {
+    twitterMeta = {
+      twitter: {
+        card: 'summary_large_image',
+        title: twitter.title,
+        description: twitter.description,
+        siteId: '1467726470533754880',
+        creator: '@nextjs',
+        creatorId: '1467726470533754880',
+        images: [twitter.image?.data?.attributes?.url || ''],
+      },
+    };
+  }
+
+  let facebookMeta: Metadata = {};
+  if (facebook) {
+    facebookMeta = {
+      openGraph: {
+        title: facebook.title,
+        description: facebook.description,
+        url: `https://thespecialcharacter.com`,
+        siteName: 'The Special Character',
+        images: [
+          {
+            url: facebook.image?.data?.attributes?.url || '',
+            width: 800,
+            height: 600,
+          },
+        ],
+        locale: 'en-US',
+        type: 'website',
+      },
+    };
+  }
+
+  const defaultSEO: Metadata = {
+    description: seo.metaDescription,
+    title: {
+      template: '%s | The Special Character',
+      default: `${seo.metaTitle} | The Special Character`,
+    },
+    keywords: seo.keywords,
+  };
+
+  return {
+    applicationName: 'The Special Character',
+    themeColor: '#fff',
+    generator: 'Next.js',
+    referrer: 'origin-when-cross-origin',
+    authors: [{ name: 'Yagnesh Modh' }],
+    colorScheme: 'light',
+    creator: 'Yagnesh Modh',
+    publisher: 'The Special Character',
+    viewport: {
+      width: 'device-width',
+      initialScale: 1,
+      maximumScale: 1,
+    },
+    formatDetection: {
+      email: false,
+      address: false,
+      telephone: false,
+    },
+    appleWebApp: {
+      title: 'The Special Character',
+      statusBarStyle: 'black-translucent',
+    },
+    icons: {
+      icon: [
+        { url: '/icons/tsc.svg', type: 'image/svg+xml' },
+        {
+          url: '/favicon/favicon-16x16.png',
+          sizes: '16x16',
+          type: 'image/png',
+        },
+        {
+          url: '/favicon/favicon-32x32.png',
+          sizes: '32x32',
+          type: 'image/png',
+        },
+      ],
+      shortcut: ['/shortcut-icon.png'],
+      apple: [
+        // { url: '/apple-icon.png' },
+        {
+          url: '/favicon/apple-touch-icon.png',
+          sizes: '180x180',
+          type: 'image/png',
+        },
+      ],
+      other: [
+        // {
+        //   rel: 'apple-touch-icon-precomposed',
+        //   url: '/apple-touch-icon-precomposed.png',
+        // },
+        {
+          rel: 'mask-icon',
+          url: '/favicon/safari-pinned-tab.svg',
+          // color: '#ffc40d',
+        },
+      ],
+    },
+    manifest: '/favicon/site.webmanifest',
+    ...defaultSEO,
+    ...twitterMeta,
+    ...facebookMeta,
+  };
+}
 
 export default function RootLayout({
   children,

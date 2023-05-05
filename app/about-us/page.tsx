@@ -5,8 +5,23 @@ import Achievements, { AchievementsSkeleton } from './achievements';
 import CompanyHistory, { CompanyHistorySkeleton } from './companyhistory';
 import OurOffice, { OurOfficeSkeleton } from './ourOffice';
 import Aboutheader, { AboutheaderSkeleton } from './aboutheader';
+import { Metadata } from 'next';
 
 type Props = {};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  // const post = await fetch(`https://.../${params.slug}`).then((res) =>
+  //   res.json(),
+  // );
+
+  return {
+    title: 'About',
+  };
+}
 
 const Page = (props: Props) => {
   return (

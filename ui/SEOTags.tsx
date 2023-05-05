@@ -78,27 +78,9 @@ export function SEOTags({
         }
       })}
 
-      {keywords && <meta name="keywords" content={keywords} />}
-
       {canonicalURL && <link rel="canonical" href={canonicalURL} />}
 
       {metaRobots && <meta name="robots" content={metaRobots} />}
-
-      {/* {structuredData && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-      )} */}
-
-      {/* {structuredData && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData),
-          }}
-        />
-      )} */}
     </>
   );
 }
