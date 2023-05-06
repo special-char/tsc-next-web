@@ -68,7 +68,7 @@
   }
 
   blockquote {
-    @apply mb-2 bg-neutral-100 py-10 px-5 text-lg shadow-base sm:py-12 sm:px-[50px] sm:text-xl md:py-[58px] md:px-[63px] md:text-xxl lg:py-[70px] lg:pr-[76px] lg:pl-[126px] lg:text-2xl;
+    @apply mb-2 bg-neutral-100 px-5 py-10 text-lg shadow-base sm:px-[50px] sm:py-12 sm:text-xl md:px-[63px] md:py-[58px] md:text-xxl lg:py-[70px] lg:pl-[126px] lg:pr-[76px] lg:text-2xl;
     border-radius: 10px 20px 20px 10px;
     border-left: 11px solid theme('colors.secondary3');
   }
@@ -90,11 +90,11 @@
   }
 
   ol {
-    @apply mt-0 mb-2 list-decimal pl-10;
+    @apply mb-2 mt-0 list-decimal pl-10;
   }
 
   ul {
-    @apply mt-0 mb-2 list-disc pl-0 md:pl-8;
+    @apply mb-2 mt-0 list-disc pl-0 md:pl-8;
   }
 
   li {
@@ -216,7 +216,7 @@
 
 @layer components {
   .btn {
-    @apply inline-block rounded-full py-6 px-10 text-center text-base font-bold uppercase tracking-[0.08em];
+    @apply inline-block rounded-full px-10 py-6 text-center text-base font-bold uppercase tracking-[0.08em];
     transition: transform 300ms ease, background-color 300ms ease;
     transform-style: preserve-3d;
 
@@ -256,16 +256,16 @@
     }
 
     &--small {
-      @apply py-4 px-6 text-base;
+      @apply px-6 py-4 text-base;
     }
 
     &--large {
-      @apply py-6 px-[68px] text-xxl;
+      @apply px-[68px] py-6 text-xxl;
     }
   }
 
   .chip {
-    @apply flex w-fit items-center justify-center rounded-full py-3 px-4 align-middle text-xs font-bold shadow-base sm:px-6;
+    @apply flex w-fit items-center justify-center rounded-full px-4 py-3 align-middle text-xs font-bold shadow-base sm:px-6;
 
     &.icon {
       @apply gap-2;
@@ -433,6 +433,14 @@
         grid-column: 3;
       }
     }
+
+    &__dots {
+      @apply col-span-full flex justify-center gap-3;
+    }
+
+    &__dot {
+      @apply h-2 w-2 rounded-full bg-neutral-400;
+    }
   }
 
   .card {
@@ -580,16 +588,16 @@
     grid-template-columns: 3fr 2fr;
 
     &__input {
-      @apply w-full rounded-full bg-neutral-100 py-5 px-6;
+      @apply w-full rounded-full bg-neutral-100 px-6 py-5;
       grid-column: 1 / -1;
       grid-row: 1 / -1;
     }
 
     &__btn {
-      @apply col-span-2 m-0 p-3 py-5 px-4 md:col-[2/-1] md:row-span-full md:m-1 md:px-1 md:py-1;
+      @apply col-span-2 m-0 p-3 px-4 py-5 md:col-[2/-1] md:row-span-full md:m-1 md:px-1 md:py-1;
     }
     &__subscribed {
-      @apply w-full rounded-xl bg-primary py-5 px-3 text-center text-neutral-100;
+      @apply w-full rounded-xl bg-primary px-3 py-5 text-center text-neutral-100;
     }
   }
 
@@ -624,7 +632,7 @@
   }
 
   .items {
-    @apply py-20 px-sm-container lg:px-container;
+    @apply px-sm-container py-20 lg:px-container;
 
     &__item {
       @apply my-8 grid grid-cols-1 gap-8 lg:grid-cols-2;

@@ -21,8 +21,16 @@ const Carousal = ({ children, isFull }: Props) => {
   const [element, setElement] = useState<Element | null>(null);
   const [index, setIndex] = useState(0);
 
-  const obCallback = useCallback((payload) => {
-    console.log(payload);
+  const obCallback = useCallback((entries) => {
+    const inter = entries.filter((entry) => entry.isIntersecting);
+
+    console.log(inter[0]?.target.getAttribute('data-key'));
+
+    const index = Number(inter.at(-1)?.target.getAttribute('data-key'));
+
+    if (index) {
+      setIndex(index);
+    }
   }, []);
 
   useEffect(() => {
@@ -31,9 +39,46 @@ const Carousal = ({ children, isFull }: Props) => {
       const element = scrollPort.firstElementChild;
       setElement(element);
 
-      const ob = new IntersectionObserver(obCallback);
-      if (element) {
-        ob.observe(document.querySelector('h1'));
+      const style = getComputedStyle(scrollPort);
+
+      const options = {
+        root: scrollPort,
+        rootMargin: '0px',
+        threshold: 1,
+      };
+      const visibleSet = new Set();
+      const carousel_observer = new IntersectionObserver(
+        (observations) => {
+          for (let observation of observations) {
+            const index = Number(observation.target.getAttribute('data-key'));
+            if (observation.isIntersecting) {
+              visibleSet.add(index);
+            } else {
+              visibleSet.delete(index);
+            }
+
+            // observation.target.classList.toggle(
+            //   '--in-view',
+            //   observation.isIntersecting,
+            // );
+          }
+
+          if (visibleSet.size === 1) {
+            setIndex(visibleSet.values().next().value);
+          } else if (visibleSet.has(0)) {
+            setIndex(0);
+          } else if (visibleSet.has(scrollPort.children.length - 1)) {
+            setIndex(scrollPort.children.length - 1);
+          }
+        },
+        {
+          root: scrollPort,
+          threshold: 1,
+        },
+      );
+
+      for (const item of scrollPort.children) {
+        carousel_observer.observe(item);
       }
     }
   }, [obCallback]);
@@ -70,7 +115,6 @@ const Carousal = ({ children, isFull }: Props) => {
 
   const moveToIndex = useCallback((index: number) => {
     const scrollport = scrollerRef.current;
-    setIndex(index);
     if (scrollport) {
       const element = scrollport.children[index];
 
@@ -99,12 +143,12 @@ const Carousal = ({ children, isFull }: Props) => {
           '!p-0': !!isFull,
         })}
       >
-        {React.Children.map(children, (child) => {
+        {React.Children.map(children, (child, index) => {
           const item = child as ReactElement<PropsWithChildren<any>>;
           const { style, ...props } = item.props;
 
           return (
-            <li className="carousal__items" style={style}>
+            <li className="carousal__items" style={style} data-key={index}>
               {React.cloneElement(item, { ...props })}
             </li>
           );
@@ -129,19 +173,19 @@ const Carousal = ({ children, isFull }: Props) => {
         </div>
       )}
 
-      <div className="relative col-span-3 mx-auto flex w-full">
-        <div className=" absolute mx-auto  flex w-full items-center justify-center gap-3">
-          {React.Children.map(children, (child, i) => {
-            return (
-              <div
-                onClick={() => moveToIndex(i)}
-                className={clsx('h-2 w-2 rounded-full bg-neutral-400', {
-                  'bg-primary duration-200': i === index,
-                })}
-              ></div>
-            );
-          })}
-        </div>
+      <div className="carousal__dots">
+        {[...Array(children.length).keys()].map((x) => {
+          return (
+            <div
+              key={x}
+              onClick={() => moveToIndex(x)}
+              className={clsx('carousal__dot', {
+                'bg-primary duration-200': x === index,
+                'md:hidden': !isFull,
+              })}
+            ></div>
+          );
+        })}
       </div>
     </div>
   );
