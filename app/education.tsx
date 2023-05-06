@@ -71,7 +71,7 @@ const Education = async () => {
           />
         </div>
         <div className="education__content ">
-          {/* {details?.map((x) => {
+          {details?.map((x) => {
             const { title, description, image, id } =
               x as ComponentCommonDetail;
             const { url, alternativeText } = image.data
@@ -93,7 +93,7 @@ const Education = async () => {
                 </div>
               </div>
             );
-          })} */}
+          })}
         </div>
       </div>
       <div className="education__header col-span-2 mb-20 lg:mb-32">

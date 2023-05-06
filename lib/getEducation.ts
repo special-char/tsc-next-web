@@ -24,6 +24,19 @@ export const getEducationData: EducationType = async () => {
                     }
                   }
                 }
+                details {
+                  id
+                  title
+                  description
+                  image {
+                    data {
+                      attributes {
+                        url
+                        alternativeText
+                      }
+                    }
+                  }
+                }
                 button {
                   text
                   url
