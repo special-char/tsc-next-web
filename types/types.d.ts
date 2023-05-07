@@ -1935,14 +1935,13 @@ export type HistoryInput = {
 export type HomeBanner = {
   __typename?: 'HomeBanner';
   buttons?: Maybe<Array<Maybe<ComponentCommonLink>>>;
+  content?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['DateTime']>;
-  description?: Maybe<Scalars['String']>;
   fromDate?: Maybe<Scalars['Date']>;
   isActive: Scalars['Boolean'];
   isStatic: Scalars['Boolean'];
   media?: Maybe<UploadFileEntityResponse>;
   publishedAt?: Maybe<Scalars['DateTime']>;
-  title: Scalars['String'];
   toDate?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['DateTime']>;
 };
@@ -1974,8 +1973,8 @@ export type HomeBannerEntityResponseCollection = {
 export type HomeBannerFiltersInput = {
   and?: InputMaybe<Array<InputMaybe<HomeBannerFiltersInput>>>;
   buttons?: InputMaybe<ComponentCommonLinkFiltersInput>;
+  content?: InputMaybe<StringFilterInput>;
   createdAt?: InputMaybe<DateTimeFilterInput>;
-  description?: InputMaybe<StringFilterInput>;
   fromDate?: InputMaybe<DateFilterInput>;
   id?: InputMaybe<IdFilterInput>;
   isActive?: InputMaybe<BooleanFilterInput>;
@@ -1983,20 +1982,18 @@ export type HomeBannerFiltersInput = {
   not?: InputMaybe<HomeBannerFiltersInput>;
   or?: InputMaybe<Array<InputMaybe<HomeBannerFiltersInput>>>;
   publishedAt?: InputMaybe<DateTimeFilterInput>;
-  title?: InputMaybe<StringFilterInput>;
   toDate?: InputMaybe<DateFilterInput>;
   updatedAt?: InputMaybe<DateTimeFilterInput>;
 };
 
 export type HomeBannerInput = {
   buttons?: InputMaybe<Array<InputMaybe<ComponentCommonLinkInput>>>;
-  description?: InputMaybe<Scalars['String']>;
+  content?: InputMaybe<Scalars['String']>;
   fromDate?: InputMaybe<Scalars['Date']>;
   isActive?: InputMaybe<Scalars['Boolean']>;
   isStatic?: InputMaybe<Scalars['Boolean']>;
   media?: InputMaybe<Scalars['ID']>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
-  title?: InputMaybe<Scalars['String']>;
   toDate?: InputMaybe<Scalars['Date']>;
 };
 

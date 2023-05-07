@@ -29,8 +29,7 @@ export const getHomeBannerData: HomeBannerType = async () => {
         ) {
           data {
             attributes {
-              title
-              description
+              content
               media {
                 data {
                   id

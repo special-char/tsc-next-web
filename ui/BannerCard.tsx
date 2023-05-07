@@ -1,17 +1,20 @@
-'use client';
 import Image from 'next/image';
+import md from 'markdown-it';
 import Link from 'next/link';
 import { UploadFile } from 'types/types';
 import Button from './Button';
-import DynamicForm from './DynamicForm';
 
-const BannerCard = ({ title, description, buttons, media, style }) => {
+const BannerCard = ({ content, buttons, media, style }) => {
   const { url } = media.data?.attributes as UploadFile;
+
+  console.log(content);
+
   return (
     <div className="banner" style={style}>
       <div className="banner__details">
-        <h2 className="banner__title">{title}</h2>
-        {description && <p>{description}</p>}
+        {content && (
+          <div dangerouslySetInnerHTML={{ __html: md().render(content) }}></div>
+        )}
         <div className="banner__actions">
           {buttons?.map((item: any, index: number) => (
             <Button
