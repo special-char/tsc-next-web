@@ -14,6 +14,7 @@ const Page = () => {
   return (
     <>
       {/* error */}
+      <h1 className="sr-only">The Special Character</h1>
       <Suspense fallback={<BannerSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
         <Banner />

@@ -7,12 +7,16 @@
     @apply text-center;
   }
 
+  &__title {
+    @apply text-5xl sm:text-7xl md:text-8xl lg:text-9xl;
+  }
+
   &__actions {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     @apply my-8 grid gap-4 md:my-12;
   }
 
   &__image {
-    @apply relative aspect-image overflow-hidden rounded-3xl bg-neutral-300;
+    @apply relative aspect-image overflow-hidden rounded-3xl;
   }
 }

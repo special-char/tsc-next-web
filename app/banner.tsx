@@ -1,11 +1,12 @@
 import '@/styles/banner.css';
 import { getBannerData } from '@/lib/getBanner';
-import { Banner, Form, UploadFile } from 'types/types';
+import { Form, HomeBannerEntity, UploadFile } from 'types/types';
 import Script from 'next/script';
 import Carousal from '@/ui/Carousal';
 import { getFormDetails } from '@/lib/getFormDetails';
 import BannerCard from '@/ui/BannerCard';
 import DynamicForm from '@/ui/DynamicForm';
+import { getHomeBannerData } from '@/lib/getHomeBanners';
 
 export const BannerSkeleton = () => {
   return (
@@ -36,41 +37,47 @@ export const BannerSkeleton = () => {
 type Props = {};
 
 const Banner = async (props: Props) => {
-  const bannerData = await getBannerData('home');
-  const form = await getFormDetails(2);
+  const bannerData = await getHomeBannerData();
 
-  const { title, description, buttons, image, seo } = bannerData.data.banner
-    .data?.attributes as Banner;
+  console.log('bannerData', bannerData);
 
-  const { fields, submitURL } = form.data?.attributes as Form;
+  // const { title, description, buttons, image, seo } = bannerData.data.banner
+  //   .data?.attributes as Banner;
+
+  const data = bannerData.data.homeBanners.data as HomeBannerEntity[];
 
   return (
     <section id="relative">
-      <Carousal isFull>
-        {[1, 2, 3].map((x) => {
-          return (
-            <BannerCard
-              key={x}
-              index={x}
-              fields={fields}
-              submitURL={submitURL}
-              {...bannerData.data.banner.data?.attributes}
-              style={{
-                maxWidth: '100%',
-              }}
-            />
-          );
-        })}
-      </Carousal>
+      {data.length === 1 ? (
+        <BannerCard
+          {...data[0].attributes}
+          style={{
+            maxWidth: '100%',
+          }}
+        />
+      ) : (
+        <Carousal isFull>
+          {data.map((x) => {
+            return (
+              <BannerCard
+                {...x.attributes}
+                style={{
+                  maxWidth: '100%',
+                }}
+              />
+            );
+          })}
+        </Carousal>
+      )}
 
-      {seo?.structuredData && (
+      {/* {seo?.structuredData && (
         <Script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(seo.structuredData),
           }}
         />
-      )}
+      )} */}
     </section>
   );
 };

@@ -5,14 +5,13 @@ import { UploadFile } from 'types/types';
 import Button from './Button';
 import DynamicForm from './DynamicForm';
 
-const BannerCard = ({ title, description, buttons, image, index, style }) => {
-  const { url } = image.data?.attributes as UploadFile;
-
+const BannerCard = ({ title, description, buttons, media, style }) => {
+  const { url } = media.data?.attributes as UploadFile;
   return (
     <div className="banner" style={style}>
       <div className="banner__details">
-        <h1 className="banner__title">{`${title} ${index}`}</h1>
-        <p>{description}</p>
+        <h2 className="banner__title">{title}</h2>
+        {description && <p>{description}</p>}
         <div className="banner__actions">
           {buttons?.map((item: any, index: number) => (
             <Button
@@ -28,7 +27,7 @@ const BannerCard = ({ title, description, buttons, image, index, style }) => {
         </div>
       </div>
       <div className="banner__image">
-        {image && (
+        {url && (
           <Image
             src={`${url}?tr=ar-3-4`}
             alt="logo"
