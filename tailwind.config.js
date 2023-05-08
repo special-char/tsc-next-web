@@ -4,6 +4,12 @@ const { fontFamily } = require('tailwindcss/defaultTheme');
 module.exports = {
   content: ['./app/**/*.{js,ts,jsx,tsx}', './ui/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    extend: {
+      animation: {
+        // Bounces 5 times 1s equals 5 seconds
+        'bounce-short': 'bounce 1s ease-in-out 5',
+      },
+    },
     colors: {
       transparent: 'transparent',
       primary: '#064EA4',
@@ -21,6 +27,8 @@ module.exports = {
         600: '#62778F',
         700: '#1E3D60',
         800: '#0F437F',
+        900: '#0d0826',
+        1000: '#24203D',
       },
     },
     screens: {
