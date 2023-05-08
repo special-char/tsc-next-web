@@ -44,7 +44,7 @@
     @apply flex flex-row items-center gap-2 pb-4 md:p-0;
   }
   &__top {
-    @apply mr-6 text-xs font-bold text-neutral-800 lg:text-base;
+    @apply mr-6 text-xs font-bold text-neutral-800 lg:text-sm;
   }
   &__chip {
     @apply hidden gap-2 border border-[#e7eaee] md:flex md:flex-row;

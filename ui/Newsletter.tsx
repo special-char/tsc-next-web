@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import { Field, Form, Formik } from 'formik';
 import { useState } from 'react';
 import Button from './Button';
+import validation from '@/lib/validation';
 
 const Newsletter = ({ btnClass }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -54,6 +55,7 @@ const Newsletter = ({ btnClass }) => {
                   className="newsletter__input"
                   name="email"
                   placeholder="enter your email address"
+                  required
                 />
                 <Button
                   className={clsx('newsletter__btn', {
