@@ -147,9 +147,8 @@ export const getBlogSiteMap: BlogSiteMapType = async () => {
           }
         }`,
     }),
-    cache: 'no-cache',
     next: {
-      revalidate: 0,
+      revalidate: 60,
     },
   });
 
