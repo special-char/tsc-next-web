@@ -1,8 +1,9 @@
 import CircleSymbol from '@/public/icons/circle.svg';
 import CheckSymbol from '@/public/icons/check.svg';
 import ButonArrow from '@/public/icons/buton-arrow.svg';
-import Accordian from '@/ui/Accordian';
-import Image from 'next/image';
+import Faq from 'app/contact/faq';
+import { Suspense } from 'react';
+import Leaders, { LeadersSkeleton } from 'app/leaders';
 
 const BonusesList = [
   {
@@ -163,8 +164,8 @@ const accordion = [
 
 const page = () => {
   return (
-    <div className="px-container">
-      <section>
+    <div>
+      <section className="px-container">
         <div className="flex flex-col gap-20 py-20">
           <div className="   flex flex-1 flex-col items-center px-5 md:px-0   ">
             <div className="   ">
@@ -264,7 +265,7 @@ const page = () => {
           </div>
         </div>
       </section>
-      <section className="">
+      <section className="px-container">
         <div className=" flex flex-col items-center">
           <div>
             <img
@@ -308,7 +309,7 @@ const page = () => {
           </div>
         </div>
       </section>
-      <section className="text-white flex flex-col  ">
+      <section className="text-white flex flex-col px-container">
         <div>
           <div className="px-5 py-5 text-center">
             <h2 className="text-2xl font-bold md:text-5xl ">
@@ -353,7 +354,7 @@ const page = () => {
 
         <div>{/* <Separator/> */}</div>
       </section>
-      <section className="text-white flex flex-col  ">
+      <section className="text-white flex flex-col px-container">
         <div>
           <div className="text-center text-4xl md:px-48">
             <h2>
@@ -379,7 +380,11 @@ const page = () => {
 
         <div>{/* <Separator/> */}</div>
       </section>
-      <section className="text-white grid gap-6  px-6 md:grid-cols-2">
+      <Suspense fallback={<LeadersSkeleton />}>
+        {/* @ts-expect-error Async Server Component */}
+        <Leaders />
+      </Suspense>
+      <section className="text-white grid gap-6 px-container md:grid-cols-2">
         <div className="">
           <h2 className="text-4xl font-bold leading-normal">
             Still wondering if the program is for you?
@@ -418,7 +423,7 @@ const page = () => {
           ))}
         </div>
       </section>
-      <section className=" px-4 py-14 md:px-6 lg:px-9 lg:py-24 ">
+      <section className="px-container py-14 lg:py-24">
         <h4 className="text-white flex justify-center text-center text-4xl font-bold lg:mb-24 lg:text-[42px]">
           Meet the Instructor
         </h4>
@@ -476,6 +481,7 @@ const page = () => {
           </div>
         </div>
       </section> */}
+      <Faq />
     </div>
   );
 };
