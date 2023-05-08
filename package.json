@@ -28,8 +28,6 @@
     "markdown-it": "13.0.1",
     "next": "13.4.1",
     "next-mdx-remote": "4.4.1",
-    "next-seo": "6.0.0",
-    "next-sitemap": "4.0.9",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

@@ -6,7 +6,7 @@ import md from 'markdown-it';
 import Design from '@/public/icons/design.svg';
 import '@/styles/blogPost.css';
 import Button from '@/ui/Button';
-import { getBlogDetails, getBlogSiteMap } from '@/lib/getBlogDetails';
+import { getBlogDetails } from '@/lib/getBlogDetails';
 import BlogCard from '@/ui/BlogCard';
 import { Blog, ComponentSharedSeo } from 'types/types';
 import Script from 'next/script';
@@ -154,10 +154,3 @@ export default async ({ params }: PageProps) => {
     </div>
   );
 };
-
-export async function getServerSideSitemap() {
-  const blogData = await getBlogSiteMap();
-  return blogData.data.blogs.data.map((x) => ({
-    slug: x.attributes?.slug,
-  }));
-}
