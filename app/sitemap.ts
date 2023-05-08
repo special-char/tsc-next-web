@@ -17,7 +17,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: new Date(),
   }));
 
-  return [
+  const staticMap = [
     {
       url: `${url}`,
       lastModified: new Date(),
@@ -46,7 +46,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${url}/hire-our-graduates`,
       lastModified: new Date(),
     },
-    ...blogSiteMap,
-    ...coursesSiteMap,
   ];
+
+  const finalMap = staticMap.concat(blogSiteMap, coursesSiteMap);
+
+  return finalMap;
 }
