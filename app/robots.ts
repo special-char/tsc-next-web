@@ -9,5 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       //   disallow: '/private/',
     },
     sitemap: `${url}/sitemap.xml`,
+    host: `https://www.thespecialcharacter.com`,
   };
 }

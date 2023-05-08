@@ -2,7 +2,7 @@ import { getBlogSiteMap } from '@/lib/getBlogDetails';
 import { getCoursesSiteMap } from '@/lib/getCourseDetails';
 import { MetadataRoute } from 'next';
 
-export default async function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const blogData = await getBlogSiteMap();
   const coursesData = await getCoursesSiteMap();
   const url = `https://www.thespecialcharacter.com`;
