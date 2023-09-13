@@ -4,7 +4,7 @@
     "dev": "next dev",
     "dev:tailwind": "concurrently 'next dev' 'npm run tailwind --watch'",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 3004",
     "lint": "next lint",
     "tailwind": "tailwindcss -i styles/globals.css -o styles/dist.css",
     "format": "prettier --write \"**/*.{js,ts,tsx,md}\"",
