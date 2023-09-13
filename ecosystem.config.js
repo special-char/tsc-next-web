@@ -1,7 +1,7 @@
 module.exports = {
     apps: [
       {
-        name: 'yam-web',
+        name: 'tsc-web',
         script: 'npm',
         args: 'start',
       },
