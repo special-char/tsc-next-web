@@ -1,4 +1,5 @@
-import { Kumbh_Sans, Newsreader, Flow_Block } from '@next/font/google';
+import { Kumbh_Sans, Newsreader, Flow_Block } from 'next/font/google';
+import localFont from 'next/font/local'
 import '@/styles/globals.css';
 import { Suspense } from 'react';
 import Footer from './footer';
@@ -16,11 +17,13 @@ const kumbSans = Kumbh_Sans({
   variable: '--font-kumbh',
 });
 
-const newsreader = Newsreader({
-  subsets: ['latin'],
-  weight: ["600"],
-  variable: '--font-newsreader',
-});
+const newsreader = localFont({ src: '../public/fonts/newsreader-latin-600-normal.woff2' })
+
+// const newsreader = Newsreader({
+//   weight: '600',
+//   subsets: ['latin'],
+//   variable: '--font-newsreader',
+// });
 
 const flowBlock = Flow_Block({
   weight: '400',
