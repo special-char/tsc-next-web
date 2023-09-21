@@ -194,7 +194,7 @@ export default function RootLayout({
           <Footer />
           <div className="fixed bottom-[86px] right-[6px] z-50 h-16 w-16">
             <a
-              NewsreaderclassName="relative flex h-[60px] w-[60px]"
+              className="relative flex h-[60px] w-[60px]"
               href="https://api.whatsapp.com/send/?phone=%2B917600096432&text&type=phone_number&text=I%20want%20to%20understand%20about"
               target="_blank"
             >
