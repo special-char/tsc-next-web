@@ -159,7 +159,7 @@ export default async function Page({ params }: PageProps) {
               </div>
             )}
 
-            <h2 className="main__left-section__title">{title}</h2>
+            <h1 className="main__left-section__title">{title}</h1>
             <p className="pb-6 text-neutral-100">{description}</p>
             <div className="main__left-section__preview">
               {url && (
