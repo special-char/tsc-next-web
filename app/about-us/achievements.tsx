@@ -42,12 +42,12 @@ const Achievements = async (props: Props) => {
       <div className="achieve__content">
         {numbers?.map((x) => (
           <div className="overflow-hidden" key={x?.id}>
-            <h1 className="text-secondary3">
+            <h2 className="text-secondary3">
               {new Intl.NumberFormat('en-IN', {
                 maximumSignificantDigits: 3,
               }).format(x?.number || 0)}
               +
-            </h1>
+            </h2>
             <h3>{x?.title}</h3>
             <p>{x?.description}</p>
           </div>
