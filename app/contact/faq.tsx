@@ -57,10 +57,6 @@ const Faq = async (props: Props) => {
       <div className="faq__section ">
         <div className="faq__header">
           <h2>Frequently Asked Questions.</h2>
-          <p>
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat.
-          </p>
         </div>
         <div className="faq__body">
           <Accordian data={faqInfo} />
