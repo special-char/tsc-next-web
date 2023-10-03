@@ -20,10 +20,10 @@ const data = [
   },
   {
     id: 2,
-    coursetype: 'BASIC COURSE',
+    coursetype: 'ADVANCE COURSE',
     duration: '6 Months',
     description:
-      '  In the realm of software development, there are no limits to innovation and excellence.',
+      'Within the realm of software solutions, we craft dynamic and efficient systems that resonate with excellence and innovation.',
     detils: [
       'In-depth Practical Training',
       'Offline Project Training Opportunities',
