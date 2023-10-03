@@ -1,7 +1,7 @@
 import PageHeader, { PageHeaderSkeleton } from '@/ui/pageHeader';
 import React, { Suspense } from 'react';
-import Content from './Content';
-import Technolgy from './Technolgy';
+import Content from '../Content';
+import Technolgy from '../Technolgy';
 
 const page = (props: Props) => {
   return (
