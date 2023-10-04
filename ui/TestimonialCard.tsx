@@ -1,10 +1,13 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useRef } from 'react';
 import { Testimonial, TestimonialEntity, UploadFile } from 'types/types';
 import Rating from './Rating';
 import '@/styles/testimonialCard.css';
 import clsx from 'clsx';
+import VideoDialog from './VideoDialog';
+import PlayButton from '@/public/icons/play-button.svg';
 
 type Props = {
   testimonial: TestimonialEntity;
@@ -40,25 +43,42 @@ const TestimonialCard = ({ testimonial, style }: Props) => {
   const { avatar, rating, quote, name, designation, company } =
     testimonial.attributes as Testimonial;
   const { url, alternativeText } = avatar?.data?.attributes as UploadFile;
+  const modelRef = useRef();
   return (
-    <Link href="#" style={style} className={clsx('testimonial_card', {})}>
-      <figure className="testimonial_card__img">
-        <Image
-          src={`${url}?tr=h-200,w-200`}
-          alt={`${alternativeText}`}
-          height={200}
-          width={200}
-        />
-      </figure>
-      <div className="testimonial_card__body">
-        <Rating rate={rating} className="testimonial_card__rating" />
-        <p className="testimonial_card__desc">{`"${quote}"`}</p>
-        <div className="user_info">
-          <h6>{name}</h6>
-          <p>{`${designation} at ${company}`}</p>
+    <>
+      <dialog id="dialog" ref={modelRef}>
+        <form method="dialog">
+          <VideoDialog />
+        </form>
+      </dialog>
+      <div style={style} className={clsx('testimonial_card', {})}>
+        <figure className="testimonial_card__img">
+          <Image
+            src={`${url}?tr=h-200,w-200`}
+            alt={`${alternativeText}`}
+            height={200}
+            width={200}
+          />
+
+          <div
+            className="testimonial_card__img__hover_icon"
+            onClick={() => {
+              modelRef.current.showModal();
+            }}
+          >
+            <PlayButton />
+          </div>
+        </figure>
+        <div className="testimonial_card__body">
+          <Rating rate={rating} className="testimonial_card__rating" />
+          <p className="testimonial_card__desc">{`"${quote}"`}</p>
+          <div className="user_info">
+            <h6>{name}</h6>
+            <p>{`${designation} at ${company}`}</p>
+          </div>
         </div>
       </div>
-    </Link>
+    </>
   );
 };
 
