@@ -11,6 +11,7 @@ import PostGresql from '@/public/icons/postgresql.svg';
 import GraphQl from '@/public/icons/graphql.svg';
 import PHP from '@/public/icons/php.svg';
 import Python from '@/public/icons/python.svg';
+import Flutter from '@/public/icons/flutter-icon (1).svg';
 
 const technologies = [
   {
@@ -70,6 +71,11 @@ const technologies = [
   },
   {
     id: '12',
+    icon: <Flutter />,
+    text: 'Flutter',
+  },
+  {
+    id: '13',
     icon: <Python />,
     text: 'Python',
   },

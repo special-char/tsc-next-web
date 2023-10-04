@@ -10,7 +10,7 @@ const PlanCard = ({
   notincourse,
 }) => (
   <div className="rounded-3xl bg-neutral-300 p-5 shadow-dark">
-    <div className="font-semibold text-secondary3">{coursetype}</div>
+    <div className="text-xxl font-bold text-secondary3">{coursetype}</div>
     <h2 className="pt-2 font-bold">{duration}</h2>
     <p>{description}</p>
     {detils.map((detail, index) => (

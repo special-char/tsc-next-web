@@ -5,32 +5,32 @@ import PageHeader, { PageHeaderSkeleton } from '@/ui/pageHeader';
 const data = [
   {
     id: 1,
-    coursetype: 'BASIC COURSE',
-    duration: '3 Months',
+    coursetype: 'Full Stack Development Course',
+    duration: '6 Months',
     description:
       '  In the realm of software development, there are no limits to innovation and excellence.',
     detils: [
       'In-depth Practical Training',
       'Offline Project Training Opportunities',
-      'Guaranteed Job Support',
+
       'Interview Preparation',
-      'Job guarantee - 50%',
+      '100% Job Assistance',
+      'Live Project Training Opportunities',
     ],
-    notincourse: ['Live Project Training Opportunities'],
+    notincourse: [],
   },
   {
     id: 2,
-    coursetype: 'ADVANCE COURSE',
-    duration: '6 Months',
+    coursetype: 'Full Stack Development Course Fast Track',
+    duration: '3 Months',
     description:
       'Within the realm of software solutions, we craft dynamic and efficient systems that resonate with excellence and innovation.',
     detils: [
       'In-depth Practical Training',
-      'Offline Project Training Opportunities',
-      'Guaranteed Job Support',
-      'Interview Preparation',
-      'Job guarantee - 50%',
+      'Offline / Online Project Training Opportunities',
+      'Mentoring For Job Assistance',
       'Live Project Training Opportunities',
+      'Exclusive For Working Professionals Weekend Batch',
     ],
     notincourse: [],
   },
