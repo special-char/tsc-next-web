@@ -41,7 +41,7 @@ const Page = async ({ params }: Props) => {
         </div>
         <div className="pt-8">
           <EventDetailPage
-            data={rest}
+            {...rest}
             additionalField={{
               eventName: params.slug,
             }}
