@@ -20,14 +20,14 @@ const Certificate = () => {
           {data.map((detail, index) => (
             <div className="flex items-center gap-4 py-3" key={index}>
               <OKIcon />
-              <p className="font-semibold">{detail}</p>
+              <p className="flex justify-center font-semibold">{detail}</p>
             </div>
           ))}
         </div>
         <div className="relative aspect-[4/3] bg-primary md:flex-1">
           <Image
             src="https://ik.imagekit.io/p99x3nxgz/tsc%20cartificate.jpg?updatedAt=1696594450480"
-            alt="img"
+            alt="Cartificate"
             fill
           />
         </div>
