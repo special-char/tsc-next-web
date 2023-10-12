@@ -16,7 +16,7 @@ const Certificate = () => {
       </h1>
 
       <div className="flex flex-col pt-3 md:flex-row">
-        <div className="flex-1">
+        <div className="flex flex-1 flex-col  justify-center">
           {data.map((detail, index) => (
             <div className="flex items-center gap-4 py-3" key={index}>
               <OKIcon />
