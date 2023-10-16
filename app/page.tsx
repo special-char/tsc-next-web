@@ -10,6 +10,7 @@ import Perks, { PerksSkeleton } from './perks';
 import Testimonial, { TestimonialSkeleton } from './testimonial';
 import Blogs, { BlogsSkeleton } from './blogs';
 import Certificate from './Certificate';
+import PrivacyPolicy from './privacy-Policy';
 
 const Page = () => {
   return (
@@ -52,6 +53,7 @@ const Page = () => {
       <Suspense fallback={<BlogsSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
         <Blogs />
+        <PrivacyPolicy />
       </Suspense>
     </>
   );
