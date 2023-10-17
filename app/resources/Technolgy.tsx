@@ -83,7 +83,7 @@ const Technolgy = () => {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-Fit,minmax(100px,1fr))',
+          gridTemplateColumns: 'repeat(auto-Fit,minmax(130px,1fr))',
           gap: '5vw',
         }}
       >

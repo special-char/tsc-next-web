@@ -1,5 +1,5 @@
 .blogs {
-  @apply overflow-hidden py-24 px-container sm:px-sm-container md:py-36 lg:px-container xl:py-44;
+  @apply overflow-hidden bg-neutral-200 px-container py-24 sm:px-sm-container md:py-36 lg:px-container xl:py-44;
   &__header {
     @apply mb-10 flex flex-col items-center gap-5 lg:mb-14 lg:flex-row lg:justify-between;
   }

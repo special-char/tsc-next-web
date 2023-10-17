@@ -9,7 +9,7 @@ const data = [
 ];
 const Certificate = () => {
   return (
-    <section className="px-container pt-16">
+    <section className="px-container py-16">
       <h1 className="text-center">
         Get a Training Certificate from a The Special character edtech Company
         in India
