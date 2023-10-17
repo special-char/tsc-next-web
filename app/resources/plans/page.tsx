@@ -42,7 +42,7 @@ const plan = () => {
       <Suspense fallback={<PageHeaderSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
         <PageHeader
-          pageName="about"
+          pageName="plans"
           className="customClass"
           circleRight="bg-primary"
           circleLeft="bg-secondary3"

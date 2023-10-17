@@ -55,7 +55,13 @@ const PageHeader = async ({
       <div className={clsx('page__body', { [className]: !!className })}>
         <div className="page__pages">
           <div className="page__detail">
-            {title && <h1 className="text-neutral-700">{title.split('<br />').map(x => <div className='whitespace-nowrap'>{x}</div>)}</h1>}
+            {title && (
+              <h1 className="text-neutral-700">
+                {title.split('<br />').map((x) => (
+                  <div className="whitespace-nowrap">{x}</div>
+                ))}
+              </h1>
+            )}
             {description && <p>{description}</p>}
           </div>
         </div>

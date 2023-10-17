@@ -9,7 +9,7 @@ const data = [
 ];
 const Certificate = () => {
   return (
-    <section className="px-container pt-6">
+    <section className="px-container pt-16">
       <h1 className="text-center">
         Get a Training Certificate from a The Special character edtech Company
         in India
@@ -24,7 +24,7 @@ const Certificate = () => {
             </div>
           ))}
         </div>
-        <div className="relative aspect-blog-image bg-primary md:flex-1">
+        <div className="relative aspect-[4/3] bg-primary md:flex-1">
           <Image
             src="https://ik.imagekit.io/p99x3nxgz/tsc%20cartificate.jpg?updatedAt=1696594450480"
             alt="Cartificate"

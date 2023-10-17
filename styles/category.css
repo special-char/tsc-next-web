@@ -1,5 +1,5 @@
 .category {
-  @apply grid min-h-fit content-center items-center py-16;
+  @apply grid min-h-fit content-center items-center pb-16;
 
   &__title {
     @apply mb-10 text-center text-neutral-700;

@@ -22,12 +22,12 @@ const technologies = [
   {
     id: '2',
     icon: <Html />,
-    text: 'HTML',
+    text: 'HTML5',
   },
   {
     id: '3',
     icon: <Css />,
-    text: 'CSS',
+    text: 'CSS3',
   },
   {
     id: '4',
@@ -52,12 +52,12 @@ const technologies = [
   {
     id: '8',
     icon: <PostGresql />,
-    text: 'PostGresql',
+    text: 'PostgreSQL',
   },
   {
     id: '9',
     icon: <GraphQl />,
-    text: 'GraphQl',
+    text: 'GraphQL',
   },
   {
     id: '10',
@@ -74,17 +74,12 @@ const technologies = [
     icon: <Flutter />,
     text: 'Flutter',
   },
-  {
-    id: '13',
-    icon: <Python />,
-    text: 'Python',
-  },
 ];
 
 const Technolgy = () => {
   return (
     <section className="px-container pb-24">
-      <h2 className="pb-4">Technologies We offer IT Training & Job on</h2>
+      <h2 className="pb-8">Technologies We offer IT Training & Job on</h2>
       <div
         style={{
           display: 'grid',
