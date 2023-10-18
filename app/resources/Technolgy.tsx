@@ -10,7 +10,6 @@ import MongoDb from '@/public/icons/mongodb.svg';
 import PostGresql from '@/public/icons/postgresql.svg';
 import GraphQl from '@/public/icons/graphql.svg';
 import PHP from '@/public/icons/php.svg';
-import Python from '@/public/icons/python.svg';
 import Flutter from '@/public/icons/flutter-icon (1).svg';
 
 const technologies = [
@@ -83,7 +82,7 @@ const Technolgy = () => {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-Fit,minmax(130px,1fr))',
+          gridTemplateColumns: 'repeat(auto-Fit,minmax(100px,1fr))',
           gap: '5vw',
         }}
       >
