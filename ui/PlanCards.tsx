@@ -9,7 +9,7 @@ const PlanCard = ({
   detils,
   notincourse,
 }) => (
-  <div className="rounded-3xl bg-neutral-300 p-5 shadow-dark">
+  <div className="rounded-3xl bg-neutral-200 p-5 shadow-dark">
     <div className="text-xxl font-bold text-secondary3">{coursetype}</div>
     <h2 className="pt-2 font-bold">{duration}</h2>
     <p>{description}</p>
