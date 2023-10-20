@@ -2,7 +2,7 @@
   @apply relative h-auto w-full;
 }
 .page__body {
-  @apply relative overflow-hidden bg-neutral-200;
+  @apply relative overflow-hidden bg-neutral-300;
 }
 .page__pages {
   @apply mx-auto px-8 py-20 text-center;
