@@ -3,7 +3,7 @@
 
   @apply grid items-center justify-items-center px-container py-4 shadow-dark;
   &__tsclogo {
-    @apply h-[56px] w-[184px];
+    @apply h-12 w-28 lg:w-44;
   }
 
   &__link {
