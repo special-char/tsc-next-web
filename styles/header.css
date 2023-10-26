@@ -1,7 +1,7 @@
 .header {
   grid-template-columns: auto 1fr auto;
 
-  @apply grid items-center justify-items-center px-container py-4 shadow-dark;
+  @apply sticky z-40 grid items-center justify-items-center bg-neutral-100 px-container py-4 shadow-dark duration-300;
   &__tsclogo {
     @apply h-12 w-28 lg:w-44;
   }
