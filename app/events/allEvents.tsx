@@ -1,5 +1,4 @@
 'use client';
-
 import EventCard from '@/ui/EventCard';
 import Features from '@/ui/features';
 import React, { useState } from 'react';
@@ -41,15 +40,17 @@ const AllEvents = ({ events }: Props) => {
     ] as ChipsType[],
   );
 
+  
+  const sortedEvents = events?.sort((a, b) => new Date(b?.attributes?.eventStartDate) - new Date(a?.attributes?.eventStartDate));
   return (
     <div className="px-container py-20">
-      <Features
+      <Features 
         title="All Events"
         chips={chips}
         selectedCategory={selectedCategory}
       />
       <div className="event_Card">
-        {events.map((data) => (
+        {sortedEvents.map((data) => (
           <EventCard data={data} key={data.id} />
         ))}
       </div>

@@ -82,7 +82,7 @@ const EventDetailPage = ({
             <div className="events__tools">
               <div className="events__svg">
                 <ClockSvg className="w-6" />
-                <span className="events__top ">
+                <span className="events__top ">;
                   {`${format(new Date(eventStartDate), 'EEEE')} ${format(
                     new Date(eventStartDate),
                     'p',

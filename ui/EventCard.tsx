@@ -92,7 +92,7 @@ const EventCard = ({ data }: Props) => {
         </div>
         <time className="date">
           <span className="text-xs uppercase md:text-base">
-            {format(new Date(eventStartDate), 'MMMM')}
+            {format(new Date(eventStartDate), 'MMM yyyy')}
           </span>
           <span className="text-4xl md:text-[48px]">
             {format(new Date(eventStartDate), 'dd')}
