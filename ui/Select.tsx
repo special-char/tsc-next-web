@@ -31,7 +31,7 @@ const Select = ({
         {...field}
         {...rest}
       >
-        <option value="">{`Please Select ${label}`}</option>
+        <option value="">{`Select ${label}`}</option>
         {options.map((x) => {
           return <option value={x.key}>{x.value}</option>;
         })}
