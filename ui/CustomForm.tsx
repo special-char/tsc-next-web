@@ -7,6 +7,8 @@ import checkValidation from '@/lib/validation';
 import TextInput from './TextInput';
 import TextArea from './TextArea';
 import clsx from 'clsx';
+import RadioButtons from './RadioButtons';
+import Select from './Select';
 
 type Props = {};
 
@@ -22,6 +24,8 @@ const CustomForm = ({
   if (formMethod) {
     formProps.method = formMethod;
   }
+
+  console.log(fields);
 
   return (
     <Formik enableReinitialize {...rest}>
@@ -52,12 +56,32 @@ const CustomForm = ({
                 return acc;
               }, {});
 
+              console.log();
+
               if (component === 'TextArea') {
                 return (
                   <Field
                     key={id}
                     id={field_id}
                     component={TextArea}
+                    {...fieldProps}
+                  />
+                );
+              } else if (component === 'Select') {
+                return (
+                  <Field
+                    key={id}
+                    id={field_id}
+                    component={Select}
+                    {...fieldProps}
+                  />
+                );
+              } else if (component === 'Radio') {
+                return (
+                  <Field
+                    key={id}
+                    id={field_id}
+                    component={RadioButtons}
                     {...fieldProps}
                   />
                 );

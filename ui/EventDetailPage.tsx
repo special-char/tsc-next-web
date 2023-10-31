@@ -106,7 +106,7 @@ const EventDetailPage = ({
           <Register
             btnText="register for event"
             btnClass="btn--primary"
-            formId={2}
+            formId={3}
             additionalField={additionalField}
           />
         </div>

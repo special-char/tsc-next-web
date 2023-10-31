@@ -43,7 +43,8 @@ const Page = async ({ params }: Props) => {
           <EventDetailPage
             {...rest}
             additionalField={{
-              eventName: params.slug,
+              registrationType: "event",
+              registrationName: params.slug,
             }}
           />
         </div>
