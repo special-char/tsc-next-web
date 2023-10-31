@@ -23,26 +23,28 @@ type ChipNavigationType = {
 
 const ChipNavigation = ({ chipData, selectedCategory, attributes }) => {
   return (
-    <div className="grid shrink-0 justify-items-center gap-y-2 rounded-3xl bg-neutral-200 py-4 md:grid-cols-2 md:rounded-full lg:flex">
-      {chipData.map(({ ...data }, index) => {
-        if (
-          !attributes ||
-          (attributes && attributes[`${data['key']}`].length > 0)
-        ) {
-          return (
-            <Button
-              key={index}
-              as="button"
-              className={clsx('chip w-full', {
-                'chip--primary': data.children === selectedCategory,
-                'chip--white': data.children !== selectedCategory,
-              })}
-              {...data}
-            />
-          );
-        }
-        return null;
-      })}
+    <div className="no-scrollbar overflow-x-scroll">
+      <div className="flex shrink-0 justify-items-center gap-x-2 rounded-3xl bg-neutral-200 py-4  md:rounded-full">
+        {chipData.map(({ ...data }, index) => {
+          if (
+            !attributes ||
+            (attributes && attributes[`${data['key']}`].length > 0)
+          ) {
+            return (
+              <Button
+                key={index}
+                as="button"
+                className={clsx('chip w-full', {
+                  'chip--primary': data.children === selectedCategory,
+                  'chip--white': data.children !== selectedCategory,
+                })}
+                {...data}
+              />
+            );
+          }
+          return null;
+        })}
+      </div>
     </div>
   );
 };

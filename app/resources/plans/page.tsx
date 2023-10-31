@@ -5,7 +5,7 @@ import PageHeader, { PageHeaderSkeleton } from '@/ui/pageHeader';
 const data = [
   {
     id: 1,
-    coursetype: 'Full Stack Development Course',
+    coursetype: 'Full Stack Advance Development Course',
     duration: '6 Months',
     description:
       '  In the realm of software development, there are no limits to innovation and excellence.',

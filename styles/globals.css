@@ -153,7 +153,7 @@
   }
 
   details {
-    @apply mb-4 max-w-full rounded-md bg-neutral-100 px-8 py-4 text-left drop-shadow-lg;
+    @apply mb-4 max-w-full rounded-md bg-neutral-100 px-3 py-4 text-left drop-shadow-lg;
 
     & > summary {
       @apply relative flex cursor-pointer list-none items-start justify-start text-2xl font-bold text-neutral-800 md:items-center;
@@ -265,7 +265,7 @@
   }
 
   .chip {
-    @apply flex w-fit items-center justify-center rounded-full px-4 py-3 align-middle text-xs font-bold shadow-base sm:px-6;
+    @apply flex w-fit items-center justify-center whitespace-nowrap rounded-full px-4 py-3 align-middle text-xs font-bold shadow-base sm:px-6;
 
     &.icon {
       @apply gap-2;
@@ -409,9 +409,13 @@
         scroll-behavior: smooth;
       }
     }
+    .no-scrollbar::-webkit-scroller {
+      display: none;
+    }
 
     &__items {
-      @apply m-0 max-w-xl flex-shrink-0 flex-grow basis-full snap-center snap-always list-none rounded-3xl bg-neutral-100 p-0;
+      @apply m-0 max-w-xl flex-shrink-0 flex-grow 
+     snap-center snap-always list-none rounded-3xl bg-neutral-100 p-0;
     }
 
     &__controls {
@@ -632,10 +636,20 @@
   }
 
   .items {
-    @apply px-sm-container py-20 lg:px-container;
+    @apply px-4 py-20 lg:px-container;
 
     &__item {
       @apply my-8 grid grid-cols-1 gap-8 lg:grid-cols-2;
     }
   }
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

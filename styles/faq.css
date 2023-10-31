@@ -1,10 +1,10 @@
 .faq__section {
-  @apply min-h-screen content-center items-center justify-center bg-neutral-200 py-24 px-4 sm:px-sm-container md:py-44 md:px-6 lg:px-container;
+  @apply min-h-screen content-center items-center justify-center bg-neutral-200 px-4 py-24 sm:px-sm-container md:px-6 md:py-44 lg:px-container;
 }
 .faq__header {
   @apply mx-auto mb-14 items-center justify-center text-center md:w-[585px] md:px-6;
 }
 
 .faq__body {
-  @apply mx-auto max-w-3xl;
+  @apply mx-auto max-w-3xl md:max-w-7xl;
 }
