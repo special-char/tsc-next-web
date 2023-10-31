@@ -2,7 +2,7 @@
 
 import { useMemo } from 'react';
 import CustomForm from './CustomForm';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FormFieldsDynamicZone } from 'types/types';
 
 const wait = (time: number) =>
@@ -24,8 +24,25 @@ const DynamicForm = ({
   wrapperClass,
   buttonStyle,
   additionalField,
+  isOpen,
 }: Props) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  useEffect(() => {
+    if (isOpen && isSubmitted) {
+      setIsSubmitted(false);
+      console.log('open');
+    }
+  }, [isOpen]);
+
+  // console.log("submite", isSubmitted);
+  // const changethe = () => {
+
+  //      console.log('isOpen changed:', isOpen);
+  //      if (isOpen === false ) {
+  //        console.log('Setting isSubmitted to false');
+  //        setIsSubmitted(false);
+  //      }
+  // }
 
   const initialValues = useMemo(
     () =>
