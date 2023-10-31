@@ -61,6 +61,6 @@
     @apply px-10 py-5 text-center uppercase md:w-72 md:py-6;
   }
   &__paragraph {
-    @apply mx-auto mb-6 flex max-w-3xl flex-col items-start gap-2 md:pb-36;
+    @apply mx-auto mb-6 flex max-w-4xl items-start flex-col gap-2 md:pb-36 px-4 md:px-0;
   }
 }
