@@ -172,7 +172,7 @@
       }
     }
     & > div:last-child {
-      @apply overflow-hidden border-none py-4 text-left text-base md:pl-16;
+      @apply overflow-hidden border-none py-4 text-left text-base pl-16;
     }
   }
 

@@ -19,10 +19,10 @@
   }
 
   &__body {
-    @apply mx-auto flex flex-col flex-wrap overflow-hidden md:flex-col md:py-4 lg:w-[990px]  lg:flex-row lg:items-baseline lg:justify-center lg:gap-32 lg:py-10;
+    @apply mx-auto flex flex-col flex-wrap overflow-hidden md:flex-col md:py-4 lg:flex-row lg:justify-center;
   }
   &__header {
-    @apply m-0 mb-6 flex flex-col items-start justify-start  text-center uppercase md:mb-0 md:mt-2 lg:items-center;
+    @apply m-0 mb-6 grid items-start justify-start  text-center uppercase md:mb-0 md:mt-2 lg:items-center;
   }
   &__h6 {
     @apply m-0 text-xs font-bold uppercase text-primary md:text-base lg:mt-3;
@@ -32,7 +32,7 @@
   }
 
   &__datails {
-    @apply !mb-16 md:mb-20 lg:mb-32 lg:w-[600px];
+    @apply !mb-16 md:mb-20 lg:max-w-3xl;
   }
   &__title {
     @apply flex flex-row justify-start gap-4 whitespace-nowrap font-bold text-neutral-800 md:items-center;
@@ -44,7 +44,7 @@
     @apply flex flex-row items-center gap-2 pb-4 md:p-0;
   }
   &__top {
-    @apply mr-6 text-xs font-bold text-neutral-800 lg:text-base;
+    @apply mr-6 text-xs flex flex-col font-bold text-neutral-800 lg:text-base;
   }
   &__chip {
     @apply hidden gap-2 border border-[#e7eaee] md:flex md:flex-row;
