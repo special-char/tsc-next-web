@@ -124,7 +124,7 @@ export async function generateMetadata({
   const defaultSEO: Metadata = {
     description: seo.metaDescription,
     title: {
-      template: '%s | The Special Character',
+      template: '%s',
       default: `${seo.metaTitle} | The Special Character`,
     },
     keywords: seo.keywords,
