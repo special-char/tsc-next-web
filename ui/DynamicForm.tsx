@@ -4,7 +4,6 @@ import { useMemo } from 'react';
 import CustomForm from './CustomForm';
 import { useState, useEffect } from 'react';
 import { FormFieldsDynamicZone } from 'types/types';
-
 const wait = (time: number) =>
   new Promise((resolve) => {
     setTimeout(resolve, time);
@@ -71,7 +70,39 @@ const DynamicForm = ({
           },
         },
       );
-      console.log(values);
+      console.log(res.status,'status');
+
+      if (res.status === 200) {
+        // Send a welcome email
+        
+        
+        
+        const getHello = await fetch('http://localhost:3000/api/welcome-email', {
+          body: JSON.stringify({email:values.email,name:values.name}), method:'POST',
+          headers:{
+            'Conetnt-Type':'application/json'
+          }
+        });
+        
+        // const textres = await fetch('http://localhost:3000/api/welcome-text', {
+        //   body: JSON.stringify({phone:values.phone,name:values.name}), method:'POST',
+        //   headers:{
+        //     'Conetnt-Type':'application/json'
+        //   }
+        // })
+        
+        const hello = await getHello?.json();
+        console.log({ hellooooooo: hello });
+
+        // const text = await textres?.json();
+        // console.log({hellotext: text});
+        
+        // Set isSubmitted to true
+        setIsSubmitted(true);
+
+        // Reset the form
+        actions.resetForm();
+      }
       setIsSubmitted(true);
       actions.resetForm();
     } catch (error) {
