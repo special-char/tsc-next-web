@@ -60,12 +60,12 @@ const Header = async (props: Props) => {
   const attributes = menuOptions.at(-1)?.attributes;
 
   return (
-    <header className="header" id="#header">
+    <header className="header" id="header">
       <ScrollDiv />
       <Link prefetch={false} href="/">
         <p className="sr-only">The Special Character Logo</p>
         <TscLogoSvg className="header__tsclogo md:hidden lg:block" />
-        <TscSvg className="hidden h-[56px] w-[52px] md:block lg:hidden " />
+        <TscSvg className="hidden h-[56px] w-[52px] md:block lg:hidden" />
       </Link>
       <nav className="header__nav">
         <ul>

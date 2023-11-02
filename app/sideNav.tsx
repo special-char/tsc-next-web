@@ -83,21 +83,21 @@ const SideNav = async (props: Props) => {
                     </details>
                   </>
                 ) : (
-                  <Link href={url} prefetch={false} className="header__link">
+                  <a href={`${url}`} prefetch={false} className="header__link">
                     {title}
-                  </Link>
+                  </a>
                 )}
               </li>
             );
           })}
         </ul>
-        <Link
+        <a
           href={`${lastMenuItem?.url}`}
           prefetch={false}
           className="btn btn--primary btn--small"
         >
           {lastMenuItem?.title}
-        </Link>
+        </a>
       </nav>
       <a
         href="#"
