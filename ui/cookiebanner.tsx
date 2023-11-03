@@ -30,7 +30,7 @@ export default function CookieBanner() {
   return (
     <div
       className={clsx(
-        `bg-gray-700 shadow fixed bottom-0
+        `bg-neutral-500 shadow fixed bottom-0
                         left-0 right-0 mx-auto my-10 
                         flex max-w-max flex-col items-center justify-between gap-4 rounded-lg px-3 py-3  
                          sm:flex-row md:max-w-screen-sm md:px-4`,
@@ -42,7 +42,7 @@ export default function CookieBanner() {
       <div className="text-center">
         <Link href="/info/cookies">
           <p>
-            We use <span className="text-sky-400 font-bold">cookies</span> on
+            We use <span className="text-neutral-300 font-bold">cookies</span> on
             our site.
           </p>
         </Link>
@@ -50,7 +50,7 @@ export default function CookieBanner() {
 
       <div className="flex gap-2">
         <button
-          className="text-gray-300 border-gray-900 rounded-md px-5 py-2"
+          className="text-neutral-300 border-neutral-400 rounded-md px-5 py-2"
           onClick={() => setCookieConsent(false)}
         >
           Decline
