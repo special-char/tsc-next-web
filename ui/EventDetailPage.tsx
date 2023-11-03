@@ -1,11 +1,12 @@
 import React from 'react';
-import ClockSvg from '@/public/icons/clock.svg';
+
 import MapSvg from '@/public/icons/map.svg';
 import SpeakerSvg from '@/public/icons/speaker.svg';
 import '@/styles/allevents.css';
 import format from 'date-fns/format';
 import Register from './Register';
 import { Event } from 'types/types';
+import EventLocalDate from './eventLocalDate';
 
 export const EventDetailPageSkeleton = () => {
   return (
@@ -88,17 +89,8 @@ const EventDetailPage = ({
                     {format(new Date(eventStartDate), 'dd')}
                   </h6>
                 </div>
-                <div className='flex flex-col gap-2 md:gap-4'>
-                  <div className="events__svg">
-                    <ClockSvg className="w-6" />
-                    <time>{`${format(
-                      new Date(eventStartDate),
-                      'EEEE',
-                    )} ${format(new Date(eventStartDate), 'p')}  - ${format(
-                      new Date(eventEndDate),
-                      'p',
-                    )}`}</time>
-                  </div>
+                <div className="flex flex-col gap-2 md:gap-4">
+                  <EventLocalDate eventStartDate={eventStartDate} eventEndDate={eventEndDate} />
                   <div className="events__svg">
                     <MapSvg className="w-6" />
                     <span className="events__top">{location?.city}</span>
