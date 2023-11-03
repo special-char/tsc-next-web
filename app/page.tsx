@@ -9,8 +9,9 @@ import Leaders, { LeadersSkeleton } from './leaders';
 import Perks, { PerksSkeleton } from './perks';
 import Testimonial, { TestimonialSkeleton } from './testimonial';
 import Blogs, { BlogsSkeleton } from './blogs';
-import Certificate from './Certificate';
-import PrivacyPolicy from './privacy-Policy';
+import Certificate from './certificate';
+
+
 
 const Page = () => {
   return (
@@ -54,6 +55,7 @@ const Page = () => {
         {/* @ts-expect-error Async Server Component */}
         <Blogs />
       </Suspense>
+     
     </>
   );
 };

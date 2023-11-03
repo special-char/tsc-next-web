@@ -12,10 +12,10 @@
   }
 
   &__page {
-    @apply overflow-hidden bg-neutral-100 px-container pt-28 md:pt-32;
+    @apply overflow-hidden bg-neutral-100 px-md-container pt-28 md:pt-32;
   }
   &__image {
-    @apply relative z-20 aspect-video max-w-4xl m-auto overflow-hidden rounded-2xl pt-5;
+    @apply relative z-20 aspect-video m-auto overflow-hidden rounded-2xl pt-5;
   }
 
   &__body {
@@ -25,7 +25,7 @@
     @apply m-0 mb-6 grid items-start justify-start  text-center uppercase md:mb-0 md:mt-2 lg:items-center;
   }
   &__h6 {
-    @apply m-0 text-xs font-bold uppercase text-primary md:text-base lg:mt-3;
+    @apply m-0 text-xs font-bold uppercase text-primary md:text-base;
   }
   &__h1 {
     @apply mb-3 text-[44px] md:text-[64px];
@@ -38,7 +38,7 @@
     @apply flex flex-row justify-start gap-4 whitespace-nowrap font-bold text-neutral-800 md:items-center;
   }
   &__tools {
-    @apply mb-5 flex flex-col md:flex-row;
+    @apply mb-5 flex flex-col md:flex-row justify-between flex-1;
   }
   &__svg {
     @apply flex flex-row items-center gap-2 pb-4 md:p-0;
@@ -55,12 +55,12 @@
     }
   }
   &__head {
-    @apply mb-2 block text-3xl font-semibold text-primary md:mb-5  md:w-[450px] md:text-6xl;
+    @apply mb-2 block text-3xl font-semibold text-primary md:mb-5 md:text-6xl;
   }
   &__button {
     @apply px-10 py-5 text-center uppercase md:w-72 md:py-6;
   }
   &__paragraph {
-    @apply mx-auto mb-6 flex max-w-4xl items-start flex-col gap-2 md:pb-36 px-4 md:px-0;
+    @apply mx-auto mb-6 flex items-start flex-col gap-2 md:pb-36 px-4 md:px-0;
   }
 }

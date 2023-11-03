@@ -1,6 +1,7 @@
 'use client';
 import EventCard from '@/ui/EventCard';
 import Features from '@/ui/features';
+import { log } from 'console';
 import React, { useState } from 'react';
 import { EventEntity } from 'types/types';
 
@@ -40,17 +41,27 @@ const AllEvents = ({ events }: Props) => {
     ] as ChipsType[],
   );
 
-  
-  const sortedEvents = events?.sort((a, b) => new Date(b?.attributes?.eventStartDate) - new Date(a?.attributes?.eventStartDate));
+  const sortedEvents = events?.sort(
+    (a, b) =>
+      new Date(b?.attributes?.eventStartDate) -
+      new Date(a?.attributes?.eventStartDate),
+  );
+  console.log(selectedCategory, sortedEvents);
+  const filterEvents = sortedEvents.filter((x) => {
+    if (selectedCategory !== 'All') {
+      return x.attributes.category.data.attributes.title === selectedCategory;
+    }
+    return x;
+  });
   return (
     <div className="px-container py-20">
-      <Features 
+      <Features
         title="All Events"
         chips={chips}
         selectedCategory={selectedCategory}
       />
       <div className="event_Card">
-        {sortedEvents.map((data) => (
+        {filterEvents.map((data) => (
           <EventCard data={data} key={data.id} />
         ))}
       </div>

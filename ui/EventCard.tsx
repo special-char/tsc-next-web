@@ -6,6 +6,7 @@ import format from 'date-fns/format';
 import Link from 'next/link';
 import { Event, EventEntity } from 'types/types';
 
+
 export const EventCardSkeleton = () => {
   return (
     <>
