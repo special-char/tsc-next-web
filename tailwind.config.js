@@ -61,6 +61,10 @@ module.exports = {
           1rem,
           calc((100vw - calc(1280px - 1rem * 2)) / 2)
         )`,
+        'md-container': `max(
+          1rem,
+          calc((100vw - calc(1024px - 1rem * 2)) / 2)
+        )`,
         'sm-container': `max(
           1rem,
           calc((100vw - calc(550px - 1rem * 2)) / 2)

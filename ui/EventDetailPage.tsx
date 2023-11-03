@@ -66,32 +66,44 @@ const EventDetailPage = ({
   return (
     <>
       <section className="events__body">
-        <div className="events__header">
-          <div>
-            <h5 className="events__h6">
-              {format(new Date(eventStartDate), 'MMMM')}
-            </h5>
-            <h6 className="events__h1">
-              {' '}
-              {format(new Date(eventStartDate), 'dd')}
-            </h6>
-          </div>
+        <div className="events__header hidden md:flex">
+          <h5 className="events__h6">
+            {format(new Date(eventStartDate), 'MMMM')}
+          </h5>
+          <h6 className="events__h1">
+            {' '}
+            {format(new Date(eventStartDate), 'dd')}
+          </h6>
         </div>
-        <div className="events__datails ">
+        <div className="events__datails">
           <div className="events__title">
-            <div className="events__tools">
-              <div className="events__svg">
-                <ClockSvg className="w-6" />
-                <span className="events__top ">;
-                  {`${format(new Date(eventStartDate), 'EEEE')} ${format(
-                    new Date(eventStartDate),
-                    'p',
-                  )}  - ${format(new Date(eventEndDate), 'p')}`}
-                </span>
-              </div>
-              <div className="events__svg">
-                <MapSvg className="w-6" />
-                <span className="events__top">{location?.city}</span>
+            <div className="events__tools items-start">
+              <div className="flex flex-1 items-start gap-4">
+                <div className="events__header flex md:hidden">
+                  <h5 className="events__h6">
+                    {format(new Date(eventStartDate), 'MMMM')}
+                  </h5>
+                  <h6 className="events__h1">
+                    {' '}
+                    {format(new Date(eventStartDate), 'dd')}
+                  </h6>
+                </div>
+                <div className='flex flex-col gap-2 md:gap-4'>
+                  <div className="events__svg">
+                    <ClockSvg className="w-6" />
+                    <time>{`${format(
+                      new Date(eventStartDate),
+                      'EEEE',
+                    )} ${format(new Date(eventStartDate), 'p')}  - ${format(
+                      new Date(eventEndDate),
+                      'p',
+                    )}`}</time>
+                  </div>
+                  <div className="events__svg">
+                    <MapSvg className="w-6" />
+                    <span className="events__top">{location?.city}</span>
+                  </div>
+                </div>
               </div>
               <div className="events__chip chip chip--white">
                 <div className="chip__icon">
