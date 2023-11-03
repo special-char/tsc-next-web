@@ -1,5 +1,5 @@
 import { Kumbh_Sans, Newsreader, Flow_Block } from 'next/font/google';
-import localFont from 'next/font/local'
+import localFont from 'next/font/local';
 import '@/styles/globals.css';
 import { Suspense } from 'react';
 import Footer from './footer';
@@ -18,7 +18,9 @@ const kumbSans = Kumbh_Sans({
   variable: '--font-kumbh',
 });
 
-const newsreader = localFont({ src: '../public/fonts/newsreader-latin-600-normal.woff2' })
+const newsreader = localFont({
+  src: '../public/fonts/newsreader-latin-600-normal.woff2',
+});
 
 // const newsreader = Newsreader({
 //   weight: '600',
@@ -169,17 +171,13 @@ export default function RootLayout({
     >
       {/* <head /> */}
       <body>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-WS7JTT5H0J"
-          strategy="worker"
-        />
-        
-        <Script id="google-analytics" strategy="worker">
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-WS7JTT5H0J" />
+        <Script id="google-analytics">
           {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-        
+ 
           gtag('config', 'G-WS7JTT5H0J');
         `}
         </Script>
