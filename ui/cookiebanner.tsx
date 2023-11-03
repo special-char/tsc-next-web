@@ -42,7 +42,7 @@ export default function CookieBanner() {
       <div className="text-center">
         <Link href="/info/cookies">
           <p>
-            We use <span className="text-neutral-300 font-bold">cookies</span> on
+            We use <span className="text-secondary3 font-bold">cookies</span> on
             our site.
           </p>
         </Link>
@@ -50,7 +50,7 @@ export default function CookieBanner() {
 
       <div className="flex gap-2">
         <button
-          className="text-neutral-300 border-neutral-400 rounded-md px-5 py-2"
+          className="text-error border-neutral-400 rounded-md px-5 py-2"
           onClick={() => setCookieConsent(false)}
         >
           Decline
