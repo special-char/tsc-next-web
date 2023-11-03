@@ -30,10 +30,10 @@ export default function CookieBanner() {
   return (
     <div
       className={clsx(
-        `bg-neutral-500 shadow fixed bottom-0
+        `bg-neutral-200 shadow fixed bottom-0
                         left-0 right-0 mx-auto my-10 
                         flex max-w-max flex-col items-center justify-between gap-4 rounded-lg px-3 py-3  
-                         sm:flex-row md:max-w-screen-sm md:px-4`,
+                         sm:flex-row md:max-w-screen-sm md:px-4 z-50`,
         {
           hidden: cookieConsent != null,
         },
@@ -56,7 +56,7 @@ export default function CookieBanner() {
           Decline
         </button>
         <button
-          className="bg-neutral-600 text-white rounded-lg px-5 py-2"
+          className="bg-primary text-neutral-100 rounded-lg px-5 py-2"
           onClick={() => setCookieConsent(true)}
         >
           Allow Cookies
