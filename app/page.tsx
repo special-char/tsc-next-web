@@ -10,7 +10,8 @@ import Perks, { PerksSkeleton } from './perks';
 import Testimonial, { TestimonialSkeleton } from './testimonial';
 import Blogs, { BlogsSkeleton } from './blogs';
 import Certificate from './certificate';
-import PrivacyPolicy from './privacy-Policy';
+
+
 
 const Page = () => {
   return (
@@ -54,6 +55,7 @@ const Page = () => {
         {/* @ts-expect-error Async Server Component */}
         <Blogs />
       </Suspense>
+     
     </>
   );
 };

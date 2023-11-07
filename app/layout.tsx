@@ -10,6 +10,7 @@ import Script from 'next/script';
 import { Metadata } from 'next';
 import { getSEOData } from '@/lib/getSEO';
 import { ComponentSharedSeo } from 'types/types';
+import { FacebookPixelEvents } from '@/ui/pixel-events';
 
 const kumbSans = Kumbh_Sans({
   style: ['normal'],
@@ -172,6 +173,7 @@ export default function RootLayout({
           src="https://www.googletagmanager.com/gtag/js?id=G-WS7JTT5H0J"
           strategy="worker"
         />
+        
         <Script id="google-analytics" strategy="worker">
           {`
           window.dataLayer = window.dataLayer || [];
@@ -206,6 +208,9 @@ export default function RootLayout({
             </a>
           </div>
         </div>
+        <Suspense fallback={null}>
+          <FacebookPixelEvents />
+        </Suspense>
         <Script
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
