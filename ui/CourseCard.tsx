@@ -105,7 +105,10 @@ const CourseCard = ({ course, isHorizontal }: Props) => {
           <h3 className="course_card__title">{title}</h3>
           <p className="course_card__desc">{description}</p>
         </Link>
-        <div className="course_card__footer">
+
+{/* ***{Dont Remove It This Code , no Body Touch it }*** */}
+
+        {/* <div className="course_card__footer">
           {brochureUrl && (
             <Link
               href={brochureUrl}
@@ -117,7 +120,7 @@ const CourseCard = ({ course, isHorizontal }: Props) => {
               Download Curriculum
             </Link>
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );
