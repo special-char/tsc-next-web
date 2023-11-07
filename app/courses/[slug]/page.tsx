@@ -179,7 +179,7 @@ export default async function Page({ params }: PageProps) {
                   priority
                 />
                 <div
-                className="testimonial_card__img__hover_icon"
+                className="testimonial_card__img__hover_icon !w-[13%]"
                 onClick={() => {
                   const model = document.getElementById("videomodel");
                   return model.showModal();
