@@ -41,13 +41,7 @@ const AllEvents = ({ events }: Props) => {
     ] as ChipsType[],
   );
 
-  const sortedEvents = events?.sort(
-    (a, b) =>
-      new Date(b?.attributes?.eventStartDate) -
-      new Date(a?.attributes?.eventStartDate),
-  );
-  console.log(selectedCategory, sortedEvents);
-  const filterEvents = sortedEvents.filter((x) => {
+  const filterEvents = events.filter((x) => {
     if (selectedCategory !== 'All') {
       return x.attributes.category.data.attributes.title === selectedCategory;
     }
