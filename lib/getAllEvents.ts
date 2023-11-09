@@ -15,7 +15,7 @@ export const getAllEvents: AllEventDetailsType = async () => {
     },
     body: JSON.stringify({
       query: `{
-            events {
+            events(sort: "updatedAt:DESC") {
               data {
                 id
                 attributes {

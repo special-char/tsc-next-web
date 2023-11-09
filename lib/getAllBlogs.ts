@@ -10,23 +10,12 @@ export type HomeBlogType = () => Promise<{
   };
 }>;
 
-export const getHomeBlogData: HomeBlogType = async () => {
+export const getAllBlogData: HomeBlogType = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
     method: 'POST',
     body: JSON.stringify({
       query: `{
-          homeBlog {
-            data {
-              attributes {
-                title
-                button {
-                  text
-                  url
-                }
-              }
-            }
-          }
-          blogs(pagination: {limit: 4}, sort: "updatedAt:DESC") {
+          blogs(sort: "updatedAt:DESC") {
             data {
               id
               attributes {
