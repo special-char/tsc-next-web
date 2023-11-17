@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React from 'react';
 import '@/styles/blogs.css';
 import { getHomeBlogData } from '@/lib/getHomeBlog';
 import BlogCard, { BlogCardSkeleton } from '@/ui/BlogCard';
@@ -16,7 +16,12 @@ export const FeatureBlogsSkeleton = () => {
 };
 
 const FeatureBlogs = async () => {
-  const homeBlogData = await getHomeBlogData();
+  const homeBlogData = await getHomeBlogData({
+    filters: {},
+    pagination: {
+      limit: 4
+    }
+  });
 
   const blogList = homeBlogData.data.blogs.data;
 
