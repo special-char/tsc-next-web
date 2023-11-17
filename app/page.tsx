@@ -10,7 +10,7 @@ import Perks, { PerksSkeleton } from './perks';
 import Testimonial, { TestimonialSkeleton } from './testimonial';
 import Blogs, { BlogsSkeleton } from './blogs';
 import Certificate from './certificate';
-import PrivacyPolicy from './privacy-Policy';
+import PrivacyPolicy from './privacy-policy/page';
 
 const Page = () => {
   return (
