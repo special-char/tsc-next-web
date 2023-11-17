@@ -62,7 +62,7 @@ const EventCard = ({ data }: Props) => {
   } = data.attributes as Event;
 
   return (
-    <Link href={`/events/${slug}`} prefetch={false} className="event__section">
+    <Link href={`/events/${slug}#register`} prefetch={false} className="event__section">
       <figure className="card__image">
         <Image
           src={`${image.data.attributes.url}?tr=ar-16-9`}

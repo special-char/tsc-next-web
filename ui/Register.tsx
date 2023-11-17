@@ -5,7 +5,8 @@ import clsx from 'clsx';
 import React, { memo, useCallback, useEffect, useState } from 'react';
 import { Form, FormFieldsDynamicZone, Maybe } from 'types/types';
 import DynamicForm from './DynamicForm';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
+import { getURL } from 'next/dist/shared/lib/utils';
 
 type Props = {
   formId: number;
@@ -27,8 +28,12 @@ const Register = ({ formId, btnText, btnClass, additionalField }: Props) => {
       setSubmitURL(submitURL);
     }
   }, []);
-
+const router = useRouter()
   useEffect(() => {
+  if(getURL().includes("#register")){
+    setIsOpen(true)
+    router.push("")
+  }
     loadformData(formId);
   }, []);
 
