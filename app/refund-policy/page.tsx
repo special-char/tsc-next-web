@@ -9,15 +9,15 @@ const RefundPolicy = () => {
   ];
 
   return (
-    <section className='px-container py-16' id='#refundpolicy'>
-      <h1>Refund Policy</h1>
+    <section className='px-4 md:px-container py-16' id='#refundpolicy'>
+      <h1>Refund Policy - Specialchar Pvt. Ltd.</h1>
 
       <p>
         Thank you for choosing our IT education technology services. We want to ensure you are satisfied with your purchase. Please read our refund policy below:
       </p>
 
       <h2>Refund Eligibility</h2>
-      <ul>
+      <ul className='px-4'>
         {refundDetails.map((detail, index) => (
           <li key={index}>{detail}</li>
         ))}
@@ -25,9 +25,9 @@ const RefundPolicy = () => {
 
       <h2>How to Request a Refund</h2>
       <p>
-        To request a refund, please contact our customer support team at support@example.com with the following information:
+        To request a refund, please contact our customer support team at <a href='mailto:contact@thespecialcharacter.com'>contact@thespecialcharacter.com</a> with the following information:
       </p>
-      <ul>
+      <ul className='px-4'>
         <li>Your full name and contact information</li>
         <li>Order number</li>
         <li>Reason for the refund request</li>
@@ -40,7 +40,7 @@ const RefundPolicy = () => {
 
       <h2>Contact Us</h2>
       <p>
-        If you have any questions about our refund policy, please contact us at support@example.com.
+        If you have any questions about our refund policy, please contact us at <a href='mailto:contact@thespecialcharacter.com'>contact@thespecialcharacter.com</a>
       </p>
     </section>
   );
