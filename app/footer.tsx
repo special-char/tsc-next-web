@@ -8,6 +8,8 @@ import EmailSvg from '@/public/icons/email.svg';
 import { getSocialMediaLinks } from '@/lib/getSocialMediaDetails';
 import Image from 'next/image';
 import { getMenuData } from '@/lib/getMenu';
+import PrivacyPolicy from './privacy-policy/page';
+import RefundPolicy from './refund-policy/page';
 
 type Props = {};
 
@@ -72,6 +74,12 @@ const Footer = (props: Props) => {
               {val.attributes.title}
             </Link>
           ))}
+          <Link href="/privacy-policy" >
+              Privacy Policy
+            </Link>
+            <Link href="/refund-policy">
+             Refund Policy
+            </Link>
         </div>
       </div>
       <hr className="col-span-full" />
