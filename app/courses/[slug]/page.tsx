@@ -12,8 +12,8 @@ import Accordian, { AccordianType } from '@/ui/Accordian';
 import { notFound } from 'next/navigation';
 import { getCoursesMeta } from '@/lib/getCoursesMeta';
 import { Metadata } from 'next';
-import PlayButton from '@/public/icons/play-button.svg';
-import VideoDialog from '@/ui/VideoDialog';
+import Script from 'next/script';
+
 export async function generateMetadata({
   params,
 }: {
@@ -147,11 +147,14 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <>
-      <dialog id="videomodel" >
-        <form method="dialog">
-          <VideoDialog />
-        </form>
-      </dialog>
+    {attributes?.seo?.structuredData && (
+        <Script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(attributes?.seo.structuredData),
+          }}
+        />
+      )}
       <section id="individualcourse" className="individualcourse">
         <div className="individualcourse__content">
           <div className="individualcourse__content__bg"></div>

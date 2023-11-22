@@ -12,7 +12,7 @@ const email = ({ value, message }: ValidationParamsType) =>
   (message || 'Please enter valid email');
 
 const tel = ({ value, message }: ValidationParamsType) =>
-  !/^(\+\d{1,3}[- ]?)?\d{10}$/.test(value as string) &&
+  !/^\d{10}$/.test(value as string) &&
   (message || 'Please enter valid email');
 
 const url = ({ value, message }: ValidationParamsType) =>
