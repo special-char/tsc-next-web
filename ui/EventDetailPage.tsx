@@ -1,11 +1,12 @@
 import React from 'react';
-import ClockSvg from '@/public/icons/clock.svg';
+
 import MapSvg from '@/public/icons/map.svg';
 import SpeakerSvg from '@/public/icons/speaker.svg';
 import '@/styles/allevents.css';
 import format from 'date-fns/format';
 import Register from './Register';
 import { Event } from 'types/types';
+import EventLocalDate from './eventLocalDate';
 
 export const EventDetailPageSkeleton = () => {
   return (
@@ -65,35 +66,38 @@ const EventDetailPage = ({
 }: Event) => {
   return (
     <>
-        <section className="events__body">
-            <div className="flex gap-12">
-          <div className="events__header">
-            <div>
-              <h5 className="events__h6">
-                {format(new Date(eventStartDate), 'MMMM')}
-              </h5>
-              <h6 className="events__h1">
-                {' '}
-                {format(new Date(eventStartDate), 'dd')}
-              </h6>
-            </div>
-          </div>
-            <div className="events__title">
-              <div className="events__tools">
-                <div className="events__svg">
-                  <ClockSvg className="w-6" />
-                  <span className="events__top ">
-                  {`${format(new Date(eventStartDate), 'EEEE')} ${format(
-                      new Date(eventStartDate),
-                      'p',
-                    )}  - ${format(new Date(eventEndDate), 'p')}`}
-                  </span>
-                  </div>
-                <div className="events__svg">
-                  <MapSvg className="w-6" />
-                  <span className="events__top">{location?.city}</span>
+      <section className="events__body">
+        <div className="events__header hidden md:flex">
+          <h5 className="events__h6">
+            {format(new Date(eventStartDate), 'MMMM')}
+          </h5>
+          <h6 className="events__h1">
+            {' '}
+            {format(new Date(eventStartDate), 'dd')}
+          </h6>
+        </div>
+        <div className="events__datails">
+          <div className="events__title">
+            <div className="events__tools items-start">
+              <div className="flex flex-1 items-start gap-4">
+                <div className="events__header flex md:hidden">
+                  <h5 className="events__h6">
+                    {format(new Date(eventStartDate), 'MMMM')}
+                  </h5>
+                  <h6 className="events__h1">
+                    {' '}
+                    {format(new Date(eventStartDate), 'dd')}
+                  </h6>
                 </div>
-                <div className="events__chip chip chip--white">
+                <div className="flex flex-col gap-2 md:gap-4">
+                  <EventLocalDate eventStartDate={eventStartDate} eventEndDate={eventEndDate} />
+                  <div className="events__svg">
+                    <MapSvg className="w-6" />
+                    <span className="events__top">{location?.city}</span>
+                  </div>
+                </div>
+              </div>
+              <div className="events__chip chip chip--white">
                 <div className="chip__icon">
                     <SpeakerSvg className="w-6" />
                   </div>

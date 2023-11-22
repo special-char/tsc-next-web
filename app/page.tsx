@@ -11,8 +11,6 @@ import Testimonial, { TestimonialSkeleton } from './testimonial';
 import Blogs, { BlogsSkeleton } from './blogs';
 import Certificate from './certificate';
 
-
-
 const Page = () => {
   return (
     <>
