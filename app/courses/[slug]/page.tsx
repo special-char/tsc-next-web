@@ -126,6 +126,7 @@ export default async function Page({ params }: PageProps) {
     curriculam,
     complitionResult,
     category,
+    courseVideo,
     ...data
   } = attributes as Course;
 
@@ -144,12 +145,13 @@ export default async function Page({ params }: PageProps) {
     }) || [];
 
   // const chipNavData = coursesData.data.courses.data.reduce()
-
+  
   return (
     <>
       <dialog id="videomodel" >
         <form method="dialog">
-          <VideoDialog />
+          <VideoDialog src={courseVideo?.data?.attributes?.url || ''} />
+          
         </form>
       </dialog>
       <section id="individualcourse" className="individualcourse">
@@ -183,7 +185,7 @@ export default async function Page({ params }: PageProps) {
                 onClick={() => {
                   const model = document.getElementById("videomodel");
                   return model.showModal();
-                }}
+                  }}
                 >
                 <PlayButton />
               </div>

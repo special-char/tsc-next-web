@@ -24,6 +24,14 @@ export const getCourseDetails: CoursesType = async (slug?: string) => {
                 }
                 title
                 description
+                courseVideo {
+                  data{
+                    attributes{
+                      url
+                      alternativeText
+                    }
+                  }
+                }
                 courseVideoPoster {
                   data {
                     attributes {
