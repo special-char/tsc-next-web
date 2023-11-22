@@ -60,7 +60,7 @@ const Header = async (props: Props) => {
   const attributes = menuOptions.at(-1)?.attributes;
 
   return (
-    <header className="header" id="#header">
+    <header className="header" id="header">
       <ScrollDiv />
       <Link prefetch={false} href="/">
         <p className="sr-only">The Special Character Logo</p>
