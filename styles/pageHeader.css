@@ -14,5 +14,5 @@
   @apply absolute -right-20 -top-36 z-10 h-[167px] rounded-full bg-primary md:-right-40 md:-top-52 md:h-[300px] md:w-[300px] lg:-right-28 lg:-top-60 lg:h-[400px] lg:w-[400px];
 }
 .circle__left {
-  @apply absolute -bottom-72 -left-[338px] z-10 h-[462px] w-[462px] rounded-full bg-secondary3 md:-bottom-48 md:-left-40 md:h-[300px]  md:w-[300px] lg:-bottom-60 lg:-left-40 lg:h-[420px] lg:w-[420px];
+  @apply absolute -bottom-80 -left-[338px] z-10 h-[462px] w-[462px] rounded-full bg-secondary3 md:-bottom-52 md:-left-40 md:h-[300px]  md:w-[300px] lg:-bottom-60 lg:-left-40 lg:h-[420px] lg:w-[420px];
 }

@@ -1,5 +1,5 @@
 import { Kumbh_Sans, Newsreader, Flow_Block } from 'next/font/google';
-import localFont from 'next/font/local'
+import localFont from 'next/font/local';
 import '@/styles/globals.css';
 import { Suspense } from 'react';
 import Footer from './footer';
@@ -11,6 +11,8 @@ import { Metadata } from 'next';
 import { getSEOData } from '@/lib/getSEO';
 import { ComponentSharedSeo } from 'types/types';
 import { FacebookPixelEvents } from '@/ui/pixel-events';
+import GoogleAnalytics from '@/ui/GoogleAnalytics';
+import CookieBanner from '@/ui/cookiebanner';
 
 const kumbSans = Kumbh_Sans({
   style: ['normal'],
@@ -18,7 +20,9 @@ const kumbSans = Kumbh_Sans({
   variable: '--font-kumbh',
 });
 
-const newsreader = localFont({ src: '../public/fonts/newsreader-latin-600-normal.woff2' })
+const newsreader = localFont({
+  src: '../public/fonts/newsreader-latin-600-normal.woff2',
+});
 
 // const newsreader = Newsreader({
 //   weight: '600',
@@ -169,20 +173,7 @@ export default function RootLayout({
     >
       {/* <head /> */}
       <body>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-WS7JTT5H0J"
-          strategy="worker"
-        />
-        
-        <Script id="google-analytics" strategy="worker">
-          {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-        
-          gtag('config', 'G-WS7JTT5H0J');
-        `}
-        </Script>
+        <GoogleAnalytics GA_MEASUREMENT_ID='G-62343L7VGM'/>
         <Suspense fallback={<SideNavSkeleton />}>
           {/* @ts-expect-error Async Server Component */}
           <SideNav />
@@ -194,6 +185,7 @@ export default function RootLayout({
           </Suspense>
           <main>{children}</main>
           <Footer />
+          <CookieBanner/>
           <div className="fixed bottom-[86px] right-[6px] z-50 h-16 w-16">
             <a
               className="relative flex h-[60px] w-[60px]"
