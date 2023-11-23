@@ -80,6 +80,9 @@ const Footer = (props: Props) => {
             <Link href="/refund-policy">
              Refund Policy
             </Link>
+            <Link href="/terms-service">
+            Terms Service
+            </Link>
         </div>
       </div>
       <hr className="col-span-full" />

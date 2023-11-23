@@ -18,6 +18,7 @@ const kumbSans = Kumbh_Sans({
   style: ['normal'],
   subsets: ['latin'],
   variable: '--font-kumbh',
+  preload:true,
 });
 
 const newsreader = localFont({
