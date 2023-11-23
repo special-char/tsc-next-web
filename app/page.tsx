@@ -53,6 +53,7 @@ const Page = () => {
         {/* @ts-expect-error Async Server Component */}
         <Blogs />
       </Suspense>
+     
     </>
   );
 };

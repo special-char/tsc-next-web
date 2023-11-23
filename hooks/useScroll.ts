@@ -18,17 +18,17 @@
 //       }
 //       lastScrollY = scrollY > 0 ? scrollY : 0;
 //     };
-//     window.addEventListener('scroll', updateScrollDirection); // add event listener
+//     window.addEventListener('scroll', updateScrollDirection); 
 //     const header = document.getElementById('#header');
 //     if (scrollDirection === 'down') {
 //       header?.classList?.add('-top-24');
 //     } else {
 //       header.classList?.remove('-top-24');
-//       header.classList.add('top-0');
+//       header.classList?.add('top-0');
 //     }
 
 //     return () => {
-//       window.removeEventListener('scroll', updateScrollDirection); // clean up
+//       window.removeEventListener('scroll', updateScrollDirection); 
 //     };
 //   }, [scrollDirection]);
 
@@ -39,6 +39,7 @@
 //   const scroll = useScrollDirection();
 //   return null;
 // };
+
 'use client'
 import React, { useState, useEffect } from 'react';
 

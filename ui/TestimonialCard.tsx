@@ -48,7 +48,7 @@ const TestimonialCard = ({ testimonial, style }: Props) => {
     <>
       <dialog id="dialog" ref={modelRef}>
         <form method="dialog">
-          <VideoDialog />
+          <VideoDialog src={"https://v6.cdnpk.net/videvo_files/video/premium/video0007/large_watermarked/black_headz_spin4k08_preview.mp4"} />
         </form>
       </dialog>
       <div style={style} className={clsx('testimonial_card', {})}>

@@ -47,7 +47,7 @@ const Register = ({ formId, btnText, btnClass, additionalField }: Props) => {
           open={isOpen}
           className="fixed inset-0 z-50 h-screen w-screen overflow-y-auto rounded-lg bg-neutral-800 bg-opacity-60 shadow-base"
         >
-          <div className="top-10 m-auto grid max-w-5xl gap-y-3 rounded-3xl bg-neutral-100 p-10">
+          <div className="top-10 m-auto grid max-w-5xl gap-y-3 rounded-3xl bg-neutral-100 px-4 md:px-8 py-12">
             <DynamicForm
               buttonStyle={'col-span-2'}
               fields={fields}
