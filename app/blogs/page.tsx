@@ -4,8 +4,8 @@ import PageHeader, { PageHeaderSkeleton } from '@/ui/pageHeader';
 import { Suspense, use } from 'react';
 import FeatureBlog, { FeatureBlogsSkeleton } from '@/ui/FeatureBlog';
 import AllBlogs from './allBlogs';
-import { getHomeBlogData } from '@/lib/getHomeBlog';
 import { notFound } from 'next/navigation';
+import { getAllBlogData } from '@/lib/getAllBlogs'
 import { Metadata } from 'next';
 import { ComponentSharedSeo } from 'types/types';
 import { getSEOData } from '@/lib/getSEO';
@@ -69,7 +69,7 @@ export async function generateMetadata({
 }
 
 export default async () => {
-  const homeBlogData = await getHomeBlogData();
+  const homeBlogData = await getAllBlogData();
 
   if (!homeBlogData) {
     notFound();
@@ -88,17 +88,16 @@ export default async () => {
           circleLeft="bg-secondary3"
         />
       </Suspense>
-      <section className="blogs">
+      {/* <section className="blogs">
         <Suspense fallback={<FeatureBlogsSkeleton />}>
-          {/* @ts-expect-error Async Server Component */}
           <FeatureBlog />
         </Suspense>
-      </section>
+      </section> */}
+
+      <AllBlogs blogList={blogList} />
       <Suspense fallback={<BlogSubscribeSkeleton />}>
         <BlogSubscribe />
       </Suspense>
-
-      <AllBlogs blogList={blogList} />
     </>
   );
 };

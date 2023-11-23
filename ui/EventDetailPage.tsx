@@ -99,22 +99,25 @@ const EventDetailPage = ({
               </div>
               <div className="events__chip chip chip--white">
                 <div className="chip__icon">
-                  <SpeakerSvg className="w-6" />
+                    <SpeakerSvg className="w-6" />
+                  </div>
+                  {category?.data?.attributes?.title}
                 </div>
-                {category?.data?.attributes?.title}
+                </div>
               </div>
-            </div>
+              </div>
+            <div className="events__datails ">
+            <h2 className="events__head">{title}</h2>
+            <p>{description}</p>
+            <Register
+              btnText="register for event"
+              btnClass="btn--primary"
+              formId={3}
+              additionalField={additionalField}
+            />
           </div>
-          <h2 className="events__head">{title}</h2>
-          <p>{description}</p>
-          <Register
-            btnText="register for event"
-            btnClass="btn--primary"
-            formId={3}
-            additionalField={additionalField}
-          />
-        </div>
-      </section>
+        </section>
+        
     </>
   );
 };

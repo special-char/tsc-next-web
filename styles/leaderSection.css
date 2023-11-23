@@ -28,7 +28,7 @@
   }
 
   .leader__content {
-    @apply z-50 mx-4 rounded-lg bg-neutral-200 px-4 py-6 text-left shadow-dark md:px-6 md:py-8;
+    @apply z-30 mx-4 rounded-lg bg-neutral-200 px-4 py-6 text-left shadow-dark md:px-6 md:py-8;
     grid-row: 2 / -1;
     grid-column: 1 / -1;
   }
