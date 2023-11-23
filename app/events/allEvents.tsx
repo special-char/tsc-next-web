@@ -43,7 +43,7 @@ const AllEvents = ({ events }: Props) => {
 
   const filterEvents = events.filter((x) => {
     if (selectedCategory !== 'All') {
-      return x.attributes.category.data.attributes.title === selectedCategory;
+      return x?.attributes.category.data.attributes.title === selectedCategory;
     }
     return x;
   });

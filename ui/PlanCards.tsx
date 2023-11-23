@@ -39,7 +39,7 @@ const PlanCard = ({
 
 const PlanCards = ({ data }) => (
   <section
-    className="bg-neutral-200 px-container py-28"
+    className="bg-neutral-200 px-container py-32"
     style={{
       display: 'grid',
       gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',

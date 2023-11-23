@@ -8,7 +8,7 @@
   @apply mx-auto px-8 py-20 text-center;
 }
 .page__detail {
-  @apply mx-auto text-center lg:w-1/2 lg:pb-20;
+  @apply mx-auto lg:w-1/2 lg:pb-20;
 }
 .circle__right {
   @apply absolute -right-20 -top-36 z-10 h-[167px] rounded-full bg-primary md:-right-40 md:-top-52 md:h-[300px] md:w-[300px] lg:-right-28 lg:-top-60 lg:h-[400px] lg:w-[400px];

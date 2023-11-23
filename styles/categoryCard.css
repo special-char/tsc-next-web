@@ -1,5 +1,5 @@
 .category_card {
-  @apply flex h-full flex-col rounded-b-2xl shadow-dark;
+  @apply flex h-full flex-col rounded-b-2xl shadow-dark max-sm:w-72;
 
   &__img {
     @apply relative m-0 aspect-h-image w-full overflow-hidden rounded-t-2xl;

@@ -51,13 +51,16 @@ const Testimonial = async () => {
       <Carousal>
         {testimonialsInfo.map((testimonial) => {
           return (
+            <div className="max-sm:w-72">
             <TestimonialCard
               key={testimonial.id}
               testimonial={testimonial}
               style={{
                 maxWidth: '48rem',
               }}
+
             />
+            </div>
           );
         })}
       </Carousal>
@@ -65,7 +68,7 @@ const Testimonial = async () => {
         {numbers?.map((number) => (
           <div key={number?.id}>
             <h3 className="testimonial__title">{number?.title}</h3>
-            <p className="text-center">{number?.description}</p>
+            <p className="text-center px-2 line-clamp-2">{number?.description}</p>
           </div>
         ))}
       </div>

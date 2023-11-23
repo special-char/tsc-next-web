@@ -62,7 +62,7 @@ const PageHeader = async ({
                 ))}
               </h1>
             )}
-            {description && <p>{description}</p>}
+            {description && <p className='text-center'>{description}</p>}
           </div>
         </div>
         <div

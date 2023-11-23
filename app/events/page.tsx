@@ -16,8 +16,8 @@ export async function generateMetadata({
   const seo = metaData?.data?.banner?.data?.attributes
     ?.seo as ComponentSharedSeo;
 
-  const facebook = seo.metaSocial?.find((x) => x?.socialNetwork === 'Facebook');
-  const twitter = seo.metaSocial?.find((x) => x?.socialNetwork === 'Twitter');
+  const facebook = seo?.metaSocial?.find((x) => x?.socialNetwork === 'Facebook');
+  const twitter = seo?.metaSocial?.find((x) => x?.socialNetwork === 'Twitter');
 
   let twitterMeta: Metadata = {};
   if (twitter) {
