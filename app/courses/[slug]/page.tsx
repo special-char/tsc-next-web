@@ -187,7 +187,7 @@ export default async function Page({ params }: PageProps) {
                   return model.showModal();
                   }}
                 >
-                <div className='pl-2 pt-1'>
+                <div className='md:pl-2 md:pt-1'>
 
                 <PlayButton />
                 </div>
