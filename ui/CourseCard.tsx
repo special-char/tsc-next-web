@@ -83,8 +83,8 @@ const CourseCard = ({ course, isHorizontal }: Props) => {
             sizes="(max-width: 640px) 100vw,576px"
           />
           <div className="course_card__chips">
-            <div className="chip chip--white">{duration}</div>
-            {price && (
+            {/* <div className="chip chip--white">{duration}</div> */}
+            {/* {price && (
               <div className="chip chip--primary">
                 {`${new Intl.NumberFormat(price.format.replace('_', '-'), {
                   style: 'currency',
@@ -92,7 +92,8 @@ const CourseCard = ({ course, isHorizontal }: Props) => {
                   minimumFractionDigits: 0,
                 }).format(price.price)}/${price.unit}`}
               </div>
-            )}
+            )
+            } */}
           </div>
         </figure>
       </Link>

@@ -31,7 +31,8 @@ const PlanCard = ({
         </div>
       ))}
     </div>
-    <Link href="/contact" className="btn btn--primary mt-auto px-20">
+    <Link href="/contact" className="btn btn--primary mt-auto px-10
+    ">
       Get Started
     </Link>
   </div>

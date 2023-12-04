@@ -5,7 +5,7 @@
     @apply flex flex-col  gap-3;
   }
   &__features {
-    @apply flex flex-col gap-8 pt-8 sm:text-sm md:pt-0 md:text-2xl lg:pt-0;
+    @apply flex flex-col sm:text-sm md:pt-0 md:text-2xl lg:pt-0;
   }
   &__content {
     @apply flex gap-4;
