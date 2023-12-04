@@ -636,7 +636,7 @@
   }
 
   .items {
-    @apply px-4 py-20 lg:px-container;
+    @apply px-4 py-32 lg:px-container;
 
     &__item {
       @apply my-8 grid grid-cols-1 gap-8 lg:grid-cols-2;

@@ -78,7 +78,7 @@ export default async () => {
           className="customClass"
           circleRight="bg-secondary3"
           circleLeft="bg-secondary2"
-          hasSeprator={false}
+          hasSeprator={true}
         />
       </Suspense>
       <AllEvents events={eventsData} />

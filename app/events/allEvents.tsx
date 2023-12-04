@@ -48,7 +48,7 @@ const AllEvents = ({ events }: Props) => {
     return x;
   });
   return (
-    <div className="px-container py-20">
+    <div className="px-container py-32">
       <Features
         title="All Events"
         chips={chips}
