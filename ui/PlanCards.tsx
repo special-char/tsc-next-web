@@ -10,9 +10,9 @@ const PlanCard = ({
   notincourse,
 }) => (
   <div className="flex flex-col rounded-3xl bg-neutral-200 p-5 shadow-dark">
-    <div className="text-xxl font-bold text-secondary3">{coursetype}</div>
+    <div className="text-xxl line-clamp-1 font-bold text-secondary3">{coursetype}</div>
     <h2 className="pt-2 font-bold">{duration}</h2>
-    <p className="min-h-[120px] sm:min-h-[90px] md:min-h-[60px] ">
+    <p className="min-h-[120px] sm:min-h-[90px] md:min-h-[60px] line-clamp-2">
       {description}
     </p>
     <div className="mb-8">
