@@ -8,11 +8,12 @@ const PlanCard = ({
   description,
   detils,
   notincourse,
+  buttonText,
 }) => (
-  <div className="flex flex-col rounded-3xl bg-neutral-200 p-5 shadow-dark">
-    <div className="text-xxl line-clamp-1 font-bold text-secondary3">{coursetype}</div>
+  <div className="flex flex-col rounded-3xl bg-neutral-200 p-2 shadow-dark">
+    <div className="text-xxl  font-bold text-secondary3 max-sm:min-h-[130px]">{coursetype}</div>
     <h2 className="pt-2 font-bold">{duration}</h2>
-    <p className="min-h-[120px] sm:min-h-[90px] md:min-h-[60px] line-clamp-2">
+    <p className="max-sm:min-h-[220px]  md:min-h-[60px] line-clamp-2">
       {description}
     </p>
     <div className="mb-8">
@@ -33,8 +34,9 @@ const PlanCard = ({
     </div>
     <Link href="/contact" className="btn btn--primary mt-auto px-10
     ">
-      Get Started
+      {buttonText || "Get Started"}
     </Link>
+    
   </div>
 );
 

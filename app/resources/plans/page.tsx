@@ -18,6 +18,10 @@ const data = [
       'Live Project Training Opportunities',
     ],
     notincourse: [],
+    buttonText:[
+      'enroll Now'
+    ],
+
   },
   {
     id: 2,
@@ -33,6 +37,9 @@ const data = [
       'Exclusive For Working Professionals Weekend Batch',
     ],
     notincourse: [],
+    buttonText:[
+      'Register Now'
+    ],
   },
 ];
 
