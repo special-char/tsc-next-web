@@ -28,7 +28,7 @@ const ListItems = ({ items }) => (
 );
 
 const Content = () => (
-  <section id="/resources" className="relative px-container py-32">
+  <section id="/resources" className="relative px-container py-24 md:py-32">
     <div className="px-4">
       <div>
         <h3>

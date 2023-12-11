@@ -11,9 +11,9 @@ const PlanCard = ({
   buttonText,
 }) => (
   <div className="flex flex-col rounded-3xl bg-neutral-200 p-2 shadow-dark">
-    <div className="text-xxl  font-bold text-secondary3 max-sm:min-h-[130px]">{coursetype}</div>
+    <div className="text-xxl font-bold text-secondary3 ">{coursetype}</div>
     <h2 className="pt-2 font-bold">{duration}</h2>
-    <p className="max-sm:min-h-[220px]  md:min-h-[60px] line-clamp-2">
+    <p>
       {description}
     </p>
     <div className="mb-8">
@@ -42,7 +42,7 @@ const PlanCard = ({
 
 const PlanCards = ({ data }) => (
   <section
-    className="bg-neutral-200 px-container py-32"
+    className="bg-neutral-200 px-container py-24 md:py-32"
     style={{
       display: 'grid',
       gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
