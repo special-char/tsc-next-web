@@ -26,6 +26,9 @@ export const EventDetailPageSkeleton = () => {
                 <span className="events__top font-cursive ">
                   Sunday 5:00 pm - 6:00 pm EDT
                 </span>
+
+
+                .
               </div>
               <div className="events__svg">
                 <div className="h-6 w-6 bg-primary" />

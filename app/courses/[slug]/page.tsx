@@ -1,4 +1,3 @@
-'use client'
 import '@/styles/individualcourse.css';
 import DesignSvg from '@/public/icons/design.svg';
 import Image from 'next/image';
@@ -12,8 +11,7 @@ import Accordian, { AccordianType } from '@/ui/Accordian';
 import { notFound } from 'next/navigation';
 import { getCoursesMeta } from '@/lib/getCoursesMeta';
 import { Metadata } from 'next';
-import PlayButton from '@/public/icons/play-button.svg';
-import VideoDialog from '@/ui/VideoDialog';
+import CourseVideoModal from '../courseVideoModal';
 export async function generateMetadata({
   params,
 }: {
@@ -148,12 +146,7 @@ export default async function Page({ params }: PageProps) {
   
   return (
     <>
-      <dialog id="videomodel" >
-        <form method="dialog">
-          <VideoDialog src={courseVideo?.data?.attributes?.url || ''} />
-          
-        </form>
-      </dialog>
+      
       <section id="individualcourse" className="individualcourse">
         <div className="individualcourse__content">
           <div className="individualcourse__content__bg"></div>
@@ -180,18 +173,7 @@ export default async function Page({ params }: PageProps) {
                   fill
                   priority
                 />
-                <div
-                className="testimonial_card__img__hover_icon !w-[13%] "
-                onClick={() => {
-                  const model = document.getElementById("videomodel");
-                  return model.showModal();
-                  }}
-                >
-                <div className='md:pl-2 md:pt-1'>
-
-                <PlayButton />
-                </div>
-              </div>
+<CourseVideoModal url={courseVideo?.data?.attributes?.url}/>
              
                 </>
               )}

@@ -414,7 +414,7 @@
     }
 
     &__items {
-      @apply m-0 max-w-xl flex-shrink-0 flex-grow 
+      @apply m-0 max-w-3xl flex-shrink-0 flex-grow 
      snap-center snap-always list-none rounded-3xl bg-neutral-100 p-0;
     }
 

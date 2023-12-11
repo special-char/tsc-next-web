@@ -66,7 +66,7 @@ const TestimonialCard = ({ testimonial, style }: Props) => {
               modelRef.current.showModal();
             }}
           >
-            <PlayButton />
+            <PlayButton className="w-10 h-10 ml-[6px] " />
           </div>
         </figure>
         <div className="testimonial_card__body">

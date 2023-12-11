@@ -2,7 +2,7 @@
   @apply flex flex-col gap-8 py-8;
 
   .event__section {
-    @apply flex flex-col  rounded-2xl bg-neutral-100 drop-shadow-2xl lg:flex-row;
+    @apply flex flex-col rounded-2xl bg-neutral-100 drop-shadow-2xl lg:flex-row;
   }
   .card__image {
     @apply relative m-0 aspect-video flex-1 overflow-hidden rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none;

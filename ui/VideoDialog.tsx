@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect, useRef } from 'react';
 import CloseIcon from '@/public/icons/close-icon.svg';
 
