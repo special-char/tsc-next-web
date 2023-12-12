@@ -36,7 +36,7 @@
       @apply pt-4 text-6xl text-neutral-100 md:text-9xl;
     }
     &__preview {
-      @apply relative min-h-[260px] w-full overflow-hidden rounded-3xl grayscale-0 md:min-h-[400px];
+      @apply relative aspect-video w-full overflow-hidden rounded-3xl grayscale-0;
       &__body {
         @apply absolute z-10 flex h-full w-full items-center justify-center;
         display: flex;
