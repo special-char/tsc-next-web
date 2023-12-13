@@ -18,6 +18,6 @@
   }
 
   &__desc {
-    @apply m-0 h-full p-0 line-clamp-4;
+    @apply m-0 h-full p-0 line-clamp-2;
   }
 }

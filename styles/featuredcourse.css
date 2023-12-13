@@ -1,5 +1,5 @@
 .featuredcourse {
-  @apply overflow-hidden p-2 px-sm-container py-36 lg:px-container lg:py-36;
+  @apply overflow-hidden p-2 px-sm-container py-24 md:py-32 lg:px-container lg:py-36;
 
   &__title {
     @apply mb-9 text-center lg:text-5xl;

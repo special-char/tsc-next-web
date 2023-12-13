@@ -2,7 +2,6 @@ import Image from 'next/image';
 import React from 'react';
 import OKIcon from '@/public/icons/ok.svg';
 const data = [
-  ' Supported by the vision of PM Shri Narendra Modi',
   ' Valid for all Jobs and College Training',
   ' International Recognition',
   ' Acquire recognized credentials to boost your resume',
@@ -10,10 +9,10 @@ const data = [
 const Certificate = () => {
   return (
     <section className="px-container py-16">
-      <h1 className="text-center">
+      <h2 className="text-center">
         Get a Training Certificate from a The Special character edtech Company
         in India
-      </h1>
+      </h2>
 
       <div className="flex flex-col pt-3 md:flex-row">
         <div className="flex flex-1 flex-col  justify-center">
