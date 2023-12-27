@@ -1,5 +1,5 @@
 .ourOffice {
-  @apply grid min-h-screen content-center justify-items-center overflow-hidden px-container pt-24 pb-12 text-neutral-700 md:pt-36 md:pb-16 lg:pt-48 lg:pb-24;
+  @apply grid min-h-screen content-center justify-items-center overflow-hidden px-container gap-8 text-neutral-700 pt-24 max-sm:pb-12 md:pt-36 lg:pt-44;
   grid-template-rows: repeat(3, auto);
 
   &__body {
@@ -29,7 +29,7 @@
   }
 
   &__map {
-    @apply relative col-span-full aspect-video w-full;
+    @apply relative col-span-full aspect-[4/3] md:-top-20 w-full;
     grid-row: 2 / -1;
   }
   &__card {
