@@ -55,8 +55,8 @@ const Leaders = async () => {
 
   return (
     <section id="Leaders" className="leader">
-      <div className="leader__details">
-        <h2 className="leader__title text-center lg:text-left">{title}</h2>
+      <div className="leader__details text-center lg:text-left">
+        <h2 className="leader__title ">{title}</h2>
         <p className="leader__description">{description}</p>
         <div className="leader__actions">
           {btns?.map((val) => (

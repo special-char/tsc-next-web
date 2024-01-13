@@ -67,7 +67,7 @@ const Footer = (props: Props) => {
       </div>
 
       <div className="footer__pages">
-        <h3 className="text-neutral-100">Pages</h3>
+        <h4 className="text-neutral-100 mb-8 md:mb-10">Pages</h4>
         <div className="footer__links">
           {flatten(array).map((val) => (
             <Link href={val.attributes.url} key={val.id}>

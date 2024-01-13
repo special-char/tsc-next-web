@@ -24,18 +24,16 @@ const RadioButtons = ({
       <div className="dropdownDiv">
         {options.map(({ ...option }) => {
           return (
-            <div key={option.key} className="flex items-center gap-3">
-              <Field
+              <label key={option.key} className="flex items-center gap-3">
+                <Field
                 className=""
                 type="radio"
                 id={option.value}
                 {...field}
                 value={option.value}
-              />
-              <label className="m-0" htmlFor={option.value}>
-                {option.key}
+                />
+                <span className="m-0">{option.key}</span>
               </label>
-            </div>
           );
         })}
       </div>

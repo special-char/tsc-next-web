@@ -6,7 +6,7 @@
   }
 
   .companyHistory__leftSection {
-    @apply top-0 flex flex-col items-stretch md:sticky md:mr-8 md:items-start;
+    @apply top-0 flex flex-col items-center  max-sm:text-center md:sticky md:mr-8 md:items-start;
   }
   .companyHistory__h2 {
     @apply text-3xl text-primary md:text-6xl;

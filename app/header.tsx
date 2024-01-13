@@ -1,3 +1,4 @@
+"use client"
 import Link from 'next/link';
 import React from 'react';
 import '@/styles/header.css';
@@ -10,10 +11,14 @@ import {
   MenusMenuItemRelationResponseCollection,
 } from 'types/types';
 import { ScrollDiv } from '@/hooks/useScroll';
+import { useRouter } from 'next/router';
+import { URL } from 'url';
+import { getURL } from 'next/dist/shared/lib/utils';
+import { usePathname } from 'next/navigation';
 
 type Props = {};
 
-export const HeaderSkeleton = () => {
+export const HeaderSkeleton = () => {  
   return (
     <header className="header animate-pulse">
       <div className="header__svg bg-neutral-400">
@@ -51,13 +56,9 @@ export const HeaderSkeleton = () => {
   );
 };
 
-const Header = async (props: Props) => {
-  const menuData = await getMenuData();
-
-  const { data: menuOptions } = menuData?.data.data?.attributes
-    ?.items as MenusMenuItemRelationResponseCollection;
-
-  const attributes = menuOptions.at(-1)?.attributes;
+const Header = ({menuOptions}: {menuOptions:MenusMenuItemRelationResponseCollection}) => {
+const pathname = usePathname()
+  const attributes = menuOptions?.at(-1)?.attributes;
 
   return (
     <header className="header" id="header">
@@ -74,7 +75,7 @@ const Header = async (props: Props) => {
               x.attributes as MenusMenuItem;
             return (
               <li key={order}>
-                <Link href={`${url}`} prefetch={false} className="header__link">
+                <Link href={`${url}`} prefetch={false} className={`header__link ${pathname === url ? "text-secondary3" : ""}`}>
                   {title}
                 </Link>
                 {children.data.length > 0 && (

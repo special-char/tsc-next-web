@@ -9,10 +9,11 @@ import WhatsAppIcon from '@/public/icons/whatsapp.svg';
 import Script from 'next/script';
 import { Metadata } from 'next';
 import { getSEOData } from '@/lib/getSEO';
-import { ComponentSharedSeo } from 'types/types';
+import { ComponentSharedSeo, MenusMenuItemRelationResponseCollection } from 'types/types';
 import { FacebookPixelEvents } from '@/ui/pixel-events';
 import GoogleAnalytics from '@/ui/GoogleAnalytics';
 import CookieBanner from '@/ui/cookiebanner';
+import { getMenuData } from '@/lib/getMenu';
 
 const kumbSans = Kumbh_Sans({
   style: ['normal'],
@@ -45,6 +46,7 @@ export async function generateMetadata({
   params: { slug: string };
 }): Promise<Metadata> {
   const metaData = await getSEOData('home');
+
 
   const seo = metaData?.data?.banner.data?.attributes
     ?.seo as ComponentSharedSeo;
@@ -162,11 +164,15 @@ export async function generateMetadata({
   };
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+
+  const menuData = await getMenuData();
+  const { data: menuOptions } = menuData?.data.data?.attributes
+    ?.items as MenusMenuItemRelationResponseCollection;
   return (
     <html
       lang="en"
@@ -182,7 +188,7 @@ export default function RootLayout({
         <div>
           <Suspense fallback={<HeaderSkeleton />}>
             {/* @ts-expect-error Async Server Component */}
-            <Header />
+            <Header menuOptions={menuOptions} />
           </Suspense>
           <main>{children}</main>
           <Footer />

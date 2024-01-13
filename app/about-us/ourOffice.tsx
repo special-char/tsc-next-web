@@ -141,7 +141,7 @@ const OurOffice = async (props: Props) => {
             src={`${url}?tr=ar-16-9`}
             fill
             alt={`${alternativeText}`}
-            className="-z-10 min-h-[300px]"
+            className="-z-10 min-h-[300px] object-contain"
             sizes="(max-width: 1024px) 100vw,
             606px"
           />

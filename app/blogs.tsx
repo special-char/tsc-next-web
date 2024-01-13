@@ -35,7 +35,7 @@ const Blogs = async (props: Props) => {
 
   return (
     <section className="blogs">
-      <div className="blogs__header">
+      <div className="blogs__header text-center lg:text-left ">
         <h2 className="blogs__title">{title}</h2>
         <Link
           href={`${button?.url}`}

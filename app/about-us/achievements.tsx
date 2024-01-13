@@ -38,17 +38,17 @@ const Achievements = async (props: Props) => {
 
   return (
     <section className="achieve">
-      <h2 className="mx-0  text-center  md:mb-8 lg:mx-72">{title}</h2>
+      <h2 className="mx-0  text-center max-sm:mb-0  md:mb-8 lg:mx-72">{title}</h2>
       <div className="achieve__content">
         {numbers?.map((x) => (
           <div className="overflow-hidden" key={x?.id}>
-            <h2 className="text-secondary3">
+            <h2 className="text-secondary3 pt-10 max-sm:mb-1">
               {new Intl.NumberFormat('en-IN', {
                 maximumSignificantDigits: 3,
               }).format(x?.number || 0)}
               +
             </h2>
-            <h3>{x?.title}</h3>
+            <h3 className='max-sm:mb-2'>{x?.title}</h3>
             <p>{x?.description}</p>
           </div>
         ))}

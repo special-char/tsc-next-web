@@ -387,7 +387,7 @@
       [carousel-pagination] var(--_carousel-pagination-size);
 
     &__scroller {
-      @apply flex gap-8 pb-4;
+      @apply flex gap-4 pb-4;
 
       scroll-padding-inline: var(--_carousel-gutters);
       padding-inline: var(--_carousel-gutters);

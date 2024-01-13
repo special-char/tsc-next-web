@@ -52,7 +52,7 @@ const Aboutheader = async (props: Props) => {
               />
             </div>
             <div>
-              <h2 className=" text-3xl md:text-6xl">{x?.title}</h2>
+              <h2 className="text-center lg:text-left  text-3xl md:text-6xl">{x?.title}</h2>
               <p className="m-0 lg:text-lg">{x?.description}</p>
             </div>
           </div>
