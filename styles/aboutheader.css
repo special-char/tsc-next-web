@@ -2,7 +2,7 @@
   @apply flex flex-col gap-8 px-container py-20 sm:py-28 md:gap-0 md:py-36 lg:py-44;
 
   &__item {
-    @apply flex flex-col items-start  my-4 gap-6 md:flex-row;
+    @apply flex flex-col items-center text-left md:text-center lg:text-left my-4 gap-6 lg:flex-row;
 
     & > * {
       @apply flex-1;
@@ -10,7 +10,7 @@
 
     &:nth-child(1) {
       & > div:nth-child(1) {
-        @apply order-1 md:-order-1;
+        @apply order-1 lg:-order-1;
       }
     }
 
@@ -24,4 +24,5 @@
   &__image {
     @apply relative aspect-square w-full overflow-hidden rounded-xl;
   }
+  
 }
