@@ -60,7 +60,7 @@ export const getAllCoursesData: CoursesType = async (category?: string) => {
     },
     cache: 'no-cache',
     next: {
-      revalidate: 0,
+      // revalidate: 0,
     },
   });
 

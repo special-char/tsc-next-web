@@ -59,7 +59,7 @@ export const getCategoriesData: CategoriesType = async () => {
       },
       cache: 'no-cache',
       next: {
-        revalidate: 0,
+        // revalidate: 0,
       },
     });
 

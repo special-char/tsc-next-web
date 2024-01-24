@@ -64,7 +64,7 @@ export const getEvents: EventDetailsType = async (slug: string) => {
     }),
     cache: 'no-cache',
     next: {
-      revalidate: 0,
+      // revalidate: 0,
     },
   });
   return await response.json();

@@ -71,7 +71,7 @@ export const getHomeBlogData: HomeBlogType = async (
     method: 'POST',
     body: JSON.stringify({
       query,
-      variables
+      variables,
     }),
     headers: {
       'Content-Type': 'application/json',
@@ -79,7 +79,7 @@ export const getHomeBlogData: HomeBlogType = async (
     },
     cache: 'no-cache',
     next: {
-      revalidate: 0,
+      // revalidate: 0,
     },
   });
 

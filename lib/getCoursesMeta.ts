@@ -60,7 +60,7 @@ export const getCoursesMeta: CoursesType = async (slug?: string) => {
       },
       cache: 'no-cache',
       next: {
-        revalidate: 0,
+        // revalidate: 0,
       },
     });
 

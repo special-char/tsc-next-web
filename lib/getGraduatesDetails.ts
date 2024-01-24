@@ -131,7 +131,7 @@ export const getGraduatesDetails: HireOurGraduatesType = async (
       },
       cache: 'no-cache',
       next: {
-        revalidate: 0,
+        // revalidate: 0,
       },
     });
 

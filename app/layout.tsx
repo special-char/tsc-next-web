@@ -9,7 +9,10 @@ import WhatsAppIcon from '@/public/icons/whatsapp.svg';
 import Script from 'next/script';
 import { Metadata } from 'next';
 import { getSEOData } from '@/lib/getSEO';
-import { ComponentSharedSeo, MenusMenuItemRelationResponseCollection } from 'types/types';
+import {
+  ComponentSharedSeo,
+  MenusMenuItemRelationResponseCollection,
+} from 'types/types';
 import { FacebookPixelEvents } from '@/ui/pixel-events';
 import GoogleAnalytics from '@/ui/GoogleAnalytics';
 import CookieBanner from '@/ui/cookiebanner';
@@ -19,7 +22,7 @@ const kumbSans = Kumbh_Sans({
   style: ['normal'],
   subsets: ['latin'],
   variable: '--font-kumbh',
-  preload:true,
+  preload: true,
 });
 
 const newsreader = localFont({
@@ -46,7 +49,6 @@ export async function generateMetadata({
   params: { slug: string };
 }): Promise<Metadata> {
   const metaData = await getSEOData('home');
-
 
   const seo = metaData?.data?.banner.data?.attributes
     ?.seo as ComponentSharedSeo;
@@ -169,7 +171,6 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-
   const menuData = await getMenuData();
   const { data: menuOptions } = menuData?.data.data?.attributes
     ?.items as MenusMenuItemRelationResponseCollection;
@@ -180,7 +181,7 @@ export default async function RootLayout({
     >
       {/* <head /> */}
       <body>
-        <GoogleAnalytics GA_MEASUREMENT_ID='G-62343L7VGM'/>
+        <GoogleAnalytics GA_MEASUREMENT_ID="G-62343L7VGM" />
         <Suspense fallback={<SideNavSkeleton />}>
           {/* @ts-expect-error Async Server Component */}
           <SideNav />
@@ -192,7 +193,7 @@ export default async function RootLayout({
           </Suspense>
           <main>{children}</main>
           <Footer />
-          <CookieBanner/>
+          <CookieBanner />
           <div className="fixed bottom-[86px] right-[6px] z-50 h-16 w-16">
             <a
               className="relative flex h-[60px] w-[60px]"

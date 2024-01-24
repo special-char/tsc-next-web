@@ -38,7 +38,7 @@ export const getTrainingCourses: CoursesType = async () => {
     },
     cache: 'no-cache',
     next: {
-      revalidate: 0,
+      // revalidate: 0,
     },
   });
 

@@ -41,7 +41,7 @@ export const getBannerHeaderData: BannerHeaderType = async (
     },
     cache: 'no-cache',
     next: {
-      revalidate: 0,
+      // revalidate: 0,
     },
   });
 

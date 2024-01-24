@@ -44,7 +44,7 @@ export const getOurWorksData: AboutWorkValueType = async () => {
       },
       cache: 'no-cache',
       next: {
-        revalidate: 0,
+        // revalidate: 0,
       },
     });
 

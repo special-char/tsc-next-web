@@ -37,7 +37,7 @@ export const getAboutNumberData: AboutNumberType = async () => {
     },
     cache: 'no-cache',
     next: {
-      revalidate: 0,
+      // revalidate: 0,
     },
   });
 

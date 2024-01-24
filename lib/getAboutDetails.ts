@@ -39,7 +39,7 @@ export const getAboutDetailData: AboutDetailType = async () => {
     },
     cache: 'no-cache',
     next: {
-      revalidate: 0,
+      // revalidate: 0,
     },
   });
 

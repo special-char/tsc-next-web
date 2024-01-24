@@ -43,7 +43,7 @@ export const getPageMeta: BannerHeaderType = async (params) => {
       },
       cache: 'no-cache',
       next: {
-        revalidate: 0,
+        // revalidate: 0,
       },
     });
 

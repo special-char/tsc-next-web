@@ -33,7 +33,7 @@ const Newsletter = ({ btnClass }) => {
                   },
                   cache: 'no-cache',
                   next: {
-                    revalidate: 0,
+                    // revalidate: 0,
                   },
                 },
               );

@@ -53,7 +53,7 @@ export const getLeaderData: LeaderType = async () => {
       },
       cache: 'no-cache',
       next: {
-        revalidate: 0,
+        // revalidate: 0,
       },
     });
 

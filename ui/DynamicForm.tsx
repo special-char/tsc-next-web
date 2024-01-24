@@ -67,44 +67,46 @@ const DynamicForm = ({
           },
           cache: 'no-cache',
           next: {
-            revalidate: 0,
+            // revalidate: 0,
           },
         },
       );
-      console.log(res.status,'status');
+      console.log(res.status, 'status');
 
       if (res.status === 200) {
         // Send a welcome emai
-        
-        const getHello = await fetch('http://localhost:3000/api/welcome-email', {
-          body: JSON.stringify({email:values.email,name:values.name}), method:'POST',
-          headers:{
-            'Conetnt-Type':'application/json'
-          }
-        });
-        
+
+        const getHello = await fetch(
+          'http://localhost:3000/api/welcome-email',
+          {
+            body: JSON.stringify({ email: values.email, name: values.name }),
+            method: 'POST',
+            headers: {
+              'Conetnt-Type': 'application/json',
+            },
+          },
+        );
+
         // const textres = await fetch('http://localhost:3000/api/welcome-text', {
         //   body: JSON.stringify({phone:values.phone,name:values.name}), method:'POST',
         //   headers:{
         //     'Conetnt-Type':'application/json'
         //   }
         // })
-        
+
         const hello = await getHello?.json();
         console.log({ hellooooooo: hello });
 
         // const text = await textres?.json();
         // console.log({hellotext: text});
 
-
         // Set isSubmitted to true
         setIsSubmitted(true);
 
-         // Reset the form
-         actions.resetForm();
-        }
+        // Reset the form
+        actions.resetForm();
+      }
 
-        
       // console.log(values);
       setIsSubmitted(true);
       actions.resetForm();

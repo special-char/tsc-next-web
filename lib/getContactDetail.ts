@@ -57,7 +57,7 @@ export const getContactDetail: ContactDetailType = async () => {
       },
       cache: 'no-cache',
       next: {
-        revalidate: 0,
+        // revalidate: 0,
       },
     });
 

@@ -37,7 +37,7 @@ export const getGrowCareerData: GrowCareerType = async () => {
     },
     cache: 'no-cache',
     next: {
-      revalidate: 0,
+      // revalidate: 0,
     },
   });
 

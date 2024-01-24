@@ -71,7 +71,7 @@ export async function generateMetadata({
     },
     cache: 'no-cache',
     next: {
-      revalidate: 0,
+      // revalidate: 0,
     },
   });
 
@@ -224,7 +224,10 @@ const Page = async ({ params }: Props) => {
           />
         </div>
         <div className="events__paragraph">
-          <div dangerouslySetInnerHTML={{ __html: md().render(content) }} style={{padding:'1rem 0rem'}}></div>
+          <div
+            dangerouslySetInnerHTML={{ __html: md().render(content) }}
+            style={{ padding: '1rem 0rem' }}
+          ></div>
           <Register
             btnText="register for event"
             btnClass="btn--primary"

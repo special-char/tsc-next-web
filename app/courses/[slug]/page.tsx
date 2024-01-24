@@ -143,10 +143,9 @@ export default async function Page({ params }: PageProps) {
     }) || [];
 
   // const chipNavData = coursesData.data.courses.data.reduce()
-  
+
   return (
     <>
-      
       <section id="individualcourse" className="individualcourse">
         <div className="individualcourse__content">
           <div className="individualcourse__content__bg"></div>
@@ -166,15 +165,14 @@ export default async function Page({ params }: PageProps) {
             <div className="main__left-section__preview">
               {url && (
                 <>
-                <Image
-                  src={url}
-                  alt={`${alternativeText}`}
-                  className="brightness-50"
-                  fill
-                  priority
-                />
-<CourseVideoModal url={courseVideo?.data?.attributes?.url}/>
-             
+                  <Image
+                    src={url}
+                    alt={`${alternativeText}`}
+                    className="brightness-50"
+                    fill
+                    priority
+                  />
+                  <CourseVideoModal url={courseVideo?.data?.attributes?.url} />
                 </>
               )}
               {/* <div className="main__left-section__preview__body">
@@ -243,7 +241,7 @@ export default async function Page({ params }: PageProps) {
               </section>
             )}
           </div>
-          <div className="sticky top-0 hidden self-start lg:block">
+          <div className="sticky top-24 mb-20 hidden self-start lg:block">
             <Price
               data={attributes}
               additionalField={{

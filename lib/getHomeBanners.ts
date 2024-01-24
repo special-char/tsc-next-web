@@ -55,7 +55,7 @@ export const getHomeBannerData: HomeBannerType = async () => {
     },
     cache: 'no-cache',
     next: {
-      revalidate: 0,
+      // revalidate: 0,
     },
   });
 
