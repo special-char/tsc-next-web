@@ -161,19 +161,28 @@ import Image from 'next/image';
 const FrontPage = () => {
   return (
     <section className="cursor-pointer">
-      { <div className="flex max-md:flex-col w-full md:h-screen ">
-        <div className="relative group flex flex-1 items-center justify-center bg-secondary5 hover:bg-secondary5/80 px-8 py-4 duration-300 hover:flex-[5] lg:px-12 ">
-          <Image src={"/images/it.png"} alt='bg-image' height={650} width={650} className='-z-10 absolute -top-10 -right-56'/>
-          <div className="bg-gradient-to-r from-secondary2/75 to-secondary2/0 p-4 rounded-xl">
-            <div>SpecialChar PVT LTD</div>
-            <h2>IT Service</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-              eligendi eaque fuga saepe et eveniet
+      <div className="flex w-full overflow-hidden max-md:flex-col md:h-screen ">
+        <div className="group relative flex flex-1 items-center justify-center overflow-hidden bg-secondary5 px-8 py-4 duration-300 hover:flex-[3] hover:bg-secondary5/80  lg:px-12">
+          <Image
+            src={'/images/it.png'}
+            alt="bg-image"
+            height={650}
+            width={650}
+            className="absolute -right-56 -top-10 -z-10 "
+          />
+          <div className="2/75 2/0 rounded-xl bg-gradient-to-r from-secondary2 to-secondary2 p-4">
+            <div className="text-neutral-100">SPECIALCHAR PVT LTD</div>
+            <h1 className="font-bold text-neutral-100">IT SERVICE</h1>
+            <p className="max-w-xl text-neutral-200">
+              At SPECIALCHAR PVT LTD, we prioritize your digital journey's
+              success. Our innovative IT solutions are tailored to your needs,
+              ensuring your growth and efficiency in the digital realm.{' '}
             </p>
             <div className="relative grid grid-cols-2">
               <div>
-                <button className="secondary pb-12 pt-4">Show More</button>
+                <button className="secondary pb-12 pt-4 text-neutral-100">
+                  Show More
+                </button>
                 <div className="flex items-center gap-4">
                   <hr className="w-[90%]" />
                   <ShareIcon className="h-6 w-6 fill-neutral-100" />
@@ -190,34 +199,43 @@ const FrontPage = () => {
           </div>
         </div>
 
-        <div className="reletive group flex flex-1 items-center justify-center bg-primary hover:bg-primary/80 px-8 py-4 duration-300 hover:flex-[5] lg:px-12">
-        <Image src={"/images/training.png"} height={650} width={650}  alt='bg-image' className='-z-10 absolute top-12 -right-64 '/>
-        <div className="hidden items-center justify-center group-hover:hidden lg:flex">
+        <div className="group relative flex flex-1 items-center justify-center overflow-hidden bg-primary px-8 py-4 duration-300 hover:flex-[3] hover:bg-primary/80 lg:px-12">
+          <Image
+            src={'/images/training.png'}
+            height={650}
+            width={650}
+            alt="bg-image"
+            className="absolute -right-48 -top-6 -z-10 overflow-hidden"
+          />
+          <div className="hidden items-center justify-center group-hover:hidden lg:flex">
             <Right className="h-6 w-6" />
           </div>
-          <div className=" bg-neutral-500 p-4 rounded-xl">
-            <div>SpecialChar Pvt Ltd</div>
-            <h2>Traning</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-              eligendi eaque fuga saepe et eveniet
+          <div className="  rounded-xl bg-neutral-500 p-4">
+            <div className="text-neutral-100">THE SPECIALCHARACTER</div>
+            <h1 className="font-bold text-neutral-100">TRAINING</h1>{' '}
+            <p className="max-w-xl text-neutral-200">
+              Empower your IT career with industry-leading courses at THE
+              SPECIAL CHARACTER IT SERVICE. Unlock new opportunities and stay
+              ahead in the rapidly evolving tech landscape."
             </p>
             <div className="relative grid grid-cols-2">
               <div>
-                <button className="secondary pb-12 pt-4">Show More</button>
+                <button className="secondary pb-12 pt-4 text-neutral-100">
+                  Show More
+                </button>
                 <div className="flex items-center gap-4">
-                  <hr className="w-[90%] " />
+                  <hr className="w-[90%]" />
                   <ShareIcon className="h-6 w-6 fill-neutral-100" />
                   <ThumsIcon className="h-6 w-6 fill-neutral-100" />
                 </div>
               </div>
-              <div className="absolute -bottom-12 -right-12 md:-bottom-20  lg:-bottom-24">
-                <Traning className="h-36 w-36 md:h-44 md:w-44 lg:h-60 lg:w-60 " />
+              <div className="absolute -bottom-12 -right-12 md:-bottom-20 lg:-bottom-24">
+                <Traning className="h-36 w-36 md:h-44 md:w-44 lg:h-60 lg:w-60" />{' '}
               </div>
             </div>
           </div>
         </div>
-      </div> }
+      </div>
 
       {/* ------------------------------------------------------------------------ */}
 

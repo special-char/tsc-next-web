@@ -11,7 +11,8 @@ module.exports = {
       secondary2: '#FCDF69',
       secondary3: '#F99D77',
       secondary4: '#7EB7FB',
-      secondary5: "#CA8904",
+      secondary5: "#FFA100",
+
       error: '#ff9494',
       neutral: {
         100: '#FFFFFF',
