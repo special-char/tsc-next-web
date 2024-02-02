@@ -10,11 +10,13 @@ import Perks, { PerksSkeleton } from './perks';
 import Testimonial, { TestimonialSkeleton } from './testimonial';
 import Blogs, { BlogsSkeleton } from './blogs';
 import Certificate from './certificate';
+import FrontPage from '@/ui/Front-Page';
 
 const Page = () => {
   return (
     <>
       {/* error */}
+      <FrontPage/>
       <h1 className="sr-only">The Special Character</h1>
       <Suspense fallback={<BannerSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
