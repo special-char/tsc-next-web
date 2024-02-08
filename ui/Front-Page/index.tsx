@@ -194,9 +194,7 @@ const FrontPage = () => {
               </div>
             </div>
           </div>
-          <div className="hidden items-center justify-center group-hover:hidden lg:flex">
-            <Left className="h-6 w-6" />
-          </div>
+          
         </div>
 
         <div className="group relative flex flex-1 items-center justify-center overflow-hidden bg-primary px-8 py-4 duration-300 hover:flex-[3] hover:bg-primary/80 lg:px-12">
@@ -207,9 +205,7 @@ const FrontPage = () => {
             alt="bg-image"
             className="absolute -right-48 -top-6 -z-10 overflow-hidden"
           />
-          <div className="hidden items-center justify-center group-hover:hidden lg:flex">
-            <Right className="h-6 w-6" />
-          </div>
+         
           <div className="  rounded-xl bg-neutral-500 p-4">
             <div className="text-neutral-100">THE SPECIALCHARACTER</div>
             <h1 className="font-bold text-neutral-100">TRAINING</h1>{' '}
