@@ -16,8 +16,8 @@ export async function generateMetadata({
   const seo = metaData?.data?.banner?.data?.attributes
     ?.seo as ComponentSharedSeo;
 
-  const facebook = seo.metaSocial?.find((x) => x?.socialNetwork === 'Facebook');
-  const twitter = seo.metaSocial?.find((x) => x?.socialNetwork === 'Twitter');
+  const facebook = seo?.metaSocial?.find((x) => x?.socialNetwork === 'Facebook');
+  const twitter = seo?.metaSocial?.find((x) => x?.socialNetwork === 'Twitter');
 
   let twitterMeta: Metadata = {};
   if (twitter) {
@@ -78,7 +78,7 @@ export default async () => {
           className="customClass"
           circleRight="bg-secondary3"
           circleLeft="bg-secondary2"
-          hasSeprator={false}
+          hasSeprator={true}
         />
       </Suspense>
       <AllEvents events={eventsData} />

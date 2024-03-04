@@ -204,7 +204,7 @@ const sections = [
 
 const PrivacyPolicy = () => {
   return (
-    <section className="px-container py-16" id="PrivacyPolicy">
+    <section className="px-container py-32" id="PrivacyPolicy">
       <h1>Privacy Policy - Specialchar Pvt. Ltd.</h1>
       {sections.map((section, index) => (
         <div key={index}>

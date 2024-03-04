@@ -9,7 +9,7 @@ const data = [
 ];
 
 const data1 = [
-  'Programming Languages: Learn popular programming languages like Java, Python, C++, and more, and become proficient in coding and software development.',
+  'Programming Languages: Learn popular programming languages like JavaScript, Python, PHP and more, and become proficient in coding and software development.',
   'Web Development: Master front-end and back-end development, including HTML, CSS, JavaScript, and frameworks like React and Node.js.',
   'Database Management: Gain expertise in SQL and other databases, essential for building robust software applications.',
   'Project Management: Develop essential project management skills to plan, execute, and deliver successful IT projects.',
@@ -28,7 +28,7 @@ const ListItems = ({ items }) => (
 );
 
 const Content = () => (
-  <section id="/resources" className="relative px-container pb-24 pt-28">
+  <section id="/resources" className="relative px-container py-24 md:py-32">
     <div className="px-4">
       <div>
         <h3>

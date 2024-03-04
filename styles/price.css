@@ -1,11 +1,11 @@
 .price {
-  @apply grid max-w-full gap-4 overflow-hidden rounded-2xl bg-neutral-100 py-12 px-8 shadow-dark md:grid-cols-2 md:gap-8  lg:grid-cols-1;
+  @apply grid max-w-full gap-4 overflow-hidden rounded-2xl bg-neutral-100 py-12 px-3 md:px-6 shadow-dark md:grid-cols-2 md:gap-8  lg:grid-cols-1;
 
   &__body {
     @apply flex flex-col  gap-3;
   }
   &__features {
-    @apply flex flex-col gap-8 pt-8 sm:text-sm md:pt-0 md:text-2xl lg:pt-0;
+    @apply flex flex-col sm:text-sm md:pt-0 md:text-2xl lg:pt-0;
   }
   &__content {
     @apply flex gap-4;

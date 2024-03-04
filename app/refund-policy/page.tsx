@@ -9,7 +9,7 @@ const RefundPolicy = () => {
   ];
 
   return (
-    <section className='px-4 md:px-container py-16' id='#refundpolicy'>
+    <section className='px-4 md:px-container py-32' id='#refundpolicy'>
       <h1>Refund Policy - Specialchar Pvt. Ltd.</h1>
 
       <p>

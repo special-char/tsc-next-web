@@ -10,7 +10,7 @@
     }
 
     @media screen and (min-width: 768px) and (max-width: 1019px) {
-      @apply grid  md:grid-cols-2 md:grid-rows-2;
+      @apply grid  md:grid-cols-2 gap-4 md:grid-rows-2;
       div:nth-child(3) {
         grid-column: 1/3;
       }

@@ -6,6 +6,7 @@ import format from 'date-fns/format';
 import Link from 'next/link';
 import { Event, EventEntity } from 'types/types';
 
+
 export const EventCardSkeleton = () => {
   return (
     <>
@@ -84,11 +85,14 @@ const EventCard = ({ data }: Props) => {
       </figure>
       <div className="event__body">
         <div className="event__date">
-          <Icon name="calendar" />
-          <time>{`${format(new Date(eventStartDate), 'EEEE')} ${format(
-            new Date(eventStartDate),
+          <div className="flex gap-2">
+            <Icon name="calendar" />
+            <time>{`${format(new Date(eventStartDate), 'EEEE')}`}</time>
+          </div>
+          <time>{`${format(new Date(eventStartDate), 'p')}  - ${format(
+            new Date(eventEndDate),
             'p',
-          )}  - ${format(new Date(eventEndDate), 'p')}`}</time>
+          )}`}</time>
         </div>
         <time className="date">
           <span className="text-xs uppercase md:text-base">

@@ -22,8 +22,6 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-
-
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
     method: 'POST',
     body: JSON.stringify({
@@ -79,8 +77,7 @@ export async function generateMetadata({
 
   const metaData = await res.json();
 
-  const seo = metaData?.data?.event.data?.attributes
-    ?.seo as ComponentSharedSeo;
+  const seo = metaData?.data?.event.data?.attributes?.seo as ComponentSharedSeo;
 
   const facebook = seo.metaSocial?.find((x) => x?.socialNetwork === 'Facebook');
   const twitter = seo.metaSocial?.find((x) => x?.socialNetwork === 'Twitter');
@@ -125,6 +122,8 @@ export async function generateMetadata({
     description: seo.metaDescription,
     title: seo.metaTitle,
     keywords: seo.keywords,
+    ...twitterMeta,
+    ...facebookMeta,
   };
 
   return {
@@ -219,13 +218,22 @@ const Page = async ({ params }: Props) => {
           <EventDetailPage
             {...rest}
             additionalField={{
-              registrationType: "event",
+              registrationType: 'event',
               registrationName: params.slug,
             }}
           />
         </div>
         <div className="events__paragraph">
-          <div dangerouslySetInnerHTML={{ __html: md().render(content) }}></div>
+          <div dangerouslySetInnerHTML={{ __html: md().render(content) }} style={{padding:'1rem 0rem'}}></div>
+          <Register
+            btnText="register for event"
+            btnClass="btn--primary"
+            formId={3}
+            additionalField={{
+              registrationType: 'event',
+              registrationName: params.slug,
+            }}
+          />
         </div>
       </div>
     </section>

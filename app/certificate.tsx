@@ -19,7 +19,7 @@ const Certificate = () => {
         <div className="flex flex-1 flex-col  justify-center">
           {data.map((detail, index) => (
             <div className="flex items-center gap-4 py-3" key={index}>
-              <OKIcon />
+              <OKIcon className="min-w-[24px]" />
               <p className="flex justify-center font-semibold">{detail}</p>
             </div>
           ))}

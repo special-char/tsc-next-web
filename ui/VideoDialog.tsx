@@ -1,7 +1,24 @@
-import React from 'react';
+'use client'
+import React, { useEffect, useRef } from 'react';
 import CloseIcon from '@/public/icons/close-icon.svg';
 
-const VideoDialog = () => {
+type Props = {
+  src: string;
+  open?:boolean
+}
+
+
+
+const VideoDialog = ({src,open}:Props) => {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  const handleCloseClick = () => {
+    // Pause the video when the close button is clicked
+    if (videoRef.current) {
+      videoRef.current.pause();
+    }
+  };
+
   return (
     <div
       className={`fixed left-0 top-0 z-50 flex h-screen w-screen items-center justify-center  p-10`}
@@ -12,12 +29,13 @@ const VideoDialog = () => {
     >
       <div className={`relative max-w-5xl rounded-2xl`}>
         <video
-          src="https://v6.cdnpk.net/videvo_files/video/premium/video0007/large_watermarked/black_headz_spin4k08_preview.mp4"
-          autoPlay
+          src={src}
+          ref={videoRef}
+          autoPlay={videoRef.current}
           controls
           style={{ outline: 'none', border: 'none' }}
         ></video>
-        <button className="text-white absolute -right-10 -top-10">
+        <button className="text-white absolute -right-10 -top-10" onClick={handleCloseClick}>
           <CloseIcon />
         </button>
       </div>

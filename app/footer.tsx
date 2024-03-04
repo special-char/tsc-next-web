@@ -74,15 +74,12 @@ const Footer = (props: Props) => {
               {val.attributes.title}
             </Link>
           ))}
-          <Link href="/privacy-policy" >
-              Privacy Policy
-            </Link>
-            <Link href="/refund-policy">
-             Refund Policy
-            </Link>
-            <Link href="/terms-service">
-            Terms Service
-            </Link>
+          <Link href="/privacy-policy">Privacy Policy</Link>
+          <Link href="/refund-policy">Cancellation and Refund</Link>
+          <Link href="/terms-service">Terms Service</Link>
+          <Link href="https://merchant.razorpay.com/policy/NEWBJzhrp8leG4/shipping">
+            Shipping and Delivery
+          </Link>
         </div>
       </div>
       <hr className="col-span-full" />

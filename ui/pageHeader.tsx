@@ -58,11 +58,11 @@ const PageHeader = async ({
             {title && (
               <h1 className="text-neutral-700">
                 {title.split('<br />').map((x) => (
-                  <div className="whitespace-nowrap">{x}</div>
+                  <div className="sm:whitespace-nowrap">{x}</div>
                 ))}
               </h1>
             )}
-            {description && <p>{description}</p>}
+            {description && <p className='text-center'>{description}</p>}
           </div>
         </div>
         <div

@@ -2,8 +2,12 @@ import React from 'react';
 
 const TermsService = () => {
   
+import React from 'react';
+
+const TermsService = () => {
+  
   return (
-    <section className="px-4 md:px-container py-28" id="termsservice">
+    <section className="px-4 md:px-container py-16" id="termsservice">
       <h1>Terms and Conditions - Specialchar Pvt. Ltd.</h1>
 
       <p>

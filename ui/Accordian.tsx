@@ -1,9 +1,10 @@
-'use client';
-
+'use client'; 
 import clsx from 'clsx';
 import md from 'markdown-it';
 import Link from 'next/link';
 import Icon from './Icon';
+import React ,{useState}from 'react';
+
 
 export type AccordianType = {
   id: string;
@@ -19,12 +20,36 @@ type Props = {
 };
 
 const Accordian = ({ data, hasTag }: Props) => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const handleToggle = (index: number) => {
+    setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
+
+
+  const All_Details = document.querySelectorAll('details');
+
+  All_Details.forEach(deet=>{
+    deet.addEventListener('toggle', toggleOpenOneOnly)
+  })
+  
+  function toggleOpenOneOnly(_e: any) {
+    if (this.open) {
+      All_Details.forEach(deet=>{
+        if (deet!=this && deet.open) deet.open = false
+      });
+    }
+  }
+
   return (
     <>
       {data.map((val, index) => {
         return (
+          <div key={val.id}>
+
           <details
-            key={val.id}
+            open={index === openIndex}
+            onClick={() => handleToggle(index)}
             // className={clsx({
             //   'with-tag': hasTag,
             // })}
@@ -68,6 +93,7 @@ const Accordian = ({ data, hasTag }: Props) => {
               ></div>
             }
           </details>
+          </div> 
         );
       })}
       {/* <div>

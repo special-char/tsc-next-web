@@ -11,8 +11,7 @@ import Accordian, { AccordianType } from '@/ui/Accordian';
 import { notFound } from 'next/navigation';
 import { getCoursesMeta } from '@/lib/getCoursesMeta';
 import { Metadata } from 'next';
-import Script from 'next/script';
-
+import CourseVideoModal from '../courseVideoModal';
 export async function generateMetadata({
   params,
 }: {
@@ -125,6 +124,7 @@ export default async function Page({ params }: PageProps) {
     curriculam,
     complitionResult,
     category,
+    courseVideo,
     ...data
   } = attributes as Course;
 
@@ -143,17 +143,10 @@ export default async function Page({ params }: PageProps) {
     }) || [];
 
   // const chipNavData = coursesData.data.courses.data.reduce()
-
+  
   return (
     <>
-    {attributes?.seo?.structuredData && (
-        <Script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(attributes?.seo.structuredData),
-          }}
-        />
-      )}
+      
       <section id="individualcourse" className="individualcourse">
         <div className="individualcourse__content">
           <div className="individualcourse__content__bg"></div>
@@ -172,6 +165,7 @@ export default async function Page({ params }: PageProps) {
             <p className="pb-6 text-neutral-100">{description}</p>
             <div className="main__left-section__preview">
               {url && (
+                <>
                 <Image
                   src={url}
                   alt={`${alternativeText}`}
@@ -179,6 +173,9 @@ export default async function Page({ params }: PageProps) {
                   fill
                   priority
                 />
+<CourseVideoModal url={courseVideo?.data?.attributes?.url}/>
+             
+                </>
               )}
               {/* <div className="main__left-section__preview__body">
                 <div className="popup-icon flex h-20 w-20 items-center justify-center rounded-full bg-secondary1 md:h-32 md:w-32">

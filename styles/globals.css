@@ -172,7 +172,7 @@
       }
     }
     & > div:last-child {
-      @apply overflow-hidden border-none py-4 text-left text-base md:pl-16;
+      @apply overflow-hidden border-none py-4 text-left text-base pl-16;
     }
   }
 
@@ -414,7 +414,7 @@
     }
 
     &__items {
-      @apply m-0 max-w-xl flex-shrink-0 flex-grow 
+      @apply m-0 max-w-3xl flex-shrink-0 flex-grow 
      snap-center snap-always list-none rounded-3xl bg-neutral-100 p-0;
     }
 
@@ -636,7 +636,7 @@
   }
 
   .items {
-    @apply px-4 py-20 lg:px-container;
+    @apply px-4 py-32 lg:px-container;
 
     &__item {
       @apply my-8 grid grid-cols-1 gap-8 lg:grid-cols-2;
