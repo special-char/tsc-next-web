@@ -39,10 +39,10 @@ const Content = () => (
       </div>
       <div>
         <h3>Program Highlights:</h3>
-        <h5>
+        <h4 className="mb-2 text-base font-semibold text-neutral-800 sm:text-lg">
           Our IT/Software Freshers & Project Training program covers a wide
           range of topics and includes the following highlights:
-        </h5>
+        </h4>
         <ListItems items={data1} />
         <div>
           <p>

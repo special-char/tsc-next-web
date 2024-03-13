@@ -199,12 +199,8 @@ const Page = async ({ params }: Props) => {
 
   return (
     <section className="events">
-      <div>
-        <div className="events__event "></div>
-        <div className="events__animate-bounce-slow1 "></div>
-        <div className="events__animate-bounce-slow2"></div>
-      </div>
       <div className="events__page">
+        <div className="events__background"></div>
         <div className="events__image">
           <Image
             alt="alt"
@@ -224,7 +220,10 @@ const Page = async ({ params }: Props) => {
           />
         </div>
         <div className="events__paragraph">
-          <div dangerouslySetInnerHTML={{ __html: md().render(content) }} style={{padding:'1rem 0rem'}}></div>
+          <div
+            dangerouslySetInnerHTML={{ __html: md().render(content) }}
+            style={{ padding: '1rem 0rem' }}
+          ></div>
           <Register
             btnText="register for event"
             btnClass="btn--primary"

@@ -20,7 +20,7 @@ export const TestimonialSkeleton = () => {
       <div className="testimonial__content">
         {[1, 2, 3, 4].map((number) => (
           <div key={number}>
-            <h3 className="testimonial__title font-cursive">100,000+</h3>
+            <div className="testimonial__title font-cursive ">100,000+</div>
             <p className="font-cursive">Five-star course reviews</p>
           </div>
         ))}
@@ -52,14 +52,13 @@ const Testimonial = async () => {
         {testimonialsInfo.map((testimonial) => {
           return (
             <div className="max-sm:w-72">
-            <TestimonialCard
-              key={testimonial.id}
-              testimonial={testimonial}
-              style={{
-                maxWidth: '48rem',
-              }}
-
-            />
+              <TestimonialCard
+                key={testimonial.id}
+                testimonial={testimonial}
+                style={{
+                  maxWidth: '48rem',
+                }}
+              />
             </div>
           );
         })}
@@ -67,8 +66,12 @@ const Testimonial = async () => {
       <div className="testimonial__content">
         {numbers?.map((number) => (
           <div key={number?.id}>
-            <h3 className="testimonial__title">{number?.title}</h3>
-            <p className="text-center px-2 line-clamp-2">{number?.description}</p>
+            <div className="testimonial__title mb-4 text-xl font-bold text-neutral-700 sm:text-xxl md:text-2xl">
+              {number?.title}
+            </div>
+            <p className="px-2 text-center line-clamp-2">
+              {number?.description}
+            </p>
           </div>
         ))}
       </div>
