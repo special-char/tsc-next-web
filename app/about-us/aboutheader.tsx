@@ -44,7 +44,8 @@ const Aboutheader = async (props: Props) => {
             <div className="about__image">
               <Image
                 src={`${url}?tr=ar-1-1`}
-                alt={`${alternativeText}`}
+                alt={`${alternativeText || 'about image'}`}
+                title={`${alternativeText || 'about image'}`}
                 fill
                 sizes="(max-width: 1024px) 100vw,
                         (max-width: 1280px) 50vw,

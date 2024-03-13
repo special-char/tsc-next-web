@@ -65,7 +65,8 @@ const Education = async () => {
         <div className="education__image">
           <Image
             src={`${url}?tr=ar-1-1.2`}
-            alt={`${alternativeText}`}
+            alt={alternativeText || 'education image'}
+            title={alternativeText || 'education image'}
             fill
             sizes="(max-width: 640px) 100vw,(max-width: 1024px) 518px,(max-width: 1280px) 45vw,592px"
           />
@@ -81,7 +82,8 @@ const Education = async () => {
                 <figure>
                   <Image
                     src={`${url}?tr=h-64,w-64`}
-                    alt={`${alternativeText}`}
+                    alt={`${alternativeText || 'education image'}`}
+                    title={`${alternativeText || 'education image'}`}
                     height={64}
                     width={64}
                     className="rounded-full"

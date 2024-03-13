@@ -203,7 +203,8 @@ const Page = async ({ params }: Props) => {
         <div className="events__background"></div>
         <div className="events__image">
           <Image
-            alt="alt"
+            alt="eventpage banner image"
+            title="eventpage banner image"
             src={`${image?.data?.attributes?.url}?tr=ar-16-9`}
             fill
             sizes="(min-width: 1024px) 100vw,

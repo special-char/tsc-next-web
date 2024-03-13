@@ -67,7 +67,9 @@ const Footer = (props: Props) => {
       </div>
 
       <div className="footer__pages">
-        <h3 className="text-neutral-100">Pages</h3>
+        <p className="mb-4 text-xl font-bold text-neutral-100 sm:text-xxl md:text-2xl">
+          Pages
+        </p>
         <div className="footer__links">
           {flatten(array).map((val) => (
             <Link href={val.attributes.url} key={val.id}>
@@ -92,8 +94,9 @@ const Footer = (props: Props) => {
               className="flex aspect-square w-10 items-stretch justify-center rounded-full bg-neutral-500 hover:bg-primary"
             >
               <Image
-                src={val.icon.data?.attributes?.url || ''}
+                src={val.icon.data?.attributes?.url || 'social media link'}
                 alt="social media icon"
+                title="social media icon"
                 height={20}
                 width={20}
               />
@@ -107,33 +110,3 @@ const Footer = (props: Props) => {
 };
 
 export default Footer;
-{
-  /* <SocialIcon
-        icons={[
-          {
-            icon: 'facebook',
-            link: 'https://www.facebook.com',
-          },
-          {
-            icon: 'twitter',
-            link: 'https://www.twitter.com',
-          },
-          {
-            icon: 'instagram',
-            link: 'https://www.instagram.com',
-          },
-          {
-            icon: 'linkedin',
-            link: 'https://www.linkedin.com',
-          },
-          {
-            icon: 'youtube',
-            link: 'https://www.youtube.com',
-          },
-          {
-            icon: 'whatsapp',
-            link: 'https://www.whatsapp.com',
-          },
-        ]}
-      /> */
-}

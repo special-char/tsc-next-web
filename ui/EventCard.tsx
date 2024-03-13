@@ -6,7 +6,6 @@ import format from 'date-fns/format';
 import Link from 'next/link';
 import { Event, EventEntity } from 'types/types';
 
-
 export const EventCardSkeleton = () => {
   return (
     <>
@@ -67,7 +66,8 @@ const EventCard = ({ data }: Props) => {
       <figure className="card__image">
         <Image
           src={`${image.data.attributes.url}?tr=ar-16-9`}
-          alt={`${image.data.attributes.alternativeText}`}
+          alt={`${image.data.attributes.alternativeText || 'card imagies'}`}
+          title={`${image.data.attributes.alternativeText || 'card imagies'}`}
           fill
           sizes="(max-width: 640px) 100vw,
                 (max-width: 1024px) 50vw,

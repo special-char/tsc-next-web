@@ -75,7 +75,8 @@ const OurWorks = async () => {
                   <Image
                     src={`${url}?tr=h-200,w-200`}
                     className="rounded-full"
-                    alt={`${alternativeText}`}
+                    alt={`${alternativeText || 'OurWorks image'}`}
+                    title={`${alternativeText || 'OurWorks image'}`}
                     width={200}
                     height={200}
                   />

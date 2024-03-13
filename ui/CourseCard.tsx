@@ -78,13 +78,14 @@ const CourseCard = ({ course, isHorizontal }: Props) => {
         <figure className="course_card__img">
           <Image
             src={`${url}?tr=ar-16-9`}
-            alt={`${alternativeText}`}
+            alt={`${alternativeText || 'course card'}`}
+            title={`${alternativeText || 'course card'}`}
             fill
             sizes="(max-width: 640px) 100vw,576px"
           />
           <div className="course_card__chips">
-             <div className="chip chip--white">{duration}</div>
-             {price && (
+            <div className="chip chip--white">{duration}</div>
+            {price && (
               <div className="chip chip--primary">
                 {`${new Intl.NumberFormat(price.format.replace('_', '-'), {
                   style: 'currency',
@@ -92,8 +93,7 @@ const CourseCard = ({ course, isHorizontal }: Props) => {
                   minimumFractionDigits: 0,
                 }).format(price.price)}/${price.unit}`}
               </div>
-            )
-            }
+            )}
           </div>
         </figure>
       </Link>
@@ -107,7 +107,7 @@ const CourseCard = ({ course, isHorizontal }: Props) => {
           <p className="course_card__desc">{description}</p>
         </Link>
 
-{/* ***{Dont Remove It This Code , no Body Touch it }*** */}
+        {/* ***{Dont Remove It This Code , no Body Touch it }*** */}
 
         {/* <div className="course_card__footer">
           {brochureUrl && (

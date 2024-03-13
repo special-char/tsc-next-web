@@ -26,8 +26,6 @@ export const EventDetailPageSkeleton = () => {
                 <span className="events__top font-cursive ">
                   Sunday 5:00 pm - 6:00 pm EDT
                 </span>
-
-
                 .
               </div>
               <div className="events__svg">
@@ -42,9 +40,9 @@ export const EventDetailPageSkeleton = () => {
               </div>
             </div>
           </div>
-          <h2 className="events__head font-cursive">
+          <h1 className="events__head font-cursive">
             Social Media Marketing Masterclass
-          </h2>
+          </h1>
           <p className="font-cursive">
             Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit.
             Felis donec massa aliquam id.
@@ -71,29 +69,32 @@ const EventDetailPage = ({
     <>
       <section className="events__body">
         <div className="events__header hidden md:flex">
-          <h5 className="events__h6">
+          <time className="events__h6">
             {format(new Date(eventStartDate), 'MMMM')}
-          </h5>
-          <h6 className="events__h1">
+          </time>
+          <time className="events__h1">
             {' '}
             {format(new Date(eventStartDate), 'dd')}
-          </h6>
+          </time>
         </div>
         <div className="events__datails">
           <div className="events__title">
             <div className="events__tools items-start">
               <div className="flex flex-1 items-start gap-4">
                 <div className="events__header flex md:hidden">
-                  <h5 className="events__h6">
+                  <time className="events__h6">
                     {format(new Date(eventStartDate), 'MMMM')}
-                  </h5>
-                  <h6 className="events__h1">
+                  </time>
+                  <time className="events__h1">
                     {' '}
                     {format(new Date(eventStartDate), 'dd')}
-                  </h6>
+                  </time>
                 </div>
                 <div className="flex flex-col gap-2 md:gap-4">
-                  <EventLocalDate eventStartDate={eventStartDate} eventEndDate={eventEndDate} />
+                  <EventLocalDate
+                    eventStartDate={eventStartDate}
+                    eventEndDate={eventEndDate}
+                  />
                   <div className="events__svg">
                     <MapSvg className="w-6" />
                     <span className="events__top">{location?.city}</span>
@@ -108,7 +109,7 @@ const EventDetailPage = ({
               </div>
             </div>
           </div>
-          <h2 className="events__head">{title}</h2>
+          <h1 className="events__head">{title}</h1>
           <p>{description}</p>
           <Register
             btnText="register for event"

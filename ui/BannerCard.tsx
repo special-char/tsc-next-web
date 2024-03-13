@@ -5,7 +5,7 @@ import { UploadFile } from 'types/types';
 import Button from './Button';
 
 const BannerCard = ({ content, buttons, media, style }) => {
-  const { url } = media.data?.attributes as UploadFile;
+  const { url, alternativeText } = media.data?.attributes as UploadFile;
 
   console.log(content);
 
@@ -33,7 +33,8 @@ const BannerCard = ({ content, buttons, media, style }) => {
         {url && (
           <Image
             src={`${url}?tr=ar-3-4`}
-            alt="logo"
+            alt={alternativeText || 'Banner Image'}
+            title={alternativeText || 'Banner Image'}
             fill
             sizes="(max-width: 640px) 100vw,
             (max-width: 1024px) 518px,
