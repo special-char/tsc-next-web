@@ -48,7 +48,11 @@ const TestimonialCard = ({ testimonial, style }: Props) => {
     <>
       <dialog id="dialog" ref={modelRef}>
         <form method="dialog">
-          <VideoDialog src={"https://v6.cdnpk.net/videvo_files/video/premium/video0007/large_watermarked/black_headz_spin4k08_preview.mp4"} />
+          <VideoDialog
+            src={
+              'https://v6.cdnpk.net/videvo_files/video/premium/video0007/large_watermarked/black_headz_spin4k08_preview.mp4'
+            }
+          />
         </form>
       </dialog>
       <div style={style} className={clsx('testimonial_card', {})}>
@@ -66,14 +70,16 @@ const TestimonialCard = ({ testimonial, style }: Props) => {
               modelRef.current.showModal();
             }}
           >
-            <PlayButton className="w-8 aspect-square ml-[2px]" />
+            <PlayButton className="ml-[2px] aspect-square w-8" />
           </div>
         </figure>
         <div className="testimonial_card__body">
           <Rating rate={rating} className="testimonial_card__rating" />
           <p className="testimonial_card__desc">{`"${quote}"`}</p>
           <div className="user_info">
-            <h6>{name}</h6>
+            <h3 className="mb-2 text-xs font-semibold text-neutral-800 sm:text-base">
+              {name}
+            </h3>
             <p>{`${designation} at ${company}`}</p>
           </div>
         </div>

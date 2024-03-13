@@ -56,7 +56,9 @@ const GrowCareer = async () => {
       <div className="growcareer__cards">
         {details?.map((val) => (
           <div key={val?.id} className="growcareer__card_details">
-            <h2>{val?.title}</h2>
+            <div className="font-serif text-3xl font-semibold text-neutral-800 md:text-6xl">
+              {val?.title}
+            </div>
             <p>{val?.description}</p>
           </div>
         ))}

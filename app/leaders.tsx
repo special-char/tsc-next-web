@@ -28,8 +28,12 @@ export const LeadersSkeleton = () => {
           <h3 className="py-4 font-cursive text-neutral-700">
             “Teaching on Educationic platform has been an amazing experience”
           </h3>
-          <h5 className="font-cursive text-neutral-700">Sophie Moore</h5>
-          <h6 className="mb-0 font-cursive text-neutral-600">pruthvish modi</h6>
+          <h4 className="font-cursive text-lg text-neutral-700 sm:text-xl">
+            Sophie Moore
+          </h4>
+          <h5 className="mb-0 font-cursive text-base text-neutral-600 sm:text-lg">
+            pruthvish modi
+          </h5>
         </div>
       </div>
     </section>
@@ -82,9 +86,11 @@ const Leaders = async () => {
         </div>
         <div className="leader__content">
           <span className="leader__ContentData">{tag}</span>
-          <h3 className="py-4 text-neutral-700">{`“${quote}”`}</h3>
-          <h5 className="text-neutral-700">{name}</h5>
-          <h6 className="mb-0">{`${designation} at ${company}`}</h6>
+          <p className="my-4 text-xl font-bold text-neutral-700 sm:text-xxl md:text-2xl">{`“${quote}”`}</p>
+          <h3 className="mb-2 text-base font-semibold text-neutral-800 sm:text-lg">
+            {name}
+          </h3>
+          <h4 className="mb-2 text-xs font-semibold text-neutral-800 sm:text-base">{`${designation} at ${company}`}</h4>
         </div>
       </div>
     </section>
