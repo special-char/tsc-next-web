@@ -45,9 +45,9 @@ const Register = ({ formId, btnText, btnClass, additionalField }: Props) => {
       {fields.length > 0 && (
         <dialog
           open={isOpen}
-          className="fixed inset-0 z-50 h-screen w-screen overflow-y-auto rounded-lg bg-neutral-800 bg-opacity-60 shadow-base"
+          className="fixed inset-0 z-50 h-full w-full overflow-y-auto rounded-lg bg-neutral-800 bg-opacity-100 shadow-base"
         >
-          <div className="top-10 m-auto grid max-w-5xl gap-y-3 rounded-3xl bg-neutral-100 px-4 md:px-8 py-12">
+          <div className="top-10 m-auto grid max-w-5xl gap-y-3 rounded-3xl bg-neutral-100 px-4 py-12 md:px-8">
             <DynamicForm
               buttonStyle={'col-span-2'}
               fields={fields}
@@ -60,7 +60,7 @@ const Register = ({ formId, btnText, btnClass, additionalField }: Props) => {
               type="button"
               onClick={() => setIsOpen(false)}
               className="btn btn--secondary"
-              style={{  
+              style={{
                 gridRow: 'revert',
               }}
             >

@@ -6,7 +6,7 @@
   }
 
   &__page {
-    @apply relative overflow-hidden bg-neutral-100 px-md-container pt-28 md:pt-32;
+    @apply relative overflow-hidden bg-neutral-100 px-md-container pt-12 md:pt-20;
   }
 
   &__background {
@@ -28,16 +28,16 @@
 
   &__body {
     @apply /* @apply lg:py-10; */
-    mx-auto flex flex-col flex-wrap gap-10 overflow-hidden md:flex-col md:py-4 lg:flex-row lg:items-baseline lg:justify-center lg:gap-32 lg:gap-32;
+    mx-auto flex flex-col flex-wrap gap-10 overflow-hidden md:flex-col md:py-4 lg:flex-row lg:items-baseline lg:justify-center lg:gap-32;
   }
   &__header {
     @apply m-0 mb-6 flex-col items-start justify-start  text-center uppercase lg:items-center;
   }
   &__h6 {
-    @apply m-0 text-xs font-bold uppercase text-primary md:text-base;
+    @apply m-0 mb-2 text-base font-semibold uppercase text-neutral-800 sm:text-lg md:text-base;
   }
   &__h1 {
-    @apply mb-3 text-[44px] md:text-[64px];
+    @apply mb-3 font-serif text-5xl font-semibold text-neutral-800 sm:text-7xl md:text-8xl lg:text-9xl;
   }
 
   &__datails {

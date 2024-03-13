@@ -59,7 +59,8 @@ const TestimonialCard = ({ testimonial, style }: Props) => {
         <figure className="testimonial_card__img">
           <Image
             src={`${url}?tr=h-200,w-200`}
-            alt={`${alternativeText}`}
+            alt={`${alternativeText || 'testimonial card'}`}
+            title={`${alternativeText || 'testimonial card'}`}
             height={200}
             width={200}
           />

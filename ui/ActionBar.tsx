@@ -23,7 +23,8 @@ const ActionBar = ({ data }: Props) => {
             src={`${
               avatar.data ? avatar.data.attributes.url : avatarData.url
             }?tr=ar-1-1`}
-            alt={avatarData.name}
+            alt={avatarData.name || avatar}
+            title={avatarData.name || avatar}
             sizes="(max-width: 1024px) 100vw,
             560px"
           />

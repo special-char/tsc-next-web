@@ -28,6 +28,7 @@ const Certificate = () => {
           <Image
             src="https://ik.imagekit.io/p99x3nxgz/tsc%20cartificate.jpg?updatedAt=1696594450480"
             alt="Cartificate"
+            title="Cartificate"
             fill
           />
         </div>

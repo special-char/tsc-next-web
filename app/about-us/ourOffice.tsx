@@ -67,7 +67,7 @@ export const OurOfficeSkeleton = () => {
                     </div>
                   </address>
                 </div>
-                <div className="absolute -right-14 -bottom-20 h-32 w-32 rounded-full bg-primary"></div>
+                <div className="absolute -bottom-20 -right-14 h-32 w-32 rounded-full bg-primary"></div>
               </div>
             );
           })}
@@ -113,7 +113,12 @@ const OurOffice = async (props: Props) => {
               >
                 <div className="ourOffice__card__content">
                   <div className="ourOffice__card__image ">
-                    <Image src={url} alt={`${alternativeText}`} fill />
+                    <Image
+                      src={url}
+                      alt={`${alternativeText || 'ouroffice card image'}`}
+                      title={`${alternativeText || 'ouroffice card image'}`}
+                      fill
+                    />
                   </div>
                   <h3 className="ourOffice__card__title">{val?.city}</h3>
                   <address className="ourOffice__card__connect">
@@ -140,7 +145,8 @@ const OurOffice = async (props: Props) => {
           <Image
             src={`${url}?tr=ar-16-9`}
             fill
-            alt={`${alternativeText}`}
+            alt={`${alternativeText || 'ouroffice map image'}`}
+            title={`${alternativeText || 'ouroffice map image'}`}
             className="-z-10 min-h-[300px]"
             sizes="(max-width: 1024px) 100vw,
             606px"

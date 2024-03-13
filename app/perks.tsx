@@ -59,7 +59,8 @@ const Perks = async () => {
               <div className="perks__item__image">
                 <Image
                   src={`${url}?tr=h-192,w-192`}
-                  alt=""
+                  alt="perks"
+                  title="perks"
                   height={192}
                   width={192}
                 />

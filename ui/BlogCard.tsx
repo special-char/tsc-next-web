@@ -41,7 +41,8 @@ export const BlogCardSkeleton = ({ index }: { index: number }) => {
 };
 
 const BlogCard = ({ blog, index = 0 }: Props) => {
-  const { title, bannerImage, updatedAt, category, slug } = blog.attributes as Blog;
+  const { title, bannerImage, updatedAt, category, slug } =
+    blog.attributes as Blog;
   const { url, alternativeText } = bannerImage?.data?.attributes as UploadFile;
 
   const categoryInfo = category?.data?.attributes;
@@ -57,7 +58,8 @@ const BlogCard = ({ blog, index = 0 }: Props) => {
         {index > 0 ? (
           <Image
             src={`${url}?tr=ar-16-9`}
-            alt={`${alternativeText}`}
+            alt={`${alternativeText || 'blog card image'}`}
+            title={`${alternativeText || 'blog card image'}`}
             fill
             sizes="(max-width: 640px) 100vw,
                    (max-width: 1024px) 235px,
@@ -66,7 +68,8 @@ const BlogCard = ({ blog, index = 0 }: Props) => {
         ) : (
           <Image
             src={`${url}?tr=ar-16-9`}
-            alt={`${alternativeText}`}
+            alt={`${alternativeText || 'blog cards'}`}
+            title={`${alternativeText || 'blog cards'}`}
             fill
             sizes="(max-width: 640px) 100vw,
                    (max-width: 1024px) 518px,
