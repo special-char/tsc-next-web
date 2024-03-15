@@ -9,7 +9,7 @@ type Props = {
   category?: string;
 };
 
-type ChipsType = { children: string; onClick?: () => void };
+type ChipsType = { children: string; onClick?: () => void; slug?: string };
 
 const AllCourses = ({ courses, category }: Props) => {
   const [selectedCategory, setSelectedCategory] = useState(category || 'All');
@@ -17,15 +17,17 @@ const AllCourses = ({ courses, category }: Props) => {
   const chips = courses.reduce(
     (acc: ChipsType[], course) => {
       const children = course.attributes?.category?.data?.attributes?.title;
+      const slug = course.attributes?.category?.data?.attributes?.slug;
 
-      if (children && !acc.some((x) => x.children === children)) {
+      if (slug && !acc.some((x) => x.slug === slug)) {
         return [
           ...acc,
           {
             children,
             onClick: () => {
-              setSelectedCategory(children || 'All');
+              setSelectedCategory(slug || 'all');
             },
+            slug,
           },
         ];
       }
@@ -33,10 +35,11 @@ const AllCourses = ({ courses, category }: Props) => {
     },
     [
       {
-        children: 'All',
+        children: 'all',
         onClick: () => {
-          setSelectedCategory('All');
+          setSelectedCategory('all');
         },
+        slug: 'all',
       },
     ] as ChipsType[],
   );
@@ -48,19 +51,19 @@ const AllCourses = ({ courses, category }: Props) => {
         chips={chips}
         selectedCategory={selectedCategory}
       />
-      {!chips.some((x) => x.children === selectedCategory) && (
+      {!chips.some((x) => x.slug === selectedCategory) && (
         <div className="mx-auto mt-5 max-w-max rounded-lg bg-primary p-5 text-neutral-100">
           Selected course category is not availabe
         </div>
       )}
 
-      {chips.some((x) => x.children === selectedCategory) && (
+      {chips.some((x) => x.slug === selectedCategory) && (
         <div className="items__item">
           {courses.map((data) => {
             if (
-              selectedCategory === 'All' ||
-              data.attributes?.category?.data?.attributes?.title ===
-              selectedCategory
+              selectedCategory === 'all' ||
+              data.attributes?.category?.data?.attributes?.slug ===
+                selectedCategory
             ) {
               return <CourseCard key={data.id} course={data} />;
             }
