@@ -1,7 +1,143 @@
+// 'use client';
+
+// import { Formik, Form, Field } from 'formik';
+// import React from 'react';
+// import Button from './Button';
+// import checkValidation from '@/lib/validation';
+// import TextInput from './TextInput';
+// import TextArea from './TextArea';
+// import clsx from 'clsx';
+// import RadioButtons from './RadioButtons';
+// import Select from './Select';
+// import ReCAPTCHA from 'react-google-recaptcha';
+
+// type Props = {};
+
+// const CustomForm = ({
+//   buttonStyle,
+//   fields,
+//   formMethod,
+//   wrapperClass,
+//   ...rest
+// }: Props) => {
+//   const formProps = {};
+
+//   if (formMethod) {
+//     formProps.method = formMethod;
+//   }
+
+//   console.log(fields);
+
+//   return (
+//     <Formik enableReinitialize {...rest}>
+//       {({ isSubmitting }) => (
+//         <Form
+//           className={clsx('form relative', {
+//             [wrapperClass || '']: !!wrapperClass,
+//           })}
+//           {...formMethod}
+//         >
+//           {fields.map(
+//             ({
+//               id,
+//               component,
+//               __component,
+//               field_id,
+//               initialvalue,
+//               validation,
+//               ...rest
+//             }) => {
+//               const fieldProps = Object.keys(rest).reduce((acc, key) => {
+//                 if (rest[key]) {
+//                   return {
+//                     ...acc,
+//                     [key]: rest[key],
+//                   };
+//                 }
+//                 return acc;
+//               }, {});
+
+//               console.log();
+
+//               if (component === 'TextArea') {
+//                 return (
+//                   <Field
+//                     key={id}
+//                     id={field_id}
+//                     component={TextArea}
+//                     {...fieldProps}
+//                   />
+//                 );
+//               } else if (component === 'Select') {
+//                 return (
+//                   <Field
+//                     key={id}
+//                     id={field_id}
+//                     component={Select}
+//                     {...fieldProps}
+//                   />
+//                 );
+//               } else if (component === 'Radio') {
+//                 return (
+//                   <Field
+//                     key={id}
+//                     id={field_id}
+//                     component={RadioButtons}
+//                     {...fieldProps}
+//                   />
+//                 );
+//               } else {
+//                 return (
+//                   <Field
+//                     key={id}
+//                     id={field_id}
+//                     component={TextInput}
+//                     validate={(value) => {
+//                       let message = '';
+//                       for (let i = 0; i < validation?.length; i++) {
+//                         const { validationType, ...rest } = validation[i];
+//                         const res = checkValidation[validationType]({
+//                           value,
+//                           ...rest,
+//                         });
+//                         if (res) {
+//                           message = res;
+//                           break;
+//                         }
+//                       }
+//                       return message;
+//                     }}
+//                     {...fieldProps}
+//                   />
+//                 );
+//               }
+//             },
+//           )}
+
+//           <Button
+//             className={clsx({
+//               [buttonStyle || '']: !!buttonStyle,
+//             })}
+//             variant="primary"
+//             as="button"
+//             type="submit"
+//           >
+//             {isSubmitting ? 'Please wait...' : 'Submit'}
+//           </Button>
+//           <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY=}/>
+
+//         </Form>
+//       )}
+//     </Formik>
+//   );
+// };
+
+// export default CustomForm;
+
 'use client';
 
 import { Formik, Form, Field } from 'formik';
-import React from 'react';
+import React, { useState } from 'react';
 import Button from './Button';
 import checkValidation from '@/lib/validation';
 import TextInput from './TextInput';
@@ -9,38 +145,63 @@ import TextArea from './TextArea';
 import clsx from 'clsx';
 import RadioButtons from './RadioButtons';
 import Select from './Select';
+import ReCAPTCHA from 'react-google-recaptcha';
+import { set } from 'date-fns';
 
-type Props = {};
+type Props = {
+  buttonStyle?: string;
+  fields: {
+    id: string;
+    component: string;
+    field_id: string;
+    initialvalue?: any;
+    validation?: {
+      validationType: string;
+      [key: string]: any;
+    }[];
+    [key: string]: any;
+  }[];
+  formMethod?: string;
+  wrapperClass?: string;
+  onSubmit: (values: any, actions: any) => Promise<void>;
+};
 
 const CustomForm = ({
   buttonStyle,
   fields,
   formMethod,
   wrapperClass,
+  onSubmit,
   ...rest
 }: Props) => {
-  const formProps = {};
+  const formProps: any = {};
+  const [capture, setCapture] = useState<boolean>(false);
 
   if (formMethod) {
     formProps.method = formMethod;
   }
 
-  console.log(fields);
+  const handleSubmit = async (values, actions) => {
+    // Handle form submission here
+    // setSubmitting(false);
+    actions.setErrors({ Name: 'Please Select Capture' });
+    if (!capture) actions.setErrors({ Name: 'Please Select Capture' });
+    // onSubmit(values, actions);
+  };
 
   return (
-    <Formik enableReinitialize {...rest}>
+    <Formik initialValues={{}} onSubmit={handleSubmit} {...rest}>
       {({ isSubmitting }) => (
         <Form
           className={clsx('form relative', {
             [wrapperClass || '']: !!wrapperClass,
           })}
-          {...formMethod}
+          {...formProps}
         >
           {fields.map(
             ({
               id,
               component,
-              __component,
               field_id,
               initialvalue,
               validation,
@@ -55,8 +216,6 @@ const CustomForm = ({
                 }
                 return acc;
               }, {});
-
-              console.log();
 
               if (component === 'TextArea') {
                 return (
@@ -112,6 +271,19 @@ const CustomForm = ({
               }
             },
           )}
+
+          {/* Google reCAPTCHA Field */}
+          <ReCAPTCHA
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+            onChange={(value) => {
+              console.log('reCAPTCHA value:', value);
+              if (value) {
+                setCapture(true);
+              }
+              setCapture(false);
+            }}
+          />
+
           <Button
             className={clsx({
               [buttonStyle || '']: !!buttonStyle,
@@ -119,6 +291,7 @@ const CustomForm = ({
             variant="primary"
             as="button"
             type="submit"
+            disabled={isSubmitting}
           >
             {isSubmitting ? 'Please wait...' : 'Submit'}
           </Button>

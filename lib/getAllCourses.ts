@@ -30,6 +30,7 @@ export const getAllCoursesData: CoursesType = async (category?: string) => {
                   data {
                     attributes {
                       title
+                      slug
                     }
                   }
                 }
