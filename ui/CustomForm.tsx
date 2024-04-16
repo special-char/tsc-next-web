@@ -56,7 +56,6 @@ const CustomForm = ({
                 return acc;
               }, {});
 
-              console.log();
 
               if (component === 'TextArea') {
                 return (

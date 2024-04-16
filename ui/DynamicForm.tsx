@@ -34,16 +34,6 @@ const DynamicForm = ({
     }
   }, [isOpen]);
 
-  // console.log("submite", isSubmitted);
-  // const changethe = () => {
-
-  //      console.log('isOpen changed:', isOpen);
-  //      if (isOpen === false ) {
-  //        console.log('Setting isSubmitted to false');
-  //        setIsSubmitted(false);
-  //      }
-  // }
-
   const initialValues = useMemo(
     () =>
       fields?.reduce((acc, val) => {
@@ -54,6 +44,10 @@ const DynamicForm = ({
 
   const onSubmit = async (values, actions) => {
     try {
+
+      console.log(values);
+      
+
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}${submitUrl}`,
         {
@@ -71,41 +65,19 @@ const DynamicForm = ({
           },
         },
       );
-      console.log(res.status,'status');
 
-      if (res.status === 200) {
-        // Send a welcome emai
-        
-        const getHello = await fetch('http://localhost:3000/api/welcome-email', {
-          body: JSON.stringify({email:values.email,name:values.name}), method:'POST',
-          headers:{
-            'Conetnt-Type':'application/json'
-          }
-        });
-        
-        // const textres = await fetch('http://localhost:3000/api/welcome-text', {
-        //   body: JSON.stringify({phone:values.phone,name:values.name}), method:'POST',
-        //   headers:{
-        //     'Conetnt-Type':'application/json'
-        //   }
-        // })
-        
-        const hello = await getHello?.json();
-        console.log({ hellooooooo: hello });
+      const json = await res.json();
 
-        // const text = await textres?.json();
-        // console.log({hellotext: text});
+      if (!res.ok) throw new Error(json);
 
+      const email = await fetch('http://localhost:3000/api/welcome-email', {
+        body: JSON.stringify({ email: values.email, name: values.name }),
+        method: 'POST',
+        headers: {
+          'Conetnt-Type': 'application/json',
+        },
+      });
 
-        // Set isSubmitted to true
-        setIsSubmitted(true);
-
-         // Reset the form
-         actions.resetForm();
-        }
-
-        
-      // console.log(values);
       setIsSubmitted(true);
       actions.resetForm();
     } catch (error) {
