@@ -186,7 +186,7 @@ const CustomForm = ({
     // setSubmitting(false);
     actions.setErrors({ Name: 'Please Select Capture' });
     if (!capture) actions.setErrors({ Name: 'Please Select Capture' });
-    // onSubmit(values, actions);
+    onSubmit(values, actions);
   };
 
   return (
