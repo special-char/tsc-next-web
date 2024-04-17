@@ -34,16 +34,6 @@ const DynamicForm = ({
     }
   }, [isOpen]);
 
-  // console.log("submite", isSubmitted);
-  // const changethe = () => {
-
-  //      console.log('isOpen changed:', isOpen);
-  //      if (isOpen === false ) {
-  //        console.log('Setting isSubmitted to false');
-  //        setIsSubmitted(false);
-  //      }
-  // }
-
   const initialValues = useMemo(
     () =>
       fields?.reduce((acc, val) => {
@@ -54,6 +44,8 @@ const DynamicForm = ({
 
   const onSubmit = async (values, actions) => {
     try {
+      console.log(values);
+
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}${submitUrl}`,
         {

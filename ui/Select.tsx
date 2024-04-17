@@ -33,7 +33,7 @@ const Select = ({
       >
         <option value="">{`Select ${label}`}</option>
         {options.map((x) => {
-          return <option value={x.key}>{x.value}</option>;
+          return <option key={x.key} value={x.key}>{x.value}</option>;
         })}
       </select>
 

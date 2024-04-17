@@ -7,7 +7,6 @@ import InquiryForm from './inquiryForm';
 
 const Inquiry = () => {
   return (
-    
    <InquiryForm/>
   );
 };
