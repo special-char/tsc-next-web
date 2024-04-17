@@ -31,17 +31,18 @@ export const CategoryCardSkeleton = () => {
 };
 
 const CategoryCard = ({ category }: Props) => {
-  const { title, description, icon, courses } = category.attributes as Category;
+  const { title, description, icon, courses, slug } =
+    category.attributes as Category;
+
   const { url, alternativeText } = icon?.data?.attributes as UploadFile;
 
   const coursesLength = courses?.data.length || 0;
-
   return (
     <Link
       style={{
         maxWidth: '24rem',
       }}
-      href={`/courses?category=${title}`}
+      href={`/courses/category/${slug}`}
       className="category_card"
     >
       <figure className="category_card__img">

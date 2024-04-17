@@ -26,6 +26,8 @@ const ChipNavigation = ({ chipData, selectedCategory, attributes }) => {
     <div className="no-scrollbar overflow-x-scroll">
       <div className="flex shrink-0 justify-items-center gap-x-2 rounded-3xl bg-neutral-200 py-4  md:rounded-full">
         {chipData.map(({ ...data }, index) => {
+          console.log(data);
+
           if (
             !attributes ||
             (attributes && attributes[`${data['key']}`].length > 0)
@@ -33,10 +35,11 @@ const ChipNavigation = ({ chipData, selectedCategory, attributes }) => {
             return (
               <Button
                 key={index}
-                as="button"
+                as={'button'}
+                // href={`${data.children}`}
                 className={clsx('chip w-full', {
-                  'chip--primary': data.children === selectedCategory,
-                  'chip--white': data.children !== selectedCategory,
+                  'chip--primary': data.slug === selectedCategory,
+                  'chip--white': data.slug !== selectedCategory,
                 })}
                 {...data}
               />
