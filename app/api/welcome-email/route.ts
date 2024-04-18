@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
-export async function POST(req: Request,) {
-  const {email,name} = await req.json()
+export async function POST(req: Request) {
+  const { email, name } = await req.json();
 
   const transporter = nodemailer.createTransport({
     host: 'smtp.office365.com',
@@ -12,16 +12,13 @@ export async function POST(req: Request,) {
       user: 'student@thespecialcharacter.com',
       pass: 'kwue gclo psfn xrtv',
     },
-    
   });
-
-  
 
   const mailOptions = {
     from: 'student@thespecialcharacter.com',
     to: email,
     subject: 'Welcome to The Special Character',
-    html:   `<p>Thank You for Registering with The Special Character</p>
+    html: `<p>Thank You for Registering with The Special Character</p>
     <p>Dear ${name},</p>
     <p>We would like to express our sincere gratitude for taking the time to register with us. Your decision to join our community is greatly appreciated, and we are excited to have you on board.</p>
     <p>Should you have any questions, need assistance, or simply want to connect with us, please feel free to reach out through any of the following channels:</p>
@@ -42,17 +39,15 @@ export async function POST(req: Request,) {
         <a href="https://www.linkedin.com/company/thespecialcharacter/">Linkedin</a>,  <a href="https://instagram.com/thespecialchar?igshid=NGVhN2U2NjQ0Yg==">Instagram</a>
     </p>
 <p><a href="http://www.thespecialcharacter.com">www.thespecialcharacter.com</a></p>
-    `
-     ,
+    `,
   };
 
   try {
-
     transporter.verify(function (error, success) {
       if (error) {
         console.log(error);
       } else {
-        console.log("Server is ready to take our messages");
+        console.log('Server is ready to take our messages');
       }
     });
     await transporter.sendMail(mailOptions);
