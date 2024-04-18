@@ -38,7 +38,7 @@ const CustomForm = ({
   ...rest
 }: Props) => {
   const formProps: any = {};
-  // const [capture, setCapture] = useState<boolean>(false);
+  const [capture, setCapture] = useState<boolean>(false);
 
   if (formMethod) {
     formProps.method = formMethod;
@@ -142,8 +142,9 @@ const CustomForm = ({
               console.log('reCAPTCHA value:', value);
               if (value) {
                 setCapture(true);
+              } else {
+                setCapture(false);
               }
-              setCapture(false);
             }}
           /> */}
 
