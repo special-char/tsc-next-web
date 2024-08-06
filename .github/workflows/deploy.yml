@@ -20,10 +20,10 @@ jobs:
         with:
           node-version: '18.x'
       - name: Install dep
-        run: npm i
+        run: yarn
 
       - name: Build next app
-        run: npm run build
+        run: yarn build
 
   deploy:
     runs-on: ubuntu-latest
