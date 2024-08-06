@@ -1,0 +1,55 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+name: TSC-WEB CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 18
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18.x"
+      - name: Install dep
+        run: yarn
+
+      - name: Build next app
+        run: yarn build
+
+      # - name: Install
+      #   uses: borales/actions-yarn@v4
+      # - run: yarn && yarn build --if-present
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Deploy using ssh
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: 22
+          script: |
+            cd /home/tscadmin/tscadmin/tsc-next-web
+            git pull
+            git status
+            node -v
+            source ~/.nvm/nvm.sh
+            nvm -v
+            nvm use 18
+            node -v
+            pwd
+            yarn
+            yarn build
+            pm2 start ecosystem.config.js
