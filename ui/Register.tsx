@@ -5,15 +5,23 @@ import clsx from 'clsx';
 import React, { memo, useCallback, useEffect, useState } from 'react';
 import { Form, FormFieldsDynamicZone, Maybe } from 'types/types';
 import DynamicForm from './DynamicForm';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 type Props = {
   formId: number;
   btnText?: string;
   btnClass?: string;
+  registerButtonURL?: string;
 };
 
-const Register = ({ formId, btnText, btnClass, additionalField }: Props) => {
+const Register = ({
+  formId,
+  btnText,
+  btnClass,
+  additionalField,
+  registerButtonURL,
+}: Props) => {
   const [fields, setFields] = useState<Maybe<FormFieldsDynamicZone>[]>([]);
   const [submitURL, setSubmitURL] = useState('');
   const [isOpen, setIsOpen] = useState(false);
@@ -32,16 +40,33 @@ const Register = ({ formId, btnText, btnClass, additionalField }: Props) => {
     loadformData(formId);
   }, []);
 
+  const router = useRouter();
+
   return (
     <>
-      <button
-        onClick={() => setIsOpen(true)}
-        className={clsx('btn btn--small uppercase', {
-          [btnClass || 'btn--secondary']: !![btnClass],
-        })}
-      >
-        {btnText}
-      </button>
+      {registerButtonURL && registerButtonURL != undefined ? (
+        <Link
+          href={registerButtonURL}
+          className={clsx('btn btn--small uppercase', {
+            [btnClass || 'btn--secondary']: !![btnClass],
+          })}
+          target="_blank"
+        >
+          {btnText}
+        </Link>
+      ) : (
+        <button
+          onClick={() => {
+            setIsOpen(true);
+          }}
+          className={clsx('btn btn--small uppercase', {
+            [btnClass || 'btn--secondary']: !![btnClass],
+          })}
+        >
+          {btnText}
+        </button>
+      )}
+
       {fields.length > 0 && (
         <dialog
           open={isOpen}
