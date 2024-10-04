@@ -25,6 +25,7 @@
     "clsx": "1.2.1",
     "date-fns": "2.30.0",
     "formik": "2.2.9",
+    "ics": "3.8.1",
     "markdown-it": "13.0.1",
     "next": "13.4.19",
     "next-mdx-remote": "4.4.1",

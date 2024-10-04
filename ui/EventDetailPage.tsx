@@ -59,6 +59,7 @@ export const EventDetailPageSkeleton = () => {
 const EventDetailPage = ({
   eventStartDate,
   eventEndDate,
+  registerButtonURL,
   location,
   category,
   title,
@@ -92,12 +93,26 @@ const EventDetailPage = ({
                 </div>
                 <div className="flex flex-col gap-2 md:gap-4">
                   <EventLocalDate
-                    eventStartDate={eventStartDate}
-                    eventEndDate={eventEndDate}
+                    eventStartDate={eventStartDate || ''}
+                    eventEndDate={eventEndDate || ''}
+                    title={title || ''}
+                    description={description || ''}
+                    location={location}
                   />
+
                   <div className="events__svg">
                     <MapSvg className="w-6" />
-                    <span className="events__top">{location?.city}</span>
+                    {location?.latitude && location?.longitude ? (
+                      <a
+                        href={`https://www.google.com/maps?q=${location?.latitude},${location?.longitude}`}
+                        className="events__top"
+                        target="_blank"
+                      >
+                        {location?.city}
+                      </a>
+                    ) : (
+                      <span>{location?.city}</span>
+                    )}
                   </div>
                 </div>
               </div>
@@ -115,6 +130,7 @@ const EventDetailPage = ({
             btnText="register for event"
             btnClass="btn--primary"
             formId={3}
+            registerButtonURL={registerButtonURL}
             additionalField={additionalField}
           />
         </div>
