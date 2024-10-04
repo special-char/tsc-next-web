@@ -229,6 +229,7 @@ const Page = async ({ params }: Props) => {
             btnText="register for event"
             btnClass="btn--primary"
             formId={3}
+            registerButtonURL={rest?.registerButtonURL}
             additionalField={{
               registrationType: 'event',
               registrationName: params.slug,
