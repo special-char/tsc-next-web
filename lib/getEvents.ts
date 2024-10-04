@@ -29,6 +29,7 @@ export const getEvents: EventDetailsType = async (slug: string) => {
                 content
                 eventStartDate
                 eventEndDate
+                registerButtonURL
                 title
                 description
                 slug

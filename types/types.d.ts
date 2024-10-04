@@ -1664,8 +1664,9 @@ export type Event = {
   description?: Maybe<Scalars['String']>;
   eventEndDate?: Maybe<Scalars['DateTime']>;
   eventStartDate?: Maybe<Scalars['DateTime']>;
+  registerButtonURL?: Maybe<Scalars['String']>;
   image?: Maybe<UploadFileEntityResponse>;
-  location?: Maybe<ComponentCommonAdress>;
+  location: ComponentCommonAdress;
   publishedAt?: Maybe<Scalars['DateTime']>;
   seo?: Maybe<ComponentSharedSeo>;
   slug: Scalars['String'];
